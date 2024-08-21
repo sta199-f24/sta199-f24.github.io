@@ -1,0 +1,192 @@
+---
+title: "Peer review"
+subtitle: "Milestone 3"
+categories: "Project"
+execute:
+  echo: false
+---
+
+During the peer feedback process, you will be provided read-only access to your partner team's GitHub repo.
+You will provide your feedback in the form of GitHub issues to your partner team's GitHub repo.
+
+# Goals
+
+The goals of this milestone are as follows:
+
+-   Review others' project drafts as a team and provide feedback
+-   Post issues on GitHub using an issue template
+-   Learn from others' projects and improve your own project based on their strengths and weaknesses
+
+# Instructions
+
+## Part 1
+
+During the first \~30 minutes, make progress on your own project.
+
+-   Review the feedback from your TA.
+
+-   Choose the dataset you want to work with.
+
+-   Make progress on your analysis and write-up in `index.qmd`:
+
+    -   At a minimum, write a plan that peers can give feedback on.
+
+    -   Time permitting, start the analysis.
+
+-   Render the project, commit and push all your changes.
+
+::: callout-important
+Make sure you always render before you commit and push. 
+If you don't render first, you're going to end up with merge conflicts that are difficult to resolve in auxiliary files created during the render process.
+:::
+
+## Part 2
+
+Review one other team's project.
+As a team you should spend \~30 minutes on each team's project.
+
+-   Find the names of the teams whose projects you're reviewing below.
+    You should already have access to this team's repo.
+
+-   Each team member should go to the repo of the team you're reviewing.
+
+-   Then,
+
+    -   1-2 team members clone the team's project and renders it to check for reproducibility.
+
+    -   1-2 team members open the team's project in their browser and starts reading through the project draft.
+
+    -   1 team member opens an issue on the team's repo using the peer review template.
+
+    -   All team members discuss the project based on the prompts on the issue template and one team member records the feedback and submits the issue.
+
+-   To open an issue in the repo you're reviewing, click on New issue, and click on Get started for the Peer review issue.
+    Fill out this issue, answering the following questions:
+
+    -   Peer review by: \[NAME OF TEAM DOING THE REVIEW\]
+
+    -   Names of team members that participated in this review: \[FULL NAMES OF TEAM MEMBERS DOING THE REVIEW\]
+
+    -   Describe the goal of the project.
+
+    -   Describe the data used or collected, if any.
+        If the proposal does not include the use of a specific dataset, comment on whether the project would be strengthened by the inclusion of a dataset.
+
+    -   Describe the approaches, tools, and methods that will be used.
+
+    -   Provide constructive feedback on how the team might be able to improve their project.
+        Make sure your feedback includes at least one comment on the statistical reasoning aspect of the project, but do feel free to comment on aspects beyond the reasoning as well.
+
+    -   What aspect of this project are you most interested in and would like to see highlighted in the presentation.
+
+    -   Were you able to reproduce the project by clicking on Render Website once you cloned it?
+        Were there any issues with reproducibility?
+
+    -   Provide constructive feedback on any issues with file and/or code organization.
+
+    -   What have you learned from this team's project that you are considering implementing in your own project?
+
+    -   (Optional) Any further comments or feedback?
+
+# Review pairings
+
+```{r}
+#| message: false
+library(tidyverse)
+library(gt)
+library(googlesheets4)
+gs4_deauth()
+
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/15vBETwwne7qjZ7EpGvpdk_yZ0zFd07N4cuihF6LpkhY/edit#gid=0") |>
+  mutate(team_to_review = paste0("[", team_to_review, "](", url, ")")) |>
+  select(-url)
+
+make_pairing_table <- function(df, section_no) {
+  df |>
+    filter(section == section_no) |>
+    gt() |>
+    fmt_markdown(
+      columns = team_to_review
+    ) |>
+    cols_align(
+      align = "center",
+      columns = section
+    ) |>
+    cols_label(
+      section = "Lab section",
+      your_team_name = "Your team name",
+      team_to_review = "Team to review"
+    )
+}
+```
+
+::: panel-tabset
+## L1 - 8:30 am
+
+```{r}
+make_pairing_table(teams, 1)
+```
+
+## L2 - 10:05 am
+
+```{r}
+make_pairing_table(teams, 2)
+```
+
+## L3 - 11:45 am
+
+```{r}
+make_pairing_table(teams, 3)
+```
+
+## L4 - 1:25 pm
+
+```{r}
+make_pairing_table(teams, 4)
+```
+
+## L11 - 1:25 pm
+
+```{r}
+make_pairing_table(teams, 11)
+```
+
+## L5 - 3:05 pm
+
+```{r}
+make_pairing_table(teams, 5)
+```
+
+## L6 - 4:40 pm
+
+```{r}
+make_pairing_table(teams, 6)
+```
+
+## L7 - 4:40 pm
+
+```{r}
+make_pairing_table(teams, 7)
+```
+:::
+
+# Grading
+
+Peer reviews will be graded on the extent to which it comprehensively and constructively addresses the components of the reviewee's team's report.
+
+Only the team members participating in the review during the lab session are eligible for points for the peer review.
+If you're unable to make it to lab in person, you should arrange to virtually connect with your team during your lab session.
+
+-   0 points: No peer review
+
+-   1 point: Feedback provided is not constructive or actionable
+
+-   2-4 points: Feedback provided is not sufficiently thorough
+
+-   5 points: Peer review is constructive, actionable, and sufficiently thorough
+
+::: callout-note
+The feedback issue will come from one team member on GitHub since you can't collectively edit an issue.
+However it must represent the opinions of the entire team.
+It is not a single team member's responsibility to provide feedback, they're just the record keeper for the team.
+:::

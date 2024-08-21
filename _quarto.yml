@@ -1,0 +1,134 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  title: "STA 199"
+  description: "Homepage for STA 199 - Introduction to Data Science at Duke University, Fall 2024."
+  site-url: "https://sta199-f24.github.io/"
+
+  repo-url: https://github.com/sta199-f24/sta199-f24.github.io/
+  repo-actions: [edit, issue]
+
+  open-graph: true
+  twitter-card:
+    creator: "@minebocek"
+    image: "img/twitter-card.png"
+
+  sidebar:
+    background: "#5D737E"
+    logo: "img/logo.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/sta199-f24
+        text: "GitHub organization"
+      - icon: code-square
+        href: https://cmgr.oit.duke.edu/containers
+        text: "RStudio containers"
+      - icon: life-preserver
+        href: https://docs.google.com/spreadsheets/d/1Mw69d1Ro-_G1Y8x7FH1wqCI04bxLpVOJ7gp8QSFGJBU/edit#gid=0
+        text: "Office hours"
+      - icon: chat-dots-fill
+        href: https://edstem.org/us/courses/50730/discussion/
+        text: "Ed"
+      - icon: camera-reels-fill
+        href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=b5b29027-7084-40bf-9a2f-b0cf0100bb98
+        text: "Class recordings"
+      - icon: check-square-fill
+        text: "Canvas"
+        menu:
+          - text: Gradescope
+            url: https://canvas.duke.edu/courses/26106/external_tools/181
+          - text: Gradebook
+            url: https://canvas.duke.edu/courses/26106/gradebook
+
+    style: docked
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "Course information"
+        contents:
+          - href: course-overview.qmd
+            text: Overview
+          - href: course-syllabus.qmd
+            text: Syllabus
+          - href: course-support.qmd
+            text: Support
+          - href: course-team.qmd
+            text: Teaching team
+          - href: index.qmd
+            text: Schedule
+          - href: course-links.qmd
+            text: Useful links
+          - href: course-faq.qmd
+            text: FAQ
+      - section: "Computing"
+        contents:
+          - href: computing-access.qmd
+            text: Access
+          - href: computing-troubleshooting.qmd
+            text: Troubleshooting
+          - href: computing-cheatsheets.qmd
+            text: Cheatsheets
+      - section: "Project"
+        contents:
+          - href: project/description.qmd
+            text: Description
+          - href: project/1-working-collaboratively.qmd
+            text: Milestone 1
+          - href: project/2-proposal.qmd
+            text: Milestone 2
+          - href: project/3-peer-review.qmd
+            text: Milestone 3
+          - href: project/4-writeup-presentation.qmd
+            text: Milestone 4            
+          - href: project/tips-resources.qmd
+            text: Tips + resources
+      - section: "Labs"
+        contents:
+          - href: labs/lab-0.qmd
+            text: Lab 0
+          - href: labs/lab-1.qmd
+            text: Lab 1
+          - href: labs/lab-2.qmd
+            text: Lab 2
+          - href: labs/lab-3.qmd
+            text: Lab 3            
+          - href: labs/lab-4.qmd
+            text: Lab 4
+          - href: labs/lab-5.qmd
+            text: Lab 5 
+          - href: labs/lab-6.qmd
+            text: Lab 6             
+          - href: labs/lab-7.qmd
+            text: Lab 7 
+      - section: "Exam review"
+        contents:
+          - href: exam-review/exam-1-review.qmd
+            text: Exam 1
+          - href: exam-review/exam-2-review.qmd
+            text: Exam 2
+            
+  page-footer:
+    right: 'This page is built with [{{< fa heart >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
+    left: "&copy; Copyright 2024, Mine Çetinkaya-Rundel"
+    background: "#5D737E"
+
+format:
+  html:
+    theme:
+      light: [cosmo, style/sta199.scss]
+      dark: [cosmo, style/sta199.scss, style/dark.scss]
+    linkcolor: "#5D737E"
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    mainfont: "Atkinson Hyperlegible"
+    highlight-style: a11y-dark
+
+execute:
+  freeze: auto
+
+editor: visual
