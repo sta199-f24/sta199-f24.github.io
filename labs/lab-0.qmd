@@ -129,6 +129,8 @@ usethis::use_git_config(
 
 You are now ready interact with GitHub via RStudio!
 
+If you don't do this, we won't be able to tell who you are and give you points for the work you do...
+
 ::: {.callout-tip collapse="true"}
 ## Need a recap? Watch this video!
 
@@ -139,10 +141,6 @@ The following video walks you through the steps outlined in the SSH key generati
 
 # Hello STA 199!
 
-Fill out the course "Getting to know you" survey on Canvas: <https://canvas.duke.edu/courses/26106/quizzes/16228>.
-
-::: callout-important
-TO DO: Update link to survey.
-:::
+Fill out the course "Getting to know you" survey on Canvas: <https://canvas.duke.edu/courses/39994/quizzes/25798>.
 
 We will use the information collected in this survey for a variety of goals, from inviting you to the course GitHub organization (more on that later) to getting to know you as a person and your course goals and concerns.

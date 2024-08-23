@@ -6,18 +6,21 @@ title: "Teaching team"
 
 ![](img/team/mine.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mine Çetinkaya-Rundel" width="200"}
 
-[**Dr. Mine Çetinkaya-Rundel**](http://mine-cr.com/) (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University.
-Mine's work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.
+[**Dr. Mine Çetinkaya-Rundel**](http://mine-cr.com/) (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University. Mine's work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education, as well as pedagogical approaches for enhancing the retention of women and underrepresented minorities in STEM.
 
-+------------------------------------------------------------+--------------+
-| Office hours                                               | Location     |
-+============================================================+==============+
-| Tuesdays and Thursdays 1-1:30 pm (immediately after class) | Bio Sci 111  |
-+------------------------------------------------------------+--------------+
-| Thursdays 2-3 pm                                           | Old Chem 213 |
-+------------------------------------------------------------+--------------+
++------------------------------------------------------------+---------------+
+| Office hours                                               | Location      |
++============================================================+===============+
+| Tuesdays and Thursdays 1-1:30 pm (immediately after class) | Bio Sci 111   |
++------------------------------------------------------------+---------------+
+| Wednesdays 2-4 pm                                          | Old Chem 213  |
++------------------------------------------------------------+---------------+
 
 ## Teaching assistants
+
+::: callout-important
+TO DO: Update TAs.
+:::
 
 +---------------------------------------+----------------+---------------+-----------------------------------------+
 |                                       | **First name** | **Last name** | **Role**                                |
@@ -69,11 +72,10 @@ Mine's work focuses on innovation in statistics and data science pedagogy, with 
 
 : {tbl-colwidths="\[15,15,20,50\]"}
 
-For office hours, please see [STA 199 - Office Hours](https://docs.google.com/spreadsheets/d/1Mw69d1Ro-_G1Y8x7FH1wqCI04bxLpVOJ7gp8QSFGJBU/edit?usp=sharing) sheet.
+For office hours, please see [STA 199 - Office Hours](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing) sheet.
 
 ## Course coordinator
 
 ![](img/team/mary.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mary Knox" width="120"}
 
-Dr. Mary Knox (she/her) is the course coordinator for this course.
-You can reach out to her (at [mary.knox\@duke.edu](mailto:mary.knox@duke.edu)) with any questions regarding missed work, extensions, etc. as well as registration questions.
+Dr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at [mary.knox\@duke.edu](mailto:mary.knox@duke.edu)) with any questions regarding accommodations, missed work, extensions, etc., and registration.

@@ -52,7 +52,7 @@ First, a bit of Git review:
 
 Git will put conflict markers in your code that look like:
 
-```         
+```       
 <<<<<<< HEAD 
 
 See also: [dplyr documentation](https://dplyr.tidyverse.org/)   
