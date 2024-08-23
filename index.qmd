@@ -11,7 +11,6 @@ Note that this schedule will be updated as the semester progresses and the timel
 #| echo: false
 #| message: false
 #| warning: false
-
 library(googlesheets4)
 library(gt)
 library(tidyverse)
