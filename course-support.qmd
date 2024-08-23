@@ -2,33 +2,56 @@
 title: "Course support"
 ---
 
-Most of you will need help at some point, and we want to make sure you can identify when that is so that you don't get too frustrated and feel comfortable seeking help.
+Most of you will need help at some point, and we want to make sure you can identify where that is so that you don't get too frustrated and feel comfortable seeking help.
 
 ## Lectures and labs
 
-If you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so asking will create a learning opportunity for everyone.
+If you have a question during the lecture or lab, feel free to ask it!
+There are likely other students with the same question, so asking will create a learning opportunity for everyone.
 
 ## Office hours
 
-The teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. Many questions are most effectively answered in person, so office hours are a valuable resource. I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by during office hours at least once during the first three weeks of class. If you have no questions, stop by and say hi and introduce yourself. You can find a list of everyone's office hours [here](/course-team.html).
+The teaching team is here to help you be successful in the course.
+You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments.
+Many questions are most effectively answered in person, so office hours are a valuable resource.
+I encourage each and every one of you to take advantage of this resource!
+Make a pledge to stop by during office hours at least once during the first three weeks of class.
+If you have no questions, stop by and say hi and introduce yourself.
+You can find a list of everyone's office hours [here](/course-team.html).
 
 ## Ed Discussion
 
-Have a question that can't wait for office hours? Prefer to write out your question in detail rather than asking in person? The course discussion forum, Ed Discussion, is the best venue for these! There is a chance another student has already asked a similar question, so please check the other posts on before asking a new question. If you know the answer to a question that is posted, I encourage you to respond!
+Have a question that can't wait for office hours?
+Prefer to write out your question in detail rather than asking in person?
+The course discussion forum, Ed Discussion, is the best venue for these!
+There is a chance another student has already asked a similar question, so please check the other posts on before asking a new question.
+If you know the answer to a question that is posted, I encourage you to respond!
 
 ## Email
 
-Please refrain from emailing any course content questions (those should go to Ed Discussion), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.). For such matters, you may email Dr. Mine Çetinkaya-Rundel at [mc301\@duke.edu](mailto:mc301@duke.edu).
+Please refrain from emailing any course content questions (those should go to Ed Discussion), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.).
+For such matters, you may email Dr. Mine Çetinkaya-Rundel at [mc301\@duke.edu](mailto:mc301@duke.edu).
 
-If there is a question that's not appropriate for the public forum, you are welcome to email me directly. **If you email me, please include "STA 199" in the subject line.** Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.
+If there is a question that's not appropriate for the public forum, you are welcome to email me directly.
+**If you email me, please include "STA 199" in the subject line.** Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours Monday - Friday.
+Response time may be slower for emails sent Friday evening - Sunday.
 
 ## Academic support
 
-There are times may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The [Academic Resource Center (ARC)](https://arc.duke.edu) offers free services to all students during their undergraduate careers at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke. Contact the ARC to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact [ARC\@duke.edu](mailto:arc@duke.edu), 919-684-5917.
+There are times you may need help with the class that is beyond what can be provided by the teaching team.
+In those instances, I encourage you to visit the Academic Resource Center.
+The [Academic Resource Center (ARC)](https://arc.duke.edu) offers free services to all students during their undergraduate careers at Duke.
+Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more.
+Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke.
+Contact the ARC to schedule an appointment.
+Undergraduates in any year, studying any discipline can benefit!
+Contact [ARC\@duke.edu](mailto:arc@duke.edu), 919-684-5917.
 
 ## Mental health and well-being
 
-Duke is committed to holistic student well-being, including mental, emotional, and physical health. The university offers resources to help students manage daily stress, encourage intentional self-care, and access just-in-time support. If you find you need support, your mental and/or emotional health concerns are impacting your day-to-day activities and your academic performance, or you need someone to talk to, the resources below are available to you:
+Duke is committed to holistic student well-being, including mental, emotional, and physical health.
+The university offers resources to help students manage daily stress, encourage intentional self-care, and access just-in-time support.
+If you find you need support, your mental and/or emotional health concerns are impacting your day-to-day activities and your academic performance, or you need someone to talk to, the resources below are available to you:
 
 -   [**DukeReach**](https://students.duke.edu/wellness/dukereach/)**:** DukeReach provides comprehensive outreach services to support students in managing all aspects of well-being, including referrals and follow-up services for students who are experiencing significant challenges related to mental health, physical health, social adjustment, and/or a variety of other stressors. You can reach the DukeReach team at [dukereach\@duke.edu](mailto:dukereach@duke.edu).
 -   [**Counseling and Psychological Services (CAPS)**](https://students.duke.edu/wellness/caps/)**:** CAPS services include individual and group counseling services, psychiatric services, and workshops. CAPS also provides referrals to off-campus resources for specialized care. You can reach CAPS at (919) 660-1000.
@@ -48,7 +71,8 @@ If you are having difficulty with the costs associated with this course, here ar
 
 -   [**Karsh Office of Undergraduate Support**](https://financialaid.duke.edu/)**:** Regardless of your aid package, Karsh offers loans and resources for connecting students with campus programs that might help alleviate course costs.
 
--   [**DukeLIFE**](https://dukelife.duke.edu/programs/course-materials-assistance/)**:** The Course Material Assistance program offers assistance for eligible students, including through the [LIFE Loaner Laptop Program](https://dukelife.duke.edu/academic-support/loaner-laptop-program/). Students who are eligible for DukeLIFE benefits are notified before the start of the semester; program resources are limited.
+-   [**DukeLIFE**](https://dukelife.duke.edu/programs/course-materials-assistance/)**:** The Course Material Assistance program offers assistance for eligible students, including through the [LIFE Loaner Laptop Program](https://dukelife.duke.edu/academic-support/loaner-laptop-program/).
+    Students who are eligible for DukeLIFE benefits are notified before the start of the semester; program resources are limited.
 
 -   [**Duke Libraries**](https://library.duke.edu/course-support/course-reserves/textbooks)**:** The library’s Top Textbook Program allows you to rent some textbooks for 3 hours at a time.
 
@@ -56,8 +80,10 @@ If you are having difficulty with the costs associated with this course, here ar
 
 ## **Assistance with Zoom or Canvas**
 
-For technical help with Canvas or Zoom, contact the Duke OIT Service Desk at [oit.duke.edu/help](https://oit.duke.edu/help). You can also access the self-service help documentation for Zoom and Canvas.
+For technical help with Canvas or Zoom, contact the Duke OIT Service Desk at [oit.duke.edu/help](https://oit.duke.edu/help).
+You can also access the self-service help documentation for Zoom and Canvas.
 
-Note that we will be using Canvas minimally in this course (primarily for announcements and the grade book). All assignment submissions will take place on GitHub, and conversations will take place on Ed Discussion.
+Note that we will be using Canvas minimally in this course (primarily for announcements and the grade book).
+All assignment submissions will take place on Gradescope and GitHub, and conversations will take place on Ed Discussion.
 
 Zoom will be used for online office hours and as a backup option should we need to hold the course online instead of in person.
