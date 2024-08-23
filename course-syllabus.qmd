@@ -83,7 +83,7 @@ Please check your email regularly to ensure you have the latest announcements fo
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!
 -   Outside of class and office hours, any general questions about course content or assignments should be posted on [ed, the course discussion forum](https://edstem.org/us/courses/62468/discussion/). There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!
 
-Check out the [Support](/course-support/) tab for more resources.
+Check out the [Support](https://sta199-f24.github.io/course-support.html) tab for more resources.
 
 ### Email
 
@@ -321,6 +321,10 @@ Regrade requests will be considered if there was an error in the grade calculati
 Requests to dispute the number of points deducted for an incorrect response will not be considered.
 Note that by submitting a regrade request, the entire assignment will be graded, which could potentially result in losing points.
 
+::: callout-important
+TO DO: There will not be project presentations in class (so edit below sentence?)
+:::
+
 *No grades will be changed after the project presentations.*
 
 ### Attendance policy
@@ -368,7 +372,11 @@ TO DO: Update dates
 
 -   **Apr 24**: Classes end
 
-HW deadlines are listed on the course schedule.
+Lab deadlines are listed on the course schedule.
 Class ends on April 24, there is no final exam.
+::: callout-important
+TO DO: remove "Class ends on April 24, there is no final exam." above? edit project dates?
+:::
 
-For more important dates, see the full [Duke Academic Calendar](https://registrar.duke.edu/fall-2022-academic-calendar).
+
+For more important dates, see the full [Duke Academic Calendar](https://registrar.duke.edu/2024-2025-academic-calendar).
