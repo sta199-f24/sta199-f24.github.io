@@ -43,6 +43,10 @@ As a student in this course, you have agreed to uphold the [Duke Community Stand
 
 ### Inclusive community
 
+::: callout-important
+TO DO: Replace Commitment to Diversity and Inclusion link.
+:::
+
 It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit.
 I intend to present materials and activities that respect diversity and align with [Duke's Commitment to Diversity and Inclusion](https://provost.duke.edu/initiatives/commitment-to-diversity-and-inclusion).
 Your suggestions are encouraged and appreciated.
@@ -79,7 +83,7 @@ Please check your email regularly to ensure you have the latest announcements fo
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!
 -   Outside of class and office hours, any general questions about course content or assignments should be posted on [ed, the course discussion forum](https://edstem.org/us/courses/62468/discussion/). There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!
 
-Check out the [Help](/help/) tab for more resources.
+Check out the [Support](/support/) tab for more resources.
 
 ### Email
 
