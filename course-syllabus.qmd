@@ -346,31 +346,33 @@ If you're willing, share the name of your pet too!
 TO DO: Update dates
 :::
 
--   **Jan 10:** Classes begin
+-   **Aug 26:** Classes begin
 
--   **Jan 24:** Drop/add ends
+-   **Sep 2:** Labor Day
 
--   **Feb 15:** Exam 1 in-class + take-home released
+-   **Sep 6:** Drop/add ends
 
--   **Feb 19:** Exam 1 take-home due
+-   **Oct 7:** Project milestone 1 – working collaboratively due
 
--   **Feb 26:** Project milestone 1 – working collaboratively due
+-   **Oct 8:** Exam 1 in-class + take-home released
 
--   **Mar 11-15**: Spring break
+-   **Oct 11:** Exam 1 take-home due
 
--   **Mar 25:** Project milestone 2 – proposals due
+-   **Oct 14-15**: Fall break
 
--   **Mar 27**: Last day to withdraw with W
+-   **Oct 21:** Project milestone 2 – proposals due
 
--   **Apr 11:** Exam 2 in-class + take-home released
+-   **Nov 8**: Last day to withdraw with W
 
--   **Apr 15:** Exam 2 take-home due
+-   **Nov 25:** Project milestone 3 – peer review due
 
--   **Apr 15:** Project milestone 3 – peer review due
+-   **Nov 27-29**: Thanksgiving break
 
--   **Apr 22**: Project milestone 4 – presentations and write-up due (in lab)
+-   **Dec 5**: Project milestone 4 – presentations and write-up due (in lab) FIX THIS
 
--   **Apr 24**: Classes end
+-   **Dec 6**: Classes end
+
+-   **Dec 12**: Final exam
 
 Lab deadlines are listed on the course schedule.
 Class ends on April 24, there is no final exam.
