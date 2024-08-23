@@ -495,36 +495,47 @@
     ]
   },
   {
-    "objectID": "labs/lab-1.html",
-    "href": "labs/lab-1.html",
-    "title": "Lab 1",
+    "objectID": "labs/lab-3.html",
+    "href": "labs/lab-3.html",
+    "title": "Lab 3",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 1"
+      "Lab 3"
     ]
   },
   {
-    "objectID": "labs/lab-6.html",
-    "href": "labs/lab-6.html",
-    "title": "Lab 6",
+    "objectID": "labs/lab-4.html",
+    "href": "labs/lab-4.html",
+    "title": "Lab 4",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 6"
+      "Lab 4"
     ]
   },
   {
-    "objectID": "labs/lab-7.html",
-    "href": "labs/lab-7.html",
-    "title": "Lab 7",
+    "objectID": "labs/lab-5.html",
+    "href": "labs/lab-5.html",
+    "title": "Lab 5",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 7"
+      "Lab 5"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html",
+    "href": "labs/lab-2.html",
+    "title": "Lab 2",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
     ]
   },
   {
@@ -594,55 +605,37 @@
     ]
   },
   {
-    "objectID": "labs/lab-2.html",
-    "href": "labs/lab-2.html",
-    "title": "Lab 2",
+    "objectID": "labs/lab-7.html",
+    "href": "labs/lab-7.html",
+    "title": "Lab 7",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 2"
+      "Lab 7"
     ]
   },
   {
-    "objectID": "labs/lab-5.html",
-    "href": "labs/lab-5.html",
-    "title": "Lab 5",
+    "objectID": "labs/lab-6.html",
+    "href": "labs/lab-6.html",
+    "title": "Lab 6",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 5"
+      "Lab 6"
     ]
   },
   {
-    "objectID": "labs/lab-4.html",
-    "href": "labs/lab-4.html",
-    "title": "Lab 4",
+    "objectID": "labs/lab-1.html",
+    "href": "labs/lab-1.html",
+    "title": "Lab 1",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 4"
+      "Lab 1"
     ]
-  },
-  {
-    "objectID": "labs/lab-3.html",
-    "href": "labs/lab-3.html",
-    "title": "Lab 3",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
   },
   {
     "objectID": "slides/00-welcome-199.html#meet-the-prof",
