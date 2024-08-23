@@ -9,7 +9,7 @@ about:
       href: https://sta199-f24.github.io
       aria-label: Link to course website
     - icon: github
-      href: https://github.com/sta199-f23
+      href: https://github.com/sta199-f24
       aria-label: Link to course GitHub organization
 ---
 
@@ -28,11 +28,13 @@ Not open to students who have taken a 100-level Statistical Science course, Stat
 | Meeting | Location                       | Time                          |
 |---------|--------------------------------|-------------------------------|
 | Lecture | Biological Sciences 111        | Tue & Thur 11:45 am - 1:00 pm |
-| Lab 01  | Perkins LINK 071 (Classroom 5) | Mon 8:30 - 9:45 am            |
-| Lab 02  | Perkins LINK 071 (Classroom 5) | Mon 10:05 - 11:20 am          |
-| Lab 03  | Perkins LINK 071 (Classroom 5) | Mon 11:45 am - 1:00 pm        |
-| Lab 04  | Perkins LINK 087 (Classroom 3) | Mon 1:25 - 2:40 pm            |
-| Lab 05  | Perkins LINK 087 (Classroom 3) | Mon 3:05 - 4:20 pm            |
-| Lab 06  | Perkins LINK 087 (Classroom 3) | Mon 4:40 - 5:55 pm            |
-| Lab 07  | Old Chemistry 003              | Mon 4:40 - 5:55 pm            |
-| Lab 11  | Perkins LINK 071 (Classroom 5) | Mon 1:25 - 2:40 pm            |
+| Lab 01  | Perkins LINK 087 (Classroom 3) | Mon 8:30 - 9:45 am            |
+| Lab 02  | Perkins LINK 087 (Classroom 3) | Mon 10:05 - 11:20 am          |
+| Lab 03  | Perkins LINK 071 (Classroom 5) | Mon 10:05 - 11:20 am          |
+| Lab 04  | Perkins LINK 087 (Classroom 3) | Mon 11:45 am - 1:00 pm        |
+| Lab 05  | Perkins LINK 071 (Classroom 5) | Mon 11:45 am - 1:00 pm        |
+| Lab 06  | Perkins LINK 087 (Classroom 3) | Mon 1:25 - 2:40 pm            |
+| Lab 07  | Perkins LINK 071 (Classroom 5) | Mon 1:25 - 2:40 pm            |
+| Lab 08  | Perkins LINK 087 (Classroom 3) | Mon 3:05 - 4:20 pm            |
+| Lab 09  | Old Chemistry 201              | Mon 3:05 - 4:20 pm            |
+| Lab 10  | Perkins LINK 087 (Classroom 3) | Mon 4:40 - 5:55 pm            |
