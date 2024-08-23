@@ -19,10 +19,6 @@ Mine's work focuses on innovation in statistics and data science pedagogy, with 
 
 ## Teaching assistants
 
-::: callout-important
-TO DO: Update TAs.
-:::
-
 +---------------------------------------+----------------+---------------+-----------------------------------------+
 |                                       | **First name** | **Last name** | **Role**                                |
 +---------------------------------------+----------------+---------------+-----------------------------------------+
