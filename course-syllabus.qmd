@@ -31,11 +31,7 @@ By the end of the semester, you will...
 
 ### Duke Community Standard
 
-::: callout-important
-TO DO: Update community standard link (in two locations -- here and in academic honesty). perhaps this one? https://trinity.duke.edu/undergraduate/academic-policies/community-standard-student-conduct
-:::
-
-As a student in this course, you have agreed to uphold the [Duke Community Standard](https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard) and the practices specific to this course.
+As a student in this course, you have agreed to uphold the [Duke Community Standard](https://trinity.duke.edu/undergraduate/academic-policies/community-standard-student-conduct) and the practices specific to this course.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_KN97j30ST4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 
@@ -43,12 +39,8 @@ As a student in this course, you have agreed to uphold the [Duke Community Stand
 
 ### Inclusive community
 
-::: callout-important
-TO DO: Replace Commitment to Diversity and Inclusion link.
-:::
-
 It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit.
-I intend to present materials and activities that respect diversity and align with [Duke's Commitment to Diversity and Inclusion](https://provost.duke.edu/initiatives/commitment-to-diversity-and-inclusion).
+I intend to present materials and activities that respect diversity and align with [Duke's Commitment to Diversity and Inclusion](https://provost.duke.edu/about/dukes-commitment-diversity-and-inclusion/).
 Your suggestions are encouraged and appreciated.
 Please let me know ways to improve the effectiveness of the course for you personally or for other students or student groups.
 
@@ -277,17 +269,13 @@ Regardless of course delivery format, it is the responsibility of all students t
 Ignoring these requirements is a violation of the Duke Community Standard.
 Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at [conduct\@duke.edu](mailto:conduct@duke.edu).
 
-::: callout-important
-TO DO: Update community standard link and office of student conduct link
-:::
-
-Any violations in academic honesty standards as outlined in the [Duke Community Standard](https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard) and those specific to this course will
+Any violations in academic honesty standards as outlined in the [Duke Community Standard](https://trinity.duke.edu/undergraduate/academic-policies/community-standard-student-conduct) and those specific to this course will
 
 -   automatically results in a 0 for the relevant portion or the entire assignment,
 
 -   can further impact your overall course grade and
 
--   will be reported to the [Office of Student Conduct](https://studentaffairs.duke.edu/conduct) for further action.
+-   will be reported to the [Office of Student Conduct & Community Standards](https://students.duke.edu/get-assistance/community-standard/osccs/) for further action.
 
 ### Late work & extensions
 
@@ -312,20 +300,12 @@ Please let me know if you need help contacting your academic dean.
 
 ### Regrade requests
 
-::: callout-important
-Note: I replaced "the entire question will be graded" with "the entire assignment will be graded"
-:::
-
 Regrade requests must be submitted on Gradescope within a week after an assignment is returned.
 Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect.
 Requests to dispute the number of points deducted for an incorrect response will not be considered.
-Note that by submitting a regrade request, the entire assignment will be graded, which could potentially result in losing points.
+Note that by submitting a regrade request, the **entire assignment will be regraded**, which could potentially result in losing points.
 
-::: callout-important
-TO DO: There will not be project presentations in class (so edit below sentence?)
-:::
-
-*No grades will be changed after the project presentations.*
+*No grades will be changed after the final exam has been administered.*
 
 ### Attendance policy
 
@@ -342,10 +322,6 @@ If you're willing, share the name of your pet too!
 
 ## Important dates
 
-::: callout-important
-TO DO: Update dates
-:::
-
 -   **Aug 26:** Classes begin
 
 -   **Sep 2:** Labor Day
@@ -354,13 +330,13 @@ TO DO: Update dates
 
 -   **Oct 7:** Project milestone 1 – working collaboratively due
 
--   **Oct 8:** Exam 1 in-class + take-home released
+-   **Oct 8:** Midterm in-class + take-home released
 
--   **Oct 11:** Exam 1 take-home due
+-   **Oct 11:** Midterm take-home due
 
 -   **Oct 14-15**: Fall break
 
--   **Oct 21:** Project milestone 2 – proposals due
+-   **Oct 28:** Project milestone 2 – proposals due
 
 -   **Nov 8**: Last day to withdraw with W
 
@@ -368,17 +344,10 @@ TO DO: Update dates
 
 -   **Nov 27-29**: Thanksgiving break
 
--   **Dec 5**: Project milestone 4 – presentations and write-up due (in lab) FIX THIS
-
 -   **Dec 6**: Classes end
 
 -   **Dec 12**: Final exam
 
 Lab deadlines are listed on the course schedule.
-Class ends on April 24, there is no final exam.
-::: callout-important
-TO DO: remove "Class ends on April 24, there is no final exam." above? edit project dates?
-:::
-
 
 For more important dates, see the full [Duke Academic Calendar](https://registrar.duke.edu/2024-2025-academic-calendar).
