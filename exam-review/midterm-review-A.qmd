@@ -1,5 +1,5 @@
 ---
-title: "Exam 2 Review"
+title: "Midterm Review"
 subtitle: "Suggested answers"
 execute:
   echo: false
