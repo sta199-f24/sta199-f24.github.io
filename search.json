@@ -213,14 +213,22 @@
     "href": "exam-review/midterm-review.html",
     "title": "Midterm Review",
     "section": "",
-    "text": "To be posted."
+    "text": "To be posted.",
+    "crumbs": [
+      "Exam review",
+      "Exam 1"
+    ]
   },
   {
     "objectID": "exam-review/final-review.html",
     "href": "exam-review/final-review.html",
     "title": "Final Review",
     "section": "",
-    "text": "To be posted."
+    "text": "To be posted.",
+    "crumbs": [
+      "Exam review",
+      "Exam 2"
+    ]
   },
   {
     "objectID": "course-support.html",
@@ -249,18 +257,29 @@
     "href": "course-support.html#office-hours",
     "title": "Course support",
     "section": "Office hours",
-    "text": "Office hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. Many questions are most effectively answered in person, so office hours are a valuable resource. I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by during office hours at least once during the first three weeks of class. If you have no questions, stop by and say hi and introduce yourself. You can find a list of everyone’s office hours here.",
+    "text": "Office hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. Many questions are most effectively answered in person, so office hours are a valuable resource. I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by during office hours at least once during the first three weeks of class. If you have no questions, stop by and say hi and introduce yourself. You can find a list of everyone’s office hours here.\nMy office hours will start in Week 1, TA office hours will start in Week 2.",
     "crumbs": [
       "Course information",
       "Support"
     ]
   },
   {
-    "objectID": "course-support.html#ed-discussion",
-    "href": "course-support.html#ed-discussion",
+    "objectID": "course-support.html#help-from-humans-ed-discussion",
+    "href": "course-support.html#help-from-humans-ed-discussion",
     "title": "Course support",
-    "section": "Ed Discussion",
-    "text": "Ed Discussion\nHave a question that can’t wait for office hours? Prefer to write out your question in detail rather than asking in person? The course discussion forum, Ed Discussion, is the best venue for these! There is a chance another student has already asked a similar question, so please check the other posts on before asking a new question. If you know the answer to a question that is posted, I encourage you to respond!",
+    "section": "Help from humans: Ed Discussion",
+    "text": "Help from humans: Ed Discussion\nHave a question that can’t wait for office hours? Prefer to write out your question in detail rather than asking in person? The course discussion forum, Ed Discussion, is the best venue for these! There is a chance another student has already asked a similar question, so please check the other posts on before asking a new question. If you know the answer to a question that is posted, I encourage you to respond!\nYou can access this tool on the course website toolbar – just click on the lifesaver icon.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#help-from-ai-chatbot",
+    "href": "course-support.html#help-from-ai-chatbot",
+    "title": "Course support",
+    "section": "Help from AI: Chatbot",
+    "text": "Help from AI: Chatbot\nThe course has a chatbot that has been trained specifically on the course textbooks. If you’re looking for AI-help, we strongly recommend starting here.\nYou can access this tool on the course website toolbar – just click on the lifesaver icon.",
     "crumbs": [
       "Course information",
       "Support"
@@ -498,36 +517,25 @@
     ]
   },
   {
-    "objectID": "labs/lab-4.html",
-    "href": "labs/lab-4.html",
-    "title": "Lab 4",
+    "objectID": "labs/lab-6.html",
+    "href": "labs/lab-6.html",
+    "title": "Lab 6",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 4"
+      "Lab 6"
     ]
   },
   {
-    "objectID": "labs/lab-5.html",
-    "href": "labs/lab-5.html",
-    "title": "Lab 5",
+    "objectID": "labs/lab-7.html",
+    "href": "labs/lab-7.html",
+    "title": "Lab 7",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 5"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html",
-    "href": "labs/lab-2.html",
-    "title": "Lab 2",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
+      "Lab 7"
     ]
   },
   {
@@ -597,25 +605,47 @@
     ]
   },
   {
-    "objectID": "labs/lab-7.html",
-    "href": "labs/lab-7.html",
-    "title": "Lab 7",
+    "objectID": "labs/lab-2.html",
+    "href": "labs/lab-2.html",
+    "title": "Lab 2",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 7"
+      "Lab 2"
     ]
   },
   {
-    "objectID": "labs/lab-6.html",
-    "href": "labs/lab-6.html",
-    "title": "Lab 6",
+    "objectID": "labs/lab-5.html",
+    "href": "labs/lab-5.html",
+    "title": "Lab 5",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 6"
+      "Lab 5"
+    ]
+  },
+  {
+    "objectID": "labs/lab-4.html",
+    "href": "labs/lab-4.html",
+    "title": "Lab 4",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 4"
+    ]
+  },
+  {
+    "objectID": "labs/lab-8.html",
+    "href": "labs/lab-8.html",
+    "title": "Lab 8",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 8"
     ]
   },
   {
@@ -964,7 +994,7 @@
     "href": "course-team.html#teaching-assistants",
     "title": "Teaching team",
     "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\n\n\n\n\n\n\n\nFirst name\nLast name\nRole\n\n\n\nFederico\nArboleda\nLab helper: M 1:25PM - 2:40PM (Sec 7)\n\n\n\nSonya\nEason\n\n\n\n\nDomenic\nFenoglio\nLab leader: M 1:25AM - 2:40PM (Sec 7)\n\n\n\nAvery\nHodges\nLab leader: M 11:45AM - 1:00PM (Sec 4)\n\n\n\nEmily\nJensen\nLab leader: M 1:25AM - 2:40PM (Sec 6)\n\n\n\nJanice\nKim\nLab helper: M 4:40AM - 5:55PM (Sec 10)\nLecture helper (Tue + Thur)\n\n\n\nDav\nKing\nLab leader: M 3:05AM - 4:20PM (Sec 8)\n\n\n\nLynn\nKremers\nLab helper: M 11:45AM - 1:00PM (Sec 5)\n\n\n\nHyunjin\nLee\nLab helper: M 3:05AM - 4:20PM (Sec 9)\n\n\n\nKareena\nLegare\nLab helper: M 1:25AM - 2:40PM (Sec 6)\n\n\n\nJonathan\nLin\nLab helper: M 10:05AM - 11:45AM (Sec 3)\n\n\n\nAurora\nLiu\nLab helper: M 8:30AM - 9:45AM (Sec 1)\n\n\n\nLiane\nMa\n\n\n\n\nNetra\nMittal\nLab leader: M 11:45AM - 1:00PM (Sec 5)\n\n\n\nMarie\nNeubrander\nHead TA\nLab leader: M 8:30AM - 9:45AM (Sec 1)\nLab leader: M 10:05AM - 11:45AM (Sec 3)\n\n\n\nNoah\nObuya\nLab helper: M 10:05AM - 11:45AM (Sec 2)\n\n\n\nGrace\nRade\nLab helper: M 11:45AM - 1:00PM (Sec 4)\n\n\n\nAnmol\nSapru\nLab helper: M 3:05AM - 4:20PM (Sec 8)\n\n\n\nJasmine\nWang\nLab leader: M 10:05AM - 11:45AM (Sec 2)\n\n\n\nSarah\nWu\nLecture helper (Tue + Thur)\n\n\n\nJohn\nZito\nLab leader: M 3:05AM - 4:20PM (Sec 9)\nLab leader: M 4:40AM - 5:55PM (Sec 10)\n\n\n\nFor office hours, please see STA 199 - Office Hours sheet.",
+    "text": "Teaching assistants\n\n\n\n\n\n\n\n\n\n\nFirst name\nLast name\nRole\n\n\n\nFederico\nArboleda\nLab helper: M 1:25 PM - 2:40 PM (Sec 7)\n\n\n\nSonya\nEason\n\n\n\n\nDomenic\nFenoglio\nLab leader: M 1:25 AM - 2:40 PM (Sec 7)\n\n\n\nAvery\nHodges\nLab leader: M 11:45 AM - 1:00 PM (Sec 4)\n\n\n\nEmily\nJensen\nLab leader: M 1:25 AM - 2:40 PM (Sec 6)\n\n\n\nJanice\nKim\nLab helper: M 4:40 AM - 5:55 PM (Sec 10)\nLecture helper (Tue + Thur)\n\n\n\nDav\nKing\nLab leader: M 3:05 AM - 4:20 PM (Sec 8)\n\n\n\nLynn\nKremers\nLab helper: M 11:45 AM - 1:00 PM (Sec 5)\n\n\n\nHyunjin\nLee\nLab helper: M 3:05 AM - 4:20 PM (Sec 9)\n\n\n\nKareena\nLegare\nLab helper: M 1:25 AM - 2:40 PM (Sec 6)\n\n\n\nJonathan\nLin\nLab helper: M 10:05 AM - 11:45 AM (Sec 3)\n\n\n\nAurora\nLiu\nLab helper: M 8:30 AM - 9:45 AM (Sec 1)\n\n\n\nLiane\nMa\n\n\n\n\nNetra\nMittal\nLab leader: M 11:45 AM - 1:00 PM (Sec 5)\n\n\n\nMarie\nNeubrander\nHead TA\nLab leader: M 8:30 AM - 9:45 AM (Sec 1)\nLab leader: M 10:05 AM - 11:45 AM (Sec 3)\n\n\n\nNoah\nObuya\nLab helper: M 10:05 AM - 11:45 AM (Sec 2)\n\n\n\nGrace\nRade\nLab helper: M 11:45 AM - 1:00 PM (Sec 4)\n\n\n\nAnmol\nSapru\nLab helper: M 3:05 AM - 4:20 PM (Sec 8)\n\n\n\nJasmine\nWang\nLab leader: M 10:05 AM - 11:45 AM (Sec 2)\n\n\n\nSarah\nWu\nLecture helper (Tue + Thur)\n\n\n\nJohn\nZito\nLab leader: M 3:05 AM - 4:20 PM (Sec 9)\nLab leader: M 4:40 AM - 5:55 PM (Sec 10)\n\n\n\nFor office hours, please see STA 199 - Office Hours sheet.",
     "crumbs": [
       "Course information",
       "Teaching team"
