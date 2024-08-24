@@ -108,7 +108,7 @@ The write-up is worth 40 points, broken down as follows:
 
 ## Slides
 
-In addition to the written report, your team will also create presentation slides and deliver presentation that summarize and showcase your project.
+In addition to the written report, your team will also create presentation slides and record a presentation that summarize and showcase your project.
 Introduce your research question and data set, showcase visualizations, and discuss the primary conclusions.
 These slides should serve as a brief visual addition to your written report and will be graded for content and quality.
 
@@ -132,11 +132,11 @@ Here is a *suggested* outline as you think through the slides; you [**do not**]{
 
 ## Presentation
 
-Presentations will take place in class during the last lab of the semester.
-**The presentation must be no longer than 5 minutes.** You can choose to present live in class (recommended) or pre-record a video to be shown in class.
-Either way you must attend the lab session for the Q&A following your presentation.
+Presentations will be recorded and uploaded to Warpwire or YouTube.
+**The presentation must be no longer than 5 minutes.** 
+During grading, we will stop watching your video at the 5-minute mark.
 
-If you choose to pre-record your presentation, you may use can use any platform that works best for your group to record your presentation.
+For recording your presentation, you may use can use any platform that works best for your group to record your presentation.
 Below are a few resources on recording videos:
 
 -   [Recording presentations in Zoom](https://kb.siue.edu/61721)
@@ -151,7 +151,12 @@ To upload your video to Warpwire:
 -   Click the Warpwire tab in the course Canvas site.
 -   Click the "+" and select "Upload files".
 -   Locate the video on your computer and click to upload.
--   Once you've uploaded the video to Warpwire, click to share the video and copy the video's URL. You will need this when you post the video in the discussion forum.
+
+The instructions should be a lot more straightforward for YouTube.
+See <https://support.google.com/youtube/answer/57407?hl=en&co=GENIE.Platform%3DDesktop> for step-by-step instructions.
+
+Once you've uploaded your video to some platform, grab its sharing link and post it on Ed Discussion.
+More information on this will be posted closer to the project deadline.
 
 ## Grading
 
@@ -178,4 +183,3 @@ Are the slides well organized, readable, not full of text, featuring figures wit
   - Does the analysis answer the question?
   - Are the conclusion(s) made based on the analysis justifiable?
   - Are the limitations carefully considered and articulated?
-

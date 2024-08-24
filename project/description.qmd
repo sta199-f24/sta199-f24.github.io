@@ -8,10 +8,10 @@ title: "Project description"
 
 **May be too long, but please do read**
 
-The project for this class will consist of analysis on a dataset of your own choosing.
+The project for this course will consist of analysis on a dataset of your own choosing.
 The dataset may already exist, or you may collect your own data using a survey or by conducting an experiment.
 You can choose the data based on your teams' interests or based on work in other courses or research projects.
-The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if you like) and apply them to a novel dataset in a meaningful way.
+The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this course (and beyond, if you like) and apply them to a novel dataset in a meaningful way.
 
 The goal is not to do an exhaustive data analysis i.e., do not calculate every statistic and procedure you have learned for every variable, but rather let me know that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results.
 Focus on methods that help you begin to answer your research questions.
@@ -21,12 +21,12 @@ Issues pertaining to the reliability and validity of your data, and appropriaten
 
 The project is very open ended.
 You should create some kind of compelling visualization(s) of this data in R.
-There is no limit on what tools or packages you may use but sticking to packages we learned in class is required.
+There is no limit on what tools or packages you may use but sticking to packages we learned in the course is required.
 You do not need to visualize all of the data at once.
 A single high-quality visualization will receive a much higher grade than a large number of poor-quality visualizations.
 Also pay attention to your presentation.
 Neatness, coherency, and clarity will count.
-All analyses must be done in RStudio, using R, and all components of the project **must be reproducible** (with the exception of the presentation).
+All analyses must be done in RStudio, using R, and all components of the project **must be reproducible** (with the exception of the slide deck).
 
 You will work on the project with your lab teams.
 
@@ -35,7 +35,7 @@ The four milestones for the final project are
 1.  Milestone 1 - Working collaboratively
 2.  Milestone 2 - Proposals, with three dataset ideas
 3.  Milestone 3 - Peer review, on another team's project
-4.  Milestone 4 - Presentation with slides and a reproducible project writeup of your analysis, with a draft along the way.
+4.  Milestone 4 - Presentation with slides and a reproducible project write-up of your analysis, with a draft along the way.
 
 You will not be submitting anything on Gradescope for the project.
 Submission of these deliverables will happen on GitHub and feedback will be provided as GitHub issues that you need to engage with and close.
@@ -65,9 +65,9 @@ This feedback is intended to help you create a high quality final project, as we
 
 Instructions and grading criteria for this milestone are outlined in [Milestone 3: Peer review](/project/3-peer-review.html).
 
-# Milestone 4 - Writeup and presentation
+# Milestone 4 - Write-up and presentation
 
-Instructions and grading criteria for this milestone are outlined in [Milestone 4: Writeup + presentation](/project/4-writeup-presentation.html).
+Instructions and grading criteria for this milestone are outlined in [Milestone 4: Write-up + presentation](/project/4-writeup-presentation.html).
 
 # Other
 

@@ -15,7 +15,8 @@ library(googlesheets4)
 library(gt)
 library(tidyverse)
 gs4_deauth()
-d <- read_sheet("https://docs.google.com/spreadsheets/d/1tHdQiEaMW5qE8oKsG4lTMWk60HtxKhtm95zZcDNacdc/edit?usp=sharing", sheet = "Post")
+d <- read_sheet("https://docs.google.com/spreadsheets/d/1tHdQiEaMW5qE8oKsG4lTMWk60HtxKhtm95zZcDNacdc/edit?usp=sharing", sheet = "Schedule")
+prepare_cutoff_date <- as.Date("2024-09-06")
 ```
 
 ```{r}
@@ -23,12 +24,18 @@ d <- read_sheet("https://docs.google.com/spreadsheets/d/1tHdQiEaMW5qE8oKsG4lTMWk
 
 d |>
   filter(!is.na(session)) |>
-  select(-session) |>
-  mutate(date = as.Date(date)) |>
+  select(-dow, -admin_notes, -number, -session) |>
+  mutate(
+    date = as.Date(date),
+    prepare = if_else(date > prepare_cutoff_date, "*To be posted*", prepare)
+    ) |>
   relocate(due, .after = materials) |>
   gt() |>
   fmt_date(date, date_style = 31) |>
-  sub_missing(columns = c(week, prepare, topic, materials, due), missing_text = "") |>
+  sub_missing(
+    columns = c(week, prepare, topic, materials, due), 
+    missing_text = ""
+  ) |>
   cols_align(
     align = "center", 
     columns = c(week)
@@ -40,6 +47,24 @@ d |>
   cols_align(
     align = "left", 
     columns = c(topic, prepare, materials, due)
+  ) |>
+  tab_style(
+    style = cell_text(
+      color = "#b4b4b4"
+    ),
+    locations = cells_body(
+      columns = c(prepare),
+      rows = prepare == "*To be posted*"
+    )
+  ) |>
+  tab_style(
+    style = cell_text(
+      color = "#b4b4b4"
+    ),
+    locations = cells_body(
+      columns = c(materials),
+      rows = materials == "*To be posted*"
+    )
   ) |>
   tab_style(
     style = cell_borders(
@@ -57,10 +82,10 @@ d |>
   cols_width(
     week ~ px(45),
     date ~ px(100), 
-    prepare ~ px(200),
+    prepare ~ px(300),
     topic ~ px(250),
     materials ~ px(150),
-    due ~ px(150)
+    due ~ px(100)
   ) |>
   cols_label_with(fn = function(x) {
       janitor::make_clean_names(x, case = "title") |>
