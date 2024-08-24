@@ -32,10 +32,10 @@ website:
         menu:
           - icon: person-raised-hand
             text: Office hours
-            href: https://docs.google.com/spreadsheets/d/1Mw69d1Ro-_G1Y8x7FH1wqCI04bxLpVOJ7gp8QSFGJBU/edit#gid=0
+            href: https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing
           - icon: people-fill
             text: Help from humans (Ed Discussion)
-            href: https://edstem.org/us/courses/50730/discussion/
+            href: https://edstem.org/us/courses/62468/discussion/
           - icon: robot
             text: Help from AI (Chatbot)
             href: https://canvas.duke.edu/courses/39994/external_tools/5887
@@ -47,10 +47,10 @@ website:
             url: https://canvas.duke.edu/courses/39994/announcements
           - icon: file-arrow-up-fill
             text: Gradescope
-            url: https://canvas.duke.edu/courses/26106/external_tools/181
+            url: https://canvas.duke.edu/courses/39994/external_tools/181
           - icon: alphabet-uppercase
             text: Gradebook
-            url: https://canvas.duke.edu/courses/26106/gradebook
+            url: https://canvas.duke.edu/courses/39994/gradebook
 
     style: docked
     search: true
