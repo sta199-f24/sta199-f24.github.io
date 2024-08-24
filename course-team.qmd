@@ -4,80 +4,82 @@ title: "Teaching team"
 
 ## Instructor
 
-![](img/team/mine.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mine Çetinkaya-Rundel" width="200"}
+![](img/team/mine.png){.circular-portrait-mine style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mine Çetinkaya-Rundel"}
 
 [**Dr. Mine Çetinkaya-Rundel**](http://mine-cr.com/) (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University. Mine's work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education, as well as pedagogical approaches for enhancing the retention of women and underrepresented minorities in STEM.
 
 +------------------------------------------------------------+---------------+
 | Office hours                                               | Location      |
 +============================================================+===============+
-| Tuesdays and Thursdays 1-1:30 pm (immediately after class) | Bio Sci 111   |
+| Tuesdays and Thursdays 1-1:30 pm (after class)             | Bio Sci 111   |
 +------------------------------------------------------------+---------------+
 | Wednesdays 2-4 pm                                          | Old Chem 213  |
 +------------------------------------------------------------+---------------+
 
+: {tbl-colwidths="[70,30]"}
+
 ## Teaching assistants
-
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-|                                       | **First name** | **Last name** | **Role**                                  |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Federico       | Arboleda      | Lab helper: M 1:25 PM - 2:40 PM (Sec 7)   |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Sonya          | Eason         |                                           |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Domenic        | Fenoglio      | Lab leader: M 1:25 AM - 2:40 PM (Sec 7)   |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/avery.png){width="80"}   | Avery          | Hodges        | Lab leader: M 11:45 AM - 1:00 PM (Sec 4)  |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Emily          | Jensen        | Lab leader: M 1:25 AM - 2:40 PM (Sec 6)   |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Janice         | Kim           | Lab helper: M 4:40 AM - 5:55 PM (Sec 10)  |
-|                                       |                |               |                                           |
-|                                       |                |               | Lecture helper (Tue + Thur)               |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Dav            | King          | Lab leader: M 3:05 AM - 4:20 PM (Sec 8)   |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Lynn           | Kremers       | Lab helper: M 11:45 AM - 1:00 PM (Sec 5)  |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Hyunjin        | Lee           | Lab helper: M 3:05 AM - 4:20 PM (Sec 9)   |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Kareena        | Legare        | Lab helper: M 1:25 AM - 2:40 PM (Sec 6)   |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Jonathan       | Lin           | Lab helper: M 10:05 AM - 11:45 AM (Sec 3) |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Aurora         | Liu           | Lab helper: M 8:30 AM - 9:45 AM (Sec 1)   |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Liane          | Ma            |                                           |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/netra.png){width="80"}   | Netra          | Mittal        | Lab leader: M 11:45 AM - 1:00 PM (Sec 5)  |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Marie          | Neubrander    | Head TA                                   |
-|                                       |                |               |                                           |
-|                                       |                |               | Lab leader: M 8:30 AM - 9:45 AM (Sec 1)   |
-|                                       |                |               |                                           |
-|                                       |                |               | Lab leader: M 10:05 AM - 11:45 AM (Sec 3) |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/noah.png){width="80"}    | Noah           | Obuya         | Lab helper: M 10:05 AM - 11:45 AM (Sec 2) |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Grace          | Rade          | Lab helper: M 11:45 AM - 1:00 PM (Sec 4)  |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Anmol          | Sapru         | Lab helper: M 3:05 AM - 4:20 PM (Sec 8)   |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/jasmine.png){width="80"} | Jasmine        | Wang          | Lab leader: M 10:05 AM - 11:45 AM (Sec 2) |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | Sarah          | Wu            | Lecture helper (Tue + Thur)               |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-| ![](img/team/nopic.png){width="80"}   | John           | Zito          | Lab leader: M 3:05 AM - 4:20 PM (Sec 9)   |
-|                                       |                |               |                                           |
-|                                       |                |               | Lab leader: M 4:40 AM - 5:55 PM (Sec 10)  |
-+---------------------------------------+----------------+---------------+-------------------------------------------+
-
-: {tbl-colwidths="\[15,15,20,50\]"}
 
 For office hours, please see [STA 199 - Office Hours](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing) sheet.
 
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+|                                                  | **First name** | **Last name** | **Role**                                  |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/federico.png){.circular-portrait-ta}| Federico       | Arboleda      | Lab helper: M 1:25 PM - 2:40 PM (Sec 7)   |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/sonya.png){.circular-portrait-ta}   | Sonya          | Eason         |                                           |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/dom.png){.circular-portrait-ta}     | Domenic        | Fenoglio      | Lab leader: M 1:25 AM - 2:40 PM (Sec 7)   |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/avery.png){.circular-portrait-ta}   | Avery          | Hodges        | Lab leader: M 11:45 AM - 1:00 PM (Sec 4)  |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/emily.png){.circular-portrait-ta}   | Emily          | Jensen        | Lab leader: M 1:25 AM - 2:40 PM (Sec 6)   |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/janice.png){.circular-portrait-ta}  | Janice         | Kim           | Lab helper: M 4:40 AM - 5:55 PM (Sec 10)  |
+|                                                  |                |               |                                           |
+|                                                  |                |               | Lecture helper (Tue + Thur)               |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/dav.png){.circular-portrait-ta}     | Dav            | King          | Lab leader: M 3:05 AM - 4:20 PM (Sec 8)   |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/lynn.png){.circular-portrait-ta}    | Lynn           | Kremers       | Lab helper: M 11:45 AM - 1:00 PM (Sec 5)  |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/hyunjin.png){.circular-portrait-ta} | Hyunjin        | Lee           | Lab helper: M 3:05 AM - 4:20 PM (Sec 9)   |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/kareena.png){.circular-portrait-ta} | Kareena        | Legare        | Lab helper: M 1:25 AM - 2:40 PM (Sec 6)   |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/jonathan.png){.circular-portrait-ta}| Jonathan       | Lin           | Lab helper: M 10:05 AM - 11:45 AM (Sec 3) |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/aurora.png){.circular-portrait-ta}  | Aurora         | Liu           | Lab helper: M 8:30 AM - 9:45 AM (Sec 1)   |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/liane.png){.circular-portrait-ta}   | Liane          | Ma            |                                           |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/netra.png){.circular-portrait-ta}   | Netra          | Mittal        | Lab leader: M 11:45 AM - 1:00 PM (Sec 5)  |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/marie.png){.circular-portrait-ta}   | Marie          | Neubrander    | Head TA                                   |
+|                                                  |                |               |                                           |
+|                                                  |                |               | Lab leader: M 8:30 AM - 9:45 AM (Sec 1)   |
+|                                                  |                |               |                                           |
+|                                                  |                |               | Lab leader: M 10:05 AM - 11:45 AM (Sec 3) |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/noah.png){.circular-portrait-ta}    | Noah           | Obuya         | Lab helper: M 10:05 AM - 11:45 AM (Sec 2) |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/grace.png){.circular-portrait-ta}   | Grace          | Rade          | Lab helper: M 11:45 AM - 1:00 PM (Sec 4)  |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/anmol.png){.circular-portrait-ta}   | Anmol          | Sapru         | Lab helper: M 3:05 AM - 4:20 PM (Sec 8)   |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/jasmine.png){.circular-portrait-ta} | Jasmine        | Wang          | Lab leader: M 10:05 AM - 11:45 AM (Sec 2) |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/sarah.png){.circular-portrait-ta}   | Sarah          | Wu            | Lecture helper (Tue + Thur)               |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+| ![](img/team/john.png){.circular-portrait-ta}    | John           | Zito          | Lab leader: M 3:05 AM - 4:20 PM (Sec 9)   |
+|                                                  |                |               |                                           |
+|                                                  |                |               | Lab leader: M 4:40 AM - 5:55 PM (Sec 10)  |
++--------------------------------------------------+----------------+---------------+-------------------------------------------+
+
+: {tbl-colwidths="\[15,15,20,50\]"}
+
 ## Course coordinator
 
-![](img/team/mary.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mary Knox" width="120"}
+![](img/team/mary.jpg){.circular-portrait-mary style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mary Knox"}
 
 Dr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at [mary.knox\@duke.edu](mailto:mary.knox@duke.edu)) with any questions regarding accommodations, missed work, extensions, etc., and registration.
