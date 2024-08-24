@@ -28,17 +28,28 @@ website:
         href: https://cmgr.oit.duke.edu/containers
         text: "RStudio containers"
       - icon: life-preserver
-        href: https://docs.google.com/spreadsheets/d/1Mw69d1Ro-_G1Y8x7FH1wqCI04bxLpVOJ7gp8QSFGJBU/edit#gid=0
-        text: "Office hours"
-      - icon: chat-dots-fill
-        href: https://edstem.org/us/courses/50730/discussion/
-        text: "Ed"
-      - icon: check-square-fill
+        text: Support
+        menu:
+          - icon: person-raised-hand
+            text: Office hours
+            href: https://docs.google.com/spreadsheets/d/1Mw69d1Ro-_G1Y8x7FH1wqCI04bxLpVOJ7gp8QSFGJBU/edit#gid=0
+          - icon: people-fill
+            text: Help from humans (Ed Discussion)
+            href: https://edstem.org/us/courses/50730/discussion/
+          - icon: robot
+            text: Help from AI (Chatbot)
+            href: https://canvas.duke.edu/courses/39994/external_tools/5887
+      - icon: file-check-fill
         text: "Canvas"
         menu:
-          - text: Gradescope
+          - icon: megaphone-fill
+            text: Announcements
+            url: https://canvas.duke.edu/courses/39994/announcements
+          - icon: file-arrow-up-fill
+            text: Gradescope
             url: https://canvas.duke.edu/courses/26106/external_tools/181
-          - text: Gradebook
+          - icon: alphabet-uppercase
+            text: Gradebook
             url: https://canvas.duke.edu/courses/26106/gradebook
 
     style: docked
@@ -101,11 +112,13 @@ website:
             text: Lab 6             
           - href: labs/lab-7.qmd
             text: Lab 7 
+          - href: labs/lab-8.qmd
+            text: Lab 8
       - section: "Exam review"
         contents:
-          - href: exam-review/exam-1-review.qmd
+          - href: exam-review/midterm-review.qmd
             text: Exam 1
-          - href: exam-review/exam-2-review.qmd
+          - href: exam-review/final-review.qmd
             text: Exam 2
             
   page-footer:
