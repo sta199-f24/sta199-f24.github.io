@@ -15,7 +15,7 @@ library(googlesheets4)
 library(gt)
 library(tidyverse)
 gs4_deauth()
-d <- read_sheet("https://docs.google.com/spreadsheets/d/1tHdQiEaMW5qE8oKsG4lTMWk60HtxKhtm95zZcDNacdc/edit?usp=sharing")
+d <- read_sheet("https://docs.google.com/spreadsheets/d/1tHdQiEaMW5qE8oKsG4lTMWk60HtxKhtm95zZcDNacdc/edit?usp=sharing", sheet = "Post")
 ```
 
 ```{r}
@@ -23,7 +23,7 @@ d <- read_sheet("https://docs.google.com/spreadsheets/d/1tHdQiEaMW5qE8oKsG4lTMWk
 
 d |>
   filter(!is.na(session)) |>
-  select(-dow, -admin_notes, -number, -session) |>
+  select(-session) |>
   mutate(date = as.Date(date)) |>
   relocate(due, .after = materials) |>
   gt() |>
