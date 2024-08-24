@@ -21,7 +21,7 @@ prepare_cutoff_date <- as.Date("2024-09-06")
 
 ```{r}
 #| echo: false
-
+#| column: screen-inset-right
 d |>
   filter(!is.na(session)) |>
   select(-dow, -admin_notes, -number, -session) |>
@@ -76,16 +76,29 @@ d |>
       columns = c(date, topic, prepare, materials)
     )
   ) |>
+  tab_style(
+    style = cell_borders(
+      sides = "top",
+      color = "black",
+      weight = px(2),
+      style = "solid"
+    ),
+    locations = cells_body(
+      columns = everything(),
+      rows = str_detect(topic, "[Ll]ab|Project milestone|Final$")
+    )
+  ) |>
   fmt_markdown(
     columns = c(topic, prepare, materials, due)
   ) |>
+  tab_options(table.width = pct(100)) |>
   cols_width(
-    week ~ px(45),
-    date ~ px(100), 
-    prepare ~ px(300),
-    topic ~ px(250),
-    materials ~ px(150),
-    due ~ px(100)
+    week ~ pct(2),
+    date ~ pct(10), 
+    prepare ~ pct(25),
+    topic ~ pct(27),
+    materials ~ pct(18),
+    due ~ pct(18)
   ) |>
   cols_label_with(fn = function(x) {
       janitor::make_clean_names(x, case = "title") |>
