@@ -19,13 +19,24 @@ Make a pledge to stop by during office hours at least once during the first thre
 If you have no questions, stop by and say hi and introduce yourself.
 You can find a list of everyone's office hours [here](/course-team.html).
 
-## Ed Discussion
+My office hours will start in Week 1, TA office hours will start in Week 2.
+
+## Help from humans: Ed Discussion
 
 Have a question that can't wait for office hours?
 Prefer to write out your question in detail rather than asking in person?
 The course discussion forum, Ed Discussion, is the best venue for these!
 There is a chance another student has already asked a similar question, so please check the other posts on before asking a new question.
 If you know the answer to a question that is posted, I encourage you to respond!
+
+You can access this tool on the course website toolbar -- just click on the lifesaver icon.
+
+## Help from AI: Chatbot
+
+The course has a chatbot that has been trained specifically on the course textbooks.
+If you're looking for AI-help, we strongly recommend starting here.
+
+You can access this tool on the course website toolbar -- just click on the lifesaver icon.
 
 ## Email
 
