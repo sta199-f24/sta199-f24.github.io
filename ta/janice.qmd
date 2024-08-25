@@ -1,0 +1,10 @@
+---
+title: Janice Kim
+categories: 
+  - Lab helper
+  - Lecture helper
+description: "M 4:40 AM - 5:55 PM (Sec 10)"
+subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing)"
+image: ../img/team/janice.png
+image-alt: Headshot of TA
+---

@@ -1,0 +1,9 @@
+---
+title: Jonathan Lin
+categories: 
+  - Lab helper
+description: "M 10:05 AM - 11:45 AM (Sec 3)"
+subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing)"
+image: ../img/team/jonathan.png
+image-alt: Headshot of TA
+---

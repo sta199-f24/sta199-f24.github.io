@@ -1,0 +1,9 @@
+---
+title: Sarah Wu
+categories: 
+  - Lecture helper
+description: ""
+subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing)"
+image: ../img/team/sarah.png
+image-alt: Headshot of TA
+---

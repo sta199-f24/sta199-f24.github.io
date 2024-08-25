@@ -1,0 +1,9 @@
+---
+title: Domenic Fenoglio
+categories: 
+  - Lab leader
+description: "M 1:25 AM - 2:40 PM (Sec 7)"
+subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing)"
+image: ../img/team/dom.png
+image-alt: Headshot of TA
+---
