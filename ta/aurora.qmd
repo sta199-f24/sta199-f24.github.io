@@ -4,6 +4,6 @@ categories:
   - Lab helper
 description: "M 8:30 AM - 9:45 AM (Sec 1)"
 subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing)"
-image: ../img/team/aurora.png
+image: headshots/aurora.png
 image-alt: Headshot of TA
 ---

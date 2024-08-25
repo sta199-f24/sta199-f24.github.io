@@ -4,6 +4,6 @@ categories:
   - Lab leader
 description: "M 11:45 AM - 1:00 PM (Sec 4)"
 subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing)"
-image: ../img/team/avery.png
+image: headshots/avery.png
 image-alt: Headshot of TA
 ---

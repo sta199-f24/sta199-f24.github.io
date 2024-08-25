@@ -5,6 +5,6 @@ categories:
   - Lab leader
 description: "M 8:30 AM - 9:45 AM (Sec 1) and M 10:05 AM - 11:45 AM (Sec 3)"
 subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing)"
-image: ../img/team/marie.png
+image: headshots/marie.png
 image-alt: Headshot of TA
 ---

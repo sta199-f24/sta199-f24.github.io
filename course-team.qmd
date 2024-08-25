@@ -17,7 +17,7 @@ listing:
 
 ## Instructor
 
-![](img/team/mine.png){.circular-portrait-mine style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mine Çetinkaya-Rundel"}
+![](img/mine.png){.circular-portrait-mine style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mine Çetinkaya-Rundel"}
 
 [**Dr. Mine Çetinkaya-Rundel**](http://mine-cr.com/) (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University. Mine's work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education, as well as pedagogical approaches for enhancing the retention of women and underrepresented minorities in STEM.
 
@@ -42,6 +42,6 @@ Some TAs help out in lecture.
 
 ## Course coordinator
 
-![](img/team/mary.jpg){.circular-portrait-mary style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mary Knox"}
+![](img/mary.jpg){.circular-portrait-mary style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mary Knox"}
 
 Dr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at [mary.knox\@duke.edu](mailto:mary.knox@duke.edu)) with any questions regarding accommodations, missed work, extensions, etc., and registration.
