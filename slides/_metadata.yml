@@ -9,7 +9,8 @@ format:
     slide-number: true
     chalkboard: true
     logo: "images/logo.png"
-  html: default
+  html:
+    code-link: true
 highlight-style: a11y-dark
 execute:
   echo: true

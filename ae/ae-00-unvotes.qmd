@@ -1,6 +1,9 @@
 ---
 title: "UN Votes"
-format: live-html
+format: 
+  live-html:
+    highlight-style: a11y
+    code-link: true
 engine: knitr
 webr:
   packages:

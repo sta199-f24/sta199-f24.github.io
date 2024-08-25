@@ -1,6 +1,7 @@
-categories: "Lab"
+categories: Lab
 execute:
   eval: false
 format:
   html:
     code-link: true
+    highlight-style: a11y-dark
