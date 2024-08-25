@@ -94,32 +94,9 @@ website:
             text: Milestone 4            
           - href: project/tips-resources.qmd
             text: Tips + resources
-      - section: "Labs"
-        contents:
-          - href: labs/lab-0.qmd
-            text: Lab 0
-          - href: labs/lab-1.qmd
-            text: Lab 1
-          - href: labs/lab-2.qmd
-            text: Lab 2
-          - href: labs/lab-3.qmd
-            text: Lab 3            
-          - href: labs/lab-4.qmd
-            text: Lab 4
-          - href: labs/lab-5.qmd
-            text: Lab 5 
-          - href: labs/lab-6.qmd
-            text: Lab 6             
-          - href: labs/lab-7.qmd
-            text: Lab 7 
-          - href: labs/lab-8.qmd
-            text: Lab 8
-      - section: "Exam review"
-        contents:
-          - href: exam-review/midterm-review.qmd
-            text: Midterm
-          - href: exam-review/final-review.qmd
-            text: Final
+      - lab.qmd
+      - ae.qmd
+      - exam-review.qmd
             
   page-footer:
     right: 'This page is built with [{{< fa heart >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
