@@ -127,9 +127,19 @@ usethis::use_git_config(
 )
 ```
 
+::: callout-note
+I used my gmail because that is the one I used to create my GitHub account.
+You should also be using the email address you used to create your GitHub account, it's ok if it isn't your Duke email.
+::: 
+
 You are now ready interact with GitHub via RStudio!
 
 If you don't do this, we won't be able to tell who you are and give you points for the work you do...
+
+::: callout-note
+Well, a more accurate statement would be that we will be reaching out to you to get things right during the first few weeks of classes. 
+But, it's best if you can get it right today!
+::: 
 
 ::: {.callout-tip collapse="true"}
 ## Need a recap? Watch this video!
