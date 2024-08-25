@@ -1,8 +1,12 @@
 ---
 title: "Welcome to STA 199"
 subtitle: "Lecture 0"
-date: "January 11, 2024"
-format: revealjs
+date: "2024-08-27"
+format: 
+  revealjs: 
+    output-file: 00-welcome-199-slides.html
+  html: default
+engine: knitr
 ---
 
 # Hello world!
@@ -67,7 +71,9 @@ Please share with at least two classmates...
 -   What you hope to get out of this course
 :::
 
+::: {.content-visible when-format="revealjs"}
 {{< countdown minutes=5 font-size="5rem" >}}
+:::
 
 ## Meet data science
 
@@ -191,7 +197,7 @@ All linked from the course website:
 -   Attend and actively participate in lectures and labs, office hours, team meetings
 -   Practice applying statistical concepts and computing with application exercises during lecture, graded for completion
 -   Put together what you've learned to analyze real-world data
-    -   Lab assignments x 7
+    -   Lab assignments x 7 or 8
     -   Exams x 2
     -   Term project presented in the last lab session
 
@@ -199,12 +205,14 @@ All linked from the course website:
 
 -   Two exams, each 20%
 
--   Each exam comprised of two parts:
+-   Midterm comprised of two parts:
 
-    -   In class: 75 minute in-class exam.
-        Closed book, one sheet of notes (“cheat sheet”, no larger than 8 1/2 x 11, both sides, **must be prepared by you**) – 70% of the grade
+    -   In-class: 75 minute in-class exam.
+        Closed book, one sheet of notes (“cheat sheet”, no larger than 8 1/2 x 11, both sides, **must be prepared by you**) – 70% of the grade.
 
-    -   Take home: The take home portion will follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam – 30% of the grade
+    -   Take-home: The take home portion will follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam – 30% of the grade.
+
+-   Final in-class only: Closed book, one sheet of notes (“cheat sheet”, no larger than 8 1/2 x 11, both sides, **must be prepared by you**).
 
 ::: callout-caution
 Exam dates cannot be changed and no make-up exams will be given.
@@ -219,15 +227,14 @@ If you can’t take the exams on these dates, you should drop this class.
 
 -   Presentation and write-up
 
--   Presentations in the last lab
+-   Presentations submitted as videos
 
 -   Interim deadlines, peer review on content, peer evaluation for team contribution
 
 -   Some lab sessions allocated to working on projects, doing peer review, getting feedback from TAs
 
 ::: callout-caution
-Final presentation date cannot be changed.
-If you can’t present on that date, you should drop this class.
+Project due date cannot be changed.
 You must complete the project to pass this class.
 :::
 
@@ -247,20 +254,22 @@ You must complete the project to pass this class.
 |-----------------------|------------|
 | Labs                  | 35%        |
 | Project               | 20%        |
-| Exam 1                | 20%        |
-| Exam 2                | 20%        |
+| Midterm               | 20%        |
+| Final                 | 20%        |
 | Application Exercises | 5%         |
 
 No specific points allocated to attendance, but attendance will be recorded periodically throughout the semester, and this information will be used as “extra credit” if you’re in between two grades and a minor bump would help.
 
-See [course syllabus](https://sta199-f22-1.github.io/course-syllabus.html) for how the final letter grade will be determined.
+See course syllabus for how the final letter grade will be determined.
 
 ## Support
 
--   Attend office hours
--   Ask and answer questions on the discussion forum
+-   Help from humans:
+    - Attend office hours
+    - Ask and answer questions on the discussion forum
+-   Help from AI: Use the course chatbot
 -   Reserve email for questions on personal matters and/or grades
--   Read the [course support](https://sta199-f22-1.github.io/course-support.html) page
+-   Read the course support page
 
 ## Announcements
 
@@ -310,8 +319,8 @@ It is my intent that students from all diverse backgrounds and perspectives be w
     -   Computational setup
     -   Getting to know you survey
 -   Read the syllabus
--   Start readings for next week
+-   Start readings for next class
 
 ## Midori says...
 
-[![](images/00/midori.jpeg){fig-alt="Picture of my cat, Midori, with a speech bubble that says \"Read the syllabus and make Mine happy!\"" fig-align="center" width="700"}](https://sta199-f22-1.github.io/course-syllabus.html)
+[![](images/00/midori.jpeg){fig-alt="Picture of my cat, Midori, with a speech bubble that says \"Read the syllabus and make Mine happy!\"" fig-align="center" width="700"}](https://sta199-f24.github.io/course-syllabus.html)

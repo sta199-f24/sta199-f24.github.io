@@ -1,17 +1,17 @@
 institute: "Duke University <br> STA 199 - Fall 2024"
 author: "Dr. Mine Çetinkaya-Rundel"
-footer: "[🔗 sta199-f24.github.io](https://sta199-f24.github.io/)"
-logo: "images/logo.png"
+date-format: long
 format:
   revealjs:
+    footer: "[🔗 sta199-f24.github.io](https://sta199-f24.github.io/)"
     theme: slides.scss
     transition: fade
     slide-number: true
     chalkboard: true
-    highlight-style: a11y-dark
-editor: visual
+    logo: "images/logo.png"
+  html: default
+highlight-style: a11y-dark
 execute:
-  freeze: auto
   echo: true
   warning: true
 knitr:
