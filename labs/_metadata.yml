@@ -4,4 +4,4 @@ execute:
 format:
   html:
     code-link: true
-    highlight-style: a11y-dark
+    highlight-style: a11y

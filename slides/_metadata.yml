@@ -11,7 +11,7 @@ format:
     logo: "images/logo.png"
   html:
     code-link: true
-highlight-style: a11y-dark
+highlight-style: a11y
 execute:
   echo: true
   warning: true
