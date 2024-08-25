@@ -24,5 +24,34 @@
       "/ta/sarah.html",
       "/ta/sonya.html"
     ]
+  },
+  {
+    "listing": "/ae.html",
+    "items": [
+      "/ae/ae-00-unvotes.html"
+    ]
+  },
+  {
+    "listing": "/lab.html",
+    "items": [
+      "/lab/lab-0.html",
+      "/lab/lab-1.html",
+      "/lab/lab-2.html",
+      "/lab/lab-3.html",
+      "/lab/lab-4.html",
+      "/lab/lab-5.html",
+      "/lab/lab-6.html",
+      "/lab/lab-7.html",
+      "/lab/lab-8.html"
+    ]
+  },
+  {
+    "listing": "/exam-review.html",
+    "items": [
+      "/exam-review/final-review.html",
+      "/exam-review/final-review-A.html",
+      "/exam-review/midterm-review.html",
+      "/exam-review/midterm-review-A.html"
+    ]
   }
 ]

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="M 1:25 AM - 2:40 PM (Sec 7)">
+<meta name="description" content="End of lab on Mon, Aug 26">
 
-<title>Domenic Fenoglio – STA 199</title>
+<title>Lab 0 – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -72,20 +106,13 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Domenic Fenoglio – STA 199">
-<meta property="og:description" content="M 1:25 AM - 2:40 PM (Sec 7)">
-<meta property="og:image" content="https://sta199-f24.github.io/ta/headshots/dom.png">
+<meta property="og:title" content="Lab 0 – STA 199">
+<meta property="og:description" content="End of lab on Mon, Aug 26">
 <meta property="og:site_name" content="STA 199">
-<meta property="og:image:height" content="335">
-<meta property="og:image:width" content="335">
-<meta property="og:image:alt" content="Headshot of TA">
-<meta name="twitter:title" content="Domenic Fenoglio – STA 199">
-<meta name="twitter:description" content="M 1:25 AM - 2:40 PM (Sec 7)">
-<meta name="twitter:image" content="https://sta199-f24.github.io/ta/headshots/dom.png">
+<meta name="twitter:title" content="Lab 0 – STA 199">
+<meta name="twitter:description" content="End of lab on Mon, Aug 26">
+<meta name="twitter:image" content="https://sta199-f24.github.io/lab/img/twitter-card.png">
 <meta name="twitter:creator" content="@minebocek">
-<meta name="twitter:image-height" content="335">
-<meta name="twitter:image-width" content="335">
-<meta name="twitter:image:alt" content="Headshot of TA">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -98,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Domenic Fenoglio</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 0</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -326,24 +353,37 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#hello-world" id="toc-hello-world" class="nav-link active" data-scroll-target="#hello-world"><code>Hello, World!</code></a>
+  <ul class="collapse">
+  <li><a href="#access-r-and-rstudio" id="toc-access-r-and-rstudio" class="nav-link" data-scroll-target="#access-r-and-rstudio">Access R and RStudio</a></li>
+  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account">Create a GitHub account</a></li>
+  <li><a href="#set-up-your-ssh-key" id="toc-set-up-your-ssh-key" class="nav-link" data-scroll-target="#set-up-your-ssh-key">Set up your SSH key</a></li>
+  <li><a href="#configure-git" id="toc-configure-git" class="nav-link" data-scroll-target="#configure-git">Configure Git</a></li>
+  </ul></li>
+  <li><a href="#hello-sta-199" id="toc-hello-sta-199" class="nav-link" data-scroll-target="#hello-sta-199">Hello STA 199!</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-0.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Domenic Fenoglio</h1>
-<p class="subtitle lead"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></p>
+<h1 class="title">Lab 0</h1>
+<p class="subtitle lead">Hello, World and STA 199!</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Lab leader</div>
+    <div class="quarto-category">Lab</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    M 1:25 AM - 2:40 PM (Sec 7)
+    End of lab on Mon, Aug 26
   </div>
 </div>
 
@@ -360,10 +400,235 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>This lab will set you up for the computing workflow and give you an opportunity to introduce yourselves to each other and the teaching team.</p>
+<section id="hello-world" class="level1">
+<h1><code>Hello, World!</code></h1>
+<p>You may have heard/seen this phrase, <code>Hello, World!</code>, elsewhere before. It’s usually the first thing you learn in programming – to learn to write a computer program to print this sentence to screen. Things will be different in this course, as it’s not a programming, but a data science course. So, starting tomorrow in class, you’ll learn to use a computer program (called R) to work with data.</p>
+<p>But today, we need to set you up for success! Let’s first briefly review the components of the computational toolkit for the course:</p>
+<ol type="1">
+<li><p>R: The programming language you’ll learn in this course.</p></li>
+<li><p>RStudio: The piece of software (a.k.a. the integrated development environment, IDE) you’ll use to write R code in.</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>R is the name of the programming language itself and RStudio is a convenient interface.</p>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Quarto: The tool you’ll use to create reproducible computational documents that contain both your narrative (i.e., words in English) and your code (i.e., code in R). Every piece of assignment you hand in will be a Quarto document.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You might be familiar with word processors like MS Word or Google Docs. We will not be using these in this class. Instead, the words you would write in such a document as well as the code will go into a Quarto document, and when you <em>render</em> the document (more on what this means later) you will get a document out that has your words, your code, and the output of that code. Everything in one place, beautifully formatted!</p>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Git: Version control system.</li>
+<li>GitHub: A web hosting service for the Git version control system that also allows for transparent collaboration between team members.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Git is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).</p>
+</div>
+</div>
+<section id="access-r-and-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="access-r-and-rstudio">Access R and RStudio</h2>
+<ul>
+<li>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and login with your Duke NetID and Password.</li>
+<li>Click <code>STA198-199</code> to log into the Docker container. You should now see the RStudio environment.</li>
+</ul>
+<p>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and under <em>Reservations available</em> click on <em>reserve STA 198-199</em> to reserve a container for yourself.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A container is a self-contained instance of RStudio for you, and you alone. You will do all of your computing in your container.</p>
+</div>
+</div>
+<p>Once you’ve reserved the container you’ll see that it will show up under <em>My reservations</em>.</p>
+<p>To launch your container click on it under My reservations, then click <em>Login</em>, and then <em>Start</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</section>
+<section id="create-a-github-account" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-github-account">Create a GitHub account</h2>
+<p>Go to <a href="https://github.com/" class="uri">https://github.com/</a> and walk through the steps for creating an account. You do not have to use your Duke email address, but I recommend doing so.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’ll need to choose a user name. I recommend reviewing the user name advice at <a href="https://happygitwithr.com/github-acct#username-advice" class="uri">https://happygitwithr.com/github-acct#username-advice</a> before choosing a username.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What if I already have a GitHub account?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If you already have a GitHub account, you do not need to create a new one for this course. Just log in to that account to make sure you still remember your username and password.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="set-up-your-ssh-key" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-your-ssh-key">Set up your SSH key</h2>
+<p>You will authenticate GitHub using SSH (Secure Shell Protocol – it doesn’t really matter what this means for the purpose of this course). Below is an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You only need to do this authentication process one time on a single system.</p>
+</div>
+</div>
+<ul>
+<li>Go back to your RStudio container and type <code>credentials::ssh_setup_github()</code> into your console.</li>
+<li>R will ask “No SSH key found. Generate one now?” You should click 1 for yes.</li>
+<li>You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” You should click 1 for yes.</li>
+<li>You may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., <code>sta199</code>).</li>
+</ul>
+<p>You can find more detailed instructions <a href="https://github.com/DukeStatSci/github_auth_guide">here</a> if you’re interested.</p>
+</section>
+<section id="configure-git" class="level2">
+<h2 class="anchored" data-anchor-id="configure-git">Configure Git</h2>
+<p>There is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.</p>
+<p>To do so, you will use the <code>use_git_config()</code> function from the <code>usethis</code> package.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’ll hear about 📦 packages a lot in the context of R – basically they’re how developers write functions and bundle them to distribute to the community (and more on this later too!).</p>
+</div>
+</div>
+<p>Type the following lines of code in the <strong>console</strong> in RStudio filling in your name and the address associated with your GitHub account.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Your name"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"Email associated with your GitHub account"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For example, mine would be</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Mine Çetinkaya-Rundel"</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"cetinkaya.mine@gmail.com"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I used my gmail because that is the one I used to create my GitHub account. You should also be using the email address you used to create your GitHub account, it’s ok if it isn’t your Duke email.</p>
+</div>
+</div>
+<p>You are now ready interact with GitHub via RStudio!</p>
+<p>If you don’t do this, we won’t be able to tell who you are and give you points for the work you do…</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Well, a more accurate statement would be that we will be reaching out to you to get things right during the first few weeks of classes. But, it’s best if you can get it right today!</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Need a recap? Watch this video!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The following video walks you through the steps outlined in the SSH key generation and Git configuration sections above.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/3lONVzFw680" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="hello-sta-199" class="level1">
+<h1>Hello STA 199!</h1>
+<p>Fill out the course “Getting to know you” survey on Canvas: <a href="https://canvas.duke.edu/courses/39994/quizzes/25798" class="uri">https://canvas.duke.edu/courses/39994/quizzes/25798</a>.</p>
+<p>We will use the information collected in this survey for a variety of goals, from inviting you to the course GitHub organization (more on that later) to getting to know you as a person and your course goals and concerns.</p>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Yes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>GitHub has some perks for students you can take advantage of later in the course or in your future work, and it helps to have a .edu address to get verified as a student.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -936,7 +1201,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/ta/dom.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-0.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
