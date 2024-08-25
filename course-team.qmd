@@ -42,6 +42,6 @@ Some TAs help out in lecture.
 
 ## Course coordinator
 
-![](img/mary.jpg){.circular-portrait-mary style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mary Knox"}
+![](img/mary.png){.circular-portrait-mary style="float:right;" fig-alt="Headshot of Dr. Mary Knox"}
 
 Dr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at [mary.knox\@duke.edu](mailto:mary.knox@duke.edu)) with any questions regarding accommodations, missed work, extensions, etc., and registration.
