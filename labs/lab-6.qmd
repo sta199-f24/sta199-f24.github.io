@@ -1,6 +1,0 @@
----
-title: "Lab 6"
-categories: "Lab"
----
-
-To be posted.

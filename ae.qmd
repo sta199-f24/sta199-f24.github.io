@@ -1,0 +1,27 @@
+---
+title: "Application exercises"
+listing:
+  id: ae-listing
+  contents: ae
+  sort: title
+  sort-ui: false
+  filter-ui: false
+  type: table
+  fields: [title, subtitle]
+  field-display-names:
+    title: "No."
+    subtitle: "Title"
+---
+
+All application exercises (AEs) are due by 2 pm on the day they're covered in lab.
+To submit your AE, make at least one change to your AE, **commit and then push** your change to your AE repo.
+AEs are graded for engagement, not accuracy.
+
+<br>
+
+::: {#ae-listing}
+:::
+
+<br>
+
+More AEs to be added as the semester progresses.

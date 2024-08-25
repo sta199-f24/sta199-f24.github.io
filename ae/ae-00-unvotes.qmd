@@ -1,5 +1,6 @@
 ---
-title: "UN Votes"
+title: AE 00
+subtitle: UN Votes
 format: 
   live-html:
     highlight-style: a11y

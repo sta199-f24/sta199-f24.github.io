@@ -1,6 +1,6 @@
 ---
-title: "Midterm Review"
-subtitle: "Suggested answers"
+title: Midterm review
+subtitle: Suggested answers
 execute:
   echo: false
 ---

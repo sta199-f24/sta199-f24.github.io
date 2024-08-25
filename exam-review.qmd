@@ -1,0 +1,10 @@
+---
+title: "Exam reviews"
+listing:
+  contents: exam-review
+  sort: [title, subtitle]
+  sort-ui: false
+  filter-ui: false
+  type: table
+  fields: [title, subtitle]
+---

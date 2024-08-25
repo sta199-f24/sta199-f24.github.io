@@ -1,5 +1,6 @@
 ---
-title: "Midterm Review"
+title: Midterm Review
+subtitle: Questions
 format:
   html: default
   pdf: default

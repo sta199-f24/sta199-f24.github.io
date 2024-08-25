@@ -1,5 +1,7 @@
 ---
-title: "Lab 0 - Hello, World and STA 199!"
+title: "Lab 0"
+subtitle: "Hello, World and STA 199!"
+description: "End of lab on Mon, Aug 26"
 categories: "Lab"
 execute:
   eval: false
