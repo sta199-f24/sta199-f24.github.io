@@ -117,9 +117,9 @@ website:
       - section: "Exam review"
         contents:
           - href: exam-review/midterm-review.qmd
-            text: Exam 1
+            text: Midterm
           - href: exam-review/final-review.qmd
-            text: Exam 2
+            text: Final
             
   page-footer:
     right: 'This page is built with [{{< fa heart >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
