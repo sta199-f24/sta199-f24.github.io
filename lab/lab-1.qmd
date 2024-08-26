@@ -213,6 +213,10 @@ Make sure to set informative titles and axis labels for your plot.
 Then, using information as needed from the box plot as well as the histogram from Question 1, describe the distribution of population density of counties and comment on any potential outliers, making sure to identify at least one county that is a clear outlier by name in your narrative and commenting on whether it makes sense to you that this county is an outlier.
 You can use the data viewer to identify the outliers interactively, you do not have to write code to identify them.
 
+::: callout-important
+In describing a distribution, make sure to mention shape, center, spread, and any unusual observations.
+:::
+
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 2".
 
