@@ -388,27 +388,6 @@
     ]
   },
   {
-    "objectID": "lab/lab-3.html",
-    "href": "lab/lab-3.html",
-    "title": "Lab 3",
-    "section": "",
-    "text": "To be posted."
-  },
-  {
-    "objectID": "lab/lab-6.html",
-    "href": "lab/lab-6.html",
-    "title": "Lab 6",
-    "section": "",
-    "text": "To be posted."
-  },
-  {
-    "objectID": "lab/lab-7.html",
-    "href": "lab/lab-7.html",
-    "title": "Lab 7",
-    "section": "",
-    "text": "To be posted."
-  },
-  {
     "objectID": "lab/lab-0.html",
     "href": "lab/lab-0.html",
     "title": "Lab 0",
@@ -434,7 +413,7 @@
     "href": "lab/lab-0.html#set-up-your-ssh-key",
     "title": "Lab 0",
     "section": "Set up your SSH key",
-    "text": "Set up your SSH key\nYou will authenticate GitHub using SSH (Secure Shell Protocol – it doesn’t really matter what this means for the purpose of this course). Below is an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nGo back to your RStudio container and type credentials::ssh_setup_github() into your console.\nR will ask “No SSH key found. Generate one now?” You should click 1 for yes.\nYou will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” You should click 1 for yes.\nYou may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta199).\n\nYou can find more detailed instructions here if you’re interested."
+    "text": "Set up your SSH key\nYou will authenticate GitHub using SSH (Secure Shell Protocol – it doesn’t really matter what this means for the purpose of this course). Below is an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nGo back to your RStudio container and type credentials::ssh_setup_github() into your console.\nR will ask “No SSH key found. Generate one now?” You should click 1 for yes.\nYou will generate a key. R will then ask “Would you like to open a browser now?” You should click 1 for yes.\nYou may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta199).\n\nYou can find more detailed instructions here if you’re interested."
   },
   {
     "objectID": "lab/lab-0.html#configure-git",
@@ -1024,7 +1003,7 @@
     "href": "lab.html",
     "title": "Labs",
     "section": "",
-    "text": "No.\n\n\nTitle\n\n\nDue date\n\n\n\n\n\n\nLab 0\n\n\nHello, World and STA 199!\n\n\nEnd of lab on Mon, Aug 26\n\n\n\n\nLab 1\n\n\nTo be posted\n\n\nMon, Sep 16 at 8:30 am\n\n\n\n\nLab 2\n\n\nTo be posted\n\n\nMon, Sep 23 at 8:30 am\n\n\n\n\nLab 3\n\n\nTo be posted\n\n\nMon, Sep 30 at 8:30 am\n\n\n\n\nLab 4\n\n\nTo be posted\n\n\nMon, Oct 7 at 8:30 am\n\n\n\n\nLab 5\n\n\nTo be posted\n\n\nMon, Nov 4 at 8:30 am\n\n\n\n\nLab 6\n\n\nTo be posted\n\n\nMon, Nov 11 at 8:30 am\n\n\n\n\nLab 7\n\n\nTo be posted\n\n\nMon, Nov 18 at 8:30 am\n\n\n\n\nLab 8\n\n\nTo be posted\n\n\nMon, Nov 25 at 8:30 am\n\n\n\n\n\nNo matching items",
+    "text": "No.\n\n\nTitle\n\n\nDue date\n\n\n\n\n\n\nLab 0\n\n\nHello, World and STA 199!\n\n\nEnd of lab on Mon, Aug 26\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Labs"
     ]
@@ -1214,41 +1193,6 @@
     "crumbs": [
       "Exam reviews"
     ]
-  },
-  {
-    "objectID": "lab/lab-2.html",
-    "href": "lab/lab-2.html",
-    "title": "Lab 2",
-    "section": "",
-    "text": "To be posted."
-  },
-  {
-    "objectID": "lab/lab-5.html",
-    "href": "lab/lab-5.html",
-    "title": "Lab 5",
-    "section": "",
-    "text": "To be posted."
-  },
-  {
-    "objectID": "lab/lab-4.html",
-    "href": "lab/lab-4.html",
-    "title": "Lab 4",
-    "section": "",
-    "text": "To be posted."
-  },
-  {
-    "objectID": "lab/lab-8.html",
-    "href": "lab/lab-8.html",
-    "title": "Lab 8",
-    "section": "",
-    "text": "To be posted."
-  },
-  {
-    "objectID": "lab/lab-1.html",
-    "href": "lab/lab-1.html",
-    "title": "Lab 1",
-    "section": "",
-    "text": "To be posted."
   },
   {
     "objectID": "exam-review/final-review-A.html",
