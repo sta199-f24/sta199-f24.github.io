@@ -2,6 +2,6 @@ categories: Lab
 execute:
   eval: false
 format:
-  live-html:
+  html:
     code-link: true
     highlight-style: a11y

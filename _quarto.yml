@@ -103,16 +103,16 @@ website:
     left: "&copy; Copyright 2024, Mine Çetinkaya-Rundel"
     background: "#5D737E"
 
-format:
-  live-html:
-    theme:
-      light: [cosmo, style/sta199.scss]
-      dark: [cosmo, style/sta199.scss, style/dark.scss]
-    linkcolor: "#5D737E"
-    toc: true
-    code-copy: true
-    code-overflow: wrap
-    mainfont: "Atkinson Hyperlegible"
+format: html
+
+theme:
+  light: [cosmo, style/sta199.scss]
+  dark: [cosmo, style/sta199.scss, style/dark.scss]
+linkcolor: "#5D737E"
+toc: true
+code-copy: true
+code-overflow: wrap
+mainfont: "Atkinson Hyperlegible"
 
 execute:
   freeze: auto
