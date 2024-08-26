@@ -94,7 +94,7 @@ You only need to do this authentication process one time on a single system.
 
 -   Go back to your RStudio container and type `credentials::ssh_setup_github()` into your console.
 -   R will ask "No SSH key found. Generate one now?" You should click 1 for yes.
--   You will generate a key. It will begin with "ssh-rsa...." R will then ask "Would you like to open a browser now?" You should click 1 for yes.
+-   You will generate a key. R will then ask "Would you like to open a browser now?" You should click 1 for yes.
 -   You may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., `sta199`).
 
 You can find more detailed instructions [here](https://github.com/DukeStatSci/github_auth_guide) if you're interested.
