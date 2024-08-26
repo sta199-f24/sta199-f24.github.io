@@ -104,6 +104,7 @@ website:
     background: "#5D737E"
 
 format: html
+  mainfont: "Atkinson Hyperlegible"
 
 theme:
   light: [cosmo, style/sta199.scss]
@@ -112,7 +113,6 @@ linkcolor: "#5D737E"
 toc: true
 code-copy: true
 code-overflow: wrap
-mainfont: "Atkinson Hyperlegible"
 
 execute:
   freeze: auto
