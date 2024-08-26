@@ -104,7 +104,7 @@ website:
     background: "#5D737E"
 
 format:
-  html:
+  live-html:
     theme:
       light: [cosmo, style/sta199.scss]
       dark: [cosmo, style/sta199.scss, style/dark.scss]
