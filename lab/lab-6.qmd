@@ -3,6 +3,7 @@ title: Lab 6
 subtitle: To be posted
 categories: Lab
 description: "Mon, Nov 11 at 8:30 am"
+draft: true
 ---
 
 To be posted.
