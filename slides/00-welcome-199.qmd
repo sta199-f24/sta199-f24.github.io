@@ -6,6 +6,8 @@ format:
   live-revealjs: 
     output-file: 00-welcome-199-slides.html
 webr:
+  cell-options:
+    autorun: false
   packages:
     - tidyverse
   resources:
@@ -138,8 +140,8 @@ Or more like demo for today...
 #| message: false
 library(tidyverse)
 
-birthdays <- read_csv("birthdays.csv")
-birthdays
+birthdays_raw <- read_csv("birthdays.csv")
+birthdays_raw
 ```
 
 ## Tidy + transform
@@ -149,12 +151,13 @@ birthdays
 ## Tidy + transform birthdays
 
 ```{webr}
-birthdays <- birthdays |>
+birthdays <- birthdays_raw |>
   mutate(
     birth_day = parse_number(birthday),
     birth_month = str_trim(str_remove(birthday, as.character(birth_day))),
     birthday_date = mdy(paste(birth_month, birth_day, "2024"))
   )
+birthdays
 ```
 
 ## Visualize
@@ -175,36 +178,6 @@ ggplot(birthdays, aes(x = birthday_date)) +
 ## Understand
 
 ![](images/00/data-science-cycle/data-science-cycle.006.png){fig-alt="Data science life cycle, with understand highlighted"}
-
-<!--
-## 
-
-::::: columns
-::: {.column width="40%"}
-![](images/00/google-trend-index.png)
-:::
-
-::: {.column width="60%"}
-![](images/00/data-science-cycle/data-science-cycle.006.png)
-
-```{r}
-#| echo: false
-#| message: false
-
-library(tidyverse)
-travel <- tribble(
-  ~date,              ~season,
-  "23 January 2017",  "winter",
-  "4 March 2017",     "spring",
-  "14 June 2017",     "summer",
-  "1 September 2017", "fall",
-  "...", "..."
-)
-travel
-```
-:::
-:::::
--->
 
 ## Communicate
 
