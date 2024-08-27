@@ -3,17 +3,24 @@ title: "Welcome to STA 199"
 subtitle: "Lecture 0"
 date: "2024-08-27"
 format: 
-  revealjs: 
+  live-revealjs: 
     output-file: 00-welcome-199-slides.html
   html: default
 engine: knitr
+webr:
+  packages:
+    - tidyverse
+  resources:
+    - https://raw.githubusercontent.com/sta199-f24/sta199-f24.github.io/main/slides/data/birthdays.csv
 ---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
 # Hello world!
 
 ## Meet the prof
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Dr. Mine Çetinkaya-Rundel
 
@@ -25,39 +32,39 @@ Old Chem 213
 ::: {.column width="50%"}
 ![](images/00/mine.png){fig-alt="Headshot of Dr. Mine Çetinkaya-Rundel" fig-align="center"}
 :::
-:::
+:::::
 
 ## Meet the course team {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 -   Mary Knox (Course coordinator)
--   Marie	Neubrander (Head TA)
--   Federico Arboleda 
--   Jaekyoung	Kim 
+-   Marie Neubrander (Head TA)
+-   Federico Arboleda
+-   Jaekyoung Kim
 -   Lynn Kremers
--   Netra	Mittal
--   Grace	Rade
--   Jasmine	Wang
--   Emily Jensen 
--   Jonathan Lin 
+-   Netra Mittal
+-   Grace Rade
+-   Jasmine Wang
+-   Emily Jensen
+-   Jonathan Lin
 -   Mengqi Liu
 :::
 
 ::: {.column width="50%"}
 -   Sonya Eason
 -   Domenic Fenoglio
--   Sarah	Wu
--   Avery	Hodges
+-   Sarah Wu
+-   Avery Hodges
 -   David King
 -   Hyunjin Lee
 -   Kareena Legare
--   Liane	Ma
+-   Liane Ma
 -   Noah Obuya
 -   Anmol Sapru
 -   John Zito
 :::
-:::
+:::::
 
 ## Meet each other!
 
@@ -72,7 +79,7 @@ Please share with at least two classmates...
 :::
 
 ::: {.content-visible when-format="revealjs"}
-{{< countdown minutes=5 font-size="5rem" >}}
+{{< countdown minutes=4 font-size="5rem" >}}
 :::
 
 ## Meet data science
@@ -83,19 +90,13 @@ Please share with at least two classmates...
 
 -   This is a course on introduction to data science, with an emphasis on statistical thinking.
 
-# Software
+## Application exercise
 
-## Excel - not...
+::: appex
+Or more like demo for today...
 
-![](images/00/excel.png){fig-alt="An Excel window with data about countries" fig-align="center"}
-
-## R
-
-![](images/00/r.png){fig-alt="An R shell" fig-align="center"}
-
-## RStudio
-
-![](images/00/rstudio.png){fig-alt="An RStudio window" fig-align="center"}
+{{< fa laptop-code >}} [sta199-f24.github.io/ae/ae-00-unvotes.html](https://sta199-f24.github.io/ae/ae-00-unvotes.html)
+:::
 
 # Data science life cycle
 
@@ -103,17 +104,60 @@ Please share with at least two classmates...
 
 ![](images/00/data-science-cycle/data-science-cycle.001.png){fig-alt="Data science life cycle"}
 
+## Collect birthdays
+
+::: columns
+
+::: {.column width="70%"}
+```{=html}
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1RvmzRhJj2VcgGe_cvsovFOdxjlIwX37aZr9NKMBuvwcquQ/viewform?embedded=true" width="640" height="371" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+```
+:::
+::: {.column width="30%"}
+{{< qrcode https://forms.gle/S2zpyu6qmkEisSSq5 >}}
+:::
+
+:::
+
 ## Import
 
 ![](images/00/data-science-cycle/data-science-cycle.002.png){fig-alt="Data science life cycle, with import highlighted"}
+
+## Import birthdays
+
+```{webr}
+#| message: false
+library(tidyverse)
+
+birthdays <- read_csv("birthdays.csv")
+birthdays
+```
 
 ## Tidy + transform
 
 ![](images/00/data-science-cycle/data-science-cycle.003.png){fig-alt="Data science life cycle, with tidy and transform highlighted"}
 
+## Tidy + transform birthdays
+
+```{webr}
+birthdays <- birthdays |>
+  mutate(
+    birth_day = parse_number(birthday),
+    birth_month = str_trim(str_remove(birthday, as.character(birth_day))),
+    birthday_date = mdy(paste(birth_month, birth_day, "2024"))
+  )
+```
+
 ## Visualize
 
 ![](images/00/data-science-cycle/data-science-cycle.004.png){fig-alt="Data science life cycle, with visualize highlighted"}
+
+## Visualize birthdays
+
+```{webr}
+ggplot(birthdays, aes(x = birthday_date)) +
+  geom_bar()
+```
 
 ## Model
 
@@ -123,9 +167,10 @@ Please share with at least two classmates...
 
 ![](images/00/data-science-cycle/data-science-cycle.006.png){fig-alt="Data science life cycle, with understand highlighted"}
 
+<!--
 ## 
 
-::: columns
+::::: columns
 ::: {.column width="40%"}
 ![](images/00/google-trend-index.png)
 :::
@@ -149,7 +194,8 @@ travel <- tribble(
 travel
 ```
 :::
-:::
+:::::
+-->
 
 ## Communicate
 
@@ -162,16 +208,6 @@ travel
 ## Program
 
 ![](images/00/data-science-cycle/data-science-cycle.009.png){fig-alt="Data science life cycle, with program highlighted"}
-
-# Let's dive in!
-
-## Application exercise
-
-::: appex
-Or more like demo for today...
-
-{{< fa laptop-code >}} [github.com/sta199-f24/](https://github.com/sta199-f24/ae-00-unvotes/)[ae-00-unvotes](https://github.com/sta199-f24/ae-00-unvotes)
-:::
 
 # Course overview
 
@@ -207,16 +243,14 @@ All linked from the course website:
 
 -   Midterm comprised of two parts:
 
-    -   In-class: 75 minute in-class exam.
-        Closed book, one sheet of notes (“cheat sheet”, no larger than 8 1/2 x 11, both sides, **must be prepared by you**) – 70% of the grade.
+    -   In-class: 75 minute in-class exam. Closed book, one sheet of notes (“cheat sheet”, no larger than 8 1/2 x 11, both sides, **must be prepared by you**) – 70% of the grade.
 
     -   Take-home: The take home portion will follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam – 30% of the grade.
 
 -   Final in-class only: Closed book, one sheet of notes (“cheat sheet”, no larger than 8 1/2 x 11, both sides, **must be prepared by you**).
 
 ::: callout-caution
-Exam dates cannot be changed and no make-up exams will be given.
-If you can’t take the exams on these dates, you should drop this class.
+Exam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class.
 :::
 
 ## Project {.smaller}
@@ -234,8 +268,7 @@ If you can’t take the exams on these dates, you should drop this class.
 -   Some lab sessions allocated to working on projects, doing peer review, getting feedback from TAs
 
 ::: callout-caution
-Project due date cannot be changed.
-You must complete the project to pass this class.
+Project due date cannot be changed. You must complete the project to pass this class.
 :::
 
 ## Teams {.smaller}
@@ -265,8 +298,8 @@ See course syllabus for how the final letter grade will be determined.
 ## Support
 
 -   Help from humans:
-    - Attend office hours
-    - Ask and answer questions on the discussion forum
+    -   Attend office hours
+    -   Ask and answer questions on the discussion forum
 -   Help from AI: Use the course chatbot
 -   Reserve email for questions on personal matters and/or grades
 -   Read the course support page
@@ -291,8 +324,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 -   The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) is available to ensure that students are able to engage with their courses and related assignments.
 
--   I am committed to making all course materials accessible and I'm always learning how to do this better.
-    If any course component is not accessible to you in any way, please don't hesitate to let me know.
+-   I am committed to making all course materials accessible and I'm always learning how to do this better. If any course component is not accessible to you in any way, please don't hesitate to let me know.
 
 # Course policies
 
