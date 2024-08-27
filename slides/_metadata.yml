@@ -10,7 +10,7 @@ format:
     chalkboard: true
     logo: "images/logo.png"
     toc: false
-  html:
+  live-html:
     code-link: true
 highlight-style: a11y
 execute:
