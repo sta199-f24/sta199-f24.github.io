@@ -548,7 +548,7 @@
     "href": "slides/00-welcome-199-slides.html#meet-each-other",
     "title": "Welcome to STA 199",
     "section": "Meet each other!",
-    "text": "Meet each other!\n\nPlease share with at least two classmates…\n\nYour name\nYour year\nWhere you’re from\nWhat you did this past summer\nWhat you hope to get out of this course\n\n\n\n  \n    −\n    +\n \n 05:00"
+    "text": "Meet each other!\n\nPlease share with at least two classmates…\n\nYour name\nYour year\nWhere you’re from\nWhat you did this past summer\nWhat you hope to get out of this course\n\n\n\n  \n    −\n    +\n \n 04:00"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#meet-data-science",
@@ -558,25 +558,11 @@
     "text": "Meet data science\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.\nWe’re going to learn to do this in a tidy way – more on that later!\nThis is a course on introduction to data science, with an emphasis on statistical thinking."
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#excel---not",
-    "href": "slides/00-welcome-199-slides.html#excel---not",
+    "objectID": "slides/00-welcome-199-slides.html#application-exercise",
+    "href": "slides/00-welcome-199-slides.html#application-exercise",
     "title": "Welcome to STA 199",
-    "section": "Excel - not…",
-    "text": "Excel - not…"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#r",
-    "href": "slides/00-welcome-199-slides.html#r",
-    "title": "Welcome to STA 199",
-    "section": "R",
-    "text": "R"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#rstudio",
-    "href": "slides/00-welcome-199-slides.html#rstudio",
-    "title": "Welcome to STA 199",
-    "section": "RStudio",
-    "text": "RStudio"
+    "section": "Application exercise",
+    "text": "Application exercise\n\nOr more like demo for today…\n sta199-f24.github.io/ae/ae-00-unvotes.html"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#data-science-life-cycle-1",
@@ -586,11 +572,25 @@
     "text": "Data science life cycle"
   },
   {
+    "objectID": "slides/00-welcome-199-slides.html#collect-birthdays",
+    "href": "slides/00-welcome-199-slides.html#collect-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Collect birthdays",
+    "text": "Collect birthdays"
+  },
+  {
     "objectID": "slides/00-welcome-199-slides.html#import",
     "href": "slides/00-welcome-199-slides.html#import",
     "title": "Welcome to STA 199",
     "section": "Import",
     "text": "Import"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#import-birthdays",
+    "href": "slides/00-welcome-199-slides.html#import-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Import birthdays",
+    "text": "Import birthdays"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#tidy-transform",
@@ -600,11 +600,25 @@
     "text": "Tidy + transform"
   },
   {
+    "objectID": "slides/00-welcome-199-slides.html#tidy-transform-birthdays",
+    "href": "slides/00-welcome-199-slides.html#tidy-transform-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Tidy + transform birthdays",
+    "text": "Tidy + transform birthdays"
+  },
+  {
     "objectID": "slides/00-welcome-199-slides.html#visualize",
     "href": "slides/00-welcome-199-slides.html#visualize",
     "title": "Welcome to STA 199",
     "section": "Visualize",
     "text": "Visualize"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#visualize-birthdays",
+    "href": "slides/00-welcome-199-slides.html#visualize-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Visualize birthdays",
+    "text": "Visualize birthdays"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#model",
@@ -619,13 +633,6 @@
     "title": "Welcome to STA 199",
     "section": "Understand",
     "text": "Understand"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#section",
-    "href": "slides/00-welcome-199-slides.html#section",
-    "title": "Welcome to STA 199",
-    "section": "",
-    "text": "# A tibble: 5 × 2\n  date             season\n  &lt;chr&gt;            &lt;chr&gt; \n1 23 January 2017  winter\n2 4 March 2017     spring\n3 14 June 2017     summer\n4 1 September 2017 fall  \n5 ...              ..."
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#communicate",
@@ -647,13 +654,6 @@
     "title": "Welcome to STA 199",
     "section": "Program",
     "text": "Program"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#application-exercise",
-    "href": "slides/00-welcome-199-slides.html#application-exercise",
-    "title": "Welcome to STA 199",
-    "section": "Application exercise",
-    "text": "Application exercise\n\nOr more like demo for today…\n github.com/sta199-f24/ae-00-unvotes"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#homepage",
@@ -765,7 +765,7 @@
     "href": "slides/00-welcome-199.html",
     "title": "Welcome to STA 199",
     "section": "",
-    "text": "Dr. Mine Çetinkaya-Rundel\nProfessor of the Practice\nOld Chem 213\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMary Knox (Course coordinator)\nMarie Neubrander (Head TA)\nFederico Arboleda\nJaekyoung Kim\nLynn Kremers\nNetra Mittal\nGrace Rade\nJasmine Wang\nEmily Jensen\nJonathan Lin\nMengqi Liu\n\n\n\nSonya Eason\nDomenic Fenoglio\nSarah Wu\nAvery Hodges\nDavid King\nHyunjin Lee\nKareena Legare\nLiane Ma\nNoah Obuya\nAnmol Sapru\nJohn Zito\n\n\n\n\n\n\n\nPlease share with at least two classmates…\n\nYour name\nYour year\nWhere you’re from\nWhat you did this past summer\nWhat you hope to get out of this course\n\n\n\n\n\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.\nWe’re going to learn to do this in a tidy way – more on that later!\nThis is a course on introduction to data science, with an emphasis on statistical thinking."
+    "text": "Dr. Mine Çetinkaya-Rundel\nProfessor of the Practice\nOld Chem 213\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMary Knox (Course coordinator)\nMarie Neubrander (Head TA)\nFederico Arboleda\nJaekyoung Kim\nLynn Kremers\nNetra Mittal\nGrace Rade\nJasmine Wang\nEmily Jensen\nJonathan Lin\nMengqi Liu\n\n\n\nSonya Eason\nDomenic Fenoglio\nSarah Wu\nAvery Hodges\nDavid King\nHyunjin Lee\nKareena Legare\nLiane Ma\nNoah Obuya\nAnmol Sapru\nJohn Zito\n\n\n\n\n\n\n\nPlease share with at least two classmates…\n\nYour name\nYour year\nWhere you’re from\nWhat you did this past summer\nWhat you hope to get out of this course\n\n\n\n\n\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.\nWe’re going to learn to do this in a tidy way – more on that later!\nThis is a course on introduction to data science, with an emphasis on statistical thinking.\n\n\n\n\n\nOr more like demo for today…\n sta199-f24.github.io/ae/ae-00-unvotes.html"
   },
   {
     "objectID": "slides/00-welcome-199.html#meet-the-prof",
@@ -796,25 +796,11 @@
     "text": "Data science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.\nWe’re going to learn to do this in a tidy way – more on that later!\nThis is a course on introduction to data science, with an emphasis on statistical thinking."
   },
   {
-    "objectID": "slides/00-welcome-199.html#excel---not",
-    "href": "slides/00-welcome-199.html#excel---not",
+    "objectID": "slides/00-welcome-199.html#application-exercise",
+    "href": "slides/00-welcome-199.html#application-exercise",
     "title": "Welcome to STA 199",
-    "section": "Excel - not…",
-    "text": "Excel - not…"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#r",
-    "href": "slides/00-welcome-199.html#r",
-    "title": "Welcome to STA 199",
-    "section": "R",
-    "text": "R"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#rstudio",
-    "href": "slides/00-welcome-199.html#rstudio",
-    "title": "Welcome to STA 199",
-    "section": "RStudio",
-    "text": "RStudio"
+    "section": "",
+    "text": "Or more like demo for today…\n sta199-f24.github.io/ae/ae-00-unvotes.html"
   },
   {
     "objectID": "slides/00-welcome-199.html#data-science-life-cycle-1",
@@ -824,11 +810,25 @@
     "text": "Data science life cycle"
   },
   {
+    "objectID": "slides/00-welcome-199.html#collect-birthdays",
+    "href": "slides/00-welcome-199.html#collect-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Collect birthdays",
+    "text": "Collect birthdays"
+  },
+  {
     "objectID": "slides/00-welcome-199.html#import",
     "href": "slides/00-welcome-199.html#import",
     "title": "Welcome to STA 199",
     "section": "Import",
     "text": "Import"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#import-birthdays",
+    "href": "slides/00-welcome-199.html#import-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Import birthdays",
+    "text": "Import birthdays\n\n#| message: false\nlibrary(tidyverse)\n\nbirthdays &lt;- read_csv(\"birthdays.csv\")\nbirthdays"
   },
   {
     "objectID": "slides/00-welcome-199.html#tidy-transform",
@@ -838,11 +838,25 @@
     "text": "Tidy + transform"
   },
   {
+    "objectID": "slides/00-welcome-199.html#tidy-transform-birthdays",
+    "href": "slides/00-welcome-199.html#tidy-transform-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Tidy + transform birthdays",
+    "text": "Tidy + transform birthdays\n\nbirthdays &lt;- birthdays |&gt;\n  mutate(\n    birth_day = parse_number(birthday),\n    birth_month = str_trim(str_remove(birthday, as.character(birth_day))),\n    birthday_date = mdy(paste(birth_month, birth_day, \"2024\"))\n  )"
+  },
+  {
     "objectID": "slides/00-welcome-199.html#visualize",
     "href": "slides/00-welcome-199.html#visualize",
     "title": "Welcome to STA 199",
     "section": "Visualize",
     "text": "Visualize"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#visualize-birthdays",
+    "href": "slides/00-welcome-199.html#visualize-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Visualize birthdays",
+    "text": "Visualize birthdays\n\nggplot(birthdays, aes(x = birthday_date)) +\n  geom_bar()"
   },
   {
     "objectID": "slides/00-welcome-199.html#model",
@@ -857,13 +871,6 @@
     "title": "Welcome to STA 199",
     "section": "Understand",
     "text": "Understand"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#section",
-    "href": "slides/00-welcome-199.html#section",
-    "title": "Welcome to STA 199",
-    "section": "",
-    "text": "# A tibble: 5 × 2\n  date             season\n  &lt;chr&gt;            &lt;chr&gt; \n1 23 January 2017  winter\n2 4 March 2017     spring\n3 14 June 2017     summer\n4 1 September 2017 fall  \n5 ...              ..."
   },
   {
     "objectID": "slides/00-welcome-199.html#communicate",
@@ -885,13 +892,6 @@
     "title": "Welcome to STA 199",
     "section": "Program",
     "text": "Program"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#application-exercise",
-    "href": "slides/00-welcome-199.html#application-exercise",
-    "title": "Welcome to STA 199",
-    "section": "Application exercise",
-    "text": "Application exercise\n\nOr more like demo for today…\n github.com/sta199-f24/ae-00-unvotes"
   },
   {
     "objectID": "slides/00-welcome-199.html#homepage",

@@ -44,6 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -331,29 +332,23 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#meet-the-course-team" id="toc-meet-the-course-team" class="nav-link" data-scroll-target="#meet-the-course-team">Meet the course team</a></li>
   <li><a href="#meet-each-other" id="toc-meet-each-other" class="nav-link" data-scroll-target="#meet-each-other">Meet each other!</a></li>
   <li><a href="#meet-data-science" id="toc-meet-data-science" class="nav-link" data-scroll-target="#meet-data-science">Meet data science</a></li>
-  </ul></li>
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a>
-  <ul class="collapse">
-  <li><a href="#excel---not" id="toc-excel---not" class="nav-link" data-scroll-target="#excel---not">Excel - not…</a></li>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
+  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a></li>
   </ul></li>
   <li><a href="#data-science-life-cycle" id="toc-data-science-life-cycle" class="nav-link" data-scroll-target="#data-science-life-cycle">Data science life cycle</a>
   <ul class="collapse">
   <li><a href="#data-science-life-cycle-1" id="toc-data-science-life-cycle-1" class="nav-link" data-scroll-target="#data-science-life-cycle-1">Data science life cycle</a></li>
+  <li><a href="#collect-birthdays" id="toc-collect-birthdays" class="nav-link" data-scroll-target="#collect-birthdays">Collect birthdays</a></li>
   <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
+  <li><a href="#import-birthdays" id="toc-import-birthdays" class="nav-link" data-scroll-target="#import-birthdays">Import birthdays</a></li>
   <li><a href="#tidy-transform" id="toc-tidy-transform" class="nav-link" data-scroll-target="#tidy-transform">Tidy + transform</a></li>
+  <li><a href="#tidy-transform-birthdays" id="toc-tidy-transform-birthdays" class="nav-link" data-scroll-target="#tidy-transform-birthdays">Tidy + transform birthdays</a></li>
   <li><a href="#visualize" id="toc-visualize" class="nav-link" data-scroll-target="#visualize">Visualize</a></li>
+  <li><a href="#visualize-birthdays" id="toc-visualize-birthdays" class="nav-link" data-scroll-target="#visualize-birthdays">Visualize birthdays</a></li>
   <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">Model</a></li>
   <li><a href="#understand" id="toc-understand" class="nav-link" data-scroll-target="#understand">Understand</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   <li><a href="#communicate" id="toc-communicate" class="nav-link" data-scroll-target="#communicate">Communicate</a></li>
   <li><a href="#understand-communicate" id="toc-understand-communicate" class="nav-link" data-scroll-target="#understand-communicate">Understand + communicate</a></li>
   <li><a href="#program" id="toc-program" class="nav-link" data-scroll-target="#program">Program</a></li>
-  </ul></li>
-  <li><a href="#lets-dive-in" id="toc-lets-dive-in" class="nav-link" data-scroll-target="#lets-dive-in">Let’s dive in!</a>
-  <ul class="collapse">
-  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a></li>
   </ul></li>
   <li><a href="#course-overview" id="toc-course-overview" class="nav-link" data-scroll-target="#course-overview">Course overview</a>
   <ul class="collapse">
@@ -380,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#midori-says" id="toc-midori-says" class="nav-link" data-scroll-target="#midori-says">Midori says…</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/00-welcome-199.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="00-welcome-199-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/00-welcome-199.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="00-welcome-199-slides.html"><i class="bi bi-file-slides"></i>RevealJS (live)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -497,31 +492,11 @@ ul.task-list li input[type="checkbox"] {
 <li><p>This is a course on introduction to data science, with an emphasis on statistical thinking.</p></li>
 </ul>
 </section>
-</section>
-<section id="software" class="level1">
-<h1>Software</h1>
-<section id="excel---not" class="level2">
-<h2 class="anchored" data-anchor-id="excel---not">Excel - not…</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/00/excel.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="An Excel window with data about countries"></p>
-</figure>
-</div>
-</section>
-<section id="r" class="level2">
-<h2 class="anchored" data-anchor-id="r">R</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/00/r.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="An R shell"></p>
-</figure>
-</div>
-</section>
-<section id="rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/00/rstudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="An RStudio window"></p>
-</figure>
+<section id="application-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="application-exercise">Application exercise</h2>
+<div class="appex">
+<p>Or more like demo for today…</p>
+<p><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> <a href="https://sta199-f24.github.io/ae/ae-00-unvotes.html">sta199-f24.github.io/ae/ae-00-unvotes.html</a></p>
 </div>
 </section>
 </section>
@@ -531,17 +506,64 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="data-science-life-cycle-1">Data science life cycle</h2>
 <p><img src="images/00/data-science-cycle/data-science-cycle.001.png" class="img-fluid" alt="Data science life cycle"></p>
 </section>
+<section id="collect-birthdays" class="level2">
+<h2 class="anchored" data-anchor-id="collect-birthdays">Collect birthdays</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1RvmzRhJj2VcgGe_cvsovFOdxjlIwX37aZr9NKMBuvwcquQ/viewform?embedded=true" width="640" height="371" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+</div><div class="column" style="width:30%;">
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"height":128,"text":"https://forms.gle/S2zpyu6qmkEisSSq5","width":128,"colorLight":"#ffffff","colorDark":"#000000"});
+  script.remove();
+})();
+</script>
+    
+</div>
+</div>
+</section>
 <section id="import" class="level2">
 <h2 class="anchored" data-anchor-id="import">Import</h2>
 <p><img src="images/00/data-science-cycle/data-science-cycle.002.png" class="img-fluid" alt="Data science life cycle, with import highlighted"></p>
+</section>
+<section id="import-birthdays" class="level2">
+<h2 class="anchored" data-anchor-id="import-birthdays">Import birthdays</h2>
+<div class="cell">
+<pre class="{webr}"><code>#| message: false
+library(tidyverse)
+
+birthdays &lt;- read_csv("birthdays.csv")
+birthdays</code></pre>
+</div>
 </section>
 <section id="tidy-transform" class="level2">
 <h2 class="anchored" data-anchor-id="tidy-transform">Tidy + transform</h2>
 <p><img src="images/00/data-science-cycle/data-science-cycle.003.png" class="img-fluid" alt="Data science life cycle, with tidy and transform highlighted"></p>
 </section>
+<section id="tidy-transform-birthdays" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-transform-birthdays">Tidy + transform birthdays</h2>
+<div class="cell">
+<pre class="{webr}"><code>birthdays &lt;- birthdays |&gt;
+  mutate(
+    birth_day = parse_number(birthday),
+    birth_month = str_trim(str_remove(birthday, as.character(birth_day))),
+    birthday_date = mdy(paste(birth_month, birth_day, "2024"))
+  )</code></pre>
+</div>
+</section>
 <section id="visualize" class="level2">
 <h2 class="anchored" data-anchor-id="visualize">Visualize</h2>
 <p><img src="images/00/data-science-cycle/data-science-cycle.004.png" class="img-fluid" alt="Data science life cycle, with visualize highlighted"></p>
+</section>
+<section id="visualize-birthdays" class="level2">
+<h2 class="anchored" data-anchor-id="visualize-birthdays">Visualize birthdays</h2>
+<div class="cell">
+<pre class="{webr}"><code>ggplot(birthdays, aes(x = birthday_date)) +
+  geom_bar()</code></pre>
+</div>
 </section>
 <section id="model" class="level2">
 <h2 class="anchored" data-anchor-id="model">Model</h2>
@@ -550,28 +572,43 @@ ul.task-list li input[type="checkbox"] {
 <section id="understand" class="level2">
 <h2 class="anchored" data-anchor-id="understand">Understand</h2>
 <p><img src="images/00/data-science-cycle/data-science-cycle.006.png" class="img-fluid" alt="Data science life cycle, with understand highlighted"></p>
-</section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img src="images/00/google-trend-index.png" class="img-fluid"></p>
-</div><div class="column" style="width:60%;">
-<p><img src="images/00/data-science-cycle/data-science-cycle.006.png" class="img-fluid"></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
+<!--
+## 
+
+::::: columns
+::: {.column width="40%"}
+![](images/00/google-trend-index.png)
+:::
+
+::: {.column width="60%"}
+![](images/00/data-science-cycle/data-science-cycle.006.png)
+
+
+
+
+::: {.cell}
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 5 × 2
   date             season
-  &lt;chr&gt;            &lt;chr&gt; 
+  <chr>            <chr> 
 1 23 January 2017  winter
 2 4 March 2017     spring
 3 14 June 2017     summer
 4 1 September 2017 fall  
-5 ...              ...   </code></pre>
-</div>
-</div>
-</div>
-</div>
+5 ...              ...   
+```
+
+
+:::
+:::
+
+
+
+:::
+:::::
+-->
 </section>
 <section id="communicate" class="level2">
 <h2 class="anchored" data-anchor-id="communicate">Communicate</h2>
@@ -584,16 +621,6 @@ ul.task-list li input[type="checkbox"] {
 <section id="program" class="level2">
 <h2 class="anchored" data-anchor-id="program">Program</h2>
 <p><img src="images/00/data-science-cycle/data-science-cycle.009.png" class="img-fluid" alt="Data science life cycle, with program highlighted"></p>
-</section>
-</section>
-<section id="lets-dive-in" class="level1">
-<h1>Let’s dive in!</h1>
-<section id="application-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="application-exercise">Application exercise</h2>
-<div class="appex">
-<p>Or more like demo for today…</p>
-<p><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> <a href="https://github.com/sta199-f24/ae-00-unvotes/">github.com/sta199-f24/</a><a href="https://github.com/sta199-f24/ae-00-unvotes">ae-00-unvotes</a></p>
-</div>
 </section>
 </section>
 <section id="course-overview" class="level1">
