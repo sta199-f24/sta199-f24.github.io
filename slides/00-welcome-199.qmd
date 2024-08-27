@@ -5,8 +5,6 @@ date: "2024-08-27"
 format: 
   live-revealjs: 
     output-file: 00-welcome-199-slides.html
-  html: default
-engine: knitr
 webr:
   packages:
     - tidyverse

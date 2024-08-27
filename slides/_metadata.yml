@@ -8,10 +8,11 @@ format:
     transition: fade
     slide-number: true
     chalkboard: true
-    logo: "images/logo.png"
+    logo: "images/logo.png" 
     toc: false
   live-html:
     code-link: true
+engine: knitr
 highlight-style: a11y
 execute:
   echo: true
