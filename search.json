@@ -828,7 +828,7 @@
     "href": "slides/00-welcome-199.html#import-birthdays",
     "title": "Welcome to STA 199",
     "section": "Import birthdays",
-    "text": "Import birthdays\n\n#| message: false\nlibrary(tidyverse)\n\nbirthdays &lt;- read_csv(\"birthdays.csv\")\nbirthdays"
+    "text": "Import birthdays"
   },
   {
     "objectID": "slides/00-welcome-199.html#tidy-transform",
@@ -842,7 +842,7 @@
     "href": "slides/00-welcome-199.html#tidy-transform-birthdays",
     "title": "Welcome to STA 199",
     "section": "Tidy + transform birthdays",
-    "text": "Tidy + transform birthdays\n\nbirthdays &lt;- birthdays |&gt;\n  mutate(\n    birth_day = parse_number(birthday),\n    birth_month = str_trim(str_remove(birthday, as.character(birth_day))),\n    birthday_date = mdy(paste(birth_month, birth_day, \"2024\"))\n  )"
+    "text": "Tidy + transform birthdays"
   },
   {
     "objectID": "slides/00-welcome-199.html#visualize",
@@ -856,7 +856,7 @@
     "href": "slides/00-welcome-199.html#visualize-birthdays",
     "title": "Welcome to STA 199",
     "section": "Visualize birthdays",
-    "text": "Visualize birthdays\n\nggplot(birthdays, aes(x = birthday_date)) +\n  geom_bar()"
+    "text": "Visualize birthdays"
   },
   {
     "objectID": "slides/00-welcome-199.html#model",
