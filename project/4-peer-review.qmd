@@ -1,6 +1,6 @@
 ---
 title: "Peer review"
-subtitle: "Milestone 3"
+subtitle: "Milestone 4"
 categories: "Project"
 execute:
   echo: false
@@ -19,30 +19,7 @@ The goals of this milestone are as follows:
 
 # Instructions
 
-## Part 1
-
-During the first \~30 minutes, make progress on your own project.
-
--   Review the feedback from your TA.
-
--   Choose the dataset you want to work with.
-
--   Make progress on your analysis and write-up in `index.qmd`:
-
-    -   At a minimum, write a plan that peers can give feedback on.
-
-    -   Time permitting, start the analysis.
-
--   Render the project, commit and push all your changes.
-
-::: callout-important
-Make sure you always render before you commit and push. 
-If you don't render first, you're going to end up with merge conflicts that are difficult to resolve in auxiliary files created during the render process.
-:::
-
-## Part 2
-
-Review one other team's project.
+Review two other teams' projects.
 As a team you should spend \~30 minutes on each team's project.
 
 -   Find the names of the teams whose projects you're reviewing below.
@@ -90,8 +67,11 @@ As a team you should spend \~30 minutes on each team's project.
 
 # Review pairings
 
+To be posted.
+
+<!--
+
 ```{r}
-#| message: false
 library(tidyverse)
 library(gt)
 library(googlesheets4)
@@ -169,6 +149,8 @@ make_pairing_table(teams, 6)
 make_pairing_table(teams, 7)
 ```
 :::
+
+-->
 
 # Grading
 

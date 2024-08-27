@@ -1,6 +1,6 @@
 ---
 title: "Write-up and presentation"
-subtitle: "Milestone 4"
+subtitle: "Milestone 5"
 categories: "Project"
 ---
 
@@ -94,15 +94,15 @@ The main body of the written report (not including the appendix) is no longer th
 
 ## Grading
 
-The write-up is worth 40 points, broken down as follows:
+The write-up is worth 35 points, broken down as follows:
 
-| Total                         | 40 pts |
+| Total                         | 35 pts |
 |-------------------------------|--------|
-| **Introduction/data**         | 6 pts  |
+| **Introduction/data**         | 4 pts  |
 | **Methodology**               | 10 pts |
-| **Results**                   | 14 pts |
-| **Discussion**                | 6 pts  |
-| **Organization + formatting** | 4 pts  |
+| **Results**                   | 15 pts |
+| **Discussion**                | 3 pts  |
+| **Organization + formatting** | 3 pts  |
 
 # Presentation + slides {#presentation-slides}
 

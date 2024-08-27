@@ -34,8 +34,9 @@ The four milestones for the final project are
 
 1.  Milestone 1 - Working collaboratively
 2.  Milestone 2 - Proposals, with three dataset ideas
-3.  Milestone 3 - Peer review, on another team's project
-4.  Milestone 4 - Presentation with slides and a reproducible project write-up of your analysis, with a draft along the way.
+3.  Milestone 3 - Improvement and progress
+3.  Milestone 4 - Peer review, on another team's project
+4.  Milestone 5 - Presentation with slides and a reproducible project write-up of your analysis, with a draft along the way.
 
 You will not be submitting anything on Gradescope for the project.
 Submission of these deliverables will happen on GitHub and feedback will be provided as GitHub issues that you need to engage with and close.
@@ -57,17 +58,21 @@ There are two main purposes of the project proposal:
 
 Instructions and grading criteria for this milestone are outlined in [Milestone 2: Proposal](/project/2-proposal.html).
 
-# Milestone 3 - Peer review {#peer-review}
+# Milestone 3 - Improvement and progress {#improvement-progress}
+
+Instructions and grading criteria for this milestone are outlined in [Milestone 3: Improvement and progress](/project/3-improvement-progress.html).
+
+# Milestone 4 - Peer review {#peer-review}
 
 Critically reviewing others' work is a crucial part of the scientific process, and STA 199 is no exception.
 You will be assigned two teams to review.
 This feedback is intended to help you create a high quality final project, as well as give you experience reading and constructively critiquing the work of others.
 
-Instructions and grading criteria for this milestone are outlined in [Milestone 3: Peer review](/project/3-peer-review.html).
+Instructions and grading criteria for this milestone are outlined in [Milestone 4: Peer review](/project/4-peer-review.html).
 
-# Milestone 4 - Write-up and presentation
+# Milestone 5 - Write-up and presentation
 
-Instructions and grading criteria for this milestone are outlined in [Milestone 4: Write-up + presentation](/project/4-writeup-presentation.html).
+Instructions and grading criteria for this milestone are outlined in [Milestone 5: Write-up + presentation](/project/5-writeup-presentation.html).
 
 # Other
 
@@ -96,8 +101,9 @@ The grade breakdown is as follows:
 |------------------------------------|---------|
 | **M1: Working collaboratively**    | 5 pts   |
 | **M2: Project proposal**           | 10 pts  |
+| **M3: Improvement + progress**     | 5 pts   |
 | **M3: Peer review**                | 5 pts   |
-| **M4: Write-up**                   | 40 pts  |
+| **M4: Write-up**                   | 35 pts  |
 | **M4: Slides + presentation**      | 25 pts  |
 | **Reproducibility + organization** | 5 pts   |
 | **Teamwork**                       | 10 pts  |
