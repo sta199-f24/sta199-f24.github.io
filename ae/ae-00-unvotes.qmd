@@ -13,6 +13,8 @@ webr:
     - DT
     - unvotes
     - ggthemes
+  cell-options:
+    autorun: false
 ---
 
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
@@ -28,8 +30,6 @@ We will use the **tidyverse**, **lubridate**, and **scales** packages for data w
 
 ```{webr}
 #| label: load-packages
-#| warning: false
-#| message: false
 library(tidyverse)
 library(scales)
 library(unvotes)
@@ -50,6 +50,7 @@ unvotes <- un_votes |>
     by = join_by(rcid == rcid), 
     relationship = "many-to-many"
   )
+head(unvotes)
 ```
 
 ## UN voting patterns

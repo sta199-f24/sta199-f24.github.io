@@ -128,7 +128,7 @@ More information about the project will be provided during the semester.
 
 Parts of some lectures will be dedicated to working on Application Exercises (AEs). These exercises allow you to apply the statistical concepts and code introduced in the preparation materials. These AEs are due by 2 pm ET on the day of the lecture they are covered. To submit the AEs, you only need to push your work to your GitHub repo.
 
-Because these AEs are for practice, they will be graded based on completion, i.e., a good-faith effort has been made in attempting all parts.
+Because these AEs are for practice, they will be graded based on attempt, i.e., a good-faith effort has been made in attempting all parts.
 
 *Successful on-time completion of at least 70% of AEs will result in full credit for AEs in the final course grade.*
 

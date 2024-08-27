@@ -95,11 +95,13 @@ Please share with at least two classmates...
 
 ## Meet data science
 
--   Data science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.
+::: incremental
+-   **Data science** is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.
 
 -   We're going to learn to do this in a `tidy` way -- more on that later!
 
--   This is a course on introduction to data science, with an emphasis on statistical thinking.
+-   This is a course on introduction to data science, with an emphasis on **statistical thinking**.
+:::
 
 ## Application exercise
 
@@ -129,6 +131,8 @@ Or more like demo for today...
 :::
 
 :::
+
+{{< countdown minutes=1 >}}
 
 ## Import
 
@@ -213,11 +217,35 @@ All linked from the course website:
 
 -   Introduce new content and prepare for lectures by watching the videos and completing the readings
 -   Attend and actively participate in lectures and labs, office hours, team meetings
--   Practice applying statistical concepts and computing with application exercises during lecture, graded for completion
+-   Practice applying statistical concepts and computing with application exercises during lecture, graded for attempting
 -   Put together what you've learned to analyze real-world data
-    -   Lab assignments x 7 or 8
-    -   Exams x 2
-    -   Term project presented in the last lab session
+    -   Lab assignments (7 or 8 throughout semester)
+    -   Exams (midterm + final)
+    -   Term project completed in teams
+
+## Application exercises {.smaller}
+
+-   Daily-ish in lecture
+
+-   "Graded" for attempt, not accuracy
+
+-   Practice Weeks 1 + 2, graded thereafter
+
+-   At least one commit by 2 pm of the day of lecture
+
+-   Turn in at least 70% for full credit
+
+## Labs {.smaller}
+
+-   Start in lab session
+
+-   Complete at home
+
+-   Due within a week
+
+-   Discussion with classmates ok, copying not ok!
+
+-   Lowest score dropped
 
 ## Exams {.smaller}
 
@@ -225,11 +253,13 @@ All linked from the course website:
 
 -   Midterm comprised of two parts:
 
-    -   In-class: 75 minute in-class exam. Closed book, one sheet of notes (“cheat sheet”, no larger than 8 1/2 x 11, both sides, **must be prepared by you**) – 70% of the grade.
+    -   In-class (Oct 8): 75 minute in-class exam. Closed book, one sheet of notes (“cheat sheet”) – 70% of the grade.
 
-    -   Take-home: The take home portion will follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam – 30% of the grade.
+    -   Take-home (Oct 8 - Oct 11): Follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam – 30% of the grade.
 
--   Final in-class only: Closed book, one sheet of notes (“cheat sheet”, no larger than 8 1/2 x 11, both sides, **must be prepared by you**).
+-   Final in-class only (Dec 12, 9am - 12pm): Closed book, one sheet of notes (“cheat sheet”).
+
+- "Cheat sheet": No larger than 8 1/2 x 11, both sides, **must be prepared by you**.
 
 ::: callout-caution
 Exam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class.
@@ -241,13 +271,15 @@ Exam dates cannot be changed and no make-up exams will be given. If you can’t 
 
 -   Teamwork
 
--   Presentation and write-up
+-   Five milestones, interim deadline throughout semester
+
+-   Final milestone: Presentation (video) and write-up
 
 -   Presentations submitted as videos
 
--   Interim deadlines, peer review on content, peer evaluation for team contribution
+-   Peer review between teams for content, peer evaluation within teams for contribution
 
--   Some lab sessions allocated to working on projects, doing peer review, getting feedback from TAs
+-   Some lab sessions allocated to project progress
 
 ::: callout-caution
 Project due date cannot be changed. You must complete the project to pass this class.
@@ -267,13 +299,13 @@ Project due date cannot be changed. You must complete the project to pass this c
 
 | Category              | Percentage |
 |-----------------------|------------|
+| Application Exercises | 5%         |
 | Labs                  | 35%        |
-| Project               | 20%        |
 | Midterm               | 20%        |
 | Final                 | 20%        |
-| Application Exercises | 5%         |
+| Project               | 20%        |
 
-No specific points allocated to attendance, but attendance will be recorded periodically throughout the semester, and this information will be used as “extra credit” if you’re in between two grades and a minor bump would help.
+No specific points allocated to attendance, but the application exercise score is implicitly tied to attendance.
 
 See course syllabus for how the final letter grade will be determined.
 
@@ -282,7 +314,7 @@ See course syllabus for how the final letter grade will be determined.
 -   Help from humans:
     -   Attend office hours
     -   Ask and answer questions on the discussion forum
--   Help from AI: Use the course chatbot
+-   Help from AI: Use the course chatbot (in Canvas!)
 -   Reserve email for questions on personal matters and/or grades
 -   Read the course support page
 
@@ -297,7 +329,7 @@ See course syllabus for how the final letter grade will be determined.
 It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.
 
 ::: incremental
--   Please let me know your preferred name and pronouns on the Getting to know you survey.
+-   Fill out the Getting to know you survey.
 -   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisors, and deans are excellent resources.
 -   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.
 :::
@@ -310,10 +342,20 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 # Course policies
 
-## Late work, waivers, regrades policy
+## Late work, waivers, lecture recordings, regrades...
 
 -   We have policies!
 -   Read about them on the [course syllabus](https://sta199-f22-1.github.io/course-syllabus.html) and refer back to them when you need it
+
+## Use of AI tools
+
+-   {{< fa check >}} **AI tools for code:** 
+    - Sure, but be careful/critical! Working code `!=` correct/good code.
+    - Must explicitly cite, with **at a minimum** AI tool you're using (e.g., ChatGPT) and your prompt.
+
+-   {{< fa ban >}} **AI tools for narrative:** Absolutely not!
+
+-   {{< fa check >}} **AI tools for learning:** Sure, but be careful/critical!
 
 ## Academic integrity
 
@@ -333,7 +375,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
     -   Computational setup
     -   Getting to know you survey
 -   Read the syllabus
--   Start readings for next class
+-   Complete readings and videos for next class
 
 ## Midori says...
 
