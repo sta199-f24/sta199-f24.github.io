@@ -86,9 +86,9 @@ Check out the [Support](https://sta199-f24.github.io/course-support.html) tab fo
 
 ### Lectures and labs
 
-Lectures and labs are designed to be interactive, so you gain experience applying new concepts and learning from each other. My role as instructor is to introduce you to new methods, tools, and techniques, but it is up to you to take them and use them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will work on various tasks and activities throughout each lecture and lab. You are expected to prepare for class by completing assigned readings, attending lectures and lab sessions, and meaningfully contributing to in-class exercises and discussions. Additionally, some lectures will feature application exercises that will be graded based on completing what we do in class.
+Lectures and labs are designed to be interactive, so you gain experience applying new concepts and learning from each other. My role as instructor is to introduce you to new methods, tools, and techniques, but it is up to you to take them and use them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will work on various tasks and activities throughout each lecture and lab. You are expected to prepare for class by completing assigned readings, attending lectures and lab sessions, and meaningfully contributing to in-class exercises and discussions. Additionally, most lectures will feature application exercises that will be graded based on completing what we do in class.
 
-You are expected to bring a laptop, tablet, or Chromebook to each class so that you can participate in the in-class exercises. Please ensure your device is fully charged before you come to class, as the number of outlets in the classroom will not be sufficient to accommodate everyone.
+You are expected to bring a laptop (or Chromebook) to each class so that you can participate in the in-class exercises. Please ensure your device is fully charged before you come to class, as the number of outlets in the classroom will not be sufficient to accommodate everyone. A tablet also works, but the user experience will be much smoother on a laptop.
 
 ### Teams
 
@@ -232,7 +232,7 @@ If circumstances have a longer-term impact on your academic performance, please 
 
 ### Regrade requests
 
-Regrade requests must be submitted on Gradescope within a week after an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the **entire assignment will be regraded**, which could potentially result in losing points.
+Regrade requests must be submitted on Gradescope within a week after an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the **entire assignment may be regraded**, which could potentially result in losing points.
 
 *No grades will be changed after the final exam has been administered.*
 
