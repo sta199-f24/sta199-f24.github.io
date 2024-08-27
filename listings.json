@@ -1,5 +1,26 @@
 [
   {
+    "listing": "/exam-review.html",
+    "items": [
+      "/exam-review/final-review.html",
+      "/exam-review/final-review-A.html",
+      "/exam-review/midterm-review.html",
+      "/exam-review/midterm-review-A.html"
+    ]
+  },
+  {
+    "listing": "/lab.html",
+    "items": [
+      "/lab/lab-0.html"
+    ]
+  },
+  {
+    "listing": "/ae.html",
+    "items": [
+      "/ae/ae-00-unvotes.html"
+    ]
+  },
+  {
     "listing": "/course-team.html",
     "items": [
       "/ta/anmol.html",
@@ -23,27 +44,6 @@
       "/ta/noah.html",
       "/ta/sarah.html",
       "/ta/sonya.html"
-    ]
-  },
-  {
-    "listing": "/ae.html",
-    "items": [
-      "/ae/ae-00-unvotes.html"
-    ]
-  },
-  {
-    "listing": "/lab.html",
-    "items": [
-      "/lab/lab-0.html"
-    ]
-  },
-  {
-    "listing": "/exam-review.html",
-    "items": [
-      "/exam-review/final-review.html",
-      "/exam-review/final-review-A.html",
-      "/exam-review/midterm-review.html",
-      "/exam-review/midterm-review-A.html"
     ]
   }
 ]
