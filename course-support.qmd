@@ -9,6 +9,8 @@ Most of you will need help at some point, and we want to make sure you can ident
 If you have a question during the lecture or lab, feel free to ask it!
 There are likely other students with the same question, so asking will create a learning opportunity for everyone.
 
+## Help from humans
+
 ## Office hours
 
 The teaching team is here to help you be successful in the course.
@@ -21,7 +23,7 @@ You can find a list of everyone's office hours [here](/course-team.html).
 
 My office hours will start in Week 1, TA office hours will start in Week 2.
 
-## Help from humans: Ed Discussion
+### Ed Discussion
 
 Have a question that can't wait for office hours?
 Prefer to write out your question in detail rather than asking in person?
@@ -30,6 +32,21 @@ There is a chance another student has already asked a similar question, so pleas
 If you know the answer to a question that is posted, I encourage you to respond!
 
 You can access this tool on the course website toolbar -- just click on the lifesaver icon.
+
+### Peer tutoring
+
+MINT Peer Tutoring (Meaningful Interactive Tutoring) are small groups of 2-5 students in the same course who meet weekly with a Peer Tutor. This semester, Peer Tutor who will be leading MINT Peer Tutoring for STA 199 is Stanley Borden (mailto:stanley.borden@duke.edu).
+
+The peer tutoring groups are a resource focused on allowing students to receive additional support for questions they have on the course content while still being part of a community of fellow learners. Peer tutors communicate with students in advance of the meetings so that they can be responsive to student needs during the group meetings. Some groups meet in person and some meet virtually.
+ 
+- In person, Wednesday 7:00 pm
+- Virtual, Wednesday 8:05 pm
+ 
+For more details and to see what other courses we offer services for, please visit their website: <https://arc.duke.edu/peer-education>
+
+Signups for MINT Peer Tutoring open the morning of Thursday, September 5th and groups start meeting on Monday, September 9th.
+
+Note that peer tutors are not directly affiliated with the course, however they tend to be students who have taken the course in the past.
 
 ## Help from AI: Chatbot
 
@@ -89,7 +106,7 @@ If you are having difficulty with the costs associated with this course, here ar
 
 -   [**Duke Link**](https://link.duke.edu/)**:** You can reserve rental equipment from the Link for course-specific technology needs, such as a Digital Voice Recorder, HD Video Camera, TI-84 Plus CE, DSLR camera kit, Tripod, Shotgun Mic, iPad Mini 4, Handheld Projector, or GoPro.
 
-## **Assistance with Zoom or Canvas**
+## Assistance with Zoom or Canvas
 
 For technical help with Canvas or Zoom, contact the Duke OIT Service Desk at [oit.duke.edu/help](https://oit.duke.edu/help).
 You can also access the self-service help documentation for Zoom and Canvas.
