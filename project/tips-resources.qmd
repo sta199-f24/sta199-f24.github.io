@@ -22,9 +22,6 @@ Neatness, coherency, and clarity will count.
 
     -   **Exception:** If you want to highlight something specific about a piece of code, you're welcome to show that portion.
 
-```{=html}
-<!-- -->
-```
 -   Merge conflicts will happen, issues will arise, and that's fine!
     Commit and push often, and ask questions when stuck.
 
