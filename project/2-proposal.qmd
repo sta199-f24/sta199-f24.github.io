@@ -71,6 +71,7 @@ You shouldn't feel constrained to datasets that are already in a tidy format, yo
 -   [Open access to Scotland's official statistics](https://statistics.gov.scot/home)
 -   [Pew Research](https://www.pewresearch.org/download-datasets/)
 -   [PRISM Data Archive Project](https://www.icpsr.umich.edu/icpsrweb/content/ICPSR/fenway.html)
+-   [Responsible Datasets in Context](https://www.responsible-datasets-in-context.com/datasets.html)
 -   [Statistics Canada](https://www.statcan.gc.ca/en/start)
 -   [TidyTuesday](https://github.com/rfordatascience/tidytuesday)
 -   [The National Bureau of Economic Research](https://www.nber.org/research/data?page=1&perPage=50)
