@@ -169,7 +169,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science and Statistical Thinking",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 26\n\n\nLab 0: Hello, World and STA 199!\n💻 lab 0\nLab 0 due at the end of lab session\n\n\n\n\nTue, Aug 27\n\n\nWelcome to STA 199\n🖥️ slides 00  🗒️ notes 00  ⌨️ ae 00\n\n\n\n\n\n\nThu, Aug 29\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit - R and RStudio  🎥 Meet the toolkit - Quarto\nMeet the toolkit\nTo be posted\n\n\n\n\n2\nMon, Sep 2\n\n\nNo lab - Labor Day\n\n\n\n\n\n\n\n\nTue, Sep 3\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics\nGrammar of data visualization\nTo be posted\n\n\n\n\n\n\nThu, Sep 5\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation\nGrammar of data transformation\nTo be posted\n\n\n\n\n3\nMon, Sep 9\nTo be posted\nLab 1: Data visualization\n💻 lab 1\n\n\n\n\n\n\nTue, Sep 10\nTo be posted\nExploring data I\nTo be posted\n\n\n\n\n\n\nThu, Sep 12\nTo be posted\nExploring data II\nTo be posted\n\n\n\n\n4\nMon, Sep 16\nTo be posted\nLab 2: Data transformation\n💻 lab 2\nLab 1 at 8:30 am\n\n\n\n\nTue, Sep 17\nTo be posted\nTidying data\nTo be posted\n\n\n\n\n\n\nThu, Sep 19\nTo be posted\nJoining data\nTo be posted\n\n\n\n\n5\nMon, Sep 23\nTo be posted\nLab 3: Data tidying and joining\n💻 lab 3\nLab 2 at 8:30 am\n\n\n\n\nTue, Sep 24\nTo be posted\nData types and classes\nTo be posted\n\n\n\n\n\n\nThu, Sep 26\nTo be posted\nImporting and recoding data\nTo be posted\n\n\n\n\n6\nMon, Sep 30\nTo be posted\nLab 4: Everything so far I\n💻 lab 4\nLab 3 at 8:30 am\n\n\n\n\nTue, Oct 1\nTo be posted\nWeb scraping\nTo be posted\n\n\n\n\n\n\nThu, Oct 3\nTo be posted\nMidterm review\n📝 midterm review  ✅ midterm review\n\n\n\n\n7\nMon, Oct 7\nTo be posted\nProject milestone 1 - Working collaboratively\n📓 project milestone 1\nLab 4 due at 8:30 am  Project milestone 1 at the end of lab session\n\n\n\n\nTue, Oct 8\nTo be posted\nMidterm - In-class + take-home released\n\n\n\n\n\n\n\n\nThu, Oct 10\nTo be posted\nWorking with generative AI tools\nTo be posted\nPeer evaluation 1 due by 5:00 pm\n\n\n\n\nFri, Oct 11\nTo be posted\n\n\n\n\nMidterm take-home due at 5:00 pm\n\n\n8\nMon, Oct 14\nTo be posted\nNo lab - Fall Break\n\n\n\n\n\n\n\n\nTue, Oct 15\nTo be posted\nNo lecture - Fall Break\n\n\n\n\n\n\n\n\nThu, Oct 17\nTo be posted\nData science ethics\nTo be posted\n\n\n\n\n\n\nFri, Oct 18\nTo be posted\n\n\n\n\nMidterm course evaluation due by 5:00 pm (optional)\n\n\n9\nMon, Oct 21\nTo be posted\nProject milestone 2 - Project proposals\n📓 project milestone 2\n\n\n\n\n\n\nTue, Oct 22\nTo be posted\nThe language of models\nTo be posted\n\n\n\n\n\n\nThu, Oct 24\nTo be posted\nLinear regression with a single predictor\nTo be posted\n\n\n\n\n\n\nFri, Oct 25\nTo be posted\n\n\n\n\nPeer evaluation 2 due by 5:00 pm\n\n\n10\nMon, Oct 28\nTo be posted\nLab 5: Modeling I\n💻 lab 5\nProject milestone 2 at 8:30 am\n\n\n\n\nTue, Oct 29\nTo be posted\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\nThu, Oct 31\nTo be posted\nLinear regression with multiple predictors II\nTo be posted\n\n\n\n\n11\nMon, Nov 4\nTo be posted\nLab 6: Modeling II\n💻 lab 6\nLab 5 at 8:30 am\n\n\n\n\nTue, Nov 5\nTo be posted\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\nThu, Nov 7\nTo be posted\nLogistic regression\nTo be posted\n\n\n\n\n12\nMon, Nov 11\nTo be posted\nLab 7: Modeling III\n💻 lab 7\nLab 6 at 8:30 am\n\n\n\n\nTue, Nov 12\nTo be posted\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\nThu, Nov 14\nTo be posted\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n13\nMon, Nov 18\nTo be posted\nLab 8: Everything so far II\n💻 lab 8\nLab 7 at 8:30 am\n\n\n\n\nTue, Nov 19\nTo be posted\nCommunicating data science results effectively\nTo be posted\n\n\n\n\n\n\nThu, Nov 21\nTo be posted\nCustomizing Quarto reports and presentations\nTo be posted\n\n\n\n\n\n\nFri, Nov 22\nTo be posted\n\n\n\n\n\n\n\n\n14\nMon, Nov 25\nTo be posted\nProject milestone 4 - Peer review\n📓 project milestone 4\nLab 8 at 8:30 am  Project milestone 3 at the end of lab session\n\n\n\n\nTue, Nov 26\nTo be posted\n\n\n\n\n\n\n\n\n\n\nThu, Nov 28\nTo be posted\nNo lecture - Thanksgiving\n\n\n\n\n\n\n15\nMon, Dec 2\nTo be posted\nProject milestone 5 - Work on writeup and presentations\n📓 project milestone 5\n\n\n\n\n\n\nTue, Dec 3\nTo be posted\nLooking further: Interactive web applications with Shiny\nTo be posted\n\n\n\n\n\n\nThu, Dec 5\nTo be posted\nFinal review\n📝 final review  ✅ final review\nProject milestone 4 - Writeup and presentation videos by 5:00 pm\n\n\n\n\nFri, Dec 6\nTo be posted\n\n\n\n\nPeer evaluation 4 due by 5:00 pm\n\n\n16\nThu, Dec 12\nTo be posted\nFinal (9 am - 12 pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 26\n\n\nLab 0: Hello, World and STA 199!\n💻 lab 0\nLab 0 due at the end of lab session\n\n\n\n\nTue, Aug 27\n\n\nWelcome to STA 199\n🖥️ slides 00  🗒️ notes 00  ⌨️ ae 00\n\n\n\n\n\n\nThu, Aug 29\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit - R and RStudio  🎥 Meet the toolkit - Quarto\nMeet the toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n\n\n\n2\nMon, Sep 2\n\n\nNo lab - Labor Day\n\n\n\n\n\n\n\n\nTue, Sep 3\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics\nGrammar of data visualization\nTo be posted\n\n\n\n\n\n\nThu, Sep 5\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation\nGrammar of data transformation\nTo be posted\n\n\n\n\n3\nMon, Sep 9\nTo be posted\nLab 1: Data visualization\n💻 lab 1\n\n\n\n\n\n\nTue, Sep 10\nTo be posted\nExploring data I\nTo be posted\n\n\n\n\n\n\nThu, Sep 12\nTo be posted\nExploring data II\nTo be posted\n\n\n\n\n4\nMon, Sep 16\nTo be posted\nLab 2: Data transformation\n💻 lab 2\nLab 1 at 8:30 am\n\n\n\n\nTue, Sep 17\nTo be posted\nTidying data\nTo be posted\n\n\n\n\n\n\nThu, Sep 19\nTo be posted\nJoining data\nTo be posted\n\n\n\n\n5\nMon, Sep 23\nTo be posted\nLab 3: Data tidying and joining\n💻 lab 3\nLab 2 at 8:30 am\n\n\n\n\nTue, Sep 24\nTo be posted\nData types and classes\nTo be posted\n\n\n\n\n\n\nThu, Sep 26\nTo be posted\nImporting and recoding data\nTo be posted\n\n\n\n\n6\nMon, Sep 30\nTo be posted\nLab 4: Everything so far I\n💻 lab 4\nLab 3 at 8:30 am\n\n\n\n\nTue, Oct 1\nTo be posted\nWeb scraping\nTo be posted\n\n\n\n\n\n\nThu, Oct 3\nTo be posted\nMidterm review\n📝 midterm review  ✅ midterm review\n\n\n\n\n7\nMon, Oct 7\nTo be posted\nProject milestone 1 - Working collaboratively\n📓 project milestone 1\nLab 4 due at 8:30 am  Project milestone 1 at the end of lab session\n\n\n\n\nTue, Oct 8\nTo be posted\nMidterm - In-class + take-home released\n\n\n\n\n\n\n\n\nThu, Oct 10\nTo be posted\nWorking with generative AI tools\nTo be posted\nPeer evaluation 1 due by 5:00 pm\n\n\n\n\nFri, Oct 11\nTo be posted\n\n\n\n\nMidterm take-home due at 5:00 pm\n\n\n8\nMon, Oct 14\nTo be posted\nNo lab - Fall Break\n\n\n\n\n\n\n\n\nTue, Oct 15\nTo be posted\nNo lecture - Fall Break\n\n\n\n\n\n\n\n\nThu, Oct 17\nTo be posted\nData science ethics\nTo be posted\n\n\n\n\n\n\nFri, Oct 18\nTo be posted\n\n\n\n\nMidterm course evaluation due by 5:00 pm (optional)\n\n\n9\nMon, Oct 21\nTo be posted\nProject milestone 2 - Project proposals\n📓 project milestone 2\n\n\n\n\n\n\nTue, Oct 22\nTo be posted\nThe language of models\nTo be posted\n\n\n\n\n\n\nThu, Oct 24\nTo be posted\nLinear regression with a single predictor\nTo be posted\n\n\n\n\n\n\nFri, Oct 25\nTo be posted\n\n\n\n\nPeer evaluation 2 due by 5:00 pm\n\n\n10\nMon, Oct 28\nTo be posted\nLab 5: Modeling I\n💻 lab 5\nProject milestone 2 at 8:30 am\n\n\n\n\nTue, Oct 29\nTo be posted\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\nThu, Oct 31\nTo be posted\nLinear regression with multiple predictors II\nTo be posted\n\n\n\n\n11\nMon, Nov 4\nTo be posted\nLab 6: Modeling II\n💻 lab 6\nLab 5 at 8:30 am\n\n\n\n\nTue, Nov 5\nTo be posted\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\nThu, Nov 7\nTo be posted\nLogistic regression\nTo be posted\n\n\n\n\n12\nMon, Nov 11\nTo be posted\nLab 7: Modeling III\n💻 lab 7\nLab 6 at 8:30 am\n\n\n\n\nTue, Nov 12\nTo be posted\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\nThu, Nov 14\nTo be posted\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n13\nMon, Nov 18\nTo be posted\nLab 8: Everything so far II\n💻 lab 8\nLab 7 at 8:30 am\n\n\n\n\nTue, Nov 19\nTo be posted\nCommunicating data science results effectively\nTo be posted\n\n\n\n\n\n\nThu, Nov 21\nTo be posted\nCustomizing Quarto reports and presentations\nTo be posted\n\n\n\n\n\n\nFri, Nov 22\nTo be posted\n\n\n\n\n\n\n\n\n14\nMon, Nov 25\nTo be posted\nProject milestone 4 - Peer review\n📓 project milestone 4\nLab 8 at 8:30 am  Project milestone 3 at the end of lab session\n\n\n\n\nTue, Nov 26\nTo be posted\n\n\n\n\n\n\n\n\n\n\nThu, Nov 28\nTo be posted\nNo lecture - Thanksgiving\n\n\n\n\n\n\n15\nMon, Dec 2\nTo be posted\nProject milestone 5 - Work on writeup and presentations\n📓 project milestone 5\n\n\n\n\n\n\nTue, Dec 3\nTo be posted\nLooking further: Interactive web applications with Shiny\nTo be posted\n\n\n\n\n\n\nThu, Dec 5\nTo be posted\nFinal review\n📝 final review  ✅ final review\nProject milestone 4 - Writeup and presentation videos by 5:00 pm\n\n\n\n\nFri, Dec 6\nTo be posted\n\n\n\n\nPeer evaluation 4 due by 5:00 pm\n\n\n16\nThu, Dec 12\nTo be posted\nFinal (9 am - 12 pm)",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -190,69 +190,706 @@
     "text": "To be posted."
   },
   {
-    "objectID": "exam-review.html",
-    "href": "exam-review.html",
-    "title": "Exam reviews",
+    "objectID": "ae/ae-00-unvotes.html",
+    "href": "ae/ae-00-unvotes.html",
+    "title": "AE 00",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\n\n\n\n\nFinal review\n\n\nQuestions\n\n\n\n\nFinal review\n\n\nSuggested answers\n\n\n\n\nMidterm Review\n\n\nQuestions\n\n\n\n\nMidterm review\n\n\nSuggested answers\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Exam reviews"
-    ]
+    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
   },
   {
-    "objectID": "course-overview.html",
-    "href": "course-overview.html",
-    "title": "STA 199Fall 2024",
+    "objectID": "ae/ae-00-unvotes.html#introduction",
+    "href": "ae/ae-00-unvotes.html#introduction",
+    "title": "AE 00",
     "section": "",
-    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
+    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
+  },
+  {
+    "objectID": "ae/ae-00-unvotes.html#un-voting-patterns",
+    "href": "ae/ae-00-unvotes.html#un-voting-patterns",
+    "title": "AE 00",
+    "section": "UN voting patterns",
+    "text": "UN voting patterns\nLet’s create a data visualisation that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.\n\n\n\n\n\n\n\n\n\nTask: Write your first piece of (R) code!\n\nModify the code cell above to change the plot to include a different country in place of Turkey. Note that the country name should be spelled and capitalized exactly the same way as it appears in the data. See the Appendix for a list of the countries in the data."
+  },
+  {
+    "objectID": "ae/ae-00-unvotes.html#references",
+    "href": "ae/ae-00-unvotes.html#references",
+    "title": "AE 00",
+    "section": "References",
+    "text": "References\n\nRobinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+  },
+  {
+    "objectID": "ae/ae-00-unvotes.html#appendix",
+    "href": "ae/ae-00-unvotes.html#appendix",
+    "title": "AE 00",
+    "section": "Appendix",
+    "text": "Appendix\nBelow is a list of countries in the dataset:"
+  },
+  {
+    "objectID": "course-links.html",
+    "href": "course-links.html",
+    "title": "Useful links",
+    "section": "",
+    "text": "Course GitHub organization\n🔗 on GitHub\n\n\n\nRStudio containers\n🔗 on Duke Container Manager\n\n\n\nOffice hours\n🔗 on Google Sheets\n\n\n\nEd Discussion\n🔗 on Canvas\n\n\n\nGradescope\n🔗 on Canvas\n\n\n\nGradebook\n🔗 on Canvas\n\n\n\nTexbooks\n🔗 R for Data Science\n🔗 Introduction to Modern Statistics\n\n\n\nPackage documentation\n🔗 ggplot2: ggplot2.tidyverse.org\n🔗 dplyr: dplyr.tidyverse.org\n🔗 tidyr: tidyr.tidyverse.org\n🔗 forcats: forcats.tidyverse.org\n🔗 stringr: stringr.tidyverse.org\n🔗 lubridate: lubridate.tidyverse.org\n🔗 readr: readr.tidyverse.org\n🔗 readxl: readxl.tidyverse.org",
     "crumbs": [
       "Course information",
-      "Overview"
+      "Useful links"
     ]
   },
   {
-    "objectID": "course-overview.html#overview",
-    "href": "course-overview.html#overview",
-    "title": "STA 199Fall 2024",
+    "objectID": "ae.html",
+    "href": "ae.html",
+    "title": "Application exercises",
     "section": "",
-    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
+    "text": "All application exercises (AEs) are due by 2 pm on the day they’re covered in lab. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nNo.\n\n\nTitle\n\n\n\n\n\n\nAE 00\n\n\nUN Votes\n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\n\nNo matching items\n\n\n\nMore AEs to be added as the semester progresses.",
+    "crumbs": [
+      "Application exercises"
+    ]
+  },
+  {
+    "objectID": "course-faq.html",
+    "href": "course-faq.html",
+    "title": "FAQ",
+    "section": "",
+    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).",
     "crumbs": [
       "Course information",
-      "Overview"
+      "FAQ"
     ]
   },
   {
-    "objectID": "course-overview.html#meetings",
-    "href": "course-overview.html#meetings",
-    "title": "STA 199Fall 2024",
-    "section": "Meetings",
-    "text": "Meetings\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLecture\nBiological Sciences 111\nTue & Thur 11:45 am - 1:00 pm\n\n\nLab 01\nPerkins LINK 087 (Classroom 3)\nMon 8:30 - 9:45 am\n\n\nLab 02\nPerkins LINK 087 (Classroom 3)\nMon 10:05 - 11:20 am\n\n\nLab 03\nPerkins LINK 071 (Classroom 5)\nMon 10:05 - 11:20 am\n\n\nLab 04\nPerkins LINK 087 (Classroom 3)\nMon 11:45 am - 1:00 pm\n\n\nLab 05\nPerkins LINK 071 (Classroom 5)\nMon 11:45 am - 1:00 pm\n\n\nLab 06\nPerkins LINK 087 (Classroom 3)\nMon 1:25 - 2:40 pm\n\n\nLab 07\nPerkins LINK 071 (Classroom 5)\nMon 1:25 - 2:40 pm\n\n\nLab 08\nPerkins LINK 087 (Classroom 3)\nMon 3:05 - 4:20 pm\n\n\nLab 09\nOld Chemistry 201\nMon 3:05 - 4:20 pm\n\n\nLab 10\nPerkins LINK 087 (Classroom 3)\nMon 4:40 - 5:55 pm",
+    "objectID": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
+    "href": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
+    "title": "FAQ",
+    "section": "",
+    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).",
     "crumbs": [
       "Course information",
-      "Overview"
+      "FAQ"
     ]
   },
   {
-    "objectID": "computing-cheatsheets.html",
-    "href": "computing-cheatsheets.html",
-    "title": "R cheatsheets",
-    "section": "",
-    "text": "The following cheatsheets come from https://www.rstudio.com/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
+    "objectID": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
+    "href": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
+    "title": "FAQ",
+    "section": "How can I submit my assignment to Gradescope?",
+    "text": "How can I submit my assignment to Gradescope?\nThe instructions for submitting your assignment to Gradescope can be found here. In a nutshell, you’ll upload your PDF and them mark the page(s) where each question can be found. It’s OK if a question spans multiple pages, just mark them all. It’s also OK if a page includes multiple questions.",
     "crumbs": [
-      "Computing",
-      "Cheatsheets"
+      "Course information",
+      "FAQ"
     ]
   },
   {
-    "objectID": "computing-access.html",
-    "href": "computing-access.html",
-    "title": "Computing access",
-    "section": "",
-    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA198-199 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA198-199 under My reservations to access the RStudio instance you’ll use for the course.",
+    "objectID": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
+    "href": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
+    "title": "FAQ",
+    "section": "Can I use a local install of R and RStudio instead of using the RStudio containers?",
+    "text": "Can I use a local install of R and RStudio instead of using the RStudio containers?\nThe short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.4.1: https://cran.r-project.org/\nDownload and install RStudio: https://posit.co/download/rstudio-desktop/\nInstall Quarto 1.5.56 or higher: https://quarto.org/docs/get-started/\nInstall Git: https://happygitwithr.com/install-git.html\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here.",
     "crumbs": [
-      "Computing",
-      "Access"
+      "Course information",
+      "FAQ"
     ]
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#announcements",
+    "href": "slides/01-meet-the-toolkit-slides.html#announcements",
+    "title": "Meet the toolkit",
+    "section": "Announcements",
+    "text": "Announcements\n\nIf you have not yet completed the Getting to know you survey, please do so asap!\nIf you have not yet accepted the invite to join the course GitHub Organization (I’m looking at 25 of you as of this morning!), please do so asap!"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#additional-resource",
+    "href": "slides/01-meet-the-toolkit-slides.html#additional-resource",
+    "title": "Meet the toolkit",
+    "section": "Additional resource",
+    "text": "Additional resource\n\nPeer tutoring\nMore info at https://sta199-f24.github.io/course-support.html#peer-tutoring"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#five-tips-for-success",
+    "href": "slides/01-meet-the-toolkit-slides.html#five-tips-for-success",
+    "title": "Meet the toolkit",
+    "section": "Five tips for success",
+    "text": "Five tips for success\n\nComplete all the preparation work before class.\nAsk questions.\nDo the readings.\nDo the lab.\nDon’t procrastinate – at least on a weekly basis!"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#course-toolkit-1",
+    "href": "slides/01-meet-the-toolkit-slides.html#course-toolkit-1",
+    "title": "Meet the toolkit",
+    "section": "Course toolkit",
+    "text": "Course toolkit\n\n\nCourse operation\n\nMaterials: sta199-f24.github.io\nSubmission: Gradescope\nDiscussion: Ed Discussion\nGradebook: Canvas\n\n\nDoing data science\n\nComputing:\n\nR\nRStudio\ntidyverse\nQuarto\n\nVersion control and collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#learning-goals",
+    "href": "slides/01-meet-the-toolkit-slides.html#learning-goals",
+    "title": "Meet the toolkit",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the course, you will be able to…\n\n\ngain insight from data\ngain insight from data, reproducibly\ngain insight from data, reproducibly, using modern programming tools and techniques\ngain insight from data, reproducibly and collaboratively, using modern programming tools and techniques\ngain insight from data, reproducibly (with literate programming and version control) and collaboratively, using modern programming tools and techniques"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#reproducibility-checklist",
+    "href": "slides/01-meet-the-toolkit-slides.html#reproducibility-checklist",
+    "title": "Meet the toolkit",
+    "section": "Reproducibility checklist",
+    "text": "Reproducibility checklist\n\nWhat does it mean for a data analysis to be “reproducible”?\n\n\nShort-term goals:\n\nAre the tables and figures reproducible from the code and data?\nDoes the code actually do what you think it does?\nIn addition to what was done, is it clear why it was done?\n\n\n\nLong-term goals:\n\nCan the code be used for other data?\nCan you extend the code to do other things?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#toolkit-for-reproducibility",
+    "href": "slides/01-meet-the-toolkit-slides.html#toolkit-for-reproducibility",
+    "title": "Meet the toolkit",
+    "section": "Toolkit for reproducibility",
+    "text": "Toolkit for reproducibility\n\nScriptability \\(\\rightarrow\\) R\nLiterate programming (code, narrative, output in one place) \\(\\rightarrow\\) Quarto\nVersion control \\(\\rightarrow\\) Git / GitHub"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#r-and-rstudio-1",
+    "href": "slides/01-meet-the-toolkit-slides.html#r-and-rstudio-1",
+    "title": "Meet the toolkit",
+    "section": "R and RStudio",
+    "text": "R and RStudio\n\n\n\n\n\n\n\n\nR is an open-source statistical programming language\nR is also an environment for statistical computing and graphics\nIt’s easily extensible with packages\n\n\n\n\nRStudio is a convenient interface for R called an IDE (integrated development environment), e.g. “I write R code in the RStudio IDE”\nRStudio is not a requirement for programming with R, but it’s very commonly used by R programmers and data scientists"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#r-vs.-rstudio",
+    "href": "slides/01-meet-the-toolkit-slides.html#r-vs.-rstudio",
+    "title": "Meet the toolkit",
+    "section": "R vs. RStudio",
+    "text": "R vs. RStudio\n\n\n\n\n\n\n\nSource: Modern Dive."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#r-packages",
+    "href": "slides/01-meet-the-toolkit-slides.html#r-packages",
+    "title": "Meet the toolkit",
+    "section": "R packages",
+    "text": "R packages\n\n\nPackages: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data1\nAs of 27 August 2024, there are 21,168 R packages available on CRAN (the Comprehensive R Archive Network)2\nWe’re going to work with a small (but important) subset of these!\n\n\n\n\n1 Wickham and Bryan, R Packages.\n2 CRAN contributed packages."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#tour-r-rstudio",
+    "href": "slides/01-meet-the-toolkit-slides.html#tour-r-rstudio",
+    "title": "Meet the toolkit",
+    "section": "Tour: R + RStudio",
+    "text": "Tour: R + RStudio\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\nOption 2:\nGo to your container and launch RStudio."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#tour-recap-r-rstudio",
+    "href": "slides/01-meet-the-toolkit-slides.html#tour-recap-r-rstudio",
+    "title": "Meet the toolkit",
+    "section": "Tour recap: R + RStudio",
+    "text": "Tour recap: R + RStudio"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#packages",
+    "href": "slides/01-meet-the-toolkit-slides.html#packages",
+    "title": "Meet the toolkit",
+    "section": "Packages",
+    "text": "Packages\n\nInstalled with install.packages(), once per system:\n\n\ninstall.packages(\"palmerpenguins\")\n\n\n\n\n\n\n\nNote\n\n\nWe already pre-installed many of the package you’ll need for this course, so you might go the whole semester without needing to run install.packages()!\n\n\n\n\n\nLoaded with library(), once per session:\n\n\nlibrary(palmerpenguins)"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#packages-an-analogy",
+    "href": "slides/01-meet-the-toolkit-slides.html#packages-an-analogy",
+    "title": "Meet the toolkit",
+    "section": "Packages, an analogy",
+    "text": "Packages, an analogy\nIf data analysis was cooking…\n\n\nInstalling a package would be like buying ingredients from the store\nLoading a package would be like getting the ingredients out of your pantry and setting them on your counter top to be used"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#tidyverse",
+    "href": "slides/01-meet-the-toolkit-slides.html#tidyverse",
+    "title": "Meet the toolkit",
+    "section": "tidyverse",
+    "text": "tidyverse\n\naka the package you’ll hear about the most…\n\n\n\n\n\ntidyverse.org\n\nThe tidyverse is an opinionated collection of R packages designed for data science\nAll packages share an underlying philosophy and a common grammar"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#data-frames-and-variables",
+    "href": "slides/01-meet-the-toolkit-slides.html#data-frames-and-variables",
+    "title": "Meet the toolkit",
+    "section": "Data frames and variables",
+    "text": "Data frames and variables\n\nEach row of a data frame is an observation\n\n\n\nEach column of a data frame is a variable\n\n\n\n\nColumns (variables) in data frames can be accessed with $:\n\n\ndataframe$variable_name"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#penguins-data-frame",
+    "href": "slides/01-meet-the-toolkit-slides.html#penguins-data-frame",
+    "title": "Meet the toolkit",
+    "section": "penguins data frame",
+    "text": "penguins data frame"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#bill_length_mm",
+    "href": "slides/01-meet-the-toolkit-slides.html#bill_length_mm",
+    "title": "Meet the toolkit",
+    "section": "bill_length_mm",
+    "text": "bill_length_mm"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#flipper_length_mm",
+    "href": "slides/01-meet-the-toolkit-slides.html#flipper_length_mm",
+    "title": "Meet the toolkit",
+    "section": "flipper_length_mm",
+    "text": "flipper_length_mm\n\nFirst, run the code below and read the error. Then, fix the code to access the flipper_length_mm variable in the penguins data frame."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#functionargument",
+    "href": "slides/01-meet-the-toolkit-slides.html#functionargument",
+    "title": "Meet the toolkit",
+    "section": "function(argument)",
+    "text": "function(argument)\nFunctions are (most often) verbs, followed by what they will be applied to in parentheses:\n\ndo_this(to_this)\ndo_that(to_this, to_that, with_those)"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#trimmed-mean",
+    "href": "slides/01-meet-the-toolkit-slides.html#trimmed-mean",
+    "title": "Meet the toolkit",
+    "section": "trimmed mean()",
+    "text": "trimmed mean()"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#help",
+    "href": "slides/01-meet-the-toolkit-slides.html#help",
+    "title": "Meet the toolkit",
+    "section": "Help",
+    "text": "Help\nObject documentation can be accessed with ?\n\n\n\n?mean\n\n\nVideo"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#a-pause-common-birthdays",
+    "href": "slides/01-meet-the-toolkit-slides.html#a-pause-common-birthdays",
+    "title": "Meet the toolkit",
+    "section": "A pause – Common birthdays ",
+    "text": "A pause – Common birthdays \n\nI cleaned up your data!\n\n\n\nNo thanks to the people who responded “yo” or “The fifth day in the month of October!!” or “may twentieth”! 🤣\n\n\n\n\n\nDates with more than one student with a birthday:\n\n\n\n# A tibble: 65 × 2\n   birthday     n\n   &lt;chr&gt;    &lt;int&gt;\n 1 04-05        4\n 2 04-15        4\n 3 05-20        4\n 4 06-18        4\n 5 10-25        4\n 6 01-24        3\n 7 03-15        3\n 8 03-29        3\n 9 04-19        3\n10 04-22        3\n11 05-15        3\n12 06-25        3\n13 07-26        3\n14 08-29        3\n15 09-11        3\n16 11-19        3\n17 12-20        3\n18 01-07        2\n19 01-08        2\n20 01-13        2\n21 01-20        2\n22 01-21        2\n23 01-23        2\n24 01-25        2\n25 01-27        2\n26 02-07        2\n27 02-18        2\n28 03-07        2\n29 03-14        2\n30 03-16        2\n31 03-22        2\n32 03-23        2\n33 03-28        2\n34 03-30        2\n35 04-06        2\n36 04-12        2\n37 05-01        2\n38 05-05        2\n39 05-11        2\n40 05-12        2\n41 05-28        2\n42 05-30        2\n43 06-02        2\n44 06-04        2\n45 06-28        2\n46 07-22        2\n47 08-09        2\n48 08-16        2\n49 09-04        2\n50 09-15        2\n51 09-17        2\n52 09-19        2\n53 09-28        2\n54 09-30        2\n55 10-12        2\n56 10-14        2\n57 10-28        2\n58 11-03        2\n59 11-06        2\n60 11-07        2\n61 11-14        2\n62 11-16        2\n63 11-17        2\n64 11-21        2\n65 12-03        2"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#git-and-github",
+    "href": "slides/01-meet-the-toolkit-slides.html#git-and-github",
+    "title": "Meet the toolkit",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\n\n\n\n\n\n\n\n\nGit is a version control system – like “Track Changes” features from Microsoft Word, on steroids\nIt’s not the only version control system, but it’s a very popular one\n\n\n\n\n\n\n\n\nGitHub is the home for your Git-based projects on the internet – like DropBox but much, much better\nWe will use GitHub as a platform for web hosting and collaboration (and as our course management system!)"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#versioning---done-badly",
+    "href": "slides/01-meet-the-toolkit-slides.html#versioning---done-badly",
+    "title": "Meet the toolkit",
+    "section": "Versioning - done badly",
+    "text": "Versioning - done badly"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#versioning---done-better",
+    "href": "slides/01-meet-the-toolkit-slides.html#versioning---done-better",
+    "title": "Meet the toolkit",
+    "section": "Versioning - done better",
+    "text": "Versioning - done better"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#versioning---done-even-better",
+    "href": "slides/01-meet-the-toolkit-slides.html#versioning---done-even-better",
+    "title": "Meet the toolkit",
+    "section": "Versioning - done even better",
+    "text": "Versioning - done even better\n\nwith human readable messages"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#how-will-we-use-git-and-github",
+    "href": "slides/01-meet-the-toolkit-slides.html#how-will-we-use-git-and-github",
+    "title": "Meet the toolkit",
+    "section": "How will we use Git and GitHub?",
+    "text": "How will we use Git and GitHub?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#how-will-we-use-git-and-github-1",
+    "href": "slides/01-meet-the-toolkit-slides.html#how-will-we-use-git-and-github-1",
+    "title": "Meet the toolkit",
+    "section": "How will we use Git and GitHub?",
+    "text": "How will we use Git and GitHub?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#how-will-we-use-git-and-github-2",
+    "href": "slides/01-meet-the-toolkit-slides.html#how-will-we-use-git-and-github-2",
+    "title": "Meet the toolkit",
+    "section": "How will we use Git and GitHub?",
+    "text": "How will we use Git and GitHub?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#how-will-we-use-git-and-github-3",
+    "href": "slides/01-meet-the-toolkit-slides.html#how-will-we-use-git-and-github-3",
+    "title": "Meet the toolkit",
+    "section": "How will we use Git and GitHub?",
+    "text": "How will we use Git and GitHub?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#git-and-github-tips",
+    "href": "slides/01-meet-the-toolkit-slides.html#git-and-github-tips",
+    "title": "Meet the toolkit",
+    "section": "Git and GitHub tips",
+    "text": "Git and GitHub tips\n\n\nThere are millions of git commands – ok, that’s an exaggeration, but there are a lot of them – and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.\nWe will be doing Git things and interfacing with GitHub through RStudio, but if you google for help you might come across methods for doing these things in the command line – skip that and move on to the next resource unless you feel comfortable trying it out.\nThere is a great resource for working with git and R: happygitwithr.com. Some of the content in there is beyond the scope of this course, but it’s a good place to look for help."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#tour-git-github",
+    "href": "slides/01-meet-the-toolkit-slides.html#tour-git-github",
+    "title": "Meet the toolkit",
+    "section": "Tour: Git + GitHub",
+    "text": "Tour: Git + GitHub\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\nYou’ll need to stick to this option if you haven’t yet accepted your GitHub invite and don’t have a repo created for you.\n\n\n\n\n\nOption 2:\nGo to the course GitHub organization and clone ae-your_github_name repo to your container."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#tour-recap-git-github",
+    "href": "slides/01-meet-the-toolkit-slides.html#tour-recap-git-github",
+    "title": "Meet the toolkit",
+    "section": "Tour recap: Git + GitHub",
+    "text": "Tour recap: Git + GitHub\n\nFind your application repo, that will always be named using the naming convention assignment_title-your_github_name\nClick on the green “Code” button, make sure SSH is selected, copy the repo URL"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#tour-recap-git-github-1",
+    "href": "slides/01-meet-the-toolkit-slides.html#tour-recap-git-github-1",
+    "title": "Meet the toolkit",
+    "section": "Tour recap: Git + GitHub",
+    "text": "Tour recap: Git + GitHub\n\nIn RStudio, File &gt; New Project &gt; From Version Control &gt; Git\nPaste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project\nFor one time only, type yes in the pop-up dialogue\n\n\n\nVideo"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#what-could-have-gone-wrong",
+    "href": "slides/01-meet-the-toolkit-slides.html#what-could-have-gone-wrong",
+    "title": "Meet the toolkit",
+    "section": "What could have gone wrong?",
+    "text": "What could have gone wrong?\n\nNever received GitHub invite \\(\\rightarrow\\) Fill out “Getting to know you survey\nNever accepted GitHub invite \\(\\rightarrow\\) Look for it in your email and accept it\nCloning repo fails \\(\\rightarrow\\) Review/redo Lab 0 steps for setting up SSH key\nStill no luck? Come by my office today (Thursday, 8/29) between 4-5pm or post on Ed for help"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#quarto-1",
+    "href": "slides/01-meet-the-toolkit-slides.html#quarto-1",
+    "title": "Meet the toolkit",
+    "section": "Quarto",
+    "text": "Quarto\n\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in chunks narrative goes outside of chunks\nA visual editor for a familiar / Google docs-like editing experience"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#tour-quarto",
+    "href": "slides/01-meet-the-toolkit-slides.html#tour-quarto",
+    "title": "Meet the toolkit",
+    "section": "Tour: Quarto",
+    "text": "Tour: Quarto\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\nIf you chose (or had to choose) this option for the previous tour, or if you couldn’t clone your repo for any reason, you’ll need to stick to this option.\n\n\n\n\n\nOption 2:\nGo to RStudio and open the document ae-01-meet-the-penguins.qmd."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#tour-recap-quarto",
+    "href": "slides/01-meet-the-toolkit-slides.html#tour-recap-quarto",
+    "title": "Meet the toolkit",
+    "section": "Tour recap: Quarto",
+    "text": "Tour recap: Quarto"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#tour-recap-git-github-2",
+    "href": "slides/01-meet-the-toolkit-slides.html#tour-recap-git-github-2",
+    "title": "Meet the toolkit",
+    "section": "Tour recap: Git + GitHub",
+    "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#how-will-we-use-quarto",
+    "href": "slides/01-meet-the-toolkit-slides.html#how-will-we-use-quarto",
+    "title": "Meet the toolkit",
+    "section": "How will we use Quarto?",
+    "text": "How will we use Quarto?\n\nEvery application exercise, lab, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#whats-with-all-the-hexes",
+    "href": "slides/01-meet-the-toolkit-slides.html#whats-with-all-the-hexes",
+    "title": "Meet the toolkit",
+    "section": "What’s with all the hexes?",
+    "text": "What’s with all the hexes?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit-slides.html#we-have-hexes-too",
+    "href": "slides/01-meet-the-toolkit-slides.html#we-have-hexes-too",
+    "title": "Meet the toolkit",
+    "section": "We have hexes too!",
+    "text": "We have hexes too!\n\nGrab one before you leave!\n\n\n\n\n\n\n\n\n🔗 sta199-f24.github.io"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#announcements",
+    "href": "slides/01-meet-the-toolkit.html#announcements",
+    "title": "Meet the toolkit",
+    "section": "Announcements",
+    "text": "Announcements\n\nIf you have not yet completed the Getting to know you survey, please do so asap!\nIf you have not yet accepted the invite to join the course GitHub Organization (I’m looking at 25 of you as of this morning!), please do so asap!"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#additional-resource",
+    "href": "slides/01-meet-the-toolkit.html#additional-resource",
+    "title": "Meet the toolkit",
+    "section": "Additional resource",
+    "text": "Additional resource\n\nPeer tutoring\nMore info at https://sta199-f24.github.io/course-support.html#peer-tutoring"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#five-tips-for-success",
+    "href": "slides/01-meet-the-toolkit.html#five-tips-for-success",
+    "title": "Meet the toolkit",
+    "section": "Five tips for success",
+    "text": "Five tips for success\n\nComplete all the preparation work before class.\nAsk questions.\nDo the readings.\nDo the lab.\nDon’t procrastinate – at least on a weekly basis!"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#course-toolkit-1",
+    "href": "slides/01-meet-the-toolkit.html#course-toolkit-1",
+    "title": "Meet the toolkit",
+    "section": "Course toolkit",
+    "text": "Course toolkit\n\n\nCourse operation\n\nMaterials: sta199-f24.github.io\nSubmission: Gradescope\nDiscussion: Ed Discussion\nGradebook: Canvas\n\n\nDoing data science\n\nComputing:\n\nR\nRStudio\ntidyverse\nQuarto\n\nVersion control and collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#learning-goals",
+    "href": "slides/01-meet-the-toolkit.html#learning-goals",
+    "title": "Meet the toolkit",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the course, you will be able to…\n\n\ngain insight from data\ngain insight from data, reproducibly\ngain insight from data, reproducibly, using modern programming tools and techniques\ngain insight from data, reproducibly and collaboratively, using modern programming tools and techniques\ngain insight from data, reproducibly (with literate programming and version control) and collaboratively, using modern programming tools and techniques"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#reproducibility-checklist",
+    "href": "slides/01-meet-the-toolkit.html#reproducibility-checklist",
+    "title": "Meet the toolkit",
+    "section": "Reproducibility checklist",
+    "text": "Reproducibility checklist\n\nWhat does it mean for a data analysis to be “reproducible”?\n\n. . .\nShort-term goals:\n\nAre the tables and figures reproducible from the code and data?\nDoes the code actually do what you think it does?\nIn addition to what was done, is it clear why it was done?\n\n. . .\nLong-term goals:\n\nCan the code be used for other data?\nCan you extend the code to do other things?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#toolkit-for-reproducibility",
+    "href": "slides/01-meet-the-toolkit.html#toolkit-for-reproducibility",
+    "title": "Meet the toolkit",
+    "section": "Toolkit for reproducibility",
+    "text": "Toolkit for reproducibility\n\nScriptability \\(\\rightarrow\\) R\nLiterate programming (code, narrative, output in one place) \\(\\rightarrow\\) Quarto\nVersion control \\(\\rightarrow\\) Git / GitHub"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#r-and-rstudio-1",
+    "href": "slides/01-meet-the-toolkit.html#r-and-rstudio-1",
+    "title": "Meet the toolkit",
+    "section": "R and RStudio",
+    "text": "R and RStudio\n\n\n\n\n\n\n\n\nR is an open-source statistical programming language\nR is also an environment for statistical computing and graphics\nIt’s easily extensible with packages\n\n\n\n\nRStudio is a convenient interface for R called an IDE (integrated development environment), e.g. “I write R code in the RStudio IDE”\nRStudio is not a requirement for programming with R, but it’s very commonly used by R programmers and data scientists"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#r-vs.-rstudio",
+    "href": "slides/01-meet-the-toolkit.html#r-vs.-rstudio",
+    "title": "Meet the toolkit",
+    "section": "R vs. RStudio",
+    "text": "R vs. RStudio\n\n\n\n\n\n\n\nSource: Modern Dive."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#r-packages",
+    "href": "slides/01-meet-the-toolkit.html#r-packages",
+    "title": "Meet the toolkit",
+    "section": "R packages",
+    "text": "R packages\n\n\nPackages: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data1\nAs of 27 August 2024, there are 21,168 R packages available on CRAN (the Comprehensive R Archive Network)2\nWe’re going to work with a small (but important) subset of these!\n\n\n\n\n1 Wickham and Bryan, R Packages.\n2 CRAN contributed packages."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#tour-r-rstudio",
+    "href": "slides/01-meet-the-toolkit.html#tour-r-rstudio",
+    "title": "Meet the toolkit",
+    "section": "Tour: R + RStudio",
+    "text": "Tour: R + RStudio\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\nOption 2:\nGo to your container and launch RStudio."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#tour-recap-r-rstudio",
+    "href": "slides/01-meet-the-toolkit.html#tour-recap-r-rstudio",
+    "title": "Meet the toolkit",
+    "section": "Tour recap: R + RStudio",
+    "text": "Tour recap: R + RStudio"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#packages",
+    "href": "slides/01-meet-the-toolkit.html#packages",
+    "title": "Meet the toolkit",
+    "section": "Packages",
+    "text": "Packages\n\nInstalled with install.packages(), once per system:\n\n\ninstall.packages(\"palmerpenguins\")\n\n\n\n\n\n\n\nNote\n\n\n\nWe already pre-installed many of the package you’ll need for this course, so you might go the whole semester without needing to run install.packages()!\n\n\n. . .\n\nLoaded with library(), once per session:\n\n\nlibrary(palmerpenguins)"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#packages-an-analogy",
+    "href": "slides/01-meet-the-toolkit.html#packages-an-analogy",
+    "title": "Meet the toolkit",
+    "section": "Packages, an analogy",
+    "text": "Packages, an analogy\nIf data analysis was cooking…\n\n\nInstalling a package would be like buying ingredients from the store\nLoading a package would be like getting the ingredients out of your pantry and setting them on your counter top to be used"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#tidyverse",
+    "href": "slides/01-meet-the-toolkit.html#tidyverse",
+    "title": "Meet the toolkit",
+    "section": "tidyverse",
+    "text": "tidyverse\n\naka the package you’ll hear about the most…\n\n\n\n\n\ntidyverse.org\n\nThe tidyverse is an opinionated collection of R packages designed for data science\nAll packages share an underlying philosophy and a common grammar"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#data-frames-and-variables",
+    "href": "slides/01-meet-the-toolkit.html#data-frames-and-variables",
+    "title": "Meet the toolkit",
+    "section": "Data frames and variables",
+    "text": "Data frames and variables\n\nEach row of a data frame is an observation\n\n. . .\n\nEach column of a data frame is a variable\n\n. . .\n\nColumns (variables) in data frames can be accessed with $:\n\n\ndataframe$variable_name"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#penguins-data-frame",
+    "href": "slides/01-meet-the-toolkit.html#penguins-data-frame",
+    "title": "Meet the toolkit",
+    "section": "penguins data frame",
+    "text": "penguins data frame"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#bill_length_mm",
+    "href": "slides/01-meet-the-toolkit.html#bill_length_mm",
+    "title": "Meet the toolkit",
+    "section": "bill_length_mm",
+    "text": "bill_length_mm"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#flipper_length_mm",
+    "href": "slides/01-meet-the-toolkit.html#flipper_length_mm",
+    "title": "Meet the toolkit",
+    "section": "flipper_length_mm",
+    "text": "flipper_length_mm\n\nFirst, run the code below and read the error. Then, fix the code to access the flipper_length_mm variable in the penguins data frame."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#functionargument",
+    "href": "slides/01-meet-the-toolkit.html#functionargument",
+    "title": "Meet the toolkit",
+    "section": "function(argument)",
+    "text": "function(argument)\nFunctions are (most often) verbs, followed by what they will be applied to in parentheses:\n\ndo_this(to_this)\ndo_that(to_this, to_that, with_those)"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#trimmed-mean",
+    "href": "slides/01-meet-the-toolkit.html#trimmed-mean",
+    "title": "Meet the toolkit",
+    "section": "trimmed mean()",
+    "text": "trimmed mean()"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#help",
+    "href": "slides/01-meet-the-toolkit.html#help",
+    "title": "Meet the toolkit",
+    "section": "Help",
+    "text": "Help\nObject documentation can be accessed with ?\n\n\n\n?mean\n\n\nVideo"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#a-pause-common-birthdays",
+    "href": "slides/01-meet-the-toolkit.html#a-pause-common-birthdays",
+    "title": "Meet the toolkit",
+    "section": "A pause – Common birthdays ",
+    "text": "A pause – Common birthdays \n\nI cleaned up your data!\n\n. . .\n\nNo thanks to the people who responded “yo” or “The fifth day in the month of October!!” or “may twentieth”! 🤣\n\n. . .\n\n\nDates with more than one student with a birthday:\n\n\n\n# A tibble: 65 × 2\n   birthday     n\n   &lt;chr&gt;    &lt;int&gt;\n 1 04-05        4\n 2 04-15        4\n 3 05-20        4\n 4 06-18        4\n 5 10-25        4\n 6 01-24        3\n 7 03-15        3\n 8 03-29        3\n 9 04-19        3\n10 04-22        3\n11 05-15        3\n12 06-25        3\n13 07-26        3\n14 08-29        3\n15 09-11        3\n16 11-19        3\n17 12-20        3\n18 01-07        2\n19 01-08        2\n20 01-13        2\n21 01-20        2\n22 01-21        2\n23 01-23        2\n24 01-25        2\n25 01-27        2\n26 02-07        2\n27 02-18        2\n28 03-07        2\n29 03-14        2\n30 03-16        2\n31 03-22        2\n32 03-23        2\n33 03-28        2\n34 03-30        2\n35 04-06        2\n36 04-12        2\n37 05-01        2\n38 05-05        2\n39 05-11        2\n40 05-12        2\n41 05-28        2\n42 05-30        2\n43 06-02        2\n44 06-04        2\n45 06-28        2\n46 07-22        2\n47 08-09        2\n48 08-16        2\n49 09-04        2\n50 09-15        2\n51 09-17        2\n52 09-19        2\n53 09-28        2\n54 09-30        2\n55 10-12        2\n56 10-14        2\n57 10-28        2\n58 11-03        2\n59 11-06        2\n60 11-07        2\n61 11-14        2\n62 11-16        2\n63 11-17        2\n64 11-21        2\n65 12-03        2"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#git-and-github",
+    "href": "slides/01-meet-the-toolkit.html#git-and-github",
+    "title": "Meet the toolkit",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\n\n\n\n\n\n\n\n\nGit is a version control system – like “Track Changes” features from Microsoft Word, on steroids\nIt’s not the only version control system, but it’s a very popular one\n\n\n\n\n\n\n\n\nGitHub is the home for your Git-based projects on the internet – like DropBox but much, much better\nWe will use GitHub as a platform for web hosting and collaboration (and as our course management system!)"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#versioning---done-badly",
+    "href": "slides/01-meet-the-toolkit.html#versioning---done-badly",
+    "title": "Meet the toolkit",
+    "section": "Versioning - done badly",
+    "text": "Versioning - done badly"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#versioning---done-better",
+    "href": "slides/01-meet-the-toolkit.html#versioning---done-better",
+    "title": "Meet the toolkit",
+    "section": "Versioning - done better",
+    "text": "Versioning - done better"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#versioning---done-even-better",
+    "href": "slides/01-meet-the-toolkit.html#versioning---done-even-better",
+    "title": "Meet the toolkit",
+    "section": "Versioning - done even better",
+    "text": "Versioning - done even better\n\nwith human readable messages"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#how-will-we-use-git-and-github",
+    "href": "slides/01-meet-the-toolkit.html#how-will-we-use-git-and-github",
+    "title": "Meet the toolkit",
+    "section": "How will we use Git and GitHub?",
+    "text": "How will we use Git and GitHub?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#how-will-we-use-git-and-github-1",
+    "href": "slides/01-meet-the-toolkit.html#how-will-we-use-git-and-github-1",
+    "title": "Meet the toolkit",
+    "section": "How will we use Git and GitHub?",
+    "text": "How will we use Git and GitHub?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#how-will-we-use-git-and-github-2",
+    "href": "slides/01-meet-the-toolkit.html#how-will-we-use-git-and-github-2",
+    "title": "Meet the toolkit",
+    "section": "How will we use Git and GitHub?",
+    "text": "How will we use Git and GitHub?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#how-will-we-use-git-and-github-3",
+    "href": "slides/01-meet-the-toolkit.html#how-will-we-use-git-and-github-3",
+    "title": "Meet the toolkit",
+    "section": "How will we use Git and GitHub?",
+    "text": "How will we use Git and GitHub?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#git-and-github-tips",
+    "href": "slides/01-meet-the-toolkit.html#git-and-github-tips",
+    "title": "Meet the toolkit",
+    "section": "Git and GitHub tips",
+    "text": "Git and GitHub tips\n\n\nThere are millions of git commands – ok, that’s an exaggeration, but there are a lot of them – and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.\nWe will be doing Git things and interfacing with GitHub through RStudio, but if you google for help you might come across methods for doing these things in the command line – skip that and move on to the next resource unless you feel comfortable trying it out.\nThere is a great resource for working with git and R: happygitwithr.com. Some of the content in there is beyond the scope of this course, but it’s a good place to look for help."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#tour-git-github",
+    "href": "slides/01-meet-the-toolkit.html#tour-git-github",
+    "title": "Meet the toolkit",
+    "section": "Tour: Git + GitHub",
+    "text": "Tour: Git + GitHub\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\n\nYou’ll need to stick to this option if you haven’t yet accepted your GitHub invite and don’t have a repo created for you.\n\n\n\n\nOption 2:\nGo to the course GitHub organization and clone ae-your_github_name repo to your container."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#tour-recap-git-github",
+    "href": "slides/01-meet-the-toolkit.html#tour-recap-git-github",
+    "title": "Meet the toolkit",
+    "section": "Tour recap: Git + GitHub",
+    "text": "Tour recap: Git + GitHub\n\nFind your application repo, that will always be named using the naming convention assignment_title-your_github_name\nClick on the green “Code” button, make sure SSH is selected, copy the repo URL"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#tour-recap-git-github-1",
+    "href": "slides/01-meet-the-toolkit.html#tour-recap-git-github-1",
+    "title": "Meet the toolkit",
+    "section": "Tour recap: Git + GitHub",
+    "text": "Tour recap: Git + GitHub\n\nIn RStudio, File &gt; New Project &gt; From Version Control &gt; Git\nPaste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project\nFor one time only, type yes in the pop-up dialogue\n\n\n\nVideo"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#what-could-have-gone-wrong",
+    "href": "slides/01-meet-the-toolkit.html#what-could-have-gone-wrong",
+    "title": "Meet the toolkit",
+    "section": "What could have gone wrong?",
+    "text": "What could have gone wrong?\n\nNever received GitHub invite \\(\\rightarrow\\) Fill out “Getting to know you survey\nNever accepted GitHub invite \\(\\rightarrow\\) Look for it in your email and accept it\nCloning repo fails \\(\\rightarrow\\) Review/redo Lab 0 steps for setting up SSH key\nStill no luck? Come by my office today (Thursday, 8/29) between 4-5pm or post on Ed for help"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#quarto-1",
+    "href": "slides/01-meet-the-toolkit.html#quarto-1",
+    "title": "Meet the toolkit",
+    "section": "Quarto",
+    "text": "Quarto\n\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in chunks narrative goes outside of chunks\nA visual editor for a familiar / Google docs-like editing experience"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#tour-quarto",
+    "href": "slides/01-meet-the-toolkit.html#tour-quarto",
+    "title": "Meet the toolkit",
+    "section": "Tour: Quarto",
+    "text": "Tour: Quarto\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\n\nIf you chose (or had to choose) this option for the previous tour, or if you couldn’t clone your repo for any reason, you’ll need to stick to this option.\n\n\n\n\nOption 2:\nGo to RStudio and open the document ae-01-meet-the-penguins.qmd."
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#tour-recap-quarto",
+    "href": "slides/01-meet-the-toolkit.html#tour-recap-quarto",
+    "title": "Meet the toolkit",
+    "section": "Tour recap: Quarto",
+    "text": "Tour recap: Quarto"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#tour-recap-git-github-2",
+    "href": "slides/01-meet-the-toolkit.html#tour-recap-git-github-2",
+    "title": "Meet the toolkit",
+    "section": "Tour recap: Git + GitHub",
+    "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#how-will-we-use-quarto",
+    "href": "slides/01-meet-the-toolkit.html#how-will-we-use-quarto",
+    "title": "Meet the toolkit",
+    "section": "How will we use Quarto?",
+    "text": "How will we use Quarto?\n\nEvery application exercise, lab, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#whats-with-all-the-hexes",
+    "href": "slides/01-meet-the-toolkit.html#whats-with-all-the-hexes",
+    "title": "Meet the toolkit",
+    "section": "What’s with all the hexes?",
+    "text": "What’s with all the hexes?"
+  },
+  {
+    "objectID": "slides/01-meet-the-toolkit.html#we-have-hexes-too",
+    "href": "slides/01-meet-the-toolkit.html#we-have-hexes-too",
+    "title": "Meet the toolkit",
+    "section": "We have hexes too!",
+    "text": "We have hexes too!\n\nGrab one before you leave!"
   },
   {
     "objectID": "course-syllabus.html",
@@ -890,104 +1527,76 @@
     "text": "Midori says…\n\n\n\n\n\n\n\n\n\n🔗 sta199-f24.github.io"
   },
   {
-    "objectID": "course-faq.html",
-    "href": "course-faq.html",
-    "title": "FAQ",
+    "objectID": "computing-access.html",
+    "href": "computing-access.html",
+    "title": "Computing access",
     "section": "",
-    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).",
+    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA198-199 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA198-199 under My reservations to access the RStudio instance you’ll use for the course.",
+    "crumbs": [
+      "Computing",
+      "Access"
+    ]
+  },
+  {
+    "objectID": "computing-cheatsheets.html",
+    "href": "computing-cheatsheets.html",
+    "title": "R cheatsheets",
+    "section": "",
+    "text": "The following cheatsheets come from https://www.rstudio.com/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
+    "crumbs": [
+      "Computing",
+      "Cheatsheets"
+    ]
+  },
+  {
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "STA 199Fall 2024",
+    "section": "",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
     "crumbs": [
       "Course information",
-      "FAQ"
+      "Overview"
     ]
   },
   {
-    "objectID": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
-    "href": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
-    "title": "FAQ",
+    "objectID": "course-overview.html#overview",
+    "href": "course-overview.html#overview",
+    "title": "STA 199Fall 2024",
     "section": "",
-    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
     "crumbs": [
       "Course information",
-      "FAQ"
+      "Overview"
     ]
   },
   {
-    "objectID": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
-    "href": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
-    "title": "FAQ",
-    "section": "How can I submit my assignment to Gradescope?",
-    "text": "How can I submit my assignment to Gradescope?\nThe instructions for submitting your assignment to Gradescope can be found here. In a nutshell, you’ll upload your PDF and them mark the page(s) where each question can be found. It’s OK if a question spans multiple pages, just mark them all. It’s also OK if a page includes multiple questions.",
+    "objectID": "course-overview.html#meetings",
+    "href": "course-overview.html#meetings",
+    "title": "STA 199Fall 2024",
+    "section": "Meetings",
+    "text": "Meetings\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLecture\nBiological Sciences 111\nTue & Thur 11:45 am - 1:00 pm\n\n\nLab 01\nPerkins LINK 087 (Classroom 3)\nMon 8:30 - 9:45 am\n\n\nLab 02\nPerkins LINK 087 (Classroom 3)\nMon 10:05 - 11:20 am\n\n\nLab 03\nPerkins LINK 071 (Classroom 5)\nMon 10:05 - 11:20 am\n\n\nLab 04\nPerkins LINK 087 (Classroom 3)\nMon 11:45 am - 1:00 pm\n\n\nLab 05\nPerkins LINK 071 (Classroom 5)\nMon 11:45 am - 1:00 pm\n\n\nLab 06\nPerkins LINK 087 (Classroom 3)\nMon 1:25 - 2:40 pm\n\n\nLab 07\nPerkins LINK 071 (Classroom 5)\nMon 1:25 - 2:40 pm\n\n\nLab 08\nPerkins LINK 087 (Classroom 3)\nMon 3:05 - 4:20 pm\n\n\nLab 09\nOld Chemistry 201\nMon 3:05 - 4:20 pm\n\n\nLab 10\nPerkins LINK 087 (Classroom 3)\nMon 4:40 - 5:55 pm",
     "crumbs": [
       "Course information",
-      "FAQ"
+      "Overview"
     ]
   },
   {
-    "objectID": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
-    "href": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
-    "title": "FAQ",
-    "section": "Can I use a local install of R and RStudio instead of using the RStudio containers?",
-    "text": "Can I use a local install of R and RStudio instead of using the RStudio containers?\nThe short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.4.1: https://cran.r-project.org/\nDownload and install RStudio: https://posit.co/download/rstudio-desktop/\nInstall Quarto 1.5.56 or higher: https://quarto.org/docs/get-started/\nInstall Git: https://happygitwithr.com/install-git.html\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here.",
+    "objectID": "exam-review.html",
+    "href": "exam-review.html",
+    "title": "Exam reviews",
+    "section": "",
+    "text": "Title\n\n\nSubtitle\n\n\n\n\n\n\nFinal review\n\n\nQuestions\n\n\n\n\nFinal review\n\n\nSuggested answers\n\n\n\n\nMidterm Review\n\n\nQuestions\n\n\n\n\nMidterm review\n\n\nSuggested answers\n\n\n\n\n\nNo matching items",
     "crumbs": [
-      "Course information",
-      "FAQ"
+      "Exam reviews"
     ]
   },
   {
-    "objectID": "ae.html",
-    "href": "ae.html",
-    "title": "Application exercises",
+    "objectID": "ae/ae-01-meet-the-penguins.html",
+    "href": "ae/ae-01-meet-the-penguins.html",
+    "title": "AE 01: Meet the penguins",
     "section": "",
-    "text": "All application exercises (AEs) are due by 2 pm on the day they’re covered in lab. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nNo.\n\n\nTitle\n\n\n\n\n\n\nAE 00\n\n\nUN Votes\n\n\n\n\n\nNo matching items\n\n\n\nMore AEs to be added as the semester progresses.",
-    "crumbs": [
-      "Application exercises"
-    ]
-  },
-  {
-    "objectID": "course-links.html",
-    "href": "course-links.html",
-    "title": "Useful links",
-    "section": "",
-    "text": "Course GitHub organization\n🔗 on GitHub\n\n\n\nRStudio containers\n🔗 on Duke Container Manager\n\n\n\nOffice hours\n🔗 on Google Sheets\n\n\n\nEd Discussion\n🔗 on Canvas\n\n\n\nGradescope\n🔗 on Canvas\n\n\n\nGradebook\n🔗 on Canvas\n\n\n\nTexbooks\n🔗 R for Data Science\n🔗 Introduction to Modern Statistics\n\n\n\nPackage documentation\n🔗 ggplot2: ggplot2.tidyverse.org\n🔗 dplyr: dplyr.tidyverse.org\n🔗 tidyr: tidyr.tidyverse.org\n🔗 forcats: forcats.tidyverse.org\n🔗 stringr: stringr.tidyverse.org\n🔗 lubridate: lubridate.tidyverse.org\n🔗 readr: readr.tidyverse.org\n🔗 readxl: readxl.tidyverse.org",
-    "crumbs": [
-      "Course information",
-      "Useful links"
-    ]
-  },
-  {
-    "objectID": "ae/ae-00-unvotes.html",
-    "href": "ae/ae-00-unvotes.html",
-    "title": "AE 00",
-    "section": "",
-    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
-  },
-  {
-    "objectID": "ae/ae-00-unvotes.html#introduction",
-    "href": "ae/ae-00-unvotes.html#introduction",
-    "title": "AE 00",
-    "section": "",
-    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
-  },
-  {
-    "objectID": "ae/ae-00-unvotes.html#un-voting-patterns",
-    "href": "ae/ae-00-unvotes.html#un-voting-patterns",
-    "title": "AE 00",
-    "section": "UN voting patterns",
-    "text": "UN voting patterns\nLet’s create a data visualisation that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.\n\n\n\n\n\n\n\n\n\nTask: Write your first piece of (R) code!\n\nModify the code cell above to change the plot to include a different country in place of Turkey. Note that the country name should be spelled and capitalized exactly the same way as it appears in the data. See the Appendix for a list of the countries in the data."
-  },
-  {
-    "objectID": "ae/ae-00-unvotes.html#references",
-    "href": "ae/ae-00-unvotes.html#references",
-    "title": "AE 00",
-    "section": "References",
-    "text": "References\n\nRobinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
-  },
-  {
-    "objectID": "ae/ae-00-unvotes.html#appendix",
-    "href": "ae/ae-00-unvotes.html#appendix",
-    "title": "AE 00",
-    "section": "Appendix",
-    "text": "Appendix\nBelow is a list of countries in the dataset:"
+    "text": "For this application exercise, we’ll use the tidyverse and palmerpenguins packages.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(palmerpenguins)\n\nThe dataset we will visualize is called penguins. Let’s glimpse() at it.\n\nYour turn: Replace #add code here with the code for “glimpse”ing at the data penguins data frame – glimpse(penguins). Render the document and view the output.\n\n\n# add code here\n\n\nDemo: First, replace the blank below with the number of rows in the penguins data frame based on the output of the chunk below. Then, replace it with “inline code” and render again.\n\n\nnrow(penguins)\n\n[1] 344\n\n\nThere are ___ penguins in the penguins data frame."
   },
   {
     "objectID": "lab/lab-0.html",

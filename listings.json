@@ -1,11 +1,9 @@
 [
   {
-    "listing": "/exam-review.html",
+    "listing": "/ae.html",
     "items": [
-      "/exam-review/final-review.html",
-      "/exam-review/final-review-A.html",
-      "/exam-review/midterm-review.html",
-      "/exam-review/midterm-review-A.html"
+      "/ae/ae-00-unvotes.html",
+      "/ae/ae-01-meet-the-penguins.html"
     ]
   },
   {
@@ -15,9 +13,12 @@
     ]
   },
   {
-    "listing": "/ae.html",
+    "listing": "/exam-review.html",
     "items": [
-      "/ae/ae-00-unvotes.html"
+      "/exam-review/final-review.html",
+      "/exam-review/final-review-A.html",
+      "/exam-review/midterm-review.html",
+      "/exam-review/midterm-review-A.html"
     ]
   },
   {
