@@ -36,7 +36,7 @@ You can access this tool on the course website toolbar -- just click on the life
 ### Peer tutoring
 
 MINT Peer Tutoring (Meaningful Interactive Tutoring) are small groups of 2-5 students in the same course who meet weekly with a Peer Tutor.
-This semester, Peer Tutor who will be leading MINT Peer Tutoring for STA 199 is Stanley Borden (mailto:stanley.borden\@duke.edu).
+This semester, Peer Tutor who will be leading MINT Peer Tutoring for STA 199 is Stanley Borden ([stanley.borden\@duke.edu](mailto:stanley.borden@duke.edu)).
 
 The peer tutoring groups are a resource focused on allowing students to receive additional support for questions they have on the course content while still being part of a community of fellow learners.
 Peer tutors communicate with students in advance of the meetings so that they can be responsive to student needs during the group meetings.
