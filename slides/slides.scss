@@ -34,6 +34,10 @@ details>summary {
   text-align: left;
 }
 
+.center-align {
+  text-align: center;
+}
+
 .small {
   font-size: 0.75em;
 }
@@ -60,6 +64,14 @@ details>summary {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   background: #c5764450;
+}
+
+.reveal .slide .task {
+  border-left: 3px solid #BCF4F5;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  background: #BCF4F550;
 }
 
 .reveal .slide .appex {

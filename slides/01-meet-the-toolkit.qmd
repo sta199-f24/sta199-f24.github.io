@@ -1,0 +1,608 @@
+---
+title: "Meet the toolkit"
+subtitle: "Lecture 1"
+date: "2024-08-29"
+format: 
+  live-revealjs: 
+    output-file: 01-meet-the-toolkit-slides.html
+webr:
+  cell-options:
+    autorun: false
+  packages:
+    - palmerpenguins
+    - tibble
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+<!-- end: webr fodder -->
+
+# Warm-up
+
+## Announcements
+
+-   If you have not yet completed the Getting to know you survey, please do so asap!
+
+-   If you have not yet accepted the invite to join the course GitHub Organization (I'm looking at 25 of you as of this morning!), please do so asap!
+
+## Additional resource
+
+-   Peer tutoring
+
+-   More info at <https://sta199-f24.github.io/course-support.html#peer-tutoring>
+
+## Five tips for success
+
+1.  Complete all the preparation work before class.
+
+2.  Ask questions.
+
+3.  Do the readings.
+
+4.  Do the lab.
+
+5.  Don’t procrastinate – at least on a weekly basis!
+
+# Course toolkit
+
+## Course toolkit {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Course operation**
+
+-   Materials: [sta199-f24.github.io](https://sta199-f24.github.io/)
+-   Submission: Gradescope
+-   Discussion: Ed Discussion
+-   Gradebook: Canvas
+:::
+
+::: {.column width="50%"}
+**Doing data science**
+
+-   Computing:
+    -   R
+    -   RStudio
+    -   tidyverse
+    -   Quarto
+-   Version control and collaboration:
+    -   Git
+    -   GitHub
+:::
+:::
+
+# Toolkit: Computing
+
+## Learning goals {.smaller}
+
+By the end of the course, you will be able to...
+
+::: incremental
+-   gain insight from data
+-   gain insight from data, **reproducibly**
+-   gain insight from data, reproducibly, **using modern programming tools and techniques**
+-   gain insight from data, reproducibly **and collaboratively**, using modern programming tools and techniques
+-   gain insight from data, reproducibly **(with literate programming and version control)** and collaboratively, using modern programming tools and techniques
+:::
+
+# Reproducible data analysis
+
+## Reproducibility checklist {.smaller}
+
+::: question
+What does it mean for a data analysis to be "reproducible"?
+:::
+
+. . .
+
+**Short-term goals:**
+
+-   Are the tables and figures reproducible from the code and data?
+-   Does the code actually do what you think it does?
+-   In addition to what was done, is it clear *why* it was done?
+
+. . .
+
+**Long-term goals:**
+
+-   Can the code be used for other data?
+-   Can you extend the code to do other things?
+
+## Toolkit for reproducibility
+
+-   Scriptability $\rightarrow$ R
+-   Literate programming (code, narrative, output in one place) $\rightarrow$ Quarto
+-   Version control $\rightarrow$ Git / GitHub
+
+# R and RStudio
+
+## R and RStudio {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/01/r-logo.png){fig-alt="R logo" fig-align="center"}
+
+-   R is an open-source statistical **programming language**
+-   R is also an environment for statistical computing and graphics
+-   It's easily extensible with *packages*
+:::
+
+::: {.column .fragment width="50%"}
+![](images/01/rstudio-logo.png){fig-alt="RStudio logo"}
+
+-   RStudio is a convenient interface for R called an **IDE** (integrated development environment), e.g. *"I write R code in the RStudio IDE"*
+-   RStudio is not a requirement for programming with R, but it's very commonly used by R programmers and data scientists
+:::
+:::
+
+## R vs. RStudio
+
+[![](images/01/r_vs_rstudio.png){fig-alt="On the left: a car engine. On the right: a car dashboard. The engine is labelled R. The dashboard is labelled RStudio." fig-align="center" width="1001"}](https://moderndive.com/1-getting-started.html)
+
+::: aside
+Source: [Modern Dive](https://moderndive.com/1-getting-started.html).
+:::
+
+## R packages {.smaller}
+
+::: incremental
+-   **Packages**: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data<sup>1</sup>
+
+-   As of 27 August 2024, there are 21,168 R packages available on **CRAN** (the Comprehensive R Archive Network)<sup>2</sup>
+
+-   We're going to work with a small (but important) subset of these!
+:::
+
+::: aside
+<sup>1</sup> Wickham and Bryan, [R Packages](https://r-pkgs.org/).
+
+<sup>2</sup> [CRAN contributed packages](https://cran.r-project.org/web/packages/).
+:::
+
+## Tour: R + RStudio {.smaller}
+
+::: columns
+::: {.column width="50%"}
+::: demo
+**Option 1:**
+
+Sit back and enjoy the show!
+:::
+:::
+
+::: {.column width="50%"}
+::: appex
+**Option 2:**
+
+Go to [your container](https://cmgr.oit.duke.edu/containers) and launch RStudio.
+:::
+:::
+:::
+
+## Tour recap: R + RStudio
+
+![](images/01/tour-r-rstudio.png)
+
+# A short list<br>(for now)<br>of R essentials
+
+## Packages {.smaller}
+
+-   Installed with `install.packages()`, once per system:
+
+```{r}
+#| eval: false
+install.packages("palmerpenguins")
+```
+
+::: callout-note
+We already pre-installed many of the package you'll need for this course, so you might go the whole semester without needing to run `install.packages()`!
+:::
+
+. . .
+
+-   Loaded with `library()`, once per session:
+
+```{r}
+#| eval: false
+library(palmerpenguins)
+```
+
+## Packages, an analogy
+
+If data analysis was cooking...
+
+::: incremental
+-   Installing a package would be like buying ingredients from the store
+
+-   Loading a package would be like getting the ingredients out of your pantry and setting them on your counter top to be used
+:::
+
+## tidyverse
+
+::: hand
+aka the package you'll hear about the most...
+:::
+
+::: columns
+::: {.column width="40%"}
+[![](images/01/tidyverse.png){fig-alt="Hex logos for dplyr, ggplot2, forcats, tibble, readr, stringr, tidyr, and purrr"}](https://tidyverse.org)
+:::
+
+::: {.column .fragment width="60%"}
+[tidyverse.org](https://www.tidyverse.org/)
+
+-   The **tidyverse** is an opinionated collection of R packages designed for data science
+-   All packages share an underlying philosophy and a common grammar
+:::
+:::
+
+## Data frames and variables
+
+-   Each row of a data frame is an **observation**
+
+. . .
+
+-   Each column of a data frame is a **variable**
+
+. . .
+
+-   Columns (variables) in data frames can be accessed with `$`:
+
+```{r}
+#| eval: false
+dataframe$variable_name
+```
+
+## `penguins` data frame
+
+```{webr}
+penguins
+```
+
+## `bill_length_mm`
+
+```{webr}
+penguins$bill_length_mm
+```
+
+## `flipper_length_mm` {.smaller}
+
+::: task
+First, run the code below and read the error.
+Then, fix the code to access the `flipper_length_mm` variable in the `penguins` data frame.
+:::
+
+```{webr}
+flipper_length_mm
+```
+
+## `function(argument)`
+
+Functions are (most often) verbs, followed by what they will be applied to in parentheses:
+
+```{r}
+#| eval: false
+do_this(to_this)
+do_that(to_this, to_that, with_those)
+```
+
+## `trim`med `mean()`
+
+```{webr}
+x <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 100)
+x
+```
+
+```{webr}
+mean(x)
+```
+
+```{webr}
+mean(x, trim = 0.05)
+```
+
+## Help
+
+Object documentation can be accessed with `?`
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+?mean
+```
+:::
+
+::: {.column width="50%"}
+![](images/01/mean-docs.mov){fig-alt="Documentation for mean function in R."}
+:::
+:::
+
+## A pause -- Common birthdays {{< fa cake-candles >}} {.smaller}
+
+::: hand
+I cleaned up your data!
+:::
+
+. . .
+
+::: hand
+No thanks to the people who responded "yo" or "The fifth day in the month of October!!" or "may twentieth"!
+🤣
+:::
+
+. . .
+
+::: columns
+::: column
+Dates with more than one student with a birthday:
+:::
+
+::: column
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(googlesheets4)
+library(tidyverse)
+gs4_deauth()
+birthdays_raw <- read_sheet("https://docs.google.com/spreadsheets/d/1mNvMGN9TflJaWhOQyZxLNqavAMhYZezQs4onvgT_nuw/edit?usp=sharing")
+birthdays <- birthdays_raw |>
+  filter(birthday != "30 2004") |>
+  mutate(
+    birthday_original = birthday,
+    birthday = as.character(birthday),
+    birthday = str_remove(birthday, "!"),
+    birthday = str_remove(birthday, "/2005"),
+    birthday = case_when(
+      birthday == "0405" ~ "April 5", 
+      birthday == "0911" ~ "September 11",
+      birthday == "The fifth day in the month of October!!" ~ "October 11",
+      birthday == "may twentieth" ~ "May 20",
+      birthday == "NULL" ~ NA,
+      birthday == "nov. 30th" ~ "November 30",
+      birthday == "yo" ~ NA,
+      birthday == "8.5" ~ "August 5",
+      birthday == "Thanks for asking!" ~ "October 25",
+      birthday == "febuary 1" ~ "February 1",
+      .default = birthday
+    )
+  )
+
+birthdays_1 <- birthdays |>
+  filter(str_detect(birthday, "/")) |>
+  mutate(
+    birthday = str_c(birthday, "/2024"),
+    birthday = str_replace(birthday, "sixteen", "16")
+  ) |>
+  arrange(birthday) |> 
+  mutate(
+    birthday = if_else(
+      str_sub(birthday, 2, 2) == "/", 
+      str_c("0", birthday), 
+      birthday
+    ),
+    birthday = if_else(
+      as.numeric(str_sub(birthday, 1, 2)) > 12,
+      dmy(birthday),
+      mdy(birthday)
+    )
+  )
+
+birthdays_2 <- birthdays |>
+  filter(!str_detect(birthday, "/")) |>
+  mutate(
+    birth_day = parse_number(birthday),
+    birth_month = str_trim(str_remove(birthday, as.character(birth_day))),
+    birth_date = str_c(birth_day, birth_month, "2024"),
+    birthday = dmy(birth_date)
+  )
+
+birthdays_clean <- bind_rows(birthdays_1, birthdays_2)
+
+birthdays_clean |>
+  mutate(
+    birthday == as.character(birthday),
+    birthday = str_remove(birthday, "2024-")
+  ) |>
+  count(birthday, sort = TRUE) |>
+  filter(n >= 2) |>
+  print(n = 65)
+```
+:::
+:::
+
+# Toolkit: Version control and collaboration
+
+## Git and GitHub {.smaller}
+
+::: columns
+::: {.column .fragment width="50%"}
+![](images/01/git-logo.png){fig-alt="Git logo" fig-align="center" width="150"}
+
+-   Git is a version control system -- like "Track Changes" features from Microsoft Word, on steroids
+-   It's not the only version control system, but it's a very popular one
+:::
+
+::: {.column .fragment width="50%"}
+![](images/01/github-logo.png){fig-alt="GitHub logo" fig-align="center" width="150"}
+
+-   GitHub is the home for your Git-based projects on the internet -- like DropBox but much, much better
+
+-   We will use GitHub as a platform for web hosting and collaboration (and as our course management system!)
+:::
+:::
+
+## Versioning - done badly
+
+![](images/01/phd_comics_vc.gif){fig-align="center"}
+
+## Versioning - done better
+
+![](images/01/lego-steps.png){fig-align="center"}
+
+## Versioning - done even better
+
+::: hand
+with human readable messages
+:::
+
+![](images/01/lego-steps-commit-messages.png){fig-align="center"}
+
+## How will we use Git and GitHub?
+
+![](images/01/whole-game-01.png){fig-align="center"}
+
+## How will we use Git and GitHub?
+
+![](images/01/whole-game-02.png){fig-align="center"}
+
+## How will we use Git and GitHub?
+
+![](images/01/whole-game-03.png){fig-align="center"}
+
+## How will we use Git and GitHub?
+
+![](images/01/whole-game-04.png){fig-align="center"}
+
+## Git and GitHub tips {.smaller}
+
+::: incremental
+-   There are millions of git commands -- ok, that's an exaggeration, but there are a lot of them -- and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.
+-   We will be doing Git things and interfacing with GitHub through RStudio, but if you google for help you might come across methods for doing these things in the command line -- skip that and move on to the next resource unless you feel comfortable trying it out.
+-   There is a great resource for working with git and R: [happygitwithr.com](http://happygitwithr.com/). Some of the content in there is beyond the scope of this course, but it's a good place to look for help.
+:::
+
+## Tour: Git + GitHub {.smaller}
+
+::: columns
+::: {.column width="50%"}
+::: demo
+**Option 1:**
+
+Sit back and enjoy the show!
+
+:::
+
+::: callout-note
+You'll need to stick to this option if you haven't yet accepted your GitHub invite and don't have a repo created for you.
+:::
+
+:::
+
+::: {.column width="50%"}
+::: appex
+**Option 2:**
+
+Go to the [course GitHub organization](https://github.com/sta199-f24) and clone `ae-your_github_name` repo to [your container](https://cmgr.oit.duke.edu/containers).
+:::
+:::
+:::
+
+## Tour recap: Git + GitHub {.smaller}
+
+-   Find your application repo, that will always be named using the naming convention `assignment_title-your_github_name`
+
+-   Click on the green "Code" button, make sure SSH is selected, copy the repo URL
+
+![](images/01/tour-git-github-1.png){fig-align="center" width="1000"}
+
+## Tour recap: Git + GitHub {.smaller}
+
+-   In RStudio, File \> New Project \> From Version Control \> Git
+-   Paste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project
+-   **For one time only**, type `yes` in the pop-up dialogue
+
+![](images/01/tour-git-github-2.mov){fig-align="center" width="600"}
+
+## What could have gone wrong?
+
+- Never received GitHub invite $\rightarrow$ Fill out "Getting to know you survey
+
+- Never accepted GitHub invite $\rightarrow$ Look for it in your email and accept it
+
+- Cloning repo fails $\rightarrow$ Review/redo Lab 0 steps for setting up SSH key
+
+- Still no luck? Come by my office today (Thursday, 8/29) between 4-5pm or post on Ed for help
+
+# Quarto
+
+## Quarto
+
+::: incremental
+-   Fully reproducible reports -- each time you render the analysis is ran from the beginning
+-   Code goes in chunks narrative goes outside of chunks
+-   A visual editor for a familiar / Google docs-like editing experience
+:::
+
+## Tour: Quarto {.smaller}
+
+::: columns
+::: {.column width="50%"}
+::: demo
+**Option 1:**
+
+Sit back and enjoy the show!
+:::
+
+::: callout-note
+If you chose (or had to choose) this option for the previous tour, or if you couldn't clone your repo for any reason, you'll need to stick to this option.
+:::
+:::
+
+::: {.column width="50%"}
+::: appex
+**Option 2:**
+
+Go to RStudio and open the document `ae-01-meet-the-penguins.qmd`.
+
+:::
+:::
+:::
+
+## Tour recap: Quarto
+
+![](images/01/tour-quarto.png){fig-alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code chunk." fig-align="center"}
+
+## Tour recap: Git + GitHub {.smaller}
+
+Once we made changes to our Quarto document, we
+
+- went to the Git pane in RStudio
+
+- staged our changes by clicking the checkboxes next to the relevant files
+
+- committed our changes with an informative commit message
+
+- pushed our changes to our application exercise repos
+
+- confirmed on GitHub that we could see our changes pushed from RStudio
+
+## How will we use Quarto?
+
+-   Every application exercise, lab, project, etc. is an Quarto document
+-   You'll always have a template Quarto document to start with
+-   The amount of scaffolding in the template will decrease over the semester
+
+## What's with all the hexes?
+
+![](images/01/hexes.jpeg){fig-alt="Hex logos for many packages" fig-align="center"}
+
+## We have hexes too!
+
+::: task
+Grab one before you leave!
+:::
+
+::: center-align
+![](images/logo.png){fig-alt="STA 199 hex logo"}
+:::
