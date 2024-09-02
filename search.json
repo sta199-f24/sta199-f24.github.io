@@ -892,135 +892,256 @@
     "text": "We have hexes too!\n\nGrab one before you leave!"
   },
   {
-    "objectID": "course-syllabus.html",
-    "href": "course-syllabus.html",
-    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
-    "section": "",
-    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to communicate results through written assignments and project presentation effectively",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "objectID": "slides/00-welcome-199-slides.html#meet-the-prof",
+    "href": "slides/00-welcome-199-slides.html#meet-the-prof",
+    "title": "Welcome to STA 199",
+    "section": "Meet the prof",
+    "text": "Meet the prof\n\n\nDr. Mine Çetinkaya-Rundel\nProfessor of the Practice\nOld Chem 213"
   },
   {
-    "objectID": "course-syllabus.html#course-learning-objectives",
-    "href": "course-syllabus.html#course-learning-objectives",
-    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
-    "section": "",
-    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to communicate results through written assignments and project presentation effectively",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "objectID": "slides/00-welcome-199-slides.html#meet-the-course-team",
+    "href": "slides/00-welcome-199-slides.html#meet-the-course-team",
+    "title": "Welcome to STA 199",
+    "section": "Meet the course team",
+    "text": "Meet the course team\n\n\n\nMary Knox (Course coordinator)\nMarie Neubrander (Head TA)\nFederico Arboleda\nJaekyoung Kim\nLynn Kremers\nNetra Mittal\nGrace Rade\nJasmine Wang\nEmily Jensen\nJonathan Lin\nMengqi Liu\n\n\n\nSonya Eason\nDomenic Fenoglio\nSarah Wu\nAvery Hodges\nDavid King\nHyunjin Lee\nKareena Legare\nLiane Ma\nNoah Obuya\nAnmol Sapru\nJohn Zito"
   },
   {
-    "objectID": "course-syllabus.html#course-materials",
-    "href": "course-syllabus.html#course-materials",
-    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
-    "section": "Course materials",
-    "text": "Course materials\n\nTextbooks\nAll books are freely available online.\n\nR for Data Science, 2e, Wickham, Çetinkaya-Rundel, Grolemund. O’Reilly, 2nd edition, 2023. Hard copy available on Amazon.\nIntroduction to Modern Statistics, Çetinkaya-Rundel, Hardin. OpenIntro Inc., 2nd Edition, 2023. Hard copy available on Amazon.\n\n\n\nComputing\nYou will need a laptop you can bring to lecture and lab for this course. We will use the statistical software R. Students will be able to access R through Docker containers provided by Duke Office of Information Technology. See the computing page for more information.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "objectID": "slides/00-welcome-199-slides.html#meet-each-other",
+    "href": "slides/00-welcome-199-slides.html#meet-each-other",
+    "title": "Welcome to STA 199",
+    "section": "Meet each other!",
+    "text": "Meet each other!\n\nPlease share with at least two classmates…\n\nYour name\nYour year\nWhere you’re from\nWhat you did this past summer\nWhat you hope to get out of this course\n\n\n\n  \n    −\n    +\n \n 04:00"
   },
   {
-    "objectID": "course-syllabus.html#course-community",
-    "href": "course-syllabus.html#course-community",
-    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
-    "section": "Course community",
-    "text": "Course community\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. I intend to present materials and activities that respect diversity and align with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives, and experiences and honors their identities. To help accomplish this:\n\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If anything was said in class (by anyone) that made you feel uncomfortable, please let me or a teaching team member know.\n\n\n\nPersonal pronouns\nPronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive. You can update your gender pronouns in Duke Hub and learn more about personal pronouns at the Center for Sexual and Gender Diversity’s website.\n\n\nAccessibility\nIf any portion of the course is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students can engage with their courses and related assignments. Students should contact the SDAO to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: sta199-f24.github.io.\nAnnouncements will periodically be emailed through Canvas Announcements. Please check your email regularly to ensure you have the latest announcements for the course.\n\n\nEmail\nIf you have questions about assignment extensions, accommodations, or any other matter not appropriate for the class discussion forum, please email me directly at mc301@duke.edu. If you do so, please include “STA 199” in the subject line. Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours, Monday through Friday. Response time may be slower for emails sent Friday evening through Sunday.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "objectID": "slides/00-welcome-199-slides.html#meet-data-science",
+    "href": "slides/00-welcome-199-slides.html#meet-data-science",
+    "title": "Welcome to STA 199",
+    "section": "Meet data science",
+    "text": "Meet data science\n\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.\nWe’re going to learn to do this in a tidy way – more on that later!\nThis is a course on introduction to data science, with an emphasis on statistical thinking."
   },
   {
-    "objectID": "course-syllabus.html#five-tips-for-success",
-    "href": "course-syllabus.html#five-tips-for-success",
-    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
-    "section": "Five tips for success",
-    "text": "Five tips for success\nYour success in this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TAs and I will help you by providing you with materials answering questions, and setting a pace, but for this to work, you must do the following:\n\nComplete all the preparation work before class.\nAsk questions. As often as you can. In class, out of class. Ask me, ask the TAs, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you’re not sure about the lab, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.\nDo the readings.\nDo the lab. The earlier you start, the better. It’s not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material and imagine how they might be changed (to make questions for an exam, for example).\nDon’t procrastinate. The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don’t let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "objectID": "slides/00-welcome-199-slides.html#application-exercise",
+    "href": "slides/00-welcome-199-slides.html#application-exercise",
+    "title": "Welcome to STA 199",
+    "section": "Application exercise",
+    "text": "Application exercise\n\nOr more like demo for today…\n sta199-f24.github.io/ae/ae-00-unvotes.html"
   },
   {
-    "objectID": "course-syllabus.html#getting-help",
-    "href": "course-syllabus.html#getting-help",
-    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
-    "section": "Getting help",
-    "text": "Getting help\n\nIf you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking, you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, Ed Discussion. There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!\n\nCheck out the Support tab for more resources.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "objectID": "slides/00-welcome-199-slides.html#data-science-life-cycle-1",
+    "href": "slides/00-welcome-199-slides.html#data-science-life-cycle-1",
+    "title": "Welcome to STA 199",
+    "section": "Data science life cycle",
+    "text": "Data science life cycle"
   },
   {
-    "objectID": "course-syllabus.html#course-components",
-    "href": "course-syllabus.html#course-components",
-    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
-    "section": "Course components",
-    "text": "Course components\n\nLectures and labs\nLectures and labs are designed to be interactive, so you gain experience applying new concepts and learning from each other. My role as instructor is to introduce you to new methods, tools, and techniques, but it is up to you to take them and use them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will work on various tasks and activities throughout each lecture and lab. You are expected to prepare for class by completing assigned readings, attending lectures and lab sessions, and meaningfully contributing to in-class exercises and discussions. Additionally, most lectures will feature application exercises that will be graded based on completing what we do in class.\nYou are expected to bring a laptop (or Chromebook) to each class so that you can participate in the in-class exercises. Please ensure your device is fully charged before you come to class, as the number of outlets in the classroom will not be sufficient to accommodate everyone. A tablet also works, but the user experience will be much smoother on a laptop.\n\n\nTeams\nYou will be assigned to a team early on in the semester. You are encouraged to sit with your teammates in lectures, and you will also work with them in some of the lab sessions. All team members are expected to contribute equally to the completion of the project, and you will be asked to evaluate your team members throughout the semester. Failure to adequately contribute to any project component will result in a penalty to your mark relative to the team’s overall mark.\nYou are expected to use the provided GitHub repository as the central collaborative platform. Commits to this repository will be used as a metric (one of several) of each team member’s relative contribution to each project.\n\n\nActivities & Assessment\nYou will be assessed based on five components: application exercises, labs, exams, project, and teamwork.\n\nLabs\nIn labs, you will apply what you’ve learned in the videos and during lectures to complete data analysis tasks. You may discuss lab assignments with other students; however, the lab should be completed and submitted individually. Lab assignments must be typed up using Quarto, all work must be pushed to your GitHub repository for the lab, and the lab’s PDF output must be submitted on Gradescope by the deadline.\nLabs are due at 8:30 am ET on the indicated due date (generally the Monday after the lab).\nThe lowest lab grade will be dropped at the end of the semester.\n\n\nExams\nThis course will have two exams: a midterm and a final. The midterm will include an in-class component (with a cheat sheet) and an open-note take-home component, while the final will include only an in-class component (with a cheat sheet).\nYou can demonstrate what you’ve learned in the course thus far through these exams. The exams will focus on both conceptual understanding of the content and application through analysis and computational tasks. The exam’s content will be related to the content in videos and reading assignments, lectures, application exercises, and labs.\nMore details about the exams will be given during the semester.\n\n\nProject\nThe project aims to apply what you’ve learned throughout the semester to analyze an interesting data-driven research question. The project will be completed in teams, and each team will present their work in the last lab session of the semester. The write-up will be due on the same day.\nYou cannot pass this course if you have not completed the project.\nMore information about the project will be provided during the semester.\n\n\nApplication exercises\nParts of some lectures will be dedicated to working on Application Exercises (AEs). These exercises allow you to apply the statistical concepts and code introduced in the preparation materials. These AEs are due by 2 pm ET on the day of the lecture they are covered. To submit the AEs, you only need to push your work to your GitHub repo.\nBecause these AEs are for practice, they will be graded based on attempt, i.e., a good-faith effort has been made in attempting all parts.\nSuccessful on-time completion of at least 70% of AEs will result in full credit for AEs in the final course grade.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "objectID": "slides/00-welcome-199-slides.html#collect-birthdays",
+    "href": "slides/00-welcome-199-slides.html#collect-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Collect birthdays",
+    "text": "Collect birthdays\n\n\n\n\n\n\n    \n\n\n  \n    −\n    +\n \n 01:00"
   },
   {
-    "objectID": "course-syllabus.html#grading",
-    "href": "course-syllabus.html#grading",
-    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "objectID": "slides/00-welcome-199-slides.html#import",
+    "href": "slides/00-welcome-199-slides.html#import",
+    "title": "Welcome to STA 199",
+    "section": "Import",
+    "text": "Import"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#import-birthdays",
+    "href": "slides/00-welcome-199-slides.html#import-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Import birthdays",
+    "text": "Import birthdays"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#tidy-transform",
+    "href": "slides/00-welcome-199-slides.html#tidy-transform",
+    "title": "Welcome to STA 199",
+    "section": "Tidy + transform",
+    "text": "Tidy + transform"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#tidy-transform-birthdays",
+    "href": "slides/00-welcome-199-slides.html#tidy-transform-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Tidy + transform birthdays",
+    "text": "Tidy + transform birthdays"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#visualize",
+    "href": "slides/00-welcome-199-slides.html#visualize",
+    "title": "Welcome to STA 199",
+    "section": "Visualize",
+    "text": "Visualize"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#visualize-birthdays",
+    "href": "slides/00-welcome-199-slides.html#visualize-birthdays",
+    "title": "Welcome to STA 199",
+    "section": "Visualize birthdays",
+    "text": "Visualize birthdays"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#model",
+    "href": "slides/00-welcome-199-slides.html#model",
+    "title": "Welcome to STA 199",
+    "section": "Model",
+    "text": "Model"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#understand",
+    "href": "slides/00-welcome-199-slides.html#understand",
+    "title": "Welcome to STA 199",
+    "section": "Understand",
+    "text": "Understand"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#communicate",
+    "href": "slides/00-welcome-199-slides.html#communicate",
+    "title": "Welcome to STA 199",
+    "section": "Communicate",
+    "text": "Communicate"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#understand-communicate",
+    "href": "slides/00-welcome-199-slides.html#understand-communicate",
+    "title": "Welcome to STA 199",
+    "section": "Understand + communicate",
+    "text": "Understand + communicate"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#program",
+    "href": "slides/00-welcome-199-slides.html#program",
+    "title": "Welcome to STA 199",
+    "section": "Program",
+    "text": "Program"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#homepage",
+    "href": "slides/00-welcome-199-slides.html#homepage",
+    "title": "Welcome to STA 199",
+    "section": "Homepage",
+    "text": "Homepage\nhttps://sta199-f24.github.io\n\nAll course materials\nLinks to Canvas, GitHub, RStudio containers, etc."
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#course-toolkit",
+    "href": "slides/00-welcome-199-slides.html#course-toolkit",
+    "title": "Welcome to STA 199",
+    "section": "Course toolkit",
+    "text": "Course toolkit\nAll linked from the course website:\n\nGitHub organization: github.com/sta199-f24\nRStudio containers: cmgr.oit.duke.edu/containers\nCommunication: Ed Discussion\nAssignment submission and feedback: Gradescope"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#activities",
+    "href": "slides/00-welcome-199-slides.html#activities",
+    "title": "Welcome to STA 199",
+    "section": "Activities",
+    "text": "Activities\n\nIntroduce new content and prepare for lectures by watching the videos and completing the readings\nAttend and actively participate in lectures and labs, office hours, team meetings\nPractice applying statistical concepts and computing with application exercises during lecture, graded for attempting\nPut together what you’ve learned to analyze real-world data\n\nLab assignments (7 or 8 throughout semester)\nExams (midterm + final)\nTerm project completed in teams"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#application-exercises",
+    "href": "slides/00-welcome-199-slides.html#application-exercises",
+    "title": "Welcome to STA 199",
+    "section": "Application exercises",
+    "text": "Application exercises\n\nDaily-ish in lecture\n“Graded” for attempt, not accuracy\nPractice Weeks 1 + 2, graded thereafter\nAt least one commit by 2 pm of the day of lecture\nTurn in at least 70% for full credit"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#labs",
+    "href": "slides/00-welcome-199-slides.html#labs",
+    "title": "Welcome to STA 199",
+    "section": "Labs",
+    "text": "Labs\n\nStart in lab session\nComplete at home\nDue within a week\nDiscussion with classmates ok, copying not ok!\nLowest score dropped"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#exams",
+    "href": "slides/00-welcome-199-slides.html#exams",
+    "title": "Welcome to STA 199",
+    "section": "Exams",
+    "text": "Exams\n\nTwo exams, each 20%\nMidterm comprised of two parts:\n\nIn-class (Oct 8): 75 minute in-class exam. Closed book, one sheet of notes (“cheat sheet”) – 70% of the grade.\nTake-home (Oct 8 - Oct 11): Follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam – 30% of the grade.\n\nFinal in-class only (Dec 12, 9am - 12pm): Closed book, one sheet of notes (“cheat sheet”).\n“Cheat sheet”: No larger than 8 1/2 x 11, both sides, must be prepared by you.\n\n\n\n\n\n\n\nCaution\n\n\nExam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class."
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#project",
+    "href": "slides/00-welcome-199-slides.html#project",
+    "title": "Welcome to STA 199",
+    "section": "Project",
+    "text": "Project\n\nDataset of your choice, method of your choice\nTeamwork\nFive milestones, interim deadline throughout semester\nFinal milestone: Presentation (video) and write-up\nPresentations submitted as videos\nPeer review between teams for content, peer evaluation within teams for contribution\nSome lab sessions allocated to project progress\n\n\n\n\n\n\n\nCaution\n\n\nProject due date cannot be changed. You must complete the project to pass this class."
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#teams",
+    "href": "slides/00-welcome-199-slides.html#teams",
+    "title": "Welcome to STA 199",
+    "section": "Teams",
+    "text": "Teams\n\nAssigned by me\nProject\nPeer evaluation during teamwork and after completion\nExpectations and roles\n\nEveryone is expected to contribute equal effort\nEveryone is expected to understand all code turned in\nIndividual contribution evaluated by peer evaluation, commits, etc."
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#grading",
+    "href": "slides/00-welcome-199-slides.html#grading",
+    "title": "Welcome to STA 199",
     "section": "Grading",
-    "text": "Grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nLabs\n35%\n\n\nProject\n20%\n\n\nMidterm\n20%\n\n\nFinal\n20%\n\n\nApplication Exercises\n5%\n\n\n\nWhile there are no specific points allocated to attendance, we will record your attendance periodically throughout the semester. This information will be used as “extra credit” if you’re in between two grades and a minor bump would help.\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nApplication Exercises\n5%\n\n\nLabs\n35%\n\n\nMidterm\n20%\n\n\nFinal\n20%\n\n\nProject\n20%\n\n\n\nNo specific points allocated to attendance, but the application exercise score is implicitly tied to attendance.\nSee course syllabus for how the final letter grade will be determined."
   },
   {
-    "objectID": "course-syllabus.html#course-policies",
-    "href": "course-syllabus.html#course-policies",
-    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
-    "section": "Course policies",
-    "text": "Course policies\n\nDuke Community Standard\nAs a student in this course, you have agreed to uphold the Duke Community Standard and the practices specific to this course.\n\n\n\n\nAcademic honesty\nTL;DR: Don’t cheat!\nPlease abide by the following as you work on assignments in this course:\n\nCollaboration: Only work that is clearly assigned as teamwork should be completed collaboratively.\n\nYou may discuss lab assignments with other students; however, you may not directly share (or copy) code or write-up with other students. For team assignments, you may collaborate freely within your team. You may discuss the assignment with other teams; however, you may not directly share (or copy) code or write-up with another team. Unauthorized sharing (or copying) of the code or write-up will be considered a violation for all students involved.\nYou may not discuss or otherwise work with others on the exams. Unauthorized collaboration or using unauthorized materials will be considered a violation for all students involved. More details will be given closer to the exam date.\nCollaboration within teams is not only allowed but expected for the project. Communication between teams at a high level is also allowed; however, you may not share code or project components across teams.\nOn individual assignments, you may not directly share work (including code) with another student in this class; on team assignments, you may not directly share work (including code) with another team.\n\nOnline resources: I am well aware that a huge volume of code is available on the web to solve any number of problems. Unless I explicitly tell you not to use something, the course’s policy is that you may make use of any online resources (e.g., StackOverflow), but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nUse of generative artificial intelligence (AI): You should treat generative AI, such as ChatGPT, like other online resources. Two guiding principles govern how to use AI in this course:\n\nCognitive dimension: Working with AI should not reduce your thinking ability. We will practice using AI to facilitate—rather than hinder—learning.\nEthical dimension: Students using AI should be transparent about their use and ensure it aligns with academic integrity.\n\n\n AI tools for code: You may use the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use these guidelines to cite AI-generated content. The bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.\n AI tools for narrative: Unless instructed otherwise, you may not use generative AI to generate a narrative that you then copy-paste verbatim into an assignment or edit and then insert into your assignment.\n AI tools for learning: You’re welcomed to ask AI tools questions that might help your learning and understanding in this course.\n\nIn general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content. Identifying AI-generated content is fairly straightforward. Any code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be considered plagiarism and treated as such.\n\nIf you are unsure if using a particular resource complies with the academic honesty policy, please ask a teaching team member.\nRegardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at conduct@duke.edu.\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will\n\nautomatically results in a 0 for the relevant portion or the entire assignment,\ncan further impact your overall course grade, and\nwill be reported to the Office of Student Conduct & Community Standards for further action.\n\n\n\nLate work & extensions\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback in a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline. Note that the lowest lab assignment will be dropped to accommodate such circumstances.\n\nLabs may be submitted up to 3 days late. A 5% deduction will be applied for each 24-hour period during which the assignment is late.\nNo late work is accepted for application exercises since these are designed to help you prepare for other assessments in the course.\nNo late work is accepted for exams.\nNo late work is accepted for projects.\n\n\n\nWaiver for extenuating circumstances\nIf circumstances prevent you from completing a lab by the stated due date, you may email the course coordinator, Dr. Mary Knox, before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide an explanation. This waiver may only be used once a semester, so only use it for a truly extenuating circumstance.\nIf circumstances have a longer-term impact on your academic performance, please let your academic dean know. They can be a resource. Please let me know if you need help contacting your academic dean.\n\n\nRegrade requests\nRegrade requests must be submitted on Gradescope within a week after an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the entire assignment may be regraded, which could potentially result in losing points.\nNo grades will be changed after the final exam has been administered.\n\n\nAttendance policy\nEvery student is expected to attend and participate in lecture and labs. There may be times, however, when you cannot attend class. Lecture recordings are available upon request for students who have an excused absence. See the Lecture recording request policy for more detail. If you miss a lecture, make sure to review the material and complete the application exercise, if applicable, before the next lecture. Labs dedicated to completing the lab assignment and collaborating with your lab team. If you miss a lab session, make sure to communicate with your lab TA and teammates about how you can make up your contribution. If you know you’re going to miss a lab session and you’re feeling well enough to do so, notify your lab TA and teammates ahead of time.\nMore details on Trinity attendance policies are available here.\n\n\nLecture recording request\nLectures will be recorded on Panopto and will be made available to students with an excused absence upon request. Videos shared with such students will be available for a week after the lecture date. To request a particular lecture’s video, please fill out the form at the link below. Please submit the form within 24 hours of missing lecture to ensure you have sufficient time to watch the recording. Please also make sure that any official documentation, such as STINFs, Dean’s excuses, NOVAPs, and quarantine/removal from class notices from student health are also uploaded to the form.\n🔗 https://forms.office.com/r/kJ6cWGE1Mp\nAbout one week before each exam, the class recordings will be available to all students. These recordings will be available until the start of the exam.\n\n\n\n\n\n\nClick here for syllabus bounty!\n\n\n\n\n\nIf you’ve read this far in the syllabus, post a picture of your pet if you have one or your favorite meme on ed in this thread! If you’re willing, share the name of your pet too!",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "objectID": "slides/00-welcome-199-slides.html#support",
+    "href": "slides/00-welcome-199-slides.html#support",
+    "title": "Welcome to STA 199",
+    "section": "Support",
+    "text": "Support\n\nHelp from humans:\n\nAttend office hours\nAsk and answer questions on the discussion forum\n\nHelp from AI: Use the course chatbot (in Canvas!)\nReserve email for questions on personal matters and/or grades\nRead the course support page"
   },
   {
-    "objectID": "course-syllabus.html#accommodations",
-    "href": "course-syllabus.html#accommodations",
-    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
-    "section": "Accommodations",
-    "text": "Accommodations\n\nAcademic accommodations\nIf you need accommodations for this class, you will need to register with the Student Disability Access Office (SDAO) and provide them with documentation related to your needs. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu.\n\n\nReligious accommodations\nStudents are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: trinity.duke.edu/undergraduate/academic-policies/religious-holidays",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "objectID": "slides/00-welcome-199-slides.html#announcements",
+    "href": "slides/00-welcome-199-slides.html#announcements",
+    "title": "Welcome to STA 199",
+    "section": "Announcements",
+    "text": "Announcements\n\nPosted on Canvas (Announcements tool) and sent via email, be sure to check both regularly\nI’ll assume that you’ve read an announcement by the next “business” day\nI’ll (try my best to) send a weekly update announcement each Friday, outlining the plan for the following week and reminding you what you need to do to prepare, practice, and perform"
   },
   {
-    "objectID": "course-syllabus.html#important-dates",
-    "href": "course-syllabus.html#important-dates",
-    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
-    "section": "Important dates",
-    "text": "Important dates\n\nAug 26: Classes begin\nSep 2: Labor Day\nSep 6: Drop/add ends\nOct 7: Project milestone 1 – working collaboratively due\nOct 8: Midterm in-class + take-home released\nOct 11: Midterm take-home due\nOct 14-15: Fall break\nOct 28: Project milestone 2 – proposals due\nNov 8: Last day to withdraw with W\nNov 25: Project milestone 3 – peer review due\nNov 27-29: Thanksgiving break\nDec 6: Classes end\nDec 12: Final exam\n\nLab deadlines are listed on the course schedule.\nFor more important dates, see the full Duke Academic Calendar.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "objectID": "slides/00-welcome-199-slides.html#diversity-inclusion",
+    "href": "slides/00-welcome-199-slides.html#diversity-inclusion",
+    "title": "Welcome to STA 199",
+    "section": "Diversity + inclusion",
+    "text": "Diversity + inclusion\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\n\nFill out the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisors, and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it."
   },
   {
-    "objectID": "lab.html",
-    "href": "lab.html",
-    "title": "Labs",
-    "section": "",
-    "text": "No.\n\n\nTitle\n\n\nDue date\n\n\n\n\n\n\nLab 0\n\n\nHello, World and STA 199!\n\n\nEnd of lab on Mon, Aug 26\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Labs"
-    ]
+    "objectID": "slides/00-welcome-199-slides.html#accessibility",
+    "href": "slides/00-welcome-199-slides.html#accessibility",
+    "title": "Welcome to STA 199",
+    "section": "Accessibility",
+    "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nI am committed to making all course materials accessible and I’m always learning how to do this better. If any course component is not accessible to you in any way, please don’t hesitate to let me know."
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#late-work-waivers-lecture-recordings-regrades",
+    "href": "slides/00-welcome-199-slides.html#late-work-waivers-lecture-recordings-regrades",
+    "title": "Welcome to STA 199",
+    "section": "Late work, waivers, lecture recordings, regrades…",
+    "text": "Late work, waivers, lecture recordings, regrades…\n\nWe have policies!\nRead about them on the course syllabus and refer back to them when you need it"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#use-of-ai-tools",
+    "href": "slides/00-welcome-199-slides.html#use-of-ai-tools",
+    "title": "Welcome to STA 199",
+    "section": "Use of AI tools",
+    "text": "Use of AI tools\n\n AI tools for code:\n\nSure, but be careful/critical! Working code != correct/good code.\nMust explicitly cite, with at a minimum AI tool you’re using (e.g., ChatGPT) and your prompt.\n\n AI tools for narrative: Absolutely not!\n AI tools for learning: Sure, but be careful/critical!"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#academic-integrity",
+    "href": "slides/00-welcome-199-slides.html#academic-integrity",
+    "title": "Welcome to STA 199",
+    "section": "Academic integrity",
+    "text": "Academic integrity\n\nTo uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#this-weeks-tasks",
+    "href": "slides/00-welcome-199-slides.html#this-weeks-tasks",
+    "title": "Welcome to STA 199",
+    "section": "This week’s tasks",
+    "text": "This week’s tasks\n\nComplete Lab 0\n\nComputational setup\nGetting to know you survey\n\nRead the syllabus\nComplete readings and videos for next class"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#midori-says",
+    "href": "slides/00-welcome-199-slides.html#midori-says",
+    "title": "Welcome to STA 199",
+    "section": "Midori says…",
+    "text": "Midori says…\n\n\n\n\n\n\n\n\n\n🔗 sta199-f24.github.io"
   },
   {
     "objectID": "slides/00-welcome-199.html#meet-the-prof",
@@ -1275,256 +1396,289 @@
     "text": "Midori says…"
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#meet-the-prof",
-    "href": "slides/00-welcome-199-slides.html#meet-the-prof",
-    "title": "Welcome to STA 199",
-    "section": "Meet the prof",
-    "text": "Meet the prof\n\n\nDr. Mine Çetinkaya-Rundel\nProfessor of the Practice\nOld Chem 213"
+    "objectID": "lab.html",
+    "href": "lab.html",
+    "title": "Labs",
+    "section": "",
+    "text": "No.\n\n\nTitle\n\n\nDue date\n\n\n\n\n\n\nLab 0\n\n\nHello, World and STA 199!\n\n\nEnd of lab on Mon, Aug 26\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Labs"
+    ]
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#meet-the-course-team",
-    "href": "slides/00-welcome-199-slides.html#meet-the-course-team",
-    "title": "Welcome to STA 199",
-    "section": "Meet the course team",
-    "text": "Meet the course team\n\n\n\nMary Knox (Course coordinator)\nMarie Neubrander (Head TA)\nFederico Arboleda\nJaekyoung Kim\nLynn Kremers\nNetra Mittal\nGrace Rade\nJasmine Wang\nEmily Jensen\nJonathan Lin\nMengqi Liu\n\n\n\nSonya Eason\nDomenic Fenoglio\nSarah Wu\nAvery Hodges\nDavid King\nHyunjin Lee\nKareena Legare\nLiane Ma\nNoah Obuya\nAnmol Sapru\nJohn Zito"
+    "objectID": "course-syllabus.html",
+    "href": "course-syllabus.html",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to communicate results through written assignments and project presentation effectively",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#meet-each-other",
-    "href": "slides/00-welcome-199-slides.html#meet-each-other",
-    "title": "Welcome to STA 199",
-    "section": "Meet each other!",
-    "text": "Meet each other!\n\nPlease share with at least two classmates…\n\nYour name\nYour year\nWhere you’re from\nWhat you did this past summer\nWhat you hope to get out of this course\n\n\n\n  \n    −\n    +\n \n 04:00"
+    "objectID": "course-syllabus.html#course-learning-objectives",
+    "href": "course-syllabus.html#course-learning-objectives",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to communicate results through written assignments and project presentation effectively",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#meet-data-science",
-    "href": "slides/00-welcome-199-slides.html#meet-data-science",
-    "title": "Welcome to STA 199",
-    "section": "Meet data science",
-    "text": "Meet data science\n\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.\nWe’re going to learn to do this in a tidy way – more on that later!\nThis is a course on introduction to data science, with an emphasis on statistical thinking."
+    "objectID": "course-syllabus.html#course-materials",
+    "href": "course-syllabus.html#course-materials",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Course materials",
+    "text": "Course materials\n\nTextbooks\nAll books are freely available online.\n\nR for Data Science, 2e, Wickham, Çetinkaya-Rundel, Grolemund. O’Reilly, 2nd edition, 2023. Hard copy available on Amazon.\nIntroduction to Modern Statistics, Çetinkaya-Rundel, Hardin. OpenIntro Inc., 2nd Edition, 2023. Hard copy available on Amazon.\n\n\n\nComputing\nYou will need a laptop you can bring to lecture and lab for this course. We will use the statistical software R. Students will be able to access R through Docker containers provided by Duke Office of Information Technology. See the computing page for more information.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#application-exercise",
-    "href": "slides/00-welcome-199-slides.html#application-exercise",
-    "title": "Welcome to STA 199",
-    "section": "Application exercise",
-    "text": "Application exercise\n\nOr more like demo for today…\n sta199-f24.github.io/ae/ae-00-unvotes.html"
+    "objectID": "course-syllabus.html#course-community",
+    "href": "course-syllabus.html#course-community",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Course community",
+    "text": "Course community\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. I intend to present materials and activities that respect diversity and align with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives, and experiences and honors their identities. To help accomplish this:\n\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If anything was said in class (by anyone) that made you feel uncomfortable, please let me or a teaching team member know.\n\n\n\nPersonal pronouns\nPronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive. You can update your gender pronouns in Duke Hub and learn more about personal pronouns at the Center for Sexual and Gender Diversity’s website.\n\n\nAccessibility\nIf any portion of the course is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students can engage with their courses and related assignments. Students should contact the SDAO to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: sta199-f24.github.io.\nAnnouncements will periodically be emailed through Canvas Announcements. Please check your email regularly to ensure you have the latest announcements for the course.\n\n\nEmail\nIf you have questions about assignment extensions, accommodations, or any other matter not appropriate for the class discussion forum, please email me directly at mc301@duke.edu. If you do so, please include “STA 199” in the subject line. Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours, Monday through Friday. Response time may be slower for emails sent Friday evening through Sunday.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#data-science-life-cycle-1",
-    "href": "slides/00-welcome-199-slides.html#data-science-life-cycle-1",
-    "title": "Welcome to STA 199",
-    "section": "Data science life cycle",
-    "text": "Data science life cycle"
+    "objectID": "course-syllabus.html#five-tips-for-success",
+    "href": "course-syllabus.html#five-tips-for-success",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Five tips for success",
+    "text": "Five tips for success\nYour success in this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TAs and I will help you by providing you with materials answering questions, and setting a pace, but for this to work, you must do the following:\n\nComplete all the preparation work before class.\nAsk questions. As often as you can. In class, out of class. Ask me, ask the TAs, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you’re not sure about the lab, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.\nDo the readings.\nDo the lab. The earlier you start, the better. It’s not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material and imagine how they might be changed (to make questions for an exam, for example).\nDon’t procrastinate. The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don’t let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#collect-birthdays",
-    "href": "slides/00-welcome-199-slides.html#collect-birthdays",
-    "title": "Welcome to STA 199",
-    "section": "Collect birthdays",
-    "text": "Collect birthdays\n\n\n\n\n\n\n    \n\n\n  \n    −\n    +\n \n 01:00"
+    "objectID": "course-syllabus.html#getting-help",
+    "href": "course-syllabus.html#getting-help",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Getting help",
+    "text": "Getting help\n\nIf you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking, you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, Ed Discussion. There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!\n\nCheck out the Support tab for more resources.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#import",
-    "href": "slides/00-welcome-199-slides.html#import",
-    "title": "Welcome to STA 199",
-    "section": "Import",
-    "text": "Import"
+    "objectID": "course-syllabus.html#course-components",
+    "href": "course-syllabus.html#course-components",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Course components",
+    "text": "Course components\n\nLectures and labs\nLectures and labs are designed to be interactive, so you gain experience applying new concepts and learning from each other. My role as instructor is to introduce you to new methods, tools, and techniques, but it is up to you to take them and use them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will work on various tasks and activities throughout each lecture and lab. You are expected to prepare for class by completing assigned readings, attending lectures and lab sessions, and meaningfully contributing to in-class exercises and discussions. Additionally, most lectures will feature application exercises that will be graded based on completing what we do in class.\nYou are expected to bring a laptop (or Chromebook) to each class so that you can participate in the in-class exercises. Please ensure your device is fully charged before you come to class, as the number of outlets in the classroom will not be sufficient to accommodate everyone. A tablet also works, but the user experience will be much smoother on a laptop.\n\n\nTeams\nYou will be assigned to a team early on in the semester. You are encouraged to sit with your teammates in lectures, and you will also work with them in some of the lab sessions. All team members are expected to contribute equally to the completion of the project, and you will be asked to evaluate your team members throughout the semester. Failure to adequately contribute to any project component will result in a penalty to your mark relative to the team’s overall mark.\nYou are expected to use the provided GitHub repository as the central collaborative platform. Commits to this repository will be used as a metric (one of several) of each team member’s relative contribution to each project.\n\n\nActivities & Assessment\nYou will be assessed based on five components: application exercises, labs, exams, project, and teamwork.\n\nLabs\nIn labs, you will apply what you’ve learned in the videos and during lectures to complete data analysis tasks. You may discuss lab assignments with other students; however, the lab should be completed and submitted individually. Lab assignments must be typed up using Quarto, all work must be pushed to your GitHub repository for the lab, and the lab’s PDF output must be submitted on Gradescope by the deadline.\nLabs are due at 8:30 am ET on the indicated due date (generally the Monday after the lab).\nThe lowest lab grade will be dropped at the end of the semester.\n\n\nExams\nThis course will have two exams: a midterm and a final. The midterm will include an in-class component (with a cheat sheet) and an open-note take-home component, while the final will include only an in-class component (with a cheat sheet).\nYou can demonstrate what you’ve learned in the course thus far through these exams. The exams will focus on both conceptual understanding of the content and application through analysis and computational tasks. The exam’s content will be related to the content in videos and reading assignments, lectures, application exercises, and labs.\nMore details about the exams will be given during the semester.\n\n\nProject\nThe project aims to apply what you’ve learned throughout the semester to analyze an interesting data-driven research question. The project will be completed in teams, and each team will present their work in the last lab session of the semester. The write-up will be due on the same day.\nYou cannot pass this course if you have not completed the project.\nMore information about the project will be provided during the semester.\n\n\nApplication exercises\nParts of some lectures will be dedicated to working on Application Exercises (AEs). These exercises allow you to apply the statistical concepts and code introduced in the preparation materials. These AEs are due by 2 pm ET on the day of the lecture they are covered. To submit the AEs, you only need to push your work to your GitHub repo.\nBecause these AEs are for practice, they will be graded based on attempt, i.e., a good-faith effort has been made in attempting all parts.\nSuccessful on-time completion of at least 70% of AEs will result in full credit for AEs in the final course grade.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#import-birthdays",
-    "href": "slides/00-welcome-199-slides.html#import-birthdays",
-    "title": "Welcome to STA 199",
-    "section": "Import birthdays",
-    "text": "Import birthdays"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#tidy-transform",
-    "href": "slides/00-welcome-199-slides.html#tidy-transform",
-    "title": "Welcome to STA 199",
-    "section": "Tidy + transform",
-    "text": "Tidy + transform"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#tidy-transform-birthdays",
-    "href": "slides/00-welcome-199-slides.html#tidy-transform-birthdays",
-    "title": "Welcome to STA 199",
-    "section": "Tidy + transform birthdays",
-    "text": "Tidy + transform birthdays"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#visualize",
-    "href": "slides/00-welcome-199-slides.html#visualize",
-    "title": "Welcome to STA 199",
-    "section": "Visualize",
-    "text": "Visualize"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#visualize-birthdays",
-    "href": "slides/00-welcome-199-slides.html#visualize-birthdays",
-    "title": "Welcome to STA 199",
-    "section": "Visualize birthdays",
-    "text": "Visualize birthdays"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#model",
-    "href": "slides/00-welcome-199-slides.html#model",
-    "title": "Welcome to STA 199",
-    "section": "Model",
-    "text": "Model"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#understand",
-    "href": "slides/00-welcome-199-slides.html#understand",
-    "title": "Welcome to STA 199",
-    "section": "Understand",
-    "text": "Understand"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#communicate",
-    "href": "slides/00-welcome-199-slides.html#communicate",
-    "title": "Welcome to STA 199",
-    "section": "Communicate",
-    "text": "Communicate"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#understand-communicate",
-    "href": "slides/00-welcome-199-slides.html#understand-communicate",
-    "title": "Welcome to STA 199",
-    "section": "Understand + communicate",
-    "text": "Understand + communicate"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#program",
-    "href": "slides/00-welcome-199-slides.html#program",
-    "title": "Welcome to STA 199",
-    "section": "Program",
-    "text": "Program"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#homepage",
-    "href": "slides/00-welcome-199-slides.html#homepage",
-    "title": "Welcome to STA 199",
-    "section": "Homepage",
-    "text": "Homepage\nhttps://sta199-f24.github.io\n\nAll course materials\nLinks to Canvas, GitHub, RStudio containers, etc."
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#course-toolkit",
-    "href": "slides/00-welcome-199-slides.html#course-toolkit",
-    "title": "Welcome to STA 199",
-    "section": "Course toolkit",
-    "text": "Course toolkit\nAll linked from the course website:\n\nGitHub organization: github.com/sta199-f24\nRStudio containers: cmgr.oit.duke.edu/containers\nCommunication: Ed Discussion\nAssignment submission and feedback: Gradescope"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#activities",
-    "href": "slides/00-welcome-199-slides.html#activities",
-    "title": "Welcome to STA 199",
-    "section": "Activities",
-    "text": "Activities\n\nIntroduce new content and prepare for lectures by watching the videos and completing the readings\nAttend and actively participate in lectures and labs, office hours, team meetings\nPractice applying statistical concepts and computing with application exercises during lecture, graded for attempting\nPut together what you’ve learned to analyze real-world data\n\nLab assignments (7 or 8 throughout semester)\nExams (midterm + final)\nTerm project completed in teams"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#application-exercises",
-    "href": "slides/00-welcome-199-slides.html#application-exercises",
-    "title": "Welcome to STA 199",
-    "section": "Application exercises",
-    "text": "Application exercises\n\nDaily-ish in lecture\n“Graded” for attempt, not accuracy\nPractice Weeks 1 + 2, graded thereafter\nAt least one commit by 2 pm of the day of lecture\nTurn in at least 70% for full credit"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#labs",
-    "href": "slides/00-welcome-199-slides.html#labs",
-    "title": "Welcome to STA 199",
-    "section": "Labs",
-    "text": "Labs\n\nStart in lab session\nComplete at home\nDue within a week\nDiscussion with classmates ok, copying not ok!\nLowest score dropped"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#exams",
-    "href": "slides/00-welcome-199-slides.html#exams",
-    "title": "Welcome to STA 199",
-    "section": "Exams",
-    "text": "Exams\n\nTwo exams, each 20%\nMidterm comprised of two parts:\n\nIn-class (Oct 8): 75 minute in-class exam. Closed book, one sheet of notes (“cheat sheet”) – 70% of the grade.\nTake-home (Oct 8 - Oct 11): Follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam – 30% of the grade.\n\nFinal in-class only (Dec 12, 9am - 12pm): Closed book, one sheet of notes (“cheat sheet”).\n“Cheat sheet”: No larger than 8 1/2 x 11, both sides, must be prepared by you.\n\n\n\n\n\n\n\nCaution\n\n\nExam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class."
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#project",
-    "href": "slides/00-welcome-199-slides.html#project",
-    "title": "Welcome to STA 199",
-    "section": "Project",
-    "text": "Project\n\nDataset of your choice, method of your choice\nTeamwork\nFive milestones, interim deadline throughout semester\nFinal milestone: Presentation (video) and write-up\nPresentations submitted as videos\nPeer review between teams for content, peer evaluation within teams for contribution\nSome lab sessions allocated to project progress\n\n\n\n\n\n\n\nCaution\n\n\nProject due date cannot be changed. You must complete the project to pass this class."
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#teams",
-    "href": "slides/00-welcome-199-slides.html#teams",
-    "title": "Welcome to STA 199",
-    "section": "Teams",
-    "text": "Teams\n\nAssigned by me\nProject\nPeer evaluation during teamwork and after completion\nExpectations and roles\n\nEveryone is expected to contribute equal effort\nEveryone is expected to understand all code turned in\nIndividual contribution evaluated by peer evaluation, commits, etc."
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#grading",
-    "href": "slides/00-welcome-199-slides.html#grading",
-    "title": "Welcome to STA 199",
+    "objectID": "course-syllabus.html#grading",
+    "href": "course-syllabus.html#grading",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
     "section": "Grading",
-    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nApplication Exercises\n5%\n\n\nLabs\n35%\n\n\nMidterm\n20%\n\n\nFinal\n20%\n\n\nProject\n20%\n\n\n\nNo specific points allocated to attendance, but the application exercise score is implicitly tied to attendance.\nSee course syllabus for how the final letter grade will be determined."
+    "text": "Grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nLabs\n35%\n\n\nProject\n20%\n\n\nMidterm\n20%\n\n\nFinal\n20%\n\n\nApplication Exercises\n5%\n\n\n\nWhile there are no specific points allocated to attendance, we will record your attendance periodically throughout the semester. This information will be used as “extra credit” if you’re in between two grades and a minor bump would help.\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#support",
-    "href": "slides/00-welcome-199-slides.html#support",
-    "title": "Welcome to STA 199",
-    "section": "Support",
-    "text": "Support\n\nHelp from humans:\n\nAttend office hours\nAsk and answer questions on the discussion forum\n\nHelp from AI: Use the course chatbot (in Canvas!)\nReserve email for questions on personal matters and/or grades\nRead the course support page"
+    "objectID": "course-syllabus.html#course-policies",
+    "href": "course-syllabus.html#course-policies",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Course policies",
+    "text": "Course policies\n\nDuke Community Standard\nAs a student in this course, you have agreed to uphold the Duke Community Standard and the practices specific to this course.\n\n\n\n\nAcademic honesty\nTL;DR: Don’t cheat!\nPlease abide by the following as you work on assignments in this course:\n\nCollaboration: Only work that is clearly assigned as teamwork should be completed collaboratively.\n\nYou may discuss lab assignments with other students; however, you may not directly share (or copy) code or write-up with other students. For team assignments, you may collaborate freely within your team. You may discuss the assignment with other teams; however, you may not directly share (or copy) code or write-up with another team. Unauthorized sharing (or copying) of the code or write-up will be considered a violation for all students involved.\nYou may not discuss or otherwise work with others on the exams. Unauthorized collaboration or using unauthorized materials will be considered a violation for all students involved. More details will be given closer to the exam date.\nCollaboration within teams is not only allowed but expected for the project. Communication between teams at a high level is also allowed; however, you may not share code or project components across teams.\nOn individual assignments, you may not directly share work (including code) with another student in this class; on team assignments, you may not directly share work (including code) with another team.\n\nOnline resources: I am well aware that a huge volume of code is available on the web to solve any number of problems. Unless I explicitly tell you not to use something, the course’s policy is that you may make use of any online resources (e.g., StackOverflow), but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nUse of generative artificial intelligence (AI): You should treat generative AI, such as ChatGPT, like other online resources. Two guiding principles govern how to use AI in this course:\n\nCognitive dimension: Working with AI should not reduce your thinking ability. We will practice using AI to facilitate—rather than hinder—learning.\nEthical dimension: Students using AI should be transparent about their use and ensure it aligns with academic integrity.\n\n\n AI tools for code: You may use the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use these guidelines to cite AI-generated content. The bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.\n AI tools for narrative: Unless instructed otherwise, you may not use generative AI to generate a narrative that you then copy-paste verbatim into an assignment or edit and then insert into your assignment.\n AI tools for learning: You’re welcomed to ask AI tools questions that might help your learning and understanding in this course.\n\nIn general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content. Identifying AI-generated content is fairly straightforward. Any code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be considered plagiarism and treated as such.\n\nIf you are unsure if using a particular resource complies with the academic honesty policy, please ask a teaching team member.\nRegardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at conduct@duke.edu.\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will\n\nautomatically results in a 0 for the relevant portion or the entire assignment,\ncan further impact your overall course grade, and\nwill be reported to the Office of Student Conduct & Community Standards for further action.\n\n\n\nLate work & extensions\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback in a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline. Note that the lowest lab assignment will be dropped to accommodate such circumstances.\n\nLabs may be submitted up to 3 days late. A 5% deduction will be applied for each 24-hour period during which the assignment is late.\nNo late work is accepted for application exercises since these are designed to help you prepare for other assessments in the course.\nNo late work is accepted for exams.\nNo late work is accepted for projects.\n\n\n\nWaiver for extenuating circumstances\nIf circumstances prevent you from completing a lab by the stated due date, you may email the course coordinator, Dr. Mary Knox, before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide an explanation. This waiver may only be used once a semester, so only use it for a truly extenuating circumstance.\nIf circumstances have a longer-term impact on your academic performance, please let your academic dean know. They can be a resource. Please let me know if you need help contacting your academic dean.\n\n\nRegrade requests\nRegrade requests must be submitted on Gradescope within a week after an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the entire assignment may be regraded, which could potentially result in losing points.\nNo grades will be changed after the final exam has been administered.\n\n\nAttendance policy\nEvery student is expected to attend and participate in lecture and labs. There may be times, however, when you cannot attend class. Lecture recordings are available upon request for students who have an excused absence. See the Lecture recording request policy for more detail. If you miss a lecture, make sure to review the material and complete the application exercise, if applicable, before the next lecture. Labs dedicated to completing the lab assignment and collaborating with your lab team. If you miss a lab session, make sure to communicate with your lab TA and teammates about how you can make up your contribution. If you know you’re going to miss a lab session and you’re feeling well enough to do so, notify your lab TA and teammates ahead of time.\nMore details on Trinity attendance policies are available here.\n\n\nLecture recording request\nLectures will be recorded on Panopto and will be made available to students with an excused absence upon request. Videos shared with such students will be available for a week after the lecture date. To request a particular lecture’s video, please fill out the form at the link below. Please submit the form within 24 hours of missing lecture to ensure you have sufficient time to watch the recording. Please also make sure that any official documentation, such as STINFs, Dean’s excuses, NOVAPs, and quarantine/removal from class notices from student health are also uploaded to the form.\n🔗 https://forms.office.com/r/kJ6cWGE1Mp\nAbout one week before each exam, the class recordings will be available to all students. These recordings will be available until the start of the exam.\n\n\n\n\n\n\nClick here for syllabus bounty!\n\n\n\n\n\nIf you’ve read this far in the syllabus, post a picture of your pet if you have one or your favorite meme on ed in this thread! If you’re willing, share the name of your pet too!",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#announcements",
-    "href": "slides/00-welcome-199-slides.html#announcements",
-    "title": "Welcome to STA 199",
+    "objectID": "course-syllabus.html#accommodations",
+    "href": "course-syllabus.html#accommodations",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Accommodations",
+    "text": "Accommodations\n\nAcademic accommodations\nIf you need accommodations for this class, you will need to register with the Student Disability Access Office (SDAO) and provide them with documentation related to your needs. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu.\n\n\nReligious accommodations\nStudents are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: trinity.duke.edu/undergraduate/academic-policies/religious-holidays",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#important-dates",
+    "href": "course-syllabus.html#important-dates",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Important dates",
+    "text": "Important dates\n\nAug 26: Classes begin\nSep 2: Labor Day\nSep 6: Drop/add ends\nOct 7: Project milestone 1 – working collaboratively due\nOct 8: Midterm in-class + take-home released\nOct 11: Midterm take-home due\nOct 14-15: Fall break\nOct 28: Project milestone 2 – proposals due\nNov 8: Last day to withdraw with W\nNov 25: Project milestone 3 – peer review due\nNov 27-29: Thanksgiving break\nDec 6: Classes end\nDec 12: Final exam\n\nLab deadlines are listed on the course schedule.\nFor more important dates, see the full Duke Academic Calendar.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#announcements",
+    "href": "slides/02-grammar-of-data-visualization.html#announcements",
+    "title": "Grammar of Data Visualization",
     "section": "Announcements",
-    "text": "Announcements\n\nPosted on Canvas (Announcements tool) and sent via email, be sure to check both regularly\nI’ll assume that you’ve read an announcement by the next “business” day\nI’ll (try my best to) send a weekly update announcement each Friday, outlining the plan for the following week and reminding you what you need to do to prepare, practice, and perform"
+    "text": "Announcements\n…"
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#diversity-inclusion",
-    "href": "slides/00-welcome-199-slides.html#diversity-inclusion",
-    "title": "Welcome to STA 199",
-    "section": "Diversity + inclusion",
-    "text": "Diversity + inclusion\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\n\nFill out the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisors, and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it."
+    "objectID": "slides/02-grammar-of-data-visualization.html#outline",
+    "href": "slides/02-grammar-of-data-visualization.html#outline",
+    "title": "Grammar of Data Visualization",
+    "section": "Outline",
+    "text": "Outline\n\nLast time:\n\nWe introduced you to the course toolkit.\nYou cloned your ae repositories and started making some updates in your Quarto documents.\nYou did not commit and push your changes back.\n\n\n. . .\n\nToday:\n\nYou will commit your changes from last time and push them to wrap up that application exercise.\nWe will introduce data visualization.\nYou will pull to get today’s application exercise file.\nYou will work on the new application exercise on data visualization, commit your changes, and push them."
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#accessibility",
-    "href": "slides/00-welcome-199-slides.html#accessibility",
-    "title": "Welcome to STA 199",
-    "section": "Accessibility",
-    "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nI am committed to making all course materials accessible and I’m always learning how to do this better. If any course component is not accessible to you in any way, please don’t hesitate to let me know."
+    "objectID": "slides/02-grammar-of-data-visualization.html#ae-01-meet-the-penguins",
+    "href": "slides/02-grammar-of-data-visualization.html#ae-01-meet-the-penguins",
+    "title": "Grammar of Data Visualization",
+    "section": "ae-01-meet-the-penguins",
+    "text": "ae-01-meet-the-penguins\n\nGo to RStudio, confirm that you’re in the ae project, and open the document ae-01-meet-the-penguins.qmd."
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#late-work-waivers-lecture-recordings-regrades",
-    "href": "slides/00-welcome-199-slides.html#late-work-waivers-lecture-recordings-regrades",
-    "title": "Welcome to STA 199",
-    "section": "Late work, waivers, lecture recordings, regrades…",
-    "text": "Late work, waivers, lecture recordings, regrades…\n\nWe have policies!\nRead about them on the course syllabus and refer back to them when you need it"
+    "objectID": "slides/02-grammar-of-data-visualization.html#tour-recap-quarto",
+    "href": "slides/02-grammar-of-data-visualization.html#tour-recap-quarto",
+    "title": "Grammar of Data Visualization",
+    "section": "Tour recap: Quarto",
+    "text": "Tour recap: Quarto"
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#use-of-ai-tools",
-    "href": "slides/00-welcome-199-slides.html#use-of-ai-tools",
-    "title": "Welcome to STA 199",
-    "section": "Use of AI tools",
-    "text": "Use of AI tools\n\n AI tools for code:\n\nSure, but be careful/critical! Working code != correct/good code.\nMust explicitly cite, with at a minimum AI tool you’re using (e.g., ChatGPT) and your prompt.\n\n AI tools for narrative: Absolutely not!\n AI tools for learning: Sure, but be careful/critical!"
+    "objectID": "slides/02-grammar-of-data-visualization.html#tour-recap-git-github",
+    "href": "slides/02-grammar-of-data-visualization.html#tour-recap-git-github",
+    "title": "Grammar of Data Visualization",
+    "section": "Tour recap: Git + GitHub",
+    "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#academic-integrity",
-    "href": "slides/00-welcome-199-slides.html#academic-integrity",
-    "title": "Welcome to STA 199",
-    "section": "Academic integrity",
-    "text": "Academic integrity\n\nTo uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+    "objectID": "slides/02-grammar-of-data-visualization.html#how-will-we-use-quarto",
+    "href": "slides/02-grammar-of-data-visualization.html#how-will-we-use-quarto",
+    "title": "Grammar of Data Visualization",
+    "section": "How will we use Quarto?",
+    "text": "How will we use Quarto?\n\nEvery application exercise, lab, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#this-weeks-tasks",
-    "href": "slides/00-welcome-199-slides.html#this-weeks-tasks",
-    "title": "Welcome to STA 199",
-    "section": "This week’s tasks",
-    "text": "This week’s tasks\n\nComplete Lab 0\n\nComputational setup\nGetting to know you survey\n\nRead the syllabus\nComplete readings and videos for next class"
+    "objectID": "slides/02-grammar-of-data-visualization.html#whats-with-all-the-hexes",
+    "href": "slides/02-grammar-of-data-visualization.html#whats-with-all-the-hexes",
+    "title": "Grammar of Data Visualization",
+    "section": "What’s with all the hexes?",
+    "text": "What’s with all the hexes?"
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#midori-says",
-    "href": "slides/00-welcome-199-slides.html#midori-says",
-    "title": "Welcome to STA 199",
-    "section": "Midori says…",
-    "text": "Midori says…\n\n\n\n\n\n\n\n\n\n🔗 sta199-f24.github.io"
+    "objectID": "slides/02-grammar-of-data-visualization.html#we-have-hexes-too",
+    "href": "slides/02-grammar-of-data-visualization.html#we-have-hexes-too",
+    "title": "Grammar of Data Visualization",
+    "section": "We have hexes too!",
+    "text": "We have hexes too!\n\nGrab one before you leave!"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#examining-data-visualization",
+    "href": "slides/02-grammar-of-data-visualization.html#examining-data-visualization",
+    "title": "Grammar of Data Visualization",
+    "section": "Examining data visualization",
+    "text": "Examining data visualization\n\n\nDiscuss the following for the visualization.\n\n\n  \n    −\n    +\n \n 04:00\n \n\n\n\nSource: Twitter"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#ae-02-bechdel-dataviz",
+    "href": "slides/02-grammar-of-data-visualization.html#ae-02-bechdel-dataviz",
+    "title": "Grammar of Data Visualization",
+    "section": "ae-02-bechdel-dataviz",
+    "text": "ae-02-bechdel-dataviz\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#recap-of-ae",
+    "href": "slides/02-grammar-of-data-visualization.html#recap-of-ae",
+    "title": "Grammar of Data Visualization",
+    "section": "Recap of AE",
+    "text": "Recap of AE\n\nConstruct plots with ggplot().\nLayers of ggplots are separated by +s.\nThe formula is (almost) always as follows:\n\n\nggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +\n  geom_XXX()\n\n\nAesthetic attributes of a geometries (color, size, transparency, etc.) can be mapped to variables in the data or set by the user, e.g. color = binary vs. color = \"pink\".\nUse facet_wrap() when faceting (creating small multiples) by one variable and facet_grid() when faceting by two variables."
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#announcements",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#announcements",
+    "title": "Grammar of Data Visualization",
+    "section": "Announcements",
+    "text": "Announcements\n…"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#outline",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#outline",
+    "title": "Grammar of Data Visualization",
+    "section": "Outline",
+    "text": "Outline\n\nLast time:\n\nWe introduced you to the course toolkit.\nYou cloned your ae repositories and started making some updates in your Quarto documents.\nYou did not commit and push your changes back.\n\n\n\n\nToday:\n\nYou will commit your changes from last time and push them to wrap up that application exercise.\nWe will introduce data visualization.\nYou will pull to get today’s application exercise file.\nYou will work on the new application exercise on data visualization, commit your changes, and push them."
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#ae-01-meet-the-penguins",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#ae-01-meet-the-penguins",
+    "title": "Grammar of Data Visualization",
+    "section": "ae-01-meet-the-penguins",
+    "text": "ae-01-meet-the-penguins\n\nGo to RStudio, confirm that you’re in the ae project, and open the document ae-01-meet-the-penguins.qmd."
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#tour-recap-quarto",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#tour-recap-quarto",
+    "title": "Grammar of Data Visualization",
+    "section": "Tour recap: Quarto",
+    "text": "Tour recap: Quarto"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#tour-recap-git-github",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#tour-recap-git-github",
+    "title": "Grammar of Data Visualization",
+    "section": "Tour recap: Git + GitHub",
+    "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#how-will-we-use-quarto",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#how-will-we-use-quarto",
+    "title": "Grammar of Data Visualization",
+    "section": "How will we use Quarto?",
+    "text": "How will we use Quarto?\n\nEvery application exercise, lab, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#whats-with-all-the-hexes",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#whats-with-all-the-hexes",
+    "title": "Grammar of Data Visualization",
+    "section": "What’s with all the hexes?",
+    "text": "What’s with all the hexes?"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#we-have-hexes-too",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#we-have-hexes-too",
+    "title": "Grammar of Data Visualization",
+    "section": "We have hexes too!",
+    "text": "We have hexes too!\n\nGrab one before you leave!"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#examining-data-visualization",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#examining-data-visualization",
+    "title": "Grammar of Data Visualization",
+    "section": "Examining data visualization",
+    "text": "Examining data visualization\n\n\nDiscuss the following for the visualization.\n\n\n  \n    −\n    +\n \n 04:00\n \n\n\n\nSource: Twitter"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#ae-02-bechdel-dataviz",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#ae-02-bechdel-dataviz",
+    "title": "Grammar of Data Visualization",
+    "section": "ae-02-bechdel-dataviz",
+    "text": "ae-02-bechdel-dataviz\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#recap-of-ae",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#recap-of-ae",
+    "title": "Grammar of Data Visualization",
+    "section": "Recap of AE",
+    "text": "Recap of AE\n\nConstruct plots with ggplot().\nLayers of ggplots are separated by +s.\nThe formula is (almost) always as follows:\n\n\nggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +\n  geom_XXX()\n\n\nAesthetic attributes of a geometries (color, size, transparency, etc.) can be mapped to variables in the data or set by the user, e.g. color = binary vs. color = \"pink\".\nUse facet_wrap() when faceting (creating small multiples) by one variable and facet_grid() when faceting by two variables.\n\n\n\n\n\n🔗 sta199-f24.github.io"
   },
   {
     "objectID": "computing-access.html",
