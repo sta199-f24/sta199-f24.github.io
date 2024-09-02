@@ -15,6 +15,8 @@ website:
     creator: "@minebocek"
     image: "img/twitter-card.png"
 
+  draft-mode: unlinked
+
   sidebar:
     background: "#5D737E"
     logo: "img/logo.png"
