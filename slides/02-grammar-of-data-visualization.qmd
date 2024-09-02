@@ -1,0 +1,146 @@
+---
+title: "Grammar of Data Visualization"
+subtitle: "Lecture 2"
+date: "2024-09-03"
+format: 
+  live-revealjs: 
+    output-file: 02-grammar-of-data-visualization-slides.html
+webr:
+  cell-options:
+    autorun: false
+  packages:
+    - palmerpenguins
+    - tibble
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+<!-- end: webr fodder -->
+
+# Warm-up
+
+## Announcements
+
+...
+
+## Outline {.smaller}
+
+-   Last time:
+
+    -   We introduced you to the course toolkit.
+
+    -   You **cloned** your `ae` repositories and started making some updates in your Quarto documents.
+
+    -   You did not **commit and push** your changes back.
+
+. . .
+
+-   Today:
+
+    -   You will **commit** your changes from last time and **push** them to wrap up that application exercise.
+
+    -   We will introduce data visualization.
+
+    -   You will **pull** to get today's application exercise file.
+
+    -   You will work on the new application exercise on data visualization, **commit** your changes, and **push** them.
+
+# From last time
+
+## `ae-01-meet-the-penguins`
+
+::: appex
+Go to RStudio, confirm that you're in the `ae` project, and open the document `ae-01-meet-the-penguins.qmd`.
+:::
+
+## Tour recap: Quarto
+
+![](images/01/tour-quarto.png){fig-alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code chunk." fig-align="center"}
+
+## Tour recap: Git + GitHub {.smaller}
+
+Once we made changes to our Quarto document, we
+
+-   went to the Git pane in RStudio
+
+-   staged our changes by clicking the checkboxes next to the relevant files
+
+-   committed our changes with an informative commit message
+
+-   pushed our changes to our application exercise repos
+
+-   confirmed on GitHub that we could see our changes pushed from RStudio
+
+## How will we use Quarto?
+
+-   Every application exercise, lab, project, etc. is an Quarto document
+-   You'll always have a template Quarto document to start with
+-   The amount of scaffolding in the template will decrease over the semester
+
+## What's with all the hexes?
+
+![](images/01/hexes.jpeg){fig-alt="Hex logos for many packages" fig-align="center"}
+
+## We have hexes too!
+
+::: task
+Grab one before you leave!
+:::
+
+::: center-align
+![](images/logo.png){fig-alt="STA 199 hex logo"}
+:::
+
+# Data visualization
+
+## Examining data visualization {.smaller}
+
+::: columns
+::: {.column width="60%"}
+Discuss the following for the visualization.
+
+```{=html}
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/STA199S24?from=status-bar?" width="100%"></iframe>
+```
+:::
+
+{{< countdown minutes=4 >}}
+
+::: {.column width="40%"}
+![Source: [Twitter](https://twitter.com/reina_sabah/status/1291509085855260672)](images/female-heights.png){fig-align="center"}
+:::
+:::
+
+## `ae-02-bechdel-dataviz` {.smaller}
+
+::: appex
+-   Go to your `ae` project in RStudio.
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+-   Click **Pull** to get today's application exercise file.
+-   Work through the application exercise in class, and **render, commit, and push** your edits by the end of class.
+:::
+
+## Recap of AE {.smaller}
+
+-   Construct plots with `ggplot()`.
+-   Layers of ggplots are separated by `+`s.
+-   The formula is (almost) always as follows:
+
+```{r}
+#| eval: false
+
+ggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +
+  geom_XXX()
+```
+
+-   Aesthetic attributes of a geometries (color, size, transparency, etc.) can be **map**ped to variables in the data or **set** by the user, e.g. `color = binary` vs. `color = "pink"`.
+-   Use `facet_wrap()` when faceting (creating small multiples) by one variable and `facet_grid()` when faceting by two variables.

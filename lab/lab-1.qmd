@@ -27,7 +27,10 @@ Today we begin with the fundamental building blocks of R and RStudio: the interf
 
 ::: callout-warning
 This lab assumes that you have already completed [Lab 0](/labs/lab-0.html).
-If you have not, please go back and do that first before proceeding.
+If you have not, please
+
+-   go back and do that first before proceeding and
+-   let your TA know as they will need to set up a Lab 1 repository for you before you can complete this lab.
 :::
 
 ## Learning objectives
@@ -48,7 +51,7 @@ By the end of the lab, you will...
 
 ### Clone the repo & start new RStudio project
 
--   Go to the course organization at [github.com/sta199-s24](https://github.com/sta199-s24) organization on GitHub.
+-   Go to the course organization at [github.com/sta199-f24](https://github.com/sta199-f24) organization on GitHub.
     Click on the repo with the prefix **lab-1**.
     It contains the starter documents you need to complete the lab.
 
@@ -68,15 +71,15 @@ By the end of the lab, you will...
 
 Below are the components of the RStudio IDE.
 
-![](images/lab-0/rstudio.png){fig-alt="RStudio IDE"}
+![](images/lab-1/rstudio.png){fig-alt="RStudio IDE"}
 
 Below are the components of a Quarto (.qmd) file.
 
-![](images/lab-0/quarto.png){fig-alt="Quarto document"}
+![](images/lab-1/quarto.png){fig-alt="Quarto document"}
 
 ### YAML
 
-The top portion of your R Markdown file (between the three dashed lines) is called **YAML**.
+The top portion of your Quarto file (between the three dashed lines) is called **YAML**.
 It stands for "YAML Ain't Markup Language".
 It is a human friendly data representation for all programming languages.
 All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.
@@ -88,17 +91,18 @@ Examine the rendered document.
 
 ### Committing changes
 
-Now, go to the Git pane in your RStudio instance.
+Now, go to the Git pane in RStudio.
 This will be in the top right hand corner in a separate tab.
 
 If you have made changes to your Quarto (.qmd) file, you should see it listed here.
+If you have rendered the document, you should also see its output, a PDF file, listed there.
 Click on it to select it in this list and then click on **Diff**.
 This shows you the *diff*erence between the last committed state of the document and its current state including changes.
 You should see deletions in red and additions in green.
 
 If you're happy with these changes, we'll prepare the changes to be pushed to your remote repository.
 First, **stage** your changes by checking the appropriate box on the files you want to prepare.
-Next, write a meaningful commit message (for instance, "updated author name") in the **Commit message** box.
+Next, write a meaningful commit message (for instance, "Updated author name") in the **Commit message** box.
 Finally, click **Commit**.
 Note that every commit needs to have a commit message associated with it.
 
@@ -295,7 +299,6 @@ The resulting data frame is assigned back to `midwest`, overwriting the existing
 ```{r}
 #| label: hint
 #| eval: false
-
 midwest <- midwest |>
   mutate(metro = if_else(inmetro == 1, "Yes", "No"))
 ```
@@ -319,7 +322,6 @@ Comment on the population composition of this county by investigating the percen
 ```{r}
 #| eval: true
 #| echo: false
-
 ggplot(
   midwest,
   aes(x = percollege, y = percbelowpoverty, color = percwhite)
@@ -362,7 +364,6 @@ You can read this file into R with the following code:
 
 ```{r}
 #| eval: false
-
 nc_county <- read_csv("data/nc-county.csv")
 ```
 
@@ -442,7 +443,7 @@ Make sure you have:
 
 ## Grading
 
-The lab is graded out of a total of ___ points.
+The lab is graded out of a total of \_\_\_ points.
 
 ::: callout-important
 TO DO: Add grading scheme.
