@@ -4,6 +4,7 @@ subtitle: To be posted
 categories: Lab
 description: "Mon, Sep 16 at 8:30 am"
 draft: true
+draft-mode: unlinked
 ---
 
 # Introduction
@@ -26,7 +27,7 @@ Before we get to that stage, however, you need to build some basic fluency in R.
 Today we begin with the fundamental building blocks of R and RStudio: the interface, reading in data, and basic commands.
 
 ::: callout-warning
-This lab assumes that you have already completed [Lab 0](/labs/lab-0.html).
+This lab assumes that you have already completed [Lab 0](lab-0.html).
 If you have not, please
 
 -   go back and do that first before proceeding and
