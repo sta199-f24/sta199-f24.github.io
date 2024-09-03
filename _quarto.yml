@@ -107,7 +107,9 @@ website:
     left: "&copy; Copyright 2024, Mine Çetinkaya-Rundel"
     background: "#5D737E"
 
-format: html
+format: 
+  html:
+    mainfont: Atkinson Hyperlegible
 
 theme:
   light: [cosmo, style/sta199.scss]
@@ -117,7 +119,6 @@ toc: true
 code-copy: true
 code-link: true
 code-overflow: wrap
-mainfont: Atkinson Hyperlegible
 
 execute:
   freeze: auto
