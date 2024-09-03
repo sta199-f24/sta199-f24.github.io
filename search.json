@@ -169,7 +169,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science and Statistical Thinking",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 26\n\n\nLab 0: Hello, World and STA 199!\n💻 lab 0\nLab 0 due at the end of lab session\n\n\n\n\nTue, Aug 27\n\n\nWelcome to STA 199\n🖥️ slides 00  🗒️ notes 00  ⌨️ ae 00\n\n\n\n\n\n\nThu, Aug 29\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit - R and RStudio  🎥 Meet the toolkit - Quarto\nMeet the toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n\n\n\n2\nMon, Sep 2\n\n\nNo lab - Labor Day\n\n\n\n\n\n\n\n\nTue, Sep 3\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics\nGrammar of data visualization\nTo be posted\n\n\n\n\n\n\nThu, Sep 5\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation\nGrammar of data transformation\nTo be posted\n\n\n\n\n3\nMon, Sep 9\nTo be posted\nLab 1: Data visualization\n💻 lab 1\n\n\n\n\n\n\nTue, Sep 10\nTo be posted\nExploring data I\nTo be posted\n\n\n\n\n\n\nThu, Sep 12\nTo be posted\nExploring data II\nTo be posted\n\n\n\n\n4\nMon, Sep 16\nTo be posted\nLab 2: Data transformation\n💻 lab 2\nLab 1 at 8:30 am\n\n\n\n\nTue, Sep 17\nTo be posted\nTidying data\nTo be posted\n\n\n\n\n\n\nThu, Sep 19\nTo be posted\nJoining data\nTo be posted\n\n\n\n\n5\nMon, Sep 23\nTo be posted\nLab 3: Data tidying and joining\n💻 lab 3\nLab 2 at 8:30 am\n\n\n\n\nTue, Sep 24\nTo be posted\nData types and classes\nTo be posted\n\n\n\n\n\n\nThu, Sep 26\nTo be posted\nImporting and recoding data\nTo be posted\n\n\n\n\n6\nMon, Sep 30\nTo be posted\nLab 4: Everything so far I\n💻 lab 4\nLab 3 at 8:30 am\n\n\n\n\nTue, Oct 1\nTo be posted\nWeb scraping\nTo be posted\n\n\n\n\n\n\nThu, Oct 3\nTo be posted\nMidterm review\n📝 midterm review  ✅ midterm review\n\n\n\n\n7\nMon, Oct 7\nTo be posted\nProject milestone 1 - Working collaboratively\n📓 project milestone 1\nLab 4 due at 8:30 am  Project milestone 1 at the end of lab session\n\n\n\n\nTue, Oct 8\nTo be posted\nMidterm - In-class + take-home released\n\n\n\n\n\n\n\n\nThu, Oct 10\nTo be posted\nWorking with generative AI tools\nTo be posted\nPeer evaluation 1 due by 5:00 pm\n\n\n\n\nFri, Oct 11\nTo be posted\n\n\n\n\nMidterm take-home due at 5:00 pm\n\n\n8\nMon, Oct 14\nTo be posted\nNo lab - Fall Break\n\n\n\n\n\n\n\n\nTue, Oct 15\nTo be posted\nNo lecture - Fall Break\n\n\n\n\n\n\n\n\nThu, Oct 17\nTo be posted\nData science ethics\nTo be posted\n\n\n\n\n\n\nFri, Oct 18\nTo be posted\n\n\n\n\nMidterm course evaluation due by 5:00 pm (optional)\n\n\n9\nMon, Oct 21\nTo be posted\nProject milestone 2 - Project proposals\n📓 project milestone 2\n\n\n\n\n\n\nTue, Oct 22\nTo be posted\nThe language of models\nTo be posted\n\n\n\n\n\n\nThu, Oct 24\nTo be posted\nLinear regression with a single predictor\nTo be posted\n\n\n\n\n\n\nFri, Oct 25\nTo be posted\n\n\n\n\nPeer evaluation 2 due by 5:00 pm\n\n\n10\nMon, Oct 28\nTo be posted\nLab 5: Modeling I\n💻 lab 5\nProject milestone 2 at 8:30 am\n\n\n\n\nTue, Oct 29\nTo be posted\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\nThu, Oct 31\nTo be posted\nLinear regression with multiple predictors II\nTo be posted\n\n\n\n\n11\nMon, Nov 4\nTo be posted\nLab 6: Modeling II\n💻 lab 6\nLab 5 at 8:30 am\n\n\n\n\nTue, Nov 5\nTo be posted\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\nThu, Nov 7\nTo be posted\nLogistic regression\nTo be posted\n\n\n\n\n12\nMon, Nov 11\nTo be posted\nLab 7: Modeling III\n💻 lab 7\nLab 6 at 8:30 am\n\n\n\n\nTue, Nov 12\nTo be posted\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\nThu, Nov 14\nTo be posted\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n13\nMon, Nov 18\nTo be posted\nLab 8: Everything so far II\n💻 lab 8\nLab 7 at 8:30 am\n\n\n\n\nTue, Nov 19\nTo be posted\nCommunicating data science results effectively\nTo be posted\n\n\n\n\n\n\nThu, Nov 21\nTo be posted\nCustomizing Quarto reports and presentations\nTo be posted\n\n\n\n\n\n\nFri, Nov 22\nTo be posted\n\n\n\n\n\n\n\n\n14\nMon, Nov 25\nTo be posted\nProject milestone 4 - Peer review\n📓 project milestone 4\nLab 8 at 8:30 am  Project milestone 3 at the end of lab session\n\n\n\n\nTue, Nov 26\nTo be posted\n\n\n\n\n\n\n\n\n\n\nThu, Nov 28\nTo be posted\nNo lecture - Thanksgiving\n\n\n\n\n\n\n15\nMon, Dec 2\nTo be posted\nProject milestone 5 - Work on writeup and presentations\n📓 project milestone 5\n\n\n\n\n\n\nTue, Dec 3\nTo be posted\nLooking further: Interactive web applications with Shiny\nTo be posted\n\n\n\n\n\n\nThu, Dec 5\nTo be posted\nFinal review\n📝 final review  ✅ final review\nProject milestone 4 - Writeup and presentation videos by 5:00 pm\n\n\n\n\nFri, Dec 6\nTo be posted\n\n\n\n\nPeer evaluation 4 due by 5:00 pm\n\n\n16\nThu, Dec 12\nTo be posted\nFinal (9 am - 12 pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 26\n\n\nLab 0: Hello, World and STA 199!\n💻 lab 0\nLab 0 due at the end of lab session\n\n\n\n\nTue, Aug 27\n\n\nWelcome to STA 199\n🖥️ slides 00  🗒️ notes 00  ⌨️ ae 00\n\n\n\n\n\n\nThu, Aug 29\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit - R and RStudio  🎥 Meet the toolkit - Quarto\nMeet the toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n\n\n\n2\nMon, Sep 2\n\n\nNo lab - Labor Day\n\n\n\n\n\n\n\n\nTue, Sep 3\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics\nGrammar of data visualization\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 02\n\n\n\n\n\n\nThu, Sep 5\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation\nGrammar of data transformation\nTo be posted\n\n\n\n\n3\nMon, Sep 9\n\n\nLab 1: Data visualization\nTo be posted\n\n\n\n\n\n\nTue, Sep 10\n📗 r4ds - chp 3.6-3.7  🎥 Visualizing and summarizing categorical data  🎥 Visualizing and summarizing numerical data  🎥 Visualizing and summarizing relationships\nExploring data I\nTo be posted\n\n\n\n\n\n\nThu, Sep 12\n📘 ims - chp 5  📘 ims - chp 6\nExploring data II\nTo be posted\n\n\n\n\n4\nMon, Sep 16\nTo be posted\nLab 2: Data transformation\nTo be posted\nLab 1 at 8:30 am\n\n\n\n\nTue, Sep 17\nTo be posted\nTidying data\nTo be posted\n\n\n\n\n\n\nThu, Sep 19\nTo be posted\nJoining data\nTo be posted\n\n\n\n\n5\nMon, Sep 23\nTo be posted\nLab 3: Data tidying and joining\nTo be posted\nLab 2 at 8:30 am\n\n\n\n\nTue, Sep 24\nTo be posted\nData types and classes\nTo be posted\n\n\n\n\n\n\nThu, Sep 26\nTo be posted\nImporting and recoding data\nTo be posted\n\n\n\n\n6\nMon, Sep 30\nTo be posted\nLab 4: Everything so far I\nTo be posted\nLab 3 at 8:30 am\n\n\n\n\nTue, Oct 1\nTo be posted\nWeb scraping\nTo be posted\n\n\n\n\n\n\nThu, Oct 3\nTo be posted\nMidterm review\n📝 midterm review  ✅ midterm review\n\n\n\n\n7\nMon, Oct 7\nTo be posted\nProject milestone 1 - Working collaboratively\n📓 project milestone 1\nLab 4 due at 8:30 am  Project milestone 1 at the end of lab session\n\n\n\n\nTue, Oct 8\nTo be posted\nMidterm - In-class + take-home released\n\n\n\n\n\n\n\n\nThu, Oct 10\nTo be posted\nWorking with generative AI tools\nTo be posted\nPeer evaluation 1 due by 5:00 pm\n\n\n\n\nFri, Oct 11\nTo be posted\n\n\n\n\nMidterm take-home due at 5:00 pm\n\n\n8\nMon, Oct 14\nTo be posted\nNo lab - Fall Break\n\n\n\n\n\n\n\n\nTue, Oct 15\nTo be posted\nNo lecture - Fall Break\n\n\n\n\n\n\n\n\nThu, Oct 17\nTo be posted\nData science ethics\nTo be posted\n\n\n\n\n\n\nFri, Oct 18\nTo be posted\n\n\n\n\nMidterm course evaluation due by 5:00 pm (optional)\n\n\n9\nMon, Oct 21\nTo be posted\nProject milestone 2 - Project proposals\n📓 project milestone 2\n\n\n\n\n\n\nTue, Oct 22\nTo be posted\nThe language of models\nTo be posted\n\n\n\n\n\n\nThu, Oct 24\nTo be posted\nLinear regression with a single predictor\nTo be posted\n\n\n\n\n\n\nFri, Oct 25\nTo be posted\n\n\n\n\nPeer evaluation 2 due by 5:00 pm\n\n\n10\nMon, Oct 28\nTo be posted\nLab 5: Modeling I\nTo be posted\nProject milestone 2 at 8:30 am\n\n\n\n\nTue, Oct 29\nTo be posted\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\nThu, Oct 31\nTo be posted\nLinear regression with multiple predictors II\nTo be posted\n\n\n\n\n11\nMon, Nov 4\nTo be posted\nLab 6: Modeling II\nTo be posted\nLab 5 at 8:30 am\n\n\n\n\nTue, Nov 5\nTo be posted\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\nThu, Nov 7\nTo be posted\nLogistic regression\nTo be posted\n\n\n\n\n12\nMon, Nov 11\nTo be posted\nLab 7: Modeling III\nTo be posted\nLab 6 at 8:30 am\n\n\n\n\nTue, Nov 12\nTo be posted\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\nThu, Nov 14\nTo be posted\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n13\nMon, Nov 18\nTo be posted\nLab 8: Everything so far II\nTo be posted\nLab 7 at 8:30 am\n\n\n\n\nTue, Nov 19\nTo be posted\nCommunicating data science results effectively\nTo be posted\n\n\n\n\n\n\nThu, Nov 21\nTo be posted\nCustomizing Quarto reports and presentations\nTo be posted\n\n\n\n\n\n\nFri, Nov 22\nTo be posted\n\n\n\n\n\n\n\n\n14\nMon, Nov 25\nTo be posted\nProject milestone 4 - Peer review\n📓 project milestone 4\nLab 8 at 8:30 am  Project milestone 3 at the end of lab session\n\n\n\n\nTue, Nov 26\nTo be posted\n\n\n\n\n\n\n\n\n\n\nThu, Nov 28\nTo be posted\nNo lecture - Thanksgiving\n\n\n\n\n\n\n15\nMon, Dec 2\nTo be posted\nProject milestone 5 - Work on writeup and presentations\n📓 project milestone 5\n\n\n\n\n\n\nTue, Dec 3\nTo be posted\nLooking further: Interactive web applications with Shiny\nTo be posted\n\n\n\n\n\n\nThu, Dec 5\nTo be posted\nFinal review\n📝 final review  ✅ final review\nProject milestone 4 - Writeup and presentation videos by 5:00 pm\n\n\n\n\nFri, Dec 6\nTo be posted\n\n\n\n\nPeer evaluation 4 due by 5:00 pm\n\n\n16\nThu, Dec 12\nTo be posted\nFinal (9 am - 12 pm)",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -190,37 +190,65 @@
     "text": "To be posted."
   },
   {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html",
+    "href": "ae/ae-02-bechdel-dataviz-A.html",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "",
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key.\nIn this mini-analysis, we use the data from the FiveThirtyEight story “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women.”\nThis analysis is about the Bechdel test, a measure of the representation of women in fiction."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html#getting-started",
+    "href": "ae/ae-02-bechdel-dataviz-A.html#getting-started",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Getting started",
+    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\nglimpse(bechdel)\n\nRows: 1,615\nColumns: 7\n$ title       &lt;chr&gt; \"21 & Over\", \"Dredd 3D\", \"12 Years a Slave\", \"2 Guns\", \"42…\n$ year        &lt;dbl&gt; 2013, 2012, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013…\n$ gross_2013  &lt;dbl&gt; 67878146, 55078343, 211714070, 208105475, 190040426, 18416…\n$ budget_2013 &lt;dbl&gt; 13000000, 45658735, 20000000, 61000000, 40000000, 22500000…\n$ roi         &lt;dbl&gt; 5.221396, 1.206305, 10.585703, 3.411565, 4.751011, 0.81851…\n$ binary      &lt;chr&gt; \"FAIL\", \"PASS\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"P…\n$ clean_test  &lt;chr&gt; \"notalk\", \"ok\", \"notalk\", \"notalk\", \"men\", \"men\", \"notalk\"…\n\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a movie.\n\nHow many observations (rows) are in the data set?\n\nThere are 1615 movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are 7 columns in the dataset.\n\n\nVariables of interest\nThe variables we’ll focus on are the following:\n\nroi: Return on investment, calculated as the ratio of the gross to budget.\nclean_test: Bechdel test result:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\nbinary: Bechdel Test PASS vs FAIL binary\n\nWe will also use the year of release in data prep and title of movie to take a deeper look at some outliers.\nThere are a few other variables in the dataset, but we won’t be using them in this analysis."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html#bechdel-test-results",
+    "href": "ae/ae-02-bechdel-dataviz-A.html#bechdel-test-results",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Bechdel test results",
+    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nggplot2 is the package and ggplot() is the function in this package that is used to create a plot.\n\nggplot() creates the initial base coordinate system, and we will add layers to that base. We first specify the data set we will use with data = bechdel.\n\n\nggplot(data = bechdel)\n\n\n\n\n\n\n\n\n\nThe mapping argument is paired with an aesthetic (aes()), which tells us how the variables in our data set should be mapped to the visual properties of the graph.\n\n\nggplot(data = bechdel, mapping = aes(x = clean_test))\n\n\n\n\n\n\n\n\nAs we previously mentioned, we often omit the names of the first two arguments in R functions. So you’ll often see this written as:\n\nggplot(bechdel, aes(x = clean_test))\n\n\n\n\n\n\n\n\nNote that the result is exactly the same.\n\nThe geom_xx function specifies the type of plot we want to use to represent the data. In the code below, we use geom_point which creates a plot where each observation is represented by a point.\n\n\nggplot(bechdel, aes(x = clean_test)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nWhat types of movies are more common, those that pass or do not pass the test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html#return-on-investment",
+    "href": "ae/ae-02-bechdel-dataviz-A.html#return-on-investment",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Return-on-investment",
+    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\nggplot(bechdel, aes(x = clean_test, y = roi, color = binary)) +\n  geom_boxplot() +\n  labs(\n    title = \"Return on investment vs. Bechdel test result\",\n    x = \"Detailed Bechdel result\",\n    y = \"Return-on-investment (gross / budget)\",\n    color = \"Bechdel\\nresult\"\n  )\n\nWarning: Removed 15 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nWhat are those movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400) |&gt;\n  select(title, roi, budget_2013, gross_2013, year, clean_test)\n\n# A tibble: 3 × 6\n  title                     roi budget_2013 gross_2013  year clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     \n1 Paranormal Activity      671.      505595  339424558  2007 dubious   \n2 The Blair Witch Project  648.      839077  543776715  1999 ok        \n3 El Mariachi              583.       11622    6778946  1992 nowomen   \n\n\n\n\nStep 2 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\nggplot(bechdel, aes(x = clean_test, y = roi, color = binary)) +\n  geom_boxplot() +\n  labs(\n    title = \"Return on investment vs. Bechdel test result\",\n    x = \"Detailed Bechdel result\",\n    y = \"Return-on-investment (gross / budget)\",\n    color = \"Bechdel\\nresult\"\n  ) +\n  coord_cartesian(ylim = c(0, 16))\n\nWarning: Removed 15 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
     "objectID": "ae/ae-00-unvotes.html",
     "href": "ae/ae-00-unvotes.html",
-    "title": "AE 00",
+    "title": "AE 00: UN Votes",
     "section": "",
     "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
   },
   {
     "objectID": "ae/ae-00-unvotes.html#introduction",
     "href": "ae/ae-00-unvotes.html#introduction",
-    "title": "AE 00",
+    "title": "AE 00: UN Votes",
     "section": "",
     "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
   },
   {
     "objectID": "ae/ae-00-unvotes.html#un-voting-patterns",
     "href": "ae/ae-00-unvotes.html#un-voting-patterns",
-    "title": "AE 00",
+    "title": "AE 00: UN Votes",
     "section": "UN voting patterns",
     "text": "UN voting patterns\nLet’s create a data visualisation that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.\n\n\n\n\n\n\n\n\n\nTask: Write your first piece of (R) code!\n\nModify the code cell above to change the plot to include a different country in place of Turkey. Note that the country name should be spelled and capitalized exactly the same way as it appears in the data. See the Appendix for a list of the countries in the data."
   },
   {
     "objectID": "ae/ae-00-unvotes.html#references",
     "href": "ae/ae-00-unvotes.html#references",
-    "title": "AE 00",
+    "title": "AE 00: UN Votes",
     "section": "References",
     "text": "References\n\nRobinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
   },
   {
     "objectID": "ae/ae-00-unvotes.html#appendix",
     "href": "ae/ae-00-unvotes.html#appendix",
-    "title": "AE 00",
+    "title": "AE 00: UN Votes",
     "section": "Appendix",
     "text": "Appendix\nBelow is a list of countries in the dataset:"
   },
@@ -240,7 +268,7 @@
     "href": "ae.html",
     "title": "Application exercises",
     "section": "",
-    "text": "All application exercises (AEs) are due by 2 pm on the day they’re covered in lab. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nNo.\n\n\nTitle\n\n\n\n\n\n\nAE 00\n\n\nUN Votes\n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\n\nNo matching items\n\n\n\nMore AEs to be added as the semester progresses.",
+    "text": "All application exercises (AEs) are due by 2 pm on the day they’re covered in lab. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nNo.\n\n\nTitle\n\n\n\n\n\n\nAE 00: UN Votes\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\n\nNo matching items\n\n\n\nMore AEs to be added as the semester progresses.",
     "crumbs": [
       "Application exercises"
     ]
@@ -1529,154 +1557,427 @@
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#announcements",
     "href": "slides/02-grammar-of-data-visualization.html#announcements",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "Announcements",
     "text": "Announcements\n…"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#outline",
     "href": "slides/02-grammar-of-data-visualization.html#outline",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "Outline",
     "text": "Outline\n\nLast time:\n\nWe introduced you to the course toolkit.\nYou cloned your ae repositories and started making some updates in your Quarto documents.\nYou did not commit and push your changes back.\n\n\n. . .\n\nToday:\n\nYou will commit your changes from last time and push them to wrap up that application exercise.\nWe will introduce data visualization.\nYou will pull to get today’s application exercise file.\nYou will work on the new application exercise on data visualization, commit your changes, and push them."
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#ae-01-meet-the-penguins",
     "href": "slides/02-grammar-of-data-visualization.html#ae-01-meet-the-penguins",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "ae-01-meet-the-penguins",
     "text": "ae-01-meet-the-penguins\n\nGo to RStudio, confirm that you’re in the ae project, and open the document ae-01-meet-the-penguins.qmd."
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#tour-recap-quarto",
     "href": "slides/02-grammar-of-data-visualization.html#tour-recap-quarto",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "Tour recap: Quarto",
     "text": "Tour recap: Quarto"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#tour-recap-git-github",
     "href": "slides/02-grammar-of-data-visualization.html#tour-recap-git-github",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "Tour recap: Git + GitHub",
     "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#how-will-we-use-quarto",
     "href": "slides/02-grammar-of-data-visualization.html#how-will-we-use-quarto",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "How will we use Quarto?",
     "text": "How will we use Quarto?\n\nEvery application exercise, lab, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#whats-with-all-the-hexes",
     "href": "slides/02-grammar-of-data-visualization.html#whats-with-all-the-hexes",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "What’s with all the hexes?",
     "text": "What’s with all the hexes?"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#we-have-hexes-too",
     "href": "slides/02-grammar-of-data-visualization.html#we-have-hexes-too",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "We have hexes too!",
     "text": "We have hexes too!\n\nGrab one before you leave!"
   },
   {
-    "objectID": "slides/02-grammar-of-data-visualization.html#examining-data-visualization",
-    "href": "slides/02-grammar-of-data-visualization.html#examining-data-visualization",
-    "title": "Grammar of Data Visualization",
-    "section": "Examining data visualization",
-    "text": "Examining data visualization\n\n\nDiscuss the following for the visualization.\n\n\n  \n    −\n    +\n \n 04:00\n \n\n\n\nSource: Twitter"
+    "objectID": "slides/02-grammar-of-data-visualization.html#un-votes",
+    "href": "slides/02-grammar-of-data-visualization.html#un-votes",
+    "title": "Grammar of data visualization",
+    "section": "UN Votes",
+    "text": "UN Votes\n\nRemember this visualization from the first day of class?"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#let-see",
+    "href": "slides/02-grammar-of-data-visualization.html#let-see",
+    "title": "Grammar of data visualization",
+    "section": "Let’ see…",
+    "text": "Let’ see…\n\nhow the sausage is made!"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#load-packages",
+    "href": "slides/02-grammar-of-data-visualization.html#load-packages",
+    "title": "Grammar of data visualization",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(unvotes)\nlibrary(tidyverse)\nlibrary(ggthemes)"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#prepare-the-data",
+    "href": "slides/02-grammar-of-data-visualization.html#prepare-the-data",
+    "title": "Grammar of data visualization",
+    "section": "Prepare the data",
+    "text": "Prepare the data\n\nus_uk_tr_votes &lt;- un_votes |&gt;\n  inner_join(un_roll_calls, by = \"rcid\") |&gt;\n  inner_join(un_roll_call_issues, by = \"rcid\", relationship = \"many-to-many\") |&gt;\n  filter(country %in% c(\"United Kingdom\", \"United States\", \"Turkey\")) |&gt;\n  mutate(year = year(date)) |&gt;\n  group_by(country, year, issue) |&gt;\n  summarize(percent_yes = mean(vote == \"yes\"), .groups = \"drop\")\n\n. . .\n\n\n\n\n\n\nNote\n\n\n\nLet’s leave these details aside for a bit, we’ll revisit this code at a later point in the semester. For now, let’s agree that we need to do some “data wrangling” to get the data into the right format for the plot we want to create. Just note that we called the data frame we’ll visualize us_uk_tr_votes."
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#visualize-the-data",
+    "href": "slides/02-grammar-of-data-visualization.html#visualize-the-data",
+    "title": "Grammar of data visualization",
+    "section": "Visualize the data",
+    "text": "Visualize the data\n\nggplot(\n  us_uk_tr_votes, \n  mapping = aes(x = year, y = percent_yes, color = country)\n  ) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(se = FALSE) +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  labs(\n    x = \"Year\", \n    y = \"% yes\", \n    color = \"Country\"\n  ) +\n  theme_minimal()\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-1.-prepare-a-canvas-for-plotting",
+    "href": "slides/02-grammar-of-data-visualization.html#step-1.-prepare-a-canvas-for-plotting",
+    "title": "Grammar of data visualization",
+    "section": "Step 1. Prepare a canvas for plotting",
+    "text": "Step 1. Prepare a canvas for plotting"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-2.-map-variables-to-aesthetics",
+    "href": "slides/02-grammar-of-data-visualization.html#step-2.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 2. Map variables to aesthetics",
+    "text": "Step 2. Map variables to aesthetics\nMap year to the x aesthetic"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-3.-map-variables-to-aesthetics",
+    "href": "slides/02-grammar-of-data-visualization.html#step-3.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 3. Map variables to aesthetics",
+    "text": "Step 3. Map variables to aesthetics\nMap percent_yes to the y aesthetic"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#mapping-and-aesthetics",
+    "href": "slides/02-grammar-of-data-visualization.html#mapping-and-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Mapping and aesthetics",
+    "text": "Mapping and aesthetics\n\nAesthetics are visual properties of a plot\nIn the grammar of graphics, variables from the data frame are mapped to aesthetics"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-4.-represent-data-on-your-canvas",
+    "href": "slides/02-grammar-of-data-visualization.html#step-4.-represent-data-on-your-canvas",
+    "title": "Grammar of data visualization",
+    "section": "Step 4. Represent data on your canvas",
+    "text": "Step 4. Represent data on your canvas\nwith a geom"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-5.-map-variables-to-aesthetics",
+    "href": "slides/02-grammar-of-data-visualization.html#step-5.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 5. Map variables to aesthetics",
+    "text": "Step 5. Map variables to aesthetics\nMap country to the color aesthetic\n\n\n\n\n\n\n\n\n. . .\n\n\n\n\n\n\nNote\n\n\n\nWe dropped the name of the mapping argument from the function call to save some space, as is commonly done."
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-6.-represent-data-on-your-canvas",
+    "href": "slides/02-grammar-of-data-visualization.html#step-6.-represent-data-on-your-canvas",
+    "title": "Grammar of data visualization",
+    "section": "Step 6. Represent data on your canvas",
+    "text": "Step 6. Represent data on your canvas\nwith another geom"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#warnings-and-messages",
+    "href": "slides/02-grammar-of-data-visualization.html#warnings-and-messages",
+    "title": "Grammar of data visualization",
+    "section": "Warnings and messages",
+    "text": "Warnings and messages\n\nAdding geom_smooth() resulted in the following warning:\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n. . .\n\nIt tells us the type of smoothing ggplot2 does under the hood when drawing the smooth curves representing trends for each country.\n\n. . .\n\nGoing forward we’ll suppress this warning to save some space."
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-7.-split-plot-into-facets",
+    "href": "slides/02-grammar-of-data-visualization.html#step-7.-split-plot-into-facets",
+    "title": "Grammar of data visualization",
+    "section": "Step 7. Split plot into facets",
+    "text": "Step 7. Split plot into facets"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-8.-use-a-different-color-scale",
+    "href": "slides/02-grammar-of-data-visualization.html#step-8.-use-a-different-color-scale",
+    "title": "Grammar of data visualization",
+    "section": "Step 8. Use a different color scale",
+    "text": "Step 8. Use a different color scale"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-10.-apply-a-different-theme",
+    "href": "slides/02-grammar-of-data-visualization.html#step-10.-apply-a-different-theme",
+    "title": "Grammar of data visualization",
+    "section": "Step 10. Apply a different theme",
+    "text": "Step 10. Apply a different theme"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-11.-add-labels",
+    "href": "slides/02-grammar-of-data-visualization.html#step-11.-add-labels",
+    "title": "Grammar of data visualization",
+    "section": "Step 11. Add labels",
+    "text": "Step 11. Add labels"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-12.-set-transparency-of-points",
+    "href": "slides/02-grammar-of-data-visualization.html#step-12.-set-transparency-of-points",
+    "title": "Grammar of data visualization",
+    "section": "Step 12. Set transparency of points",
+    "text": "Step 12. Set transparency of points\nwith alpha"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#step-13.-hide-standard-errors-of-curves",
+    "href": "slides/02-grammar-of-data-visualization.html#step-13.-hide-standard-errors-of-curves",
+    "title": "Grammar of data visualization",
+    "section": "Step 13. Hide standard errors of curves",
+    "text": "Step 13. Hide standard errors of curves\nwith se = FALSE"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization.html#grammar-of-graphics",
+    "href": "slides/02-grammar-of-data-visualization.html#grammar-of-graphics",
+    "title": "Grammar of data visualization",
+    "section": "Grammar of graphics",
+    "text": "Grammar of graphics\n\n\nWe built a plot layer-by-layer\n\njust like described in the book The Grammar of Graphics and\nimplemented in the ggplot2 package, the data visualization package of the tidyverse."
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#ae-02-bechdel-dataviz",
     "href": "slides/02-grammar-of-data-visualization.html#ae-02-bechdel-dataviz",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "ae-02-bechdel-dataviz",
     "text": "ae-02-bechdel-dataviz\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#recap-of-ae",
     "href": "slides/02-grammar-of-data-visualization.html#recap-of-ae",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "Recap of AE",
     "text": "Recap of AE\n\nConstruct plots with ggplot().\nLayers of ggplots are separated by +s.\nThe formula is (almost) always as follows:\n\n\nggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +\n  geom_XXX()\n\n\nAesthetic attributes of a geometries (color, size, transparency, etc.) can be mapped to variables in the data or set by the user, e.g. color = binary vs. color = \"pink\".\nUse facet_wrap() when faceting (creating small multiples) by one variable and facet_grid() when faceting by two variables."
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#announcements",
     "href": "slides/02-grammar-of-data-visualization-slides.html#announcements",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "Announcements",
     "text": "Announcements\n…"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#outline",
     "href": "slides/02-grammar-of-data-visualization-slides.html#outline",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "Outline",
     "text": "Outline\n\nLast time:\n\nWe introduced you to the course toolkit.\nYou cloned your ae repositories and started making some updates in your Quarto documents.\nYou did not commit and push your changes back.\n\n\n\n\nToday:\n\nYou will commit your changes from last time and push them to wrap up that application exercise.\nWe will introduce data visualization.\nYou will pull to get today’s application exercise file.\nYou will work on the new application exercise on data visualization, commit your changes, and push them."
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#ae-01-meet-the-penguins",
     "href": "slides/02-grammar-of-data-visualization-slides.html#ae-01-meet-the-penguins",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "ae-01-meet-the-penguins",
     "text": "ae-01-meet-the-penguins\n\nGo to RStudio, confirm that you’re in the ae project, and open the document ae-01-meet-the-penguins.qmd."
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#tour-recap-quarto",
     "href": "slides/02-grammar-of-data-visualization-slides.html#tour-recap-quarto",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "Tour recap: Quarto",
     "text": "Tour recap: Quarto"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#tour-recap-git-github",
     "href": "slides/02-grammar-of-data-visualization-slides.html#tour-recap-git-github",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "Tour recap: Git + GitHub",
     "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#how-will-we-use-quarto",
     "href": "slides/02-grammar-of-data-visualization-slides.html#how-will-we-use-quarto",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "How will we use Quarto?",
     "text": "How will we use Quarto?\n\nEvery application exercise, lab, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#whats-with-all-the-hexes",
     "href": "slides/02-grammar-of-data-visualization-slides.html#whats-with-all-the-hexes",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "What’s with all the hexes?",
     "text": "What’s with all the hexes?"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#we-have-hexes-too",
     "href": "slides/02-grammar-of-data-visualization-slides.html#we-have-hexes-too",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "We have hexes too!",
     "text": "We have hexes too!\n\nGrab one before you leave!"
   },
   {
-    "objectID": "slides/02-grammar-of-data-visualization-slides.html#examining-data-visualization",
-    "href": "slides/02-grammar-of-data-visualization-slides.html#examining-data-visualization",
-    "title": "Grammar of Data Visualization",
-    "section": "Examining data visualization",
-    "text": "Examining data visualization\n\n\nDiscuss the following for the visualization.\n\n\n  \n    −\n    +\n \n 04:00\n \n\n\n\nSource: Twitter"
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#un-votes",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#un-votes",
+    "title": "Grammar of data visualization",
+    "section": "UN Votes",
+    "text": "UN Votes\n\nRemember this visualization from the first day of class?"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#let-see",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#let-see",
+    "title": "Grammar of data visualization",
+    "section": "Let’ see…",
+    "text": "Let’ see…\n\nhow the sausage is made!"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#load-packages",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#load-packages",
+    "title": "Grammar of data visualization",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(unvotes)\nlibrary(tidyverse)\nlibrary(ggthemes)"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#prepare-the-data",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#prepare-the-data",
+    "title": "Grammar of data visualization",
+    "section": "Prepare the data",
+    "text": "Prepare the data\n\nus_uk_tr_votes &lt;- un_votes |&gt;\n  inner_join(un_roll_calls, by = \"rcid\") |&gt;\n  inner_join(un_roll_call_issues, by = \"rcid\", relationship = \"many-to-many\") |&gt;\n  filter(country %in% c(\"United Kingdom\", \"United States\", \"Turkey\")) |&gt;\n  mutate(year = year(date)) |&gt;\n  group_by(country, year, issue) |&gt;\n  summarize(percent_yes = mean(vote == \"yes\"), .groups = \"drop\")\n\n\n\n\n\n\n\n\nNote\n\n\nLet’s leave these details aside for a bit, we’ll revisit this code at a later point in the semester. For now, let’s agree that we need to do some “data wrangling” to get the data into the right format for the plot we want to create. Just note that we called the data frame we’ll visualize us_uk_tr_votes."
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#visualize-the-data",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#visualize-the-data",
+    "title": "Grammar of data visualization",
+    "section": "Visualize the data",
+    "text": "Visualize the data\n\nggplot(\n  us_uk_tr_votes, \n  mapping = aes(x = year, y = percent_yes, color = country)\n  ) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(se = FALSE) +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  labs(\n    x = \"Year\", \n    y = \"% yes\", \n    color = \"Country\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#visualize-the-data-output",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#visualize-the-data-output",
+    "title": "Grammar of data visualization",
+    "section": "Visualize the data",
+    "text": "Visualize the data\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-1.-prepare-a-canvas-for-plotting",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-1.-prepare-a-canvas-for-plotting",
+    "title": "Grammar of data visualization",
+    "section": "Step 1. Prepare a canvas for plotting",
+    "text": "Step 1. Prepare a canvas for plotting"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-2.-map-variables-to-aesthetics",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-2.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 2. Map variables to aesthetics",
+    "text": "Step 2. Map variables to aesthetics\nMap year to the x aesthetic"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-3.-map-variables-to-aesthetics",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-3.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 3. Map variables to aesthetics",
+    "text": "Step 3. Map variables to aesthetics\nMap percent_yes to the y aesthetic"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#mapping-and-aesthetics",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#mapping-and-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Mapping and aesthetics",
+    "text": "Mapping and aesthetics\n\nAesthetics are visual properties of a plot\nIn the grammar of graphics, variables from the data frame are mapped to aesthetics"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-4.-represent-data-on-your-canvas",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-4.-represent-data-on-your-canvas",
+    "title": "Grammar of data visualization",
+    "section": "Step 4. Represent data on your canvas",
+    "text": "Step 4. Represent data on your canvas\nwith a geom"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-5.-map-variables-to-aesthetics",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-5.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 5. Map variables to aesthetics",
+    "text": "Step 5. Map variables to aesthetics\nMap country to the color aesthetic\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nWe dropped the name of the mapping argument from the function call to save some space, as is commonly done."
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-6.-represent-data-on-your-canvas",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-6.-represent-data-on-your-canvas",
+    "title": "Grammar of data visualization",
+    "section": "Step 6. Represent data on your canvas",
+    "text": "Step 6. Represent data on your canvas\nwith another geom"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#warnings-and-messages",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#warnings-and-messages",
+    "title": "Grammar of data visualization",
+    "section": "Warnings and messages",
+    "text": "Warnings and messages\n\nAdding geom_smooth() resulted in the following warning:\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\nIt tells us the type of smoothing ggplot2 does under the hood when drawing the smooth curves representing trends for each country.\n\n\n\n\nGoing forward we’ll suppress this warning to save some space."
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-7.-split-plot-into-facets",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-7.-split-plot-into-facets",
+    "title": "Grammar of data visualization",
+    "section": "Step 7. Split plot into facets",
+    "text": "Step 7. Split plot into facets"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-8.-use-a-different-color-scale",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-8.-use-a-different-color-scale",
+    "title": "Grammar of data visualization",
+    "section": "Step 8. Use a different color scale",
+    "text": "Step 8. Use a different color scale"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-10.-apply-a-different-theme",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-10.-apply-a-different-theme",
+    "title": "Grammar of data visualization",
+    "section": "Step 10. Apply a different theme",
+    "text": "Step 10. Apply a different theme"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-11.-add-labels",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-11.-add-labels",
+    "title": "Grammar of data visualization",
+    "section": "Step 11. Add labels",
+    "text": "Step 11. Add labels"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-12.-set-transparency-of-points",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-12.-set-transparency-of-points",
+    "title": "Grammar of data visualization",
+    "section": "Step 12. Set transparency of points",
+    "text": "Step 12. Set transparency of points\nwith alpha"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-13.-hide-standard-errors-of-curves",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#step-13.-hide-standard-errors-of-curves",
+    "title": "Grammar of data visualization",
+    "section": "Step 13. Hide standard errors of curves",
+    "text": "Step 13. Hide standard errors of curves\nwith se = FALSE"
+  },
+  {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#grammar-of-graphics",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#grammar-of-graphics",
+    "title": "Grammar of data visualization",
+    "section": "Grammar of graphics",
+    "text": "Grammar of graphics\n\n\nWe built a plot layer-by-layer\n\njust like described in the book The Grammar of Graphics and\nimplemented in the ggplot2 package, the data visualization package of the tidyverse."
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#ae-02-bechdel-dataviz",
     "href": "slides/02-grammar-of-data-visualization-slides.html#ae-02-bechdel-dataviz",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "ae-02-bechdel-dataviz",
     "text": "ae-02-bechdel-dataviz\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#recap-of-ae",
     "href": "slides/02-grammar-of-data-visualization-slides.html#recap-of-ae",
-    "title": "Grammar of Data Visualization",
+    "title": "Grammar of data visualization",
     "section": "Recap of AE",
     "text": "Recap of AE\n\nConstruct plots with ggplot().\nLayers of ggplots are separated by +s.\nThe formula is (almost) always as follows:\n\n\nggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +\n  geom_XXX()\n\n\nAesthetic attributes of a geometries (color, size, transparency, etc.) can be mapped to variables in the data or set by the user, e.g. color = binary vs. color = \"pink\".\nUse facet_wrap() when faceting (creating small multiples) by one variable and facet_grid() when faceting by two variables.\n\n\n\n\n\n🔗 sta199-f24.github.io"
   },
@@ -1744,6 +2045,34 @@
     "crumbs": [
       "Exam reviews"
     ]
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz.html",
+    "href": "ae/ae-02-bechdel-dataviz.html",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "",
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key.\nIn this mini-analysis, we use the data from the FiveThirtyEight story “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women.”\nThis analysis is about the Bechdel test, a measure of the representation of women in fiction."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz.html#getting-started",
+    "href": "ae/ae-02-bechdel-dataviz.html#getting-started",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Getting started",
+    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\n# add code here\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a ___.\n\nHow many observations (rows) are in the data set?\n\nThere are ___ movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are ___ columns in the dataset.\n\n\nVariables of interest\nThe variables we’ll focus on are the following:\n\nroi: Return on investment, calculated as the ratio of the gross to budget.\nclean_test: Bechdel test result:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\nbinary: Bechdel Test PASS vs FAIL binary\n\nWe will also use the year of release in data prep and title of movie to take a deeper look at some outliers.\nThere are a few other variables in the dataset, but we won’t be using them in this analysis."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz.html#bechdel-test-results",
+    "href": "ae/ae-02-bechdel-dataviz.html#bechdel-test-results",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Bechdel test results",
+    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nggplot2 is the package and ggplot() is the function in this package that is used to create a plot.\n\nggplot() creates the initial base coordinate system, and we will add layers to that base. We first specify the data set we will use with data = bechdel.\n\n\nggplot(data = bechdel)\n\n\n\n\n\n\n\n\n\nThe mapping argument is paired with an aesthetic (aes()), which tells us how the variables in our data set should be mapped to the visual properties of the graph.\n\n\nggplot(data = bechdel, mapping = aes(x = clean_test))\n\n\n\n\n\n\n\n\nAs we previously mentioned, we often omit the names of the first two arguments in R functions. So you’ll often see this written as:\n\nggplot(bechdel, aes(x = clean_test))\n\n\n\n\n\n\n\n\nNote that the result is exactly the same.\n\nThe geom_xx function specifies the type of plot we want to use to represent the data. In the code below, we use geom_point which creates a plot where each observation is represented by a point.\n\n\nggplot(bechdel, aes(x = clean_test)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nWhat types of movies are more common, those that pass or do not pass the test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz.html#return-on-investment",
+    "href": "ae/ae-02-bechdel-dataviz.html#return-on-investment",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Return-on-investment",
+    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\n# add code here\n\nWhat are those movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400) |&gt;\n  select(title, roi, budget_2013, gross_2013, year, clean_test)\n\n# A tibble: 3 × 6\n  title                     roi budget_2013 gross_2013  year clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     \n1 Paranormal Activity      671.      505595  339424558  2007 dubious   \n2 The Blair Witch Project  648.      839077  543776715  1999 ok        \n3 El Mariachi              583.       11622    6778946  1992 nowomen   \n\n\n\n\nStep 2 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\n# add code here\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
   },
   {
     "objectID": "ae/ae-01-meet-the-penguins.html",
