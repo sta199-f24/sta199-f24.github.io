@@ -110,6 +110,7 @@ website:
 format: 
   html:
     mainfont: Atkinson Hyperlegible
+    highlight-style: a11y-dark
 
 theme:
   light: [cosmo, style/sta199.scss]
@@ -119,7 +120,6 @@ toc: true
 code-copy: true
 code-link: true
 code-overflow: wrap
-highlight-style: a11y-dark
 
 execute:
   freeze: auto
