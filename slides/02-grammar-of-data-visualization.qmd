@@ -37,9 +37,15 @@ us_uk_tr_votes <- un_votes |>
 
 # Warm-up
 
-## Announcements
+## Announcements {.smaller}
 
-...
+-   Office hours are posted on the course website!
+
+-   If you can follow along with today's application exercise steps, great!
+    If something doesn't work as expected, ask me/TA during the exercise.
+    We'll either:
+    - help you on the spot and get you unstuck or
+    - identify that you're missing an earlier step, ask you to follow along with your neighbor, and visit office hours before Thursday for one-on-one help
 
 ## Outline {.smaller}
 
