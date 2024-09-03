@@ -8,12 +8,9 @@ listing:
   filter-ui: false
   type: table
   fields: [title, subtitle]
-  field-display-names:
-    title: "No."
-    subtitle: "Title"
 ---
 
-All application exercises (AEs) are due by 2 pm on the day they're covered in lab.
+All application exercises (AEs) are due by the end of lecture (or, precisely, by 2 pm) on the day they're covered in lecture.
 To submit your AE, make at least one change to your AE, **commit and then push** your change to your AE repo.
 AEs are graded for engagement, not accuracy.
 
