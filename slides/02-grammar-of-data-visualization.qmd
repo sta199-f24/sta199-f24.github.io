@@ -87,6 +87,8 @@ Once we made changes to our Quarto document, we
 
 -   pushed our changes to our application exercise repos
 
+    - if this failed, we pulled first to get the new application exercise files, and then pushed
+
 -   confirmed on GitHub that we could see our changes pushed from RStudio
 
 ## How will we use Quarto?
@@ -111,9 +113,9 @@ Grab one before you leave!
 
 # Data visualization
 
-## UN Votes
+## UN Votes {.smaller}
 
-::: task
+::: question
 Remember this visualization from the first day of class?
 :::
 
@@ -160,6 +162,10 @@ Just note that we called the data frame we'll visualize `us_uk_tr_votes`.
 ```{r}
 #| label: un-data-viz
 #| output-location: slide
+#| warning: false
+#| fig-width: 9
+#| fig-height: 5
+#| fig-align: center
 ggplot(
   us_uk_tr_votes, 
   mapping = aes(x = year, y = percent_yes, color = country)
@@ -181,7 +187,7 @@ ggplot(
 ```{webr}
 #| fig-width: 9
 #| fig-height: 3
-ggplot(us_uk_tr_votes)
+ggplot(data = us_uk_tr_votes)
 ```
 
 ## Step 2. Map variables to aesthetics {.smaller}
@@ -191,7 +197,7 @@ ggplot(us_uk_tr_votes)
 ```{webr}
 #| fig-width: 9
 #| fig-height: 3
-ggplot(us_uk_tr_votes, mapping = aes(x = year))
+ggplot(data = us_uk_tr_votes, mapping = aes(x = year))
 ```
 
 ## Step 3. Map variables to aesthetics {.smaller}
@@ -201,7 +207,7 @@ ggplot(us_uk_tr_votes, mapping = aes(x = year))
 ```{webr}
 #| fig-width: 9
 #| fig-height: 3
-ggplot(us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))
+ggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))
 ```
 
 ## Mapping and aesthetics {.smaller}
@@ -211,6 +217,25 @@ ggplot(us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))
 - In the *grammar of graphics*, variables from the data frame are **map**ped to aesthetics
 
 ![](images/02/aesthetic-mapping.gif){fig-align="center"}
+
+## Argument names {.smaller}
+
+It's common practice in R to omit the names of first two arguments of a function:
+
+. . .
+
+- Instead of
+
+```r
+ggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))
+```
+
+- Use
+
+```r
+ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes))
+```
+
 
 ## Step 4. Represent data on your canvas {.smaller}
 
@@ -234,12 +259,6 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point()
 ```
 
-. . .
-
-::: callout-note
-We dropped the name of the mapping argument from the function call to save some space, as is commonly done.
-:::
-
 ## Step 6. Represent data on your canvas {.smaller}
 
 with another `geom`
@@ -262,7 +281,7 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
 
 . . .
 
-- It tells us the type of smoothing ggplot2 does under the hood when drawing the smooth curves representing trends for each country.
+- It tells us the type of smoothing ggplot2 does under the hood when drawing the smooth curves that represent trends for each country.
 
 . . .
 
@@ -373,16 +392,18 @@ We built a plot layer-by-layer
 :::
 :::
 
+# Application exercise
+
 ## `ae-02-bechdel-dataviz` {.smaller}
 
 ::: appex
 -   Go to your `ae` project in RStudio.
 -   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
--   Click **Pull** to get today's application exercise file.
+-   If you haven't yet done so, click **Pull** to get today's application exercise file.
 -   Work through the application exercise in class, and **render, commit, and push** your edits by the end of class.
 :::
 
-## Recap of AE {.smaller}
+## Recap {.smaller}
 
 -   Construct plots with `ggplot()`.
 -   Layers of ggplots are separated by `+`s.
@@ -390,10 +411,6 @@ We built a plot layer-by-layer
 
 ```{r}
 #| eval: false
-
 ggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +
   geom_XXX()
 ```
-
--   Aesthetic attributes of a geometries (color, size, transparency, etc.) can be **map**ped to variables in the data or **set** by the user, e.g. `color = binary` vs. `color = "pink"`.
--   Use `facet_wrap()` when faceting (creating small multiples) by one variable and `facet_grid()` when faceting by two variables.
