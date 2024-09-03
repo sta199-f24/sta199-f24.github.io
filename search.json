@@ -1587,7 +1587,7 @@
     "href": "slides/02-grammar-of-data-visualization.html#tour-recap-git-github",
     "title": "Grammar of data visualization",
     "section": "Tour recap: Git + GitHub",
-    "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
+    "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\n\nif this failed, we pulled first to get the new application exercise files, and then pushed\n\nconfirmed on GitHub that we could see our changes pushed from RStudio"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#how-will-we-use-quarto",
@@ -1643,7 +1643,7 @@
     "href": "slides/02-grammar-of-data-visualization.html#visualize-the-data",
     "title": "Grammar of data visualization",
     "section": "Visualize the data",
-    "text": "Visualize the data\n\nggplot(\n  us_uk_tr_votes, \n  mapping = aes(x = year, y = percent_yes, color = country)\n  ) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(se = FALSE) +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  labs(\n    x = \"Year\", \n    y = \"% yes\", \n    color = \"Country\"\n  ) +\n  theme_minimal()\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+    "text": "Visualize the data\n\nggplot(\n  us_uk_tr_votes, \n  mapping = aes(x = year, y = percent_yes, color = country)\n  ) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(se = FALSE) +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  labs(\n    x = \"Year\", \n    y = \"% yes\", \n    color = \"Country\"\n  ) +\n  theme_minimal()"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#step-1.-prepare-a-canvas-for-plotting",
@@ -1674,6 +1674,13 @@
     "text": "Mapping and aesthetics\n\nAesthetics are visual properties of a plot\nIn the grammar of graphics, variables from the data frame are mapped to aesthetics"
   },
   {
+    "objectID": "slides/02-grammar-of-data-visualization.html#argument-names",
+    "href": "slides/02-grammar-of-data-visualization.html#argument-names",
+    "title": "Grammar of data visualization",
+    "section": "Argument names",
+    "text": "Argument names\nIt’s common practice in R to omit the names of first two arguments of a function:\n. . .\n\nInstead of\n\nggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))\n\nUse\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes))"
+  },
+  {
     "objectID": "slides/02-grammar-of-data-visualization.html#step-4.-represent-data-on-your-canvas",
     "href": "slides/02-grammar-of-data-visualization.html#step-4.-represent-data-on-your-canvas",
     "title": "Grammar of data visualization",
@@ -1685,7 +1692,7 @@
     "href": "slides/02-grammar-of-data-visualization.html#step-5.-map-variables-to-aesthetics",
     "title": "Grammar of data visualization",
     "section": "Step 5. Map variables to aesthetics",
-    "text": "Step 5. Map variables to aesthetics\nMap country to the color aesthetic\n\n\n\n\n\n\n\n\n. . .\n\n\n\n\n\n\nNote\n\n\n\nWe dropped the name of the mapping argument from the function call to save some space, as is commonly done."
+    "text": "Step 5. Map variables to aesthetics\nMap country to the color aesthetic"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#step-6.-represent-data-on-your-canvas",
@@ -1699,7 +1706,7 @@
     "href": "slides/02-grammar-of-data-visualization.html#warnings-and-messages",
     "title": "Grammar of data visualization",
     "section": "Warnings and messages",
-    "text": "Warnings and messages\n\nAdding geom_smooth() resulted in the following warning:\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n. . .\n\nIt tells us the type of smoothing ggplot2 does under the hood when drawing the smooth curves representing trends for each country.\n\n. . .\n\nGoing forward we’ll suppress this warning to save some space."
+    "text": "Warnings and messages\n\nAdding geom_smooth() resulted in the following warning:\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n. . .\n\nIt tells us the type of smoothing ggplot2 does under the hood when drawing the smooth curves that represent trends for each country.\n\n. . .\n\nGoing forward we’ll suppress this warning to save some space."
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization.html#step-7.-split-plot-into-facets",
@@ -1755,14 +1762,14 @@
     "href": "slides/02-grammar-of-data-visualization.html#ae-02-bechdel-dataviz",
     "title": "Grammar of data visualization",
     "section": "ae-02-bechdel-dataviz",
-    "text": "ae-02-bechdel-dataviz\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+    "text": "ae-02-bechdel-dataviz\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
-    "objectID": "slides/02-grammar-of-data-visualization.html#recap-of-ae",
-    "href": "slides/02-grammar-of-data-visualization.html#recap-of-ae",
+    "objectID": "slides/02-grammar-of-data-visualization.html#recap",
+    "href": "slides/02-grammar-of-data-visualization.html#recap",
     "title": "Grammar of data visualization",
-    "section": "Recap of AE",
-    "text": "Recap of AE\n\nConstruct plots with ggplot().\nLayers of ggplots are separated by +s.\nThe formula is (almost) always as follows:\n\n\nggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +\n  geom_XXX()\n\n\nAesthetic attributes of a geometries (color, size, transparency, etc.) can be mapped to variables in the data or set by the user, e.g. color = binary vs. color = \"pink\".\nUse facet_wrap() when faceting (creating small multiples) by one variable and facet_grid() when faceting by two variables."
+    "section": "Recap",
+    "text": "Recap\n\nConstruct plots with ggplot().\nLayers of ggplots are separated by +s.\nThe formula is (almost) always as follows:\n\n\nggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +\n  geom_XXX()"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#announcements",
@@ -1797,7 +1804,7 @@
     "href": "slides/02-grammar-of-data-visualization-slides.html#tour-recap-git-github",
     "title": "Grammar of data visualization",
     "section": "Tour recap: Git + GitHub",
-    "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
+    "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\n\nif this failed, we pulled first to get the new application exercise files, and then pushed\n\nconfirmed on GitHub that we could see our changes pushed from RStudio"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#how-will-we-use-quarto",
@@ -1860,7 +1867,7 @@
     "href": "slides/02-grammar-of-data-visualization-slides.html#visualize-the-data-output",
     "title": "Grammar of data visualization",
     "section": "Visualize the data",
-    "text": "Visualize the data\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+    "text": "Visualize the data"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-1.-prepare-a-canvas-for-plotting",
@@ -1891,6 +1898,13 @@
     "text": "Mapping and aesthetics\n\nAesthetics are visual properties of a plot\nIn the grammar of graphics, variables from the data frame are mapped to aesthetics"
   },
   {
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#argument-names",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#argument-names",
+    "title": "Grammar of data visualization",
+    "section": "Argument names",
+    "text": "Argument names\nIt’s common practice in R to omit the names of first two arguments of a function:\n\n\nInstead of\n\nggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))\n\nUse\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes))"
+  },
+  {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-4.-represent-data-on-your-canvas",
     "href": "slides/02-grammar-of-data-visualization-slides.html#step-4.-represent-data-on-your-canvas",
     "title": "Grammar of data visualization",
@@ -1902,7 +1916,7 @@
     "href": "slides/02-grammar-of-data-visualization-slides.html#step-5.-map-variables-to-aesthetics",
     "title": "Grammar of data visualization",
     "section": "Step 5. Map variables to aesthetics",
-    "text": "Step 5. Map variables to aesthetics\nMap country to the color aesthetic\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nWe dropped the name of the mapping argument from the function call to save some space, as is commonly done."
+    "text": "Step 5. Map variables to aesthetics\nMap country to the color aesthetic"
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-6.-represent-data-on-your-canvas",
@@ -1916,7 +1930,7 @@
     "href": "slides/02-grammar-of-data-visualization-slides.html#warnings-and-messages",
     "title": "Grammar of data visualization",
     "section": "Warnings and messages",
-    "text": "Warnings and messages\n\nAdding geom_smooth() resulted in the following warning:\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\nIt tells us the type of smoothing ggplot2 does under the hood when drawing the smooth curves representing trends for each country.\n\n\n\n\nGoing forward we’ll suppress this warning to save some space."
+    "text": "Warnings and messages\n\nAdding geom_smooth() resulted in the following warning:\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\nIt tells us the type of smoothing ggplot2 does under the hood when drawing the smooth curves that represent trends for each country.\n\n\n\n\nGoing forward we’ll suppress this warning to save some space."
   },
   {
     "objectID": "slides/02-grammar-of-data-visualization-slides.html#step-7.-split-plot-into-facets",
@@ -1972,14 +1986,14 @@
     "href": "slides/02-grammar-of-data-visualization-slides.html#ae-02-bechdel-dataviz",
     "title": "Grammar of data visualization",
     "section": "ae-02-bechdel-dataviz",
-    "text": "ae-02-bechdel-dataviz\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+    "text": "ae-02-bechdel-dataviz\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
-    "objectID": "slides/02-grammar-of-data-visualization-slides.html#recap-of-ae",
-    "href": "slides/02-grammar-of-data-visualization-slides.html#recap-of-ae",
+    "objectID": "slides/02-grammar-of-data-visualization-slides.html#recap",
+    "href": "slides/02-grammar-of-data-visualization-slides.html#recap",
     "title": "Grammar of data visualization",
-    "section": "Recap of AE",
-    "text": "Recap of AE\n\nConstruct plots with ggplot().\nLayers of ggplots are separated by +s.\nThe formula is (almost) always as follows:\n\n\nggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +\n  geom_XXX()\n\n\nAesthetic attributes of a geometries (color, size, transparency, etc.) can be mapped to variables in the data or set by the user, e.g. color = binary vs. color = \"pink\".\nUse facet_wrap() when faceting (creating small multiples) by one variable and facet_grid() when faceting by two variables.\n\n\n\n\n\n🔗 sta199-f24.github.io"
+    "section": "Recap",
+    "text": "Recap\n\nConstruct plots with ggplot().\nLayers of ggplots are separated by +s.\nThe formula is (almost) always as follows:\n\n\nggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +\n  geom_XXX()\n\n\n\n\n\n🔗 sta199-f24.github.io"
   },
   {
     "objectID": "computing-access.html",
