@@ -369,7 +369,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#access-r-and-rstudio" id="toc-access-r-and-rstudio" class="nav-link" data-scroll-target="#access-r-and-rstudio">Access R and RStudio</a></li>
   <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account">Create a GitHub account</a></li>
   <li><a href="#set-up-your-ssh-key" id="toc-set-up-your-ssh-key" class="nav-link" data-scroll-target="#set-up-your-ssh-key">Set up your SSH key</a></li>
-  <li><a href="#configure-git" id="toc-configure-git" class="nav-link" data-scroll-target="#configure-git">Configure Git</a></li>
+  <li><a href="#configure-git-to-introduce-yourself" id="toc-configure-git-to-introduce-yourself" class="nav-link" data-scroll-target="#configure-git-to-introduce-yourself">Configure Git to introduce yourself</a></li>
+  <li><a href="#configure-git-further" id="toc-configure-git-further" class="nav-link" data-scroll-target="#configure-git-further">Configure Git further</a></li>
   </ul></li>
   <li><a href="#hello-sta-199" id="toc-hello-sta-199" class="nav-link" data-scroll-target="#hello-sta-199">Hello STA 199!</a></li>
   </ul>
@@ -541,8 +542,8 @@ Note
 </ul>
 <p>You can find more detailed instructions <a href="https://github.com/DukeStatSci/github_auth_guide">here</a> if you’re interested.</p>
 </section>
-<section id="configure-git" class="level2">
-<h2 class="anchored" data-anchor-id="configure-git">Configure Git</h2>
+<section id="configure-git-to-introduce-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="configure-git-to-introduce-yourself">Configure Git to introduce yourself</h2>
 <p>There is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.</p>
 <p>To do so, you will use the <code>use_git_config()</code> function from the <code>usethis</code> package.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -617,6 +618,12 @@ Need a recap? Watch this video!
 </div>
 </div>
 </div>
+</section>
+<section id="configure-git-further" class="level2">
+<h2 class="anchored" data-anchor-id="configure-git-further">Configure Git further</h2>
+<p>One last step is to go to the Terminal (not the Console) and type:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config pull.rebase false</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And now you’re done!</p>
 </section>
 </section>
 <section id="hello-sta-199" class="level1">
