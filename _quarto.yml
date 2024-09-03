@@ -119,6 +119,7 @@ toc: true
 code-copy: true
 code-link: true
 code-overflow: wrap
+highlight-style: a11y-dark
 
 execute:
   freeze: auto
