@@ -2,10 +2,6 @@
 title: "AE 02: Bechdel + data visualization"
 ---
 
-::: callout-important
-These are suggested answers. This document should be used as a reference only; it's not designed to be an exhaustive key.
-:::
-
 In this mini-analysis, we use the data from the FiveThirtyEight story "The Dollar-And-Cents Case Against Hollywood's Exclusion of Women."
 
 This analysis is about the [Bechdel test](https://en.wikipedia.org/wiki/Bechdel_test), a measure of the representation of women in fiction.
