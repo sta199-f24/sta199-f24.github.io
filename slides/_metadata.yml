@@ -13,7 +13,7 @@ format:
   live-html:
     code-link: true
 engine: knitr
-highlight-style: a11y
+highlight-style: a11y-dark
 execute:
   echo: true
   warning: true
