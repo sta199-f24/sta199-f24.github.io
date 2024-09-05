@@ -515,7 +515,14 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#the-pipe-in-action-3",
     "title": "Grammar of data transformation",
     "section": "The pipe, in action",
-    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nSelect columns title and roi:\n\nbechdel |&gt;\n  filter(binary == \"PASS\") |&gt;\n  arrange(desc(roi)) |&gt;\n  select(title, roi)\n\n# A tibble: 753 × 2\n   title                      roi\n   &lt;chr&gt;                    &lt;dbl&gt;\n 1 The Blair Witch Project  648. \n 2 The Devil Inside         155. \n 3 My Big Fat Greek Wedding 119. \n 4 Chasing Amy              109. \n 5 Slacker                  107. \n 6 Insidious                103. \n 7 Paranormal Activity 2     87.4\n 8 Paranormal Activity 3     62.2\n 9 The Last Exorcism         61.8\n10 Cinderella                58.6\n# ℹ 743 more rows\n\n\n\n\n\n\n🔗 sta199-f24.github.io"
+    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nSelect columns title and roi:\n\nbechdel |&gt;\n  filter(binary == \"PASS\") |&gt;\n  arrange(desc(roi)) |&gt;\n  select(title, roi)\n\n# A tibble: 753 × 2\n   title                      roi\n   &lt;chr&gt;                    &lt;dbl&gt;\n 1 The Blair Witch Project  648. \n 2 The Devil Inside         155. \n 3 My Big Fat Greek Wedding 119. \n 4 Chasing Amy              109. \n 5 Slacker                  107. \n 6 Insidious                103. \n 7 Paranormal Activity 2     87.4\n 8 Paranormal Activity 3     62.2\n 9 The Last Exorcism         61.8\n10 Cinderella                58.6\n# ℹ 743 more rows"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#time-permitting",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#time-permitting",
+    "title": "Grammar of data transformation",
+    "section": "Time permitting",
+    "text": "Time permitting\n\nAsk another question of the data that can be answered with a data transformation pipeline.\n\n\n\n\n\n\n\n\n\n\n\n\n\n🔗 sta199-f24.github.io"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#announcements",
@@ -593,6 +600,13 @@
     "title": "Grammar of data transformation",
     "section": "The pipe, in action",
     "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nSelect columns title and roi:\n\nbechdel |&gt;\n  filter(binary == \"PASS\") |&gt;\n  arrange(desc(roi)) |&gt;\n  select(title, roi)\n\n# A tibble: 753 × 2\n   title                      roi\n   &lt;chr&gt;                    &lt;dbl&gt;\n 1 The Blair Witch Project  648. \n 2 The Devil Inside         155. \n 3 My Big Fat Greek Wedding 119. \n 4 Chasing Amy              109. \n 5 Slacker                  107. \n 6 Insidious                103. \n 7 Paranormal Activity 2     87.4\n 8 Paranormal Activity 3     62.2\n 9 The Last Exorcism         61.8\n10 Cinderella                58.6\n# ℹ 743 more rows"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation.html#time-permitting",
+    "href": "slides/03-grammar-of-data-transformation.html#time-permitting",
+    "title": "Grammar of data transformation",
+    "section": "Time permitting",
+    "text": "Time permitting\n\nAsk another question of the data that can be answered with a data transformation pipeline."
   },
   {
     "objectID": "course-overview.html",
