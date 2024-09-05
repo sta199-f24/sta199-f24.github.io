@@ -14,7 +14,7 @@ format:
     code-link: true
     webr:
       cell-options:
-        autorun: false
+        autorun: true
 engine: knitr
 highlight-style: a11y-light
 execute:
