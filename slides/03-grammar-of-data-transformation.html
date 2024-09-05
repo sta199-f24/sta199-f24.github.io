@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
-<meta name="dcterms.date" content="2024-08-27">
+<meta name="dcterms.date" content="2024-09-04">
 
-<title>Welcome to STA 199 – STA 199</title>
+<title>Grammar of data transformation – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -46,9 +80,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
-<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
-<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -80,11 +111,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
-<meta property="og:title" content="Welcome to STA 199 – STA 199">
-<meta property="og:description" content="Lecture 0">
+<meta property="og:title" content="Grammar of data transformation – STA 199">
+<meta property="og:description" content="Lecture 3">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Welcome to STA 199 – STA 199">
-<meta name="twitter:description" content="Lecture 0">
+<meta name="twitter:title" content="Grammar of data transformation – STA 199">
+<meta name="twitter:description" content="Lecture 3">
 <meta name="twitter:image" content="https://sta199-f24.github.io/slides/img/twitter-card.png">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
@@ -99,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Welcome to STA 199</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Grammar of data transformation</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -338,67 +369,36 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#hello-world" id="toc-hello-world" class="nav-link active" data-scroll-target="#hello-world">Hello world!</a>
+  <li><a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up">Warm-up</a>
   <ul class="collapse">
-  <li><a href="#meet-the-prof" id="toc-meet-the-prof" class="nav-link" data-scroll-target="#meet-the-prof">Meet the prof</a></li>
-  <li><a href="#meet-the-course-team" id="toc-meet-the-course-team" class="nav-link" data-scroll-target="#meet-the-course-team">Meet the course team</a></li>
-  <li><a href="#meet-each-other" id="toc-meet-each-other" class="nav-link" data-scroll-target="#meet-each-other">Meet each other!</a></li>
-  <li><a href="#meet-data-science" id="toc-meet-data-science" class="nav-link" data-scroll-target="#meet-data-science">Meet data science</a></li>
-  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a></li>
-  </ul></li>
-  <li><a href="#data-science-life-cycle" id="toc-data-science-life-cycle" class="nav-link" data-scroll-target="#data-science-life-cycle">Data science life cycle</a>
-  <ul class="collapse">
-  <li><a href="#data-science-life-cycle-1" id="toc-data-science-life-cycle-1" class="nav-link" data-scroll-target="#data-science-life-cycle-1">Data science life cycle</a></li>
-  <li><a href="#collect-birthdays" id="toc-collect-birthdays" class="nav-link" data-scroll-target="#collect-birthdays">Collect birthdays</a></li>
-  <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
-  <li><a href="#import-birthdays" id="toc-import-birthdays" class="nav-link" data-scroll-target="#import-birthdays">Import birthdays</a></li>
-  <li><a href="#tidy-transform" id="toc-tidy-transform" class="nav-link" data-scroll-target="#tidy-transform">Tidy + transform</a></li>
-  <li><a href="#tidy-transform-birthdays" id="toc-tidy-transform-birthdays" class="nav-link" data-scroll-target="#tidy-transform-birthdays">Tidy + transform birthdays</a></li>
-  <li><a href="#visualize" id="toc-visualize" class="nav-link" data-scroll-target="#visualize">Visualize</a></li>
-  <li><a href="#visualize-birthdays" id="toc-visualize-birthdays" class="nav-link" data-scroll-target="#visualize-birthdays">Visualize birthdays</a></li>
-  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">Model</a></li>
-  <li><a href="#understand" id="toc-understand" class="nav-link" data-scroll-target="#understand">Understand</a></li>
-  <li><a href="#communicate" id="toc-communicate" class="nav-link" data-scroll-target="#communicate">Communicate</a></li>
-  <li><a href="#understand-communicate" id="toc-understand-communicate" class="nav-link" data-scroll-target="#understand-communicate">Understand + communicate</a></li>
-  <li><a href="#program" id="toc-program" class="nav-link" data-scroll-target="#program">Program</a></li>
-  </ul></li>
-  <li><a href="#course-overview" id="toc-course-overview" class="nav-link" data-scroll-target="#course-overview">Course overview</a>
-  <ul class="collapse">
-  <li><a href="#homepage" id="toc-homepage" class="nav-link" data-scroll-target="#homepage">Homepage</a></li>
-  <li><a href="#course-toolkit" id="toc-course-toolkit" class="nav-link" data-scroll-target="#course-toolkit">Course toolkit</a></li>
-  <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
-  <li><a href="#application-exercises" id="toc-application-exercises" class="nav-link" data-scroll-target="#application-exercises">Application exercises</a></li>
-  <li><a href="#labs" id="toc-labs" class="nav-link" data-scroll-target="#labs">Labs</a></li>
-  <li><a href="#exams" id="toc-exams" class="nav-link" data-scroll-target="#exams">Exams</a></li>
-  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">Project</a></li>
-  <li><a href="#teams" id="toc-teams" class="nav-link" data-scroll-target="#teams">Teams</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  <li><a href="#support" id="toc-support" class="nav-link" data-scroll-target="#support">Support</a></li>
   <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
-  <li><a href="#diversity-inclusion" id="toc-diversity-inclusion" class="nav-link" data-scroll-target="#diversity-inclusion">Diversity + inclusion</a></li>
-  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility">Accessibility</a></li>
   </ul></li>
-  <li><a href="#course-policies" id="toc-course-policies" class="nav-link" data-scroll-target="#course-policies">Course policies</a>
+  <li><a href="#from-last-time" id="toc-from-last-time" class="nav-link" data-scroll-target="#from-last-time">From last time</a>
   <ul class="collapse">
-  <li><a href="#late-work-waivers-lecture-recordings-regrades" id="toc-late-work-waivers-lecture-recordings-regrades" class="nav-link" data-scroll-target="#late-work-waivers-lecture-recordings-regrades">Late work, waivers, lecture recordings, regrades…</a></li>
-  <li><a href="#use-of-ai-tools" id="toc-use-of-ai-tools" class="nav-link" data-scroll-target="#use-of-ai-tools">Use of AI tools</a></li>
-  <li><a href="#academic-integrity" id="toc-academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">Academic integrity</a></li>
+  <li><a href="#ae-02-bechdel-dataviz" id="toc-ae-02-bechdel-dataviz" class="nav-link" data-scroll-target="#ae-02-bechdel-dataviz"><code>ae-02-bechdel-dataviz</code></a></li>
+  <li><a href="#recap-code-cells-aka-code-chunks" id="toc-recap-code-cells-aka-code-chunks" class="nav-link" data-scroll-target="#recap-code-cells-aka-code-chunks">Recap: Code cells (aka code chunks)</a></li>
   </ul></li>
-  <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a>
+  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a></li>
+  <li><a href="#data-transformation" id="toc-data-transformation" class="nav-link" data-scroll-target="#data-transformation">Data transformation</a>
   <ul class="collapse">
-  <li><a href="#this-weeks-tasks" id="toc-this-weeks-tasks" class="nav-link" data-scroll-target="#this-weeks-tasks">This week’s tasks</a></li>
-  <li><a href="#midori-says" id="toc-midori-says" class="nav-link" data-scroll-target="#midori-says">Midori says…</a></li>
+  <li><a href="#a-quick-reminder" id="toc-a-quick-reminder" class="nav-link" data-scroll-target="#a-quick-reminder">A quick reminder</a></li>
+  <li><a href="#the-pipe" id="toc-the-pipe" class="nav-link" data-scroll-target="#the-pipe">The pipe <code>|&gt;</code></a></li>
+  <li><a href="#code-style-tip" id="toc-code-style-tip" class="nav-link" data-scroll-target="#code-style-tip">Code style tip <i class="fa-solid fa-lightbulb" aria-label="lightbulb"></i></a></li>
+  <li><a href="#the-pipe-in-action" id="toc-the-pipe-in-action" class="nav-link" data-scroll-target="#the-pipe-in-action">The pipe, in action</a></li>
+  <li><a href="#the-pipe-in-action-1" id="toc-the-pipe-in-action-1" class="nav-link" data-scroll-target="#the-pipe-in-action-1">The pipe, in action</a></li>
+  <li><a href="#the-pipe-in-action-2" id="toc-the-pipe-in-action-2" class="nav-link" data-scroll-target="#the-pipe-in-action-2">The pipe, in action</a></li>
+  <li><a href="#the-pipe-in-action-3" id="toc-the-pipe-in-action-3" class="nav-link" data-scroll-target="#the-pipe-in-action-3">The pipe, in action</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/00-welcome-199.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="00-welcome-199-slides.html"><i class="bi bi-file-slides"></i>RevealJS (live)</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/03-grammar-of-data-transformation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="03-grammar-of-data-transformation-slides.html"><i class="bi bi-file-slides"></i>RevealJS (live)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome to STA 199</h1>
-<p class="subtitle lead">Lecture 0</p>
+<h1 class="title">Grammar of data transformation</h1>
+<p class="subtitle lead">Lecture 3</p>
 </div>
 
 
@@ -422,7 +422,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 27, 2024</p>
+      <p class="date">September 4, 2024</p>
     </div>
   </div>
   
@@ -441,453 +441,283 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 <script type="webr-1-contents">
-eyJhdHRyIjp7Im91dHB1dCI6ZmFsc2UsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiYXV0b3J1biI6ZmFsc2UsImV2YWwiOnRydWV9LCJjb2RlIjoib3B0aW9ucyhcInJlYWRyLmVkaXRpb25cIiA9IDEpIn0=
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiYXV0b3J1biI6ZmFsc2UsImV2YWwiOnRydWUsIm91dHB1dCI6ZmFsc2V9LCJjb2RlIjoib3B0aW9ucyh3aWR0aCA9IDYwKSJ9
 </script>
 </div>
 </div>
 <!-- end: webr fodder -->
-<section id="hello-world" class="level1">
-<h1>Hello world!</h1>
-<section id="meet-the-prof" class="level2">
-<h2 class="anchored" data-anchor-id="meet-the-prof">Meet the prof</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Dr.&nbsp;Mine Çetinkaya-Rundel</p>
-<p>Professor of the Practice</p>
-<p>Old Chem 213</p>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/00/mine.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Headshot of Dr. Mine Çetinkaya-Rundel"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="meet-the-course-team" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="meet-the-course-team">Meet the course team</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<section id="warm-up" class="level1">
+<h1>Warm-up</h1>
+<section id="announcements" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
-<li>Mary Knox (Course coordinator)</li>
-<li>Marie Neubrander (Head TA)</li>
-<li>Federico Arboleda</li>
-<li>Jaekyoung Kim</li>
-<li>Lynn Kremers</li>
-<li>Netra Mittal</li>
-<li>Grace Rade</li>
-<li>Jasmine Wang</li>
-<li>Emily Jensen</li>
-<li>Jonathan Lin</li>
-<li>Mengqi Liu</li>
-</ul>
-</div><div class="column" style="width:50%;">
+<li><p>Ed Discussion posts:</p>
 <ul>
-<li>Sonya Eason</li>
-<li>Domenic Fenoglio</li>
-<li>Sarah Wu</li>
-<li>Avery Hodges</li>
-<li>David King</li>
-<li>Hyunjin Lee</li>
-<li>Kareena Legare</li>
-<li>Liane Ma</li>
-<li>Noah Obuya</li>
-<li>Anmol Sapru</li>
-<li>John Zito</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="meet-each-other" class="level2">
-<h2 class="anchored" data-anchor-id="meet-each-other">Meet each other!</h2>
-<div class="question">
-<p>Please share with at least two classmates…</p>
+<li>Keep them coming!</li>
+<li>Keep them public!</li>
+<li>Feel free to make them anonymous if you prefer.</li>
+</ul></li>
+<li><p>Monday’s lab:</p>
 <ul>
-<li>Your name</li>
-<li>Your year</li>
-<li>Where you’re from</li>
-<li>What you did this past summer</li>
-<li>What you hope to get out of this course</li>
+<li>Show up on time</li>
+<li>Show up to learn and get support</li>
+<li>Leave with all questions answered and a plan to work on the lab throughout the week</li>
+</ul></li>
 </ul>
-</div>
 </section>
-<section id="meet-data-science" class="level2">
-<h2 class="anchored" data-anchor-id="meet-data-science">Meet data science</h2>
-<div class="incremental">
-<ul class="incremental">
-<li><p><strong>Data science</strong> is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.</p></li>
-<li><p>We’re going to learn to do this in a <code>tidy</code> way – more on that later!</p></li>
-<li><p>This is a course on introduction to data science, with an emphasis on <strong>statistical thinking</strong>.</p></li>
-</ul>
-</div>
 </section>
-<section id="application-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="application-exercise">Application exercise</h2>
+<section id="from-last-time" class="level1">
+<h1>From last time</h1>
+<section id="ae-02-bechdel-dataviz" class="level2">
+<h2 class="anchored" data-anchor-id="ae-02-bechdel-dataviz"><code>ae-02-bechdel-dataviz</code></h2>
 <div class="appex">
-<p>Or more like demo for today…</p>
-<p><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> <a href="https://sta199-f24.github.io/ae/ae-00-unvotes.html">sta199-f24.github.io/ae/ae-00-unvotes.html</a></p>
+<p>Go to RStudio, confirm that you’re in the <code>ae</code> project, and open the document ae-02-bechdel-dataviz<code>.qmd</code>.</p>
 </div>
 </section>
+<section id="recap-code-cells-aka-code-chunks" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="recap-code-cells-aka-code-chunks">Recap: Code cells (aka code chunks)</h2>
+<p><img src="images/03/code-cell.png" class="img-fluid"> . . .</p>
+<ul>
+<li><p>Cell <code>label</code>s are helpful for describing what the code is doing, for jumping between code cells in the editor, and for troubleshooting</p></li>
+<li><p><code>message: false</code> hides any messages emitted by the code in your rendered document</p></li>
+</ul>
 </section>
-<section id="data-science-life-cycle" class="level1">
-<h1>Data science life cycle</h1>
-<section id="data-science-life-cycle-1" class="level2">
-<h2 class="anchored" data-anchor-id="data-science-life-cycle-1">Data science life cycle</h2>
-<p><img src="images/00/data-science-cycle/data-science-cycle.001.png" class="img-fluid" alt="Data science life cycle"></p>
 </section>
-<section id="collect-birthdays" class="level2">
-<h2 class="anchored" data-anchor-id="collect-birthdays">Collect birthdays</h2>
+<section id="application-exercise" class="level1">
+<h1>Application exercise</h1>
+<p><code>ae-03-bechdel-data-viz-transform</code></p>
+<div class="appex">
+<ul>
+<li><p>Go to your ae project in RStudio.</p></li>
+<li><p>Make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <code>ae-03-bechdel-data-viz-transform.qmd</code>.</p></li>
+<li><p>Work through the application exercise in class, and render, commit, and push your edits by the end of class.</p></li>
+</ul>
+</div>
+</section>
+<section id="data-transformation" class="level1">
+<h1>Data transformation</h1>
+<section id="a-quick-reminder" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="a-quick-reminder">A quick reminder</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a>bechdel <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-2" class="code-annotation-target"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(roi <span class="sc">&gt;</span> <span class="dv">400</span>) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(title, roi, budget_2013, gross_2013, year, clean_test)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">Start with the <code>bechdel</code> data frame</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="2">Filter for movies with <code>roi</code> greater than 400 (gross is more than 400 times budget)</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="3" data-code-annotation="3">Select the columns <code>title</code>, <code>roi</code>, <code>budget_2013</code>, <code>gross_2013</code>, <code>year</code>, and <code>clean_test</code></span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 6
+  title                    roi budget_2013 gross_2013  year clean_test
+  &lt;chr&gt;                  &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     
+1 Paranormal Activity     671.      505595  339424558  2007 dubious   
+2 The Blair Witch Proje…  648.      839077  543776715  1999 ok        
+3 El Mariachi             583.       11622    6778946  1992 nowomen   </code></pre>
+</div>
+</div>
+</section>
+<section id="the-pipe" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="the-pipe">The pipe <code>|&gt;</code></h2>
+<p>The pipe operator passes what comes before it into the function that comes after it as the first argument in that function.</p>
 <div class="columns">
-<div class="column" style="width:70%;">
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1RvmzRhJj2VcgGe_cvsovFOdxjlIwX37aZr9NKMBuvwcquQ/viewform?embedded=true" width="640" height="371" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-</div><div class="column" style="width:30%;">
-<div id="" class="qrcode"></div>
-<script type="text/javascript">
-(function() {
-  var script = document.currentScript;
-  var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","text":"https://forms.gle/S2zpyu6qmkEisSSq5","width":128,"height":128});
-  script.remove();
-})();
-</script>
-    
-</div>
-</div>
-<div id="timer_e66a965e235aa58f8a8179eb2e28647f8a35ef28" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section>
-<section id="import" class="level2">
-<h2 class="anchored" data-anchor-id="import">Import</h2>
-<p><img src="images/00/data-science-cycle/data-science-cycle.002.png" class="img-fluid" alt="Data science life cycle, with import highlighted"></p>
-</section>
-<section id="import-birthdays" class="level2">
-<h2 class="anchored" data-anchor-id="import-birthdays">Import birthdays</h2>
+<div class="column fragment" style="width:55%;">
 <div class="cell">
-<div>
-<div id="webr-2">
-
-</div>
-<script type="webr-2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImF1dG9ydW4iOmZhbHNlLCJtZXNzYWdlIjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KHRpZHl2ZXJzZSlcblxuYmlydGhkYXlzX3JhdyA8LSByZWFkX2NzdihcImJpcnRoZGF5cy5jc3ZcIilcbmJpcnRoZGF5c19yYXcifQ==
-</script>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
 </div>
 </div>
-</section>
-<section id="tidy-transform" class="level2">
-<h2 class="anchored" data-anchor-id="tidy-transform">Tidy + transform</h2>
-<p><img src="images/00/data-science-cycle/data-science-cycle.003.png" class="img-fluid" alt="Data science life cycle, with tidy and transform highlighted"></p>
-</section>
-<section id="tidy-transform-birthdays" class="level2">
-<h2 class="anchored" data-anchor-id="tidy-transform-birthdays">Tidy + transform birthdays</h2>
+</div><div class="column fragment" style="width:45%;">
 <div class="cell">
-<div>
-<div id="webr-3">
-
-</div>
-<script type="webr-3-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImJpcnRoZGF5cyA8LSBiaXJ0aGRheXNfcmF3IHw+XG4gIG11dGF0ZShcbiAgICBiaXJ0aF9kYXkgPSBwYXJzZV9udW1iZXIoYmlydGhkYXkpLFxuICAgIGJpcnRoX21vbnRoID0gc3RyX3RyaW0oc3RyX3JlbW92ZShiaXJ0aGRheSwgYXMuY2hhcmFjdGVyKGJpcnRoX2RheSkpKSxcbiAgICBiaXJ0aGRheV9kYXRlID0gbWR5KHBhc3RlKGJpcnRoX21vbnRoLCBiaXJ0aF9kYXksIFwiMjAyNFwiKSlcbiAgKVxuYmlydGhkYXlzIn0=
-</script>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
 </div>
 </div>
-</section>
-<section id="visualize" class="level2">
-<h2 class="anchored" data-anchor-id="visualize">Visualize</h2>
-<p><img src="images/00/data-science-cycle/data-science-cycle.004.png" class="img-fluid" alt="Data science life cycle, with visualize highlighted"></p>
-</section>
-<section id="visualize-birthdays" class="level2">
-<h2 class="anchored" data-anchor-id="visualize-birthdays">Visualize birthdays</h2>
+</div>
+</div>
+<p><br></p>
+<div class="columns">
+<div class="column fragment" style="width:55%;">
 <div class="cell">
-<div>
-<div id="webr-4">
-
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(<span class="fu">filter</span>(bechdel, roi <span class="sc">&gt;</span> <span class="dv">400</span>), title)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 1
+  title                  
+  &lt;chr&gt;                  
+1 Paranormal Activity    
+2 The Blair Witch Project
+3 El Mariachi            </code></pre>
 </div>
-<script type="webr-4-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImdncGxvdChiaXJ0aGRheXMsIGFlcyh4ID0gYmlydGhkYXlfZGF0ZSkpICtcbiAgZ2VvbV9iYXIoKSJ9
-</script>
+</div>
+</div><div class="column fragment" style="width:45%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(roi <span class="sc">&gt;</span> <span class="dv">400</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(title)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 1
+  title                  
+  &lt;chr&gt;                  
+1 Paranormal Activity    
+2 The Blair Witch Project
+3 El Mariachi            </code></pre>
+</div>
+</div>
 </div>
 </div>
 </section>
-<section id="model" class="level2">
-<h2 class="anchored" data-anchor-id="model">Model</h2>
-<p><img src="images/00/data-science-cycle/data-science-cycle.005.png" class="img-fluid" alt="Data science life cycle, with model highlighted"></p>
-</section>
-<section id="understand" class="level2">
-<h2 class="anchored" data-anchor-id="understand">Understand</h2>
-<p><img src="images/00/data-science-cycle/data-science-cycle.006.png" class="img-fluid" alt="Data science life cycle, with understand highlighted"></p>
-</section>
-<section id="communicate" class="level2">
-<h2 class="anchored" data-anchor-id="communicate">Communicate</h2>
-<p><img src="images/00/data-science-cycle/data-science-cycle.007.png" class="img-fluid" alt="Data science life cycle, with communicate highlighted"></p>
-</section>
-<section id="understand-communicate" class="level2">
-<h2 class="anchored" data-anchor-id="understand-communicate">Understand + communicate</h2>
-<p><img src="images/00/data-science-cycle/data-science-cycle.008.png" class="img-fluid" alt="Data science life cycle, with understand and communicate highlighted"></p>
-</section>
-<section id="program" class="level2">
-<h2 class="anchored" data-anchor-id="program">Program</h2>
-<p><img src="images/00/data-science-cycle/data-science-cycle.009.png" class="img-fluid" alt="Data science life cycle, with program highlighted"></p>
-</section>
-</section>
-<section id="course-overview" class="level1">
-<h1>Course overview</h1>
-<section id="homepage" class="level2">
-<h2 class="anchored" data-anchor-id="homepage">Homepage</h2>
-<p><a href="https://sta199-f24.github.io/" class="uri">https://sta199-f24.github.io</a></p>
+<section id="code-style-tip" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="code-style-tip">Code style tip <i class="fa-solid fa-lightbulb" aria-label="lightbulb"></i></h2>
 <ul>
-<li>All course materials</li>
-<li>Links to Canvas, GitHub, RStudio containers, etc.</li>
+<li>In data transformation pipelines, always use a
+<ul>
+<li>space before <code>|&gt;</code></li>
+<li>line break after <code>|&gt;</code></li>
+<li>indent the next line of code</li>
+</ul></li>
 </ul>
-</section>
-<section id="course-toolkit" class="level2">
-<h2 class="anchored" data-anchor-id="course-toolkit">Course toolkit</h2>
-<p>All linked from the course website:</p>
+<p>. . .</p>
 <ul>
-<li>GitHub organization: <a href="https://github.com/sta199-f24">github.com/sta199-f24</a></li>
-<li>RStudio containers: <a href="https://cmgr.oit.duke.edu/containers">cmgr.oit.duke.edu/containers</a></li>
-<li>Communication: Ed Discussion</li>
-<li>Assignment submission and feedback: Gradescope</li>
-</ul>
-</section>
-<section id="activities" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="activities">Activities</h2>
+<li>In data visualization layers, always use a
 <ul>
-<li>Introduce new content and prepare for lectures by watching the videos and completing the readings</li>
-<li>Attend and actively participate in lectures and labs, office hours, team meetings</li>
-<li>Practice applying statistical concepts and computing with application exercises during lecture, graded for attempting</li>
-<li>Put together what you’ve learned to analyze real-world data
-<ul>
-<li>Lab assignments (7 or 8 throughout semester)</li>
-<li>Exams (midterm + final)</li>
-<li>Term project completed in teams</li>
+<li>space before <code>+</code></li>
+<li>line break after <code>+</code></li>
+<li>indent the next line of code</li>
 </ul></li>
 </ul>
 </section>
-<section id="application-exercises" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="application-exercises">Application exercises</h2>
-<ul>
-<li><p>Daily-ish in lecture</p></li>
-<li><p>“Graded” for attempt, not accuracy</p></li>
-<li><p>Practice Weeks 1 + 2, graded thereafter</p></li>
-<li><p>At least one commit by 2 pm of the day of lecture</p></li>
-<li><p>Turn in at least 70% for full credit</p></li>
-</ul>
-</section>
-<section id="labs" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="labs">Labs</h2>
-<ul>
-<li><p>Start in lab session</p></li>
-<li><p>Complete at home</p></li>
-<li><p>Due within a week</p></li>
-<li><p>Discussion with classmates ok, copying not ok!</p></li>
-<li><p>Lowest score dropped</p></li>
-</ul>
-</section>
-<section id="exams" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exams">Exams</h2>
-<ul>
-<li><p>Two exams, each 20%</p></li>
-<li><p>Midterm comprised of two parts:</p>
-<ul>
-<li><p>In-class (Oct 8): 75 minute in-class exam. Closed book, one sheet of notes (“cheat sheet”) – 70% of the grade.</p></li>
-<li><p>Take-home (Oct 8 - Oct 11): Follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam – 30% of the grade.</p></li>
-</ul></li>
-<li><p>Final in-class only (Dec 12, 9am - 12pm): Closed book, one sheet of notes (“cheat sheet”).</p></li>
-<li><p>“Cheat sheet”: No larger than 8 1/2 x 11, both sides, <strong>must be prepared by you</strong>.</p></li>
-</ul>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="the-pipe-in-action" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="the-pipe-in-action">The pipe, in action</h2>
+<div class="task">
+<p>Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.</p>
 </div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Exam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class.</p>
+<p>. . .</p>
+<p>Start with the <code>bechdel</code> data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,615 × 7
+   title          year gross_2013 budget_2013    roi binary clean_test
+   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
+ 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
+ 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
+ 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
+ 5 42             2013  190040426    40000000  4.75  FAIL   men       
+ 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
+ 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
+ 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
+ 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
+10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
+# ℹ 1,605 more rows</code></pre>
 </div>
 </div>
 </section>
-<section id="project" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="project">Project</h2>
-<ul>
-<li><p>Dataset of your choice, method of your choice</p></li>
-<li><p>Teamwork</p></li>
-<li><p>Five milestones, interim deadline throughout semester</p></li>
-<li><p>Final milestone: Presentation (video) and write-up</p></li>
-<li><p>Presentations submitted as videos</p></li>
-<li><p>Peer review between teams for content, peer evaluation within teams for contribution</p></li>
-<li><p>Some lab sessions allocated to project progress</p></li>
-</ul>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="the-pipe-in-action-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="the-pipe-in-action-1">The pipe, in action</h2>
+<div class="task">
+<p>Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.</p>
 </div>
-<div class="callout-title-container flex-fill">
-Caution
+<p>Filter for rows where <code>binary</code> is equal to <code>"PASS"</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 753 × 7
+   title           year gross_2013 budget_2013   roi binary clean_test
+   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 Dredd 3D        2012   55078343    45658735  1.21 PASS   ok        
+ 2 About Time      2013  102648667    12000000  8.55 PASS   ok        
+ 3 Admission       2013   36014634    13000000  2.77 PASS   ok        
+ 4 American Hust…  2013  397915817    40000000  9.95 PASS   ok        
+ 5 August: Osage…  2013   87609748    25000000  3.50 PASS   ok        
+ 6 Beautiful Cre…  2013   75392809    50000000  1.51 PASS   ok        
+ 7 Blue Jasmine    2013  101793664    18000000  5.66 PASS   ok        
+ 8 Carrie          2013  120268278    30000000  4.01 PASS   ok        
+ 9 Despicable Me…  2013 1338831390    76000000 17.6  PASS   ok        
+10 Elysium         2013  379242208   120000000  3.16 PASS   ok        
+# ℹ 743 more rows</code></pre>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Project due date cannot be changed. You must complete the project to pass this class.</p>
-</div>
-</div>
-</section>
-<section id="teams" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="teams">Teams</h2>
-<ul>
-<li>Assigned by me</li>
-<li>Project</li>
-<li>Peer evaluation during teamwork and after completion</li>
-<li>Expectations and roles
-<ul>
-<li>Everyone is expected to contribute equal <em>effort</em></li>
-<li>Everyone is expected to understand <em>all</em> code turned in</li>
-<li>Individual contribution evaluated by peer evaluation, commits, etc.</li>
-</ul></li>
-</ul>
-</section>
-<section id="grading" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="grading">Grading</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Category</th>
-<th>Percentage</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Application Exercises</td>
-<td>5%</td>
-</tr>
-<tr class="even">
-<td>Labs</td>
-<td>35%</td>
-</tr>
-<tr class="odd">
-<td>Midterm</td>
-<td>20%</td>
-</tr>
-<tr class="even">
-<td>Final</td>
-<td>20%</td>
-</tr>
-<tr class="odd">
-<td>Project</td>
-<td>20%</td>
-</tr>
-</tbody>
-</table>
-<p>No specific points allocated to attendance, but the application exercise score is implicitly tied to attendance.</p>
-<p>See course syllabus for how the final letter grade will be determined.</p>
-</section>
-<section id="support" class="level2">
-<h2 class="anchored" data-anchor-id="support">Support</h2>
-<ul>
-<li>Help from humans:
-<ul>
-<li>Attend office hours</li>
-<li>Ask and answer questions on the discussion forum</li>
-</ul></li>
-<li>Help from AI: Use the course chatbot (in Canvas!)</li>
-<li>Reserve email for questions on personal matters and/or grades</li>
-<li>Read the course support page</li>
-</ul>
-</section>
-<section id="announcements" class="level2">
-<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
-<ul>
-<li>Posted on Canvas (Announcements tool) and sent via email, be sure to check both regularly</li>
-<li>I’ll assume that you’ve read an announcement by the next “business” day</li>
-<li>I’ll (try my best to) send a weekly update announcement each Friday, outlining the plan for the following week and reminding you what you need to do to prepare, practice, and perform</li>
-</ul>
-</section>
-<section id="diversity-inclusion" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="diversity-inclusion">Diversity + inclusion</h2>
-<p>It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.</p>
-<div class="incremental">
-<ul class="incremental">
-<li>Fill out the Getting to know you survey.</li>
-<li>If you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisors, and deans are excellent resources.</li>
-<li>I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.</li>
-</ul>
 </div>
 </section>
-<section id="accessibility" class="level2">
-<h2 class="anchored" data-anchor-id="accessibility">Accessibility</h2>
-<ul>
-<li><p>The <a href="https://access.duke.edu/students">Student Disability Access Office (SDAO)</a> is available to ensure that students are able to engage with their courses and related assignments.</p></li>
-<li><p>I am committed to making all course materials accessible and I’m always learning how to do this better. If any course component is not accessible to you in any way, please don’t hesitate to let me know.</p></li>
-</ul>
+<section id="the-pipe-in-action-2" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="the-pipe-in-action-2">The pipe, in action</h2>
+<div class="task">
+<p>Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.</p>
+</div>
+<p>Arrange the rows in <code>desc</code>ending order of <code>roi</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(roi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 753 × 7
+   title           year gross_2013 budget_2013   roi binary clean_test
+   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 The Blair Wit…  1999  543776715      839077 648.  PASS   ok        
+ 2 The Devil Ins…  2012  157289709     1014639 155.  PASS   ok        
+ 3 My Big Fat Gr…  2002  768922942     6475896 119.  PASS   ok        
+ 4 Chasing Amy     1997   39417963      362810 109.  PASS   ok        
+ 5 Slacker         1991    4200140       39349 107.  PASS   ok        
+ 6 Insidious       2010  164379554     1602348 103.  PASS   ok        
+ 7 Paranormal Ac…  2010  280159759     3204696  87.4 PASS   ok        
+ 8 Paranormal Ac…  2011  322170936     5178454  62.2 PASS   ok        
+ 9 The Last Exor…  2010  118787648     1922817  61.8 PASS   ok        
+10 Cinderella      1997  246710482     4208591  58.6 PASS   ok        
+# ℹ 743 more rows</code></pre>
+</div>
+</div>
 </section>
-</section>
-<section id="course-policies" class="level1">
-<h1>Course policies</h1>
-<section id="late-work-waivers-lecture-recordings-regrades" class="level2">
-<h2 class="anchored" data-anchor-id="late-work-waivers-lecture-recordings-regrades">Late work, waivers, lecture recordings, regrades…</h2>
-<ul>
-<li>We have policies!</li>
-<li>Read about them on the <a href="https://sta199-f22-1.github.io/course-syllabus.html">course syllabus</a> and refer back to them when you need it</li>
-</ul>
-</section>
-<section id="use-of-ai-tools" class="level2">
-<h2 class="anchored" data-anchor-id="use-of-ai-tools">Use of AI tools</h2>
-<ul>
-<li><p><i class="fa-solid fa-check" aria-label="check"></i> <strong>AI tools for code:</strong></p>
-<ul>
-<li>Sure, but be careful/critical! Working code <code>!=</code> correct/good code.</li>
-<li>Must explicitly cite, with <strong>at a minimum</strong> AI tool you’re using (e.g., ChatGPT) and your prompt.</li>
-</ul></li>
-<li><p><i class="fa-solid fa-ban" aria-label="ban"></i> <strong>AI tools for narrative:</strong> Absolutely not!</p></li>
-<li><p><i class="fa-solid fa-check" aria-label="check"></i> <strong>AI tools for learning:</strong> Sure, but be careful/critical!</p></li>
-</ul>
-</section>
-<section id="academic-integrity" class="level2">
-<h2 class="anchored" data-anchor-id="academic-integrity">Academic integrity</h2>
-<blockquote class="blockquote">
-<p>To uphold the Duke Community Standard:</p>
-<ul>
-<li><p>I will not lie, cheat, or steal in my academic endeavors;</p></li>
-<li><p>I will conduct myself honorably in all my endeavors; and</p></li>
-<li><p>I will act if the Standard is compromised.</p></li>
-</ul>
-</blockquote>
-</section>
-</section>
-<section id="wrap-up" class="level1">
-<h1>Wrap up</h1>
-<section id="this-weeks-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="this-weeks-tasks">This week’s tasks</h2>
-<ul>
-<li>Complete Lab 0
-<ul>
-<li>Computational setup</li>
-<li>Getting to know you survey</li>
-</ul></li>
-<li>Read the syllabus</li>
-<li>Complete readings and videos for next class</li>
-</ul>
-</section>
-<section id="midori-says" class="level2">
-<h2 class="anchored" data-anchor-id="midori-says">Midori says…</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://sta199-f24.github.io/course-syllabus.html"><img src="images/00/midori.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Picture of my cat, Midori, with a speech bubble that says &quot;Read the syllabus and make Mine happy!&quot;" width="700"></a></p>
-</figure>
+<section id="the-pipe-in-action-3" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="the-pipe-in-action-3">The pipe, in action</h2>
+<div class="task">
+<p>Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.</p>
+</div>
+<p>Select columns <code>title</code> and <code>roi</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(roi)) <span class="sc">|&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">select</span>(title, roi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 753 × 2
+   title                      roi
+   &lt;chr&gt;                    &lt;dbl&gt;
+ 1 The Blair Witch Project  648. 
+ 2 The Devil Inside         155. 
+ 3 My Big Fat Greek Wedding 119. 
+ 4 Chasing Amy              109. 
+ 5 Slacker                  107. 
+ 6 Insidious                103. 
+ 7 Paranormal Activity 2     87.4
+ 8 Paranormal Activity 3     62.2
+ 9 The Last Exorcism         61.8
+10 Cinderella                58.6
+# ℹ 743 more rows</code></pre>
+</div>
 </div>
 
 
 <script type="webr-data">
-eyJyZW5kZXJfZGYiOiJkZWZhdWx0Iiwib3B0aW9ucyI6eyJiYXNlVXJsIjoiaHR0cHM6Ly93ZWJyLnItd2FzbS5vcmcvdjAuNC4xLyJ9LCJwYWNrYWdlcyI6eyJwa2dzIjpbImV2YWx1YXRlIiwia25pdHIiLCJodG1sdG9vbHMiLCJ0aWR5dmVyc2UiXSwicmVwb3MiOltdfX0=
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC40LjEvIn0sInJlbmRlcl9kZiI6ImRlZmF1bHQiLCJwYWNrYWdlcyI6eyJyZXBvcyI6W10sInBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyJdfX0=
 </script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC00IiwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV80O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIiwiaW5saW5lIjpmYWxzZX0seyJjZWxsTmFtZSI6IndlYnItNCIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzQgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici00LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItNC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV80ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl80LCB7fSk7XG4iLCJpbmxpbmUiOmZhbHNlfSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtMyIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMztcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiIsImlubGluZSI6ZmFsc2V9LHsiY2VsbE5hbWUiOiJ3ZWJyLTMiLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl8zID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMy1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTMtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfMyA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMywge30pO1xuIiwiaW5saW5lIjpmYWxzZX0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTIiLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzI7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlfSx7ImNlbGxOYW1lIjoid2Vici0yIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMiA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTItY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0yLWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzIgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzIsIHt9KTtcbiIsImlubGluZSI6ZmFsc2V9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xIiwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8xO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIiwiaW5saW5lIjpmYWxzZX0seyJjZWxsTmFtZSI6IndlYnItMSIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJfd2Vicl92YWx1ZV8xID0ge1xuICBjb25zdCB7IGhpZ2hsaWdodFIsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTEtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV2YWx1YXRpb24gY29uZmlndXJhdGlvblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7XG4gICAgaWQ6IFwid2Vici0xLWNvbnRlbnRzXCIsXG4gICAgZWNobzogdHJ1ZSxcbiAgICBvdXRwdXQ6IHRydWVcbiAgfSwgYmxvY2suYXR0cik7XG5cbiAgLy8gRXZhbHVhdGUgdGhlIHByb3ZpZGVkIFIgY29kZVxuICBjb25zdCByZXN1bHQgPSB3ZWJST2pzLnByb2Nlc3Moe2NvZGU6IGJsb2NrLmNvZGUsIG9wdGlvbnN9LCB7fSk7XG5cbiAgLy8gRWFybHkgeWllbGQgd2hpbGUgd2Ugd2FpdCBmb3IgdGhlIGZpcnN0IGV2YWx1YXRpb24gYW5kIHJlbmRlclxuICBpZiAob3B0aW9ucy5vdXRwdXQgJiYgIShcIjFcIiBpbiB3ZWJST2pzLnJlbmRlcmVkT2pzKSkge1xuICAgIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gICAgY29uc3Qgc3Bpbm5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG5cbiAgICBpZiAob3B0aW9ucy5lY2hvKSB7XG4gICAgICAvLyBTaG93IG91dHB1dCBhcyBoaWdobGlnaHRlZCBzb3VyY2VcbiAgICAgIGNvbnN0IHByZUVsZW0gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwicHJlXCIpO1xuICAgICAgY29udGFpbmVyLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZVwiO1xuICAgICAgcHJlRWxlbS5jbGFzc05hbWUgPSBcInNvdXJjZUNvZGUgclwiO1xuICAgICAgcHJlRWxlbS5hcHBlbmRDaGlsZChoaWdobGlnaHRSKGJsb2NrLmNvZGUpKTtcbiAgICAgIHNwaW5uZXIuY2xhc3NOYW1lID0gXCJzcGlubmVyLWdyb3cgc3Bpbm5lci1ncm93LXNtIG0tMiBwb3NpdGlvbi1hYnNvbHV0ZSB0b3AtMCBlbmQtMFwiO1xuICAgICAgcHJlRWxlbS5hcHBlbmRDaGlsZChzcGlubmVyKTtcbiAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChwcmVFbGVtKTtcbiAgICB9IGVsc2Uge1xuICAgICAgc3Bpbm5lci5jbGFzc05hbWUgPSBcInNwaW5uZXItYm9yZGVyIHNwaW5uZXItYm9yZGVyLXNtXCI7XG4gICAgICBjb250YWluZXIuYXBwZW5kQ2hpbGQoc3Bpbm5lcik7XG4gICAgfVxuXG4gICAgeWllbGQgY29udGFpbmVyO1xuICB9XG5cbiAgd2ViUk9qcy5yZW5kZXJlZE9qc1tcIjFcIl0gPSB0cnVlO1xuICB5aWVsZCBhd2FpdCByZXN1bHQ7XG59XG4iLCJpbmxpbmUiOmZhbHNlfSx7ImNlbGxOYW1lIjoid2Vici1wcmVsdWRlIiwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoid2ViUk9qcyA9IHtcbiAgY29uc3QgeyBXZWJSIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lLldlYlI7XG4gIGNvbnN0IHsgV2ViUkV2YWx1YXRvciwgV2ViUkVudmlyb25tZW50TWFuYWdlciwgc2V0dXBSLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc3RhdHVzQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLXN0YXR1c1wiKTtcbiAgY29uc3QgaW5kaWNhdG9yQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaW5kaWNhdG9yQ29udGFpbmVyLmNsYXNzTGlzdC5yZW1vdmUoXCJkLW5vbmVcIik7XG5cbiAgbGV0IHN0YXR1c1RleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXG4gIHN0YXR1c1RleHQuY2xhc3NMaXN0ID0gXCJleGVyY2lzZS1sb2FkaW5nLWRldGFpbHNcIjtcbiAgc3RhdHVzVGV4dCA9IHN0YXR1c0NvbnRhaW5lci5hcHBlbmRDaGlsZChzdGF0dXNUZXh0KTtcbiAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbml0aWFsaXNlYDtcblxuICAvLyBIb2lzdCBpbmRpY2F0b3Igb3V0IGZyb20gZmluYWwgc2xpZGUgd2hlbiBydW5uaW5nIHVuZGVyIHJldmVhbFxuICBjb25zdCByZXZlYWxTdGF0dXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCAuZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGlmIChyZXZlYWxTdGF0dXMpIHtcbiAgICByZXZlYWxTdGF0dXMucmVtb3ZlKCk7XG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgPiAuc2xpZGVzXCIpLmFwcGVuZENoaWxkKHJldmVhbFN0YXR1cyk7XG4gIH1cblxuICAvLyB3ZWJSIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIC8vIEluaXRpYWxpc2Ugd2ViUiBhbmQgc2V0dXAgZm9yIFIgY29kZSBldmFsdWF0aW9uXG4gIGxldCB3ZWJSUHJvbWlzZSA9IChhc3luYyAod2ViUikgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgd2ViUmA7XG4gICAgYXdhaXQgd2ViUi5pbml0KCk7XG5cbiAgICAvLyBJbnN0YWxsIHByb3ZpZGVkIGxpc3Qgb2YgcGFja2FnZXNcbiAgICAvLyBFbnN1cmUgd2ViUiBkZWZhdWx0IHJlcG8gaXMgaW5jbHVkZWRcbiAgICBkYXRhLnBhY2thZ2VzLnJlcG9zLnB1c2goXCJodHRwczovL3JlcG8uci13YXNtLm9yZ1wiKVxuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIHdlYlIuZXZhbFJWb2lkKGBcbiAgICAgICAgd2Vicjo6aW5zdGFsbChwa2csIHJlcG9zID0gcmVwb3MpXG4gICAgICAgIGxpYnJhcnkocGtnLCBjaGFyYWN0ZXIub25seSA9IFRSVUUpXG4gICAgICBgLCB7IGVudjoge1xuICAgICAgICBwa2c6IHBrZyxcbiAgICAgICAgcmVwb3M6IGRhdGEucGFja2FnZXMucmVwb3MsXG4gICAgICB9fSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBzd2FsbG93aW5nIGFueSBgZGlyIGV4aXN0c2AgZXJyb3JzXG4gICAgICBsZXQgcGF0aCA9IGZpbGU7XG4gICAgICB3aGlsZSAocGF0aCA9IHBhdGguc3Vic3RyKDAsIHBhdGgubGFzdEluZGV4T2YoJy8nKSkpIHtcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCB3ZWJSLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKCFlLm1lc3NhZ2UuaW5jbHVkZXMoXCJGUyBlcnJvclwiKSkge1xuICAgICAgICAgICAgdGhyb3cgZTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgcmV0dXJuIGF3YWl0IHdlYlIuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5zdGFsbGluZyB3ZWJSIHNoaW1zYDtcbiAgICBhd2FpdCB3ZWJSLmV2YWxSVm9pZChgd2Vicjo6c2hpbV9pbnN0YWxsKClgKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgV2ViUiBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBSKHdlYlIsIGRhdGEpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHdlYlI7XG4gIH0pKG5ldyBXZWJSKGRhdGEub3B0aW9ucykpO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCB3ZWJSID0gYXdhaXQgd2ViUlByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFdlYlJFdmFsdWF0b3Iod2ViUiwgY29udGV4dClcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBwcm9jZXNzLFxuICAgIHdlYlJQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICB9O1xufVxuIiwiaW5saW5lIjpmYWxzZX1dfQ==
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xIiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8xO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIiwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZX0seyJjZWxsTmFtZSI6IndlYnItMSIsInNvdXJjZSI6Il93ZWJyX3ZhbHVlXzEgPSB7XG4gIGNvbnN0IHsgaGlnaGxpZ2h0UiwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIC8vIERlZmF1bHQgZXZhbHVhdGlvbiBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHtcbiAgICBpZDogXCJ3ZWJyLTEtY29udGVudHNcIixcbiAgICBlY2hvOiB0cnVlLFxuICAgIG91dHB1dDogdHJ1ZVxuICB9LCBibG9jay5hdHRyKTtcblxuICAvLyBFdmFsdWF0ZSB0aGUgcHJvdmlkZWQgUiBjb2RlXG4gIGNvbnN0IHJlc3VsdCA9IHdlYlJPanMucHJvY2Vzcyh7Y29kZTogYmxvY2suY29kZSwgb3B0aW9uc30sIHt9KTtcblxuICAvLyBFYXJseSB5aWVsZCB3aGlsZSB3ZSB3YWl0IGZvciB0aGUgZmlyc3QgZXZhbHVhdGlvbiBhbmQgcmVuZGVyXG4gIGlmIChvcHRpb25zLm91dHB1dCAmJiAhKFwiMVwiIGluIHdlYlJPanMucmVuZGVyZWRPanMpKSB7XG4gICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbiAgICBjb25zdCBzcGlubmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcblxuICAgIGlmIChvcHRpb25zLmVjaG8pIHtcbiAgICAgIC8vIFNob3cgb3V0cHV0IGFzIGhpZ2hsaWdodGVkIHNvdXJjZVxuICAgICAgY29uc3QgcHJlRWxlbSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJwcmVcIik7XG4gICAgICBjb250YWluZXIuY2xhc3NOYW1lID0gXCJzb3VyY2VDb2RlXCI7XG4gICAgICBwcmVFbGVtLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZSByXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKGhpZ2hsaWdodFIoYmxvY2suY29kZSkpO1xuICAgICAgc3Bpbm5lci5jbGFzc05hbWUgPSBcInNwaW5uZXItZ3JvdyBzcGlubmVyLWdyb3ctc20gbS0yIHBvc2l0aW9uLWFic29sdXRlIHRvcC0wIGVuZC0wXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHByZUVsZW0pO1xuICAgIH0gZWxzZSB7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ib3JkZXIgc3Bpbm5lci1ib3JkZXItc21cIjtcbiAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChzcGlubmVyKTtcbiAgICB9XG5cbiAgICB5aWVsZCBjb250YWluZXI7XG4gIH1cblxuICB3ZWJST2pzLnJlbmRlcmVkT2pzW1wiMVwiXSA9IHRydWU7XG4gIHlpZWxkIGF3YWl0IHJlc3VsdDtcbn1cbiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlfSx7ImNlbGxOYW1lIjoid2Vici1wcmVsdWRlIiwic291cmNlIjoid2ViUk9qcyA9IHtcbiAgY29uc3QgeyBXZWJSIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lLldlYlI7XG4gIGNvbnN0IHsgV2ViUkV2YWx1YXRvciwgV2ViUkVudmlyb25tZW50TWFuYWdlciwgc2V0dXBSLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc3RhdHVzQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLXN0YXR1c1wiKTtcbiAgY29uc3QgaW5kaWNhdG9yQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaW5kaWNhdG9yQ29udGFpbmVyLmNsYXNzTGlzdC5yZW1vdmUoXCJkLW5vbmVcIik7XG5cbiAgbGV0IHN0YXR1c1RleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXG4gIHN0YXR1c1RleHQuY2xhc3NMaXN0ID0gXCJleGVyY2lzZS1sb2FkaW5nLWRldGFpbHNcIjtcbiAgc3RhdHVzVGV4dCA9IHN0YXR1c0NvbnRhaW5lci5hcHBlbmRDaGlsZChzdGF0dXNUZXh0KTtcbiAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbml0aWFsaXNlYDtcblxuICAvLyBIb2lzdCBpbmRpY2F0b3Igb3V0IGZyb20gZmluYWwgc2xpZGUgd2hlbiBydW5uaW5nIHVuZGVyIHJldmVhbFxuICBjb25zdCByZXZlYWxTdGF0dXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCAuZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGlmIChyZXZlYWxTdGF0dXMpIHtcbiAgICByZXZlYWxTdGF0dXMucmVtb3ZlKCk7XG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgPiAuc2xpZGVzXCIpLmFwcGVuZENoaWxkKHJldmVhbFN0YXR1cyk7XG4gIH1cblxuICAvLyB3ZWJSIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIC8vIEluaXRpYWxpc2Ugd2ViUiBhbmQgc2V0dXAgZm9yIFIgY29kZSBldmFsdWF0aW9uXG4gIGxldCB3ZWJSUHJvbWlzZSA9IChhc3luYyAod2ViUikgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgd2ViUmA7XG4gICAgYXdhaXQgd2ViUi5pbml0KCk7XG5cbiAgICAvLyBJbnN0YWxsIHByb3ZpZGVkIGxpc3Qgb2YgcGFja2FnZXNcbiAgICAvLyBFbnN1cmUgd2ViUiBkZWZhdWx0IHJlcG8gaXMgaW5jbHVkZWRcbiAgICBkYXRhLnBhY2thZ2VzLnJlcG9zLnB1c2goXCJodHRwczovL3JlcG8uci13YXNtLm9yZ1wiKVxuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIHdlYlIuZXZhbFJWb2lkKGBcbiAgICAgICAgd2Vicjo6aW5zdGFsbChwa2csIHJlcG9zID0gcmVwb3MpXG4gICAgICAgIGxpYnJhcnkocGtnLCBjaGFyYWN0ZXIub25seSA9IFRSVUUpXG4gICAgICBgLCB7IGVudjoge1xuICAgICAgICBwa2c6IHBrZyxcbiAgICAgICAgcmVwb3M6IGRhdGEucGFja2FnZXMucmVwb3MsXG4gICAgICB9fSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBzd2FsbG93aW5nIGFueSBgZGlyIGV4aXN0c2AgZXJyb3JzXG4gICAgICBsZXQgcGF0aCA9IGZpbGU7XG4gICAgICB3aGlsZSAocGF0aCA9IHBhdGguc3Vic3RyKDAsIHBhdGgubGFzdEluZGV4T2YoJy8nKSkpIHtcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCB3ZWJSLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKCFlLm1lc3NhZ2UuaW5jbHVkZXMoXCJGUyBlcnJvclwiKSkge1xuICAgICAgICAgICAgdGhyb3cgZTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgcmV0dXJuIGF3YWl0IHdlYlIuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5zdGFsbGluZyB3ZWJSIHNoaW1zYDtcbiAgICBhd2FpdCB3ZWJSLmV2YWxSVm9pZChgd2Vicjo6c2hpbV9pbnN0YWxsKClgKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgV2ViUiBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBSKHdlYlIsIGRhdGEpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHdlYlI7XG4gIH0pKG5ldyBXZWJSKGRhdGEub3B0aW9ucykpO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCB3ZWJSID0gYXdhaXQgd2ViUlByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFdlYlJFdmFsdWF0b3Iod2ViUiwgY29udGV4dClcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBwcm9jZXNzLFxuICAgIHdlYlJQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICB9O1xufVxuIiwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZX1dfQ==
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
@@ -898,7 +728,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC00IiwibWV0aG9kTmFtZSI6ImludGVy
 </div>
 </div>
 <script type="vfs-file">
-WyJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vc3RhMTk5LWYyNC9zdGExOTktZjI0LmdpdGh1Yi5pby9tYWluL3NsaWRlcy9kYXRhL2JpcnRoZGF5cy5jc3YiXQ==
+W10=
 </script>
 </section>
 </section>
@@ -1525,7 +1355,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/00-welcome-199.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/03-grammar-of-data-transformation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
