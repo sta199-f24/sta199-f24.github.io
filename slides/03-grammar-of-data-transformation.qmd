@@ -57,7 +57,7 @@ Go to RStudio, confirm that you're in the `ae` project, and open the document ae
 
 # Application exercise
 
-`ae-03-bechdel-data-viz-transform`
+## `ae-03-bechdel-data-viz-transform`
 
 ::: appex
 -   Go to your ae project in RStudio.
