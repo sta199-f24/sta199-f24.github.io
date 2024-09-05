@@ -1,7 +1,7 @@
 ---
 title: "Grammar of data transformation"
 subtitle: "Lecture 3"
-date: "2024-09-04"
+date: "2024-09-05"
 format: 
   live-revealjs: 
     output-file: 03-grammar-of-data-transformation-slides.html
@@ -103,12 +103,13 @@ bechdel |> # <1>
 The pipe operator passes what comes before it into the function that comes after it as the first argument in that function.
 
 ::: columns
-::: {.column .fragment width=55%}
+::: {.column .fragment width="55%"}
 ```{r}
 sum(1, 2)
 ```
 :::
-::: {.column .fragment width=45%}
+
+::: {.column .fragment width="45%"}
 ```{r}
 1 |> 
   sum(2)
@@ -119,12 +120,13 @@ sum(1, 2)
 <br>
 
 ::: columns
-::: {.column .fragment width=55%}
+::: {.column .fragment width="55%"}
 ```{r}
 select(filter(bechdel, roi > 400), title)
 ```
 :::
-::: {.column .fragment width=45%}
+
+::: {.column .fragment width="45%"}
 ```{r}
 bechdel |>
   filter(roi > 400) |>
@@ -136,16 +138,16 @@ bechdel |>
 ## Code style tip {{< fa lightbulb >}} {.smaller}
 
 -   In data transformation pipelines, always use a
-    - space before `|>`
-    - line break after `|>`
-    - indent the next line of code
+    -   space before `|>`
+    -   line break after `|>`
+    -   indent the next line of code
 
 . . .
 
 -   In data visualization layers, always use a
-    - space before `+`
-    - line break after `+`
-    - indent the next line of code
+    -   space before `+`
+    -   line break after `+`
+    -   indent the next line of code
 
 ## The pipe, in action {.smaller}
 
