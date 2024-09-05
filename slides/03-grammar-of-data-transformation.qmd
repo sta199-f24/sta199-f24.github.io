@@ -5,9 +5,10 @@ date: "2024-09-04"
 format: 
   live-revealjs: 
     output-file: 03-grammar-of-data-transformation-slides.html
+    webr:
+      cell-options:
+        autorun: false
 webr:
-  cell-options:
-    autorun: false
   packages:
     - tidyverse
   resources:
@@ -211,5 +212,5 @@ Ask another question of the data that can be answered with a data transformation
 
 ```{webr}
 bechdel |>
-  ___
+  filter(roi > 300)
 ```
