@@ -34,6 +34,8 @@ bechdel <- read_csv("bechdel.csv")
 
 ## Announcements {.smaller}
 
+-   AE 01 and AE 02 suggested answers posted on the course website.
+
 -   Ed Discussion posts:
 
     -   Keep them coming!
@@ -155,7 +157,7 @@ Find movies that pass the Bechdel test and display their titles and ROIs in desc
 
 Start with the `bechdel` data frame:
 
-```{r}
+```{webr}
 bechdel
 ```
 
@@ -167,8 +169,7 @@ Find movies that pass the Bechdel test and display their titles and ROIs in desc
 
 Filter for rows where `binary` is equal to `"PASS"`:
 
-```{r}
-#| code-line-numbers: "2"
+```{webr}
 bechdel |>
   filter(binary == "PASS")
 ```
@@ -181,8 +182,7 @@ Find movies that pass the Bechdel test and display their titles and ROIs in desc
 
 Arrange the rows in `desc`ending order of `roi`:
 
-```{r}
-#| code-line-numbers: "3"
+```{webr}
 bechdel |>
   filter(binary == "PASS") |>
   arrange(desc(roi))
@@ -196,8 +196,7 @@ Find movies that pass the Bechdel test and display their titles and ROIs in desc
 
 Select columns `title` and `roi`:
 
-```{r}
-#| code-line-numbers: "3"
+```{webr}
 bechdel |>
   filter(binary == "PASS") |>
   arrange(desc(roi)) |>
@@ -212,5 +211,5 @@ Ask another question of the data that can be answered with a data transformation
 
 ```{webr}
 bechdel |>
-  filter(roi > 300)
+  ___
 ```
