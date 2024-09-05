@@ -462,6 +462,13 @@
     "text": "Recap: Code cells (aka code chunks)\n . . .\n\nCell labels are helpful for describing what the code is doing, for jumping between code cells in the editor, and for troubleshooting\nmessage: false hides any messages emitted by the code in your rendered document"
   },
   {
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#ae-03-bechdel-data-viz-transform",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#ae-03-bechdel-data-viz-transform",
+    "title": "Grammar of data transformation",
+    "section": "ae-03-bechdel-data-viz-transform",
+    "text": "ae-03-bechdel-data-viz-transform\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-03-bechdel-data-viz-transform.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+  },
+  {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#a-quick-reminder",
     "href": "slides/03-grammar-of-data-transformation-slides.html#a-quick-reminder",
     "title": "Grammar of data transformation",
@@ -530,6 +537,13 @@
     "title": "Grammar of data transformation",
     "section": "Recap: Code cells (aka code chunks)",
     "text": "Recap: Code cells (aka code chunks)\n . . .\n\nCell labels are helpful for describing what the code is doing, for jumping between code cells in the editor, and for troubleshooting\nmessage: false hides any messages emitted by the code in your rendered document"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation.html#ae-03-bechdel-data-viz-transform",
+    "href": "slides/03-grammar-of-data-transformation.html#ae-03-bechdel-data-viz-transform",
+    "title": "Grammar of data transformation",
+    "section": "ae-03-bechdel-data-viz-transform",
+    "text": "ae-03-bechdel-data-viz-transform\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-03-bechdel-data-viz-transform.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#a-quick-reminder",
