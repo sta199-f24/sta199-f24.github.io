@@ -117,7 +117,7 @@ theme:
   dark: [cosmo, style/sta199.scss, style/dark.scss]
 linkcolor: "#5D737E"
 toc: true
-code-copy: true
+code-copy: hover
 code-link: true
 code-overflow: wrap
 

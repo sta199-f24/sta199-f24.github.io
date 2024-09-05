@@ -91,7 +91,8 @@ details>summary {
 }
 
 .reveal pre code {
-  width: 1100px;
+  background-color: #2b2b2b;
+  color: #f8f8f3;
 }
 
 .reveal .hand {
@@ -100,6 +101,8 @@ details>summary {
 }
 
 .reveal dl.code-annotation-container-grid {
-    margin-left: 0.1em;
-    background-color: #ecf1f7;
+  background-color: #ecf1f7;
+  font-size: 1em;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
