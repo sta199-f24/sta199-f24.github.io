@@ -8,6 +8,10 @@ format:
 webr:
   cell-options:
     autorun: false
+  packages:
+    - tidyverse
+  resources:
+    - https://raw.githubusercontent.com/sta199-f24/sta199-f24.github.io/main/slides/data/bechdel.csv
 ---
 
 <!-- begin: webr fodder -->
@@ -19,6 +23,8 @@ webr:
 #| echo: false
 #| output: false
 options(width = 60)
+
+bechdel <- read_csv("bechdel.csv")
 ```
 
 <!-- end: webr fodder -->
@@ -195,4 +201,15 @@ bechdel |>
   filter(binary == "PASS") |>
   arrange(desc(roi)) |>
   select(title, roi)
+```
+
+## Time permitting {.smaller}
+
+::: task
+Ask another question of the data that can be answered with a data transformation pipeline.
+:::
+
+```{webr}
+bechdel |>
+  ___
 ```
