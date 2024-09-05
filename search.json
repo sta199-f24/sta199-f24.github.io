@@ -445,7 +445,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#announcements",
     "title": "Grammar of data transformation",
     "section": "Announcements",
-    "text": "Announcements\n\nEd Discussion posts:\n\nKeep them coming!\nKeep them public!\nFeel free to make them anonymous if you prefer.\n\nMonday’s lab:\n\nShow up on time\nShow up to learn and get support\nLeave with all questions answered and a plan to work on the lab throughout the week"
+    "text": "Announcements\n\nAE 01 and AE 02 suggested answers posted on the course website.\nEd Discussion posts:\n\nKeep them coming!\nKeep them public!\nFeel free to make them anonymous if you prefer.\n\nMonday’s lab:\n\nShow up on time\nShow up to learn and get support\nLeave with all questions answered and a plan to work on the lab throughout the week"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#ae-02-bechdel-dataviz",
@@ -494,28 +494,28 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#the-pipe-in-action",
     "title": "Grammar of data transformation",
     "section": "The pipe, in action",
-    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\n\nStart with the bechdel data frame:\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\n\nStart with the bechdel data frame:"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#the-pipe-in-action-1",
     "href": "slides/03-grammar-of-data-transformation-slides.html#the-pipe-in-action-1",
     "title": "Grammar of data transformation",
     "section": "The pipe, in action",
-    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nFilter for rows where binary is equal to \"PASS\":\n\nbechdel |&gt;\n  filter(binary == \"PASS\")\n\n# A tibble: 753 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 Dredd 3D        2012   55078343    45658735  1.21 PASS   ok        \n 2 About Time      2013  102648667    12000000  8.55 PASS   ok        \n 3 Admission       2013   36014634    13000000  2.77 PASS   ok        \n 4 American Hust…  2013  397915817    40000000  9.95 PASS   ok        \n 5 August: Osage…  2013   87609748    25000000  3.50 PASS   ok        \n 6 Beautiful Cre…  2013   75392809    50000000  1.51 PASS   ok        \n 7 Blue Jasmine    2013  101793664    18000000  5.66 PASS   ok        \n 8 Carrie          2013  120268278    30000000  4.01 PASS   ok        \n 9 Despicable Me…  2013 1338831390    76000000 17.6  PASS   ok        \n10 Elysium         2013  379242208   120000000  3.16 PASS   ok        \n# ℹ 743 more rows"
+    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nFilter for rows where binary is equal to \"PASS\":"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#the-pipe-in-action-2",
     "href": "slides/03-grammar-of-data-transformation-slides.html#the-pipe-in-action-2",
     "title": "Grammar of data transformation",
     "section": "The pipe, in action",
-    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nArrange the rows in descending order of roi:\n\nbechdel |&gt;\n  filter(binary == \"PASS\") |&gt;\n  arrange(desc(roi))\n\n# A tibble: 753 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 The Blair Wit…  1999  543776715      839077 648.  PASS   ok        \n 2 The Devil Ins…  2012  157289709     1014639 155.  PASS   ok        \n 3 My Big Fat Gr…  2002  768922942     6475896 119.  PASS   ok        \n 4 Chasing Amy     1997   39417963      362810 109.  PASS   ok        \n 5 Slacker         1991    4200140       39349 107.  PASS   ok        \n 6 Insidious       2010  164379554     1602348 103.  PASS   ok        \n 7 Paranormal Ac…  2010  280159759     3204696  87.4 PASS   ok        \n 8 Paranormal Ac…  2011  322170936     5178454  62.2 PASS   ok        \n 9 The Last Exor…  2010  118787648     1922817  61.8 PASS   ok        \n10 Cinderella      1997  246710482     4208591  58.6 PASS   ok        \n# ℹ 743 more rows"
+    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nArrange the rows in descending order of roi:"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#the-pipe-in-action-3",
     "href": "slides/03-grammar-of-data-transformation-slides.html#the-pipe-in-action-3",
     "title": "Grammar of data transformation",
     "section": "The pipe, in action",
-    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nSelect columns title and roi:\n\nbechdel |&gt;\n  filter(binary == \"PASS\") |&gt;\n  arrange(desc(roi)) |&gt;\n  select(title, roi)\n\n# A tibble: 753 × 2\n   title                      roi\n   &lt;chr&gt;                    &lt;dbl&gt;\n 1 The Blair Witch Project  648. \n 2 The Devil Inside         155. \n 3 My Big Fat Greek Wedding 119. \n 4 Chasing Amy              109. \n 5 Slacker                  107. \n 6 Insidious                103. \n 7 Paranormal Activity 2     87.4\n 8 Paranormal Activity 3     62.2\n 9 The Last Exorcism         61.8\n10 Cinderella                58.6\n# ℹ 743 more rows"
+    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nSelect columns title and roi:"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#time-permitting",
@@ -529,7 +529,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#announcements",
     "title": "Grammar of data transformation",
     "section": "Announcements",
-    "text": "Announcements\n\nEd Discussion posts:\n\nKeep them coming!\nKeep them public!\nFeel free to make them anonymous if you prefer.\n\nMonday’s lab:\n\nShow up on time\nShow up to learn and get support\nLeave with all questions answered and a plan to work on the lab throughout the week"
+    "text": "Announcements\n\nAE 01 and AE 02 suggested answers posted on the course website.\nEd Discussion posts:\n\nKeep them coming!\nKeep them public!\nFeel free to make them anonymous if you prefer.\n\nMonday’s lab:\n\nShow up on time\nShow up to learn and get support\nLeave with all questions answered and a plan to work on the lab throughout the week"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#ae-02-bechdel-dataviz",
@@ -578,28 +578,28 @@
     "href": "slides/03-grammar-of-data-transformation.html#the-pipe-in-action",
     "title": "Grammar of data transformation",
     "section": "The pipe, in action",
-    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\n. . .\nStart with the bechdel data frame:\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\n. . .\nStart with the bechdel data frame:"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#the-pipe-in-action-1",
     "href": "slides/03-grammar-of-data-transformation.html#the-pipe-in-action-1",
     "title": "Grammar of data transformation",
     "section": "The pipe, in action",
-    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nFilter for rows where binary is equal to \"PASS\":\n\nbechdel |&gt;\n  filter(binary == \"PASS\")\n\n# A tibble: 753 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 Dredd 3D        2012   55078343    45658735  1.21 PASS   ok        \n 2 About Time      2013  102648667    12000000  8.55 PASS   ok        \n 3 Admission       2013   36014634    13000000  2.77 PASS   ok        \n 4 American Hust…  2013  397915817    40000000  9.95 PASS   ok        \n 5 August: Osage…  2013   87609748    25000000  3.50 PASS   ok        \n 6 Beautiful Cre…  2013   75392809    50000000  1.51 PASS   ok        \n 7 Blue Jasmine    2013  101793664    18000000  5.66 PASS   ok        \n 8 Carrie          2013  120268278    30000000  4.01 PASS   ok        \n 9 Despicable Me…  2013 1338831390    76000000 17.6  PASS   ok        \n10 Elysium         2013  379242208   120000000  3.16 PASS   ok        \n# ℹ 743 more rows"
+    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nFilter for rows where binary is equal to \"PASS\":"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#the-pipe-in-action-2",
     "href": "slides/03-grammar-of-data-transformation.html#the-pipe-in-action-2",
     "title": "Grammar of data transformation",
     "section": "The pipe, in action",
-    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nArrange the rows in descending order of roi:\n\nbechdel |&gt;\n  filter(binary == \"PASS\") |&gt;\n  arrange(desc(roi))\n\n# A tibble: 753 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 The Blair Wit…  1999  543776715      839077 648.  PASS   ok        \n 2 The Devil Ins…  2012  157289709     1014639 155.  PASS   ok        \n 3 My Big Fat Gr…  2002  768922942     6475896 119.  PASS   ok        \n 4 Chasing Amy     1997   39417963      362810 109.  PASS   ok        \n 5 Slacker         1991    4200140       39349 107.  PASS   ok        \n 6 Insidious       2010  164379554     1602348 103.  PASS   ok        \n 7 Paranormal Ac…  2010  280159759     3204696  87.4 PASS   ok        \n 8 Paranormal Ac…  2011  322170936     5178454  62.2 PASS   ok        \n 9 The Last Exor…  2010  118787648     1922817  61.8 PASS   ok        \n10 Cinderella      1997  246710482     4208591  58.6 PASS   ok        \n# ℹ 743 more rows"
+    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nArrange the rows in descending order of roi:"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#the-pipe-in-action-3",
     "href": "slides/03-grammar-of-data-transformation.html#the-pipe-in-action-3",
     "title": "Grammar of data transformation",
     "section": "The pipe, in action",
-    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nSelect columns title and roi:\n\nbechdel |&gt;\n  filter(binary == \"PASS\") |&gt;\n  arrange(desc(roi)) |&gt;\n  select(title, roi)\n\n# A tibble: 753 × 2\n   title                      roi\n   &lt;chr&gt;                    &lt;dbl&gt;\n 1 The Blair Witch Project  648. \n 2 The Devil Inside         155. \n 3 My Big Fat Greek Wedding 119. \n 4 Chasing Amy              109. \n 5 Slacker                  107. \n 6 Insidious                103. \n 7 Paranormal Activity 2     87.4\n 8 Paranormal Activity 3     62.2\n 9 The Last Exorcism         61.8\n10 Cinderella                58.6\n# ℹ 743 more rows"
+    "text": "The pipe, in action\n\nFind movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.\n\nSelect columns title and roi:"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#time-permitting",
@@ -1045,7 +1045,7 @@
     "href": "ae.html",
     "title": "Application exercises",
     "section": "",
-    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 2 pm) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: UN Votes\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\n\nNo matching items\n\n\n\nMore AEs to be added as the semester progresses.",
+    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 2 pm) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: UN Votes\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\nSuggested answers\n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\n \n\n\n\n\n\nNo matching items\n\n\n\nMore AEs to be added as the semester progresses.",
     "crumbs": [
       "Application exercises"
     ]
@@ -1095,39 +1095,60 @@
     ]
   },
   {
-    "objectID": "ae/ae-00-unvotes.html",
-    "href": "ae/ae-00-unvotes.html",
-    "title": "AE 00: UN Votes",
+    "objectID": "ae/ae-03-bechdel-data-viz-transform.html",
+    "href": "ae/ae-03-bechdel-data-viz-transform.html",
+    "title": "AE 03: Bechdel + data visualization and transformation",
     "section": "",
-    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
+    "text": "In this mini-analysis, we’ll continue our exploration of the bechdel dataset, which contains information on whether the movies in the data pass the Bechdel test (a measure of the representation of women in fiction)."
   },
   {
-    "objectID": "ae/ae-00-unvotes.html#introduction",
-    "href": "ae/ae-00-unvotes.html#introduction",
-    "title": "AE 00: UN Votes",
+    "objectID": "ae/ae-03-bechdel-data-viz-transform.html#getting-started",
+    "href": "ae/ae-03-bechdel-data-viz-transform.html#getting-started",
+    "title": "AE 03: Bechdel + data visualization and transformation",
+    "section": "Getting started",
+    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\n# add code here\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a movie.\n\nHow many observations (rows) are in the data set?\n\nThere are 1615 movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are 7 columns in the dataset."
+  },
+  {
+    "objectID": "ae/ae-03-bechdel-data-viz-transform.html#bechdel-test-results",
+    "href": "ae/ae-03-bechdel-data-viz-transform.html#bechdel-test-results",
+    "title": "AE 03: Bechdel + data visualization and transformation",
+    "section": "Bechdel test results",
+    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nCreate a bar plot of the clean_test variable:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\n\n# add code here\n\nWhat types of movies are more common, those that pass or do not pass the test?\nAdd your response here.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-03-bechdel-data-viz-transform.html#return-on-investment",
+    "href": "ae/ae-03-bechdel-data-viz-transform.html#return-on-investment",
+    "title": "AE 03: Bechdel + data visualization and transformation",
+    "section": "Return-on-investment",
+    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\n# add code here\n\n\n\nStep 2 - Demo\nWhat are the movies with very high returns on investment?\n\n# add code here\n\n\n\nStep 3 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\n# add code here\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\nAdd your response here.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html",
+    "href": "ae/ae-03-bechdel-data-viz-transform-A.html",
+    "title": "AE 03: Bechdel + data visualization and transformation",
     "section": "",
-    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key.\nIn this mini-analysis, we’ll continue our exploration of the bechdel dataset, which contains information on whether the movies in the data pass the Bechdel test (a measure of the representation of women in fiction)."
   },
   {
-    "objectID": "ae/ae-00-unvotes.html#un-voting-patterns",
-    "href": "ae/ae-00-unvotes.html#un-voting-patterns",
-    "title": "AE 00: UN Votes",
-    "section": "UN voting patterns",
-    "text": "UN voting patterns\nLet’s create a data visualisation that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.\n\n\n\n\n\n\n\n\n\nTask: Write your first piece of (R) code!\n\nModify the code cell above to change the plot to include a different country in place of Turkey. Note that the country name should be spelled and capitalized exactly the same way as it appears in the data. See the Appendix for a list of the countries in the data."
+    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html#getting-started",
+    "href": "ae/ae-03-bechdel-data-viz-transform-A.html#getting-started",
+    "title": "AE 03: Bechdel + data visualization and transformation",
+    "section": "Getting started",
+    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\nglimpse(bechdel)\n\nRows: 1,615\nColumns: 7\n$ title       &lt;chr&gt; \"21 & Over\", \"Dredd 3D\", \"12 Years a Slave\", \"2 Guns\", \"42…\n$ year        &lt;dbl&gt; 2013, 2012, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013…\n$ gross_2013  &lt;dbl&gt; 67878146, 55078343, 211714070, 208105475, 190040426, 18416…\n$ budget_2013 &lt;dbl&gt; 13000000, 45658735, 20000000, 61000000, 40000000, 22500000…\n$ roi         &lt;dbl&gt; 5.221396, 1.206305, 10.585703, 3.411565, 4.751011, 0.81851…\n$ binary      &lt;chr&gt; \"FAIL\", \"PASS\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"P…\n$ clean_test  &lt;chr&gt; \"notalk\", \"ok\", \"notalk\", \"notalk\", \"men\", \"men\", \"notalk\"…\n\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a movie.\n\nHow many observations (rows) are in the data set?\n\nThere are 1615 movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are 7 columns in the dataset."
   },
   {
-    "objectID": "ae/ae-00-unvotes.html#references",
-    "href": "ae/ae-00-unvotes.html#references",
-    "title": "AE 00: UN Votes",
-    "section": "References",
-    "text": "References\n\nRobinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html#bechdel-test-results",
+    "href": "ae/ae-03-bechdel-data-viz-transform-A.html#bechdel-test-results",
+    "title": "AE 03: Bechdel + data visualization and transformation",
+    "section": "Bechdel test results",
+    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nCreate a bar plot of the clean_test variable:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\n\nggplot(bechdel, aes(x = clean_test)) +\n  geom_bar() +\n  labs(\n    x = \"Bechdel test result\",\n    y = \"Count\"\n  )\n\n\n\n\n\n\n\n\nWhat types of movies are more common, those that pass or do not pass the test?\nIf we consider “dubious” to be no, movies that don’t pass the test are more common.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
   },
   {
-    "objectID": "ae/ae-00-unvotes.html#appendix",
-    "href": "ae/ae-00-unvotes.html#appendix",
-    "title": "AE 00: UN Votes",
-    "section": "Appendix",
-    "text": "Appendix\nBelow is a list of countries in the dataset:"
+    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html#return-on-investment",
+    "href": "ae/ae-03-bechdel-data-viz-transform-A.html#return-on-investment",
+    "title": "AE 03: Bechdel + data visualization and transformation",
+    "section": "Return-on-investment",
+    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\nggplot(bechdel, aes(x = roi, y = clean_test, color = binary)) +\n  geom_boxplot() +\n  labs(\n    x = \"Return on investment\",\n    y = \"Bechdel test result\",\n    color = \"Pass / Fail\"\n  )\n\n\n\n\n\n\n\n\n\n\nStep 2 - Demo\nWhat are the movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400)\n\n# A tibble: 3 × 7\n  title                    year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Paranormal Activity      2007  339424558      505595  671. FAIL   dubious   \n2 The Blair Witch Project  1999  543776715      839077  648. PASS   ok        \n3 El Mariachi              1992    6778946       11622  583. FAIL   nowomen   \n\n\n\n\nStep 3 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\nggplot(bechdel, aes(x = roi, y = clean_test, color = binary)) +\n  geom_boxplot() +\n  labs(\n    x = \"Return on investment\",\n    y = \"Bechdel test result\",\n    color = \"Pass / Fail\"\n  ) +\n  coord_cartesian(xlim = c(0, 16))\n\nWarning: Removed 15 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\nMovies that pass the Bechdel test typically have an higher return-on-investment than those that do not.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
   },
   {
     "objectID": "ae/ae-01-meet-the-penguins.html",
@@ -1174,6 +1195,41 @@
     "title": "AE 02: Bechdel + data visualization",
     "section": "Return-on-investment",
     "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\n# add code here\n\nWhat are those movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400) |&gt;\n  select(title, roi, budget_2013, gross_2013, year, clean_test)\n\n# A tibble: 3 × 6\n  title                     roi budget_2013 gross_2013  year clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     \n1 Paranormal Activity      671.      505595  339424558  2007 dubious   \n2 The Blair Witch Project  648.      839077  543776715  1999 ok        \n3 El Mariachi              583.       11622    6778946  1992 nowomen   \n\n\n\n\nStep 2 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\n# add code here\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-00-unvotes.html",
+    "href": "ae/ae-00-unvotes.html",
+    "title": "AE 00: UN Votes",
+    "section": "",
+    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
+  },
+  {
+    "objectID": "ae/ae-00-unvotes.html#introduction",
+    "href": "ae/ae-00-unvotes.html#introduction",
+    "title": "AE 00: UN Votes",
+    "section": "",
+    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
+  },
+  {
+    "objectID": "ae/ae-00-unvotes.html#un-voting-patterns",
+    "href": "ae/ae-00-unvotes.html#un-voting-patterns",
+    "title": "AE 00: UN Votes",
+    "section": "UN voting patterns",
+    "text": "UN voting patterns\nLet’s create a data visualisation that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.\n\n\n\n\n\n\n\n\n\nTask: Write your first piece of (R) code!\n\nModify the code cell above to change the plot to include a different country in place of Turkey. Note that the country name should be spelled and capitalized exactly the same way as it appears in the data. See the Appendix for a list of the countries in the data."
+  },
+  {
+    "objectID": "ae/ae-00-unvotes.html#references",
+    "href": "ae/ae-00-unvotes.html#references",
+    "title": "AE 00: UN Votes",
+    "section": "References",
+    "text": "References\n\nRobinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+  },
+  {
+    "objectID": "ae/ae-00-unvotes.html#appendix",
+    "href": "ae/ae-00-unvotes.html#appendix",
+    "title": "AE 00: UN Votes",
+    "section": "Appendix",
+    "text": "Appendix\nBelow is a list of countries in the dataset:"
   },
   {
     "objectID": "ae/ae-02-bechdel-dataviz-A.html",
