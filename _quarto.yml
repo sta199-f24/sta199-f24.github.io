@@ -110,7 +110,7 @@ website:
 format: 
   html:
     mainfont: Atkinson Hyperlegible
-    highlight-style: a11y-dark
+    highlight-style: a11y-light
 
 theme:
   light: [cosmo, style/sta199.scss]
