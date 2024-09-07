@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Due Mon, Sep 16 at 8:30 am">
+<meta name="description" content="Mon, Sep 16 at 8:30 am">
 
 <title>Lab 1 – STA 199</title>
 <style>
@@ -398,16 +398,14 @@ window.Quarto = {
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
   <ul class="collapse">
-  <li><a href="#step-1-log-in-to-rstudio" id="toc-step-1-log-in-to-rstudio" class="nav-link" data-scroll-target="#step-1-log-in-to-rstudio">Step 1: Log in to RStudio</a></li>
-  <li><a href="#step-2-clone-the-repo-start-new-rstudio-project" id="toc-step-2-clone-the-repo-start-new-rstudio-project" class="nav-link" data-scroll-target="#step-2-clone-the-repo-start-new-rstudio-project">Step 2: Clone the repo &amp; start new RStudio project</a></li>
-  <li><a href="#step-3-update-the-yaml" id="toc-step-3-update-the-yaml" class="nav-link" data-scroll-target="#step-3-update-the-yaml">Step 3: Update the YAML</a></li>
-  <li><a href="#step-4-commit-your-changes" id="toc-step-4-commit-your-changes" class="nav-link" data-scroll-target="#step-4-commit-your-changes">Step 4: Commit your changes</a></li>
-  <li><a href="#step-5-pushing-changes" id="toc-step-5-pushing-changes" class="nav-link" data-scroll-target="#step-5-pushing-changes">Step 5: Pushing changes</a></li>
+  <li><a href="#log-in-to-rstudio" id="toc-log-in-to-rstudio" class="nav-link" data-scroll-target="#log-in-to-rstudio">Log in to RStudio</a></li>
+  <li><a href="#clone-the-repo-start-new-rstudio-project" id="toc-clone-the-repo-start-new-rstudio-project" class="nav-link" data-scroll-target="#clone-the-repo-start-new-rstudio-project">Clone the repo &amp; start new RStudio project</a></li>
+  <li><a href="#r-and-r-studio" id="toc-r-and-r-studio" class="nav-link" data-scroll-target="#r-and-r-studio">R and R Studio</a></li>
+  <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
+  <li><a href="#committing-changes" id="toc-committing-changes" class="nav-link" data-scroll-target="#committing-changes">Committing changes</a></li>
+  <li><a href="#pushing-changes" id="toc-pushing-changes" class="nav-link" data-scroll-target="#pushing-changes">Pushing changes</a></li>
   </ul></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a>
-  <ul class="collapse">
-  <li><a href="#refresher-tidyverse" id="toc-refresher-tidyverse" class="nav-link" data-scroll-target="#refresher-tidyverse">Refresher: tidyverse</a></li>
-  </ul></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines">Guidelines</a></li>
   </ul></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
@@ -432,7 +430,7 @@ window.Quarto = {
   <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap-up</a>
   <ul class="collapse">
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  <li><a href="#grading-and-feedback" id="toc-grading-and-feedback" class="nav-link" data-scroll-target="#grading-and-feedback">Grading and feedback</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -451,7 +449,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    Due Mon, Sep 16 at 8:30 am
+    Mon, Sep 16 at 8:30 am
   </div>
 </div>
 
@@ -528,22 +526,15 @@ Warning
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<section id="step-1-log-in-to-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-log-in-to-rstudio">Step 1: Log in to RStudio</h3>
+<section id="log-in-to-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="log-in-to-rstudio">Log in to RStudio</h3>
 <ul>
 <li>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and login with your Duke NetID and Password.</li>
 <li>Click <code>STA198-199</code> under My reservations to log into your container. You should now see the RStudio environment.</li>
 </ul>
-<section id="refresher-r-and-r-studio" class="level4">
-<h4 class="anchored" data-anchor-id="refresher-r-and-r-studio">Refresher: R and R Studio</h4>
-<p>Below are the components of the RStudio IDE.</p>
-<p><img src="images/lab-1/rstudio.png" class="img-fluid" alt="RStudio IDE"></p>
-<p>Below are the components of a Quarto (.qmd) file.</p>
-<p><img src="images/lab-1/quarto.png" class="img-fluid" alt="Quarto document"></p>
 </section>
-</section>
-<section id="step-2-clone-the-repo-start-new-rstudio-project" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-clone-the-repo-start-new-rstudio-project">Step 2: Clone the repo &amp; start new RStudio project</h3>
+<section id="clone-the-repo-start-new-rstudio-project" class="level3">
+<h3 class="anchored" data-anchor-id="clone-the-repo-start-new-rstudio-project">Clone the repo &amp; start new RStudio project</h3>
 <ul>
 <li><p>Go to the course organization at <a href="https://github.com/sta199-f24">github.com/sta199-f24</a> organization on GitHub. Click on the repo with the prefix <strong>lab-1</strong>. It contains the starter documents you need to complete the lab.</p></li>
 <li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
@@ -553,29 +544,52 @@ Warning
 <li><p>Click <em>lab-1.qmd</em> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</p></li>
 </ul>
 </section>
-<section id="step-3-update-the-yaml" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-update-the-yaml">Step 3: Update the YAML</h3>
-<p>The top portion of your Quarto file (between the three dashed lines) is called <strong>YAML</strong>. It stands for “YAML Ain’t Markup Language”. It is a human friendly data representation for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.</p>
-<ul>
-<li><p>Open the Quarto (<code>.qmd</code>) file in your project, change the author name to your name, and render the document.</p></li>
-<li><p>If you get a popup window error, click “Try again”.</p></li>
-<li><p>Examine the rendered document and make sure your name is updated in the document.</p></li>
-</ul>
+<section id="r-and-r-studio" class="level3">
+<h3 class="anchored" data-anchor-id="r-and-r-studio">R and R Studio</h3>
+<p>Below are the components of the RStudio IDE.</p>
+<p><img src="images/lab-1/rstudio.png" class="img-fluid" alt="RStudio IDE"></p>
+<p>Below are the components of a Quarto (.qmd) file.</p>
+<p><img src="images/lab-1/quarto.png" class="img-fluid" alt="Quarto document"></p>
 </section>
-<section id="step-4-commit-your-changes" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-commit-your-changes">Step 4: Commit your changes</h3>
-<ul>
-<li><p>Go to the Git pane in RStudio. This will be in the top right hand corner in a separate tab.</p>
-<p>If you have made changes to your Quarto (.qmd) file, you should see it listed here. If you have rendered the document, you should also see its output, a PDF file, listed there.</p></li>
-<li><p>Click on it to select it in this list and then click on <strong>Diff</strong>.</p>
-<p>This shows you the <em>diff</em>erence between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.</p></li>
-<li><p>If you’re happy with these changes, prepare the changes to be pushed to your remote repository.</p>
-<ul>
-<li><p>First, <strong>stage</strong> your changes by checking the appropriate box on the files you want to prepare.</p></li>
-<li><p>Next, write a meaningful commit message (for instance, “Updated author name”) in the <strong>Commit message</strong> box.</p></li>
-<li><p>Finally, click <strong>Commit</strong>. Note that every commit needs to have a commit message associated with it.</p></li>
-</ul></li>
-</ul>
+<section id="yaml" class="level3">
+<h3 class="anchored" data-anchor-id="yaml">YAML</h3>
+<p>The top portion of your Quarto file (between the three dashed lines) is called <strong>YAML</strong>. It stands for “YAML Ain’t Markup Language”. It is a human friendly data representation for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open the Quarto (<code>.qmd</code>) file in your project, change the author name to your name, and render the document. Examine the rendered document.</p>
+</div>
+</div>
+</section>
+<section id="committing-changes" class="level3">
+<h3 class="anchored" data-anchor-id="committing-changes">Committing changes</h3>
+<p>Now, go to the Git pane in RStudio. This will be in the top right hand corner in a separate tab.</p>
+<p>If you have made changes to your Quarto (.qmd) file, you should see it listed here. If you have rendered the document, you should also see its output, a PDF file, listed there. Click on it to select it in this list and then click on <strong>Diff</strong>. This shows you the <em>diff</em>erence between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.</p>
+<p>If you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, <strong>stage</strong> your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “Updated author name”) in the <strong>Commit message</strong> box. Finally, click <strong>Commit</strong>. Note that every commit needs to have a commit message associated with it.</p>
+<p>You don’t have to commit after every change, as this would get quite tedious. You should commit states that are <em>meaningful to you</em> for inspection, comparison, or restoration.</p>
+<p>In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.</p>
+<p>Now let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!</p>
+</section>
+<section id="pushing-changes" class="level3">
+<h3 class="anchored" data-anchor-id="pushing-changes">Pushing changes</h3>
+<p>Now that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.</p>
+<p>In order to push your changes to GitHub, you must have <strong>staged</strong> your <strong>commit</strong> to be pushed. click on <strong>Push</strong>.</p>
+</section>
+</section>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>In this lab we will work with the <strong>tidyverse</strong> package, which is a collection of packages for doing data analysis in a “tidy” way.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Render</strong> the document which loads this package with the <code>library()</code> function.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -586,45 +600,9 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You don’t have to commit after every change, as this would get quite tedious. You should commit states that are <em>meaningful to you</em> for inspection, comparison, or restoration (going back and restoring a previous version of your document).</p>
-<p>In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.</p>
+<p>The rendered document will include a message about which packages the tidyverse package is loading along with it. It’s just R being informative, a <strong>message</strong> does not indicate anything is wrong (it’s not a <strong>warning</strong> or an <strong>error</strong>).</p>
 </div>
 </div>
-</section>
-<section id="step-5-pushing-changes" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-pushing-changes">Step 5: Pushing changes</h3>
-<p>Now that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.</p>
-<ul>
-<li><p>In the Git pane, click on Push.</p></li>
-<li><p>Then, make sure all the changes went to GitHub. Go to your GitHub repo in your browser and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!</p></li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you don’t see your update, go back to Step 4. Remember that in order to push your changes to GitHub, you must have <strong>staged</strong> (checkec boxes) your <strong>commit</strong> (with a commit message) to be pushed and then clicked on <strong>Push</strong>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="packages" class="level2">
-<h2 class="anchored" data-anchor-id="packages">Packages</h2>
-<p>In this lab we will work with the <strong>tidyverse</strong> package, which is a collection of packages for doing data analysis in a “tidy” way.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li><strong>Run</strong> the code cell by clicking on the green triangle (play) button for the code cell labeled <code>load-packages</code>. This loads the package to make its features (the functions and datasets in it) be accessible from your <em>Console</em>.</li>
-<li>Then, <strong>render</strong> the document which loads this package to make its features (the functions and datasets in it) be available for other code cells in your Quarto document.</li>
-</ul>
-<section id="refresher-tidyverse" class="level3">
-<h3 class="anchored" data-anchor-id="refresher-tidyverse">Refresher: tidyverse</h3>
 <p>The tidyverse is a meta-package. When you load it you get nine packages loaded for you:</p>
 <ul>
 <li><strong>dplyr</strong>: for data wrangling</li>
@@ -637,26 +615,14 @@ Warning
 <li><strong>tibble</strong>: for modern, tidy data frames</li>
 <li><strong>tidyr</strong>: for data tidying and rectangling</li>
 </ul>
-</section>
+<p>The message that’s printed when you load the package tells you which versions of these packages are loaded as well as any conflicts they may have introduced, e.g., the <code>filter()</code> function from dplyr has now masked (overwritten) the <code>filter()</code> function available in base R (and that’s ok, we’ll use <code>dplyr::filter()</code> anyway).</p>
+<p>You can now <strong>Render</strong> your template document and see the results.</p>
 </section>
 <section id="guidelines" class="level2">
 <h2 class="anchored" data-anchor-id="guidelines">Guidelines</h2>
 <p>As we’ve discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.</p>
 <p>In addition, the code should all the code should be be able to be read (not run off the page) when you render to PDF. Make sure that is the case, and add line breaks where the code is running off the page.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to remind you to <strong>render, commit, and push</strong> your changes to GitHub.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You should have at least 3 commits with meaningful commit messages by the end of the assignment.</p>
-</div>
-</div>
+<p>Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to remind you to <strong>render, commit, and push</strong> your changes to GitHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.</p>
 </section>
 </section>
 <section id="questions" class="level1">
@@ -891,16 +857,22 @@ Checklist
 </div>
 </div>
 </section>
-<section id="grading-and-feedback" class="level2">
-<h2 class="anchored" data-anchor-id="grading-and-feedback">Grading and feedback</h2>
-<ul>
-<li><p>Some of the questions will be graded for accuracy.</p></li>
-<li><p>Some will be graded for completion.</p></li>
-<li><p>Question 10 is just asking you to select your pages on Gradescope, and you get points for following the instructions!</p></li>
-<li><p>There are also workflow points, for coding style, for committing at least three times as you work through your lab, and for overall organization.</p></li>
-<li><p>You’ll receive feedback on your lab on Gradescope within a week.</p></li>
-</ul>
-<p>Good luck, and have fun with it!</p>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<p>The lab is graded out of a total of ___ points.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TO DO: Add grading scheme.</p>
+</div>
+</div>
 
 
 </section>
