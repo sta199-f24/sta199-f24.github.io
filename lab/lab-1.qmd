@@ -450,10 +450,16 @@ Make sure you have:
 -   selected pages associated with each question on Gradescope
 :::
 
-## Grading
+## Grading and feedback
 
-The lab is graded out of a total of \_\_\_ points.
+-   Some of the questions will be graded for accuracy.
 
-::: callout-important
-TO DO: Add grading scheme.
-:::
+-   Some will be graded for completion.
+
+-   Question 10 is just asking you to select your pages on Gradescope, and you get points for following the instructions!
+
+-   There are also workflow points, for coding style, for committing at least three times as you work through your lab, and for overall organization.
+
+-   You'll receive feedback on your lab on Gradescope within a week.
+
+Good luck, and have fun with it!
