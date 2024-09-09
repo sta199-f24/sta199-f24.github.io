@@ -166,10 +166,21 @@ When you load it you get nine packages loaded for you:
 
 ## Guidelines
 
-As we've discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.
+As we've discussed in lecture, your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.
 
-In addition, the code should all the code should be be able to be read (not run off the page) when you render to PDF.
-Make sure that is the case, and add line breaks where the code is running off the page.[^1]
+Additionally, code should follow the [tidyverse style](https://style.tidyverse.org/).
+Particularly,
+
+-   there should be line breaks after each `+` when building a `ggplot`,
+
+-   there should also be line breaks after each `|>` in a data transformation pipeline,
+
+-   code should be properly indented,
+
+-   there should be spaces around `=` signs and spaces after commas.
+
+Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF.
+Long lines that run off the page should be split across multiple lines with line breaks.[^1]
 
 [^1]: Remember, haikus not novellas when writing code!
 
