@@ -2904,7 +2904,7 @@
     "href": "slides/04-exploring-data-I.html#data-gerrymander-2",
     "title": "Exploring data I",
     "section": "Data: gerrymander",
-    "text": "Data: gerrymander\n\nRows: Congressional districts\nColumns:\n\nCongressional district and state\n2016 election: winning party, % for Clinton, % for Trump, whether a Democrat won the House election, name of election winner\n2018 election: winning party, whether a Democrat won the 2016 House election\nWhether a Democrat flipped the seat in the 2018 election\nPrevalence of gerrymandering: low, mid, and high"
+    "text": "Data: gerrymander\n\nRows: Congressional districts\nColumns:\n\nCongressional district and state\n2016 election: winning party, % for Clinton, % for Trump, whether a Democrat won the House election, name of election winner\n2018 election: winning party, whether a Democrat won the 2018 House election\nWhether a Democrat flipped the seat in the 2018 election\nPrevalence of gerrymandering: low, mid, and high"
   },
   {
     "objectID": "slides/04-exploring-data-I.html#variable-types",
@@ -3058,7 +3058,7 @@
     "href": "slides/04-exploring-data-I.html#distribution-of-votes-for-trump-in-the-2016-election",
     "title": "Exploring data I",
     "section": "Distribution of votes for Trump in the 2016 election",
-    "text": "Distribution of votes for Trump in the 2016 election\n\nDescribe the distribution of percent of vote received by Trump in 2016 Presidential Election from Congressional Districts.\n\n\nShape: The distribution of votes for Trump in the 2016 election from Congressional Districts is unimodal and right-skewed.\nCenter: The percent of vote received by Trump in the 2016 Presidential Election from a typical Congressional Districts is 48.7%.\nSpread: In the middle 50% of Congressional Districts, 34.8% to 58.1% of voters voted for Trump in the 2016 Presidential Election.\nUnusual observations: -"
+    "text": "Distribution of votes for Trump in the 2016 election\n\nDescribe the distribution of percent of vote received by Trump in 2016 Presidential Election from Congressional Districts.\n\n\nShape: The distribution of votes for Trump in the 2016 election from Congressional Districts is unimodal and left-skewed.\nCenter: The percent of vote received by Trump in the 2016 Presidential Election from a typical Congressional Districts is 48.7%.\nSpread: In the middle 50% of Congressional Districts, 34.8% to 58.1% of voters voted for Trump in the 2016 Presidential Election.\nUnusual observations: -"
   },
   {
     "objectID": "slides/04-exploring-data-I.html#bivariate-analysis-1",
@@ -3198,7 +3198,7 @@
     "href": "slides/04-exploring-data-I-slides.html#data-gerrymander-2",
     "title": "Exploring data I",
     "section": "Data: gerrymander",
-    "text": "Data: gerrymander\n\nRows: Congressional districts\nColumns:\n\nCongressional district and state\n2016 election: winning party, % for Clinton, % for Trump, whether a Democrat won the House election, name of election winner\n2018 election: winning party, whether a Democrat won the 2016 House election\nWhether a Democrat flipped the seat in the 2018 election\nPrevalence of gerrymandering: low, mid, and high"
+    "text": "Data: gerrymander\n\nRows: Congressional districts\nColumns:\n\nCongressional district and state\n2016 election: winning party, % for Clinton, % for Trump, whether a Democrat won the House election, name of election winner\n2018 election: winning party, whether a Democrat won the 2018 House election\nWhether a Democrat flipped the seat in the 2018 election\nPrevalence of gerrymandering: low, mid, and high"
   },
   {
     "objectID": "slides/04-exploring-data-I-slides.html#variable-types",
@@ -3352,7 +3352,7 @@
     "href": "slides/04-exploring-data-I-slides.html#distribution-of-votes-for-trump-in-the-2016-election",
     "title": "Exploring data I",
     "section": "Distribution of votes for Trump in the 2016 election",
-    "text": "Distribution of votes for Trump in the 2016 election\n\nDescribe the distribution of percent of vote received by Trump in 2016 Presidential Election from Congressional Districts.\n\n\nShape: The distribution of votes for Trump in the 2016 election from Congressional Districts is unimodal and right-skewed.\nCenter: The percent of vote received by Trump in the 2016 Presidential Election from a typical Congressional Districts is 48.7%.\nSpread: In the middle 50% of Congressional Districts, 34.8% to 58.1% of voters voted for Trump in the 2016 Presidential Election.\nUnusual observations: -"
+    "text": "Distribution of votes for Trump in the 2016 election\n\nDescribe the distribution of percent of vote received by Trump in 2016 Presidential Election from Congressional Districts.\n\n\nShape: The distribution of votes for Trump in the 2016 election from Congressional Districts is unimodal and left-skewed.\nCenter: The percent of vote received by Trump in the 2016 Presidential Election from a typical Congressional Districts is 48.7%.\nSpread: In the middle 50% of Congressional Districts, 34.8% to 58.1% of voters voted for Trump in the 2016 Presidential Election.\nUnusual observations: -"
   },
   {
     "objectID": "slides/04-exploring-data-I-slides.html#bivariate-analysis-1",
