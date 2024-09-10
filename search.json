@@ -1685,7 +1685,7 @@
     "href": "computing-troubleshooting.html",
     "title": "Computing troubleshooting",
     "section": "",
-    "text": "If you’re having difficulty launching an RStudio session from your reserved container, go to status.oit.duke.edu and scroll down to Teaching and Learning Tools. Under this heading you’ll find an entry called Container Manager (CMGR Coursework Containers).\n\nIf the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the Ed Discussions to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\n\nAnother approach is to request a restart of your container. To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container.",
+    "text": "If you’re having difficulty launching an RStudio session from your reserved container, go to status.oit.duke.edu and scroll down to Teaching and Learning Tools. Under this heading you’ll find an entry called Container Manager (CMGR Coursework Containers).\n\nIf the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the Ed Discussions to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. If you’re still having trouble, follow the steps in the order given below:\n\nRestart your browser.\nMake sure there are no updates pending for your browser. If there are, install those updates and restart your browser again.\nRequest a restart of your container – To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container.\nClear your browser cache and restart your browser again.\nRestart your computer to ensure a fresh new connection.\nIf your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).",
     "crumbs": [
       "Computing",
       "Troubleshooting"
@@ -1947,176 +1947,98 @@
     ]
   },
   {
-    "objectID": "ae/ae-02-bechdel-dataviz-A.html",
-    "href": "ae/ae-02-bechdel-dataviz-A.html",
-    "title": "AE 02: Bechdel + data visualization",
+    "objectID": "computing-code-alongs.html",
+    "href": "computing-code-alongs.html",
+    "title": "Code alongs",
     "section": "",
-    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key.\nIn this mini-analysis, we use the data from the FiveThirtyEight story “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women.”\nThis analysis is about the Bechdel test, a measure of the representation of women in fiction."
-  },
-  {
-    "objectID": "ae/ae-02-bechdel-dataviz-A.html#getting-started",
-    "href": "ae/ae-02-bechdel-dataviz-A.html#getting-started",
-    "title": "AE 02: Bechdel + data visualization",
-    "section": "Getting started",
-    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\nglimpse(bechdel)\n\nRows: 1,615\nColumns: 7\n$ title       &lt;chr&gt; \"21 & Over\", \"Dredd 3D\", \"12 Years a Slave\", \"2 Guns\", \"42…\n$ year        &lt;dbl&gt; 2013, 2012, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013…\n$ gross_2013  &lt;dbl&gt; 67878146, 55078343, 211714070, 208105475, 190040426, 18416…\n$ budget_2013 &lt;dbl&gt; 13000000, 45658735, 20000000, 61000000, 40000000, 22500000…\n$ roi         &lt;dbl&gt; 5.221396, 1.206305, 10.585703, 3.411565, 4.751011, 0.81851…\n$ binary      &lt;chr&gt; \"FAIL\", \"PASS\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"P…\n$ clean_test  &lt;chr&gt; \"notalk\", \"ok\", \"notalk\", \"notalk\", \"men\", \"men\", \"notalk\"…\n\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a movie.\n\nHow many observations (rows) are in the data set?\n\nThere are 1615 movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are 7 columns in the dataset.\n\n\nVariables of interest\nThe variables we’ll focus on are the following:\n\nroi: Return on investment, calculated as the ratio of the gross to budget.\nclean_test: Bechdel test result:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\nbinary: Bechdel Test PASS vs FAIL binary\n\nWe will also use the year of release in data prep and title of movie to take a deeper look at some outliers.\nThere are a few other variables in the dataset, but we won’t be using them in this analysis."
-  },
-  {
-    "objectID": "ae/ae-02-bechdel-dataviz-A.html#bechdel-test-results",
-    "href": "ae/ae-02-bechdel-dataviz-A.html#bechdel-test-results",
-    "title": "AE 02: Bechdel + data visualization",
-    "section": "Bechdel test results",
-    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nggplot2 is the package and ggplot() is the function in this package that is used to create a plot.\n\nggplot() creates the initial base coordinate system, and we will add layers to that base. We first specify the data set we will use with data = bechdel.\n\n\nggplot(data = bechdel)\n\n\n\n\n\n\n\n\n\nThe mapping argument is paired with an aesthetic (aes()), which tells us how the variables in our data set should be mapped to the visual properties of the graph.\n\n\nggplot(data = bechdel, mapping = aes(x = clean_test))\n\n\n\n\n\n\n\n\nAs we previously mentioned, we often omit the names of the first two arguments in R functions. So you’ll often see this written as:\n\nggplot(bechdel, aes(x = clean_test))\n\n\n\n\n\n\n\n\nNote that the result is exactly the same.\n\nThe geom_xx function specifies the type of plot we want to use to represent the data. In the code below, we use geom_point which creates a plot where each observation is represented by a point.\n\n\nggplot(bechdel, aes(x = clean_test)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nWhat types of movies are more common, those that pass or do not pass the test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
-  },
-  {
-    "objectID": "ae/ae-02-bechdel-dataviz-A.html#return-on-investment",
-    "href": "ae/ae-02-bechdel-dataviz-A.html#return-on-investment",
-    "title": "AE 02: Bechdel + data visualization",
-    "section": "Return-on-investment",
-    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\nggplot(bechdel, aes(x = clean_test, y = roi, color = binary)) +\n  geom_boxplot() +\n  labs(\n    title = \"Return on investment vs. Bechdel test result\",\n    x = \"Detailed Bechdel result\",\n    y = \"Return-on-investment (gross / budget)\",\n    color = \"Bechdel\\nresult\"\n  )\n\nWarning: Removed 15 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nWhat are those movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400) |&gt;\n  select(title, roi, budget_2013, gross_2013, year, clean_test)\n\n# A tibble: 3 × 6\n  title                     roi budget_2013 gross_2013  year clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     \n1 Paranormal Activity      671.      505595  339424558  2007 dubious   \n2 The Blair Witch Project  648.      839077  543776715  1999 ok        \n3 El Mariachi              583.       11622    6778946  1992 nowomen   \n\n\n\n\nStep 2 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\nggplot(bechdel, aes(x = clean_test, y = roi, color = binary)) +\n  geom_boxplot() +\n  labs(\n    title = \"Return on investment vs. Bechdel test result\",\n    x = \"Detailed Bechdel result\",\n    y = \"Return-on-investment (gross / budget)\",\n    color = \"Bechdel\\nresult\"\n  ) +\n  coord_cartesian(ylim = c(0, 16))\n\nWarning: Removed 15 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
-  },
-  {
-    "objectID": "ae/ae-04-gerrymander-explore-I-A.html",
-    "href": "ae/ae-04-gerrymander-explore-I-A.html",
-    "title": "AE 04: Gerrymandering + data exploration I",
-    "section": "",
-    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\n\n\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
-  },
-  {
-    "objectID": "ae/ae-04-gerrymander-explore-I-A.html#getting-started",
-    "href": "ae/ae-04-gerrymander-explore-I-A.html#getting-started",
-    "title": "AE 04: Gerrymandering + data exploration I",
-    "section": "",
-    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\n\n\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
-  },
-  {
-    "objectID": "ae/ae-04-gerrymander-explore-I-A.html#districts-at-the-tails",
-    "href": "ae/ae-04-gerrymander-explore-I-A.html#districts-at-the-tails",
-    "title": "AE 04: Gerrymandering + data exploration I",
-    "section": "Districts at the tails",
-    "text": "Districts at the tails\nMake side-by-side box plots of percent of vote received by Trump in 2016 Presidential Election by prevalence of gerrymandering. Identify any Congressional Districts that are potential outliers. Are they different from the rest of the Congressional Districts due to high support or low support for Trump in the 2016 Presidential Election? Which state are they in? Which city are they in?\n\nggplot(gerrymander, aes(x = trump16, y = gerry)) +\n  geom_boxplot()\n\n\n\n\n\n\n\ngerrymander |&gt;\n  filter(gerry == \"low\", trump16 &lt; 10)\n\n# A tibble: 2 × 12\n  district last_name first_name party16 clinton16 trump16 dem16 state party18\n  &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  \n1 NY-13    Espaillat Adriano    D            92.3     5.4     1 NY    D      \n2 NY-15    Serrano   Jose       D            93.8     4.9     1 NY    D      \n# ℹ 3 more variables: dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;, gerry &lt;fct&gt;"
-  },
-  {
-    "objectID": "ae/ae-04-gerrymander-explore-I-A.html#flips",
-    "href": "ae/ae-04-gerrymander-explore-I-A.html#flips",
-    "title": "AE 04: Gerrymandering + data exploration I",
-    "section": "Flips",
-    "text": "Flips\nIs a Congressional District more likely to have high prevalance of gerrymandering if a Democrat was able to flip the seat in the 2018 election? Support your answer with a visualization as well as summary statistics. Hint: Calculate the conditional distribution of prevalance of gerrymandering based on whether a Democrat was able to flip the seat in the 2018 election.\n\ngerrymander |&gt;\n  select(dem16, dem18, flip18) |&gt;\n  filter(flip18 == -1)\n\n# A tibble: 5 × 3\n  dem16 dem18 flip18\n  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1     1     0     -1\n2     1     0     -1\n3     1     0     -1\n4     1     0     -1\n5     1     0     -1\n\nggplot(gerrymander, aes(x = flip18, fill = gerry)) +\n  geom_bar(position = \"fill\")"
-  },
-  {
-    "objectID": "ae/ae-04-gerrymander-explore-I-A.html#render-commit-and-push",
-    "href": "ae/ae-04-gerrymander-explore-I-A.html#render-commit-and-push",
-    "title": "AE 04: Gerrymandering + data exploration I",
-    "section": "Render, commit, and push",
-    "text": "Render, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
-  },
-  {
-    "objectID": "ae/ae-04-gerrymander-explore-I.html",
-    "href": "ae/ae-04-gerrymander-explore-I.html",
-    "title": "AE 04: Gerrymandering + data exploration I",
-    "section": "",
-    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\n\n\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
-  },
-  {
-    "objectID": "ae/ae-04-gerrymander-explore-I.html#getting-started",
-    "href": "ae/ae-04-gerrymander-explore-I.html#getting-started",
-    "title": "AE 04: Gerrymandering + data exploration I",
-    "section": "",
-    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\n\n\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
-  },
-  {
-    "objectID": "ae/ae-04-gerrymander-explore-I.html#districts-at-the-tails",
-    "href": "ae/ae-04-gerrymander-explore-I.html#districts-at-the-tails",
-    "title": "AE 04: Gerrymandering + data exploration I",
-    "section": "Districts at the tails",
-    "text": "Districts at the tails\nMake side-by-side box plots of percent of vote received by Trump in 2016 Presidential Election by prevalence of gerrymandering. Identify any Congressional Districts that are potential outliers. Are they different from the rest of the Congressional Districts due to high support or low support for Trump in the 2016 Presidential Election? Which state are they in? Which city are they in?\nAdd narrative here.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-04-gerrymander-explore-I.html#flips",
-    "href": "ae/ae-04-gerrymander-explore-I.html#flips",
-    "title": "AE 04: Gerrymandering + data exploration I",
-    "section": "Flips",
-    "text": "Flips\nIs a Congressional District more likely to have high prevalance of gerrymandering if a Democrat was able to flip the seat in the 2018 election? Support your answer with a visualization as well as summary statistics. Hint: Calculate the conditional distribution of prevalance of gerrymandering based on whether a Democrat was able to flip the seat in the 2018 election.\nAdd narrative here.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-04-gerrymander-explore-I.html#submit",
-    "href": "ae/ae-04-gerrymander-explore-I.html#submit",
-    "title": "AE 04: Gerrymandering + data exploration I",
-    "section": "Submit",
-    "text": "Submit\nRender, commit, and push:\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
-  },
-  {
-    "objectID": "ae/ae-02-bechdel-dataviz.html",
-    "href": "ae/ae-02-bechdel-dataviz.html",
-    "title": "AE 02: Bechdel + data visualization",
-    "section": "",
-    "text": "In this mini-analysis, we use the data from the FiveThirtyEight story “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women.”\nThis analysis is about the Bechdel test, a measure of the representation of women in fiction."
-  },
-  {
-    "objectID": "ae/ae-02-bechdel-dataviz.html#getting-started",
-    "href": "ae/ae-02-bechdel-dataviz.html#getting-started",
-    "title": "AE 02: Bechdel + data visualization",
-    "section": "Getting started",
-    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\n# add code here\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a ___.\n\nHow many observations (rows) are in the data set?\n\nThere are ___ movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are ___ columns in the dataset.\n\n\nVariables of interest\nThe variables we’ll focus on are the following:\n\nroi: Return on investment, calculated as the ratio of the gross to budget.\nclean_test: Bechdel test result:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\nbinary: Bechdel Test PASS vs FAIL binary\n\nWe will also use the year of release in data prep and title of movie to take a deeper look at some outliers.\nThere are a few other variables in the dataset, but we won’t be using them in this analysis."
-  },
-  {
-    "objectID": "ae/ae-02-bechdel-dataviz.html#bechdel-test-results",
-    "href": "ae/ae-02-bechdel-dataviz.html#bechdel-test-results",
-    "title": "AE 02: Bechdel + data visualization",
-    "section": "Bechdel test results",
-    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nggplot2 is the package and ggplot() is the function in this package that is used to create a plot.\n\nggplot() creates the initial base coordinate system, and we will add layers to that base. We first specify the data set we will use with data = bechdel.\n\n\nggplot(data = bechdel)\n\n\n\n\n\n\n\n\n\nThe mapping argument is paired with an aesthetic (aes()), which tells us how the variables in our data set should be mapped to the visual properties of the graph.\n\n\nggplot(data = bechdel, mapping = aes(x = clean_test))\n\n\n\n\n\n\n\n\nAs we previously mentioned, we often omit the names of the first two arguments in R functions. So you’ll often see this written as:\n\nggplot(bechdel, aes(x = clean_test))\n\n\n\n\n\n\n\n\nNote that the result is exactly the same.\n\nThe geom_xx function specifies the type of plot we want to use to represent the data. In the code below, we use geom_point which creates a plot where each observation is represented by a point.\n\n\nggplot(bechdel, aes(x = clean_test)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nWhat types of movies are more common, those that pass or do not pass the test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
-  },
-  {
-    "objectID": "ae/ae-02-bechdel-dataviz.html#return-on-investment",
-    "href": "ae/ae-02-bechdel-dataviz.html#return-on-investment",
-    "title": "AE 02: Bechdel + data visualization",
-    "section": "Return-on-investment",
-    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\n# add code here\n\nWhat are those movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400) |&gt;\n  select(title, roi, budget_2013, gross_2013, year, clean_test)\n\n# A tibble: 3 × 6\n  title                     roi budget_2013 gross_2013  year clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     \n1 Paranormal Activity      671.      505595  339424558  2007 dubious   \n2 The Blair Witch Project  648.      839077  543776715  1999 ok        \n3 El Mariachi              583.       11622    6778946  1992 nowomen   \n\n\n\n\nStep 2 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\n# add code here\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
-  },
-  {
-    "objectID": "computing-cheatsheets.html",
-    "href": "computing-cheatsheets.html",
-    "title": "R cheatsheets",
-    "section": "",
-    "text": "The following cheatsheets come from https://www.rstudio.com/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
+    "text": "The following videos feature “code alongs” as an additional resource for getting coding practice.",
     "crumbs": [
       "Computing",
-      "Cheatsheets"
+      "Code alongs"
     ]
   },
   {
-    "objectID": "ae/ae-01-meet-the-penguins.html",
-    "href": "ae/ae-01-meet-the-penguins.html",
-    "title": "AE 01: Meet the penguins",
-    "section": "",
-    "text": "For this application exercise, we’ll use the tidyverse and palmerpenguins packages.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(palmerpenguins)\n\nThe dataset we will visualize is called penguins. Let’s glimpse() at it.\n\nYour turn: Replace #add code here with the code for “glimpse”ing at the data penguins data frame – glimpse(penguins). Render the document and view the output.\n\n\n# add code here\n\n\nDemo: First, replace the blank below with the number of rows in the penguins data frame based on the output of the chunk below. Then, replace it with “inline code” and render again.\n\n\nnrow(penguins)\n\n[1] 344\n\n\nThere are ___ penguins in the penguins data frame."
+    "objectID": "computing-code-alongs.html#un-votes",
+    "href": "computing-code-alongs.html#un-votes",
+    "title": "Code alongs",
+    "section": "UN Votes",
+    "text": "UN Votes\nFirst look at R amd RStudio.",
+    "crumbs": [
+      "Computing",
+      "Code alongs"
+    ]
   },
   {
-    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html",
-    "href": "ae/ae-03-bechdel-data-viz-transform-A.html",
+    "objectID": "computing-code-alongs.html#first-look-at-palmer-penguins",
+    "href": "computing-code-alongs.html#first-look-at-palmer-penguins",
+    "title": "Code alongs",
+    "section": "First look at Palmer Penguins",
+    "text": "First look at Palmer Penguins\nFirst look at data science with the tidyverse.",
+    "crumbs": [
+      "Computing",
+      "Code alongs"
+    ]
+  },
+  {
+    "objectID": "computing-code-alongs.html#flights-and-pipes",
+    "href": "computing-code-alongs.html#flights-and-pipes",
+    "title": "Code alongs",
+    "section": "Flights and pipes",
+    "text": "Flights and pipes\nData transformation",
+    "crumbs": [
+      "Computing",
+      "Code alongs"
+    ]
+  },
+  {
+    "objectID": "computing-code-alongs.html#starwars-characters",
+    "href": "computing-code-alongs.html#starwars-characters",
+    "title": "Code alongs",
+    "section": "Starwars characters",
+    "text": "Starwars characters\nData visualization",
+    "crumbs": [
+      "Computing",
+      "Code alongs"
+    ]
+  },
+  {
+    "objectID": "computing-code-alongs.html#diving-deeper-with-palmer-penguins",
+    "href": "computing-code-alongs.html#diving-deeper-with-palmer-penguins",
+    "title": "Code alongs",
+    "section": "Diving deeper with Palmer Penguins",
+    "text": "Diving deeper with Palmer Penguins\nData visualization and transformation",
+    "crumbs": [
+      "Computing",
+      "Code alongs"
+    ]
+  },
+  {
+    "objectID": "ae/ae-03-bechdel-data-viz-transform.html",
+    "href": "ae/ae-03-bechdel-data-viz-transform.html",
     "title": "AE 03: Bechdel + data visualization and transformation",
     "section": "",
-    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key.\nIn this mini-analysis, we’ll continue our exploration of the bechdel dataset, which contains information on whether the movies in the data pass the Bechdel test (a measure of the representation of women in fiction)."
+    "text": "In this mini-analysis, we’ll continue our exploration of the bechdel dataset, which contains information on whether the movies in the data pass the Bechdel test (a measure of the representation of women in fiction)."
   },
   {
-    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html#getting-started",
-    "href": "ae/ae-03-bechdel-data-viz-transform-A.html#getting-started",
+    "objectID": "ae/ae-03-bechdel-data-viz-transform.html#getting-started",
+    "href": "ae/ae-03-bechdel-data-viz-transform.html#getting-started",
     "title": "AE 03: Bechdel + data visualization and transformation",
     "section": "Getting started",
-    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\nglimpse(bechdel)\n\nRows: 1,615\nColumns: 7\n$ title       &lt;chr&gt; \"21 & Over\", \"Dredd 3D\", \"12 Years a Slave\", \"2 Guns\", \"42…\n$ year        &lt;dbl&gt; 2013, 2012, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013…\n$ gross_2013  &lt;dbl&gt; 67878146, 55078343, 211714070, 208105475, 190040426, 18416…\n$ budget_2013 &lt;dbl&gt; 13000000, 45658735, 20000000, 61000000, 40000000, 22500000…\n$ roi         &lt;dbl&gt; 5.221396, 1.206305, 10.585703, 3.411565, 4.751011, 0.81851…\n$ binary      &lt;chr&gt; \"FAIL\", \"PASS\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"P…\n$ clean_test  &lt;chr&gt; \"notalk\", \"ok\", \"notalk\", \"notalk\", \"men\", \"men\", \"notalk\"…\n\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a movie.\n\nHow many observations (rows) are in the data set?\n\nThere are 1615 movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are 7 columns in the dataset."
+    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\n# add code here\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a movie.\n\nHow many observations (rows) are in the data set?\n\nThere are 1615 movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are 7 columns in the dataset."
   },
   {
-    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html#bechdel-test-results",
-    "href": "ae/ae-03-bechdel-data-viz-transform-A.html#bechdel-test-results",
+    "objectID": "ae/ae-03-bechdel-data-viz-transform.html#bechdel-test-results",
+    "href": "ae/ae-03-bechdel-data-viz-transform.html#bechdel-test-results",
     "title": "AE 03: Bechdel + data visualization and transformation",
     "section": "Bechdel test results",
-    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nCreate a bar plot of the clean_test variable:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\n\nggplot(bechdel, aes(x = clean_test)) +\n  geom_bar() +\n  labs(\n    x = \"Bechdel test result\",\n    y = \"Count\"\n  )\n\n\n\n\n\n\n\n\nWhat types of movies are more common, those that pass or do not pass the test?\nIf we consider “dubious” to be no, movies that don’t pass the test are more common.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nCreate a bar plot of the clean_test variable:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\n\n# add code here\n\nWhat types of movies are more common, those that pass or do not pass the test?\nAdd your response here.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
   },
   {
-    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html#return-on-investment",
-    "href": "ae/ae-03-bechdel-data-viz-transform-A.html#return-on-investment",
+    "objectID": "ae/ae-03-bechdel-data-viz-transform.html#return-on-investment",
+    "href": "ae/ae-03-bechdel-data-viz-transform.html#return-on-investment",
     "title": "AE 03: Bechdel + data visualization and transformation",
     "section": "Return-on-investment",
-    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\nggplot(bechdel, aes(x = roi, y = clean_test, color = binary)) +\n  geom_boxplot() +\n  labs(\n    x = \"Return on investment\",\n    y = \"Bechdel test result\",\n    color = \"Pass / Fail\"\n  )\n\n\n\n\n\n\n\n\n\n\nStep 2 - Demo\nWhat are the movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400)\n\n# A tibble: 3 × 7\n  title                    year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Paranormal Activity      2007  339424558      505595  671. FAIL   dubious   \n2 The Blair Witch Project  1999  543776715      839077  648. PASS   ok        \n3 El Mariachi              1992    6778946       11622  583. FAIL   nowomen   \n\n\n\n\nStep 3 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\nggplot(bechdel, aes(x = roi, y = clean_test, color = binary)) +\n  geom_boxplot() +\n  labs(\n    x = \"Return on investment\",\n    y = \"Bechdel test result\",\n    color = \"Pass / Fail\"\n  ) +\n  coord_cartesian(xlim = c(0, 16))\n\nWarning: Removed 15 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\nMovies that pass the Bechdel test typically have an higher return-on-investment than those that do not.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\n# add code here\n\n\n\nStep 2 - Demo\nWhat are the movies with very high returns on investment?\n\n# add code here\n\n\n\nStep 3 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\n# add code here\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\nAdd your response here.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
   },
   {
     "objectID": "ae/ae-00-unvotes.html",
@@ -2154,32 +2076,176 @@
     "text": "Appendix\nBelow is a list of countries in the dataset:"
   },
   {
-    "objectID": "ae/ae-03-bechdel-data-viz-transform.html",
-    "href": "ae/ae-03-bechdel-data-viz-transform.html",
+    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html",
+    "href": "ae/ae-03-bechdel-data-viz-transform-A.html",
     "title": "AE 03: Bechdel + data visualization and transformation",
     "section": "",
-    "text": "In this mini-analysis, we’ll continue our exploration of the bechdel dataset, which contains information on whether the movies in the data pass the Bechdel test (a measure of the representation of women in fiction)."
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key.\nIn this mini-analysis, we’ll continue our exploration of the bechdel dataset, which contains information on whether the movies in the data pass the Bechdel test (a measure of the representation of women in fiction)."
   },
   {
-    "objectID": "ae/ae-03-bechdel-data-viz-transform.html#getting-started",
-    "href": "ae/ae-03-bechdel-data-viz-transform.html#getting-started",
+    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html#getting-started",
+    "href": "ae/ae-03-bechdel-data-viz-transform-A.html#getting-started",
     "title": "AE 03: Bechdel + data visualization and transformation",
     "section": "Getting started",
-    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\n# add code here\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a movie.\n\nHow many observations (rows) are in the data set?\n\nThere are 1615 movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are 7 columns in the dataset."
+    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\nglimpse(bechdel)\n\nRows: 1,615\nColumns: 7\n$ title       &lt;chr&gt; \"21 & Over\", \"Dredd 3D\", \"12 Years a Slave\", \"2 Guns\", \"42…\n$ year        &lt;dbl&gt; 2013, 2012, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013…\n$ gross_2013  &lt;dbl&gt; 67878146, 55078343, 211714070, 208105475, 190040426, 18416…\n$ budget_2013 &lt;dbl&gt; 13000000, 45658735, 20000000, 61000000, 40000000, 22500000…\n$ roi         &lt;dbl&gt; 5.221396, 1.206305, 10.585703, 3.411565, 4.751011, 0.81851…\n$ binary      &lt;chr&gt; \"FAIL\", \"PASS\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"P…\n$ clean_test  &lt;chr&gt; \"notalk\", \"ok\", \"notalk\", \"notalk\", \"men\", \"men\", \"notalk\"…\n\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a movie.\n\nHow many observations (rows) are in the data set?\n\nThere are 1615 movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are 7 columns in the dataset."
   },
   {
-    "objectID": "ae/ae-03-bechdel-data-viz-transform.html#bechdel-test-results",
-    "href": "ae/ae-03-bechdel-data-viz-transform.html#bechdel-test-results",
+    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html#bechdel-test-results",
+    "href": "ae/ae-03-bechdel-data-viz-transform-A.html#bechdel-test-results",
     "title": "AE 03: Bechdel + data visualization and transformation",
     "section": "Bechdel test results",
-    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nCreate a bar plot of the clean_test variable:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\n\n# add code here\n\nWhat types of movies are more common, those that pass or do not pass the test?\nAdd your response here.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nCreate a bar plot of the clean_test variable:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\n\nggplot(bechdel, aes(x = clean_test)) +\n  geom_bar() +\n  labs(\n    x = \"Bechdel test result\",\n    y = \"Count\"\n  )\n\n\n\n\n\n\n\n\nWhat types of movies are more common, those that pass or do not pass the test?\nIf we consider “dubious” to be no, movies that don’t pass the test are more common.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
   },
   {
-    "objectID": "ae/ae-03-bechdel-data-viz-transform.html#return-on-investment",
-    "href": "ae/ae-03-bechdel-data-viz-transform.html#return-on-investment",
+    "objectID": "ae/ae-03-bechdel-data-viz-transform-A.html#return-on-investment",
+    "href": "ae/ae-03-bechdel-data-viz-transform-A.html#return-on-investment",
     "title": "AE 03: Bechdel + data visualization and transformation",
     "section": "Return-on-investment",
-    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\n# add code here\n\n\n\nStep 2 - Demo\nWhat are the movies with very high returns on investment?\n\n# add code here\n\n\n\nStep 3 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\n# add code here\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\nAdd your response here.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\nggplot(bechdel, aes(x = roi, y = clean_test, color = binary)) +\n  geom_boxplot() +\n  labs(\n    x = \"Return on investment\",\n    y = \"Bechdel test result\",\n    color = \"Pass / Fail\"\n  )\n\n\n\n\n\n\n\n\n\n\nStep 2 - Demo\nWhat are the movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400)\n\n# A tibble: 3 × 7\n  title                    year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Paranormal Activity      2007  339424558      505595  671. FAIL   dubious   \n2 The Blair Witch Project  1999  543776715      839077  648. PASS   ok        \n3 El Mariachi              1992    6778946       11622  583. FAIL   nowomen   \n\n\n\n\nStep 3 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\nggplot(bechdel, aes(x = roi, y = clean_test, color = binary)) +\n  geom_boxplot() +\n  labs(\n    x = \"Return on investment\",\n    y = \"Bechdel test result\",\n    color = \"Pass / Fail\"\n  ) +\n  coord_cartesian(xlim = c(0, 16))\n\nWarning: Removed 15 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\nMovies that pass the Bechdel test typically have an higher return-on-investment than those that do not.\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-01-meet-the-penguins.html",
+    "href": "ae/ae-01-meet-the-penguins.html",
+    "title": "AE 01: Meet the penguins",
+    "section": "",
+    "text": "For this application exercise, we’ll use the tidyverse and palmerpenguins packages.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(palmerpenguins)\n\nThe dataset we will visualize is called penguins. Let’s glimpse() at it.\n\nYour turn: Replace #add code here with the code for “glimpse”ing at the data penguins data frame – glimpse(penguins). Render the document and view the output.\n\n\n# add code here\n\n\nDemo: First, replace the blank below with the number of rows in the penguins data frame based on the output of the chunk below. Then, replace it with “inline code” and render again.\n\n\nnrow(penguins)\n\n[1] 344\n\n\nThere are ___ penguins in the penguins data frame."
+  },
+  {
+    "objectID": "computing-cheatsheets.html",
+    "href": "computing-cheatsheets.html",
+    "title": "R cheatsheets",
+    "section": "",
+    "text": "The following cheatsheets come from https://www.rstudio.com/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
+    "crumbs": [
+      "Computing",
+      "Cheatsheets"
+    ]
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz.html",
+    "href": "ae/ae-02-bechdel-dataviz.html",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "",
+    "text": "In this mini-analysis, we use the data from the FiveThirtyEight story “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women.”\nThis analysis is about the Bechdel test, a measure of the representation of women in fiction."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz.html#getting-started",
+    "href": "ae/ae-02-bechdel-dataviz.html#getting-started",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Getting started",
+    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\n# add code here\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a ___.\n\nHow many observations (rows) are in the data set?\n\nThere are ___ movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are ___ columns in the dataset.\n\n\nVariables of interest\nThe variables we’ll focus on are the following:\n\nroi: Return on investment, calculated as the ratio of the gross to budget.\nclean_test: Bechdel test result:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\nbinary: Bechdel Test PASS vs FAIL binary\n\nWe will also use the year of release in data prep and title of movie to take a deeper look at some outliers.\nThere are a few other variables in the dataset, but we won’t be using them in this analysis."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz.html#bechdel-test-results",
+    "href": "ae/ae-02-bechdel-dataviz.html#bechdel-test-results",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Bechdel test results",
+    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nggplot2 is the package and ggplot() is the function in this package that is used to create a plot.\n\nggplot() creates the initial base coordinate system, and we will add layers to that base. We first specify the data set we will use with data = bechdel.\n\n\nggplot(data = bechdel)\n\n\n\n\n\n\n\n\n\nThe mapping argument is paired with an aesthetic (aes()), which tells us how the variables in our data set should be mapped to the visual properties of the graph.\n\n\nggplot(data = bechdel, mapping = aes(x = clean_test))\n\n\n\n\n\n\n\n\nAs we previously mentioned, we often omit the names of the first two arguments in R functions. So you’ll often see this written as:\n\nggplot(bechdel, aes(x = clean_test))\n\n\n\n\n\n\n\n\nNote that the result is exactly the same.\n\nThe geom_xx function specifies the type of plot we want to use to represent the data. In the code below, we use geom_point which creates a plot where each observation is represented by a point.\n\n\nggplot(bechdel, aes(x = clean_test)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nWhat types of movies are more common, those that pass or do not pass the test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz.html#return-on-investment",
+    "href": "ae/ae-02-bechdel-dataviz.html#return-on-investment",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Return-on-investment",
+    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\n# add code here\n\nWhat are those movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400) |&gt;\n  select(title, roi, budget_2013, gross_2013, year, clean_test)\n\n# A tibble: 3 × 6\n  title                     roi budget_2013 gross_2013  year clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     \n1 Paranormal Activity      671.      505595  339424558  2007 dubious   \n2 The Blair Witch Project  648.      839077  543776715  1999 ok        \n3 El Mariachi              583.       11622    6778946  1992 nowomen   \n\n\n\n\nStep 2 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\n# add code here\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-04-gerrymander-explore-I.html",
+    "href": "ae/ae-04-gerrymander-explore-I.html",
+    "title": "AE 04: Gerrymandering + data exploration I",
+    "section": "",
+    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\n\n\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
+  },
+  {
+    "objectID": "ae/ae-04-gerrymander-explore-I.html#getting-started",
+    "href": "ae/ae-04-gerrymander-explore-I.html#getting-started",
+    "title": "AE 04: Gerrymandering + data exploration I",
+    "section": "",
+    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\n\n\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
+  },
+  {
+    "objectID": "ae/ae-04-gerrymander-explore-I.html#districts-at-the-tails",
+    "href": "ae/ae-04-gerrymander-explore-I.html#districts-at-the-tails",
+    "title": "AE 04: Gerrymandering + data exploration I",
+    "section": "Districts at the tails",
+    "text": "Districts at the tails\nMake side-by-side box plots of percent of vote received by Trump in 2016 Presidential Election by prevalence of gerrymandering. Identify any Congressional Districts that are potential outliers. Are they different from the rest of the Congressional Districts due to high support or low support for Trump in the 2016 Presidential Election? Which state are they in? Which city are they in?\nAdd narrative here.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-04-gerrymander-explore-I.html#flips",
+    "href": "ae/ae-04-gerrymander-explore-I.html#flips",
+    "title": "AE 04: Gerrymandering + data exploration I",
+    "section": "Flips",
+    "text": "Flips\nIs a Congressional District more likely to have high prevalance of gerrymandering if a Democrat was able to flip the seat in the 2018 election? Support your answer with a visualization as well as summary statistics. Hint: Calculate the conditional distribution of prevalance of gerrymandering based on whether a Democrat was able to flip the seat in the 2018 election.\nAdd narrative here.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-04-gerrymander-explore-I.html#submit",
+    "href": "ae/ae-04-gerrymander-explore-I.html#submit",
+    "title": "AE 04: Gerrymandering + data exploration I",
+    "section": "Submit",
+    "text": "Submit\nRender, commit, and push:\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-04-gerrymander-explore-I-A.html",
+    "href": "ae/ae-04-gerrymander-explore-I-A.html",
+    "title": "AE 04: Gerrymandering + data exploration I",
+    "section": "",
+    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\n\n\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
+  },
+  {
+    "objectID": "ae/ae-04-gerrymander-explore-I-A.html#getting-started",
+    "href": "ae/ae-04-gerrymander-explore-I-A.html#getting-started",
+    "title": "AE 04: Gerrymandering + data exploration I",
+    "section": "",
+    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\n\n\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
+  },
+  {
+    "objectID": "ae/ae-04-gerrymander-explore-I-A.html#districts-at-the-tails",
+    "href": "ae/ae-04-gerrymander-explore-I-A.html#districts-at-the-tails",
+    "title": "AE 04: Gerrymandering + data exploration I",
+    "section": "Districts at the tails",
+    "text": "Districts at the tails\nMake side-by-side box plots of percent of vote received by Trump in 2016 Presidential Election by prevalence of gerrymandering. Identify any Congressional Districts that are potential outliers. Are they different from the rest of the Congressional Districts due to high support or low support for Trump in the 2016 Presidential Election? Which state are they in? Which city are they in?\n\nggplot(gerrymander, aes(x = trump16, y = gerry)) +\n  geom_boxplot()\n\n\n\n\n\n\n\ngerrymander |&gt;\n  filter(gerry == \"low\", trump16 &lt; 10)\n\n# A tibble: 2 × 12\n  district last_name first_name party16 clinton16 trump16 dem16 state party18\n  &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  \n1 NY-13    Espaillat Adriano    D            92.3     5.4     1 NY    D      \n2 NY-15    Serrano   Jose       D            93.8     4.9     1 NY    D      \n# ℹ 3 more variables: dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;, gerry &lt;fct&gt;"
+  },
+  {
+    "objectID": "ae/ae-04-gerrymander-explore-I-A.html#flips",
+    "href": "ae/ae-04-gerrymander-explore-I-A.html#flips",
+    "title": "AE 04: Gerrymandering + data exploration I",
+    "section": "Flips",
+    "text": "Flips\nIs a Congressional District more likely to have high prevalance of gerrymandering if a Democrat was able to flip the seat in the 2018 election? Support your answer with a visualization as well as summary statistics. Hint: Calculate the conditional distribution of prevalance of gerrymandering based on whether a Democrat was able to flip the seat in the 2018 election.\n\ngerrymander |&gt;\n  select(dem16, dem18, flip18) |&gt;\n  filter(flip18 == -1)\n\n# A tibble: 5 × 3\n  dem16 dem18 flip18\n  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1     1     0     -1\n2     1     0     -1\n3     1     0     -1\n4     1     0     -1\n5     1     0     -1\n\nggplot(gerrymander, aes(x = flip18, fill = gerry)) +\n  geom_bar(position = \"fill\")"
+  },
+  {
+    "objectID": "ae/ae-04-gerrymander-explore-I-A.html#render-commit-and-push",
+    "href": "ae/ae-04-gerrymander-explore-I-A.html#render-commit-and-push",
+    "title": "AE 04: Gerrymandering + data exploration I",
+    "section": "Render, commit, and push",
+    "text": "Render, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html",
+    "href": "ae/ae-02-bechdel-dataviz-A.html",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "",
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key.\nIn this mini-analysis, we use the data from the FiveThirtyEight story “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women.”\nThis analysis is about the Bechdel test, a measure of the representation of women in fiction."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html#getting-started",
+    "href": "ae/ae-02-bechdel-dataviz-A.html#getting-started",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Getting started",
+    "text": "Getting started\n\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\n\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\n\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\nglimpse(bechdel)\n\nRows: 1,615\nColumns: 7\n$ title       &lt;chr&gt; \"21 & Over\", \"Dredd 3D\", \"12 Years a Slave\", \"2 Guns\", \"42…\n$ year        &lt;dbl&gt; 2013, 2012, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013…\n$ gross_2013  &lt;dbl&gt; 67878146, 55078343, 211714070, 208105475, 190040426, 18416…\n$ budget_2013 &lt;dbl&gt; 13000000, 45658735, 20000000, 61000000, 40000000, 22500000…\n$ roi         &lt;dbl&gt; 5.221396, 1.206305, 10.585703, 3.411565, 4.751011, 0.81851…\n$ binary      &lt;chr&gt; \"FAIL\", \"PASS\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"P…\n$ clean_test  &lt;chr&gt; \"notalk\", \"ok\", \"notalk\", \"notalk\", \"men\", \"men\", \"notalk\"…\n\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a movie.\n\nHow many observations (rows) are in the data set?\n\nThere are 1615 movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are 7 columns in the dataset.\n\n\nVariables of interest\nThe variables we’ll focus on are the following:\n\nroi: Return on investment, calculated as the ratio of the gross to budget.\nclean_test: Bechdel test result:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\nbinary: Bechdel Test PASS vs FAIL binary\n\nWe will also use the year of release in data prep and title of movie to take a deeper look at some outliers.\nThere are a few other variables in the dataset, but we won’t be using them in this analysis."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html#bechdel-test-results",
+    "href": "ae/ae-02-bechdel-dataviz-A.html#bechdel-test-results",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Bechdel test results",
+    "text": "Bechdel test results\n\nVisualizing data with ggplot2\nggplot2 is the package and ggplot() is the function in this package that is used to create a plot.\n\nggplot() creates the initial base coordinate system, and we will add layers to that base. We first specify the data set we will use with data = bechdel.\n\n\nggplot(data = bechdel)\n\n\n\n\n\n\n\n\n\nThe mapping argument is paired with an aesthetic (aes()), which tells us how the variables in our data set should be mapped to the visual properties of the graph.\n\n\nggplot(data = bechdel, mapping = aes(x = clean_test))\n\n\n\n\n\n\n\n\nAs we previously mentioned, we often omit the names of the first two arguments in R functions. So you’ll often see this written as:\n\nggplot(bechdel, aes(x = clean_test))\n\n\n\n\n\n\n\n\nNote that the result is exactly the same.\n\nThe geom_xx function specifies the type of plot we want to use to represent the data. In the code below, we use geom_point which creates a plot where each observation is represented by a point.\n\n\nggplot(bechdel, aes(x = clean_test)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nWhat types of movies are more common, those that pass or do not pass the test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html#return-on-investment",
+    "href": "ae/ae-02-bechdel-dataviz-A.html#return-on-investment",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Return-on-investment",
+    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\n\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\nggplot(bechdel, aes(x = clean_test, y = roi, color = binary)) +\n  geom_boxplot() +\n  labs(\n    title = \"Return on investment vs. Bechdel test result\",\n    x = \"Detailed Bechdel result\",\n    y = \"Return-on-investment (gross / budget)\",\n    color = \"Bechdel\\nresult\"\n  )\n\nWarning: Removed 15 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nWhat are those movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400) |&gt;\n  select(title, roi, budget_2013, gross_2013, year, clean_test)\n\n# A tibble: 3 × 6\n  title                     roi budget_2013 gross_2013  year clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     \n1 Paranormal Activity      671.      505595  339424558  2007 dubious   \n2 The Blair Witch Project  648.      839077  543776715  1999 ok        \n3 El Mariachi              583.       11622    6778946  1992 nowomen   \n\n\n\n\nStep 2 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\nggplot(bechdel, aes(x = clean_test, y = roi, color = binary)) +\n  geom_boxplot() +\n  labs(\n    title = \"Return on investment vs. Bechdel test result\",\n    x = \"Detailed Bechdel result\",\n    y = \"Return-on-investment (gross / budget)\",\n    color = \"Bechdel\\nresult\"\n  ) +\n  coord_cartesian(ylim = c(0, 16))\n\nWarning: Removed 15 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\n\n\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
   },
   {
     "objectID": "course-team.html",
@@ -2350,7 +2416,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science and Statistical Thinking",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 26\n\n\nLab 0: Hello, World and STA 199!\n💻 lab 0\nLab 0 due at the end of lab session\n\n\n\n\nTue, Aug 27\n\n\nWelcome to STA 199\n🖥️ slides 00  🗒️ notes 00  ⌨️ ae 00\n\n\n\n\n\n\nThu, Aug 29\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit - R and RStudio  🎥 Meet the toolkit - Quarto\nMeet the toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n\n\n\n2\nMon, Sep 2\n\n\nNo lab - Labor Day\n\n\n\n\n\n\n\n\nTue, Sep 3\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics\nGrammar of data visualization\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 02  ☑️ ae 02\n\n\n\n\n\n\nThu, Sep 5\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation\nGrammar of data transformation\n🖥️ slides 03  🗒️ notes 03  ⌨️ ae 03  ☑️ ae 03\n\n\n\n\n3\nMon, Sep 9\n\n\nLab 1: From the Midwest to North Carolina\n💻 lab 1\n\n\n\n\n\n\nTue, Sep 10\n📗 r4ds - chp 3.6-3.7  🎥 Visualizing and summarizing categorical data  🎥 Visualizing and summarizing numerical data  🎥 Visualizing and summarizing relationships\nExploring data I\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 04\n\n\n\n\n\n\nThu, Sep 12\n📘 ims - chp 5  📘 ims - chp 6\nExploring data II\nTo be posted\n\n\n\n\n4\nMon, Sep 16\nTo be posted\nLab 2: Data transformation\nTo be posted\nLab 1 at 8:30 am\n\n\n\n\nTue, Sep 17\nTo be posted\nTidying data\nTo be posted\n\n\n\n\n\n\nThu, Sep 19\nTo be posted\nJoining data\nTo be posted\n\n\n\n\n5\nMon, Sep 23\nTo be posted\nLab 3: Data tidying and joining\nTo be posted\nLab 2 at 8:30 am\n\n\n\n\nTue, Sep 24\nTo be posted\nData types and classes\nTo be posted\n\n\n\n\n\n\nThu, Sep 26\nTo be posted\nImporting and recoding data\nTo be posted\n\n\n\n\n6\nMon, Sep 30\nTo be posted\nLab 4: Everything so far I\nTo be posted\nLab 3 at 8:30 am\n\n\n\n\nTue, Oct 1\nTo be posted\nWeb scraping\nTo be posted\n\n\n\n\n\n\nThu, Oct 3\nTo be posted\nMidterm review\n📝 midterm review  ✅ midterm review\n\n\n\n\n7\nMon, Oct 7\nTo be posted\nProject milestone 1 - Working collaboratively\n📓 project milestone 1\nLab 4 due at 8:30 am  Project milestone 1 at the end of lab session\n\n\n\n\nTue, Oct 8\nTo be posted\nMidterm - In-class + take-home released\n\n\n\n\n\n\n\n\nThu, Oct 10\nTo be posted\nWorking with generative AI tools\nTo be posted\nPeer evaluation 1 due by 5:00 pm\n\n\n\n\nFri, Oct 11\nTo be posted\n\n\n\n\nMidterm take-home due at 5:00 pm\n\n\n8\nMon, Oct 14\nTo be posted\nNo lab - Fall Break\n\n\n\n\n\n\n\n\nTue, Oct 15\nTo be posted\nNo lecture - Fall Break\n\n\n\n\n\n\n\n\nThu, Oct 17\nTo be posted\nData science ethics\nTo be posted\n\n\n\n\n\n\nFri, Oct 18\nTo be posted\n\n\n\n\nMidterm course evaluation due by 5:00 pm (optional)\n\n\n9\nMon, Oct 21\nTo be posted\nProject milestone 2 - Project proposals\n📓 project milestone 2\n\n\n\n\n\n\nTue, Oct 22\nTo be posted\nThe language of models\nTo be posted\n\n\n\n\n\n\nThu, Oct 24\nTo be posted\nLinear regression with a single predictor\nTo be posted\n\n\n\n\n\n\nFri, Oct 25\nTo be posted\n\n\n\n\nPeer evaluation 2 due by 5:00 pm\n\n\n10\nMon, Oct 28\nTo be posted\nLab 5: Modeling I\nTo be posted\nProject milestone 2 at 8:30 am\n\n\n\n\nTue, Oct 29\nTo be posted\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\nThu, Oct 31\nTo be posted\nLinear regression with multiple predictors II\nTo be posted\n\n\n\n\n11\nMon, Nov 4\nTo be posted\nLab 6: Modeling II\nTo be posted\nLab 5 at 8:30 am\n\n\n\n\nTue, Nov 5\nTo be posted\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\nThu, Nov 7\nTo be posted\nLogistic regression\nTo be posted\n\n\n\n\n12\nMon, Nov 11\nTo be posted\nLab 7: Modeling III\nTo be posted\nLab 6 at 8:30 am\n\n\n\n\nTue, Nov 12\nTo be posted\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\nThu, Nov 14\nTo be posted\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n13\nMon, Nov 18\nTo be posted\nLab 8: Everything so far II\nTo be posted\nLab 7 at 8:30 am\n\n\n\n\nTue, Nov 19\nTo be posted\nCommunicating data science results effectively\nTo be posted\n\n\n\n\n\n\nThu, Nov 21\nTo be posted\nCustomizing Quarto reports and presentations\nTo be posted\n\n\n\n\n\n\nFri, Nov 22\nTo be posted\n\n\n\n\n\n\n\n\n14\nMon, Nov 25\nTo be posted\nProject milestone 4 - Peer review\n📓 project milestone 4\nLab 8 at 8:30 am  Project milestone 3 at the end of lab session\n\n\n\n\nTue, Nov 26\nTo be posted\n\n\n\n\n\n\n\n\n\n\nThu, Nov 28\nTo be posted\nNo lecture - Thanksgiving\n\n\n\n\n\n\n15\nMon, Dec 2\nTo be posted\nProject milestone 5 - Work on writeup and presentations\n📓 project milestone 5\n\n\n\n\n\n\nTue, Dec 3\nTo be posted\nLooking further: Interactive web applications with Shiny\nTo be posted\n\n\n\n\n\n\nThu, Dec 5\nTo be posted\nFinal review\n📝 final review  ✅ final review\nProject milestone 4 - Writeup and presentation videos by 5:00 pm\n\n\n\n\nFri, Dec 6\nTo be posted\n\n\n\n\nPeer evaluation 4 due by 5:00 pm\n\n\n16\nThu, Dec 12\nTo be posted\nFinal (9 am - 12 pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 26\n\n\nLab 0: Hello, World and STA 199!\n💻 lab 0\nLab 0 due at the end of lab session\n\n\n\n\nTue, Aug 27\n\n\nWelcome to STA 199\n🖥️ slides 00  🗒️ notes 00  ⌨️ ae 00\n\n\n\n\n\n\nThu, Aug 29\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit - R and RStudio  🎥 Meet the toolkit - Quarto  🎥 Code along - First data viz with UN Votes\nMeet the toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n\n\n\n2\nMon, Sep 2\n\n\nNo lab - Labor Day\n\n\n\n\n\n\n\n\nTue, Sep 3\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along - First look at Palmer Penguins\nGrammar of data visualization\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 02  ☑️ ae 02\n\n\n\n\n\n\nThu, Sep 5\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along - First look at Palmer Penguins\nGrammar of data transformation\n🖥️ slides 03  🗒️ notes 03  ⌨️ ae 03  ☑️ ae 03\n\n\n\n\n3\nMon, Sep 9\n\n\nLab 1: From the Midwest to North Carolina\n💻 lab 1\n\n\n\n\n\n\nTue, Sep 10\n📗 r4ds - chp 3.6-3.7  🎥 Visualizing and summarizing categorical data  🎥 Visualizing and summarizing numerical data  🎥 Visualizing and summarizing relationships\nExploring data I\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 04\n\n\n\n\n\n\nThu, Sep 12\n📘 ims - chp 5  📘 ims - chp 6\nExploring data II\nTo be posted\n\n\n\n\n4\nMon, Sep 16\nTo be posted\nLab 2: Data transformation\nTo be posted\nLab 1 at 8:30 am\n\n\n\n\nTue, Sep 17\nTo be posted\nTidying data\nTo be posted\n\n\n\n\n\n\nThu, Sep 19\nTo be posted\nJoining data\nTo be posted\n\n\n\n\n5\nMon, Sep 23\nTo be posted\nLab 3: Data tidying and joining\nTo be posted\nLab 2 at 8:30 am\n\n\n\n\nTue, Sep 24\nTo be posted\nData types and classes\nTo be posted\n\n\n\n\n\n\nThu, Sep 26\nTo be posted\nImporting and recoding data\nTo be posted\n\n\n\n\n6\nMon, Sep 30\nTo be posted\nLab 4: Everything so far I\nTo be posted\nLab 3 at 8:30 am\n\n\n\n\nTue, Oct 1\nTo be posted\nWeb scraping\nTo be posted\n\n\n\n\n\n\nThu, Oct 3\nTo be posted\nMidterm review\n📝 midterm review  ✅ midterm review\n\n\n\n\n7\nMon, Oct 7\nTo be posted\nProject milestone 1 - Working collaboratively\n📓 project milestone 1\nLab 4 due at 8:30 am  Project milestone 1 at the end of lab session\n\n\n\n\nTue, Oct 8\nTo be posted\nMidterm - In-class + take-home released\n\n\n\n\n\n\n\n\nThu, Oct 10\nTo be posted\nWorking with generative AI tools\nTo be posted\nPeer evaluation 1 due by 5:00 pm\n\n\n\n\nFri, Oct 11\nTo be posted\n\n\n\n\nMidterm take-home due at 5:00 pm\n\n\n8\nMon, Oct 14\nTo be posted\nNo lab - Fall Break\n\n\n\n\n\n\n\n\nTue, Oct 15\nTo be posted\nNo lecture - Fall Break\n\n\n\n\n\n\n\n\nThu, Oct 17\nTo be posted\nData science ethics\nTo be posted\n\n\n\n\n\n\nFri, Oct 18\nTo be posted\n\n\n\n\nMidterm course evaluation due by 5:00 pm (optional)\n\n\n9\nMon, Oct 21\nTo be posted\nProject milestone 2 - Project proposals\n📓 project milestone 2\n\n\n\n\n\n\nTue, Oct 22\nTo be posted\nThe language of models\nTo be posted\n\n\n\n\n\n\nThu, Oct 24\nTo be posted\nLinear regression with a single predictor\nTo be posted\n\n\n\n\n\n\nFri, Oct 25\nTo be posted\n\n\n\n\nPeer evaluation 2 due by 5:00 pm\n\n\n10\nMon, Oct 28\nTo be posted\nLab 5: Modeling I\nTo be posted\nProject milestone 2 at 8:30 am\n\n\n\n\nTue, Oct 29\nTo be posted\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\nThu, Oct 31\nTo be posted\nLinear regression with multiple predictors II\nTo be posted\n\n\n\n\n11\nMon, Nov 4\nTo be posted\nLab 6: Modeling II\nTo be posted\nLab 5 at 8:30 am\n\n\n\n\nTue, Nov 5\nTo be posted\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\nThu, Nov 7\nTo be posted\nLogistic regression\nTo be posted\n\n\n\n\n12\nMon, Nov 11\nTo be posted\nLab 7: Modeling III\nTo be posted\nLab 6 at 8:30 am\n\n\n\n\nTue, Nov 12\nTo be posted\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\nThu, Nov 14\nTo be posted\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n13\nMon, Nov 18\nTo be posted\nLab 8: Everything so far II\nTo be posted\nLab 7 at 8:30 am\n\n\n\n\nTue, Nov 19\nTo be posted\nCommunicating data science results effectively\nTo be posted\n\n\n\n\n\n\nThu, Nov 21\nTo be posted\nCustomizing Quarto reports and presentations\nTo be posted\n\n\n\n\n\n\nFri, Nov 22\nTo be posted\n\n\n\n\n\n\n\n\n14\nMon, Nov 25\nTo be posted\nProject milestone 4 - Peer review\n📓 project milestone 4\nLab 8 at 8:30 am  Project milestone 3 at the end of lab session\n\n\n\n\nTue, Nov 26\nTo be posted\n\n\n\n\n\n\n\n\n\n\nThu, Nov 28\nTo be posted\nNo lecture - Thanksgiving\n\n\n\n\n\n\n15\nMon, Dec 2\nTo be posted\nProject milestone 5 - Work on writeup and presentations\n📓 project milestone 5\n\n\n\n\n\n\nTue, Dec 3\nTo be posted\nLooking further: Interactive web applications with Shiny\nTo be posted\n\n\n\n\n\n\nThu, Dec 5\nTo be posted\nFinal review\n📝 final review  ✅ final review\nProject milestone 4 - Writeup and presentation videos by 5:00 pm\n\n\n\n\nFri, Dec 6\nTo be posted\n\n\n\n\nPeer evaluation 4 due by 5:00 pm\n\n\n16\nThu, Dec 12\nTo be posted\nFinal (9 am - 12 pm)",
     "crumbs": [
       "Course information",
       "Schedule"
