@@ -78,10 +78,12 @@ website:
         contents:
           - href: computing-access.qmd
             text: Access
-          - href: computing-troubleshooting.qmd
-            text: Troubleshooting
+          - href: computing-code-alongs.qmd
+            text: Code alongs
           - href: computing-cheatsheets.qmd
             text: Cheatsheets
+          - href: computing-troubleshooting.qmd
+            text: Troubleshooting
       - section: "Project"
         contents:
           - href: project/description.qmd
