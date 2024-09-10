@@ -1,7 +1,8 @@
 ---
 title: "AE 04: Gerrymandering + data exploration I"
-editor_options: 
-  chunk_output_type: console
+subtitle: "Suggested answers"
+categories: 
+  - Answers
 ---
 
 ## Getting started
