@@ -121,7 +121,7 @@ What is a good first function to use to get to know a dataset?
 
     -   2016 election: winning party, % for Clinton, % for Trump, whether a Democrat won the House election, name of election winner
 
-    -   2018 election: winning party, whether a Democrat won the 2016 House election
+    -   2018 election: winning party, whether a Democrat won the 2018 House election
 
     -   Whether a Democrat flipped the seat in the 2018 election
 
@@ -330,7 +330,7 @@ gerrymander |>
 Describe the distribution of percent of vote received by Trump in 2016 Presidential Election from Congressional Districts.
 :::
 
--   Shape: [The distribution of votes for Trump in the 2016 election from Congressional Districts is **unimodal and right-skewed**.]{.fragment}
+-   Shape: [The distribution of votes for Trump in the 2016 election from Congressional Districts is **unimodal and left-skewed**.]{.fragment}
 
 -   Center: [The percent of vote received by Trump in the 2016 Presidential Election from a **typical** Congressional Districts is 48.7%.]{.fragment}
 
