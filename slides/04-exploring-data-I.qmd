@@ -4,7 +4,7 @@ subtitle: "Lecture 4"
 date: "2024-09-10"
 format: 
   live-revealjs: 
-    output-file: 04-exploring-data-slides.html
+    output-file: 04-exploring-data-I-slides.html
     webr:
       cell-options:
         autorun: false
