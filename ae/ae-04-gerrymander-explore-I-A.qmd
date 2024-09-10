@@ -1,0 +1,71 @@
+---
+title: "AE 04: Gerrymandering + data exploration I"
+editor_options: 
+  chunk_output_type: console
+---
+
+## Getting started
+
+### Packages
+
+We'll use the **tidyverse** package for this analysis.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(usdata)
+```
+
+### Data
+
+The data are availale in the **usdata** package.
+
+```{r}
+#| label: gerrymander
+glimpse(gerrymander)
+```
+
+## Districts at the tails
+
+Make side-by-side box plots of percent of vote received by Trump in 2016 Presidential Election by prevalence of gerrymandering.
+Identify any Congressional Districts that are potential outliers.
+Are they different from the rest of the Congressional Districts due to high support or low support for Trump in the 2016 Presidential Election?
+Which state are they in?
+Which city are they in?
+
+```{r}
+#| label: outliers
+ggplot(gerrymander, aes(x = trump16, y = gerry)) +
+  geom_boxplot()
+
+gerrymander |>
+  filter(gerry == "low", trump16 < 10)
+```
+
+## Flips
+
+Is a Congressional District more likely to have high prevalance of gerrymandering if a Democrat was able to flip the seat in the 2018 election?
+Support your answer with a visualization as well as summary statistics.
+**Hint:** Calculate the conditional distribution of prevalance of gerrymandering based on whether a Democrat was able to flip the seat in the 2018 election.
+
+```{r}
+gerrymander |>
+  select(dem16, dem18, flip18) |>
+  filter(flip18 == -1)
+
+ggplot(gerrymander, aes(x = flip18, fill = gerry)) +
+  geom_bar(position = "fill")
+```
+
+## Render, commit, and push
+
+1.  Render your Quarto document.
+
+2.  Go to the Git pane and check the box next to each file listed, i.e., stage your changes.
+    Commit your staged changes using a simple and informative message.
+
+3.  Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.
+
+4.  Go to your repo on GitHub and confirm that you can see the updated files.
+    Once your updated files are in your repo on GitHub, you're good to go!

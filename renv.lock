@@ -1790,6 +1790,17 @@
       ],
       "Hash": "71608579c8b607fb79c7468c1cf090b3"
     },
+    "usdata": {
+      "Package": "usdata",
+      "Version": "0.3.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "tibble"
+      ],
+      "Hash": "924b597b270e2f6a84387f563abadb39"
+    },
     "usethis": {
       "Package": "usethis",
       "Version": "2.2.3",
