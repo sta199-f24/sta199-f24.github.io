@@ -3152,295 +3152,295 @@
     "text": "ae-04-gerrymander-explore-I\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#while-you-wait",
-    "href": "slides/04-exploring-data-slides.html#while-you-wait",
+    "objectID": "slides/04-exploring-data-I-slides.html#while-you-wait",
+    "href": "slides/04-exploring-data-I-slides.html#while-you-wait",
     "title": "Exploring data I",
     "section": "While you wait…",
     "text": "While you wait…\nPrepare for today’s application exercise: ae-04-gerrymander-explore-I\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#announcements",
-    "href": "slides/04-exploring-data-slides.html#announcements",
+    "objectID": "slides/04-exploring-data-I-slides.html#announcements",
+    "href": "slides/04-exploring-data-I-slides.html#announcements",
     "title": "Exploring data I",
     "section": "Announcements",
     "text": "Announcements\n\n\nWeekend office hours in Old Chem – bring your Duke Card, you’ll need to swipe/tap in to get in\nAEs are due by the end of class (precisely, by 2 pm) – done = at least one commit + push\nCoding principles bonus office hour, RSVP at https://forms.gle/mufcsHnPXejZbkdT8 – Thursday, 9/12 at 7:30 pm at Old Chem 116\nRStudio visual editor acting up?\n\nUsing Chrome – make sure to update!\nUsing another browser or update doesn’t solve the problem, come by my office hours to diagnose\n\nNew resource: Code along videos\nAny questions about lab before we get started?"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#packages",
-    "href": "slides/04-exploring-data-slides.html#packages",
+    "objectID": "slides/04-exploring-data-I-slides.html#packages",
+    "href": "slides/04-exploring-data-I-slides.html#packages",
     "title": "Exploring data I",
     "section": "Packages",
     "text": "Packages\n\nFor the data: usdata\n\n\nlibrary(usdata)\n\n\nFor the analysis: tidyverse and ggthemes\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(ggthemes)"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#data-gerrymander",
-    "href": "slides/04-exploring-data-slides.html#data-gerrymander",
+    "objectID": "slides/04-exploring-data-I-slides.html#data-gerrymander",
+    "href": "slides/04-exploring-data-I-slides.html#data-gerrymander",
     "title": "Exploring data I",
     "section": "Data: gerrymander",
     "text": "Data: gerrymander\n\ngerrymander\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#what-is-gerrymandering",
-    "href": "slides/04-exploring-data-slides.html#what-is-gerrymandering",
+    "objectID": "slides/04-exploring-data-I-slides.html#what-is-gerrymandering",
+    "href": "slides/04-exploring-data-I-slides.html#what-is-gerrymandering",
     "title": "Exploring data I",
     "section": "What is gerrymandering?",
     "text": "What is gerrymandering?"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#data-gerrymander-1",
-    "href": "slides/04-exploring-data-slides.html#data-gerrymander-1",
+    "objectID": "slides/04-exploring-data-I-slides.html#data-gerrymander-1",
+    "href": "slides/04-exploring-data-I-slides.html#data-gerrymander-1",
     "title": "Exploring data I",
     "section": "Data: gerrymander",
     "text": "Data: gerrymander\n\nWhat is a good first function to use to get to know a dataset?"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#data-gerrymander-2",
-    "href": "slides/04-exploring-data-slides.html#data-gerrymander-2",
+    "objectID": "slides/04-exploring-data-I-slides.html#data-gerrymander-2",
+    "href": "slides/04-exploring-data-I-slides.html#data-gerrymander-2",
     "title": "Exploring data I",
     "section": "Data: gerrymander",
     "text": "Data: gerrymander\n\nRows: Congressional districts\nColumns:\n\nCongressional district and state\n2016 election: winning party, % for Clinton, % for Trump, whether a Democrat won the House election, name of election winner\n2018 election: winning party, whether a Democrat won the 2016 House election\nWhether a Democrat flipped the seat in the 2018 election\nPrevalence of gerrymandering: low, mid, and high"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#variable-types",
-    "href": "slides/04-exploring-data-slides.html#variable-types",
+    "objectID": "slides/04-exploring-data-I-slides.html#variable-types",
+    "href": "slides/04-exploring-data-I-slides.html#variable-types",
     "title": "Exploring data I",
     "section": "Variable types",
     "text": "Variable types\n\n\n\n\n\n\nVariable\nType\n\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\ncategorical\n\n\nparty18\ncategorical\n\n\ndem18\ncategorical\n\n\nflip18\ncategorical\n\n\ngerry\ncategorical, ordinal"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#univariate-analysis-1",
-    "href": "slides/04-exploring-data-slides.html#univariate-analysis-1",
+    "objectID": "slides/04-exploring-data-I-slides.html#univariate-analysis-1",
+    "href": "slides/04-exploring-data-I-slides.html#univariate-analysis-1",
     "title": "Exploring data I",
     "section": "Univariate analysis",
     "text": "Univariate analysis\nAnalyzing a single variable:\n\n\nNumerical: histogram, box plot, density plot, etc.\nCategorical: bar plot, pie chart, etc."
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#histogram---step-1",
-    "href": "slides/04-exploring-data-slides.html#histogram---step-1",
+    "objectID": "slides/04-exploring-data-I-slides.html#histogram---step-1",
+    "href": "slides/04-exploring-data-I-slides.html#histogram---step-1",
     "title": "Exploring data I",
     "section": "Histogram - Step 1",
     "text": "Histogram - Step 1\n\nggplot(gerrymander)"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#histogram---step-2",
-    "href": "slides/04-exploring-data-slides.html#histogram---step-2",
+    "objectID": "slides/04-exploring-data-I-slides.html#histogram---step-2",
+    "href": "slides/04-exploring-data-I-slides.html#histogram---step-2",
     "title": "Exploring data I",
     "section": "Histogram - Step 2",
     "text": "Histogram - Step 2\n\nggplot(gerrymander, aes(x = trump16))"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#histogram---step-3",
-    "href": "slides/04-exploring-data-slides.html#histogram---step-3",
+    "objectID": "slides/04-exploring-data-I-slides.html#histogram---step-3",
+    "href": "slides/04-exploring-data-I-slides.html#histogram---step-3",
     "title": "Exploring data I",
     "section": "Histogram - Step 3",
     "text": "Histogram - Step 3\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#histogram---step-4",
-    "href": "slides/04-exploring-data-slides.html#histogram---step-4",
+    "objectID": "slides/04-exploring-data-I-slides.html#histogram---step-4",
+    "href": "slides/04-exploring-data-I-slides.html#histogram---step-4",
     "title": "Exploring data I",
     "section": "Histogram - Step 4",
     "text": "Histogram - Step 4"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#histogram---step-5",
-    "href": "slides/04-exploring-data-slides.html#histogram---step-5",
+    "objectID": "slides/04-exploring-data-I-slides.html#histogram---step-5",
+    "href": "slides/04-exploring-data-I-slides.html#histogram---step-5",
     "title": "Exploring data I",
     "section": "Histogram - Step 5",
     "text": "Histogram - Step 5\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(binwidth = 5) +\n  labs(\n    title = \"Percent of vote received by Trump in 2016 Presidential Election\",\n    subtitle = \"From each Congressional District\",\n    x = \"Percent of vote\",\n    y = \"Count\"\n  )"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#box-plot---step-1",
-    "href": "slides/04-exploring-data-slides.html#box-plot---step-1",
+    "objectID": "slides/04-exploring-data-I-slides.html#box-plot---step-1",
+    "href": "slides/04-exploring-data-I-slides.html#box-plot---step-1",
     "title": "Exploring data I",
     "section": "Box plot - Step 1",
     "text": "Box plot - Step 1\n\nggplot(gerrymander)"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#box-plot---step-2",
-    "href": "slides/04-exploring-data-slides.html#box-plot---step-2",
+    "objectID": "slides/04-exploring-data-I-slides.html#box-plot---step-2",
+    "href": "slides/04-exploring-data-I-slides.html#box-plot---step-2",
     "title": "Exploring data I",
     "section": "Box plot - Step 2",
     "text": "Box plot - Step 2\n\nggplot(gerrymander, aes(x = trump16))"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#box-plot---step-3",
-    "href": "slides/04-exploring-data-slides.html#box-plot---step-3",
+    "objectID": "slides/04-exploring-data-I-slides.html#box-plot---step-3",
+    "href": "slides/04-exploring-data-I-slides.html#box-plot---step-3",
     "title": "Exploring data I",
     "section": "Box plot - Step 3",
     "text": "Box plot - Step 3\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot()"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#box-plot---alternative-step-2-3",
-    "href": "slides/04-exploring-data-slides.html#box-plot---alternative-step-2-3",
+    "objectID": "slides/04-exploring-data-I-slides.html#box-plot---alternative-step-2-3",
+    "href": "slides/04-exploring-data-I-slides.html#box-plot---alternative-step-2-3",
     "title": "Exploring data I",
     "section": "Box plot - Alternative Step 2 + 3",
     "text": "Box plot - Alternative Step 2 + 3"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#box-plot---step-4",
-    "href": "slides/04-exploring-data-slides.html#box-plot---step-4",
+    "objectID": "slides/04-exploring-data-I-slides.html#box-plot---step-4",
+    "href": "slides/04-exploring-data-I-slides.html#box-plot---step-4",
     "title": "Exploring data I",
     "section": "Box plot - Step 4",
     "text": "Box plot - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot() +\n  labs(\n    title = \"Percent of vote received by Trump in 2016 Presidential Election\",\n    subtitle = \"From each Congressional District\",\n    x = \"Percent of vote\",\n    y = NULL\n  )"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#density-plot---step-1",
-    "href": "slides/04-exploring-data-slides.html#density-plot---step-1",
+    "objectID": "slides/04-exploring-data-I-slides.html#density-plot---step-1",
+    "href": "slides/04-exploring-data-I-slides.html#density-plot---step-1",
     "title": "Exploring data I",
     "section": "Density plot - Step 1",
     "text": "Density plot - Step 1\n\nggplot(gerrymander)"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#density-plot---step-2",
-    "href": "slides/04-exploring-data-slides.html#density-plot---step-2",
+    "objectID": "slides/04-exploring-data-I-slides.html#density-plot---step-2",
+    "href": "slides/04-exploring-data-I-slides.html#density-plot---step-2",
     "title": "Exploring data I",
     "section": "Density plot - Step 2",
     "text": "Density plot - Step 2\n\nggplot(gerrymander, aes(x = trump16))"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#density-plot---step-3",
-    "href": "slides/04-exploring-data-slides.html#density-plot---step-3",
+    "objectID": "slides/04-exploring-data-I-slides.html#density-plot---step-3",
+    "href": "slides/04-exploring-data-I-slides.html#density-plot---step-3",
     "title": "Exploring data I",
     "section": "Density plot - Step 3",
     "text": "Density plot - Step 3\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density()"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#density-plot---step-4",
-    "href": "slides/04-exploring-data-slides.html#density-plot---step-4",
+    "objectID": "slides/04-exploring-data-I-slides.html#density-plot---step-4",
+    "href": "slides/04-exploring-data-I-slides.html#density-plot---step-4",
     "title": "Exploring data I",
     "section": "Density plot - Step 4",
     "text": "Density plot - Step 4"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#density-plot---step-5",
-    "href": "slides/04-exploring-data-slides.html#density-plot---step-5",
+    "objectID": "slides/04-exploring-data-I-slides.html#density-plot---step-5",
+    "href": "slides/04-exploring-data-I-slides.html#density-plot---step-5",
     "title": "Exploring data I",
     "section": "Density plot - Step 5",
     "text": "Density plot - Step 5"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#density-plot---step-6",
-    "href": "slides/04-exploring-data-slides.html#density-plot---step-6",
+    "objectID": "slides/04-exploring-data-I-slides.html#density-plot---step-6",
+    "href": "slides/04-exploring-data-I-slides.html#density-plot---step-6",
     "title": "Exploring data I",
     "section": "Density plot - Step 6",
     "text": "Density plot - Step 6"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#density-plot---step-7",
-    "href": "slides/04-exploring-data-slides.html#density-plot---step-7",
+    "objectID": "slides/04-exploring-data-I-slides.html#density-plot---step-7",
+    "href": "slides/04-exploring-data-I-slides.html#density-plot---step-7",
     "title": "Exploring data I",
     "section": "Density plot - Step 7",
     "text": "Density plot - Step 7"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#density-plot---step-8",
-    "href": "slides/04-exploring-data-slides.html#density-plot---step-8",
+    "objectID": "slides/04-exploring-data-I-slides.html#density-plot---step-8",
+    "href": "slides/04-exploring-data-I-slides.html#density-plot---step-8",
     "title": "Exploring data I",
     "section": "Density plot - Step 8",
     "text": "Density plot - Step 8\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\", alpha = 0.5, linewidth = 2) +\n  labs(\n    title = \"Percent of vote received by Trump in 2016 Presidential Election\",\n    subtitle = \"From each Congressional District\",\n    x = \"Percent of vote\",\n    y = \"Density\"\n  )"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#summary-statistics",
-    "href": "slides/04-exploring-data-slides.html#summary-statistics",
+    "objectID": "slides/04-exploring-data-I-slides.html#summary-statistics",
+    "href": "slides/04-exploring-data-I-slides.html#summary-statistics",
     "title": "Exploring data I",
     "section": "Summary statistics",
     "text": "Summary statistics"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#distribution-of-votes-for-trump-in-the-2016-election",
-    "href": "slides/04-exploring-data-slides.html#distribution-of-votes-for-trump-in-the-2016-election",
+    "objectID": "slides/04-exploring-data-I-slides.html#distribution-of-votes-for-trump-in-the-2016-election",
+    "href": "slides/04-exploring-data-I-slides.html#distribution-of-votes-for-trump-in-the-2016-election",
     "title": "Exploring data I",
     "section": "Distribution of votes for Trump in the 2016 election",
     "text": "Distribution of votes for Trump in the 2016 election\n\nDescribe the distribution of percent of vote received by Trump in 2016 Presidential Election from Congressional Districts.\n\n\nShape: The distribution of votes for Trump in the 2016 election from Congressional Districts is unimodal and right-skewed.\nCenter: The percent of vote received by Trump in the 2016 Presidential Election from a typical Congressional Districts is 48.7%.\nSpread: In the middle 50% of Congressional Districts, 34.8% to 58.1% of voters voted for Trump in the 2016 Presidential Election.\nUnusual observations: -"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#bivariate-analysis-1",
-    "href": "slides/04-exploring-data-slides.html#bivariate-analysis-1",
+    "objectID": "slides/04-exploring-data-I-slides.html#bivariate-analysis-1",
+    "href": "slides/04-exploring-data-I-slides.html#bivariate-analysis-1",
     "title": "Exploring data I",
     "section": "Bivariate analysis",
     "text": "Bivariate analysis\nAnalyzing the relationship between two variables:\n\n\nNumerical + numerical: scatterplot\nNumerical + categorical: side-by-side box plots, violin plots, etc.\nCategorical + categorical: stacked bar plots\nUsing an aesthetic (e.g., fill, color, shape, etc.) or facets to represent the second variable in any plot"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#side-by-side-box-plots",
-    "href": "slides/04-exploring-data-slides.html#side-by-side-box-plots",
+    "objectID": "slides/04-exploring-data-I-slides.html#side-by-side-box-plots",
+    "href": "slides/04-exploring-data-I-slides.html#side-by-side-box-plots",
     "title": "Exploring data I",
     "section": "Side-by-side box plots",
     "text": "Side-by-side box plots\n\n\nggplot(\n  gerrymander, \n  aes(\n    x = trump16, \n    y = gerry\n    )\n  ) +\n  geom_boxplot()"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#summary-statistics-1",
-    "href": "slides/04-exploring-data-slides.html#summary-statistics-1",
+    "objectID": "slides/04-exploring-data-I-slides.html#summary-statistics-1",
+    "href": "slides/04-exploring-data-I-slides.html#summary-statistics-1",
     "title": "Exploring data I",
     "section": "Summary statistics",
     "text": "Summary statistics"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#density-plots",
-    "href": "slides/04-exploring-data-slides.html#density-plots",
+    "objectID": "slides/04-exploring-data-I-slides.html#density-plots",
+    "href": "slides/04-exploring-data-I-slides.html#density-plots",
     "title": "Exploring data I",
     "section": "Density plots",
     "text": "Density plots\n\n\nggplot(\n  gerrymander, \n  aes(\n    x = trump16, \n    color = gerry\n    )\n  ) +\n  geom_density()"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#filled-density-plots",
-    "href": "slides/04-exploring-data-slides.html#filled-density-plots",
+    "objectID": "slides/04-exploring-data-I-slides.html#filled-density-plots",
+    "href": "slides/04-exploring-data-I-slides.html#filled-density-plots",
     "title": "Exploring data I",
     "section": "Filled density plots",
     "text": "Filled density plots\n\n\nggplot(\n  gerrymander, \n  aes(\n    x = trump16, \n    color = gerry,\n    fill = gerry\n    )\n  ) +\n  geom_density()"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#better-filled-density-plots",
-    "href": "slides/04-exploring-data-slides.html#better-filled-density-plots",
+    "objectID": "slides/04-exploring-data-I-slides.html#better-filled-density-plots",
+    "href": "slides/04-exploring-data-I-slides.html#better-filled-density-plots",
     "title": "Exploring data I",
     "section": "Better filled density plots",
     "text": "Better filled density plots\n\nggplot(\n  gerrymander, \n  aes(x = trump16, color = gerry, fill = gerry)\n  ) +\n  geom_density(alpha = 0.5)"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#better-colors",
-    "href": "slides/04-exploring-data-slides.html#better-colors",
+    "objectID": "slides/04-exploring-data-I-slides.html#better-colors",
+    "href": "slides/04-exploring-data-I-slides.html#better-colors",
     "title": "Exploring data I",
     "section": "Better colors",
     "text": "Better colors\n\n\nggplot(\n  gerrymander, \n  aes(x = trump16, color = gerry, fill = gerry)\n  ) +\n  geom_density(alpha = 0.5) +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#violin-plots",
-    "href": "slides/04-exploring-data-slides.html#violin-plots",
+    "objectID": "slides/04-exploring-data-I-slides.html#violin-plots",
+    "href": "slides/04-exploring-data-I-slides.html#violin-plots",
     "title": "Exploring data I",
     "section": "Violin plots",
     "text": "Violin plots\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#multiple-geoms",
-    "href": "slides/04-exploring-data-slides.html#multiple-geoms",
+    "objectID": "slides/04-exploring-data-I-slides.html#multiple-geoms",
+    "href": "slides/04-exploring-data-I-slides.html#multiple-geoms",
     "title": "Exploring data I",
     "section": "Multiple geoms",
     "text": "Multiple geoms\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  geom_point() +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#multiple-geoms-1",
-    "href": "slides/04-exploring-data-slides.html#multiple-geoms-1",
+    "objectID": "slides/04-exploring-data-I-slides.html#multiple-geoms-1",
+    "href": "slides/04-exploring-data-I-slides.html#multiple-geoms-1",
     "title": "Exploring data I",
     "section": "Multiple geoms",
     "text": "Multiple geoms\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  geom_jitter() +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#remove-legend",
-    "href": "slides/04-exploring-data-slides.html#remove-legend",
+    "objectID": "slides/04-exploring-data-I-slides.html#remove-legend",
+    "href": "slides/04-exploring-data-I-slides.html#remove-legend",
     "title": "Exploring data I",
     "section": "Remove legend",
     "text": "Remove legend\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  geom_jitter() +\n  scale_color_colorblind() +\n  scale_fill_colorblind() +\n  theme(legend.position = \"none\")"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#multivariate-analysis-1",
-    "href": "slides/04-exploring-data-slides.html#multivariate-analysis-1",
+    "objectID": "slides/04-exploring-data-I-slides.html#multivariate-analysis-1",
+    "href": "slides/04-exploring-data-I-slides.html#multivariate-analysis-1",
     "title": "Exploring data I",
     "section": "Multivariate analysis",
     "text": "Multivariate analysis\nAnalyzing the relationship between multiple variables:\n\n\nIn general, one variable is identified as the outcome of interest\nThe remaining variables are predictors or explanatory variables\nPlots for exploring multivariate relationships are the same as those for bivariate relationships, but conditional on one or more variables\n\nConditioning can be done via faceting or aesthetic mappings (e.g., scatterplot of y vs. x1, colored by x2, faceted by x3)\n\nSummary statistics for exploring multivariate relationships are the same as those for bivariate relationships, but conditional on one or more variables\n\nConditioning can be done via grouping (e.g., correlation between y and x1, grouped by levels of x2 and x3)"
   },
   {
-    "objectID": "slides/04-exploring-data-slides.html#ae-04-gerrymander-explore-i",
-    "href": "slides/04-exploring-data-slides.html#ae-04-gerrymander-explore-i",
+    "objectID": "slides/04-exploring-data-I-slides.html#ae-04-gerrymander-explore-i",
+    "href": "slides/04-exploring-data-I-slides.html#ae-04-gerrymander-explore-i",
     "title": "Exploring data I",
     "section": "ae-04-gerrymander-explore-I",
     "text": "ae-04-gerrymander-explore-I\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class.\n\n\n\n\n\n\n🔗 sta199-f24.github.io"
