@@ -1940,7 +1940,7 @@
     "href": "coding-principles-oh.html",
     "title": "Intro to Coding Principles",
     "section": "",
-    "text": "library(tidyverse)\n\n\n\n# Downloading packages -------------------------------------------------------\n- Downloading viridis from CRAN ...             OK [2.9 Mb in 0.27s]\n- Downloading gridExtra from CRAN ...           OK [1.1 Mb in 0.25s]\nSuccessfully downloaded 2 packages in 1.6 seconds.\n\nThe following package(s) will be installed:\n- gridExtra [2.3]\n- viridis   [0.6.5]\nThese packages will be installed into \"~/work/sta199-f24.github.io/sta199-f24.github.io/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu\".\n\n# Installing packages --------------------------------------------------------\n- Installing gridExtra ...                      OK [installed binary and cached in 0.61s]\n- Installing viridis ...                        OK [installed binary and cached in 0.98s]\nSuccessfully installed 2 packages in 1.7 seconds."
+    "text": "library(tidyverse)"
   },
   {
     "objectID": "coding-principles-oh.html#definition",
