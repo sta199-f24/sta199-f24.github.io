@@ -19,6 +19,7 @@ library(tidyverse)
 #| echo: FALSE
 #| warning: FALSE
 #| message: FALSE
+#| output: FALSE
 
 if (!requireNamespace("viridis", quietly = TRUE)) {
   suppressMessages(suppressWarnings(install.packages("viridis")))
