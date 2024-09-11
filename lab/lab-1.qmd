@@ -215,7 +215,7 @@ ggplot(midwest, aes(x = popdensity)) +
   labs(
     x = "Population density",
     y = "Count",
-    title = "Population density of midwesten counties",
+    title = "Population density of Midwestern counties",
     subtitle = "Binwidth = 100"
   )
 ```
