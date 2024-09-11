@@ -4,6 +4,8 @@ author: "Dav King + STA 199 Team"
 format: html
 ---
 
+# Setup
+
 ```{r}
 #| label: libraries
 #| warning: FALSE
