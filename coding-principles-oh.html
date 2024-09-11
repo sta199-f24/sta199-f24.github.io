@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dav King + STA 199 Team">
+
+<title>Intro to Coding Principles – STA 199</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Intro to Coding Principles – STA 199">
+<meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Fall 2024.">
+<meta property="og:site_name" content="STA 199">
+<meta name="twitter:title" content="Intro to Coding Principles – STA 199">
+<meta name="twitter:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Fall 2024.">
+<meta name="twitter:image" content="https://sta199-f24.github.io/img/twitter-card.png">
+<meta name="twitter:creator" content="@minebocek">
+<meta name="twitter:image-height" content="418">
+<meta name="twitter:image-width" content="800">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Intro to Coding Principles</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/sta199-f24" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
+    <div class="dropdown">
+      <a href="" title="Support" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Support"><i class="bi bi-life-preserver"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">
+              <i class="bi bi-person-raised-hand pe-1"></i>
+            Office hours
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://edstem.org/us/courses/62468/discussion/">
+              <i class="bi bi-people-fill pe-1"></i>
+            Help from humans (Ed Discussion)
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/39994/external_tools/5887">
+              <i class="bi bi-robot pe-1"></i>
+            Help from AI (Chatbot)
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Canvas" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Canvas"><i class="bi bi-file-check-fill"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/39994/announcements">
+              <i class="bi bi-megaphone-fill pe-1"></i>
+            Announcements
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/39994/external_tools/181">
+              <i class="bi bi-file-arrow-up-fill pe-1"></i>
+            Gradescope
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/39994/gradebook">
+              <i class="bi bi-alphabet-uppercase pe-1"></i>
+            Gradebook
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Team</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful links</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Computing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computing-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computing-code-alongs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code alongs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cheatsheets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/description.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Description</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/1-working-collaboratively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/2-proposal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/3-improvement-progress.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/4-peer-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/5-writeup-presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/tips-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tips + resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ae.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application exercises</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exam-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam reviews</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#variables" id="toc-variables" class="nav-link active" data-scroll-target="#variables">Variables</a>
+  <ul class="collapse">
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#assignment-saving" id="toc-assignment-saving" class="nav-link" data-scroll-target="#assignment-saving">Assignment &amp; Saving</a>
+  <ul class="collapse">
+  <li><a href="#saving-changes" id="toc-saving-changes" class="nav-link" data-scroll-target="#saving-changes">Saving Changes</a></li>
+  </ul></li>
+  <li><a href="#variable-examples" id="toc-variable-examples" class="nav-link" data-scroll-target="#variable-examples">Variable Examples</a></li>
+  </ul></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data Types</a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
+  <ul class="collapse">
+  <li><a href="#doublenumeric" id="toc-doublenumeric" class="nav-link" data-scroll-target="#doublenumeric">Double/Numeric</a></li>
+  <li><a href="#integer" id="toc-integer" class="nav-link" data-scroll-target="#integer">Integer</a></li>
+  <li><a href="#logicalboolean" id="toc-logicalboolean" class="nav-link" data-scroll-target="#logicalboolean">Logical/Boolean</a></li>
+  <li><a href="#characterstring" id="toc-characterstring" class="nav-link" data-scroll-target="#characterstring">Character/String</a></li>
+  </ul></li>
+  <li><a href="#casting" id="toc-casting" class="nav-link" data-scroll-target="#casting">Casting</a></li>
+  </ul></li>
+  <li><a href="#boolean-operators" id="toc-boolean-operators" class="nav-link" data-scroll-target="#boolean-operators">Boolean Operators</a>
+  <ul class="collapse">
+  <li><a href="#equals" id="toc-equals" class="nav-link" data-scroll-target="#equals">Equals</a></li>
+  <li><a href="#and" id="toc-and" class="nav-link" data-scroll-target="#and">And</a></li>
+  <li><a href="#or" id="toc-or" class="nav-link" data-scroll-target="#or">Or</a></li>
+  <li><a href="#not" id="toc-not" class="nav-link" data-scroll-target="#not">Not</a></li>
+  <li><a href="#combining-boolean-operators" id="toc-combining-boolean-operators" class="nav-link" data-scroll-target="#combining-boolean-operators">Combining Boolean Operators</a></li>
+  </ul></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <ul class="collapse">
+  <li><a href="#definition-1" id="toc-definition-1" class="nav-link" data-scroll-target="#definition-1">Definition</a></li>
+  <li><a href="#arguments" id="toc-arguments" class="nav-link" data-scroll-target="#arguments">Arguments</a>
+  <ul class="collapse">
+  <li><a href="#pipe-operator" id="toc-pipe-operator" class="nav-link" data-scroll-target="#pipe-operator">Pipe Operator</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries">Libraries</a>
+  <ul class="collapse">
+  <li><a href="#definition-2" id="toc-definition-2" class="nav-link" data-scroll-target="#definition-2">Definition</a></li>
+  <li><a href="#environment" id="toc-environment" class="nav-link" data-scroll-target="#environment">Environment</a></li>
+  <li><a href="#rendering-quarto" id="toc-rendering-quarto" class="nav-link" data-scroll-target="#rendering-quarto">Rendering Quarto</a></li>
+  </ul></li>
+  <li><a href="#documentation-errors" id="toc-documentation-errors" class="nav-link" data-scroll-target="#documentation-errors">Documentation + Errors</a>
+  <ul class="collapse">
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#errors" id="toc-errors" class="nav-link" data-scroll-target="#errors">Errors</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example 3</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/coding-principles-oh.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Intro to Coding Principles</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dav King + STA 199 Team </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="variables" class="level1">
+<h1>Variables</h1>
+<section id="definition" class="level2">
+<h2 class="anchored" data-anchor-id="definition">Definition</h2>
+<p>So what even <em>is</em> a variable, in the first place? There are many possible definitions:</p>
+<ul>
+<li>Anything you assign!</li>
+<li>Practically speaking, variables are a way for you to store data without having to type it out every time.</li>
+<li>They allow you to manipulate data with the help of pre-built functions (more on that later).</li>
+<li>They can also be <em>changed</em> - hence the name “variable”.</li>
+</ul>
+<p>What are some examples of variables?</p>
+<ul>
+<li>The simplest is a single value - like in math. I could say “x = 10”.</li>
+<li>It might also be a vector - essentially a list of values. For example, I might just store every name in this class in a vector.</li>
+<li>Most frequently, your variables will be your entire data frames.</li>
+</ul>
+</section>
+<section id="assignment-saving" class="level2">
+<h2 class="anchored" data-anchor-id="assignment-saving">Assignment &amp; Saving</h2>
+<p>Ok, these seem pretty useful - so how do we use them? In math and most programming languages, you use the “=” operator. This is also possible to do in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">10</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+<p>However, in R, we prefer to use the “&lt;-” operator, to avoid confusion between variable assignment and function arguments. Here’s how that looks:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
+<section id="saving-changes" class="level3">
+<h3 class="anchored" data-anchor-id="saving-changes">Saving Changes</h3>
+<p>Suppose you run a function on a variable. By default, R will show you the output of this function, but it will not actually modify your variable. For example, let’s look at the <code>midwest</code> data set:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>midwest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 437 × 28
+     PID county  state  area poptotal popdensity popwhite popblack popamerindian
+   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+ 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98
+ 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19
+ 3   563 BOND    IL    0.022    14991       681.    14477      429            35
+ 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46
+ 5   565 BROWN   IL    0.018     5836       324.     5264      547            14
+ 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65
+ 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8
+ 8   568 CARROLL IL    0.027    16805       622.    16519      111            30
+ 9   569 CASS    IL    0.024    13437       560.    13384       16             8
+10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331
+# ℹ 427 more rows
+# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>Now, let’s run a function that “changes” the data frame. We can use <code>select()</code> to look only at the <code>county</code> column:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(county)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 437 × 1
+   county   
+   &lt;chr&gt;    
+ 1 ADAMS    
+ 2 ALEXANDER
+ 3 BOND     
+ 4 BOONE    
+ 5 BROWN    
+ 6 BUREAU   
+ 7 CALHOUN  
+ 8 CARROLL  
+ 9 CASS     
+10 CHAMPAIGN
+# ℹ 427 more rows</code></pre>
+</div>
+</div>
+<p>Cool change! So, just to make sure, let’s look at the <code>midwest</code> data frame one more time.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>midwest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 437 × 28
+     PID county  state  area poptotal popdensity popwhite popblack popamerindian
+   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+ 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98
+ 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19
+ 3   563 BOND    IL    0.022    14991       681.    14477      429            35
+ 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46
+ 5   565 BROWN   IL    0.018     5836       324.     5264      547            14
+ 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65
+ 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8
+ 8   568 CARROLL IL    0.027    16805       622.    16519      111            30
+ 9   569 CASS    IL    0.024    13437       560.    13384       16             8
+10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331
+# ℹ 427 more rows
+# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>Now wait a minute - what happened here? I clearly told it to select the <code>county</code> column, and it did! So why is it that, when I went to look at the <code>midwest</code> data frame again, it had all of the columns, not just the one that I selected?</p>
+<p>The answer is that we never saved <code>midwest</code> back to a variable! By default, R will show the output, but not modify the data frame unless I want it to. Let’s look at a couple ways we can do that:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="ot">&lt;-</span> midwest <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(county)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>midwest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 437 × 1
+   county   
+   &lt;chr&gt;    
+ 1 ADAMS    
+ 2 ALEXANDER
+ 3 BOND     
+ 4 BOONE    
+ 5 BROWN    
+ 6 BUREAU   
+ 7 CALHOUN  
+ 8 CARROLL  
+ 9 CASS     
+10 CHAMPAIGN
+# ℹ 427 more rows</code></pre>
+</div>
+</div>
+<p>The first option is to simply overwrite the variable. This is useful if you’re never going to need those data in their original form - it saves you some confusion in that case.</p>
+<p>However, what if later on I decide I did need those data after all? Perhaps I wanted population density data. I go to try and find this variable in the <code>midwest</code> data set, because that’s where I know it’s stored…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(popdensity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `select()`:
+! Can't select columns that don't exist.
+✖ Column `popdensity` doesn't exist.</code></pre>
+</div>
+</div>
+<p>…but the variable is gone! This is a common point of confusion for students in STA 199, so it’s important to understand what you’re doing whenever you modify your data in-place like this - you’re overwriting the existing data.</p>
+<p>We have a couple of options here. If we were loading these data from a .csv file, we could go back to the top of the document. Or, we could do something more effective: Go to Environment, click the little broom icon, and select “yes”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>midwest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 437 × 28
+     PID county  state  area poptotal popdensity popwhite popblack popamerindian
+   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+ 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98
+ 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19
+ 3   563 BOND    IL    0.022    14991       681.    14477      429            35
+ 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46
+ 5   565 BROWN   IL    0.018     5836       324.     5264      547            14
+ 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65
+ 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8
+ 8   568 CARROLL IL    0.027    16805       622.    16519      111            30
+ 9   569 CASS    IL    0.024    13437       560.    13384       16             8
+10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331
+# ℹ 427 more rows
+# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>Now the second option: let’s try making the modification a little more carefully: saving the data to a new variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>midwest_counties <span class="ot">&lt;-</span> midwest <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(county)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>midwest_counties</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 437 × 1
+   county   
+   &lt;chr&gt;    
+ 1 ADAMS    
+ 2 ALEXANDER
+ 3 BOND     
+ 4 BOONE    
+ 5 BROWN    
+ 6 BUREAU   
+ 7 CALHOUN  
+ 8 CARROLL  
+ 9 CASS     
+10 CHAMPAIGN
+# ℹ 427 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>midwest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 437 × 28
+     PID county  state  area poptotal popdensity popwhite popblack popamerindian
+   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+ 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98
+ 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19
+ 3   563 BOND    IL    0.022    14991       681.    14477      429            35
+ 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46
+ 5   565 BROWN   IL    0.018     5836       324.     5264      547            14
+ 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65
+ 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8
+ 8   568 CARROLL IL    0.027    16805       622.    16519      111            30
+ 9   569 CASS    IL    0.024    13437       560.    13384       16             8
+10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331
+# ℹ 427 more rows
+# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>Now we have two data frames: the new data frame <code>midwest_counties</code>, which contains our modifications from the data pipeline above, and the original data frame <code>midwest</code>, which has not been changed. Both of these are useful operations, and you will undoubtedly use both this semester! However, keep this distinction in mind when you’re mutating your data - don’t remove anything you think you’ll need later.</p>
+</section>
+</section>
+<section id="variable-examples" class="level2">
+<h2 class="anchored" data-anchor-id="variable-examples">Variable Examples</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> midwest</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 437 × 28
+     PID county  state  area poptotal popdensity popwhite popblack popamerindian
+   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+ 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98
+ 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19
+ 3   563 BOND    IL    0.022    14991       681.    14477      429            35
+ 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46
+ 5   565 BROWN   IL    0.018     5836       324.     5264      547            14
+ 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65
+ 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8
+ 8   568 CARROLL IL    0.027    16805       622.    16519      111            30
+ 9   569 CASS    IL    0.024    13437       560.    13384       16             8
+10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331
+# ℹ 427 more rows
+# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="data-types" class="level1">
+<h1>Data Types</h1>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<p>Every column in a data frame will have a particular data type - sort of a way that R recognizes, classifies, and interacts with the data. Let’s look at an example, using the convenient <code>glimpse</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(midwest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 437
+Columns: 28
+$ PID                  &lt;int&gt; 561, 562, 563, 564, 565, 566, 567, 568, 569, 570,…
+$ county               &lt;chr&gt; "ADAMS", "ALEXANDER", "BOND", "BOONE", "BROWN", "…
+$ state                &lt;chr&gt; "IL", "IL", "IL", "IL", "IL", "IL", "IL", "IL", "…
+$ area                 &lt;dbl&gt; 0.052, 0.014, 0.022, 0.017, 0.018, 0.050, 0.017, …
+$ poptotal             &lt;int&gt; 66090, 10626, 14991, 30806, 5836, 35688, 5322, 16…
+$ popdensity           &lt;dbl&gt; 1270.9615, 759.0000, 681.4091, 1812.1176, 324.222…
+$ popwhite             &lt;int&gt; 63917, 7054, 14477, 29344, 5264, 35157, 5298, 165…
+$ popblack             &lt;int&gt; 1702, 3496, 429, 127, 547, 50, 1, 111, 16, 16559,…
+$ popamerindian        &lt;int&gt; 98, 19, 35, 46, 14, 65, 8, 30, 8, 331, 51, 26, 17…
+$ popasian             &lt;int&gt; 249, 48, 16, 150, 5, 195, 15, 61, 23, 8033, 89, 3…
+$ popother             &lt;int&gt; 124, 9, 34, 1139, 6, 221, 0, 84, 6, 1596, 20, 7, …
+$ percwhite            &lt;dbl&gt; 96.71206, 66.38434, 96.57128, 95.25417, 90.19877,…
+$ percblack            &lt;dbl&gt; 2.57527614, 32.90043290, 2.86171703, 0.41225735, …
+$ percamerindan        &lt;dbl&gt; 0.14828264, 0.17880670, 0.23347342, 0.14932156, 0…
+$ percasian            &lt;dbl&gt; 0.37675897, 0.45172219, 0.10673071, 0.48691813, 0…
+$ percother            &lt;dbl&gt; 0.18762294, 0.08469791, 0.22680275, 3.69733169, 0…
+$ popadults            &lt;int&gt; 43298, 6724, 9669, 19272, 3979, 23444, 3583, 1132…
+$ perchsd              &lt;dbl&gt; 75.10740, 59.72635, 69.33499, 75.47219, 68.86152,…
+$ percollege           &lt;dbl&gt; 19.63139, 11.24331, 17.03382, 17.27895, 14.47600,…
+$ percprof             &lt;dbl&gt; 4.355859, 2.870315, 4.488572, 4.197800, 3.367680,…
+$ poppovertyknown      &lt;int&gt; 63628, 10529, 14235, 30337, 4815, 35107, 5241, 16…
+$ percpovertyknown     &lt;dbl&gt; 96.27478, 99.08714, 94.95697, 98.47757, 82.50514,…
+$ percbelowpoverty     &lt;dbl&gt; 13.151443, 32.244278, 12.068844, 7.209019, 13.520…
+$ percchildbelowpovert &lt;dbl&gt; 18.011717, 45.826514, 14.036061, 11.179536, 13.02…
+$ percadultpoverty     &lt;dbl&gt; 11.009776, 27.385647, 10.852090, 5.536013, 11.143…
+$ percelderlypoverty   &lt;dbl&gt; 12.443812, 25.228976, 12.697410, 6.217047, 19.200…
+$ inmetro              &lt;int&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0…
+$ category             &lt;chr&gt; "AAR", "LHR", "AAR", "ALU", "AAR", "AAR", "LAR", …</code></pre>
+</div>
+</div>
+<p>Next to the data, we can see various designations - <code>&lt;int&gt;</code>, <code>&lt;dbl&gt;</code>, <code>&lt;chr&gt;</code>, etc. These are <strong>data types</strong>. But what exactly is the difference?</p>
+<section id="doublenumeric" class="level3">
+<h3 class="anchored" data-anchor-id="doublenumeric">Double/Numeric</h3>
+<p>The <code>dbl</code> data type, which is the default implementation of the <code>numeric</code> class, stands for <strong>double</strong> - meaning “double-precision floating-point format”. It’s pretty clear that double is an easier word to remember! This allows you to store numbers with a lot of decimal points (but not infinite!). For example, let’s look at <span class="math inline">\(\pi\)</span>, which is built in as <code>pi</code> in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>pi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.141593</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(pi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+</div>
+<p>Here, we use the <code>class()</code> function to determine what data type R is using to store our variables. In this case, we can see that R stores <code>pi</code> as a default <code>numeric</code> variable, which is implemented as a double. In general, whenever you work with numbers, they will be doubles, and for purposes of STA 199 there is no issue with this.</p>
+</section>
+<section id="integer" class="level3">
+<h3 class="anchored" data-anchor-id="integer">Integer</h3>
+<p>The <code>int</code> data type means <strong>integer</strong> - as in, the mathematical concept of an integer. All data represented as integers will be whole numbers. This data type is not capable of storing decimal places, so if you try to do decimal operations with it, R will implicitly cast it to another data type. <strong>Implicitly</strong> means that it does this without us telling it to. Let’s take a look at a couple of examples:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+</div>
+<p>By default, R will treat all numbers as the <code>numeric</code> class. If you want to explicitly tell R that your number is an integer, follow the number with “L”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span>L</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+</div>
+<p>Now, let’s say we want to divide this number by 2:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> a <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+</div>
+<p>Since 3 is not divisible by 2, the output is a decimal. However, since we have performed a decimal operation, rather than trying to guess whether to round up or down, R simply implicitly casts it back to <code>numeric</code>.</p>
+</section>
+<section id="logicalboolean" class="level3">
+<h3 class="anchored" data-anchor-id="logicalboolean">Logical/Boolean</h3>
+<p>While there isn’t an example in this data frame, there is a data type called <strong>logical</strong> - which represents true/false.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+</div>
+<p>In R, you need to type out TRUE/FALSE in all caps for it to be recognized. Under the hood, R stores these values as “FALSE = 0” and “TRUE = 1”, which means that if you want to find the percentage of TRUE in your data, you can just take the average:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6666667</code></pre>
+</div>
+</div>
+</section>
+<section id="characterstring" class="level3">
+<h3 class="anchored" data-anchor-id="characterstring">Character/String</h3>
+<p>The <code>chr</code> data type represents all <strong>characters</strong> and <strong>strings</strong> in R. Unlike some languages, R does not differentiate between these. In general, strings are used to represent words and categorical data, for example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>place <span class="ot">&lt;-</span> <span class="st">"Durham, NC"</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(place)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+<p>However, there is an important point of caution here. Sometimes, when you load in a data frame, there will be columns that should be represented as numbers, but are accidentally represented as strings. If you’re not careful, this can have consequences. For example, consider the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span> <span class="sc">==</span> <span class="dv">00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="st">"0"</span> <span class="sc">==</span> <span class="st">"00"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+<p>In R, the numbers 0 and 00 represent the same thing! However, when they are strings, they do not. R treats numbers differently than it does strings, so it’s important to pay attention to which one you are actually implementing. You might also run into issues with some of your operations - for example, if you try to take the average of a column of strings, R has no idea what to do and will throw an error.</p>
+<p><strong>Note:</strong> pay attention to the usage of two equal signs here, rather than just one. Why did we do this? (More on this shortly.)</p>
+</section>
+</section>
+<section id="casting" class="level2">
+<h2 class="anchored" data-anchor-id="casting">Casting</h2>
+<p>So what is the solution to this problem? The answer is called <strong>casting</strong>, which means changing the data type. You do this using the <code>as.character()</code>, <code>as.numeric()</code>, and <code>as.logical()</code> commands. Let’s look at an example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="st">"00"</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "00"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(e)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">as.logical</span>(e)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">as.character</span>(e)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "FALSE"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(e) <span class="co"># What happened?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: NAs introduced by coercion</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>Be mindful with your casting - you can lose information along the way!</p>
+<p><strong>Note:</strong> <code>NA</code> is a specific type in R. It essentially means “nothing” or “this value has not been declared”. You cannot use == to check whether a value is <code>NA</code>. Instead, you must use <code>is.na()</code>.</p>
+</section>
+</section>
+<section id="boolean-operators" class="level1">
+<h1>Boolean Operators</h1>
+<p>So what <em>is</em> going on with the whole == thing, anyway? Well, == is one of four so-called <strong>Boolean</strong> or <strong>Logical Operators</strong> - a term we get from computer science. The term basically means “anything that relies on multiple statements.” Note that there is a difference between boolean operators and boolean (True/False) values - they are actually two entirely different things!</p>
+<section id="equals" class="level2">
+<h2 class="anchored" data-anchor-id="equals">Equals</h2>
+<p>The first boolean operator is “equals”. This is a place where it is easy to get confused. We use the single equals sign, =, to denote <em>assignment</em> - essentially, telling R “this thing takes this value.” We use the double equals sign, ==, to denote <em>comparison</em> - essentially, asking R “are these two values equal?” It is important to keep these two things distinct - if you want to check equality, or filter for a specific value, you always need to use the double equals sign!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="at">county =</span> <span class="st">"Cook"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `filter()`:
+! We detected a named input.
+ℹ This usually means that you've used `=` instead of `==`.
+ℹ Did you mean `county == "Cook"`?</code></pre>
+</div>
+</div>
+<p>Here’s an example of where a single equals sign is incorrect, and R returns an error. Fortunately, it has a very helpful suggestion in the error message! Let’s replace that with the double equals:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(county <span class="sc">==</span> <span class="st">"Cook"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 0 × 28
+# ℹ 28 variables: PID &lt;int&gt;, county &lt;chr&gt;, state &lt;chr&gt;, area &lt;dbl&gt;,
+#   poptotal &lt;int&gt;, popdensity &lt;dbl&gt;, popwhite &lt;int&gt;, popblack &lt;int&gt;,
+#   popamerindian &lt;int&gt;, popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+<p>Now there’s no error message, but we also didn’t return any values. Why did this happen? When I use ==, I am checking whether these two strings are <em>exactly</em> equivalent, and that includes being case sensitive. If I view the data in the data frame, I see that all of the county names are actually in all caps. I can fix the string in my example…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(county <span class="sc">==</span> <span class="st">"COOK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 28
+    PID county state  area poptotal popdensity popwhite popblack popamerindian
+  &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+1   576 COOK   IL    0.058  5105067     88018.  3204947  1317147         10289
+# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>…and finally find Chicago!</p>
+</section>
+<section id="and" class="level2">
+<h2 class="anchored" data-anchor-id="and">And</h2>
+<p>The second boolean operator is “and”. We use this when we want multiple conditions to be true. In R, to denote and, we use the single ampersand <code>&amp;</code> (in some other languages, you use a double ampersand). When R sees this, it checks both statements, and only returns TRUE if both statements are true. Let’s look at an example, again using <code>filter()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"IL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 102 × 28
+     PID county  state  area poptotal popdensity popwhite popblack popamerindian
+   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+ 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98
+ 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19
+ 3   563 BOND    IL    0.022    14991       681.    14477      429            35
+ 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46
+ 5   565 BROWN   IL    0.018     5836       324.     5264      547            14
+ 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65
+ 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8
+ 8   568 CARROLL IL    0.027    16805       622.    16519      111            30
+ 9   569 CASS    IL    0.024    13437       560.    13384       16             8
+10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331
+# ℹ 92 more rows
+# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>Using our == operator, we can find all of the counties in Illinois. Now, let’s find only the ones with a population density over 30,000:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"IL"</span> <span class="sc">&amp;</span> popdensity <span class="sc">&gt;=</span> <span class="dv">30000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 28
+    PID county  state  area poptotal popdensity popwhite popblack popamerindian
+  &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+1   576 COOK    IL    0.058  5105067     88018.  3204947  1317147         10289
+2   582 DU PAGE IL    0.02    781666     39083.   714905    15462           962
+# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>Now, the <code>filter()</code> statement is returning all of the rows from this data frame where BOTH the state is “IL” AND the population density is <span class="math inline">\(\geq\)</span> 30,000.</p>
+</section>
+<section id="or" class="level2">
+<h2 class="anchored" data-anchor-id="or">Or</h2>
+<p>The third boolean operator is “or”. We use this when we want at least one condition to be true. In R, to denote or, we use the vertical line <code>|</code> (again, in some other languages, you use a double line). When R sees this, it checks both statements, and returns TRUE if either (or both) of the statements are true. Let’s go back to our example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"IL"</span> <span class="sc">|</span> popdensity <span class="sc">&gt;=</span> <span class="dv">30000</span>) <span class="sc">|&gt;</span></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(popdensity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 107 × 28
+     PID county  state  area poptotal popdensity popwhite popblack popamerindian
+   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+ 1   576 COOK    IL    0.058  5105067     88018.  3204947  1317147         10289
+ 2  3021 MILWAU… WI    0.015   959275     63952.   718918   195470          6994
+ 3  1278 WAYNE   MI    0.035  2111687     60334.  1212007   849109          8048
+ 4  2026 CUYAHO… OH    0.026  1412140     54313.  1025756   350185          2533
+ 5   582 DU PAGE IL    0.02    781666     39083.   714905    15462           962
+ 6   711 MARION  IN    0.023   797159     34659.   615039   169654          1698
+ 7  2039 HAMILT… OH    0.025   866228     34649.   672972   181145          1204
+ 8   609 LAKE    IL    0.028   516418     18444.   450666    34771          1198
+ 9   605 KANE    IL    0.029   317471     10947.   269675    19006           620
+10   661 Winneb… IL    0.03    252913      8430.   222439    23256           651
+# ℹ 97 more rows
+# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>Now, R returns all of the rows that are in Illinois, as well as all of the rows that are not in Illinois, but have a population density of at least 30,000.</p>
+<p><strong>Note:</strong> Keep in mind that <code>|</code> is not exclusive. That means that <code>|</code> will return true if only one condition is true, but it will also return true if both conditions are true. If you want exactly one condition to be true, look up the operator XOR.</p>
+</section>
+<section id="not" class="level2">
+<h2 class="anchored" data-anchor-id="not">Not</h2>
+<p>The fourth boolean operator is “not”. We use this when we want to exclude certain values from the data or prevent something from happening. In R, to denote not, we use the exclamation mark <code>!</code>. Specifically, you place the <code>!</code>, also known as a <strong>bang sign</strong>, in front of the statement that you want to be false. The most frequent use of this is to say “not equals”, which is denoted <code>!=</code> (note that it is only one equals sign now, not two!) Let’s look at an example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">!=</span> <span class="st">"IL"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(popdensity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 335 × 28
+     PID county  state  area poptotal popdensity popwhite popblack popamerindian
+   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+ 1  3021 MILWAU… WI    0.015   959275     63952.   718918   195470          6994
+ 2  1278 WAYNE   MI    0.035  2111687     60334.  1212007   849109          8048
+ 3  2026 CUYAHO… OH    0.026  1412140     54313.  1025756   350185          2533
+ 4   711 MARION  IN    0.023   797159     34659.   615039   169654          1698
+ 5  2039 HAMILT… OH    0.025   866228     34649.   672972   181145          1204
+ 6  2033 FRANKL… OH    0.034   961437     28278.   783714   152840          2056
+ 7  1246 MACOMB  MI    0.028   717400     25621.   693686    10400          2639
+ 8  2056 LUCAS   OH    0.021   462361     22017.   380155    68456          1164
+ 9  2085 SUMMIT  OH    0.024   514990     21458.   446902    61185          1065
+10  2065 MONTGO… OH    0.027   573809     21252.   463551   101817          1065
+# ℹ 325 more rows
+# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>In these data, all rows from Illinois have been removed. You can check this by commenting out the <code>filter</code> line, and observing the difference, or just noting that Cook County, IL (home of Chicago, the densest city in the midwest) is absent!</p>
+</section>
+<section id="combining-boolean-operators" class="level2">
+<h2 class="anchored" data-anchor-id="combining-boolean-operators">Combining Boolean Operators</h2>
+<p>You can also combine multiple boolean operators in more complex logical statements. We will not look at any examples here, because they can get very confusing, very quickly (and are generally unnecessary for this course). However, if you do want to combine boolean operators, here are some things to keep in mind:</p>
+<ul>
+<li>Parentheses: Just like in math, any statements that you put in parentheses will execute first. If I say “A and B or C”, it’s unclear exactly what I mean. If I would accept either (A and B) or (A and C), I would write A &amp; (B | C), meaning I need at least one of B or C to be true. If I would accept either (A and B) or C, I would write (A &amp; B) | C, meaning I need either (A and B) or C to be true.</li>
+<li>Order of operations: Pay attention to the order in which your statements evaluate! If I write !(A &amp; B), that means I need at least one of A or B to be false. If I write !A &amp; !B, that means I need both A and B to be false. This can get confusing, so it’s best to write out your logic fully and work through a few examples by hand (or avoid layering these operators entirely).</li>
+</ul>
+</section>
+</section>
+<section id="functions" class="level1">
+<h1>Functions</h1>
+<section id="definition-1" class="level2">
+<h2 class="anchored" data-anchor-id="definition-1">Definition</h2>
+<p>What is a function? A function is, essentially, a block of code that does something (so that <em>you</em> don’t have to implement it!). A function will always have a name, followed by open and closed parentheses (). Some functions do not take arguments. However, if they do, these arguments will go within the parentheses. Once R sees an opening parenthesis, it will not execute the code until it sees a closing parenthesis. Beware - when you start layering functions, such as using <code>aes()</code> inside of <code>ggplot()</code>, you need to pay attention to what your parentheses are around and make sure that they all close!</p>
+</section>
+<section id="arguments" class="level2">
+<h2 class="anchored" data-anchor-id="arguments">Arguments</h2>
+<p>Arguments are the commands that you give to a function that tell it what to do. Most functions take at least one argument, and some can take arbitrarily many. Functions have a default order for (some of) their arguments. If you know this order, you do not have to explicitly name the arguments. If not, you must list them explicitly. Here are two examples:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Named Arguments</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> poptotal,</span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">y =</span> popdensity,</span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">color =</span> percwhite)) <span class="sc">+</span></span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="coding-principles-oh_files/figure-html/ggplot arguments-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unnamed Arguments</span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(midwest, <span class="fu">aes</span>(poptotal,</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>                    popdensity,</span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>                    percwhite)) <span class="sc">+</span></span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="coding-principles-oh_files/figure-html/ggplot arguments-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In ggplot, the first two arguments are always <code>data</code> and <code>mapping</code>, so it is common to drop these. However, in the second plot here, we lost our <code>fill</code> aesthetic. Why?</p>
+<p>When we look at the <code>aes()</code> documentation, we see that <code>x</code> is the first named argument and <code>y</code> is the second, but after that there are no named arguments. That means, while you can add more aesthetics, you must name them explicitly, since they do not appear by default.</p>
+<section id="pipe-operator" class="level3">
+<h3 class="anchored" data-anchor-id="pipe-operator">Pipe Operator</h3>
+<p>Many times in this class, you will see the symbol <code>|&gt;</code> used. This is known as the <strong>pipe operator</strong>, and it allows us to have a so-called “data pipeline”. This helps make code a lot more readable! Let’s take a look at why:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">arrange</span>(<span class="fu">mutate</span>(<span class="fu">select</span>(<span class="fu">filter</span>(midwest, state <span class="sc">==</span> <span class="st">"IL"</span>), county, state, area, poptotal, inmetro), <span class="at">inmetro =</span> <span class="fu">as.logical</span>(inmetro)), <span class="fu">desc</span>(poptotal)), <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+   county    state  area poptotal inmetro
+   &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt; &lt;lgl&gt;  
+ 1 COOK      IL    0.058  5105067 TRUE   
+ 2 DU PAGE   IL    0.02    781666 TRUE   
+ 3 LAKE      IL    0.028   516418 TRUE   
+ 4 WILL      IL    0.05    357313 TRUE   
+ 5 KANE      IL    0.029   317471 TRUE   
+ 6 ST CLAIR  IL    0.04    262852 TRUE   
+ 7 Winnebago IL    0.03    252913 TRUE   
+ 8 MADISON   IL    0.045   249238 TRUE   
+ 9 MCHENRY   IL    0.036   183241 TRUE   
+10 PEORIA    IL    0.038   182827 TRUE   </code></pre>
+</div>
+</div>
+<p>Technically, we can write our code in this manner! Strictly speaking, under the hood, the pipe operator is reconstructing your code into this format. However, this is nearly impossible to read (I’ve been coding in R for years, and I still ran into multiple errors trying to write this).</p>
+<p>With the pipe operator, we can skip this and execute each function on its own line. By default, the pipe operator “pipes” your data into the first argument of a function - which, in the tidyverse, is almost always the “data” argument. This lets us write our data in a much neater pipeline, where you can see step-by-step what is happening to the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span>   <span class="co"># Operate on the midwest data frame</span></span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"IL"</span>) <span class="sc">|&gt;</span>   <span class="co"># Filter for only the counties in Illinois</span></span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(county, state, area, poptotal, inmetro) <span class="sc">|&gt;</span>   <span class="co"># Select only these five columns, and drop all others</span></span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">inmetro =</span> <span class="fu">as.logical</span>(inmetro)) <span class="sc">|&gt;</span>   <span class="co"># Cast inmetro to a logical type</span></span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(poptotal)) <span class="sc">|&gt;</span>   <span class="co"># Arrange the data frame by poptotal in descending order</span></span>
+<span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)   <span class="co"># Select the top 10 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+   county    state  area poptotal inmetro
+   &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt; &lt;lgl&gt;  
+ 1 COOK      IL    0.058  5105067 TRUE   
+ 2 DU PAGE   IL    0.02    781666 TRUE   
+ 3 LAKE      IL    0.028   516418 TRUE   
+ 4 WILL      IL    0.05    357313 TRUE   
+ 5 KANE      IL    0.029   317471 TRUE   
+ 6 ST CLAIR  IL    0.04    262852 TRUE   
+ 7 Winnebago IL    0.03    252913 TRUE   
+ 8 MADISON   IL    0.045   249238 TRUE   
+ 9 MCHENRY   IL    0.036   183241 TRUE   
+10 PEORIA    IL    0.038   182827 TRUE   </code></pre>
+</div>
+</div>
+<p>Much better, right? Remember, whenever you’re using the pipe operator (or the +, in <code>ggplot</code>, which is different!), you should start a new line of code. As long as you have a pipe operator, R is expecting another function, so it won’t execute only part of your code.</p>
+<p><strong>Note:</strong> In this class, we focus on the base R pipe, which is denoted by <code>|&gt;</code>. However, when you’re debugging on the internet, you may come across the symbol <code>%&gt;%</code>, which is the <code>magrittr</code> pipe. There are some technical differences in these that generally go beyond the scope of this class, but they essentially serve the same purpose. Don’t be scared by the <code>magrittr</code> pipe when you’re doing your debugging!</p>
+</section>
+</section>
+</section>
+<section id="libraries" class="level1">
+<h1>Libraries</h1>
+<section id="definition-2" class="level2">
+<h2 class="anchored" data-anchor-id="definition-2">Definition</h2>
+<p>Every time we start programming in this class, we run <code>library(tidyverse)</code>. Why do we do this?</p>
+<p>Libraries are collections of functions, and running them means that we are loading those functions into our current R session. If you try to open up a fresh R session and run <code>ggplot()</code> immediately, you will get an error, because that function is not found. However, with the library, you can load in everything that you need, all at once. The tidyverse is especially cool, because it is actually a collection of libraries - libraryception!</p>
+</section>
+<section id="environment" class="level2">
+<h2 class="anchored" data-anchor-id="environment">Environment</h2>
+<p>Your environment in R is basically the current instance of your program. When you run a library, it is part of your environment until you restart R, meaning you can call any of its functions at any time. When you create a variable, it is part of your environment until you restart R, meaning you can reference those variables at any time.</p>
+<p>When you use the containers, they do not regularly restart R. This can be a problem sometimes, when old code gets tangled up with new code! It is my personal recommendation that you (at a minimum) restart R and clear your environment every time you start a new project (AE, lab, etc). You can restart R by going to Session -&gt; Restart R, and clear your environment by going to the environment pane and clicking the broom icon.</p>
+</section>
+<section id="rendering-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="rendering-quarto">Rendering Quarto</h2>
+<p>When you click the “Render” button for your .qmd file, what happens? R executes a program, called a “compiler”, that runs your entire .qmd file in a new environment. In other words, if you have loaded a library, or edited a variable, or done any number of things in the console (or even later in the .qmd file) without saving them in the .qmd file, and then you try to render, you will get an error because that function/variable/etc has not been defined in the rendering environment. This forces you to write reproducible code, and it’s the first thing to think about when you run into errors while rendering!</p>
+</section>
+</section>
+<section id="documentation-errors" class="level1">
+<h1>Documentation + Errors</h1>
+<section id="documentation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
+<p>Unless you have a function and its usage entirely memorized, you are going to be reading documentation. Documentation is useful, but it is dense, and can be hard to parse. Let’s look at an example of how we can look through documentation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>?if_else</span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a>?geom_point</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="errors" class="level2">
+<h2 class="anchored" data-anchor-id="errors">Errors</h2>
+<p>Unless you are the Roman God of Programming (and even then, I’m not too sure), you are going to encounter errors in your programming. These are completely natural, and nothing to be ashamed of - sometimes I write partial code, just to see where it will catch errors. However, some error messages are easier to understand than others. Let’s look through a couple of examples of common errors, and what I would do to interpret and fix them.</p>
+</section>
+<section id="example-1" class="level2">
+<h2 class="anchored" data-anchor-id="example-1">Example 1</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sumarize</span>(<span class="at">avg_pop_dens =</span> <span class="fu">mean</span>(popdensity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in sumarize(midwest, avg_pop_dens = mean(popdensity)): could not find function "sumarize"</code></pre>
+</div>
+</div>
+<details>
+<summary>
+What’s wrong with this code?
+</summary>
+<p>In this case, we just have a simple spelling error! It may seem trivial, but this will constitute at least half of the errors that you have. Make this the first thing you check - you will never meet a programmer who doesn’t have a story of the time they spent at least 30 minutes debugging a function, just to realize it was a typo all along.</p>
+</details>
+</section>
+<section id="example-2" class="level2">
+<h2 class="anchored" data-anchor-id="example-2">Example 2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(midwest, <span class="fu">aes</span>(<span class="at">x =</span> poptotal, <span class="at">y =</span> popdensity,)) <span class="sc">|&gt;</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">|&gt;</span></span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Total Population"</span>, <span class="at">y =</span> <span class="st">"Population Density"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `geom_point()`:
+! `mapping` must be created by `aes()`.
+ℹ Did you use `%&gt;%` or `|&gt;` instead of `+`?</code></pre>
+</div>
+</div>
+<details>
+<summary>
+What’s wrong with this code?
+</summary>
+<p>This one should be pretty obvious, since it’s a common enough error that R gives an extremely helpful error message. When you’re building a <code>ggplot</code> object, you use <code>+</code> rather than <code>|&gt;</code> to add additional lines!</p>
+<p>There’s a second error here, that R knew well enough to handle here, but which could become an issue in more complicated code chunks. Did anyone spot it?</p>
+</details>
+</section>
+<section id="example-3" class="level2">
+<h2 class="anchored" data-anchor-id="example-3">Example 3</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(midwest, <span class="fu">aes</span>(<span class="at">x =</span> state, <span class="at">y =</span> poptotal, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">unit_format</span>(<span class="at">unit =</span> <span class="st">"M"</span>, <span class="at">scale =</span> <span class="fl">1e-6</span>)) <span class="sc">+</span></span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"State"</span>,</span>
+<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Total Population</span><span class="sc">\n</span><span class="st">(Millions)"</span>,</span>
+<span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Total Population by State"</span>) <span class="sc">+</span></span>
+<span id="cb95-8"><a href="#cb95-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb95-9"><a href="#cb95-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb95-10"><a href="#cb95-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb95-11"><a href="#cb95-11" aria-hidden="true" tabindex="-1"></a>  viridis<span class="sc">::</span><span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in loadNamespace(x): there is no package called 'viridis'</code></pre>
+</div>
+</div>
+<p>There’s a lot going on here, so it might not be obvious at first where the issue is! The error has something to do with the function <code>stat_count()</code>, but that’s not a function we used (explicitly) anywhere in this code. This is why you should iterate on your code, running it intermittently, so that you can catch errors when they pop up.</p>
+<p>My first thought would be to run <code>rlang::last_trace()</code>, as suggested by the error message. This is sometimes helpful - it can reference certain functions and even lines of code, especially when you’re executing something more complex. Frequently, though, it’s too complicated to understand. In this case, I would certainly say I can’t make any sense of that.</p>
+<p>My next thought is to google the error message. It can be a little tricky to know what to google from the error message. You want to look for anything that seems general enough that other people might have asked, but specific enough that it will apply to your situation. Let’s go line by line:</p>
+<ul>
+<li>“Error in <code>geom_bar()</code>”: Probably too general to bother googling. There are a lot of possible errors with <code>geom_bar()</code>, and it would take too long to look through them all to get to your specific problem!</li>
+<li>“Problem while computing stat.”: This is more helpful, because it gives a little more direction as to the source of the error, but it is still too general - what stat are we computing? What problem?</li>
+<li>“Error occured in the 1st layer”: This can be helpful for you, if you know the order of <code>ggplot</code> layers. However, it is probably not helpful to google, since people could have built their layers in a different order before encountering this error.</li>
+<li>“Caused by error in <code>setup_params()</code>”: Closer! This is getting more and more specific, and this might be good enough to google. However, it still doesn’t say what the error is, it just says that there was one.</li>
+<li>“<code>stat_count()</code> must only have an <code>x</code> or <code>y</code> aesthetic”: Bingo! This is the one we’re looking for, which tells us exactly what the issue is. Now, it may be possible to interpret manually, but let’s say you can’t. Here’s where we go now:</li>
+</ul>
+<p>I would copy-paste the entire final line into google. You don’t want to copy-paste the full error message, since that’s probably too specific, and you might not find any results. At the same time, you don’t want to copy-paste only a couple of words, since that might not be specific enough, and you could be stuck looking through a lot of links. If you google just that line, you are likely to find someone on stack exchange who has posted a question with this exact (or almost this exact) error message. You can also help your google out by throwing in some relevant key words:</p>
+<ul>
+<li>ggplot</li>
+<li>R</li>
+<li>error</li>
+</ul>
+<p>Take a couple minutes to google this, and see if you can figure out what’s wrong with the code! Then, remember to cite the source where you found this answer! In general, it’s okay to google your error messages for help, but not to use someone else’s solution without credit.</p>
+<details>
+<summary>
+What’s wrong with this code?
+</summary>
+<p>I looked at https://stackoverflow.com/questions/61068031/error-stat-count-can-only-have-an-x-or-y-aesthetic for my answer. There’s a few different suggestions on this page, all of which could be useful! This page definitely suggests to me that the issue with my plot is in the <code>geom_bar()</code> line - which makes sense, since this is layer 1 of the plot. While they have a couple simple fixes, here’s the actual error I wrote: <code>geom_bar()</code> is expecting only one variable. If you want two variables, like this, you should use <code>geom_col()</code> instead.</p>
+</details>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>I hope this has given you some tips and tricks for how to use R and how to fix your errors on your own! Remember, we are always willing to answer questions, and the more you write code, the more you’ll understand it. Coding is all about attention to detail: the machine does <em>exactly</em> what you tell it to do, whether or not that’s what you actually wanted. Try to break things, to find out what you can and can’t do, and remember - we were all beginner programmers at one point!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/sta199-f24\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2024, Mine Çetinkaya-Rundel</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/coding-principles-oh.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
