@@ -16,12 +16,14 @@ library(tidyverse)
 
 ```{r}
 #| label: library for github
+#| echo: FALSE
 #| warning: FALSE
 #| message: FALSE
-#| echo: FALSE
 
-install.packages("viridis")
-library(viridis)
+if (!requireNamespace("viridis", quietly = TRUE)) {
+  suppressMessages(suppressWarnings(install.packages("viridis")))
+}
+suppressMessages(suppressWarnings(library(viridis)))
 ```
 
 
