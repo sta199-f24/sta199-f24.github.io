@@ -12,8 +12,11 @@ format:
     toc: false
   live-html:
     code-link: true
+    webr:
+      cell-options:
+        autorun: true
 engine: knitr
-highlight-style: a11y
+highlight-style: a11y-light
 execute:
   echo: true
   warning: true

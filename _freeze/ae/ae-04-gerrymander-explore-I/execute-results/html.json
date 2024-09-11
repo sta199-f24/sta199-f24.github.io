@@ -1,0 +1,17 @@
+{
+  "hash": "c7a1058a1116aeecd1ab3a7490f3eaae",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"AE 04: Gerrymandering + data exploration I\"\n---\n\n\n\n## Getting started\n\n### Packages\n\nWe'll use the **tidyverse** package for this analysis.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(usdata)\n```\n:::\n\n\n\n### Data\n\nThe data are availale in the **usdata** package.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nglimpse(gerrymander)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\nRows: 435\nColumns: 12\n$ district   <chr> \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  <chr> \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name <chr> \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    <chr> \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  <dbl> 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    <dbl> 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      <dbl> 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      <chr> \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    <chr> \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      <dbl> 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      <fct> mid, high, high, high, high, high, high, high, mid, mid, mi…\n```\n\n\n:::\n:::\n\n\n\n## Districts at the tails\n\nMake side-by-side box plots of percent of vote received by Trump in 2016 Presidential Election by prevalence of gerrymandering.\nIdentify any Congressional Districts that are potential outliers.\nAre they different from the rest of the Congressional Districts due to high support or low support for Trump in the 2016 Presidential Election?\nWhich state are they in?\nWhich city are they in?\n\nAdd narrative here.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\n## Flips\n\nIs a Congressional District more likely to have high prevalance of gerrymandering if a Democrat was able to flip the seat in the 2018 election?\nSupport your answer with a visualization as well as summary statistics.\n**Hint:** Calculate the conditional distribution of prevalance of gerrymandering based on whether a Democrat was able to flip the seat in the 2018 election.\n\nAdd narrative here.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\n## Submit\n\n**Render, commit, and push:**\n\n1.  Render your Quarto document.\n\n2.  Go to the Git pane and check the box next to each file listed, i.e., stage your changes.\n    Commit your staged changes using a simple and informative message.\n\n3.  Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.\n\n4.  Go to your repo on GitHub and confirm that you can see the updated files.\n    Once your updated files are in your repo on GitHub, you're good to go!\n",
+    "supporting": [
+      "ae-04-gerrymander-explore-I_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

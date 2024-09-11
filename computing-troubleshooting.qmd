@@ -12,9 +12,18 @@ Under this heading you'll find an entry called *Container Manager (CMGR Coursewo
     Note: We don't anticipate this to happen regularly, the systems are Operational a huge majority of the time!
 
 -   If the status shows `Operational`, this means the system is expected to be working.
-    Check your internet connection, if need be, restart your computer to ensure a fresh new connection.
-    If your issue persists, post on the course forum with details on what you've tried and the errors you see (including verbatim errors and/or screenshots).
+    If you're still having trouble, follow the steps in the order given below:
 
-Another approach is to request a restart of your container.
-To do so, select your container as you usually do and then, instead of Login, click on Request Restart.
-Read the warning in the next page, and then click once more to restart your container.
+    -   Restart your browser.
+
+    -   Make sure there are no updates pending for your browser.
+        If there are, install those updates and restart your browser again.
+
+    -   Request a restart of your container – To do so, select your container as you usually do and then, instead of Login, click on Request Restart.
+        Read the warning in the next page, and then click once more to restart your container.
+
+    -   Clear your browser cache and restart your browser again.
+
+    -   Restart your computer to ensure a fresh new connection.
+
+    -   If your issue persists, post on the course forum with details on what you've tried and the errors you see (including verbatim errors and/or screenshots).

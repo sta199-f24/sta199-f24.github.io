@@ -1,10 +1,9 @@
 ---
-title: AE 00
-subtitle: UN Votes
+title: "AE 00: UN Votes"
 format: 
   live-html:
-    highlight-style: a11y
     code-link: true
+    mainfont: Atkinson Hyperlegible
 engine: knitr
 webr:
   packages:

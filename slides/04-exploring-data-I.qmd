@@ -1,0 +1,530 @@
+---
+title: "Exploring data I"
+subtitle: "Lecture 4"
+date: "2024-09-10"
+format: 
+  live-revealjs: 
+    output-file: 04-exploring-data-I-slides.html
+    webr:
+      cell-options:
+        autorun: false
+webr:
+  packages:
+    - tidyverse
+    - ggthemes
+    - usdata
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+<!-- end: webr fodder -->
+
+<!-- begin: ae definition -->
+
+```{r}
+#| include: false
+todays_ae <- "ae-04-gerrymander-explore-I"
+```
+
+<!-- end: ae definition -->
+
+# Warm-up
+
+## While you wait... {.smaller}
+
+Prepare for today's application exercise: **`{r} todays_ae`**
+
+::: appex
+-   Go to your `ae` project in RStudio.
+
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   Click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Wait till the you're prompted to work on the application exercise during class before editing the file.
+:::
+
+## Announcements {.smaller}
+
+::: incremental
+-   **Weekend office hours** in Old Chem – bring your Duke Card, you'll need to swipe/tap in to get in
+
+-   **AEs are due by the end of class** (precisely, by 2 pm) – done = at least one commit + push
+
+-   **Coding principles bonus office hour**, RSVP at <https://forms.gle/mufcsHnPXejZbkdT8> – Thursday, 9/12 at 7:30 pm at Old Chem 116
+
+-   **RStudio visual editor acting up?**
+
+    -   Using Chrome – make sure to update!
+
+    -   Using another browser or update doesn't solve the problem, come by my office hours to diagnose
+
+-   New resource: **Code along videos**
+
+-   Any **questions about lab** before we get started?
+:::
+
+# Exploratory data analysis
+
+## Packages {.smaller}
+
+-   For the data: [**usdata**](https://openintrostat.github.io/usdata/)
+
+```{r}
+library(usdata)
+```
+
+-   For the analysis: [**tidyverse**](https://www.tidyverse.org/packages/) and [**ggthemes**](https://jrnold.github.io/ggthemes/)
+
+```{r}
+library(tidyverse)
+library(ggthemes)
+```
+
+## Data: `gerrymander` {.smaller}
+
+```{r}
+gerrymander
+```
+
+## What is gerrymandering?
+
+```{=html}
+<iframe width="900" height="500" src="https://www.washingtonpost.com/business/wonkblog/gerrymandering-explained/2016/04/21/e447f5c2-07fe-11e6-bfed-ef65dff5970d_video.html" title="What is gerrymandering?"></iframe>
+```
+## Data: `gerrymander` {.scrollable .smaller}
+
+::: question
+What is a good first function to use to get to know a dataset?
+:::
+
+```{webr}
+
+```
+
+## Data: `gerrymander` {.smaller}
+
+-   Rows: Congressional districts
+
+-   Columns:
+
+    -   Congressional district and state
+
+    -   2016 election: winning party, % for Clinton, % for Trump, whether a Democrat won the House election, name of election winner
+
+    -   2018 election: winning party, whether a Democrat won the 2018 House election
+
+    -   Whether a Democrat flipped the seat in the 2018 election
+
+    -   Prevalence of gerrymandering: low, mid, and high
+
+## Variable types
+
+::: columns
+::: column
+::: xsmall
+| Variable     | Type                               |
+|--------------|------------------------------------|
+| `district`   | [categorical, ID]{.fragment}       |
+| `last_name`  | [categorical, ID]{.fragment}       |
+| `first_name` | [categorical, ID]{.fragment}       |
+| `party16`    | [categorical]{.fragment}           |
+| `clinton16`  | [numerical, continuous]{.fragment} |
+| `trump16`    | [numerical, continuous]{.fragment} |
+| `dem16`      | [categorical]{.fragment}           |
+| `state`      | [categorical]{.fragment}           |
+| `party18`    | [categorical]{.fragment}           |
+| `dem18`      | [categorical]{.fragment}           |
+| `flip18`     | [categorical]{.fragment}           |
+| `gerry`      | [categorical, ordinal]{.fragment}  |
+:::
+:::
+
+::: column
+```{webr}
+gerrymander |>
+  select(___)
+```
+:::
+:::
+
+# Univariate analysis
+
+## Univariate analysis
+
+Analyzing a single variable:
+
+::: incremental
+-   Numerical: histogram, box plot, density plot, etc.
+
+-   Categorical: bar plot, pie chart, etc.
+:::
+
+## Histogram - Step 1 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander)
+```
+
+## Histogram - Step 2 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander, aes(x = trump16))
+```
+
+## Histogram - Step 3 {.smaller .scrollable}
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_histogram()
+```
+
+## Histogram - Step 4 {.smaller .scrollable}
+
+```{webr}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_histogram(binwidth = ___)
+```
+
+## Histogram - Step 5 {.smaller .scrollable}
+
+```{r}
+#| code-line-numbers: "3-8"
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_histogram(binwidth = 5) +
+  labs(
+    title = "Percent of vote received by Trump in 2016 Presidential Election",
+    subtitle = "From each Congressional District",
+    x = "Percent of vote",
+    y = "Count"
+  )
+```
+
+## Box plot - Step 1 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander)
+```
+
+## Box plot - Step 2 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander, aes(x = trump16))
+```
+
+## Box plot - Step 3 {.smaller .scrollable}
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_boxplot()
+```
+
+## Box plot - Alternative Step 2 + 3 {.smaller .scrollable}
+
+```{webr}
+ggplot(gerrymander, aes(___ = trump16)) +
+  geom_boxplot()
+```
+
+## Box plot - Step 4 {.smaller .scrollable}
+
+```{r}
+#| code-line-numbers: "3-8"
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_boxplot() +
+  labs(
+    title = "Percent of vote received by Trump in 2016 Presidential Election",
+    subtitle = "From each Congressional District",
+    x = "Percent of vote",
+    y = NULL
+  )
+```
+
+## Density plot - Step 1 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander)
+```
+
+## Density plot - Step 2 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander, aes(x = trump16))
+```
+
+## Density plot - Step 3 {.smaller .scrollable}
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density()
+```
+
+## Density plot - Step 4 {.smaller .scrollable}
+
+```{webr}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = ___)
+```
+
+## Density plot - Step 5 {.smaller .scrollable}
+
+```{webr}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = "firebrick", fill = ___)
+```
+
+## Density plot - Step 6 {.smaller .scrollable}
+
+```{webr}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = "firebrick", fill = "firebrick1", alpha = ___)
+```
+
+## Density plot - Step 7 {.smaller .scrollable}
+
+```{webr}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = "firebrick", fill = "firebrick1", alpha = 0.5, linewidth = ___)
+```
+
+## Density plot - Step 8 {.smaller .scrollable}
+
+```{r}
+#| code-line-numbers: "3-8"
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = "firebrick", fill = "firebrick1", alpha = 0.5, linewidth = 2) +
+  labs(
+    title = "Percent of vote received by Trump in 2016 Presidential Election",
+    subtitle = "From each Congressional District",
+    x = "Percent of vote",
+    y = "Density"
+  )
+```
+
+## Summary statistics
+
+```{webr}
+#| autorun: true
+gerrymander |>
+  summarize(
+    mean = mean(trump16),
+    median = median(trump16)
+  )
+```
+
+## Distribution of votes for Trump in the 2016 election {.smaller}
+
+::: question
+Describe the distribution of percent of vote received by Trump in 2016 Presidential Election from Congressional Districts.
+:::
+
+-   Shape: [The distribution of votes for Trump in the 2016 election from Congressional Districts is **unimodal and left-skewed**.]{.fragment}
+
+-   Center: [The percent of vote received by Trump in the 2016 Presidential Election from a **typical** Congressional Districts is 48.7%.]{.fragment}
+
+-   Spread: [In the **middle 50%** of Congressional Districts, 34.8% to 58.1% of voters voted for Trump in the 2016 Presidential Election.]{.fragment}
+
+-   Unusual observations: [-]{.fragment}
+
+# Bivariate analysis
+
+## Bivariate analysis
+
+Analyzing the relationship between two variables:
+
+::: incremental
+-   Numerical + numerical: scatterplot
+
+-   Numerical + categorical: side-by-side box plots, violin plots, etc.
+
+-   Categorical + categorical: stacked bar plots
+
+-   Using an aesthetic (e.g., fill, color, shape, etc.) or facets to represent the second variable in any plot
+:::
+
+## Side-by-side box plots
+
+```{r}
+#| code-line-numbers: "|2|3-6|4|5|8"
+#| output-location: column
+ggplot(
+  gerrymander, 
+  aes(
+    x = trump16, 
+    y = gerry
+    )
+  ) +
+  geom_boxplot()
+```
+
+## Summary statistics
+
+```{webr}
+gerrymander |>
+  # do the following for each level of gerry
+  summarize(
+    min = min(trump16),
+    q25 = quantile(trump16, 0.25),
+    median = median(trump16),
+    q75 = quantile(trump16, 0.75),
+    max = max(trump16),
+  )
+```
+
+## Density plots
+
+```{r}
+#| code-line-numbers: "|4|5|8"
+#| output-location: column
+ggplot(
+  gerrymander, 
+  aes(
+    x = trump16, 
+    color = gerry
+    )
+  ) +
+  geom_density()
+```
+
+## Filled density plots
+
+```{r}
+#| code-line-numbers: "6"
+#| output-location: column
+ggplot(
+  gerrymander, 
+  aes(
+    x = trump16, 
+    color = gerry,
+    fill = gerry
+    )
+  ) +
+  geom_density()
+```
+
+## Better filled density plots
+
+```{r}
+#| code-line-numbers: "5"
+ggplot(
+  gerrymander, 
+  aes(x = trump16, color = gerry, fill = gerry)
+  ) +
+  geom_density(alpha = 0.5)
+```
+
+## Better colors
+
+```{r}
+#| code-line-numbers: "7-8"
+#| output-location: column
+ggplot(
+  gerrymander, 
+  aes(x = trump16, color = gerry, fill = gerry)
+  ) +
+  geom_density(alpha = 0.5) +
+  scale_color_colorblind() +
+  scale_fill_colorblind()
+```
+
+## Violin plots {.scrollable}
+
+```{r}
+#| code-line-numbers: "5"
+ggplot(
+  gerrymander, 
+  aes(x = trump16, y = gerry, color = gerry)
+  ) +
+  geom_violin() +
+  scale_color_colorblind() +
+  scale_fill_colorblind()
+```
+
+## Multiple geoms {.scrollable}
+
+```{r}
+#| code-line-numbers: "6"
+ggplot(
+  gerrymander, 
+  aes(x = trump16, y = gerry, color = gerry)
+  ) +
+  geom_violin() +
+  geom_point() +
+  scale_color_colorblind() +
+  scale_fill_colorblind()
+```
+
+## Multiple geoms {.scrollable}
+
+```{r}
+#| code-line-numbers: "6"
+ggplot(
+  gerrymander, 
+  aes(x = trump16, y = gerry, color = gerry)
+  ) +
+  geom_violin() +
+  geom_jitter() +
+  scale_color_colorblind() +
+  scale_fill_colorblind()
+```
+
+## Remove legend {.scrollable}
+
+```{r}
+#| code-line-numbers: "9"
+ggplot(
+  gerrymander, 
+  aes(x = trump16, y = gerry, color = gerry)
+  ) +
+  geom_violin() +
+  geom_jitter() +
+  scale_color_colorblind() +
+  scale_fill_colorblind() +
+  theme(legend.position = "none")
+```
+
+# Multivariate analysis
+
+## Multivariate analysis {.smaller}
+
+Analyzing the relationship between multiple variables:
+
+::: incremental
+-   In general, one variable is identified as the **outcome** of interest
+
+-   The remaining variables are **predictors** or **explanatory variables**
+
+-   Plots for exploring multivariate relationships are the same as those for bivariate relationships, but **conditional** on one or more variables
+
+    -   Conditioning can be done via faceting or aesthetic mappings (e.g., scatterplot of `y` vs. `x1`, colored by `x2`, faceted by `x3`)
+
+-   Summary statistics for exploring multivariate relationships are the same as those for bivariate relationships, but **conditional** on one or more variables
+
+    -   Conditioning can be done via grouping (e.g., correlation between `y` and `x1`, grouped by levels of `x2` and `x3`)
+:::
+
+# Application exercise
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits by the end of class.
+:::

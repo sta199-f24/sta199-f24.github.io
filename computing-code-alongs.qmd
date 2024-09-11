@@ -1,0 +1,43 @@
+---
+title: "Code alongs"
+---
+
+The following videos feature "code alongs" as an additional resource for getting coding practice.
+
+## Data visualization and transformation
+
+### UN Votes
+
+First look at R amd RStudio.
+
+```{=html}
+<iframe height="360" width="640" src="https://warpwire.duke.edu/w/22sIAA/" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
+```
+### First look at Palmer Penguins
+
+First look at data science with the tidyverse.
+
+```{=html}
+<iframe height="360" width="640" src="https://warpwire.duke.edu/w/82sIAA/" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
+```
+### Flights and pipes
+
+Data transformation
+
+```{=html}
+<iframe height="360" width="640" src="https://warpwire.duke.edu/w/8WsIAA/" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
+```
+### Starwars characters
+
+Data visualization
+
+```{=html}
+<iframe height="360" width="640" src="https://warpwire.duke.edu/w/92sIAA/" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
+```
+### Diving deeper with Palmer Penguins
+
+Data visualization and transformation
+
+```{=html}
+<iframe height="360" width="640" src="https://warpwire.duke.edu/w/72sIAA/" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
+```

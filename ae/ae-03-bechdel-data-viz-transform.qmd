@@ -1,0 +1,129 @@
+---
+title: "AE 03: Bechdel + data visualization and transformation"
+---
+
+In this mini-analysis, we'll continue our exploration of the `bechdel` dataset, which contains information on whether the movies in the data pass the [Bechdel test](https://en.wikipedia.org/wiki/Bechdel_test) (a measure of the representation of women in fiction).
+
+## Getting started
+
+### Packages
+
+We'll use the **tidyverse** package for this analysis.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+```
+
+### Data
+
+The data are stored as a CSV (comma-separated values) file in your repository's `data` folder.
+Let's read it from there and save it as an object called `bechdel`.
+
+```{r}
+#| label: read-data
+#| message: false
+bechdel <- read_csv("data/bechdel.csv")
+```
+
+### Get to know the data
+
+We can use the `glimpse()` function to get an overview (or "glimpse") of the data.
+
+```{r}
+#| label: glimpse
+# add code here
+```
+
+-   What does each observation (row) in the data set represent?
+
+Each observation represents a movie.
+
+-   How many observations (rows) are in the data set?
+
+There are `{r} nrow(bechdel)` movies in the dataset.
+
+-   How many variables (columns) are in the data set?
+
+There are `{r} ncol(bechdel)` columns in the dataset.
+
+## Bechdel test results
+
+### Visualizing data with **ggplot2**
+
+Create a bar plot of the `clean_test` variable:
+
+-   `ok` = passes test
+-   `dubious`
+-   `men` = women only talk about men
+-   `notalk` = women don't talk to each other
+-   `nowomen` = fewer than two women
+
+```{r}
+#| label: clean-test-bar
+# add code here
+```
+
+What types of movies are more common, those that pass or do not pass the test?
+
+Add your response here.
+
+### Render, commit, and push
+
+1.  Render your Quarto document.
+
+2.  Go to the Git pane and check the box next to each file listed, i.e., stage your changes.
+    Commit your staged changes using a simple and informative message.
+
+3.  Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.
+
+4.  Go to your repo on GitHub and confirm that you can see the updated files.
+    Once your updated files are in your repo on GitHub, you're good to go!
+
+## Return-on-investment
+
+Let's take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.
+
+### Step 1 - Your turn
+
+Create side-by-side box plots of `roi` by `clean_test` where the boxes are colored by `binary`.
+
+```{r}
+#| label: roi-zoom
+# add code here
+```
+
+### Step 2 - Demo
+
+What are the movies with *very* high returns on investment?
+
+```{r}
+#| label: roi-outliers
+# add code here
+```
+
+### Step 3 - Demo
+
+Expand on your plot from the previous step to zoom in on movies with `roi < ___` to get a better view of how the medians across the categories compare.
+
+```{r}
+#| label: roi-test-zoom
+# add code here
+```
+
+What does this plot say about return-on-investment on movies that pass the Bechdel test?
+
+Add your response here.
+
+### Render, commit, and push
+
+1.  Render your Quarto document.
+
+2.  Go to the Git pane and check the box next to each file listed, i.e., stage your changes.
+    Commit your staged changes using a simple and informative message.
+
+3.  Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.
+
+4.  Go to your repo on GitHub and confirm that you can see the updated files.
+    Once your updated files are in your repo on GitHub, you're good to go!

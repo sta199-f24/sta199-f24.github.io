@@ -15,6 +15,8 @@ website:
     creator: "@minebocek"
     image: "img/twitter-card.png"
 
+  draft-mode: unlinked
+
   sidebar:
     background: "#5D737E"
     logo: "img/logo.png"
@@ -76,10 +78,12 @@ website:
         contents:
           - href: computing-access.qmd
             text: Access
-          - href: computing-troubleshooting.qmd
-            text: Troubleshooting
+          - href: computing-code-alongs.qmd
+            text: Code alongs
           - href: computing-cheatsheets.qmd
             text: Cheatsheets
+          - href: computing-troubleshooting.qmd
+            text: Troubleshooting
       - section: "Project"
         contents:
           - href: project/description.qmd
@@ -107,14 +111,16 @@ website:
 
 format: 
   html:
-    mainfont: "Atkinson Hyperlegible"
+    mainfont: Atkinson Hyperlegible
+    highlight-style: a11y-light
 
 theme:
   light: [cosmo, style/sta199.scss]
   dark: [cosmo, style/sta199.scss, style/dark.scss]
 linkcolor: "#5D737E"
 toc: true
-code-copy: true
+code-copy: hover
+code-link: true
 code-overflow: wrap
 
 execute:

@@ -1,0 +1,217 @@
+---
+title: "Grammar of data transformation"
+subtitle: "Lecture 3"
+date: "2024-09-05"
+format: 
+  live-revealjs: 
+    output-file: 03-grammar-of-data-transformation-slides.html
+    webr:
+      cell-options:
+        autorun: false
+webr:
+  packages:
+    - tidyverse
+  resources:
+    - https://raw.githubusercontent.com/sta199-f24/sta199-f24.github.io/main/slides/data/bechdel.csv
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+
+bechdel <- read_csv("bechdel.csv")
+```
+
+<!-- end: webr fodder -->
+
+# Warm-up
+
+## Announcements {.smaller}
+
+-   AE 01 and AE 02 suggested answers posted on the course website.
+
+-   Ed Discussion posts:
+
+    -   Keep them coming!
+    -   Keep them public!
+    -   Feel free to make them anonymous if you prefer.
+
+-   Monday's lab:
+
+    -   Show up on time
+    -   Show up to learn and get support
+    -   Leave with all questions answered and a plan to work on the lab throughout the week
+
+# From last time
+
+## `ae-02-bechdel-dataviz`
+
+::: appex
+Go to RStudio, confirm that you're in the `ae` project, and open the document ae-02-bechdel-dataviz`.qmd`.
+:::
+
+## Recap: Code cells (aka code chunks) {.smaller}
+
+![](images/03/code-cell.png) . . .
+
+-   Cell `label`s are helpful for describing what the code is doing, for jumping between code cells in the editor, and for troubleshooting
+
+-   `message: false` hides any messages emitted by the code in your rendered document
+
+# Application exercise
+
+## `ae-03-bechdel-data-viz-transform` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: `ae-03-bechdel-data-viz-transform.qmd`.
+
+-   Work through the application exercise in class, and render, commit, and push your edits by the end of class.
+:::
+
+# Data transformation
+
+## A quick reminder {.smaller}
+
+```{r}
+#| include: false
+library(tidyverse)
+bechdel <- read_csv("data/bechdel.csv")
+```
+
+```{r}
+bechdel |> # <1>
+  filter(roi > 400) |> # <2>
+  select(title, roi, budget_2013, gross_2013, year, clean_test) # <3>
+```
+
+1.  Start with the `bechdel` data frame
+2.  Filter for movies with `roi` greater than 400 (gross is more than 400 times budget)
+3.  Select the columns `title`, `roi`, `budget_2013`, `gross_2013`, `year`, and `clean_test`
+
+## The pipe `|>` {.smaller}
+
+The pipe operator passes what comes before it into the function that comes after it as the first argument in that function.
+
+::: columns
+::: {.column .fragment width="55%"}
+```{r}
+sum(1, 2)
+```
+:::
+
+::: {.column .fragment width="45%"}
+```{r}
+1 |> 
+  sum(2)
+```
+:::
+:::
+
+<br>
+
+::: columns
+::: {.column .fragment width="55%"}
+```{r}
+select(filter(bechdel, roi > 400), title)
+```
+:::
+
+::: {.column .fragment width="45%"}
+```{r}
+bechdel |>
+  filter(roi > 400) |>
+  select(title)
+```
+:::
+:::
+
+## Code style tip {{< fa lightbulb >}} {.smaller}
+
+-   In data transformation pipelines, always use a
+    -   space before `|>`
+    -   line break after `|>`
+    -   indent the next line of code
+
+. . .
+
+-   In data visualization layers, always use a
+    -   space before `+`
+    -   line break after `+`
+    -   indent the next line of code
+
+## The pipe, in action {.smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+. . .
+
+Start with the `bechdel` data frame:
+
+```{webr}
+bechdel
+```
+
+## The pipe, in action {.smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+Filter for rows where `binary` is equal to `"PASS"`:
+
+```{webr}
+bechdel |>
+  filter(binary == "PASS")
+```
+
+## The pipe, in action {.smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+Arrange the rows in `desc`ending order of `roi`:
+
+```{webr}
+bechdel |>
+  filter(binary == "PASS") |>
+  arrange(desc(roi))
+```
+
+## The pipe, in action {.smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+Select columns `title` and `roi`:
+
+```{webr}
+bechdel |>
+  filter(binary == "PASS") |>
+  arrange(desc(roi)) |>
+  select(title, roi)
+```
+
+## Time permitting {.smaller}
+
+::: task
+Ask another question of the data that can be answered with a data transformation pipeline.
+:::
+
+```{webr}
+bechdel |>
+  ___
+```

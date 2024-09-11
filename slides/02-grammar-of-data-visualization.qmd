@@ -1,0 +1,425 @@
+---
+title: "Grammar of data visualization"
+subtitle: "Lecture 2"
+date: "2024-09-03"
+format: 
+  live-revealjs: 
+    output-file: 02-grammar-of-data-visualization-slides.html
+webr:
+  cell-options:
+    autorun: false
+  packages:
+    - unvotes
+    - tidyverse
+    - ggthemes
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+
+us_uk_tr_votes <- un_votes |>
+  inner_join(un_roll_calls, by = "rcid") |>
+  inner_join(un_roll_call_issues, by = "rcid", relationship = "many-to-many") |>
+  filter(country %in% c("United Kingdom", "United States", "Turkey")) |>
+  mutate(year = year(date)) |>
+  group_by(country, year, issue) |>
+  summarize(percent_yes = mean(vote == "yes"), .groups = "drop")
+```
+
+<!-- end: webr fodder -->
+
+# Warm-up
+
+## Announcements {.smaller}
+
+-   Office hours are posted on the course website!
+
+-   If you can follow along with today's application exercise steps, great!
+    If something doesn't work as expected, ask me/TA during the exercise.
+    We'll either:
+
+    -   help you on the spot and get you unstuck or
+    -   identify that you're missing an earlier step, ask you to follow along with your neighbor, and visit office hours before Thursday for one-on-one help
+
+## Outline {.smaller}
+
+-   Last time:
+
+    -   We introduced you to the course toolkit.
+
+    -   You **cloned** your `ae` repositories and started making some updates in your Quarto documents.
+
+    -   You did not **commit and push** your changes back.
+
+. . .
+
+-   Today:
+
+    -   You will **commit** your changes from last time and **push** them to wrap up that application exercise.
+
+    -   We will introduce data visualization.
+
+    -   You will **pull** to get today's application exercise file.
+
+    -   You will work on the new application exercise on data visualization, **commit** your changes, and **push** them.
+
+# From last time
+
+## `ae-01-meet-the-penguins`
+
+::: appex
+Go to RStudio, confirm that you're in the `ae` project, and open the document `ae-01-meet-the-penguins.qmd`.
+:::
+
+## Tour recap: Quarto
+
+![](images/01/tour-quarto.png){fig-alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code chunk." fig-align="center"}
+
+## Tour recap: Git + GitHub {.smaller}
+
+Once we made changes to our Quarto document, we
+
+-   went to the Git pane in RStudio
+
+-   staged our changes by clicking the checkboxes next to the relevant files
+
+-   committed our changes with an informative commit message
+
+-   pushed our changes to our application exercise repos
+
+    -   if this failed, we pulled first to get the new application exercise files, and then pushed
+
+-   confirmed on GitHub that we could see our changes pushed from RStudio
+
+## How will we use Quarto?
+
+-   Every application exercise, lab, project, etc. is an Quarto document
+-   You'll always have a template Quarto document to start with
+-   The amount of scaffolding in the template will decrease over the semester
+
+## What's with all the hexes?
+
+![](images/01/hexes.jpeg){fig-alt="Hex logos for many packages" fig-align="center"}
+
+## We have hexes too!
+
+::: task
+Grab one before you leave!
+:::
+
+::: center-align
+![](images/logo.png){fig-alt="STA 199 hex logo"}
+:::
+
+# Data visualization
+
+## UN Votes {.smaller}
+
+::: question
+Remember this visualization from the first day of class?
+:::
+
+![](images/02/un-data-viz.png)
+
+## Let' see... {.center}
+
+::: {.hand .large}
+how the sausage is made!
+:::
+
+## Load packages
+
+```{r}
+#| label: load-packages
+#| message: false
+library(unvotes)
+library(tidyverse)
+library(ggthemes)
+```
+
+## Prepare the data {.smaller}
+
+```{r}
+#| label: un-data-prep
+us_uk_tr_votes <- un_votes |>
+  inner_join(un_roll_calls, by = "rcid") |>
+  inner_join(un_roll_call_issues, by = "rcid", relationship = "many-to-many") |>
+  filter(country %in% c("United Kingdom", "United States", "Turkey")) |>
+  mutate(year = year(date)) |>
+  group_by(country, year, issue) |>
+  summarize(percent_yes = mean(vote == "yes"), .groups = "drop")
+```
+
+. . .
+
+::: callout-note
+Let's leave these details aside for a bit, we'll revisit this code at a later point in the semester.
+For now, let's agree that we need to do some "data wrangling" to get the data into the right format for the plot we want to create.
+Just note that we called the data frame we'll visualize `us_uk_tr_votes`.
+:::
+
+## Visualize the data
+
+```{r}
+#| label: un-data-viz
+#| output-location: slide
+#| warning: false
+#| fig-width: 9
+#| fig-height: 5
+#| fig-align: center
+ggplot(
+  us_uk_tr_votes, 
+  mapping = aes(x = year, y = percent_yes, color = country)
+  ) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(se = FALSE) +
+  facet_wrap(~issue) +
+  scale_color_colorblind() +
+  labs(
+    x = "Year", 
+    y = "% yes", 
+    color = "Country"
+  ) +
+  theme_minimal()
+```
+
+## Step 1. Prepare a canvas for plotting
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+ggplot(data = us_uk_tr_votes)
+```
+
+## Step 2. Map variables to aesthetics {.smaller}
+
+*Map* `year` to the `x` *aesthetic*
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+ggplot(data = us_uk_tr_votes, mapping = aes(x = year))
+```
+
+## Step 3. Map variables to aesthetics {.smaller}
+
+*Map* `percent_yes` to the `y` *aesthetic*
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+ggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))
+```
+
+## Mapping and aesthetics {.smaller}
+
+-   **Aesthetics** are visual properties of a plot
+
+-   In the *grammar of graphics*, variables from the data frame are **map**ped to aesthetics
+
+![](images/02/aesthetic-mapping.gif){fig-align="center"}
+
+## Argument names {.smaller}
+
+It's common practice in R to omit the names of first two arguments of a function:
+
+. . .
+
+-   Instead of
+
+``` r
+ggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))
+```
+
+-   Use
+
+``` r
+ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes))
+```
+
+## Step 4. Represent data on your canvas {.smaller}
+
+with a `geom`
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+ggplot(us_uk_tr_votes, mapping = aes(x = year, y = percent_yes)) +
+  geom_point()
+```
+
+## Step 5. Map variables to aesthetics {.smaller}
+
+*Map* `country` to the `color` *aesthetic*
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
+  geom_point()
+```
+
+## Step 6. Represent data on your canvas {.smaller}
+
+with another `geom`
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
+  geom_point() +
+  geom_smooth()
+```
+
+## Warnings and messages
+
+-   Adding `geom_smooth()` resulted in the following warning:
+
+```         
+`geom_smooth()` using method = 'loess' and formula = 'y ~ x'
+```
+
+. . .
+
+-   It tells us the type of smoothing ggplot2 does under the hood when drawing the smooth curves that represent trends for each country.
+
+. . .
+
+-   Going forward we'll suppress this warning to save some space.
+
+## Step 7. Split plot into facets {.smaller}
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+#| warning: false
+ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
+  geom_point() +
+  geom_smooth() +
+  facet_wrap(~issue)
+```
+
+## Step 8. Use a different color scale
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+#| warning: false
+ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
+  geom_point() +
+  geom_smooth() +
+  facet_wrap(~issue) +
+  scale_color_colorblind()
+```
+
+## Step 10. Apply a different theme
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+#| warning: false
+ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
+  geom_point() +
+  geom_smooth() +
+  facet_wrap(~issue) +
+  scale_color_colorblind() +
+  theme_minimal()
+```
+
+## Step 11. Add labels
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+#| warning: false
+ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
+  geom_point() +
+  geom_smooth() +
+  facet_wrap(~issue) +
+  scale_color_colorblind() +
+  theme_minimal() +
+  labs(x = "Year", y = "% yes", color = "Country")
+```
+
+## Step 12. Set transparency of points
+
+with `alpha`
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+#| warning: false
+ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth() +
+  facet_wrap(~issue) +
+  scale_color_colorblind() +
+  theme_minimal() +
+  labs(x = "Year", y = "% yes", color = "Country")
+```
+
+## Step 13. Hide standard errors of curves
+
+with `se = FALSE`
+
+```{webr}
+#| fig-width: 9
+#| fig-height: 3
+#| warning: false
+ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(se = FALSE) +
+  facet_wrap(~issue) +
+  scale_color_colorblind() +
+  theme_minimal() +
+  labs(x = "Year", y = "% yes", color = "Country")
+```
+
+## Grammar of graphics {.smaller}
+
+::: columns
+::: {.column width="50%"}
+We built a plot layer-by-layer
+
+-   just like described in the book *The Grammar of Graphics* and
+-   implemented in the **ggplot2** package, the data visualization package of the tidyverse.
+:::
+
+::: {.column width="20%"}
+![](images/02/gg-book.png)
+:::
+
+::: {.column width="30%"}
+![](images/02/gg-layers.png)
+:::
+:::
+
+# Application exercise
+
+## `ae-02-bechdel-dataviz` {.smaller}
+
+::: appex
+-   Go to your `ae` project in RStudio.
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+-   If you haven't yet done so, click **Pull** to get today's application exercise file.
+-   Work through the application exercise in class, and **render, commit, and push** your edits by the end of class.
+:::
+
+## Recap {.smaller}
+
+-   Construct plots with `ggplot()`.
+-   Layers of ggplots are separated by `+`s.
+-   The formula is (almost) always as follows:
+
+```{r}
+#| eval: false
+ggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +
+  geom_XXX()
+```
