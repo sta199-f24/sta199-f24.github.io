@@ -3688,7 +3688,14 @@
     "href": "slides/05-exploring-data-II.html#reminder-lab-guidelines",
     "title": "Exploring data II",
     "section": "Reminder: Lab guidelines",
-    "text": "Reminder: Lab guidelines\n\n\nPlots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.\nCode should follow the tidyverse style (style.tidyverse.org) Particularly,\n\nline breaks after each + when building a ggplot\nline breaks after each |&gt; in a data transformation pipeline\ncode should be properly indented\nspaces around = signs and spaces after commas\n\nAll code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks. Tip: Haikus not novellas when writing code!\nAt least three commits with meaningful commit messages."
+    "text": "Reminder: Lab guidelines\n\n\nPlots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.\nCode should follow the tidyverse style (style.tidyverse.org) Particularly,\n\nspace before and line breaks after each + when building a ggplot\nspace before and line breaks after each |&gt; in a data transformation pipeline\ncode should be properly indented\nspaces around = signs and spaces after commas\n\nAll code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks. Tip: Haikus not novellas when writing code!\nAt least three commits with meaningful commit messages."
+  },
+  {
+    "objectID": "slides/05-exploring-data-II.html#code-style-and-readability",
+    "href": "slides/05-exploring-data-II.html#code-style-and-readability",
+    "title": "Exploring data II",
+    "section": "Code style and readability",
+    "text": "Code style and readability\n\nWhydowecareaboutthestyleandreadabilityofyourcode? \\(\\rightarrow\\) Why do we care about the style and readability of your code?\n\n. . .\n\nJe voudrais un cafe \\(\\rightarrow\\) Je voudrais un café"
   },
   {
     "objectID": "slides/05-exploring-data-II.html#packages",
@@ -3835,7 +3842,14 @@
     "href": "slides/05-exploring-data-II-slides.html#reminder-lab-guidelines",
     "title": "Exploring data II",
     "section": "Reminder: Lab guidelines",
-    "text": "Reminder: Lab guidelines\n\n\nPlots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.\nCode should follow the tidyverse style (style.tidyverse.org) Particularly,\n\nline breaks after each + when building a ggplot\nline breaks after each |&gt; in a data transformation pipeline\ncode should be properly indented\nspaces around = signs and spaces after commas\n\nAll code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks. Tip: Haikus not novellas when writing code!\nAt least three commits with meaningful commit messages."
+    "text": "Reminder: Lab guidelines\n\n\nPlots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.\nCode should follow the tidyverse style (style.tidyverse.org) Particularly,\n\nspace before and line breaks after each + when building a ggplot\nspace before and line breaks after each |&gt; in a data transformation pipeline\ncode should be properly indented\nspaces around = signs and spaces after commas\n\nAll code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks. Tip: Haikus not novellas when writing code!\nAt least three commits with meaningful commit messages."
+  },
+  {
+    "objectID": "slides/05-exploring-data-II-slides.html#code-style-and-readability",
+    "href": "slides/05-exploring-data-II-slides.html#code-style-and-readability",
+    "title": "Exploring data II",
+    "section": "Code style and readability",
+    "text": "Code style and readability\n\nWhydowecareaboutthestyleandreadabilityofyourcode? \\(\\rightarrow\\) Why do we care about the style and readability of your code?\n\n\n\nJe voudrais un cafe \\(\\rightarrow\\) Je voudrais un café"
   },
   {
     "objectID": "slides/05-exploring-data-II-slides.html#packages",
