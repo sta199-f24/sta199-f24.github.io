@@ -943,10 +943,10 @@ $ category             &lt;chr&gt; "AAR", "LHR", "AAR", "ALU", "AAR", "AAR", "LA
 </section>
 <section id="boolean-operators" class="level1">
 <h1>Boolean Operators</h1>
-<p>So what <em>is</em> going on with the whole == thing, anyway? Well, == is one of four so-called <strong>Boolean</strong> or <strong>Logical Operators</strong> - a term we get from computer science. The term basically means “anything that relies on multiple statements.” Note that there is a difference between boolean operators and boolean (True/False) values - they are actually two entirely different things!</p>
+<p>So what <em>is</em> going on with the whole == thing, anyway? Well, == is one of four so-called <strong>Boolean</strong> or <strong>Logical Operators</strong> - a term we get from computer science. The term basically means “anything that relies on multiple statements.” Note that there is a difference between Boolean operators and Boolean (True/False) values - they are actually two entirely different things!</p>
 <section id="equals" class="level2">
 <h2 class="anchored" data-anchor-id="equals">Equals</h2>
-<p>The first boolean operator is “equals”. This is a place where it is easy to get confused. We use the single equals sign, =, to denote <em>assignment</em> - essentially, telling R “this thing takes this value.” We use the double equals sign, ==, to denote <em>comparison</em> - essentially, asking R “are these two values equal?” It is important to keep these two things distinct - if you want to check equality, or filter for a specific value, you always need to use the double equals sign!</p>
+<p>The first Boolean operator is “equals”. This is a place where it is easy to get confused. We use the single equals sign, =, to denote <em>assignment</em> - essentially, telling R “this thing takes this value.” We use the double equals sign, ==, to denote <em>comparison</em> - essentially, asking R “are these two values equal?” It is important to keep these two things distinct - if you want to check equality, or filter for a specific value, you always need to use the double equals sign!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="at">county =</span> <span class="st">"Cook"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -993,7 +993,7 @@ $ category             &lt;chr&gt; "AAR", "LHR", "AAR", "ALU", "AAR", "AAR", "LA
 </section>
 <section id="and" class="level2">
 <h2 class="anchored" data-anchor-id="and">And</h2>
-<p>The second boolean operator is “and”. We use this when we want multiple conditions to be true. In R, to denote and, we use the single ampersand <code>&amp;</code> (in some other languages, you use a double ampersand). When R sees this, it checks both statements, and only returns TRUE if both statements are true. Let’s look at an example, again using <code>filter()</code>:</p>
+<p>The second Boolean operator is “and”. We use this when we want multiple conditions to be true. In R, to denote and, we use the single ampersand <code>&amp;</code> (in some other languages, you use a double ampersand). When R sees this, it checks both statements, and only returns TRUE if both statements are true. Let’s look at an example, again using <code>filter()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"IL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1042,7 +1042,7 @@ $ category             &lt;chr&gt; "AAR", "LHR", "AAR", "ALU", "AAR", "AAR", "LA
 </section>
 <section id="or" class="level2">
 <h2 class="anchored" data-anchor-id="or">Or</h2>
-<p>The third boolean operator is “or”. We use this when we want at least one condition to be true. In R, to denote or, we use the vertical line <code>|</code> (again, in some other languages, you use a double line). When R sees this, it checks both statements, and returns TRUE if either (or both) of the statements are true. Let’s go back to our example:</p>
+<p>The third Boolean operator is “or”. We use this when we want at least one condition to be true. In R, to denote or, we use the vertical line <code>|</code> (again, in some other languages, you use a double line). When R sees this, it checks both statements, and returns TRUE if either (or both) of the statements are true. Let’s go back to our example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"IL"</span> <span class="sc">|</span> popdensity <span class="sc">&gt;=</span> <span class="dv">30000</span>) <span class="sc">|&gt;</span></span>
@@ -1075,7 +1075,7 @@ $ category             &lt;chr&gt; "AAR", "LHR", "AAR", "ALU", "AAR", "AAR", "LA
 </section>
 <section id="not" class="level2">
 <h2 class="anchored" data-anchor-id="not">Not</h2>
-<p>The fourth boolean operator is “not”. We use this when we want to exclude certain values from the data or prevent something from happening. In R, to denote not, we use the exclamation mark <code>!</code>. Specifically, you place the <code>!</code>, also known as a <strong>bang sign</strong>, in front of the statement that you want to be false. The most frequent use of this is to say “not equals”, which is denoted <code>!=</code> (note that it is only one equals sign now, not two!) Let’s look at an example:</p>
+<p>The fourth Boolean operator is “not”. We use this when we want to exclude certain values from the data or prevent something from happening. In R, to denote not, we use the exclamation mark <code>!</code>. Specifically, you place the <code>!</code>, also known as a <strong>bang sign</strong>, in front of the statement that you want to be false. The most frequent use of this is to say “not equals”, which is denoted <code>!=</code> (note that it is only one equals sign now, not two!) Let’s look at an example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">!=</span> <span class="st">"IL"</span>) <span class="sc">|&gt;</span></span>
@@ -1107,7 +1107,7 @@ $ category             &lt;chr&gt; "AAR", "LHR", "AAR", "ALU", "AAR", "AAR", "LA
 </section>
 <section id="combining-boolean-operators" class="level2">
 <h2 class="anchored" data-anchor-id="combining-boolean-operators">Combining Boolean Operators</h2>
-<p>You can also combine multiple boolean operators in more complex logical statements. We will not look at any examples here, because they can get very confusing, very quickly (and are generally unnecessary for this course). However, if you do want to combine boolean operators, here are some things to keep in mind:</p>
+<p>You can also combine multiple Boolean operators in more complex logical statements. We will not look at any examples here, because they can get very confusing, very quickly (and are generally unnecessary for this course). However, if you do want to combine Boolean operators, here are some things to keep in mind:</p>
 <ul>
 <li>Parentheses: Just like in math, any statements that you put in parentheses will execute first. If I say “A and B or C”, it’s unclear exactly what I mean. If I would accept either (A and B) or (A and C), I would write A &amp; (B | C), meaning I need at least one of B or C to be true. If I would accept either (A and B) or C, I would write (A &amp; B) | C, meaning I need either (A and B) or C to be true.</li>
 <li>Order of operations: Pay attention to the order in which your statements evaluate! If I write !(A &amp; B), that means I need at least one of A or B to be false. If I write !A &amp; !B, that means I need both A and B to be false. This can get confusing, so it’s best to write out your logic fully and work through a few examples by hand (or avoid layering these operators entirely).</li>
@@ -1125,26 +1125,28 @@ $ category             &lt;chr&gt; "AAR", "LHR", "AAR", "ALU", "AAR", "AAR", "LA
 <p>Arguments are the commands that you give to a function that tell it what to do. Most functions take at least one argument, and some can take arbitrarily many. Functions have a default order for (some of) their arguments. If you know this order, you do not have to explicitly name the arguments. If not, you must list them explicitly. Here are two examples:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Named Arguments</span></span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> midwest, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> poptotal,</span>
-<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">y =</span> popdensity,</span>
-<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">color =</span> percwhite)) <span class="sc">+</span></span>
-<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> midwest, </span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> poptotal, <span class="at">y =</span> popdensity, <span class="at">color =</span> percwhite)</span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="coding-principles-oh_files/figure-html/ggplot arguments-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="coding-principles-oh_files/figure-html/ggplot-arguments-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unnamed Arguments</span></span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(midwest, <span class="fu">aes</span>(poptotal,</span>
-<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>                    popdensity,</span>
-<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>                    percwhite)) <span class="sc">+</span></span>
-<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>  midwest, </span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(poptotal, popdensity, percwhite)</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="coding-principles-oh_files/figure-html/ggplot arguments-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="coding-principles-oh_files/figure-html/ggplot-arguments-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1243,11 +1245,22 @@ $ category             &lt;chr&gt; "AAR", "LHR", "AAR", "ALU", "AAR", "AAR", "LA
 <pre><code>Error in sumarize(midwest, avg_pop_dens = mean(popdensity)): could not find function "sumarize"</code></pre>
 </div>
 </div>
-<details>
-<summary>
-<p>What’s wrong with this code?&lt; /summary&gt;</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What’s wrong with this code?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>In this case, we just have a simple spelling error! It may seem trivial, but this will constitute at least half of the errors that you have. Make this the first thing you check - you will never meet a programmer who doesn’t have a story of the time they spent at least 30 minutes debugging a function, just to realize it was a typo all along.</p>
-</summary></details>
+</div>
+</div>
+</div>
 </section>
 <section id="example-2" class="level2">
 <h2 class="anchored" data-anchor-id="example-2">Example 2</h2>
@@ -1261,12 +1274,23 @@ $ category             &lt;chr&gt; "AAR", "LHR", "AAR", "ALU", "AAR", "AAR", "LA
 ℹ Did you use `%&gt;%` or `|&gt;` instead of `+`?</code></pre>
 </div>
 </div>
-<details>
-<summary>
-<p>What’s wrong with this code?&lt; /summary&gt;</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What’s wrong with this code?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>This one should be pretty obvious, since it’s a common enough error that R gives an extremely helpful error message. When you’re building a <code>ggplot</code> object, you use <code>+</code> rather than <code>|&gt;</code> to add additional lines!</p>
 <p>There’s a second error here, that R knew well enough to handle here, but which could become an issue in more complicated code chunks. Did anyone spot it?</p>
-</summary></details>
+</div>
+</div>
+</div>
 </section>
 <section id="example-3" class="level2">
 <h2 class="anchored" data-anchor-id="example-3">Example 3</h2>
@@ -1275,13 +1299,17 @@ $ category             &lt;chr&gt; "AAR", "LHR", "AAR", "ALU", "AAR", "AAR", "LA
 <span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">unit_format</span>(<span class="at">unit =</span> <span class="st">"M"</span>, <span class="at">scale =</span> <span class="fl">1e-6</span>)) <span class="sc">+</span></span>
-<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"State"</span>,</span>
-<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Total Population</span><span class="sc">\n</span><span class="st">(Millions)"</span>,</span>
-<span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Total Population by State"</span>) <span class="sc">+</span></span>
-<span id="cb95-8"><a href="#cb95-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb95-9"><a href="#cb95-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb95-10"><a href="#cb95-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb95-11"><a href="#cb95-11" aria-hidden="true" tabindex="-1"></a>  viridis<span class="sc">::</span><span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"State"</span>,</span>
+<span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Total Population</span><span class="sc">\n</span><span class="st">(Millions)"</span>,</span>
+<span id="cb95-8"><a href="#cb95-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Total Population by State"</span></span>
+<span id="cb95-9"><a href="#cb95-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb95-10"><a href="#cb95-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb95-11"><a href="#cb95-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb95-12"><a href="#cb95-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb95-13"><a href="#cb95-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb95-14"><a href="#cb95-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb95-15"><a href="#cb95-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `geom_bar()`:
 ! Problem while computing stat.
@@ -1307,11 +1335,22 @@ Caused by error in `setup_params()` at ggplot2/R/ggproto.R:190:17:
 <li>error</li>
 </ul>
 <p>Take a couple minutes to google this, and see if you can figure out what’s wrong with the code! Then, remember to cite the source where you found this answer! In general, it’s okay to google your error messages for help, but not to use someone else’s solution without credit.</p>
-<details>
-<summary>
-<p>What’s wrong with this code?&lt; /summary&gt;</p>
-<p>I looked at https://stackoverflow.com/questions/61068031/error-stat-count-can-only-have-an-x-or-y-aesthetic for my answer. There’s a few different suggestions on this page, all of which could be useful! This page definitely suggests to me that the issue with my plot is in the <code>geom_bar()</code> line - which makes sense, since this is layer 1 of the plot. While they have a couple simple fixes, here’s the actual error I wrote: <code>geom_bar()</code> is expecting only one variable. If you want two variables, like this, you should use <code>geom_col()</code> instead.</p>
-</summary></details>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What’s wrong with this code?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>I looked at <a href="https://stackoverflow.com/questions/61068031/error-stat-count-can-only-have-an-x-or-y-aesthetic" class="uri">https://stackoverflow.com/questions/61068031/error-stat-count-can-only-have-an-x-or-y-aesthetic</a> for my answer. There’s a few different suggestions on this page, all of which could be useful! This page definitely suggests to me that the issue with my plot is in the <code>geom_bar()</code> line - which makes sense, since this is layer 1 of the plot. While they have a couple simple fixes, here’s the actual error I wrote: <code>geom_bar()</code> is expecting only one variable. If you want two variables, like this, you should use <code>geom_col()</code> instead.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="conclusion" class="level1">
