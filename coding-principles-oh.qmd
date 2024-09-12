@@ -1,0 +1,731 @@
+---
+title: "Intro to Coding Principles"
+author: "Dav King + STA 199 Team"
+format: html
+---
+
+# Setup
+
+```{r}
+#| label: libraries
+#| warning: FALSE
+#| message: FALSE
+
+library(tidyverse)
+```
+
+```{r}
+#| label: library for github
+#| echo: FALSE
+#| warning: FALSE
+#| message: FALSE
+#| output: FALSE
+
+if (!requireNamespace("viridis", quietly = TRUE)) {
+  suppressMessages(suppressWarnings(install.packages("viridis")))
+}
+suppressMessages(suppressWarnings(library(viridis)))
+```
+
+
+# Variables
+
+## Definition
+
+So what even *is* a variable, in the first place?
+There are many possible definitions:
+
+-   Anything you assign!
+-   Practically speaking, variables are a way for you to store data without having to type it out every time.
+-   They allow you to manipulate data with the help of pre-built functions (more on that later).
+-   They can also be *changed* - hence the name "variable".
+
+What are some examples of variables?
+
+-   The simplest is a single value - like in math. I could say "x = 10".
+-   It might also be a vector - essentially a list of values. For example, I might just store every name in this class in a vector.
+-   Most frequently, your variables will be your entire data frames.
+
+## Assignment & Saving
+
+Ok, these seem pretty useful - so how do we use them?
+In math and most programming languages, you use the "=" operator.
+This is also possible to do in R:
+
+```{r}
+#| label: variable equals
+
+x = 10
+x
+```
+
+However, in R, we prefer to use the "\<-" operator, to avoid confusion between variable assignment and function arguments.
+Here's how that looks:
+
+```{r}
+#| label: variable arrow
+
+y <- 15
+y
+```
+
+### Saving Changes
+
+Suppose you run a function on a variable.
+By default, R will show you the output of this function, but it will not actually modify your variable.
+For example, let's look at the `midwest` data set:
+
+```{r}
+#| label: midwest example
+
+midwest
+```
+
+Now, let's run a function that "changes" the data frame.
+We can use `select()` to look only at the `county` column:
+
+```{r}
+#| label: midwest modification
+
+midwest |>
+  select(county)
+```
+
+Cool change!
+So, just to make sure, let's look at the `midwest` data frame one more time.
+
+```{r}
+#| label: midwest unchanged
+
+midwest
+```
+
+Now wait a minute - what happened here?
+I clearly told it to select the `county` column, and it did!
+So why is it that, when I went to look at the `midwest` data frame again, it had all of the columns, not just the one that I selected?
+
+The answer is that we never saved `midwest` back to a variable!
+By default, R will show the output, but not modify the data frame unless I want it to.
+Let's look at a couple ways we can do that:
+
+```{r}
+#| label: midwest modify in-place
+
+midwest <- midwest |>
+  select(county)
+
+midwest
+```
+
+The first option is to simply overwrite the variable.
+This is useful if you're never going to need those data in their original form - it saves you some confusion in that case.
+
+However, what if later on I decide I did need those data after all?
+Perhaps I wanted population density data.
+I go to try and find this variable in the `midwest` data set, because that's where I know it's stored...
+
+```{r}
+#| label: midwest missing variable
+#| error: TRUE
+
+midwest |>
+  select(popdensity)
+```
+
+...but the variable is gone!
+This is a common point of confusion for students in STA 199, so it's important to understand what you're doing whenever you modify your data in-place like this - you're overwriting the existing data.
+
+We have a couple of options here.
+If we were loading these data from a .csv file, we could go back to the top of the document.
+Or, we could do something more effective: Go to Environment, click the little broom icon, and select "yes".
+
+```{r}
+#| label: make midwest compile STUDENTS IGNORE
+#| echo: FALSE
+
+midwest <- ggplot2::midwest
+```
+
+```{r}
+#| label: midwest restored
+
+midwest
+```
+
+Now the second option: let's try making the modification a little more carefully: saving the data to a new variable.
+
+```{r}
+#| label: midwest_counties
+
+midwest_counties <- midwest |>
+  select(county)
+
+midwest_counties
+
+midwest
+```
+
+Now we have two data frames: the new data frame `midwest_counties`, which contains our modifications from the data pipeline above, and the original data frame `midwest`, which has not been changed.
+Both of these are useful operations, and you will undoubtedly use both this semester!
+However, keep this distinction in mind when you're mutating your data - don't remove anything you think you'll need later.
+
+## Variable Examples
+
+```{r}
+#| label: variable types
+
+x <- 10
+x
+
+y <- c(3, 5)
+y
+
+z <- midwest
+z
+```
+
+# Data Types
+
+## Examples
+
+Every column in a data frame will have a particular data type - sort of a way that R recognizes, classifies, and interacts with the data.
+Let's look at an example, using the convenient `glimpse` function:
+
+```{r}
+#| label: midwest glimpse
+
+glimpse(midwest)
+```
+
+Next to the data, we can see various designations - `<int>`, `<dbl>`, `<chr>`, etc.
+These are **data types**.
+But what exactly is the difference?
+
+### Double/Numeric
+
+The `dbl` data type, which is the default implementation of the `numeric` class, stands for **double** - meaning "double-precision floating-point format".
+It's pretty clear that double is an easier word to remember!
+This allows you to store numbers with a lot of decimal points (but not infinite!).
+For example, let's look at $\pi$, which is built in as `pi` in R:
+
+```{r}
+#| label: double example
+
+pi
+
+class(pi)
+```
+
+Here, we use the `class()` function to determine what data type R is using to store our variables.
+In this case, we can see that R stores `pi` as a default `numeric` variable, which is implemented as a double.
+In general, whenever you work with numbers, they will be doubles, and for purposes of STA 199 there is no issue with this.
+
+### Integer
+
+The `int` data type means **integer** - as in, the mathematical concept of an integer.
+All data represented as integers will be whole numbers.
+This data type is not capable of storing decimal places, so if you try to do decimal operations with it, R will implicitly cast it to another data type.
+**Implicitly** means that it does this without us telling it to.
+Let's take a look at a couple of examples:
+
+```{r}
+#| label: integer example
+
+a <- 3
+class(a)
+```
+
+By default, R will treat all numbers as the `numeric` class.
+If you want to explicitly tell R that your number is an integer, follow the number with "L":
+
+```{r}
+#| label: integer declaration
+
+a <- 3L
+class(a)
+```
+
+Now, let's say we want to divide this number by 2:
+
+```{r}
+#| label: integer casting
+
+b <- a / 2
+class(b)
+```
+
+Since 3 is not divisible by 2, the output is a decimal.
+However, since we have performed a decimal operation, rather than trying to guess whether to round up or down, R simply implicitly casts it back to `numeric`.
+
+### Logical/Boolean
+
+While there isn't an example in this data frame, there is a data type called **logical** - which represents true/false.
+
+```{r}
+#| label: boolean example
+
+c <- TRUE
+class(c)
+```
+
+In R, you need to type out TRUE/FALSE in all caps for it to be recognized.
+Under the hood, R stores these values as "FALSE = 0" and "TRUE = 1", which means that if you want to find the percentage of TRUE in your data, you can just take the average:
+
+```{r}
+#| label: boolean average
+
+d <- c(TRUE, FALSE, TRUE)
+mean(d)
+```
+
+### Character/String
+
+The `chr` data type represents all **characters** and **strings** in R.
+Unlike some languages, R does not differentiate between these.
+In general, strings are used to represent words and categorical data, for example:
+
+```{r}
+#| label: string example
+
+place <- "Durham, NC"
+class(place)
+```
+
+However, there is an important point of caution here.
+Sometimes, when you load in a data frame, there will be columns that should be represented as numbers, but are accidentally represented as strings.
+If you're not careful, this can have consequences.
+For example, consider the following:
+
+```{r}
+#| label: string vs numeric
+
+0 == 00
+
+"0" == "00"
+```
+
+In R, the numbers 0 and 00 represent the same thing!
+However, when they are strings, they do not.
+R treats numbers differently than it does strings, so it's important to pay attention to which one you are actually implementing.
+You might also run into issues with some of your operations - for example, if you try to take the average of a column of strings, R has no idea what to do and will throw an error.
+
+**Note:** pay attention to the usage of two equal signs here, rather than just one.
+Why did we do this?
+(More on this shortly.)
+
+## Casting
+
+So what is the solution to this problem?
+The answer is called **casting**, which means changing the data type.
+You do this using the `as.character()`, `as.numeric()`, and `as.logical()` commands.
+Let's look at an example:
+
+```{r}
+#| label: casting example
+
+e <- "00"
+class(e)
+e
+
+e <- as.numeric(e)
+class(e)
+e
+
+e <- as.logical(e)
+class(e)
+e
+
+e <- as.character(e)
+class(e)
+e
+
+e <- as.numeric(e) # What happened?
+e
+```
+
+Be mindful with your casting - you can lose information along the way!
+
+**Note:** `NA` is a specific type in R.
+It essentially means "nothing" or "this value has not been declared".
+You cannot use == to check whether a value is `NA`.
+Instead, you must use `is.na()`.
+
+# Boolean Operators
+
+So what *is* going on with the whole == thing, anyway?
+Well, == is one of four so-called **Boolean** or **Logical Operators** - a term we get from computer science.
+The term basically means "anything that relies on multiple statements." Note that there is a difference between boolean operators and boolean (True/False) values - they are actually two entirely different things!
+
+## Equals
+
+The first boolean operator is "equals".
+This is a place where it is easy to get confused.
+We use the single equals sign, =, to denote *assignment* - essentially, telling R "this thing takes this value." We use the double equals sign, ==, to denote *comparison* - essentially, asking R "are these two values equal?" It is important to keep these two things distinct - if you want to check equality, or filter for a specific value, you always need to use the double equals sign!
+
+```{r}
+#| label: equals example
+#| error: TRUE
+
+midwest |>
+  filter(county = "Cook")
+```
+
+Here's an example of where a single equals sign is incorrect, and R returns an error.
+Fortunately, it has a very helpful suggestion in the error message!
+Let's replace that with the double equals:
+
+```{r}
+#| label: equals example part 2
+
+midwest |>
+  filter(county == "Cook")
+```
+
+Now there's no error message, but we also didn't return any values.
+Why did this happen?
+When I use ==, I am checking whether these two strings are *exactly* equivalent, and that includes being case sensitive.
+If I view the data in the data frame, I see that all of the county names are actually in all caps.
+I can fix the string in my example...
+
+```{r}
+#| label: equals example part 3
+
+midwest |>
+  filter(county == "COOK")
+```
+
+...and finally find Chicago!
+
+## And
+
+The second boolean operator is "and".
+We use this when we want multiple conditions to be true.
+In R, to denote and, we use the single ampersand `&` (in some other languages, you use a double ampersand).
+When R sees this, it checks both statements, and only returns TRUE if both statements are true.
+Let's look at an example, again using `filter()`:
+
+```{r}
+#| label: and example
+
+midwest |>
+  filter(state == "IL")
+```
+
+Using our == operator, we can find all of the counties in Illinois.
+Now, let's find only the ones with a population density over 30,000:
+
+```{r}
+#| label: and example part 2
+
+midwest |>
+  filter(state == "IL" & popdensity >= 30000)
+```
+
+Now, the `filter()` statement is returning all of the rows from this data frame where BOTH the state is "IL" AND the population density is $\geq$ 30,000.
+
+## Or
+
+The third boolean operator is "or".
+We use this when we want at least one condition to be true.
+In R, to denote or, we use the vertical line `|` (again, in some other languages, you use a double line).
+When R sees this, it checks both statements, and returns TRUE if either (or both) of the statements are true.
+Let's go back to our example:
+
+```{r}
+#| label: or example
+
+midwest |>
+  filter(state == "IL" | popdensity >= 30000) |>
+  arrange(desc(popdensity))
+```
+
+Now, R returns all of the rows that are in Illinois, as well as all of the rows that are not in Illinois, but have a population density of at least 30,000.
+
+**Note:** Keep in mind that `|` is not exclusive.
+That means that `|` will return true if only one condition is true, but it will also return true if both conditions are true.
+If you want exactly one condition to be true, look up the operator XOR.
+
+## Not
+
+The fourth boolean operator is "not".
+We use this when we want to exclude certain values from the data or prevent something from happening.
+In R, to denote not, we use the exclamation mark `!`.
+Specifically, you place the `!`, also known as a **bang sign**, in front of the statement that you want to be false.
+The most frequent use of this is to say "not equals", which is denoted `!=` (note that it is only one equals sign now, not two!) Let's look at an example:
+
+```{r}
+#| label: not example
+
+midwest |>
+  filter(state != "IL") |>
+  arrange(desc(popdensity))
+```
+
+In these data, all rows from Illinois have been removed.
+You can check this by commenting out the `filter` line, and observing the difference, or just noting that Cook County, IL (home of Chicago, the densest city in the midwest) is absent!
+
+## Combining Boolean Operators
+
+You can also combine multiple boolean operators in more complex logical statements.
+We will not look at any examples here, because they can get very confusing, very quickly (and are generally unnecessary for this course).
+However, if you do want to combine boolean operators, here are some things to keep in mind:
+
+-   Parentheses: Just like in math, any statements that you put in parentheses will execute first. If I say "A and B or C", it's unclear exactly what I mean. If I would accept either (A and B) or (A and C), I would write A & (B \| C), meaning I need at least one of B or C to be true. If I would accept either (A and B) or C, I would write (A & B) \| C, meaning I need either (A and B) or C to be true.
+-   Order of operations: Pay attention to the order in which your statements evaluate! If I write !(A & B), that means I need at least one of A or B to be false. If I write !A & !B, that means I need both A and B to be false. This can get confusing, so it's best to write out your logic fully and work through a few examples by hand (or avoid layering these operators entirely).
+
+# Functions
+
+## Definition
+
+What is a function?
+A function is, essentially, a block of code that does something (so that *you* don't have to implement it!).
+A function will always have a name, followed by open and closed parentheses ().
+Some functions do not take arguments.
+However, if they do, these arguments will go within the parentheses.
+Once R sees an opening parenthesis, it will not execute the code until it sees a closing parenthesis.
+Beware - when you start layering functions, such as using `aes()` inside of `ggplot()`, you need to pay attention to what your parentheses are around and make sure that they all close!
+
+## Arguments
+
+Arguments are the commands that you give to a function that tell it what to do.
+Most functions take at least one argument, and some can take arbitrarily many.
+Functions have a default order for (some of) their arguments.
+If you know this order, you do not have to explicitly name the arguments.
+If not, you must list them explicitly.
+Here are two examples:
+
+```{r}
+#| label: ggplot arguments
+
+# Named Arguments
+ggplot(data = midwest, mapping = aes(x = poptotal,
+                                     y = popdensity,
+                                     color = percwhite)) +
+  geom_point()
+
+# Unnamed Arguments
+ggplot(midwest, aes(poptotal,
+                    popdensity,
+                    percwhite)) +
+  geom_point()
+```
+
+In ggplot, the first two arguments are always `data` and `mapping`, so it is common to drop these.
+However, in the second plot here, we lost our `fill` aesthetic.
+Why?
+
+When we look at the `aes()` documentation, we see that `x` is the first named argument and `y` is the second, but after that there are no named arguments.
+That means, while you can add more aesthetics, you must name them explicitly, since they do not appear by default.
+
+### Pipe Operator
+
+Many times in this class, you will see the symbol `|>` used.
+This is known as the **pipe operator**, and it allows us to have a so-called "data pipeline".
+This helps make code a lot more readable!
+Let's take a look at why:
+
+```{r}
+#| label: without pipe
+
+head(arrange(mutate(select(filter(midwest, state == "IL"), county, state, area, poptotal, inmetro), inmetro = as.logical(inmetro)), desc(poptotal)), 10)
+```
+
+Technically, we can write our code in this manner!
+Strictly speaking, under the hood, the pipe operator is reconstructing your code into this format.
+However, this is nearly impossible to read (I've been coding in R for years, and I still ran into multiple errors trying to write this).
+
+With the pipe operator, we can skip this and execute each function on its own line.
+By default, the pipe operator "pipes" your data into the first argument of a function - which, in the tidyverse, is almost always the "data" argument.
+This lets us write our data in a much neater pipeline, where you can see step-by-step what is happening to the data:
+
+```{r}
+#| label: with pipe
+
+midwest |>   # Operate on the midwest data frame
+  filter(state == "IL") |>   # Filter for only the counties in Illinois
+  select(county, state, area, poptotal, inmetro) |>   # Select only these five columns, and drop all others
+  mutate(inmetro = as.logical(inmetro)) |>   # Cast inmetro to a logical type
+  arrange(desc(poptotal)) |>   # Arrange the data frame by poptotal in descending order
+  head(10)   # Select the top 10 rows
+```
+
+Much better, right?
+Remember, whenever you're using the pipe operator (or the +, in `ggplot`, which is different!), you should start a new line of code.
+As long as you have a pipe operator, R is expecting another function, so it won't execute only part of your code.
+
+**Note:** In this class, we focus on the base R pipe, which is denoted by `|>`.
+However, when you're debugging on the internet, you may come across the symbol `%>%`, which is the `magrittr` pipe.
+There are some technical differences in these that generally go beyond the scope of this class, but they essentially serve the same purpose.
+Don't be scared by the `magrittr` pipe when you're doing your debugging!
+
+# Libraries
+
+## Definition
+
+Every time we start programming in this class, we run `library(tidyverse)`.
+Why do we do this?
+
+Libraries are collections of functions, and running them means that we are loading those functions into our current R session.
+If you try to open up a fresh R session and run `ggplot()` immediately, you will get an error, because that function is not found.
+However, with the library, you can load in everything that you need, all at once.
+The tidyverse is especially cool, because it is actually a collection of libraries - libraryception!
+
+## Environment
+
+Your environment in R is basically the current instance of your program.
+When you run a library, it is part of your environment until you restart R, meaning you can call any of its functions at any time.
+When you create a variable, it is part of your environment until you restart R, meaning you can reference those variables at any time.
+
+When you use the containers, they do not regularly restart R.
+This can be a problem sometimes, when old code gets tangled up with new code!
+It is my personal recommendation that you (at a minimum) restart R and clear your environment every time you start a new project (AE, lab, etc).
+You can restart R by going to Session -\> Restart R, and clear your environment by going to the environment pane and clicking the broom icon.
+
+## Rendering Quarto
+
+When you click the "Render" button for your .qmd file, what happens?
+R executes a program, called a "compiler", that runs your entire .qmd file in a new environment.
+In other words, if you have loaded a library, or edited a variable, or done any number of things in the console (or even later in the .qmd file) without saving them in the .qmd file, and then you try to render, you will get an error because that function/variable/etc has not been defined in the rendering environment.
+This forces you to write reproducible code, and it's the first thing to think about when you run into errors while rendering!
+
+# Documentation + Errors
+
+## Documentation
+
+Unless you have a function and its usage entirely memorized, you are going to be reading documentation.
+Documentation is useful, but it is dense, and can be hard to parse.
+Let's look at an example of how we can look through documentation.
+
+```{r}
+#| label: documentation
+#| eval: FALSE
+
+?if_else
+
+?geom_point
+```
+
+## Errors
+
+Unless you are the Roman God of Programming (and even then, I'm not too sure), you are going to encounter errors in your programming.
+These are completely natural, and nothing to be ashamed of - sometimes I write partial code, just to see where it will catch errors.
+However, some error messages are easier to understand than others.
+Let's look through a couple of examples of common errors, and what I would do to interpret and fix them.
+
+## Example 1
+
+```{r}
+#| label: error 1
+#| error: TRUE
+
+midwest |>
+  sumarize(avg_pop_dens = mean(popdensity))
+```
+
+<details>
+
+<summary>What's wrong with this code?`<`{=html}
+`/summary>`{=html}
+
+In this case, we just have a simple spelling error!
+It may seem trivial, but this will constitute at least half of the errors that you have.
+Make this the first thing you check - you will never meet a programmer who doesn't have a story of the time they spent at least 30 minutes debugging a function, just to realize it was a typo all along.
+
+</details>
+
+## Example 2
+
+```{r}
+#| label: error 2
+#| error: TRUE
+
+ggplot(midwest, aes(x = poptotal, y = popdensity,)) |>
+  geom_point() |>
+  labs(x = "Total Population", y = "Population Density")
+```
+
+<details>
+
+<summary>What's wrong with this code?`<`{=html}
+`/summary>`{=html}
+
+This one should be pretty obvious, since it's a common enough error that R gives an extremely helpful error message.
+When you're building a `ggplot` object, you use `+` rather than `|>` to add additional lines!
+
+There's a second error here, that R knew well enough to handle here, but which could become an issue in more complicated code chunks.
+Did anyone spot it?
+
+</details>
+
+## Example 3
+
+```{r}
+#| label: error 3
+#| error: TRUE
+
+ggplot(midwest, aes(x = state, y = poptotal, fill = state)) +
+  geom_bar() +
+  theme_bw() +
+  scale_y_continuous(labels = scales::unit_format(unit = "M", scale = 1e-6)) +
+  labs(x = "State",
+       y = "Total Population\n(Millions)",
+       title = "Total Population by State") +
+  theme(plot.title = element_text(hjust = 0.5),
+        panel.grid.major.x = element_blank(),
+        legend.position = "none") +
+  viridis::scale_fill_viridis(discrete = TRUE)
+```
+
+There's a lot going on here, so it might not be obvious at first where the issue is!
+The error has something to do with the function `stat_count()`, but that's not a function we used (explicitly) anywhere in this code.
+This is why you should iterate on your code, running it intermittently, so that you can catch errors when they pop up.
+
+My first thought would be to run `rlang::last_trace()`, as suggested by the error message.
+This is sometimes helpful - it can reference certain functions and even lines of code, especially when you're executing something more complex.
+Frequently, though, it's too complicated to understand.
+In this case, I would certainly say I can't make any sense of that.
+
+My next thought is to google the error message.
+It can be a little tricky to know what to google from the error message.
+You want to look for anything that seems general enough that other people might have asked, but specific enough that it will apply to your situation.
+Let's go line by line:
+
+-   "Error in `geom_bar()`": Probably too general to bother googling. There are a lot of possible errors with `geom_bar()`, and it would take too long to look through them all to get to your specific problem!
+-   "Problem while computing stat.": This is more helpful, because it gives a little more direction as to the source of the error, but it is still too general - what stat are we computing? What problem?
+-   "Error occured in the 1st layer": This can be helpful for you, if you know the order of `ggplot` layers. However, it is probably not helpful to google, since people could have built their layers in a different order before encountering this error.
+-   "Caused by error in `setup_params()`": Closer! This is getting more and more specific, and this might be good enough to google. However, it still doesn't say what the error is, it just says that there was one.
+-   "`stat_count()` must only have an `x` or `y` aesthetic": Bingo! This is the one we're looking for, which tells us exactly what the issue is. Now, it may be possible to interpret manually, but let's say you can't. Here's where we go now:
+
+I would copy-paste the entire final line into google.
+You don't want to copy-paste the full error message, since that's probably too specific, and you might not find any results.
+At the same time, you don't want to copy-paste only a couple of words, since that might not be specific enough, and you could be stuck looking through a lot of links.
+If you google just that line, you are likely to find someone on stack exchange who has posted a question with this exact (or almost this exact) error message.
+You can also help your google out by throwing in some relevant key words:
+
+-   ggplot
+-   R
+-   error
+
+Take a couple minutes to google this, and see if you can figure out what's wrong with the code!
+Then, remember to cite the source where you found this answer!
+In general, it's okay to google your error messages for help, but not to use someone else's solution without credit.
+
+<details>
+
+<summary>What's wrong with this code?`<`{=html}
+`/summary>`{=html}
+
+I looked at https://stackoverflow.com/questions/61068031/error-stat-count-can-only-have-an-x-or-y-aesthetic for my answer.
+There's a few different suggestions on this page, all of which could be useful!
+This page definitely suggests to me that the issue with my plot is in the `geom_bar()` line - which makes sense, since this is layer 1 of the plot.
+While they have a couple simple fixes, here's the actual error I wrote: `geom_bar()` is expecting only one variable.
+If you want two variables, like this, you should use `geom_col()` instead.
+
+</details>
+
+# Conclusion
+
+I hope this has given you some tips and tricks for how to use R and how to fix your errors on your own!
+Remember, we are always willing to answer questions, and the more you write code, the more you'll understand it.
+Coding is all about attention to detail: the machine does *exactly* what you tell it to do, whether or not that's what you actually wanted.
+Try to break things, to find out what you can and can't do, and remember - we were all beginner programmers at one point!
