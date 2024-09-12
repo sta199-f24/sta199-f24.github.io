@@ -1,7 +1,9 @@
 ---
 title: "Intro to Coding Principles"
 author: "Dav King + STA 199 Team"
-format: html
+format: 
+  html:
+    highlight-style: github
 ---
 
 # Setup
