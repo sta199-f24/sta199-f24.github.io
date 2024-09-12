@@ -82,6 +82,8 @@ website:
             text: Code alongs
           - href: computing-cheatsheets.qmd
             text: Cheatsheets
+          - href: coding-principles-oh.qmd
+            text: Coding principles
           - href: computing-troubleshooting.qmd
             text: Troubleshooting
       - section: "Project"
