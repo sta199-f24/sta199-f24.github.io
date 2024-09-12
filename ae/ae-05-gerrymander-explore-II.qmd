@@ -1,0 +1,73 @@
+---
+title: "AE 05: Gerrymandering + data exploration II"
+---
+
+## Getting started
+
+### Packages
+
+We'll use the **tidyverse** package for this analysis.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(usdata)
+library(ggbeeswarm)
+```
+
+### Data
+
+The data are availale in the **usdata** package.
+
+```{r}
+#| label: gerrymander
+glimpse(gerrymander)
+```
+
+## Congressional districts per state
+
+Which state has the most congressional districts?
+How many congressional districts are there in this state?
+
+Add your response here.
+
+```{r}
+#| label: n-districts
+# add code here
+```
+
+## Gerrymandering and flipping
+
+Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?
+Support your answer with a visualization and summary statistics.
+
+Add your response here.
+
+```{r}
+#| label: gerrymandering-flipping
+# add code here
+```
+
+## Aesthetic mappings
+
+Recreate the following visualization, and then improve it.
+
+![](images/gerrymander-recreate.png)
+
+```{r}
+#| label: gerrumander-recreate
+# add code here
+```
+
+## Render, commit, and push
+
+1.  Render your Quarto document.
+
+2.  Go to the Git pane and check the box next to each file listed, i.e., stage your changes.
+    Commit your staged changes using a simple and informative message.
+
+3.  Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.
+
+4.  Go to your repo on GitHub and confirm that you can see the updated files.
+    Once your updated files are in your repo on GitHub, you're good to go!

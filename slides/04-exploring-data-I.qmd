@@ -98,9 +98,8 @@ gerrymander
 
 ## What is gerrymandering?
 
-```{=html}
-<iframe width="900" height="500" src="https://www.washingtonpost.com/business/wonkblog/gerrymandering-explained/2016/04/21/e447f5c2-07fe-11e6-bfed-ef65dff5970d_video.html" title="What is gerrymandering?"></iframe>
-```
+<https://www.washingtonpost.com/business/wonkblog/gerrymandering-explained/2016/04/21/e447f5c2-07fe-11e6-bfed-ef65dff5970d_video.html>
+
 ## Data: `gerrymander` {.scrollable .smaller}
 
 ::: question
