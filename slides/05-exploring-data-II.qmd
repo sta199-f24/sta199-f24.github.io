@@ -60,8 +60,8 @@ Prepare for today's application exercise: **`{r} todays_ae`**
 
 -   Code should follow the [tidyverse style](https://style.tidyverse.org/) ([style.tidyverse.org](https://style.tidyverse.org/)) Particularly,
 
-    -   line breaks after each `+` when building a `ggplot`
-    -   line breaks after each `|>` in a data transformation pipeline
+    -   space before and line breaks after each `+` when building a `ggplot`
+    -   space before and line breaks after each `|>` in a data transformation pipeline
     -   code should be properly indented
     -   spaces around `=` signs and spaces after commas
 
@@ -71,6 +71,14 @@ Prepare for today's application exercise: **`{r} todays_ae`**
 
 -   At least three commits with meaningful commit messages.
 :::
+
+## Code style and readability
+
+- Whydowecareaboutthestyleandreadabilityofyourcode? [$\rightarrow$ Why do we care about the style and readability of your code?]{.fragment}
+
+. . .
+
+- Je voudrais un cafe [$\rightarrow$ Je voudrais un café]{.fragment}
 
 # `gerrymander`
 
