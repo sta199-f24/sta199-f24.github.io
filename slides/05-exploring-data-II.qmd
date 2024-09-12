@@ -144,7 +144,7 @@ gerrymander |>
   summarize(mean_trump16 = mean(trump16))
 ```
 
-## `group_by()`
+## `group_by()` {.scrollable}
 
 - Group by converts a data frame to a grouped data frame, where subsequent operations are performed once per group
 
@@ -321,7 +321,7 @@ gerrymander |>
   mutate(flip18 = as.factor(flip18))
 ```
 
-## Revisit the plot
+## Revisit the plot {.scrollable}
 
 ::: question
 "Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?"
