@@ -104,6 +104,109 @@ You should have at least 3 commits with meaningful commit messages by the end of
 
 ## Part 1
 
+**All about `group_by()`!**
+
+Use the following data frame for Question 1 and Question 2:
+
+```{r}
+#| eval: true
+df <- tibble(
+  var_1 = c(10, 20, 30, 40, 50),
+  var_2 = c("Pizza", "Burger", "Pizza", "Pizza", "Burger"),
+  var_3 = c("Apple", "Apple", "Pear", "Pear", "Banana")
+)
+
+df
+```
+
+### Question 1
+
+Grouping by a single variable.
+
+a\.
+What does the following code chunk do?
+Run it and analyze the result and articulate in words what `arrange()` does.
+
+```{r}
+#| eval: false
+df |>
+  arrange(var_2)
+```
+
+b\.
+What does the following code chunk do?
+Run it and analyze the result and articulate in words what `group_by()` does.
+Also comment on how it's different from the `arrange()` in part (a)?
+
+```{r}
+#| eval: false
+df |>
+  group_by(var_2)
+```
+
+c\.
+What does the following code chunk do?
+Run it and analyze the result and articulate in words what the pipeline does.
+
+```{r}
+#| eval: false
+df |>
+  group_by(var_2) |>
+  summarize(mean_var_1 = mean(var_1))
+```
+
+### Question 2
+
+Grouping by two variables.
+
+a\.
+What does the following code chunk do?
+Run it and analyze the result and articulate in words what the pipeline does.
+Then, comment on what the message says.
+
+```{r}
+#| eval: false
+df |>
+  group_by(var_2, var_3) |>
+  summarize(mean_var_1 = mean(var_1))
+```
+
+b\.
+What does the following code chunk do?
+Run it and analyze the result and articulate in words what the pipeline does, especially mentioning what the `.groups` argument does.
+How is the output different from the one in part (d).
+
+```{r}
+#| eval: false
+df |>
+  group_by(var_2, var_3) |>
+  summarize(mean_var_1 = mean(var_1), .groups = "drop")
+```
+
+c\.
+What do the following pipelines do?
+Run both and analyze their results and articulate in words what each pipeline does.
+How are the outputs of the two pipelines different?
+
+```{r}
+#| eval: false
+df |>
+  group_by(var_2, var_3) |>
+  summarize(mean_var_1 = mean(var_1), .groups = "drop")
+
+df |>
+  group_by(var_2, var_3) |>
+  mutate(mean_var_1 = mean(var_1))
+```
+
+::: render-commit-push
+Render, commit, and push your changes to GitHub with the commit message "Added answers for Questions 1 and 2".
+
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
+## Part 2
+
 **Back to the Midwest!**
 
 In this part you will revisit and build on some of your findings from Lab 1, where you explored the `midwest` data frame.
@@ -111,7 +214,7 @@ Remember that this data frame is bundled with the **ggplot2** package and is aut
 As a refresher, the data contains demographic characteristics of counties in the Midwest region of the United States.
 You can read documentation for the data set, including variable definitions by typing `?midwest` in the Console or searching for `midwest` in the Help pane.
 
-### Question 1
+### Question 3
 
 Calculate the number of counties in each state and display your results in descending order of number of counties.
 Which state has the highest number of counties, and how many?
@@ -122,12 +225,12 @@ The number of counties in a state can change over time, so the values you see in
 :::
 
 ::: render-commit-push
-Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 1".
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 3".
 
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-### Question 2
+### Question 4
 
 While in a given state two counties can't have the same name, across states some county names might be shared.
 A classmate says "Look at that, there is a county called \_\_\_ in each state in this dataset!" In a single pipeline, discover all counties that could fill in the blank.
@@ -157,12 +260,12 @@ The table below is a summary of logical operators and how to articulate them in 
 :::
 
 ::: render-commit-push
-Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 2".
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 4".
 
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-### Question 3
+### Question 5
 
 Return to the following box plot of population densities where you were asked to identify at least one outlier.
 
@@ -196,12 +299,12 @@ Your response should be a data frame five columns: county name, state name, popu
 If your response has multiple rows, the data frame should be arranged in descending order of population density.
 
 ::: render-commit-push
-Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 3".
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 5".
 
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-### Question 4
+### Question 6
 
 In Lab 1 you were also asked to describe the distribution of population densities.
 The following is one acceptable description that touches on shape, center, and spread of this distribution.
@@ -216,12 +319,12 @@ Think about which measures of center and spread are appropriate for skewed distr
 :::
 
 ::: render-commit-push
-Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 4".
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 6".
 
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-### Question 5
+### Question 7
 
 Another visualization from Lab 1 was the following that showed the proportion of urban counties in each state.
 
@@ -252,12 +355,12 @@ You can refer to [Lab 1](/labs/lab-1.html#question-6) if you need a refresher on
 :::
 
 ::: render-commit-push
-Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 5".
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 7".
 
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-### Question 6
+### Question 8
 
 Return to the following scatter plot of percentage below poverty vs. percentage of people with a college degree, where the color and shape of points are determined by `state` where you were asked to identify at least one county that is a clear outlier by name.
 
@@ -322,12 +425,12 @@ c\.
 Recreate the visualization above, i.e. a scatterplot of percentage below poverty vs. percentage of people with a college degree, however color the points by the newly created `potential_outlier` variable instead of state.
 
 ::: render-commit-push
-Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 6".
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 8".
 
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-### Question 7
+### Question 9
 
 a\.
 In a single pipeline, calculate the total population for each state and save the resulting data frame as `state_population` and display it in descending order of total population.
@@ -345,12 +448,12 @@ Which Midwestern state is most populous and what percent of the Midwest populati
 Which is the least populous and what percent lives there?
 
 ::: render-commit-push
-Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 7".
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 9".
 
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-### Question 8
+### Question 10
 
 Calculate the average percentage below poverty for each state and save the resulting data frame as `state_poverty` with the columns `state` and `mean_percbelowpoverty`.
 
@@ -359,117 +462,10 @@ Which state has the lowest average percentage below poverty across its counties?
 Which state has the highest average percentage below poverty across its counties?
 
 ::: render-commit-push
-Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 8".
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 10".
 
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
-
-## Part 2
-
-**All about `group_by()`!**
-
-### Question 9
-
-Suppose we have the following data frame:
-
-```{r}
-#| eval: true
-
-df <- tibble(
-  var_1 = c(10, 20, 30, 40, 50),
-  var_2 = c("Pizza", "Burger", "Pizza", "Pizza", "Burger"),
-  var_3 = c("Apple", "Apple", "Pear", "Pear", "Banana")
-)
-
-df
-```
-
-a\.
-What does the following code chunk do?
-Run it and analyze the result and articulate in words what `arrange()` does.
-
-```{r}
-#| eval: false
-df |>
-  arrange(var_2)
-```
-
-b\.
-What does the following code chunk do?
-Run it and analyze the result and articulate in words what `group_by()` does.
-Also comment on how it's different from the `arrange()` in part (a)?
-
-```{r}
-#| eval: false
-df |>
-  group_by(var_2)
-```
-
-c\.
-What does the following code chunk do?
-Run it and analyze the result and articulate in words what the pipeline does.
-
-```{r}
-#| eval: false
-df |>
-  group_by(var_2) |>
-  summarize(mean_var_1 = mean(var_1))
-```
-
-d\.
-What does the following code chunk do?
-Run it and analyze the result and articulate in words what the pipeline does.
-Then, comment on what the message says.
-
-```{r}
-#| eval: false
-df |>
-  group_by(var_2, var_3) |>
-  summarize(mean_var_1 = mean(var_1))
-```
-
-e\.
-What does the following code chunk do?
-Run it and analyze the result and articulate in words what the pipeline does, especially mentioning what the `.groups` argument does.
-How is the output different from the one in part (d).
-
-```{r}
-#| eval: false
-df |>
-  group_by(var_2, var_3) |>
-  summarize(mean_var_1 = mean(var_1), .groups = "drop")
-```
-
-f\.
-What do the following pipelines do?
-Run both and analyze their results and articulate in words what each pipeline does.
-How are the outputs of the two pipelines different?
-
-```{r}
-#| eval: false
-df |>
-  group_by(var_2, var_3) |>
-  summarize(mean_var_1 = mean(var_1), .groups = "drop")
-
-df |>
-  group_by(var_2, var_3) |>
-  mutate(mean_var_1 = mean(var_1))
-```
-
-::: render-commit-push
-Render, commit, and push your changes to GitHub with an appropriate commit message.
-
-Make sure to commit and push all changed files so that your Git pane is empty afterward.
-:::
-
-### Question 10
-
-Did you select your pages on Gradescope?
-You don't need to write an answer for this question, if you select your pages when you upload your lab to Gradescope, you'll get full points on this question.
-Otherwise, you'll get a 0 on this question.[^2]
-
-[^2]: We're assigning points to this seemingly trivial task because not selecting your pages and questions will greatly slow down the grading.
-    So we want to make sure you're properly motivated to complete this task!
 
 # Wrap-up
 
@@ -509,8 +505,6 @@ Make sure you have:
 -   Some of the questions will be graded for accuracy.
 
 -   Some will be graded for completion.
-
--   Question 10 is just asking you to select your pages on Gradescope, and you get points for following the instructions!
 
 -   There are also workflow points, for coding style, for committing at least three times as you work through your lab, and for overall organization.
 
