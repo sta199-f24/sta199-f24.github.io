@@ -71,7 +71,7 @@ library(tidyverse)
 ```
 
 -   **Run** the code cell by clicking on the green triangle (play) button for the code cell labeled `load-packages`. This loads the package so that its features (the functions and datasets in it) are accessible from your *Console*.
-- Then, **render** the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document.
+-   Then, **render** the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document.
 
 ## Guidelines
 
@@ -422,7 +422,8 @@ This variable should take on the value:
 Then, display the updated `midwest` data frame, with county, state, percentage below poverty, percentage college educated, `potential_outlier` as the selected variables, arranged in ascending order of `potential_outlier`.
 
 c\.
-Recreate the visualization above, i.e., a scatterplot of the percentage below poverty vs. the percentage of people with a college degree. However, color the points by the newly created `potential_outlier` variable instead of the state.
+Recreate the visualization above, i.e., a scatterplot of the percentage below poverty vs. the percentage of people with a college degree.
+However, color the points by the newly created `potential_outlier` variable instead of the state.
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 8".
