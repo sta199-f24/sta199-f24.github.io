@@ -1,6 +1,6 @@
 ---
 title: Lab 2
-subtitle: From the Midwest to North Carolina, again
+subtitle: Revisiting the Midwest
 categories: Lab
 description: "Due Mon, Sep 23 at 8:30 am"
 draft: false
