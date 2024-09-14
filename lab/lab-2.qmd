@@ -8,11 +8,11 @@ draft: true
 
 # Introduction
 
-In this lab you'll continue to hone your data science workflow as well as bring together what you learned so far in the course (data visualization) with what's coming up (data wrangling).
+In this lab, you'll continue to hone your data science workflow and integrate what you learned so far in the course (data visualization) with what's coming up (data wrangling).
 
 ::: callout-note
 This lab assumes you've completed [Lab 0](/labs/lab-0.html) and [Lab 1](/labs/lab-1.html) and doesn't repeat setup and overview content from those labs.
-If you have not yet done those, you should go back and review them before starting with this one.
+If you haven't done those yet, you should review them before starting with this one.
 :::
 
 ## Learning objectives
@@ -32,13 +32,13 @@ By the end of the lab, you will...
 -   Go to <https://cmgr.oit.duke.edu/containers> and log in with your Duke NetID and Password.
 -   Click `STA198-199` under My reservations to log into your container. You should now see the RStudio environment.
 
-### Step 2: Clone the repo & start new RStudio project
+### Step 2: Clone the repo & start a new RStudio project
 
 -   Go to the course organization at [github.com/sta199-f24](https://github.com/sta199-f24) organization on GitHub.
     Click on the repo with the prefix **lab-2**.
     It contains the starter documents you need to complete the lab.
 
--   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**).
+-   Click on the green **CODE** button and select **Use SSH** (this might already be selected by default; if it is, you'll see the text **Clone with SSH**).
     Click on the clipboard icon to copy the repo URL.
 
 -   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
@@ -52,17 +52,17 @@ By the end of the lab, you will...
 
 ### Step 3: Update the YAML
 
-In `lab-2.qmd`, update the `author` field to your name, render your document and examine the changes.
+In `lab-2.qmd`, update the `author` field to your name, render your document, and examine the changes.
 Then, in the Git pane, click on **Diff** to view your changes, add a commit message (e.g., "Added author name"), and click **Commit**.
-Then, push the changes to your GitHub repository, and in your browser confirm that these changes have indeed propagated to your repository.
+Then, push the changes to your GitHub repository and, in your browser, confirm that these changes have indeed propagated to your repository.
 
 ::: callout-important
-If you run into any issues with the first steps outlined above, flag a TA for help before proceeding.
+If you encounter any issues with the above steps, flag a TA for help before proceeding.
 :::
 
 ## Packages
 
-In this lab we will work with the **tidyverse** package, which is a collection of packages for doing data analysis in a "tidy" way.
+In this lab, we will work with the **tidyverse** package, a collection of packages for performing data analysis in a "tidy" way.
 
 ```{r}
 #| eval: true
@@ -70,12 +70,12 @@ In this lab we will work with the **tidyverse** package, which is a collection o
 library(tidyverse)
 ```
 
--   **Run** the code cell by clicking on the green triangle (play) button for the code cell labeled `load-packages`. This loads the package to make its features (the functions and datasets in it) be accessible from your *Console*.
--   Then, **render** the document which loads this package to make its features (the functions and datasets in it) be available for other code cells in your Quarto document.
+-   **Run** the code cell by clicking on the green triangle (play) button for the code cell labeled `load-packages`. This loads the package so that its features (the functions and datasets in it) are accessible from your *Console*.
+- Then, **render** the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document.
 
 ## Guidelines
 
-As we've discussed in lecture, your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.
+As we've discussed in the lecture, your plots should include an informative title, axes and legends should have human-readable labels and aesthetic choices should be carefully considered.
 
 Additionally, code should follow the [tidyverse style](https://style.tidyverse.org/).
 Particularly,
@@ -91,10 +91,10 @@ Particularly,
 Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF.
 Long lines that run off the page should be split across multiple lines with line breaks.[^1]
 
-[^1]: Remember, haikus not novellas when writing code!
+[^1]: Remember, haikus, not novellas, when writing code!
 
-Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.
-There will be periodic reminders in this assignment to remind you to **render, commit, and push** your changes to GitHub.
+As you complete the lab and other assignments in this course, remember to develop a sound workflow for reproducible data analysis.
+This assignment will periodically remind you to render, commit, and push your changes to GitHub.
 
 ::: callout-important
 You should have at least 3 commits with meaningful commit messages by the end of the assignment.
@@ -125,7 +125,7 @@ Grouping by a single variable.
 
 a\.
 What does the following code chunk do?
-Run it and analyze the result and articulate in words what `arrange()` does.
+Run it, analyze the result, and articulate in words what `arrange()` does.
 
 ```{r}
 #| eval: false
@@ -135,8 +135,8 @@ df |>
 
 b\.
 What does the following code chunk do?
-Run it and analyze the result and articulate in words what `group_by()` does.
-Also comment on how it's different from the `arrange()` in part (a)?
+Run it, analyze the result, and articulate in words what `group_by()` does.
+Also, comment on how it's different from the `arrange()` in part (a).
 
 ```{r}
 #| eval: false
@@ -146,7 +146,7 @@ df |>
 
 c\.
 What does the following code chunk do?
-Run it and analyze the result and articulate in words what the pipeline does.
+Run it, analyze the result, and articulate in words what the pipeline does.
 
 ```{r}
 #| eval: false
@@ -161,7 +161,7 @@ Grouping by two variables.
 
 a\.
 What does the following code chunk do?
-Run it and analyze the result and articulate in words what the pipeline does.
+Run it, analyze the result, and articulate in words what the pipeline does.
 Then, comment on what the message says.
 
 ```{r}
@@ -173,8 +173,8 @@ df |>
 
 b\.
 What does the following code chunk do?
-Run it and analyze the result and articulate in words what the pipeline does, especially mentioning what the `.groups` argument does.
-How is the output different from the one in part (d).
+Run it, analyze the result, and articulate in words what the pipeline does, especially mentioning what the `.groups` argument does.
+How is the output different from the one in part (d)?
 
 ```{r}
 #| eval: false
@@ -185,7 +185,7 @@ df |>
 
 c\.
 What do the following pipelines do?
-Run both and analyze their results and articulate in words what each pipeline does.
+Run both, analyze their results, and articulate in words what each pipeline does.
 How are the outputs of the two pipelines different?
 
 ```{r}
@@ -209,10 +209,10 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 **Back to the Midwest!**
 
-In this part you will revisit and build on some of your findings from Lab 1, where you explored the `midwest` data frame.
+In this part, you will revisit and build on some of your findings from Lab 1, where you explored the `midwest` data frame.
 Remember that this data frame is bundled with the **ggplot2** package and is automatically loaded when you load the tidyverse package.
 As a refresher, the data contains demographic characteristics of counties in the Midwest region of the United States.
-You can read documentation for the data set, including variable definitions by typing `?midwest` in the Console or searching for `midwest` in the Help pane.
+You can read the documentation for the data set, including variable definitions, by typing `?midwest` in the Console or searching for `midwest` in the Help pane.
 
 ### Question 3
 
@@ -232,13 +232,13 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ### Question 4
 
-While in a given state two counties can't have the same name, across states some county names might be shared.
-A classmate says "Look at that, there is a county called \_\_\_ in each state in this dataset!" In a single pipeline, discover all counties that could fill in the blank.
-Your response should be a data frame with only the county names that could fill in the blank and how many times they appear in the data.
+While two counties in a given state can't have the same name, some county names might be shared across states.
+A classmate says "Look at that, there is a county called \_\_\_ in each state in this dataset!" In a single pipeline, discover all counties that could fill in the blanks.
+Your response should be a data frame with only the county names that could fill in the blank and the number of times they appear in the data.
 
 ::: callout-tip
 You will want to use the `filter()` function in your answer, which requires a logical condition to describe what you want to filter for.
-For example `filter(x > 2)` means filter for values of `x` greater than 2, `filter(y <= 3)` means filter for values of y less than or equal to 3.
+For example, `filter(x > 2)` means filter for values of `x` greater than 2, and `filter(y <= 3)` means filter for values of y less than or equal to 3.
 
 The table below is a summary of logical operators and how to articulate them in R.
 
@@ -284,7 +284,7 @@ ggplot(midwest, aes(x = popdensity)) +
   )
 ```
 
-In this question part, we want you to revisit this box plot and identify the counties described in each part.
+In this question, we want you to revisit this box plot and identify the counties described in each section.
 
 a\.
 The counties with a population density higher than 25,000.
@@ -295,7 +295,7 @@ The county with the highest population density.
 Your code must use the `max()` function.
 
 Answer using a single data wrangling pipeline for each part.
-Your response should be a data frame five columns: county name, state name, population density, total population, and area, in this order.
+Your response should be a data frame with five columns: county name, state name, population density, total population, and area, in this order.
 If your response has multiple rows, the data frame should be arranged in descending order of population density.
 
 ::: render-commit-push
@@ -307,7 +307,7 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 ### Question 6
 
 In Lab 1 you were also asked to describe the distribution of population densities.
-The following is one acceptable description that touches on shape, center, and spread of this distribution.
+The following is one acceptable description that touches on the shape, center, and spread of this distribution.
 Calculate the values that should go into the blanks.
 
 > The distribution of population density of counties is unimodal and extremely right-skewed.
@@ -326,7 +326,7 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ### Question 7
 
-Another visualization from Lab 1 was the following that showed the proportion of urban counties in each state.
+Another visualization from Lab 1 was the following, which showed the proportion of urban counties in each state.
 
 ```{r}
 #| label: metro-barplot
@@ -399,7 +399,7 @@ ggplot(
 ```
 
 a\.
-In a single pipeline, identify the observations marked in the orange square on the upper left corner.
+In a single pipeline, identify the observations marked in the orange square in the upper left corner.
 Your answer should be a data frame with four variables: county, state, percentage below poverty, and percentage college educated.
 
 b\.
@@ -422,7 +422,7 @@ This variable should take on the value:
 Then, display the updated `midwest` data frame, with county, state, percentage below poverty, percentage college educated, `potential_outlier` as the selected variables, arranged in ascending order of `potential_outlier`.
 
 c\.
-Recreate the visualization above, i.e. a scatterplot of percentage below poverty vs. percentage of people with a college degree, however color the points by the newly created `potential_outlier` variable instead of state.
+Recreate the visualization above, i.e., a scatterplot of the percentage below poverty vs. the percentage of people with a college degree. However, color the points by the newly created `potential_outlier` variable instead of the state.
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 8".
@@ -439,12 +439,12 @@ b\.
 Then, in a separate pipeline, calculate the proportion of the total population in each state and, once again, display the results in descending order of proportion of population.
 
 ::: callout-tip
-In answering parts (a) and (b), you'll create two new variables, one for total population and other for proportion of total proportion.
+In answering parts (a) and (b), you'll create two new variables, one for the total population and the other for the proportion of total proportion.
 Make sure to give them "reasonable" names – short but evocative.
 :::
 
 e\.
-Which Midwestern state is most populous and what percent of the Midwest population lives there?
+Which Midwestern state is most populous, and what percent of the Midwest population lives there?
 Which is the least populous and what percent lives there?
 
 ::: render-commit-push
@@ -477,7 +477,7 @@ Once you are finished with the lab, you will submit your final PDF document to G
 Before you wrap up the assignment, make sure all of your documents are updated on your GitHub repo.
 We will be checking these to make sure you have been practicing how to commit and push changes.
 
-You must turn in a PDF file to the Gradescope page by the submission deadline to be considered "on time".
+To be considered " on time, " you must turn in a PDF file to the Gradescope page by the submission deadline.
 :::
 
 To submit your assignment:
@@ -486,7 +486,7 @@ To submit your assignment:
 -   Click *School Credentials* $\rightarrow$ *Duke NetID* and log in using your NetID credentials.
 -   Click on your *STA 199* course.
 -   Click on the assignment, and you'll be prompted to submit it.
--   Mark all the pages associated with question. All the pages of your lab should be associated with at least one question (i.e., should be "checked").
+-   Mark all the pages associated with each question. All the pages of your lab should be associated with at least one question (i.e., should be "checked").
 
 ::: callout-important
 ## Checklist
