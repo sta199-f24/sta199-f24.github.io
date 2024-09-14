@@ -81,7 +81,7 @@ Below are the components of a Quarto (.qmd) file.
 
 The top portion of your Quarto file (between the three dashed lines) is called **YAML**.
 It stands for "YAML Ain't Markup Language".
-It is a human friendly data representation for all programming languages.
+It is a human-friendly data representation for all programming languages.
 All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.
 
 -   Open the Quarto (`.qmd`) file in your project, change the author name to your name, and render the document.
@@ -114,10 +114,10 @@ All you need to know is that this area is called the YAML (we will refer to it a
 
 ::: callout-note
 You don't have to commit after every change, as this would get quite tedious.
-You should commit states that are *meaningful to you* for inspection, comparison, or restoration (going back and restoring a previous version of your document).
+You should commit states that are *meaningful to you* for inspection, comparison, or restoration (e.g., restoring a previous version of your document).
 
-In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use.
-As the semester progresses we will let you make these decisions.
+In the first few assignments, we will tell you exactly when to commit and, in some cases, what commit message to use.
+As the semester progresses, we will let you make these decisions.
 :::
 
 ### Step 5: Pushing changes
@@ -129,11 +129,11 @@ Now that you have made an update and committed this change, it's time to push th
 -   Then, make sure all the changes went to GitHub.
     Go to your GitHub repo in your browser and refresh the page.
     You should see your commit message next to the updated files.
-    If you see this, all your changes are on GitHub and you're good to go!
+    If you see this, all your changes are on GitHub, and you're good to go!
 
 ::: callout-warning
 If you don't see your update, go back to Step 4.
-Remember that in order to push your changes to GitHub, you must have **staged** (checkec boxes) your **commit** (with a commit message) to be pushed and then clicked on **Push**.
+Remember that in order to push your changes to GitHub, you must have **staged** (checked boxes) your **commit** (with a commit message) to be pushed and then click on **Push**.
 :::
 
 ## Packages
@@ -171,9 +171,9 @@ As we've discussed in lecture, your plots should include an informative title, a
 Additionally, code should follow the [tidyverse style](https://style.tidyverse.org/).
 Particularly,
 
--   there should be line breaks after each `+` when building a `ggplot`,
+-   there should be spaces before and line breaks after each `+` when building a `ggplot`,
 
--   there should also be line breaks after each `|>` in a data transformation pipeline,
+-   there should also be spaces before and line breaks after each `|>` in a data transformation pipeline,
 
 -   code should be properly indented,
 
