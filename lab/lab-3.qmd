@@ -87,9 +87,9 @@ As we've discussed in lecture, your plots should include an informative title, a
 Additionally, code should follow the [tidyverse style](https://style.tidyverse.org/).
 Particularly,
 
--   there should be line breaks after each `+` when building a `ggplot`,
+-   there should be spaces before and line breaks after each `+` when building a `ggplot`,
 
--   there should also be line breaks after each `|>` in a data transformation pipeline,
+-   there should also be spaces before and line breaks after each `|>` in a data transformation pipeline,
 
 -   code should be properly indented,
 
