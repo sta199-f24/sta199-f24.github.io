@@ -444,7 +444,7 @@ In answering parts (a) and (b), you'll create two new variables, one for the tot
 Make sure to give them "reasonable" names – short but evocative.
 :::
 
-e\.
+c\.
 Which Midwestern state is most populous, and what percent of the Midwest population lives there?
 Which is the least populous and what percent lives there?
 
