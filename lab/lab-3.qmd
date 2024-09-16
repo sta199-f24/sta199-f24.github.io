@@ -129,7 +129,7 @@ a.  `glimpse()` at the `country_inflation` data frame and answer the following q
     How many rows does `country_inflation` have and what does each row represent?
     How many columns does `country_inflation` have and what does each column represent?
 
-b.  Display a list of the countries included in the dataset.
+b.  Display a list of the unique countries included in the dataset.
 
 ::: callout-tip
 A function that can be useful for part (b) is `pull()`.
@@ -138,7 +138,7 @@ Check out its documentation for examples of usage.
 
 ### Question 2
 
-Which countries had the top three highest inflation rates in 2021?
+Which countries had the top three highest inflation rates in 2023?
 Your output should be a data frame with two columns, `country` and `2021`, with inflation rates in descending order, and three rows for the top three countries.
 Briefly comment on how the inflation rates for these countries compare to the inflation rate for United States in that year.
 
@@ -150,14 +150,14 @@ Column names that are numbers are not considered "proper" in R, therefore to sel
 
 In a single pipeline,
 
--   calculate the ratio of the inflation in 2021 and inflation in 1993 for each country and store this information in a new column called `inf_ratio`,
+-   calculate the ratio of the inflation in 2023 and inflation in 1993 for each country and store this information in a new column called `inf_ratio`,
 -   arrange the data frame in decreasing order of `inf_ratio`, and
 -   select the variables `country` and `inf_ratio` to display as the result of the pipeline.
 
 Do not save this new variable in `inf_ratio`, only calculate and display it so you can answer the following question based on the output of the pipeline.
 
 Which country's inflation change is the largest over this time period?
-Did inflation increase of decrease between 1993 and 2021 in this country?
+Did inflation increase of decrease between 1993 and 2023 in this country?
 
 ::: callout-tip
 For this question you'll once again need to use variables whose names are numbers (years) in your pipeline.
@@ -185,15 +185,15 @@ Use a separate, single pipeline to answer each of the following questions.
 
 Requirement: Your code must use the `filter()` function for each part, not `arrange()`.
 
-a.  What is the highest inflation rate observed between 1993 and 2021?
+a.  What is the highest inflation rate observed between 1993 and 2023?
     The output of the pipeline should be a data frame with one row and three columns.
     In addition to code and output, your response should include a single sentence stating the country and year.
 
-b.  What is the lowest inflation rate observed between 1993 and 2021?
+b.  What is the lowest inflation rate observed between 1993 and 2023?
     The output of the pipeline should be a data frame with one row and three columns.
     In addition to code and output, your response should include a single sentence stating the country and year.
 
-c.  Putting (a) and (b) together: What are the highest and the lowest inflation rates observed between 1993 and 2021?
+c.  Putting (a) and (b) together: What are the highest and the lowest inflation rates observed between 1993 and 2023?
     The output of the pipeline should be a data frame with two rows and three columns.
 
 ### Question 6
@@ -206,11 +206,11 @@ For example, if these countries are Türkiye and United States, you can express 
 countries_of_interest <- c("Türkiye", "United States")
 ```
 
-If they are Türkiye, United States, and China, you can express this as follows:
+If they are Türkiye, United States, and Chile, you can express this as follows:
 
 ```{r}
 countries_of_interest <- c(
-  "Türkiye", "United States", "China (People's Republic of)"
+  "Türkiye", "United States", "Chile"
 )
 ```
 
