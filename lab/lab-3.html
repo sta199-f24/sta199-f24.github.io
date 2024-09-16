@@ -605,7 +605,7 @@ Important
 <p>Get to know the data.</p>
 <ol type="a">
 <li><p><code>glimpse()</code> at the <code>country_inflation</code> data frame and answer the following questions based on the output. How many rows does <code>country_inflation</code> have and what does each row represent? How many columns does <code>country_inflation</code> have and what does each column represent?</p></li>
-<li><p>Display a list of the countries included in the dataset.</p></li>
+<li><p>Display a list of the unique countries included in the dataset.</p></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -623,7 +623,7 @@ Tip
 </section>
 <section id="question-2" class="level3">
 <h3 class="anchored" data-anchor-id="question-2">Question 2</h3>
-<p>Which countries had the top three highest inflation rates in 2021? Your output should be a data frame with two columns, <code>country</code> and <code>2021</code>, with inflation rates in descending order, and three rows for the top three countries. Briefly comment on how the inflation rates for these countries compare to the inflation rate for United States in that year.</p>
+<p>Which countries had the top three highest inflation rates in 2023? Your output should be a data frame with two columns, <code>country</code> and <code>2021</code>, with inflation rates in descending order, and three rows for the top three countries. Briefly comment on how the inflation rates for these countries compare to the inflation rate for United States in that year.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -642,12 +642,12 @@ Tip
 <h3 class="anchored" data-anchor-id="question-3">Question 3</h3>
 <p>In a single pipeline,</p>
 <ul>
-<li>calculate the ratio of the inflation in 2021 and inflation in 1993 for each country and store this information in a new column called <code>inf_ratio</code>,</li>
+<li>calculate the ratio of the inflation in 2023 and inflation in 1993 for each country and store this information in a new column called <code>inf_ratio</code>,</li>
 <li>arrange the data frame in decreasing order of <code>inf_ratio</code>, and</li>
 <li>select the variables <code>country</code> and <code>inf_ratio</code> to display as the result of the pipeline.</li>
 </ul>
 <p>Do not save this new variable in <code>inf_ratio</code>, only calculate and display it so you can answer the following question based on the output of the pipeline.</p>
-<p>Which country’s inflation change is the largest over this time period? Did inflation increase of decrease between 1993 and 2021 in this country?</p>
+<p>Which country’s inflation change is the largest over this time period? Did inflation increase of decrease between 1993 and 2023 in this country?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -690,9 +690,9 @@ Important
 <p>Use a separate, single pipeline to answer each of the following questions.</p>
 <p>Requirement: Your code must use the <code>filter()</code> function for each part, not <code>arrange()</code>.</p>
 <ol type="a">
-<li><p>What is the highest inflation rate observed between 1993 and 2021? The output of the pipeline should be a data frame with one row and three columns. In addition to code and output, your response should include a single sentence stating the country and year.</p></li>
-<li><p>What is the lowest inflation rate observed between 1993 and 2021? The output of the pipeline should be a data frame with one row and three columns. In addition to code and output, your response should include a single sentence stating the country and year.</p></li>
-<li><p>Putting (a) and (b) together: What are the highest and the lowest inflation rates observed between 1993 and 2021? The output of the pipeline should be a data frame with two rows and three columns.</p></li>
+<li><p>What is the highest inflation rate observed between 1993 and 2023? The output of the pipeline should be a data frame with one row and three columns. In addition to code and output, your response should include a single sentence stating the country and year.</p></li>
+<li><p>What is the lowest inflation rate observed between 1993 and 2023? The output of the pipeline should be a data frame with one row and three columns. In addition to code and output, your response should include a single sentence stating the country and year.</p></li>
+<li><p>Putting (a) and (b) together: What are the highest and the lowest inflation rates observed between 1993 and 2023? The output of the pipeline should be a data frame with two rows and three columns.</p></li>
 </ol>
 </section>
 <section id="question-6" class="level3">
@@ -701,10 +701,10 @@ Important
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>countries_of_interest <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Türkiye"</span>, <span class="st">"United States"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If they are Türkiye, United States, and China, you can express this as follows:</p>
+<p>If they are Türkiye, United States, and Chile, you can express this as follows:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>countries_of_interest <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Türkiye"</span>, <span class="st">"United States"</span>, <span class="st">"China (People's Republic of)"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Türkiye"</span>, <span class="st">"United States"</span>, <span class="st">"Chile"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>So on and so forth… Then, in 1-2 sentences, state why you chose these countries.</p>
