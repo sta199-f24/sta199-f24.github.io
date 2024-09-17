@@ -1,0 +1,188 @@
+---
+title: "AE 06: StatSci majors + data tidying"
+subtitle: "Suggested answers"
+categories: 
+  - Answers
+---
+
+## Getting started
+
+### Packages
+
+We'll use the **tidyverse** package for this analysis.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+```
+
+### Data
+
+The data are available in the `data` folder.
+
+```{r}
+#| label: load-data
+statsci <- read_csv("data/statsci.csv")
+```
+
+And let's take a look at the data.
+
+```{r}
+statsci
+```
+
+## Pivoting
+
+Pivot the `statsci` data frame *longer* such that 
+
+- each row represents a degree type / year combination,
+- `year` and `n`umber of graduates for that year are columns,
+- `year` is numerical,
+- `NA`s in counts are replaced with 0s,
+- `degree_type` has levels BS, BS2, AB, and AB2 (in this order), and
+- the resulting data frame is saved as `statsci_longer`.
+
+```{r}
+statsci_longer <- statsci |>
+  pivot_longer(
+    cols = -degree,
+    names_to = "year",
+    names_transform = as.numeric,
+    values_to = "n"
+  ) |>
+  mutate(n = if_else(is.na(n), 0, n)) |>
+  separate(degree, sep = " \\(", into = c("major", "degree_type")) |>
+  mutate(
+    degree_type = str_remove(degree_type, "\\)"),
+    degree_type = fct_relevel(degree_type, "BS", "BS2", "AB", "AB2")
+  )
+
+statsci_longer
+```
+
+## Plotting
+
+-   Now we start making our plot, but let's not get too fancy right away. Create the following plot, which will serve as the "first draft" on the way to our goal.
+
+![](https://sta199-s24.github.io/images/statsci-plot-draft.png){fig-alt="Line plot of numbers of Statistical Science majors over the years (2011 - 2021). Degree types represented are BS, BS2, AB, AB2. There is an increasing trend in BS degrees and somewhat steady trend in AB degrees." fig-align="center"}
+
+```{r}
+ggplot(statsci_longer, aes(x = year, y = n, color = degree_type)) +
+  geom_point() +
+  geom_line()
+```
+
+-   What aspects of the plot need to be updated to go from the draft you created above to the [Goal] plot at the beginning of this application exercise.
+
+    -   x-axis scale: need to go from 2012 to 2024 in increments of 2 years
+    -   line colors
+    -   axis labels: title, subtitle, x, y, caption
+    -   theme
+    -   legend position and border
+
+-   Update x-axis scale such that the years displayed go from 2012 to 2024 in increments of 2 years. Do this by adding on to your ggplot call from earlier.
+
+```{r}
+ggplot(statsci_longer, aes(x = year, y = n, color = degree_type)) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks = seq(2012, 2024, 2))
+```
+
+-   Update line colors using the following level / color assignments. Once again, do this by adding on to your ggplot call from earlier.
+    -   "BS" = "cadetblue4"
+    -   "BS2" = "cadetblue3"
+    -   "AB" = "lightgoldenrod4"
+    -   "AB2" = "lightgoldenrod3"
+
+```{r}
+ggplot(statsci_longer, aes(x = year, y = n, color = degree_type)) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks = seq(2012, 2024, 2)) +
+  scale_color_manual(
+    values = c(
+      "BS" = "cadetblue4",
+      "BS2" = "cadetblue3",
+      "AB" = "lightgoldenrod4",
+      "AB2" = "lightgoldenrod3"
+    )
+  )
+```
+
+-   Update the plot labels (`title`, `subtitle`, `x`, `y`, and `caption`) and use `theme_minimal()`. Once again, do this by adding on to your ggplot call from earlier.
+
+```{r}
+ggplot(statsci_longer, aes(x = year, y = n, color = degree_type)) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks = seq(2012, 2024, 2)) +
+  scale_color_manual(
+    values = c(
+      "BS" = "cadetblue4",
+      "BS2" = "cadetblue3",
+      "AB" = "lightgoldenrod4",
+      "AB2" = "lightgoldenrod3"
+    )
+  ) +
+  labs(
+    x = "Graduation year",
+    y = "Number of majors graduating",
+    color = "Degree type",
+    title = "Statistical Science majors over the years",
+    subtitle = "Academic years 2011 - 2024",
+    caption = "Source: Office of the University Registrar\nhttps://registrar.duke.edu/registration/enrollment-statistics"
+  ) +
+  theme_minimal()
+```
+
+-   Finally, adding to your pipeline you've developed so far, move the legend into the plot, make its background white, and its border gray. Additionally, in the cell options, set
+    - `out-width: 100%` -- Output should span 100% of the width
+    - `fig-width: 8` -- Figure output should have a width of 8 inches
+    - `fig-asp: 0.5` -- Figure output should have an aspect ratio of 0.5, resulting in a height of 8 * 0.5 = 4 inches
+
+```{r}
+#| out-width: 100%
+#| fig-width: 8
+#| fig-asp: 0.5
+ggplot(statsci_longer, aes(x = year, y = n, color = degree_type)) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks = seq(2012, 2024, 2)) +
+  scale_color_manual(
+    values = c(
+      "BS" = "cadetblue4",
+      "BS2" = "cadetblue3",
+      "AB" = "lightgoldenrod4",
+      "AB2" = "lightgoldenrod3"
+    )
+  ) +
+  labs(
+    x = "Graduation year",
+    y = "Number of majors graduating",
+    color = "Degree type",
+    title = "Statistical Science majors over the years",
+    subtitle = "Academic years 2011 - 2024",
+    caption = "Source: Office of the University Registrar\nhttps://registrar.duke.edu/registration/enrollment-statistics"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "inside",
+    legend.position.inside = c(0.1, 0.7),
+    legend.background = element_rect(fill = "white", color = "gray")
+  )
+```
+
+
+## Render, commit, and push
+
+1.  Render your Quarto document.
+
+2.  Go to the Git pane and check the box next to each file listed, i.e., stage your changes.
+    Commit your staged changes using a simple and informative message.
+
+3.  Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.
+
+4.  Go to your repo on GitHub and confirm that you can see the updated files.
+    Once your updated files are in your repo on GitHub, you're good to go!
