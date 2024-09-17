@@ -419,7 +419,7 @@ This variable should take on the value:
 
 -   `No` otherwise.
 
-Then, display the updated `midwest` data frame, with county, state, percentage below poverty, percentage college educated, `potential_outlier` as the selected variables, arranged in ascending order of `potential_outlier`.
+Then, display the updated `midwest` data frame, with county, state, percentage below poverty, percentage college educated, `potential_outlier` as the selected variables, arranged in descending order of `potential_outlier`.
 
 c\.
 Recreate the visualization above, i.e., a scatterplot of the percentage below poverty vs. the percentage of people with a college degree.
