@@ -3,6 +3,7 @@ title: "AE 06: StatSci majors + data tidying"
 subtitle: "Suggested answers"
 categories: 
   - Answers
+draft: true
 ---
 
 ## Getting started
