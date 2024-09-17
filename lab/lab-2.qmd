@@ -421,7 +421,7 @@ This variable should take on the value:
 
 Then, display the updated `midwest` data frame, with county, state, percentage below poverty, percentage college educated, `potential_outlier` as the selected variables, arranged in descending order of `potential_outlier`.
 
-c\.
+e\.
 Recreate the visualization above, i.e., a scatterplot of the percentage below poverty vs. the percentage of people with a college degree.
 However, color the points by the newly created `potential_outlier` variable instead of the state.
 
