@@ -19,7 +19,7 @@ write_csv(country_inflation_wide, "lab/data/country-inflation.csv")
 
 # data prep for us inflation / join --------------------------------------------
 
-# data source: 
+# data source: https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CEconomy%23ECO%23%7CPrices%23ECO_PRI%23&pg=0&fc=Topic&bp=true&snb=16&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_PRICES%40DF_PRICES_ALL&df[ag]=OECD.SDD.TPS&df[vs]=1.0&pd=2011%2C2024&dq=USA.A.N.CPI.PA.CP12%2BCP11%2BCP10%2BCP09%2BCP08%2BCP07%2BCP06%2BCP05%2BCP04%2BCP03%2BCP02%2BCP01%2B_T.N.GY&to[TIME_PERIOD]=false&vw=tb
 
 us_inflation_raw <- read_csv("lab/data/PRICES_CPI_19092022031404285.csv")
 
