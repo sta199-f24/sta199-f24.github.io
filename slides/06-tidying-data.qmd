@@ -60,10 +60,11 @@ Prepare for today's application exercise: **`{r} todays_ae`**
 ## Recap: layering geoms {.scrollable .smaller}
 
 ::: columns
-::: {.column width=70%}
+::: {.column width="70%"}
 ::: task
 Update the following code to create the visualization on the right.
 :::
+
 ```{r}
 #| message: false
 library(tidyverse)
@@ -71,12 +72,11 @@ library(usdata)
 library(ggbeeswarm)
 ```
 :::
-::: {.column width=30%}
 
+::: {.column width="30%"}
 ![](images/06/gerrymander-recreate.png)
 :::
 :::
-
 
 ```{webr}
 ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
@@ -104,7 +104,7 @@ Generally useful in a `filter()` but will come up in various other places as wel
 Generally useful in a `filter()` but will come up in various other places as well...
 
 | operator      | definition                                                            |
-|:--------------------|:--------------------------------------------------|
+|:--------------|:----------------------------------------------------------------------|
 | `x & y`       | [is x AND y?]{.fragment}                                              |
 | `x \| y`      | [is x OR y?]{.fragment}                                               |
 | `is.na(x)`    | [is x NA?]{.fragment}                                                 |
