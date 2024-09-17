@@ -174,7 +174,7 @@ df |>
 b\.
 What does the following code chunk do?
 Run it, analyze the result, and articulate in words what the pipeline does, especially mentioning what the `.groups` argument does.
-How is the output different from the one in part (d)?
+How is the output different from the one in part (a)?
 
 ```{r}
 #| eval: false
@@ -419,9 +419,9 @@ This variable should take on the value:
 
 -   `No` otherwise.
 
-Then, display the updated `midwest` data frame, with county, state, percentage below poverty, percentage college educated, `potential_outlier` as the selected variables, arranged in ascending order of `potential_outlier`.
+Then, display the updated `midwest` data frame, with county, state, percentage below poverty, percentage college educated, `potential_outlier` as the selected variables, arranged in descending order of `potential_outlier`.
 
-c\.
+e\.
 Recreate the visualization above, i.e., a scatterplot of the percentage below poverty vs. the percentage of people with a college degree.
 However, color the points by the newly created `potential_outlier` variable instead of the state.
 
@@ -444,7 +444,7 @@ In answering parts (a) and (b), you'll create two new variables, one for the tot
 Make sure to give them "reasonable" names – short but evocative.
 :::
 
-e\.
+c\.
 Which Midwestern state is most populous, and what percent of the Midwest population lives there?
 Which is the least populous and what percent lives there?
 
