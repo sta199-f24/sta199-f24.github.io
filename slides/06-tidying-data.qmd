@@ -4,13 +4,15 @@ subtitle: "Lecture 6"
 date: "2024-09-17"
 format: 
   live-revealjs: 
-    output-file: 05-exploring-data-II-slides.html
+    output-file: 06-tidying-data-slides.html
     webr:
       cell-options:
         autorun: false
 webr:
   packages:
     - tidyverse
+    - usdata
+    - ggbeeswarm
   resources:
     - https://raw.githubusercontent.com/sta199-f24/sta199-f24.github.io/main/slides/data/statsci.csv
 ---
@@ -55,29 +57,36 @@ Prepare for today's application exercise: **`{r} todays_ae`**
 -   Wait till the you're prompted to work on the application exercise during class before editing the file.
 :::
 
-## Recap: pipe {.smaller}
-
--   The pipe operator passes what comes before it into the function that comes after it as the first argument in that function.
+## Recap: layering geoms {.scrollable .smaller}
 
 ::: columns
-::: column
+::: {.column width=70%}
+::: task
+Update the following code to create the visualization on the right.
+:::
 ```{r}
-sum(1, 2)
+#| message: false
+library(tidyverse)
+library(usdata)
+library(ggbeeswarm)
 ```
 :::
+::: {.column width=30%}
 
-::: column
-```{r}
-1 |> 
-  sum(2)
+![](images/06/gerrymander-recreate.png)
+:::
+:::
+
+
+```{webr}
+ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
+  geom_boxplot(aes(color = gerry)) +
+  geom_beeswarm()
 ```
-:::
-:::
-
--   Always use a line break after the pipe, and indent the next line of code.
-    -   Just like always use a line break between layers of ggplots, after `+`, and indent the next line.
 
 ## Recap: logical operators {.smaller}
+
+Generally useful in a `filter()` but will come up in various other places as well...
 
 | operator | definition                                |
 |:---------|:------------------------------------------|
@@ -90,10 +99,12 @@ sum(1, 2)
 
 : {tbl-colwidths="\[25,75\]"}
 
-## Recap: logical operators {.smaller}
+## Recap: logical operators (cont.) {.smaller}
+
+Generally useful in a `filter()` but will come up in various other places as well...
 
 | operator      | definition                                                            |
-|:-----------------|:-----------------------------------------------------|
+|:--------------------|:--------------------------------------------------|
 | `x & y`       | [is x AND y?]{.fragment}                                              |
 | `x \| y`      | [is x OR y?]{.fragment}                                               |
 | `is.na(x)`    | [is x NA?]{.fragment}                                                 |
@@ -109,8 +120,6 @@ sum(1, 2)
 Let's make a tiny data frame to use as an example:
 
 ```{r}
-#| message: false
-library(tidyverse)
 df <- tibble(x = c(1, 2, 3, 4, 5), y = c("a", "a", "b", "c", "c"))
 df
 ```

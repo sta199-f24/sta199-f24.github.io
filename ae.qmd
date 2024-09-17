@@ -3,7 +3,7 @@ title: "Application exercises"
 listing:
   id: ae-listing
   contents: ae
-  sort: title
+  sort: [title, subtitle]
   sort-ui: false
   filter-ui: false
   type: table

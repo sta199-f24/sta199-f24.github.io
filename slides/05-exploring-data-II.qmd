@@ -74,11 +74,11 @@ Prepare for today's application exercise: **`{r} todays_ae`**
 
 ## Code style and readability
 
-- Whydowecareaboutthestyleandreadabilityofyourcode? [$\rightarrow$ Why do we care about the style and readability of your code?]{.fragment}
+-   Whydowecareaboutthestyleandreadabilityofyourcode? [$\rightarrow$ Why do we care about the style and readability of your code?]{.fragment}
 
 . . .
 
-- Je voudrais un cafe [$\rightarrow$ Je voudrais un café]{.fragment}
+-   Je voudrais un cafe [$\rightarrow$ Je voudrais un café]{.fragment}
 
 # `gerrymander`
 
@@ -100,7 +100,8 @@ library(ggthemes)
 ## From last time {.scrollable .smaller}
 
 ::: question
-Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election? Support your answer with a visualization as well as summary statistics.
+Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?
+Support your answer with a visualization as well as summary statistics.
 :::
 
 ```{webr}
@@ -146,9 +147,9 @@ gerrymander |>
 
 ## `group_by()` {.scrollable}
 
-- Group by converts a data frame to a grouped data frame, where subsequent operations are performed once per group
+-   Group by converts a data frame to a grouped data frame, where subsequent operations are performed once per group
 
-- `ungroup()` removes grouping
+-   `ungroup()` removes grouping
 
 ```{webr}
 gerrymander |>
@@ -181,7 +182,7 @@ gerrymander |>
 
 ## `summarize()` {.smaller}
 
-```r
+``` r
 ... |>
   summarize(
     name_of_summary_statistic = summary_function(variable)
@@ -190,15 +191,13 @@ gerrymander |>
 
 . . .
 
-- `name_of_summary_statistic`: Anything you want to call it! 
-  - Recommendation: Keep it short and evocative
-
-- `summary_function()`: 
-  - `n()`: number of observations
-  - `mean()`: mean
-  - `median()`: median
-  - ...
-
+-   `name_of_summary_statistic`: Anything you want to call it!
+    -   Recommendation: Keep it short and evocative
+-   `summary_function()`:
+    -   `n()`: number of observations
+    -   `mean()`: mean
+    -   `median()`: median
+    -   ...
 
 ## Spot the difference {.smaller}
 
@@ -214,6 +213,7 @@ gerrymander |>
   summarize(n = n())
 ```
 :::
+
 ::: column
 ```{r}
 gerrymander |>
@@ -226,27 +226,29 @@ gerrymander |>
 
 ::: columns
 ::: {.column width="40%"}
-```r
+``` r
 ... |>
   count(variable)
 ```
 :::
+
 ::: {.column width="60%"}
-```r
+``` r
 ... |>
   count(variable1, variable2)
 ```
 :::
 :::
 
-- Count the number of observations in each level of variable(s)
+-   Count the number of observations in each level of variable(s)
 
-- Place the counts in a variable called `n`
+-   Place the counts in a variable called `n`
 
 ## `count()` and `sort` {.scrollable}
 
 ::: question
-What does the following pipeline do? Rewrite it with `count()` instead.
+What does the following pipeline do?
+Rewrite it with `count()` instead.
 :::
 
 ```{webr}
@@ -273,7 +275,8 @@ Is a Congressional District more likely to be flipped to a Democratic seat if it
 ## Flipping vs. gerrymandering prevalence {.smaller}
 
 ::: {.question .xsmall}
-The following code should produce a visualization that answers the question "Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?" However, it produces a `warning` and an unexpected plot. What's going on?
+The following code should produce a visualization that answers the question "Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?" However, it produces a `warning` and an unexpected plot.
+What's going on?
 :::
 
 ::: columns
@@ -289,6 +292,7 @@ ggplot(
   geom_bar(position = "fill")
 ```
 :::
+
 ::: column
 ```{r}
 #| ref.label: fill-warning
@@ -306,13 +310,13 @@ glimpse(gerrymander)
 
 ## `mutate()`
 
-- We want to use `flip18` as a categorical variable
+-   We want to use `flip18` as a categorical variable
 
-- But it's stored as a numeric
+-   But it's stored as a numeric
 
-- So we need to change its type first, before we can use it as a categorical variable
+-   So we need to change its type first, before we can use it as a categorical variable
 
-- The `mutate()` function transforms (*mutates*) a data frame by creating a new column or updating an existing one
+-   The `mutate()` function transforms (*mutates*) a data frame by creating a new column or updating an existing one
 
 ## `mutate()` in action {.scrollable}
 
@@ -350,11 +354,6 @@ gerrymander |>
 
 ## Recap: aesthetic mappings
 
-- **Local** aesthetic mappings for a given `geom`
+-   **Local** aesthetic mappings for a given `geom`
 
-- **Global** aesthetic mappings for all `geom`s
-
-
-
-
-
+-   **Global** aesthetic mappings for all `geom`s
