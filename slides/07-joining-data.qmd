@@ -60,9 +60,67 @@ Prepare for today's application exercise: **`{r} todays_ae`**
 
 ## Announcements
 
+## Notes from Lab 1 submissions {.smaller}
+
+**Use of AI tools:**
+
+- If using an AI tool **for code**, [**CITE!**]{style="color:#009E73;"}
+
+> The bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.
+
+If we suspect code was generated with by / with the help of an AI tool but not cited, it's an automatic 0 on that question + potentially further penalties as outlined in <https://sta199-f24.github.io/course-syllabus.html#academic-honesty>.
+
+. . .
+
+- If using an AI tool **for narrative**, [**STOP!**]{style="color:#D55E00;"}
+
+## Notes from Lab 1 submissions {.smaller}
+
+- **Plot labeling:** Keep it concise and non-redundant (same info doesn't need to be repeated, in detail, in axis labels and title).
+
+- TO DO: Add other notes...
+
+## Recap: StatSci majors {.smaller}
+
+```{r}
+#| label: statsci-longer
+#| include: false
+library(tidyverse)
+statsci <- read_csv("data/statsci.csv")
+
+statsci_longer <- statsci |>
+  pivot_longer(
+    cols = -degree,
+    names_to = "year",
+    names_transform = as.numeric,
+    values_to = "n"
+  ) |>
+  mutate(n = if_else(is.na(n), 0, n)) |>
+  separate(degree, sep = " \\(", into = c("major", "degree_type")) |>
+  mutate(
+    degree_type = str_remove(degree_type, "\\)"),
+    degree_type = fct_relevel(degree_type, "BS", "BS2", "AB", "AB2")
+  )
+```
+
+```{r}
+#| label: statsci-plot-1
+#| output-location: column
+#| fig-width: 5
+#| fig-asp: 0.618
+ggplot(
+  statsci_longer, 
+  aes(
+    x = year, y = n, color = degree_type
+    )
+  ) +
+  geom_point() +
+  geom_line()
+```
+
 ## Recap: StatSci majors
 
-TO DO: Add plotting code.
+TO DO: Add incremental plots
 
 ## Recap: Data tidying {.smaller}
 
@@ -85,7 +143,6 @@ Can you guess the variable plotted here?
 ```{r}
 #| echo: false
 #| message: false
-library(tidyverse)
 library(usmap)
 library(scales)
 library(scico)
