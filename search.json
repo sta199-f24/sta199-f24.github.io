@@ -3719,11 +3719,32 @@
     "text": "Announcements"
   },
   {
+    "objectID": "slides/07-joining-data.html#notes-from-lab-1-submissions",
+    "href": "slides/07-joining-data.html#notes-from-lab-1-submissions",
+    "title": "Joining data",
+    "section": "Notes from Lab 1 submissions",
+    "text": "Notes from Lab 1 submissions\nUse of AI tools:\n\nIf using an AI tool for code, CITE!\n\n\nThe bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.\n\nIf we suspect code was generated with by / with the help of an AI tool but not cited, it’s an automatic 0 on that question + potentially further penalties as outlined in https://sta199-f24.github.io/course-syllabus.html#academic-honesty.\n. . .\n\nIf using an AI tool for narrative, STOP!"
+  },
+  {
+    "objectID": "slides/07-joining-data.html#notes-from-lab-1-submissions-1",
+    "href": "slides/07-joining-data.html#notes-from-lab-1-submissions-1",
+    "title": "Joining data",
+    "section": "Notes from Lab 1 submissions",
+    "text": "Notes from Lab 1 submissions\n\nPlot labeling: Keep it concise and non-redundant (same info doesn’t need to be repeated, in detail, in axis labels and title).\nTO DO: Add other notes…"
+  },
+  {
     "objectID": "slides/07-joining-data.html#recap-statsci-majors",
     "href": "slides/07-joining-data.html#recap-statsci-majors",
     "title": "Joining data",
     "section": "Recap: StatSci majors",
-    "text": "Recap: StatSci majors\nTO DO: Add plotting code."
+    "text": "Recap: StatSci majors\n\nggplot(\n  statsci_longer, \n  aes(\n    x = year, y = n, color = degree_type\n    )\n  ) +\n  geom_point() +\n  geom_line()"
+  },
+  {
+    "objectID": "slides/07-joining-data.html#recap-statsci-majors-1",
+    "href": "slides/07-joining-data.html#recap-statsci-majors-1",
+    "title": "Joining data",
+    "section": "Recap: StatSci majors",
+    "text": "Recap: StatSci majors\nTO DO: Add incremental plots"
   },
   {
     "objectID": "slides/07-joining-data.html#recap-data-tidying",
@@ -3908,11 +3929,32 @@
     "text": "Announcements"
   },
   {
+    "objectID": "slides/07-joining-data-slides.html#notes-from-lab-1-submissions",
+    "href": "slides/07-joining-data-slides.html#notes-from-lab-1-submissions",
+    "title": "Joining data",
+    "section": "Notes from Lab 1 submissions",
+    "text": "Notes from Lab 1 submissions\nUse of AI tools:\n\nIf using an AI tool for code, CITE!\n\n\nThe bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.\n\nIf we suspect code was generated with by / with the help of an AI tool but not cited, it’s an automatic 0 on that question + potentially further penalties as outlined in https://sta199-f24.github.io/course-syllabus.html#academic-honesty.\n\n\nIf using an AI tool for narrative, STOP!"
+  },
+  {
+    "objectID": "slides/07-joining-data-slides.html#notes-from-lab-1-submissions-1",
+    "href": "slides/07-joining-data-slides.html#notes-from-lab-1-submissions-1",
+    "title": "Joining data",
+    "section": "Notes from Lab 1 submissions",
+    "text": "Notes from Lab 1 submissions\n\nPlot labeling: Keep it concise and non-redundant (same info doesn’t need to be repeated, in detail, in axis labels and title).\nTO DO: Add other notes…"
+  },
+  {
     "objectID": "slides/07-joining-data-slides.html#recap-statsci-majors",
     "href": "slides/07-joining-data-slides.html#recap-statsci-majors",
     "title": "Joining data",
     "section": "Recap: StatSci majors",
-    "text": "Recap: StatSci majors\nTO DO: Add plotting code."
+    "text": "Recap: StatSci majors\n\n\nggplot(\n  statsci_longer, \n  aes(\n    x = year, y = n, color = degree_type\n    )\n  ) +\n  geom_point() +\n  geom_line()"
+  },
+  {
+    "objectID": "slides/07-joining-data-slides.html#recap-statsci-majors-1",
+    "href": "slides/07-joining-data-slides.html#recap-statsci-majors-1",
+    "title": "Joining data",
+    "section": "Recap: StatSci majors",
+    "text": "Recap: StatSci majors\nTO DO: Add incremental plots"
   },
   {
     "objectID": "slides/07-joining-data-slides.html#recap-data-tidying",
