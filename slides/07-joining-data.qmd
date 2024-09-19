@@ -64,21 +64,30 @@ Prepare for today's application exercise: **`{r} todays_ae`**
 
 **Use of AI tools:**
 
-- If using an AI tool **for code**, [**CITE!**]{style="color:#009E73;"}
+-   If using an AI tool **for code**, [**CITE!**]{style="color:#009E73;"}
 
-> The bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.
+> The bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt.
+> The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.
 
 If we suspect code was generated with by / with the help of an AI tool but not cited, it's an automatic 0 on that question + potentially further penalties as outlined in <https://sta199-f24.github.io/course-syllabus.html#academic-honesty>.
 
 . . .
 
-- If using an AI tool **for narrative**, [**STOP!**]{style="color:#D55E00;"}
+-   If using an AI tool **for narrative**, [**STOP!**]{style="color:#D55E00;"}
 
 ## Notes from Lab 1 submissions {.smaller}
 
-- **Plot labeling:** Keep it concise and non-redundant (same info doesn't need to be repeated, in detail, in axis labels and title).
+-   **Plot labeling:** Keep it concise and non-redundant (same info doesn't need to be repeated, in detail, in axis labels and title).
 
-- TO DO: Add other notes...
+-   **Code style and readability:**
+
+    -   Looking good overall!
+    -   A tool that can help (but won't get everything right):
+        -   Highlight code you want to style
+
+        -   Click on Addins (top of editor), scroll down to STYLER, select Style selection
+
+-   **Narrative:** Avoid lengthy or conflicting prose
 
 ## Recap: StatSci majors {.smaller}
 
@@ -118,18 +127,139 @@ ggplot(
   geom_line()
 ```
 
-## Recap: StatSci majors
+## Recap: Scales {.smaller}
 
-TO DO: Add incremental plots
+::: task
+Update x-axis scale: 2012 to 2024, increments of 2 years.
+:::
+
+```{r}
+#| label: statsci-plot-2
+#| output-location: column
+#| fig-width: 5
+#| fig-asp: 0.618
+#| code-line-numbers: "|9"
+ggplot(
+  statsci_longer, 
+  aes(
+    x = year, y = n, color = degree_type
+    )
+  ) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks = seq(2012, 2024, 2))
+```
+
+## Recap: Labels and themes {.smaller}
+
+::: task
+Add custom labels and change theme.
+:::
+
+```{r}
+#| label: statsci-plot-3
+#| output-location: column
+#| fig-width: 5
+#| fig-asp: 0.618
+#| code-line-numbers: "|10-25|26"
+ggplot(
+  statsci_longer, 
+  aes(
+    x = year, y = n, color = degree_type
+    )
+  ) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks = seq(2012, 2024, 2)) +
+  scale_color_manual(
+    values = c(
+      "BS" = "cadetblue4",
+      "BS2" = "cadetblue3",
+      "AB" = "lightgoldenrod4",
+      "AB2" = "lightgoldenrod3"
+    )
+  ) +
+  labs(
+    x = "Graduation year",
+    y = "Number of majors graduating",
+    color = "Degree type",
+    title = "Statistical Science majors over the years",
+    subtitle = "Academic years 2011 - 2024",
+    caption = "Source: Office of the University Registrar\nhttps://registrar.duke.edu/registration/enrollment-statistics"
+  ) +
+  theme_minimal()
+```
+
+## Recap: Legends {.smaller}
+
+```{r}
+#| label: statsci-plot-4
+#| output-location: column
+#| fig-width: 5
+#| fig-asp: 0.618
+#| code-line-numbers: "|27-31"
+ggplot(
+  statsci_longer, 
+  aes(
+    x = year, y = n, color = degree_type
+    )
+  ) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks = seq(2012, 2024, 2)) +
+  scale_color_manual(
+    values = c(
+      "BS" = "cadetblue4",
+      "BS2" = "cadetblue3",
+      "AB" = "lightgoldenrod4",
+      "AB2" = "lightgoldenrod3"
+    )
+  ) +
+  labs(
+    x = "Graduation year",
+    y = "Number of majors graduating",
+    color = "Degree type",
+    title = "Statistical Science majors over the years",
+    subtitle = "Academic years 2011 - 2024",
+    caption = "Source: Office of the University Registrar\nhttps://registrar.duke.edu/registration/enrollment-statistics"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "inside",
+    legend.position.inside = c(0.1, 0.7),
+    legend.background = element_rect(fill = "white", color = "gray")
+  )
+```
+
+## Recap: Plot sizing {.smaller}
+
+```{.r code-line-numbers="|2-4"}
+#| label: statsci-plot-5
+#| out-width: 100% 
+#| fig-width: 8
+#| fig-asp: 0.5
+# plot code goes here
+```
+
+```{r}
+#| ref.label: statsci-plot-4
+#| out-width: 100% 
+#| fig-width: 8
+#| fig-asp: 0.5
+#| echo: false
+```
+
 
 ## Recap: Data tidying {.smaller}
 
 ::: incremental
-- Data sets can't be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format
+-   Data sets can't be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format
 
-- When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the `pivot_longer()` function.
+-   When pivoting longer, variable names that turn into values are characters by default.
+    If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the `pivot_longer()` function.
 
-- You can tweak a plot forever, but at some point the tweaks are likely not very productive. However, you should always be critical of defaults (however pretty they might be) and see if you can improve the plot to better portray your data / results / what you want to communicate.
+-   You can tweak a plot forever, but at some point the tweaks are likely not very productive.
+    However, you should always be critical of defaults (however pretty they might be) and see if you can improve the plot to better portray your data / results / what you want to communicate.
 :::
 
 # Recoding data
@@ -183,9 +313,9 @@ How would you approach this task?
 
 . . .
 
-- Create a new variable called `swing_state` with levels `"Swing"` and `"Non-swing"`
-- Group by `swing_state`
-- Summarize to find the mean sales tax in each type of state
+-   Create a new variable called `swing_state` with levels `"Swing"` and `"Non-swing"`
+-   Group by `swing_state`
+-   Summarize to find the mean sales tax in each type of state
 
 ## `mutate()` with `if_else()` {.smaller .scrollable}
 
@@ -202,7 +332,7 @@ sales_taxes <- sales_taxes |>
 
 ## Recap: `if_else()`
 
-```r
+``` r
 if_else(
   x == y,               #<1>
   "x is equal to y",    #<2>
@@ -210,9 +340,9 @@ if_else(
 )
 ```
 
-1. Condition
-2. Value if condition is `TRUE`
-3. Value if condition is `FALSE`
+1.  Condition
+2.  Value if condition is `TRUE`
+3.  Value if condition is `FALSE`
 
 ## Sales tax in swing states {.smaller .scrollable}
 
@@ -238,9 +368,9 @@ How would you approach this task?
 
 . . .
 
-- Create a new variable called `coast` with levels `"Pacific"`, `"Atlantic"`, and `"Neither"`
-- Group by `coast`
-- Summarize to find the mean sales tax in each type of state
+-   Create a new variable called `coast` with levels `"Pacific"`, `"Atlantic"`, and `"Neither"`
+-   Group by `coast`
+-   Summarize to find the mean sales tax in each type of state
 
 ## `mutate()` with `case_when()` {.smaller .scrollable}
 
@@ -263,7 +393,7 @@ sales_taxes <- sales_taxes |>
 
 ## Recap: `case_when()`
 
-```r
+``` r
 case_when(
   x > y  ~ "x is greater than y", #<1>
   x < y  ~ "x is less than y",    #<2>
@@ -271,9 +401,9 @@ case_when(
 )
 ```
 
-1. Value if first condition is `TRUE`
-2. Value if second condition is `TRUE`
-3. Value if neither condition is `TRUE`, i.e., default value
+1.  Value if first condition is `TRUE`
+2.  Value if second condition is `TRUE`
+3.  Value if neither condition is `TRUE`, i.e., default value
 
 ## Sales tax in coastal states {.smaller .scrollable}
 
@@ -299,14 +429,15 @@ How would you approach this task?
 
 . . .
 
-- Create a new variable called `region` with levels `"Midwest"`, `"Northeast"`, `"South"`, and `"West"`.
-- Group by `region`
-- Summarize to find the mean sales tax in each type of state
+-   Create a new variable called `region` with levels `"Midwest"`, `"Northeast"`, `"South"`, and `"West"`.
+-   Group by `region`
+-   Summarize to find the mean sales tax in each type of state
 
 ## `mutate()` with `case_when()` {.smaller .scrollable}
 
 ::: question
-Who feels like filling in the blanks lists of states in each region? Who feels like it's simply too tedious to write out names of all states?
+Who feels like filling in the blanks lists of states in each region?
+Who feels like it's simply too tedious to write out names of all states?
 :::
 
 ```{webr}
@@ -472,7 +603,7 @@ anti_join(x, y)
 Compare the average state sales tax rates of states in various regions (Midwest, Northeast, South, West), where the input data are:
 
 1.  States and sales taxes
-2.  States and regions 
+2.  States and regions
 
 ## `{r} todays_ae` {.smaller}
 
