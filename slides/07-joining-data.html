@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.56">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
 <meta name="dcterms.date" content="2024-09-19">
-
 <title>Joining data – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
@@ -58,7 +55,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -79,8 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -106,11 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-
-
+}</script><script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script><link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <meta property="og:title" content="Joining data – STA 199">
 <meta property="og:description" content="Lecture 7">
 <meta property="og:site_name" content="STA 199">
@@ -120,13 +111,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -137,23 +125,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f24" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
     <div class="dropdown">
       <a href="" title="Support" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Support"><i class="bi bi-life-preserver"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
+<li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">
               <i class="bi bi-person-raised-hand pe-1"></i>
             Office hours
@@ -172,11 +155,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             </a>
           </li>
       </ul>
-    </div>
+</div>
     <div class="dropdown">
       <a href="" title="Canvas" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Canvas"><i class="bi bi-file-check-fill"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
-          <li>
+<li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/39994/announcements">
               <i class="bi bi-megaphone-fill pe-1"></i>
             Announcements
@@ -195,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             </a>
           </li>
       </ul>
-    </div>
+</div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
@@ -206,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
@@ -214,8 +197,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -258,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -267,8 +250,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
@@ -299,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -308,8 +291,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/description.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Description</span></a>
@@ -352,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab.html" class="sidebar-item-text sidebar-link">
@@ -372,28 +355,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up">Warm-up</a>
+<li>
+<a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up">Warm-up</a>
   <ul class="collapse">
-  <li><a href="#while-you-wait" id="toc-while-you-wait" class="nav-link" data-scroll-target="#while-you-wait">While you wait…</a></li>
+<li><a href="#while-you-wait" id="toc-while-you-wait" class="nav-link" data-scroll-target="#while-you-wait">While you wait…</a></li>
   <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
   <li><a href="#notes-from-lab-1-submissions" id="toc-notes-from-lab-1-submissions" class="nav-link" data-scroll-target="#notes-from-lab-1-submissions">Notes from Lab 1 submissions</a></li>
   <li><a href="#notes-from-lab-1-submissions-1" id="toc-notes-from-lab-1-submissions-1" class="nav-link" data-scroll-target="#notes-from-lab-1-submissions-1">Notes from Lab 1 submissions</a></li>
   <li><a href="#recap-statsci-majors" id="toc-recap-statsci-majors" class="nav-link" data-scroll-target="#recap-statsci-majors">Recap: StatSci majors</a></li>
-  <li><a href="#recap-statsci-majors-1" id="toc-recap-statsci-majors-1" class="nav-link" data-scroll-target="#recap-statsci-majors-1">Recap: StatSci majors</a></li>
+  <li><a href="#recap-scales" id="toc-recap-scales" class="nav-link" data-scroll-target="#recap-scales">Recap: Scales</a></li>
+  <li><a href="#recap-labels-and-themes" id="toc-recap-labels-and-themes" class="nav-link" data-scroll-target="#recap-labels-and-themes">Recap: Labels and themes</a></li>
+  <li><a href="#recap-legends" id="toc-recap-legends" class="nav-link" data-scroll-target="#recap-legends">Recap: Legends</a></li>
+  <li><a href="#recap-plot-sizing" id="toc-recap-plot-sizing" class="nav-link" data-scroll-target="#recap-plot-sizing">Recap: Plot sizing</a></li>
   <li><a href="#recap-data-tidying" id="toc-recap-data-tidying" class="nav-link" data-scroll-target="#recap-data-tidying">Recap: Data tidying</a></li>
-  </ul></li>
-  <li><a href="#recoding-data" id="toc-recoding-data" class="nav-link" data-scroll-target="#recoding-data">Recoding data</a>
+  </ul>
+</li>
+  <li>
+<a href="#recoding-data" id="toc-recoding-data" class="nav-link" data-scroll-target="#recoding-data">Recoding data</a>
   <ul class="collapse">
-  <li><a href="#whats-going-on-in-this-plot" id="toc-whats-going-on-in-this-plot" class="nav-link" data-scroll-target="#whats-going-on-in-this-plot">What’s going on in this plot?</a></li>
+<li><a href="#whats-going-on-in-this-plot" id="toc-whats-going-on-in-this-plot" class="nav-link" data-scroll-target="#whats-going-on-in-this-plot">What’s going on in this plot?</a></li>
   <li><a href="#sales-taxes-in-us-states" id="toc-sales-taxes-in-us-states" class="nav-link" data-scroll-target="#sales-taxes-in-us-states">Sales taxes in US states</a></li>
   <li><a href="#sales-tax-in-swing-states" id="toc-sales-tax-in-swing-states" class="nav-link" data-scroll-target="#sales-tax-in-swing-states">Sales tax in swing states</a></li>
   <li><a href="#mutate-with-if_else" id="toc-mutate-with-if_else" class="nav-link" data-scroll-target="#mutate-with-if_else"><code>mutate()</code> with <code>if_else()</code></a></li>
@@ -405,10 +392,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sales-tax-in-coastal-states-1" id="toc-sales-tax-in-coastal-states-1" class="nav-link" data-scroll-target="#sales-tax-in-coastal-states-1">Sales tax in coastal states</a></li>
   <li><a href="#sales-tax-in-us-regions" id="toc-sales-tax-in-us-regions" class="nav-link" data-scroll-target="#sales-tax-in-us-regions">Sales tax in US regions</a></li>
   <li><a href="#mutate-with-case_when-1" id="toc-mutate-with-case_when-1" class="nav-link" data-scroll-target="#mutate-with-case_when-1"><code>mutate()</code> with <code>case_when()</code></a></li>
-  </ul></li>
-  <li><a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data">Joining data</a>
+  </ul>
+</li>
+  <li>
+<a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data">Joining data</a>
   <ul class="collapse">
-  <li><a href="#why-join" id="toc-why-join" class="nav-link" data-scroll-target="#why-join">Why join?</a></li>
+<li><a href="#why-join" id="toc-why-join" class="nav-link" data-scroll-target="#why-join">Why join?</a></li>
   <li><a href="#why-join-1" id="toc-why-join-1" class="nav-link" data-scroll-target="#why-join-1">Why join?</a></li>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#left_join" id="toc-left_join" class="nav-link" data-scroll-target="#left_join"><code>left_join()</code></a></li>
@@ -417,20 +406,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#inner_join" id="toc-inner_join" class="nav-link" data-scroll-target="#inner_join"><code>inner_join()</code></a></li>
   <li><a href="#semi_join" id="toc-semi_join" class="nav-link" data-scroll-target="#semi_join"><code>semi_join()</code></a></li>
   <li><a href="#anti_join" id="toc-anti_join" class="nav-link" data-scroll-target="#anti_join"><code>anti_join()</code></a></li>
-  </ul></li>
-  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
-  <ul class="collapse">
-  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
-  <li><a href="#ae-07-taxes-join" id="toc-ae-07-taxes-join" class="nav-link" data-scroll-target="#ae-07-taxes-join">ae-07-taxes-join</a></li>
-  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/07-joining-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="07-joining-data-slides.html"><i class="bi bi-file-slides"></i>RevealJS (live)</a></li></ul></div></nav>
+</li>
+  <li>
+<a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
+  <ul class="collapse">
+<li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#ae-07-taxes-join" id="toc-ae-07-taxes-join" class="nav-link" data-scroll-target="#ae-07-taxes-join">ae-07-taxes-join</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/07-joining-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="07-joining-data-slides.html"><i class="bi bi-file-slides"></i>RevealJS (live)</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Joining data</h1>
 <p class="subtitle lead">Lecture 7</p>
 </div>
@@ -465,27 +453,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<!-- begin: webr fodder -->
-<div class="cell" data-edit="false">
+</header><!-- begin: webr fodder --><div class="cell" data-edit="false">
 <div>
 <div id="webr-1">
 
 </div>
 <script type="webr-1-contents">
-eyJhdHRyIjp7ImV2YWwiOnRydWUsImVjaG8iOmZhbHNlLCJhdXRvcnVuIjp0cnVlLCJlZGl0IjpmYWxzZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJvcHRpb25zKHdpZHRoID0gNjApXG5zYWxlc190YXhlcyA8LSByZWFkX2NzdihcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9zdGExOTktZjI0L3N0YTE5OS1mMjQuZ2l0aHViLmlvL21haW4vc2xpZGVzL2RhdGEvc2FsZXMtdGF4ZXMuY3N2XCIpXG51c19yZWdpb25zIDwtIHJlYWRfY3N2KFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3N0YTE5OS1mMjQvc3RhMTk5LWYyNC5naXRodWIuaW8vbWFpbi9zbGlkZXMvZGF0YS91cy1yZWdpb25zLmNzdlwiKSJ9
+eyJjb2RlIjoib3B0aW9ucyh3aWR0aCA9IDYwKVxuc2FsZXNfdGF4ZXMgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vc3RhMTk5LWYyNC9zdGExOTktZjI0LmdpdGh1Yi5pby9tYWluL3NsaWRlcy9kYXRhL3NhbGVzLXRheGVzLmNzdlwiKVxudXNfcmVnaW9ucyA8LSByZWFkX2NzdihcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9zdGExOTktZjI0L3N0YTE5OS1mMjQuZ2l0aHViLmlvL21haW4vc2xpZGVzL2RhdGEvdXMtcmVnaW9ucy5jc3ZcIikiLCJhdHRyIjp7Im91dHB1dCI6ZmFsc2UsImVkaXQiOmZhbHNlLCJldmFsIjp0cnVlLCJhdXRvcnVuIjp0cnVlLCJlY2hvIjpmYWxzZX19
 </script>
 </div>
 </div>
 <!-- end: webr fodder -->
 <!-- begin: ae definition -->
 <!-- end: ae definition -->
-<section id="warm-up" class="level1">
-<h1>Warm-up</h1>
-<section id="while-you-wait" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="while-you-wait">While you wait…</h2>
+<section id="warm-up" class="level1"><h1>Warm-up</h1>
+<section id="while-you-wait" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="while-you-wait">While you wait…</h2>
 <p>Prepare for today’s application exercise: <strong>ae-07-taxes-join</strong></p>
 <div class="appex">
 <ul>
@@ -495,15 +477,12 @@ eyJhdHRyIjp7ImV2YWwiOnRydWUsImVjaG8iOmZhbHNlLCJhdXRvcnVuIjp0cnVlLCJlZGl0IjpmYWxz
 <li><p>Wait till the you’re prompted to work on the application exercise during class before editing the file.</p></li>
 </ul>
 </div>
-</section>
-<section id="announcements" class="level2">
-<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
-</section>
-<section id="notes-from-lab-1-submissions" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="notes-from-lab-1-submissions">Notes from Lab 1 submissions</h2>
+</section><section id="announcements" class="level2"><h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
+</section><section id="notes-from-lab-1-submissions" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="notes-from-lab-1-submissions">Notes from Lab 1 submissions</h2>
 <p><strong>Use of AI tools:</strong></p>
 <ul>
-<li>If using an AI tool <strong>for code</strong>, <span style="color:#009E73;"><strong>CITE!</strong></span></li>
+<li>If using an AI tool <strong>for code</strong>, <span style="color:#009E73;"><strong>CITE!</strong></span>
+</li>
 </ul>
 <blockquote class="blockquote">
 <p>The bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.</p>
@@ -511,42 +490,155 @@ eyJhdHRyIjp7ImV2YWwiOnRydWUsImVjaG8iOmZhbHNlLCJhdXRvcnVuIjp0cnVlLCJlZGl0IjpmYWxz
 <p>If we suspect code was generated with by / with the help of an AI tool but not cited, it’s an automatic 0 on that question + potentially further penalties as outlined in <a href="https://sta199-f24.github.io/course-syllabus.html#academic-honesty" class="uri">https://sta199-f24.github.io/course-syllabus.html#academic-honesty</a>.</p>
 <p>. . .</p>
 <ul>
-<li>If using an AI tool <strong>for narrative</strong>, <span style="color:#D55E00;"><strong>STOP!</strong></span></li>
-</ul>
-</section>
-<section id="notes-from-lab-1-submissions-1" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="notes-from-lab-1-submissions-1">Notes from Lab 1 submissions</h2>
+<li>If using an AI tool <strong>for narrative</strong>, <span style="color:#D55E00;"><strong>STOP!</strong></span>
+</li>
+</ul></section><section id="notes-from-lab-1-submissions-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="notes-from-lab-1-submissions-1">Notes from Lab 1 submissions</h2>
 <ul>
 <li><p><strong>Plot labeling:</strong> Keep it concise and non-redundant (same info doesn’t need to be repeated, in detail, in axis labels and title).</p></li>
-<li><p>TO DO: Add other notes…</p></li>
+<li>
+<p><strong>Code style and readability:</strong></p>
+<ul>
+<li>Looking good overall!</li>
+<li>A tool that can help (but won’t get everything right):
+<ul>
+<li><p>Highlight code you want to style</p></li>
+<li><p>Click on Addins (top of editor), scroll down to STYLER, select Style selection</p></li>
 </ul>
-</section>
-<section id="recap-statsci-majors" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="recap-statsci-majors">Recap: StatSci majors</h2>
+</li>
+</ul>
+</li>
+<li><p><strong>Narrative:</strong> Avoid lengthy or conflicting prose</p></li>
+</ul></section><section id="recap-statsci-majors" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-statsci-majors">Recap: StatSci majors</h2>
 <div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  statsci_longer, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">color =</span> degree_type</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span></span>
+<span>  <span class="va">statsci_longer</span>, </span>
+<span>  <span class="fu">aes</span><span class="op">(</span></span>
+<span>    x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">n</span>, color <span class="op">=</span> <span class="va">degree_type</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="07-joining-data_files/figure-revealjs/statsci-plot-1-1.png" class="img-fluid figure-img" width="480"></p>
+<figure class="figure"><p><img src="07-joining-data_files/figure-revealjs/statsci-plot-1-1.png" class="img-fluid figure-img" width="480"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="recap-statsci-majors-1" class="level2">
-<h2 class="anchored" data-anchor-id="recap-statsci-majors-1">Recap: StatSci majors</h2>
-<p>TO DO: Add incremental plots</p>
-</section>
-<section id="recap-data-tidying" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="recap-data-tidying">Recap: Data tidying</h2>
+</section><section id="recap-scales" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-scales">Recap: Scales</h2>
+<div class="task">
+<p>Update x-axis scale: 2012 to 2024, increments of 2 years.</p>
+</div>
+<div class="cell" data-output-location="column">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  statsci_longer, </span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">color =</span> degree_type</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    )</span>
+<span id="cb2-6"><a href="#cb2-6"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2012</span>, <span class="dv">2024</span>, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="07-joining-data_files/figure-revealjs/statsci-plot-2-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="recap-labels-and-themes" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-labels-and-themes">Recap: Labels and themes</h2>
+<div class="task">
+<p>Add custom labels and change theme.</p>
+</div>
+<div class="cell" data-output-location="column">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  statsci_longer, </span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">color =</span> degree_type</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    )</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2012</span>, <span class="dv">2024</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb3-11"><a href="#cb3-11"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb3-12"><a href="#cb3-12"></a>      <span class="st">"BS"</span> <span class="ot">=</span> <span class="st">"cadetblue4"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13"></a>      <span class="st">"BS2"</span> <span class="ot">=</span> <span class="st">"cadetblue3"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14"></a>      <span class="st">"AB"</span> <span class="ot">=</span> <span class="st">"lightgoldenrod4"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15"></a>      <span class="st">"AB2"</span> <span class="ot">=</span> <span class="st">"lightgoldenrod3"</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a>    )</span>
+<span id="cb3-17"><a href="#cb3-17"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-19"><a href="#cb3-19"></a>    <span class="at">x =</span> <span class="st">"Graduation year"</span>,</span>
+<span id="cb3-20"><a href="#cb3-20"></a>    <span class="at">y =</span> <span class="st">"Number of majors graduating"</span>,</span>
+<span id="cb3-21"><a href="#cb3-21"></a>    <span class="at">color =</span> <span class="st">"Degree type"</span>,</span>
+<span id="cb3-22"><a href="#cb3-22"></a>    <span class="at">title =</span> <span class="st">"Statistical Science majors over the years"</span>,</span>
+<span id="cb3-23"><a href="#cb3-23"></a>    <span class="at">subtitle =</span> <span class="st">"Academic years 2011 - 2024"</span>,</span>
+<span id="cb3-24"><a href="#cb3-24"></a>    <span class="at">caption =</span> <span class="st">"Source: Office of the University Registrar</span><span class="sc">\n</span><span class="st">https://registrar.duke.edu/registration/enrollment-statistics"</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-26"><a href="#cb3-26"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="07-joining-data_files/figure-revealjs/statsci-plot-3-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="recap-legends" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-legends">Recap: Legends</h2>
+<div class="cell" data-output-location="column">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  statsci_longer, </span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">color =</span> degree_type</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    )</span>
+<span id="cb4-6"><a href="#cb4-6"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2012</span>, <span class="dv">2024</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb4-11"><a href="#cb4-11"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb4-12"><a href="#cb4-12"></a>      <span class="st">"BS"</span> <span class="ot">=</span> <span class="st">"cadetblue4"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13"></a>      <span class="st">"BS2"</span> <span class="ot">=</span> <span class="st">"cadetblue3"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14"></a>      <span class="st">"AB"</span> <span class="ot">=</span> <span class="st">"lightgoldenrod4"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15"></a>      <span class="st">"AB2"</span> <span class="ot">=</span> <span class="st">"lightgoldenrod3"</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>    )</span>
+<span id="cb4-17"><a href="#cb4-17"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-19"><a href="#cb4-19"></a>    <span class="at">x =</span> <span class="st">"Graduation year"</span>,</span>
+<span id="cb4-20"><a href="#cb4-20"></a>    <span class="at">y =</span> <span class="st">"Number of majors graduating"</span>,</span>
+<span id="cb4-21"><a href="#cb4-21"></a>    <span class="at">color =</span> <span class="st">"Degree type"</span>,</span>
+<span id="cb4-22"><a href="#cb4-22"></a>    <span class="at">title =</span> <span class="st">"Statistical Science majors over the years"</span>,</span>
+<span id="cb4-23"><a href="#cb4-23"></a>    <span class="at">subtitle =</span> <span class="st">"Academic years 2011 - 2024"</span>,</span>
+<span id="cb4-24"><a href="#cb4-24"></a>    <span class="at">caption =</span> <span class="st">"Source: Office of the University Registrar</span><span class="sc">\n</span><span class="st">https://registrar.duke.edu/registration/enrollment-statistics"</span></span>
+<span id="cb4-25"><a href="#cb4-25"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a>  <span class="fu">theme</span>(</span>
+<span id="cb4-28"><a href="#cb4-28"></a>    <span class="at">legend.position =</span> <span class="st">"inside"</span>,</span>
+<span id="cb4-29"><a href="#cb4-29"></a>    <span class="at">legend.position.inside =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.7</span>),</span>
+<span id="cb4-30"><a href="#cb4-30"></a>    <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"gray"</span>)</span>
+<span id="cb4-31"><a href="#cb4-31"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="07-joining-data_files/figure-revealjs/statsci-plot-4-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="recap-plot-sizing" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-plot-sizing">Recap: Plot sizing</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#| label: statsci-plot-5</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="co">#| out-width: 100% </span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#| fig-width: 8</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#| fig-asp: 0.5</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co"># plot code goes here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="07-joining-data_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="recap-data-tidying" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-data-tidying">Recap: Data tidying</h2>
 <div class="incremental">
 <ul class="incremental">
 <li><p>Data sets can’t be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format</p></li>
@@ -554,29 +646,22 @@ eyJhdHRyIjp7ImV2YWwiOnRydWUsImVjaG8iOmZhbHNlLCJhdXRvcnVuIjp0cnVlLCJlZGl0IjpmYWxz
 <li><p>You can tweak a plot forever, but at some point the tweaks are likely not very productive. However, you should always be critical of defaults (however pretty they might be) and see if you can improve the plot to better portray your data / results / what you want to communicate.</p></li>
 </ul>
 </div>
-</section>
-</section>
-<section id="recoding-data" class="level1">
-<h1>Recoding data</h1>
-<section id="whats-going-on-in-this-plot" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="whats-going-on-in-this-plot">What’s going on in this plot?</h2>
+</section></section><section id="recoding-data" class="level1"><h1>Recoding data</h1>
+<section id="whats-going-on-in-this-plot" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="whats-going-on-in-this-plot">What’s going on in this plot?</h2>
 <div class="question">
 <p>Can you guess the variable plotted here?</p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="07-joining-data_files/figure-revealjs/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="960"></p>
+<figure class="figure"><p><img src="07-joining-data_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="sales-taxes-in-us-states" class="level2">
-<h2 class="anchored" data-anchor-id="sales-taxes-in-us-states">Sales taxes in US states</h2>
+</section><section id="sales-taxes-in-us-states" class="level2"><h2 class="anchored" data-anchor-id="sales-taxes-in-us-states">Sales taxes in US states</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sales_taxes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 51 × 5
    state       state_tax_rate avg_local_tax_rate combined_rate
@@ -595,9 +680,7 @@ eyJhdHRyIjp7ImV2YWwiOnRydWUsImVjaG8iOmZhbHNlLCJhdXRvcnVuIjp0cnVlLCJlZGl0IjpmYWxz
 # ℹ 1 more variable: max_local_tax_rate &lt;dbl&gt;</code></pre>
 </div>
 </div>
-</section>
-<section id="sales-tax-in-swing-states" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="sales-tax-in-swing-states">Sales tax in swing states</h2>
+</section><section id="sales-tax-in-swing-states" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sales-tax-in-swing-states">Sales tax in swing states</h2>
 <div class="question">
 <p>Suppose you’re tasked with the following:</p>
 <blockquote class="blockquote">
@@ -607,13 +690,14 @@ eyJhdHRyIjp7ImV2YWwiOnRydWUsImVjaG8iOmZhbHNlLCJhdXRvcnVuIjp0cnVlLCJlZGl0IjpmYWxz
 </div>
 <p>. . .</p>
 <ul>
-<li>Create a new variable called <code>swing_state</code> with levels <code>"Swing"</code> and <code>"Non-swing"</code></li>
-<li>Group by <code>swing_state</code></li>
+<li>Create a new variable called <code>swing_state</code> with levels <code>"Swing"</code> and <code>"Non-swing"</code>
+</li>
+<li>Group by <code>swing_state</code>
+</li>
 <li>Summarize to find the mean sales tax in each type of state</li>
-</ul>
-</section>
-<section id="mutate-with-if_else" class="level2 smaller scrollable">
-<h2 class="smaller scrollable anchored" data-anchor-id="mutate-with-if_else"><code>mutate()</code> with <code>if_else()</code></h2>
+</ul></section><section id="mutate-with-if_else" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="mutate-with-if_else">
+<code>mutate()</code> with <code>if_else()</code>
+</h2>
 <div class="task">
 <p>Create a new variable called <code>swing_state</code> with levels <code>"Swing"</code> and <code>"Non-swing"</code>.</p>
 </div>
@@ -623,35 +707,31 @@ eyJhdHRyIjp7ImV2YWwiOnRydWUsImVjaG8iOmZhbHNlLCJhdXRvcnVuIjp0cnVlLCJlZGl0IjpmYWxz
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoibGlzdF9vZl9zd2luZ19zdGF0ZXMgPC0gYyhfX18pXG5cbnNhbGVzX3RheGVzIDwtIHNhbGVzX3RheGVzIHw+XG4gIF9fXyJ9
+eyJjb2RlIjoibGlzdF9vZl9zd2luZ19zdGF0ZXMgPC0gYyhfX18pXG5cbnNhbGVzX3RheGVzIDwtIHNhbGVzX3RheGVzIHw+XG4gIF9fXyIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZSwiYXV0b3J1biI6dHJ1ZX19
 </script>
 </div>
 </div>
-</section>
-<section id="recap-if_else" class="level2">
-<h2 class="anchored" data-anchor-id="recap-if_else">Recap: <code>if_else()</code></h2>
-<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">if_else</span>(</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-2" class="code-annotation-target"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">==</span> y,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"x is equal to y"</span>,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"x is not equal to y"</span></span>
-<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+</section><section id="recap-if_else" class="level2"><h2 class="anchored" data-anchor-id="recap-if_else">Recap: <code>if_else()</code>
+</h2>
+<div class="sourceCode" id="annotated-cell-7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">if_else</span><span class="op">(</span></span>
+<span>  <span class="va">x</span> <span class="op">==</span> <span class="va">y</span>,</span>
+<span>  <span class="st">"x is equal to y"</span>,</span>
+<span>  <span class="st">"x is not equal to y"</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="2" data-code-annotation="1">Condition</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="2" data-code-annotation="1">Condition</span>
 </dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="2">Value if condition is <code>TRUE</code></span>
+<span data-code-cell="annotated-cell-7" data-code-lines="3" data-code-annotation="2">Value if condition is <code>TRUE</code></span>
 </dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="3">Value if condition is <code>FALSE</code></span>
+<span data-code-cell="annotated-cell-7" data-code-lines="4" data-code-annotation="3">Value if condition is <code>FALSE</code></span>
 </dd>
-</dl>
-</section>
-<section id="sales-tax-in-swing-states-1" class="level2 smaller scrollable">
-<h2 class="smaller scrollable anchored" data-anchor-id="sales-tax-in-swing-states-1">Sales tax in swing states</h2>
+</dl></section><section id="sales-tax-in-swing-states-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="sales-tax-in-swing-states-1">Sales tax in swing states</h2>
 <div class="task">
 <p>Compare the average state sales tax rates of swing states vs.&nbsp;non-swing states.</p>
 </div>
@@ -661,13 +741,11 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoibGlz
 
 </div>
 <script type="webr-3-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoic2FsZXNfdGF4ZXMgfD5cbiAgX19fIHw+XG4gIF9fXyJ9
+eyJjb2RlIjoic2FsZXNfdGF4ZXMgfD5cbiAgX19fIHw+XG4gIF9fXyIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZSwiYXV0b3J1biI6dHJ1ZX19
 </script>
 </div>
 </div>
-</section>
-<section id="sales-tax-in-coastal-states" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="sales-tax-in-coastal-states">Sales tax in coastal states</h2>
+</section><section id="sales-tax-in-coastal-states" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sales-tax-in-coastal-states">Sales tax in coastal states</h2>
 <div class="question">
 <p>Suppose you’re tasked with the following:</p>
 <blockquote class="blockquote">
@@ -677,13 +755,14 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoic2Fs
 </div>
 <p>. . .</p>
 <ul>
-<li>Create a new variable called <code>coast</code> with levels <code>"Pacific"</code>, <code>"Atlantic"</code>, and <code>"Neither"</code></li>
-<li>Group by <code>coast</code></li>
+<li>Create a new variable called <code>coast</code> with levels <code>"Pacific"</code>, <code>"Atlantic"</code>, and <code>"Neither"</code>
+</li>
+<li>Group by <code>coast</code>
+</li>
 <li>Summarize to find the mean sales tax in each type of state</li>
-</ul>
-</section>
-<section id="mutate-with-case_when" class="level2 smaller scrollable">
-<h2 class="smaller scrollable anchored" data-anchor-id="mutate-with-case_when"><code>mutate()</code> with <code>case_when()</code></h2>
+</ul></section><section id="mutate-with-case_when" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="mutate-with-case_when">
+<code>mutate()</code> with <code>case_when()</code>
+</h2>
 <div class="task">
 <p>Create a new variable called <code>coast</code> with levels <code>"Pacific"</code>, <code>"Atlantic"</code>, and <code>"Neither"</code>.</p>
 </div>
@@ -693,35 +772,31 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoic2Fs
 
 </div>
 <script type="webr-4-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoicGFjaWZpY19jb2FzdCA8LSBjKFwiQWxhc2thXCIsIFwiV2FzaGluZ3RvblwiLCBcIk9yZWdvblwiLCBcIkNhbGlmb3JuaWFcIiwgXCJIYXdhaWlcIilcblxuYXRsYW50aWNfY29hc3QgPC0gYyhcbiAgXCJDb25uZWN0aWN1dFwiLCBcIkRlbGF3YXJlXCIsIFwiR2VvcmdpYVwiLCBcIkZsb3JpZGFcIiwgXCJNYWluZVwiLCBcIk1hcnlsYW5kXCIsIFxuICBcIk1hc3NhY2h1c2V0dHNcIiwgXCJOZXcgSGFtcHNoaXJlXCIsIFwiTmV3IEplcnNleVwiLCBcIk5ldyBZb3JrXCIsIFxuICBcIk5vcnRoIENhcm9saW5hXCIsIFwiUmhvZGUgSXNsYW5kXCIsIFwiU291dGggQ2Fyb2xpbmFcIiwgXCJWaXJnaW5pYVwiXG4pXG5cbnNhbGVzX3RheGVzIDwtIHNhbGVzX3RheGVzIHw+XG4gIF9fXyJ9
+eyJjb2RlIjoicGFjaWZpY19jb2FzdCA8LSBjKFwiQWxhc2thXCIsIFwiV2FzaGluZ3RvblwiLCBcIk9yZWdvblwiLCBcIkNhbGlmb3JuaWFcIiwgXCJIYXdhaWlcIilcblxuYXRsYW50aWNfY29hc3QgPC0gYyhcbiAgXCJDb25uZWN0aWN1dFwiLCBcIkRlbGF3YXJlXCIsIFwiR2VvcmdpYVwiLCBcIkZsb3JpZGFcIiwgXCJNYWluZVwiLCBcIk1hcnlsYW5kXCIsIFxuICBcIk1hc3NhY2h1c2V0dHNcIiwgXCJOZXcgSGFtcHNoaXJlXCIsIFwiTmV3IEplcnNleVwiLCBcIk5ldyBZb3JrXCIsIFxuICBcIk5vcnRoIENhcm9saW5hXCIsIFwiUmhvZGUgSXNsYW5kXCIsIFwiU291dGggQ2Fyb2xpbmFcIiwgXCJWaXJnaW5pYVwiXG4pXG5cbnNhbGVzX3RheGVzIDwtIHNhbGVzX3RheGVzIHw+XG4gIF9fXyIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZSwiYXV0b3J1biI6dHJ1ZX19
 </script>
 </div>
 </div>
-</section>
-<section id="recap-case_when" class="level2">
-<h2 class="anchored" data-anchor-id="recap-case_when">Recap: <code>case_when()</code></h2>
-<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">case_when</span>(</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">&gt;</span> y  <span class="sc">~</span> <span class="st">"x is greater than y"</span>,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">&lt;</span> y  <span class="sc">~</span> <span class="st">"x is less than y"</span>,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.default =</span> <span class="st">"x is equal to y"</span></span>
-<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+</section><section id="recap-case_when" class="level2"><h2 class="anchored" data-anchor-id="recap-case_when">Recap: <code>case_when()</code>
+</h2>
+<div class="sourceCode" id="annotated-cell-8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">case_when</span><span class="op">(</span></span>
+<span>  <span class="va">x</span> <span class="op">&gt;</span> <span class="va">y</span>  <span class="op">~</span> <span class="st">"x is greater than y"</span>,</span>
+<span>  <span class="va">x</span> <span class="op">&lt;</span> <span class="va">y</span>  <span class="op">~</span> <span class="st">"x is less than y"</span>,</span>
+<span>  .default <span class="op">=</span> <span class="st">"x is equal to y"</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="1">Value if first condition is <code>TRUE</code></span>
+<span data-code-cell="annotated-cell-8" data-code-lines="2" data-code-annotation="1">Value if first condition is <code>TRUE</code></span>
 </dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="2">Value if second condition is <code>TRUE</code></span>
+<span data-code-cell="annotated-cell-8" data-code-lines="3" data-code-annotation="2">Value if second condition is <code>TRUE</code></span>
 </dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="3">Value if neither condition is <code>TRUE</code>, i.e., default value</span>
+<span data-code-cell="annotated-cell-8" data-code-lines="4" data-code-annotation="3">Value if neither condition is <code>TRUE</code>, i.e., default value</span>
 </dd>
-</dl>
-</section>
-<section id="sales-tax-in-coastal-states-1" class="level2 smaller scrollable">
-<h2 class="smaller scrollable anchored" data-anchor-id="sales-tax-in-coastal-states-1">Sales tax in coastal states</h2>
+</dl></section><section id="sales-tax-in-coastal-states-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="sales-tax-in-coastal-states-1">Sales tax in coastal states</h2>
 <div class="task">
 <p>Compare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.</p>
 </div>
@@ -731,13 +806,11 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoicGFj
 
 </div>
 <script type="webr-5-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoic2FsZXNfdGF4ZXMgfD5cbiAgZ3JvdXBfYnkoY29hc3QpIHw+XG4gIHN1bW1hcml6ZShtZWFuX3N0YXRlX3RheCA9IG1lYW4oc3RhdGVfdGF4X3JhdGUpKSJ9
+eyJjb2RlIjoic2FsZXNfdGF4ZXMgfD5cbiAgZ3JvdXBfYnkoY29hc3QpIHw+XG4gIHN1bW1hcml6ZShtZWFuX3N0YXRlX3RheCA9IG1lYW4oc3RhdGVfdGF4X3JhdGUpKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZSwiYXV0b3J1biI6dHJ1ZX19
 </script>
 </div>
 </div>
-</section>
-<section id="sales-tax-in-us-regions" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="sales-tax-in-us-regions">Sales tax in US regions</h2>
+</section><section id="sales-tax-in-us-regions" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sales-tax-in-us-regions">Sales tax in US regions</h2>
 <div class="question">
 <p>Suppose you’re tasked with the following:</p>
 <blockquote class="blockquote">
@@ -748,12 +821,12 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoic2Fs
 <p>. . .</p>
 <ul>
 <li>Create a new variable called <code>region</code> with levels <code>"Midwest"</code>, <code>"Northeast"</code>, <code>"South"</code>, and <code>"West"</code>.</li>
-<li>Group by <code>region</code></li>
+<li>Group by <code>region</code>
+</li>
 <li>Summarize to find the mean sales tax in each type of state</li>
-</ul>
-</section>
-<section id="mutate-with-case_when-1" class="level2 smaller scrollable">
-<h2 class="smaller scrollable anchored" data-anchor-id="mutate-with-case_when-1"><code>mutate()</code> with <code>case_when()</code></h2>
+</ul></section><section id="mutate-with-case_when-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="mutate-with-case_when-1">
+<code>mutate()</code> with <code>case_when()</code>
+</h2>
 <div class="question">
 <p>Who feels like filling in the blanks lists of states in each region? Who feels like it’s simply too tedious to write out names of all states?</p>
 </div>
@@ -763,16 +836,12 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoic2Fs
 
 </div>
 <script type="webr-6-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoibGlzdF9vZl9taWR3ZXN0X3N0YXRlcyA8LSBjKF9fXylcbmxpc3Rfb2Zfbm9ydGhlYXN0X3N0YXRlcyA8LSBjKF9fXylcbmxpc3Rfb2Zfc291dGhfc3RhdGVzIDwtIGMoX19fKVxubGlzdF9vZl93ZXN0X3N0YXRlcyA8LSBjKF9fXylcblxuc2FsZXNfdGF4ZXMgPC0gc2FsZXNfdGF4ZXMgfD5cbiAgbXV0YXRlKFxuICAgIGNvYXN0ID0gY2FzZV93aGVuKFxuICAgICAgc3RhdGUgJWluJSBsaXN0X29mX3dlc3Rfc3RhdGVzIH4gXCJNaWR3ZXN0XCIsXG4gICAgICBzdGF0ZSAlaW4lIGxpc3Rfb2Zfbm9ydGhlYXN0X3N0YXRlcyB+IFwiTm9ydGhlYXN0XCIsXG4gICAgICBzdGF0ZSAlaW4lIGxpc3Rfb2Zfc291dGhfc3RhdGVzIH4gXCJTb3V0aFwiLFxuICAgICAgc3RhdGUgJWluJSBsaXN0X29mX3dlc3Rfc3RhdGVzIH4gXCJXZXN0XCJcbiAgICApXG4gICkifQ==
+eyJjb2RlIjoibGlzdF9vZl9taWR3ZXN0X3N0YXRlcyA8LSBjKF9fXylcbmxpc3Rfb2Zfbm9ydGhlYXN0X3N0YXRlcyA8LSBjKF9fXylcbmxpc3Rfb2Zfc291dGhfc3RhdGVzIDwtIGMoX19fKVxubGlzdF9vZl93ZXN0X3N0YXRlcyA8LSBjKF9fXylcblxuc2FsZXNfdGF4ZXMgPC0gc2FsZXNfdGF4ZXMgfD5cbiAgbXV0YXRlKFxuICAgIGNvYXN0ID0gY2FzZV93aGVuKFxuICAgICAgc3RhdGUgJWluJSBsaXN0X29mX3dlc3Rfc3RhdGVzIH4gXCJNaWR3ZXN0XCIsXG4gICAgICBzdGF0ZSAlaW4lIGxpc3Rfb2Zfbm9ydGhlYXN0X3N0YXRlcyB+IFwiTm9ydGhlYXN0XCIsXG4gICAgICBzdGF0ZSAlaW4lIGxpc3Rfb2Zfc291dGhfc3RhdGVzIH4gXCJTb3V0aFwiLFxuICAgICAgc3RhdGUgJWluJSBsaXN0X29mX3dlc3Rfc3RhdGVzIH4gXCJXZXN0XCJcbiAgICApXG4gICkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWUsImF1dG9ydW4iOnRydWV9fQ==
 </script>
 </div>
 </div>
-</section>
-</section>
-<section id="joining-data" class="level1">
-<h1>Joining data</h1>
-<section id="why-join" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="why-join">Why join?</h2>
+</section></section><section id="joining-data" class="level1"><h1>Joining data</h1>
+<section id="why-join" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="why-join">Why join?</h2>
 <p>Suppose we want to answer questions like:</p>
 <blockquote class="blockquote">
 <p>Is there a relationship between<br>
@@ -784,28 +853,24 @@ and performance in this course?”</p>
 </blockquote>
 <p>. . .</p>
 <p>Each of these would require <em>join</em>ing class performance data with an outside data source so we can have all relevant information (columns) in a single data frame.</p>
-</section>
-<section id="why-join-1" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="why-join-1">Why join?</h2>
+</section><section id="why-join-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="why-join-1">Why join?</h2>
 <p>Suppose we want to answer questions like:</p>
 <blockquote class="blockquote">
 <p>Compare the average state sales tax rates of states in various regions (Midwest - 12 states, Northeast - 9 states, South - 16 states, West - 13 states).</p>
 </blockquote>
 <p>. . .</p>
 <p>This can also be solved with <em>join</em>ing region information with the state-level sales tax data.</p>
-</section>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+</section><section id="setup" class="level2"><h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>For the next few slides…</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">value_x =</span> <span class="fu">c</span>(<span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<span>  id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
+<span>  value_x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
      id value_x
@@ -817,12 +882,12 @@ and performance in this course?”</p>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>),</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">value_y =</span> <span class="fu">c</span>(<span class="st">"y1"</span>, <span class="st">"y2"</span>, <span class="st">"y4"</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<span>  id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span>,</span>
+<span>  value_y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"y1"</span>, <span class="st">"y2"</span>, <span class="st">"y4"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
      id value_y
@@ -834,15 +899,13 @@ and performance in this course?”</p>
 </div>
 </div>
 </div>
-</section>
-<section id="left_join" class="level2">
-<h2 class="anchored" data-anchor-id="left_join"><code>left_join()</code></h2>
+</section><section id="left_join" class="level2"><h2 class="anchored" data-anchor-id="left_join"><code>left_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/07/left-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">left_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -857,15 +920,13 @@ and performance in this course?”</p>
 </div>
 </div>
 </div>
-</section>
-<section id="right_join" class="level2">
-<h2 class="anchored" data-anchor-id="right_join"><code>right_join()</code></h2>
+</section><section id="right_join" class="level2"><h2 class="anchored" data-anchor-id="right_join"><code>right_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/07/right-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">right_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">right_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -880,15 +941,13 @@ and performance in this course?”</p>
 </div>
 </div>
 </div>
-</section>
-<section id="full_join" class="level2">
-<h2 class="anchored" data-anchor-id="full_join"><code>full_join()</code></h2>
+</section><section id="full_join" class="level2"><h2 class="anchored" data-anchor-id="full_join"><code>full_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/07/full-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">full_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -904,15 +963,13 @@ and performance in this course?”</p>
 </div>
 </div>
 </div>
-</section>
-<section id="inner_join" class="level2">
-<h2 class="anchored" data-anchor-id="inner_join"><code>inner_join()</code></h2>
+</section><section id="inner_join" class="level2"><h2 class="anchored" data-anchor-id="inner_join"><code>inner_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/07/inner-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">inner_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -926,15 +983,13 @@ and performance in this course?”</p>
 </div>
 </div>
 </div>
-</section>
-<section id="semi_join" class="level2">
-<h2 class="anchored" data-anchor-id="semi_join"><code>semi_join()</code></h2>
+</section><section id="semi_join" class="level2"><h2 class="anchored" data-anchor-id="semi_join"><code>semi_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/07/semi-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">semi_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">semi_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -948,15 +1003,13 @@ and performance in this course?”</p>
 </div>
 </div>
 </div>
-</section>
-<section id="anti_join" class="level2">
-<h2 class="anchored" data-anchor-id="anti_join"><code>anti_join()</code></h2>
+</section><section id="anti_join" class="level2"><h2 class="anchored" data-anchor-id="anti_join"><code>anti_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/07/anti-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anti_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">anti_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -969,20 +1022,13 @@ and performance in this course?”</p>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="application-exercise" class="level1">
-<h1>Application exercise</h1>
-<section id="goal" class="level2">
-<h2 class="anchored" data-anchor-id="goal">Goal</h2>
+</section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
+<section id="goal" class="level2"><h2 class="anchored" data-anchor-id="goal">Goal</h2>
 <p>Compare the average state sales tax rates of states in various regions (Midwest, Northeast, South, West), where the input data are:</p>
 <ol type="1">
 <li>States and sales taxes</li>
 <li>States and regions</li>
-</ol>
-</section>
-<section id="ae-07-taxes-join" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="ae-07-taxes-join">ae-07-taxes-join</h2>
+</ol></section><section id="ae-07-taxes-join" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-07-taxes-join">ae-07-taxes-join</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
@@ -994,12 +1040,10 @@ and performance in this course?”</p>
 
 
 <script type="webr-data">
-eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC40LjEvIn0sInBhY2thZ2VzIjp7InJlcG9zIjpbXSwicGtncyI6WyJldmFsdWF0ZSIsImtuaXRyIiwiaHRtbHRvb2xzIiwidGlkeXZlcnNlIl19LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
-</script>
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC02Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV82O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLTYiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzYgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici02LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV82ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl82LCB7fSk7XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici13aWRnZXQtNSIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfNTtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici01Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl81ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItNS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTUtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfNSA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfNSwge30pO1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItNCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfNCA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici00LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzQgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzQsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLTMiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8zID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8zLCB7fSk7XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici13aWRnZXQtMiIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici0yIiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTItY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMiwge30pO1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTEiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzE7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMSIsInNvdXJjZSI6Il93ZWJyX3ZhbHVlXzEgPSB7XG4gIGNvbnN0IHsgaGlnaGxpZ2h0UiwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIC8vIERlZmF1bHQgZXZhbHVhdGlvbiBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHtcbiAgICBpZDogXCJ3ZWJyLTEtY29udGVudHNcIixcbiAgICBlY2hvOiB0cnVlLFxuICAgIG91dHB1dDogdHJ1ZVxuICB9LCBibG9jay5hdHRyKTtcblxuICAvLyBFdmFsdWF0ZSB0aGUgcHJvdmlkZWQgUiBjb2RlXG4gIGNvbnN0IHJlc3VsdCA9IHdlYlJPanMucHJvY2Vzcyh7Y29kZTogYmxvY2suY29kZSwgb3B0aW9uc30sIHt9KTtcblxuICAvLyBFYXJseSB5aWVsZCB3aGlsZSB3ZSB3YWl0IGZvciB0aGUgZmlyc3QgZXZhbHVhdGlvbiBhbmQgcmVuZGVyXG4gIGlmIChvcHRpb25zLm91dHB1dCAmJiAhKFwiMVwiIGluIHdlYlJPanMucmVuZGVyZWRPanMpKSB7XG4gICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbiAgICBjb25zdCBzcGlubmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcblxuICAgIGlmIChvcHRpb25zLmVjaG8pIHtcbiAgICAgIC8vIFNob3cgb3V0cHV0IGFzIGhpZ2hsaWdodGVkIHNvdXJjZVxuICAgICAgY29uc3QgcHJlRWxlbSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJwcmVcIik7XG4gICAgICBjb250YWluZXIuY2xhc3NOYW1lID0gXCJzb3VyY2VDb2RlXCI7XG4gICAgICBwcmVFbGVtLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZSByXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKGhpZ2hsaWdodFIoYmxvY2suY29kZSkpO1xuICAgICAgc3Bpbm5lci5jbGFzc05hbWUgPSBcInNwaW5uZXItZ3JvdyBzcGlubmVyLWdyb3ctc20gbS0yIHBvc2l0aW9uLWFic29sdXRlIHRvcC0wIGVuZC0wXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHByZUVsZW0pO1xuICAgIH0gZWxzZSB7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ib3JkZXIgc3Bpbm5lci1ib3JkZXItc21cIjtcbiAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChzcGlubmVyKTtcbiAgICB9XG5cbiAgICB5aWVsZCBjb250YWluZXI7XG4gIH1cblxuICB3ZWJST2pzLnJlbmRlcmVkT2pzW1wiMVwiXSA9IHRydWU7XG4gIHlpZWxkIGF3YWl0IHJlc3VsdDtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXByZWx1ZGUiLCJzb3VyY2UiOiJ3ZWJST2pzID0ge1xuICBjb25zdCB7IFdlYlIgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWUuV2ViUjtcbiAgY29uc3Qge1xuICAgIFdlYlJFdmFsdWF0b3IsXG4gICAgV2ViUkVudmlyb25tZW50TWFuYWdlcixcbiAgICBzZXR1cFIsXG4gICAgYjY0RGVjb2RlLFxuICAgIGNvbGxhcHNlUGF0aFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIHdlYlIgc3VwcGxlbWVudGFsIGRhdGEgYW5kIG9wdGlvbnNcbiAgY29uc3QgZGF0YUNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici1kYXRhXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZGF0YSA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGRhdGFDb250ZW50KSk7XG5cbiAgLy8gR3JhYiBsaXN0IG9mIHJlc291cmNlcyB0byBiZSBkb3dubG9hZGVkXG4gIGNvbnN0IGZpbGVzQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ2ZnMtZmlsZVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGZpbGVzID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZmlsZXNDb250ZW50KSk7XG5cbiAgLy8gSW5pdGlhbGlzZSB3ZWJSIGFuZCBzZXR1cCBmb3IgUiBjb2RlIGV2YWx1YXRpb25cbiAgbGV0IHdlYlJQcm9taXNlID0gKGFzeW5jICh3ZWJSKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyB3ZWJSYDtcbiAgICBhd2FpdCB3ZWJSLmluaXQoKTtcblxuICAgIC8vIEluc3RhbGwgcHJvdmlkZWQgbGlzdCBvZiBwYWNrYWdlc1xuICAgIC8vIEVuc3VyZSB3ZWJSIGRlZmF1bHQgcmVwbyBpcyBpbmNsdWRlZFxuICAgIGRhdGEucGFja2FnZXMucmVwb3MucHVzaChcImh0dHBzOi8vcmVwby5yLXdhc20ub3JnXCIpXG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gd2ViUi5ldmFsUlZvaWQoYFxuICAgICAgICB3ZWJyOjppbnN0YWxsKHBrZywgcmVwb3MgPSByZXBvcylcbiAgICAgICAgbGlicmFyeShwa2csIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSlcbiAgICAgIGAsIHsgZW52OiB7XG4gICAgICAgIHBrZzogcGtnLFxuICAgICAgICByZXBvczogZGF0YS5wYWNrYWdlcy5yZXBvcyxcbiAgICAgIH19KTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICB0cnkge1xuICAgICAgICAgIGF3YWl0IHdlYlIuRlMubWtkaXIocGF0aCk7XG4gICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICBpZiAoIWUubWVzc2FnZS5pbmNsdWRlcyhcIkZTIGVycm9yXCIpKSB7XG4gICAgICAgICAgICB0aHJvdyBlO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgcmV0dXJuIGF3YWl0IHdlYlIuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5zdGFsbGluZyB3ZWJSIHNoaW1zYDtcbiAgICBhd2FpdCB3ZWJSLmV2YWxSVm9pZChgd2Vicjo6c2hpbV9pbnN0YWxsKClgKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgV2ViUiBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBSKHdlYlIsIGRhdGEpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHdlYlI7XG4gIH0pKG5ldyBXZWJSKGRhdGEub3B0aW9ucykpO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCB3ZWJSID0gYXdhaXQgd2ViUlByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFdlYlJFdmFsdWF0b3Iod2ViUiwgY29udGV4dClcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBwcm9jZXNzLFxuICAgIHdlYlJQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICB9O1xufVxuIn1dfQ==
-</script>
-<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+eyJyZW5kZXJfZGYiOiJkZWZhdWx0IiwicGFja2FnZXMiOnsicGtncyI6WyJldmFsdWF0ZSIsImtuaXRyIiwiaHRtbHRvb2xzIiwidGlkeXZlcnNlIl0sInJlcG9zIjpbXX0sIm9wdGlvbnMiOnsiYmFzZVVybCI6Imh0dHBzOi8vd2Vici5yLXdhc20ub3JnL3YwLjQuMS8ifX0=
+</script><script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC02IiwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV82O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItNiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzYgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici02LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV82ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl82LCB7fSk7XG4ifSx7ImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici13aWRnZXQtNSIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfNTtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLTUiLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl81ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItNS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTUtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfNSA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfNSwge30pO1xuIn0seyJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTQiLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici00IiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfNCA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici00LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzQgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzQsIHt9KTtcbiJ9LHsiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMyIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8zID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8zLCB7fSk7XG4ifSx7ImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici13aWRnZXQtMiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLTIiLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTItY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMiwge30pO1xuIn0seyJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTEiLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzE7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici0xIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6Il93ZWJyX3ZhbHVlXzEgPSB7XG4gIGNvbnN0IHsgaGlnaGxpZ2h0UiwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIC8vIERlZmF1bHQgZXZhbHVhdGlvbiBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHtcbiAgICBpZDogXCJ3ZWJyLTEtY29udGVudHNcIixcbiAgICBlY2hvOiB0cnVlLFxuICAgIG91dHB1dDogdHJ1ZVxuICB9LCBibG9jay5hdHRyKTtcblxuICAvLyBFdmFsdWF0ZSB0aGUgcHJvdmlkZWQgUiBjb2RlXG4gIGNvbnN0IHJlc3VsdCA9IHdlYlJPanMucHJvY2Vzcyh7Y29kZTogYmxvY2suY29kZSwgb3B0aW9uc30sIHt9KTtcblxuICAvLyBFYXJseSB5aWVsZCB3aGlsZSB3ZSB3YWl0IGZvciB0aGUgZmlyc3QgZXZhbHVhdGlvbiBhbmQgcmVuZGVyXG4gIGlmIChvcHRpb25zLm91dHB1dCAmJiAhKFwiMVwiIGluIHdlYlJPanMucmVuZGVyZWRPanMpKSB7XG4gICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbiAgICBjb25zdCBzcGlubmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcblxuICAgIGlmIChvcHRpb25zLmVjaG8pIHtcbiAgICAgIC8vIFNob3cgb3V0cHV0IGFzIGhpZ2hsaWdodGVkIHNvdXJjZVxuICAgICAgY29uc3QgcHJlRWxlbSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJwcmVcIik7XG4gICAgICBjb250YWluZXIuY2xhc3NOYW1lID0gXCJzb3VyY2VDb2RlXCI7XG4gICAgICBwcmVFbGVtLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZSByXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKGhpZ2hsaWdodFIoYmxvY2suY29kZSkpO1xuICAgICAgc3Bpbm5lci5jbGFzc05hbWUgPSBcInNwaW5uZXItZ3JvdyBzcGlubmVyLWdyb3ctc20gbS0yIHBvc2l0aW9uLWFic29sdXRlIHRvcC0wIGVuZC0wXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHByZUVsZW0pO1xuICAgIH0gZWxzZSB7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ib3JkZXIgc3Bpbm5lci1ib3JkZXItc21cIjtcbiAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChzcGlubmVyKTtcbiAgICB9XG5cbiAgICB5aWVsZCBjb250YWluZXI7XG4gIH1cblxuICB3ZWJST2pzLnJlbmRlcmVkT2pzW1wiMVwiXSA9IHRydWU7XG4gIHlpZWxkIGF3YWl0IHJlc3VsdDtcbn1cbiJ9LHsiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXByZWx1ZGUiLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ3ZWJST2pzID0ge1xuICBjb25zdCB7IFdlYlIgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWUuV2ViUjtcbiAgY29uc3Qge1xuICAgIFdlYlJFdmFsdWF0b3IsXG4gICAgV2ViUkVudmlyb25tZW50TWFuYWdlcixcbiAgICBzZXR1cFIsXG4gICAgYjY0RGVjb2RlLFxuICAgIGNvbGxhcHNlUGF0aFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIHdlYlIgc3VwcGxlbWVudGFsIGRhdGEgYW5kIG9wdGlvbnNcbiAgY29uc3QgZGF0YUNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici1kYXRhXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZGF0YSA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGRhdGFDb250ZW50KSk7XG5cbiAgLy8gR3JhYiBsaXN0IG9mIHJlc291cmNlcyB0byBiZSBkb3dubG9hZGVkXG4gIGNvbnN0IGZpbGVzQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ2ZnMtZmlsZVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGZpbGVzID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZmlsZXNDb250ZW50KSk7XG5cbiAgLy8gSW5pdGlhbGlzZSB3ZWJSIGFuZCBzZXR1cCBmb3IgUiBjb2RlIGV2YWx1YXRpb25cbiAgbGV0IHdlYlJQcm9taXNlID0gKGFzeW5jICh3ZWJSKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyB3ZWJSYDtcbiAgICBhd2FpdCB3ZWJSLmluaXQoKTtcblxuICAgIC8vIEluc3RhbGwgcHJvdmlkZWQgbGlzdCBvZiBwYWNrYWdlc1xuICAgIC8vIEVuc3VyZSB3ZWJSIGRlZmF1bHQgcmVwbyBpcyBpbmNsdWRlZFxuICAgIGRhdGEucGFja2FnZXMucmVwb3MucHVzaChcImh0dHBzOi8vcmVwby5yLXdhc20ub3JnXCIpXG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gd2ViUi5ldmFsUlZvaWQoYFxuICAgICAgICB3ZWJyOjppbnN0YWxsKHBrZywgcmVwb3MgPSByZXBvcylcbiAgICAgICAgbGlicmFyeShwa2csIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSlcbiAgICAgIGAsIHsgZW52OiB7XG4gICAgICAgIHBrZzogcGtnLFxuICAgICAgICByZXBvczogZGF0YS5wYWNrYWdlcy5yZXBvcyxcbiAgICAgIH19KTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICB0cnkge1xuICAgICAgICAgIGF3YWl0IHdlYlIuRlMubWtkaXIocGF0aCk7XG4gICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICBpZiAoIWUubWVzc2FnZS5pbmNsdWRlcyhcIkZTIGVycm9yXCIpKSB7XG4gICAgICAgICAgICB0aHJvdyBlO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgcmV0dXJuIGF3YWl0IHdlYlIuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5zdGFsbGluZyB3ZWJSIHNoaW1zYDtcbiAgICBhd2FpdCB3ZWJSLmV2YWxSVm9pZChgd2Vicjo6c2hpbV9pbnN0YWxsKClgKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgV2ViUiBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBSKHdlYlIsIGRhdGEpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHdlYlI7XG4gIH0pKG5ldyBXZWJSKGRhdGEub3B0aW9ucykpO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCB3ZWJSID0gYXdhaXQgd2ViUlByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFdlYlJFdmFsdWF0b3Iod2ViUiwgY29udGV4dClcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBwcm9jZXNzLFxuICAgIHdlYlJQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICB9O1xufVxuIn1dfQ==
+</script><div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
 
 </div>
@@ -1009,24 +1053,16 @@ eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwi
 </div>
 <script type="vfs-file">
 WyJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vc3RhMTk5LWYyNC9zdGExOTktZjI0LmdpdGh1Yi5pby9tYWluL3NsaWRlcy9kYXRhL3NhbGVzLXRheGVzLmNzdiIsImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9zdGExOTktZjI0L3N0YTE5OS1mMjQuZ2l0aHViLmlvL21haW4vc2xpZGVzL2RhdGEvdXMtcmVnaW9ucy5jc3YiXQ==
-</script>
-</section>
-</section>
-
-</main> <!-- /main -->
-<script type="ojs-module-contents">
+</script></section></section></main><!-- /main --><script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
-</script>
-<script type="module">
+</script><script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
 window._ojs.paths.runtimeToDoc = "../../slides";
 window._ojs.paths.runtimeToRoot = "../..";
 window._ojs.paths.docToRoot = "..";
 window._ojs.selfContained = false;
 window._ojs.runtime.interpretFromScriptTags();
-</script>
-
-<script>
+</script><script>
   // htmlwidgets need to know to resize themselves when slides are shown/hidden.
   // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
   // slide changes (different for each slide format).
@@ -1061,9 +1097,7 @@ window._ojs.runtime.interpretFromScriptTags();
     }
 
   })();
-</script>
-
-<script id="quarto-html-after-body" type="application/javascript">
+</script><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1628,8 +1662,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2024, Mine Çetinkaya-Rundel</p>
 </div>   
@@ -1641,8 +1674,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
