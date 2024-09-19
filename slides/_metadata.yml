@@ -7,7 +7,6 @@ format:
     theme: slides.scss
     transition: fade
     slide-number: true
-    chalkboard: true
     logo: "images/logo.png" 
     toc: false
   live-html:
