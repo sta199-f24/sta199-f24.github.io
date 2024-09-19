@@ -3747,6 +3747,13 @@
     "text": "Recap: Scales\n\nUpdate x-axis scale: 2012 to 2024, increments of 2 years.\n\n\nggplot(\n  statsci_longer, \n  aes(\n    x = year, y = n, color = degree_type\n    )\n  ) +\n  geom_point() +\n  geom_line() +\n  scale_x_continuous(breaks = seq(2012, 2024, 2))"
   },
   {
+    "objectID": "slides/07-joining-data.html#recap-colors",
+    "href": "slides/07-joining-data.html#recap-colors",
+    "title": "Joining data",
+    "section": "Recap: Colors",
+    "text": "Recap: Colors\n\nUse custom colors.\n\n\nggplot(\n  statsci_longer, \n  aes(\n    x = year, y = n, color = degree_type\n    )\n  ) +\n  geom_point() +\n  geom_line() +\n  scale_x_continuous(breaks = seq(2012, 2024, 2)) +\n  scale_color_manual(\n    values = c(\n      \"BS\" = \"cadetblue4\",\n      \"BS2\" = \"cadetblue3\",\n      \"AB\" = \"lightgoldenrod4\",\n      \"AB2\" = \"lightgoldenrod3\"\n    )\n  )"
+  },
+  {
     "objectID": "slides/07-joining-data.html#recap-labels-and-themes",
     "href": "slides/07-joining-data.html#recap-labels-and-themes",
     "title": "Joining data",
@@ -3976,6 +3983,13 @@
     "title": "Joining data",
     "section": "Recap: Scales",
     "text": "Recap: Scales\n\nUpdate x-axis scale: 2012 to 2024, increments of 2 years.\n\n\n\nggplot(\n  statsci_longer, \n  aes(\n    x = year, y = n, color = degree_type\n    )\n  ) +\n  geom_point() +\n  geom_line() +\n  scale_x_continuous(breaks = seq(2012, 2024, 2))"
+  },
+  {
+    "objectID": "slides/07-joining-data-slides.html#recap-colors",
+    "href": "slides/07-joining-data-slides.html#recap-colors",
+    "title": "Joining data",
+    "section": "Recap: Colors",
+    "text": "Recap: Colors\n\nUse custom colors.\n\n\n\nggplot(\n  statsci_longer, \n  aes(\n    x = year, y = n, color = degree_type\n    )\n  ) +\n  geom_point() +\n  geom_line() +\n  scale_x_continuous(breaks = seq(2012, 2024, 2)) +\n  scale_color_manual(\n    values = c(\n      \"BS\" = \"cadetblue4\",\n      \"BS2\" = \"cadetblue3\",\n      \"AB\" = \"lightgoldenrod4\",\n      \"AB2\" = \"lightgoldenrod3\"\n    )\n  )"
   },
   {
     "objectID": "slides/07-joining-data-slides.html#recap-labels-and-themes",
