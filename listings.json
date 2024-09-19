@@ -1,13 +1,5 @@
 [
   {
-    "listing": "/lab.html",
-    "items": [
-      "/lab/lab-0.html",
-      "/lab/lab-1.html",
-      "/lab/lab-2.html"
-    ]
-  },
-  {
     "listing": "/course-team.html",
     "items": [
       "/ta/anmol.html",
@@ -56,6 +48,14 @@
       "/exam-review/final-review-A.html",
       "/exam-review/midterm-review.html",
       "/exam-review/midterm-review-A.html"
+    ]
+  },
+  {
+    "listing": "/lab.html",
+    "items": [
+      "/lab/lab-0.html",
+      "/lab/lab-1.html",
+      "/lab/lab-2.html"
     ]
   }
 ]
