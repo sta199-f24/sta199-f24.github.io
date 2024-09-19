@@ -1,0 +1,79 @@
+---
+title: "AE 07: Sales taxes + data joining"
+---
+
+## Getting started
+
+### Packages
+
+We'll use the **tidyverse** package for this analysis.
+
+```{r}
+#| label: load-packages
+#| message: false
+# add code here
+```
+
+### Data
+
+The data are available in the `data` folder:
+
+-   `sales-taxes.csv`
+
+-   `us-regions.csv`
+
+```{r}
+#| label: load-data
+# add code here
+```
+
+And let's take a look at the data.
+
+```{r}
+#| label: glimpse
+# add code here
+```
+
+## Joining
+
+Join the sales tax data with region data and save the joined data frame as a new data frame, not overwriting either data frame that goes into the join.
+
+```{r}
+#| label: join
+# add code here
+```
+
+Calculate the average sales tax of states in each region.
+What is surprising in the output?
+
+```{r}
+#| label: region-means-take-1
+# add code here
+```
+
+Identify the state with `NA` for region.
+
+```{r}
+#| label: identify-na
+# add code here
+```
+
+Apply a fix for the `NA` in region, and calculate the mean sales taxes for regions again.
+Display the results in ascending order of mean sales tax.
+
+```{r}
+#| label: region-means-take-2
+# add code here
+```
+
+## Render, commit, and push
+
+1.  Render your Quarto document.
+
+2.  Go to the Git pane and check the box next to each file listed, i.e., stage your changes.
+    Commit your staged changes using a simple and informative message.
+
+3.  Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.
+
+4.  Go to your repo on GitHub and confirm that you can see the updated files.
+    Once your updated files are in your repo on GitHub, you're good to go!

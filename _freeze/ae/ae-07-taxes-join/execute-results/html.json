@@ -1,0 +1,15 @@
+{
+  "hash": "2729f326e8b2e7720f41fcd204c71e45",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"AE 07: Sales taxes + data joining\"\n---\n\n\n\n## Getting started\n\n### Packages\n\nWe'll use the **tidyverse** package for this analysis.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\n### Data\n\nThe data are available in the `data` folder:\n\n-   `sales-taxes.csv`\n\n-   `us-regions.csv`\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\nAnd let's take a look at the data.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\n## Joining\n\nJoin the sales tax data with region data and save the joined data frame as a new data frame, not overwriting either data frame that goes into the join.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\nCalculate the average sales tax of states in each region.\nWhat is surprising in the output?\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\nIdentify the state with `NA` for region.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\nApply a fix for the `NA` in region, and calculate the mean sales taxes for regions again.\nDisplay the results in ascending order of mean sales tax.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\n## Render, commit, and push\n\n1.  Render your Quarto document.\n\n2.  Go to the Git pane and check the box next to each file listed, i.e., stage your changes.\n    Commit your staged changes using a simple and informative message.\n\n3.  Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.\n\n4.  Go to your repo on GitHub and confirm that you can see the updated files.\n    Once your updated files are in your repo on GitHub, you're good to go!\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
