@@ -712,31 +712,31 @@ Tip
 <p>The main measure of inflation is the annual inflation rate which is the movement of the Consumer Price Index (CPI) from one month/period to the same month/period of the previous year expressed as percentage over time.</p>
 <p>Source: <a href="https://www.oecd.org/sdd/prices-ppp/consumerpriceindices-frequentlyaskedquestionsfaqs.htm#1">OECD CPI FAQ</a></p>
 </blockquote>
-<p>CPI is broken down into 12 divisions such as food, housing, health, etc. Your goal in this part is to create another time series plot of annual inflation, this time for US only.</p>
+<p>CPI is broken down into 12 expenditures such as food, housing, health, etc. Your goal in this part is to create another time series plot of annual inflation, this time for US only.</p>
 <p>The data you will need to create this visualization is spread across two files:</p>
 <ul>
 <li>
-<code>us-inflation.csv</code>: Annual inflation rate for the US for 12 CPI divisions. Each division is identified by an ID number.</li>
+<code>us-inflation.csv</code>: Annual inflation rate for the US for 12 CPI expenditures. Each expenditure is identified by an ID number.</li>
 <li>
-<code>cpi-divisions.csv</code>: A “lookup table” of CPI division ID numbers and their descriptions.</li>
+<code>cpi-expenditures.csv</code>: A “lookup table” of CPI expenditure ID numbers and their descriptions.</li>
 </ul>
 <p>Let’s load both of these files.</p>
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">us_inflation</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/us-inflation.csv"</span><span class="op">)</span></span>
-<span><span class="va">cpi_divisions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/cpi-divisions.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">cpi_expenditures</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/cpi-expenditures.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="question-8" class="level3"><h3 class="anchored" data-anchor-id="question-8">Question 8</h3>
-<p>a. How many columns and how many rows does the <code>us_inflation</code> dataset have? What are the variables in it? Write a brief (1-2 sentences) narrative summarizing this information.</p>
-<p>b. How many columns and how many rows does the <code>cpi_divisions</code> dataset have? What are the variables in it? Write a brief (1-2 sentences) narrative summarizing this information.</p>
-<p>c. Create a new dataset by joining the <code>us_inflation</code> dataset with the <code>cpi_division_id</code> dataset.</p>
+<p>a. How many columns and how many rows does the <code>us_inflation</code> dataset have? What are the variables in it? Which years do these data span? Write a brief (1-2 sentences) narrative summarizing this information.</p>
+<p>b. How many columns and how many rows does the <code>cpi_expenditures</code> dataset have? What are the variables in it? Write a brief (1-2 sentences) narrative summarizing this information.</p>
+<p>c. Create a new dataset by joining the <code>us_inflation</code> dataset with the <code>cpi_expenditure_id</code> dataset.</p>
 <ul>
 <li><p>Determine which type of join is the most appropriate one and use that.</p></li>
-<li><p>Note that the two datasets don’t have a common variable. You will need to define the <code>by</code> argument and use the <code><a href="https://dplyr.tidyverse.org/reference/join_by.html">join_by()</a></code> function to indicate which variables to join the datasets by.</p></li>
+<li><p>Note that the two datasets don’t have a variable with a common name, though they do have variables that contain common information but are named differently. You will need to first figure out which variables those are, and then define the <code>by</code> argument and use the <code><a href="https://dplyr.tidyverse.org/reference/join_by.html">join_by()</a></code> function to indicate these variables to join the datasets by.</p></li>
 <li><p>Use a short but informative name for the joined dataset, and do not overwrite either of the datasets that go into creating it.</p></li>
 </ul>
 <p>Then, find the number of rows and columns of the resulting dataset and report the names of its columns. Add a brief (1-2 sentences) narrative summarizing this information.</p>
 </section><section id="question-9" class="level3"><h3 class="anchored" data-anchor-id="question-9">Question 9</h3>
-<p>a. Create a vector called <code>divisions_of_interest</code> which contains the descriptions or IDs of CPI divisions you want to visualize. Your <code>divisions_of_interest</code> should consist of no more than five divisions. If you’re using descriptions, make sure that the spelling of your divisions matches how they appear in the dataset. Then, in 1-2 sentences, state why you chose these divisions.</p>
+<p>a. Create a vector called <code>expenditures_of_interest</code> which contains the descriptions or IDs of CPI expenditures you want to visualize. Your <code>expenditures_of_interest</code> should consist of no more than five expenditures. If you’re using descriptions, make sure that the spelling of your expenditures matches how they appear in the dataset. Then, in 1-2 sentences, state why you chose these expenditures.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -750,12 +750,12 @@ Tip
 <p>Refer back to the guidance provided in <a href="#question-6">Question 6</a> if you’re not sure how to create this vector.</p>
 </div>
 </div>
-<p>b. In a single pipeline, filter your reshaped dataset to include only the <code>divisions_of_interest</code> from part (a), and save the resulting data frame with a new name so you (1) can refer to this data frame later in your analysis and (2) do not overwrite the data frame you’re starting with. Use a short but informative name. Then, in a new pipeline, find the <code><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct()</a></code> divisions in the data frame you created.</p>
+<p>b. In a single pipeline, filter your reshaped dataset to include only the <code>expenditures_of_interest</code> from part (a), and save the resulting data frame with a new name so you (1) can refer to this data frame later in your analysis and (2) do not overwrite the data frame you’re starting with. Use a short but informative name. Then, in a new pipeline, find the <code><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct()</a></code> expenditures in the data frame you created.</p>
 </section><section id="question-10" class="level3"><h3 class="anchored" data-anchor-id="question-10">Question 10</h3>
-<p>Using your data frame from the previous question, create a plot of annual inflation vs.&nbsp;year for these divisions. Then, in a few sentences, describe the patterns you observe in the plot, particularly focusing on anything you find surprising or not surprising, based on your knowledge (or lack thereof) of inflation rates in the US over the last decade.</p>
+<p>Using your data frame from the previous question, create a plot of annual inflation vs.&nbsp;year for these expenditures. Then, in a few sentences, describe the patterns you observe in the plot, particularly focusing on anything you find surprising or not surprising, based on your knowledge (or lack thereof) of inflation rates in the US over the last decade.</p>
 <ul>
-<li>Data should be represented with points as well as lines connecting the points for each division.</li>
-<li>Each division should be represented by a different color line and different color and shape points.</li>
+<li>Data should be represented with points as well as lines connecting the points for each expenditure.</li>
+<li>Each expenditure should be represented by a different color line and different color and shape points.</li>
 <li>Axes and legend should be properly labeled.</li>
 <li>The plot should have an appropriate title (and optionally a subtitle).</li>
 <li>Plot should be customized in at least one way – you could use a different than default color scale, or different than default theme, or some other customization.</li>
