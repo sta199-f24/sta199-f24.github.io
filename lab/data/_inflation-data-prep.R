@@ -17,6 +17,10 @@ country_inflation_wide <- country_inflation_raw |>
 
 write_csv(country_inflation_wide, "lab/data/country-inflation.csv")
 
+# check
+
+read_csv("lab/data/country-inflation.csv") |> names()
+
 # data prep for us inflation / join --------------------------------------------
 
 # data source: Mary to add URL for data source
@@ -42,3 +46,9 @@ cpi_expenditures <- us_inflation |>
 
 write_csv(us_inflation, "lab/data/us-inflation.csv")
 write_csv(cpi_expenditures, "lab/data/cpi-expenditures.csv")
+
+# check
+
+read_csv("lab/data/us-inflation.csv") |> names()
+read_csv("lab/data/us-inflation.csv") |> distinct(year)
+read_csv("lab/data/cpi-expenditures.csv") |> names()
