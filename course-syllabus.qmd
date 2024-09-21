@@ -232,7 +232,7 @@ If circumstances have a longer-term impact on your academic performance, please 
 
 ### Regrade requests
 
-Regrade requests must be submitted on Gradescope within a week after an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Note that by submitting a regrade request, the **entire assignment may be regraded**, which could potentially result in losing points.
+Regrade requests must be submitted on Gradescope within a week after an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Regrade requests are also not a mechanism for asking for clarification on feedback, those questions should be brought to office hours. Note that by submitting a regrade request, the **entire assignment may be regraded**, which could potentially result in losing points.
 
 *No grades will be changed after the final exam has been administered.*
 
