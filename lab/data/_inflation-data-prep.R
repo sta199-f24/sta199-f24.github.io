@@ -19,48 +19,26 @@ write_csv(country_inflation_wide, "lab/data/country-inflation.csv")
 
 # data prep for us inflation / join --------------------------------------------
 
-# data source: https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CEconomy%23ECO%23%7CPrices%23ECO_PRI%23&pg=0&fc=Topic&bp=true&snb=16&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_PRICES%40DF_PRICES_ALL&df[ag]=OECD.SDD.TPS&df[vs]=1.0&pd=2011%2C2024&dq=USA.A.N.CPI.PA.CP12%2BCP11%2BCP10%2BCP09%2BCP08%2BCP07%2BCP06%2BCP05%2BCP04%2BCP03%2BCP02%2BCP01%2B_T.N.GY&to[TIME_PERIOD]=false&vw=tb
+# data source: Mary to add URL for data source
 
-us_inflation_raw <- read_csv("lab/data/PRICES_CPI_19092022031404285.csv")
+us_inflation_raw <- read_csv("lab/data/OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL,1.0+USA.A.N.CPI.PA.CP12+CP11+CP10+CP09+CP08+CP07+CP06+CP05+CP04+CP03+CP02+CP01+_T.N.GY.csv")
 
-us_inflation_temp <- us_inflation_raw |>
-  filter(Measure == "Percentage change on the same period of the previous year") |>
-  select(Country, Subject, Time, Value) |>
+us_inflation <- us_inflation_raw |>
+  select(`Reference area`, `Expenditure`, TIME_PERIOD, OBS_VALUE) |>
   janitor::clean_names() |>
+  filter(expenditure != "Total") |>
   rename(
-    year = time,
-    annual_inflation = value
-    ) |>
-  filter(
-    subject != "CPI: 01-12 - All items",
-    str_detect(subject, "CPI: [0-9][0-9] "),
-    year >= 2011
-    ) |>
-  mutate(subject = str_remove(subject, "CPI: ")) |>
-  separate(subject, sep = " - ", into = c("subject_id", "subject_description")) |>
-  mutate(subject_id = as.numeric(subject_id)) |>
-  rename(
-    cpi_division_id = subject_id,
-    cpi_division_description = subject_description
-  )
+    country = reference_area,
+    expenditure = expenditure,
+    year = time_period,
+    annual_inflation = obs_value
+  ) |>
+  arrange(expenditure, year)
 
-us_inflation <- us_inflation_temp |>
-  select(country, cpi_division_id, year, annual_inflation) |>
-  arrange(cpi_division_id, year)
-
-cpi_divisions <- us_inflation_temp |>
-  distinct(cpi_division_id, cpi_division_description) |>
-  arrange(cpi_division_id) |>
-  rename(
-    id = cpi_division_id,
-    description = cpi_division_description
-  )
+cpi_expenditures <- us_inflation |>
+  distinct(expenditure) |>
+  rowid_to_column(var = "cpi_expenditure_id") |>
+  rename(cpi_expenditure_description = expenditure)
 
 write_csv(us_inflation, "lab/data/us-inflation.csv")
-write_csv(cpi_divisions, "lab/data/cpi-divisions.csv")
-
-# join: join other inflation indices for the US --------------------------------
-
-us_inflation <- read_csv("lab/data/us-inflation.csv")
-cpi_divisions <- read_csv("lab/data/cpi-divisions.csv")
-
+write_csv(cpi_expenditures, "lab/data/cpi-expenditures.csv")
