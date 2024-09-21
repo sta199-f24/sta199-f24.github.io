@@ -130,6 +130,7 @@ a.  `glimpse()` at the `country_inflation` data frame and answer the following q
     How many columns does `country_inflation` have and what does each column represent?
 
 b.  Display a list of the unique countries included in the dataset.
+    *Hint:* Another word for "unique" is `distinct()`.
 
 ::: callout-tip
 A function that can be useful for part (b) is `pull()`.
@@ -139,11 +140,11 @@ Check out its documentation for examples of usage.
 ### Question 2
 
 Which countries had the top three highest inflation rates in 2023?
-Your output should be a data frame with two columns, `country` and `2021`, with inflation rates in descending order, and three rows for the top three countries.
+Your output should be a data frame with two columns, `country` and `2023`, with inflation rates in descending order, and three rows for the top three countries.
 Briefly comment on how the inflation rates for these countries compare to the inflation rate for United States in that year.
 
 ::: callout-tip
-Column names that are numbers are not considered "proper" in R, therefore to select them you'll need to surround them with backticks, e.g. `select(` `` ` `` `1993` `` ` `` `)`.
+Column names that are numbers are not considered "proper" in R, therefore to select them you'll need to surround them with backticks, e.g. `` select( ` 1993 ` ) ``.
 :::
 
 ### Question 3
@@ -157,7 +158,7 @@ In a single pipeline,
 Do not save this new variable in `inf_ratio`, only calculate and display it so you can answer the following question based on the output of the pipeline.
 
 Which country's inflation change is the largest over this time period?
-Did inflation increase of decrease between 1993 and 2023 in this country?
+Did inflation increase or decrease between 1993 and 2023 in this country?
 
 ::: callout-tip
 For this question you'll once again need to use variables whose names are numbers (years) in your pipeline.
@@ -177,6 +178,11 @@ Requirements:
 
 ::: callout-important
 The remaining questions in Part 1 require the use of the pivoted data frame from Question 4.
+:::
+
+::: render-commit-push
+If you haven't yet done so, now is a good time to render, commit, and push.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 :::
 
 ### Question 5
@@ -199,7 +205,7 @@ c.  Putting (a) and (b) together: What are the highest and the lowest inflation 
 ### Question 6
 
 a\.
-Create a vector called `countries_of_interest` which contains the names of up tp five countries you want to visualize the inflation rates for over the years.
+Create a vector called `countries_of_interest` which contains the names of up to five countries you want to visualize the inflation rates for over the years.
 For example, if these countries are Türkiye and United States, you can express this as follows:
 
 ```{r}
@@ -229,8 +235,8 @@ Then, in a new pipeline, find the `distinct()` countries in the data frame you c
 
 ::: callout-tip
 The number of distinct countries in the filtered data frame you created in part (b) should equal the number of countries you chose in part (a).
-If it doesn't, you might have misspelled a country name or made a mistake in how to filter for these countries.
-Go back and check your code.
+If it doesn't, you might have misspelled a country name or made a mistake in filtering for these countries.
+Go back and correct your work.
 :::
 
 ### Question 7
@@ -247,7 +253,7 @@ Requirements for the plot:
 -   Plot should be customized in at least one way – you could use a different than default color scale, or different than default theme, or some other customization.
 
 ::: render-commit-push
-If you haven't yet done so, now is a good time to render, commit, and push.
+Now is another good time to render, commit, and push.
 Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 :::
 
@@ -285,12 +291,12 @@ cpi_divisions <- read_csv("data/cpi-divisions.csv")
 a\.
 How many columns and how many rows does the `us_inflation` dataset have?
 What are the variables in it?
-Add a brief (1-2 sentences) narrative summarizing this information.
+Write a brief (1-2 sentences) narrative summarizing this information.
 
 b\.
 How many columns and how many rows does the `cpi_divisions` dataset have?
 What are the variables in it?
-Add a brief (1-2 sentences) narrative summarizing this information.
+Write a brief (1-2 sentences) narrative summarizing this information.
 
 c\.
 Create a new dataset by joining the `us_inflation` dataset with the `cpi_division_id` dataset.
@@ -298,7 +304,7 @@ Create a new dataset by joining the `us_inflation` dataset with the `cpi_divisio
 -   Determine which type of join is the most appropriate one and use that.
 
 -   Note that the two datasets don't have a common variable.
-    Review the help for the join functions to determine how to use the `by` argument when the names of the variables that the datasets should be joined by are different.
+    You will need to define the `by` argument and use the `join_by()` function to indicate which variables to join the datasets by.
 
 -   Use a short but informative name for the joined dataset, and do not overwrite either of the datasets that go into creating it.
 
