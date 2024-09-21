@@ -291,6 +291,7 @@ cpi_expenditures <- read_csv("data/cpi-expenditures.csv")
 a\.
 How many columns and how many rows does the `us_inflation` dataset have?
 What are the variables in it?
+Which years do these data span?
 Write a brief (1-2 sentences) narrative summarizing this information.
 
 b\.
@@ -303,8 +304,8 @@ Create a new dataset by joining the `us_inflation` dataset with the `cpi_expendi
 
 -   Determine which type of join is the most appropriate one and use that.
 
--   Note that the two datasets don't have a common variable.
-    You will need to define the `by` argument and use the `join_by()` function to indicate which variables to join the datasets by.
+-   Note that the two datasets don't have a variable with a common name, though they do have variables that contain common information but are named differently.
+    You will need to first figure out which variables those are, and then define the `by` argument and use the `join_by()` function to indicate these variables to join the datasets by.
 
 -   Use a short but informative name for the joined dataset, and do not overwrite either of the datasets that go into creating it.
 
