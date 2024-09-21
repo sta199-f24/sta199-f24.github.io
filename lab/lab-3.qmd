@@ -269,13 +269,13 @@ The OECD defines inflation as follows:
 >
 > Source: [OECD CPI FAQ](https://www.oecd.org/sdd/prices-ppp/consumerpriceindices-frequentlyaskedquestionsfaqs.htm#1)
 
-CPI is broken down into 12 divisions such as food, housing, health, etc.
+CPI is broken down into 12 expenditures such as food, housing, health, etc.
 Your goal in this part is to create another time series plot of annual inflation, this time for US only.
 
 The data you will need to create this visualization is spread across two files:
 
--   `us-inflation.csv`: Annual inflation rate for the US for 12 CPI divisions. Each division is identified by an ID number.
--   `cpi-divisions.csv`: A "lookup table" of CPI division ID numbers and their descriptions.
+-   `us-inflation.csv`: Annual inflation rate for the US for 12 CPI expenditures. Each expenditure is identified by an ID number.
+-   `cpi-expenditures.csv`: A "lookup table" of CPI expenditure ID numbers and their descriptions.
 
 Let's load both of these files.
 
@@ -283,7 +283,7 @@ Let's load both of these files.
 #| label: load-us-data
 #| message: false
 us_inflation <- read_csv("data/us-inflation.csv")
-cpi_divisions <- read_csv("data/cpi-divisions.csv")
+cpi_expenditures <- read_csv("data/cpi-expenditures.csv")
 ```
 
 ### Question 8
@@ -294,12 +294,12 @@ What are the variables in it?
 Write a brief (1-2 sentences) narrative summarizing this information.
 
 b\.
-How many columns and how many rows does the `cpi_divisions` dataset have?
+How many columns and how many rows does the `cpi_expenditures` dataset have?
 What are the variables in it?
 Write a brief (1-2 sentences) narrative summarizing this information.
 
 c\.
-Create a new dataset by joining the `us_inflation` dataset with the `cpi_division_id` dataset.
+Create a new dataset by joining the `us_inflation` dataset with the `cpi_expenditure_id` dataset.
 
 -   Determine which type of join is the most appropriate one and use that.
 
@@ -314,27 +314,27 @@ Add a brief (1-2 sentences) narrative summarizing this information.
 ### Question 9
 
 a\.
-Create a vector called `divisions_of_interest` which contains the descriptions or IDs of CPI divisions you want to visualize.
-Your `divisions_of_interest` should consist of no more than five divisions.
-If you're using descriptions, make sure that the spelling of your divisions matches how they appear in the dataset.
-Then, in 1-2 sentences, state why you chose these divisions.
+Create a vector called `expenditures_of_interest` which contains the descriptions or IDs of CPI expenditures you want to visualize.
+Your `expenditures_of_interest` should consist of no more than five expenditures.
+If you're using descriptions, make sure that the spelling of your expenditures matches how they appear in the dataset.
+Then, in 1-2 sentences, state why you chose these expenditures.
 
 ::: callout-tip
 Refer back to the guidance provided in [Question 6] if you're not sure how to create this vector.
 :::
 
 b\.
-In a single pipeline, filter your reshaped dataset to include only the `divisions_of_interest` from part (a), and save the resulting data frame with a new name so you (1) can refer to this data frame later in your analysis and (2) do not overwrite the data frame you're starting with.
+In a single pipeline, filter your reshaped dataset to include only the `expenditures_of_interest` from part (a), and save the resulting data frame with a new name so you (1) can refer to this data frame later in your analysis and (2) do not overwrite the data frame you're starting with.
 Use a short but informative name.
-Then, in a new pipeline, find the `distinct()` divisions in the data frame you created.
+Then, in a new pipeline, find the `distinct()` expenditures in the data frame you created.
 
 ### Question 10
 
-Using your data frame from the previous question, create a plot of annual inflation vs. year for these divisions.
+Using your data frame from the previous question, create a plot of annual inflation vs. year for these expenditures.
 Then, in a few sentences, describe the patterns you observe in the plot, particularly focusing on anything you find surprising or not surprising, based on your knowledge (or lack thereof) of inflation rates in the US over the last decade.
 
--   Data should be represented with points as well as lines connecting the points for each division.
--   Each division should be represented by a different color line and different color and shape points.
+-   Data should be represented with points as well as lines connecting the points for each expenditure.
+-   Each expenditure should be represented by a different color line and different color and shape points.
 -   Axes and legend should be properly labeled.
 -   The plot should have an appropriate title (and optionally a subtitle).
 -   Plot should be customized in at least one way – you could use a different than default color scale, or different than default theme, or some other customization.
