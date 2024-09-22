@@ -3,7 +3,7 @@ title: Lab 3
 subtitle: Inflation everywhere
 categories: Lab
 description: "Due Mon, Sep 30 at 8:30 am"
-draft: true
+draft: false
 ---
 
 # Introduction
