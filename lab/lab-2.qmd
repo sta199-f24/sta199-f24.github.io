@@ -434,10 +434,12 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 ### Question 9
 
 a\.
-In a single pipeline, calculate the total population for each state and save the resulting data frame as `state_population`. Then, display the data frame, `state_population`, in descending order of total population.
+In a single pipeline, calculate the total population for each state and save the resulting data frame as `state_population`.
+Then, display the data frame, `state_population`, in descending order of total population.
 
 b\.
-Then, in a separate pipeline, calculate the proportion of the total population in each state. Once again, display the results in descending order of proportion of population.
+Then, in a separate pipeline, calculate the proportion of the total population in each state.
+Once again, display the results in descending order of proportion of population.
 
 ::: callout-tip
 In answering parts (a) and (b), you'll create two new variables, one for the total population and the other for the proportion of total proportion.
