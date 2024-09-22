@@ -27,7 +27,7 @@ read_csv("lab/data/country-inflation.csv") |> names()
 
 us_inflation_raw <- read_csv("lab/data/OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL,1.0+USA.A.N.CPI.PA.CP12+CP11+CP10+CP09+CP08+CP07+CP06+CP05+CP04+CP03+CP02+CP01+_T.N.GY.csv")
 
-us_inflation <- us_inflation_raw |>
+us_inflation_temp <- us_inflation_raw |>
   select(`Reference area`, `Expenditure`, TIME_PERIOD, OBS_VALUE) |>
   janitor::clean_names() |>
   filter(expenditure != "Total") |>
@@ -39,10 +39,15 @@ us_inflation <- us_inflation_raw |>
   ) |>
   arrange(expenditure, year)
 
-cpi_expenditures <- us_inflation |>
+cpi_expenditures <- us_inflation_temp |>
   distinct(expenditure) |>
-  rowid_to_column(var = "cpi_expenditure_id") |>
-  rename(cpi_expenditure_description = expenditure)
+  rowid_to_column(var = "id") |>
+  rename(description = expenditure)
+
+us_inflation <- us_inflation_temp |>
+  left_join(cpi_expenditures, by = join_by(expenditure == description)) |>
+  rename(cpi_expenditure_id = id) |>
+  select(country, cpi_expenditure_id, year, annual_inflation)
 
 write_csv(us_inflation, "lab/data/us-inflation.csv")
 write_csv(cpi_expenditures, "lab/data/cpi-expenditures.csv")
