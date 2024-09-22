@@ -603,11 +603,15 @@ Tip
 <p>In a single pipeline,</p>
 <ul>
 <li>calculate the ratio of the inflation in 2023 and inflation in 1993 for each country and store this information in a new column called <code>inf_ratio</code>,</li>
-<li>arrange the data frame in decreasing order of <code>inf_ratio</code>, and</li>
-<li>select the variables <code>country</code> and <code>inf_ratio</code> to display as the result of the pipeline.</li>
+<li>select the variables <code>country</code> and <code>inf_ratio</code>, and</li>
+<li>store the result in a new data frame called <code>country_inflation_ratios</code>.</li>
 </ul>
-<p>Do not save this new variable in <code>inf_ratio</code>, only calculate and display it so you can answer the following question based on the output of the pipeline.</p>
-<p>Which country’s inflation change is the largest over this time period? Did inflation increase or decrease between 1993 and 2023 in this country?</p>
+<p>Then, in two separate pipelines,</p>
+<ul>
+<li>arrange <code>country_inflation_ratios</code> in increasing order of <code>inf_ratio</code> and</li>
+<li>arrange <code>country_inflation_ratios</code> in decreasing order of <code>inf_ratio</code>.</li>
+</ul>
+<p>Which country’s inflation increase is the largest over this time period and by how much? Which country’s inflation decrease is the largest over this time period and by how much?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
