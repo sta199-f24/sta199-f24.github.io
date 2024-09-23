@@ -3,7 +3,7 @@ title: "AE 07: Sales taxes + data joining"
 subtitle: "Suggested answers"
 categories: 
   - Answers
-draft: true
+draft: false
 ---
 
 ## Getting started
