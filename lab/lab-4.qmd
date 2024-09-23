@@ -6,4 +6,4 @@ description: "Mon, Oct 7 at 8:30 am"
 draft: true
 ---
 
-To be posted.
+To be posted soon.
