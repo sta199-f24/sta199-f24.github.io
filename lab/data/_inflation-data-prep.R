@@ -23,7 +23,9 @@ read_csv("lab/data/country-inflation.csv") |> names()
 
 # data prep for us inflation / join --------------------------------------------
 
-# data source: Mary to add URL for data source
+# data source: https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CEconomy%23ECO%23%7CPrices%23ECO_PRI%23&pg=0&fc=Topic&bp=true&snb=16&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_PRICES%40DF_PRICES_ALL&df[ag]=OECD.SDD.TPS&df[vs]=1.0&pd=2011%2C2024&dq=USA.A.N.CPI.PA.CP12%2BCP11%2BCP10%2BCP09%2BCP08%2BCP07%2BCP06%2BCP05%2BCP04%2BCP03%2BCP02%2BCP01%2B_T.N.GY&to[TIME_PERIOD]=false&vw=tb
+# see also https://www.oecd.org/en/data/insights/data-explainers/2024/07/consumer-price-indices-frequently-asked-questions-faqs.html
+# under 2. Where can I download CPIs data?
 
 us_inflation_raw <- read_csv("lab/data/OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL,1.0+USA.A.N.CPI.PA.CP12+CP11+CP10+CP09+CP08+CP07+CP06+CP05+CP04+CP03+CP02+CP01+_T.N.GY.csv")
 
