@@ -3793,14 +3793,14 @@
     "href": "slides/08-data-types-classes.html#while-you-wait",
     "title": "Data types and classes",
     "section": "While you wait…",
-    "text": "While you wait…\n\n\n\nLoading…\n\nPrepare for today’s application exercise: ae-07-taxes-join\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-07-taxes-join.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
+    "text": "While you wait…\n\n\n\nLoading…\n\nPrepare for today’s application exercise: ae-08-durham-climate-factors\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-08-durham-climate-factors.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
     "objectID": "slides/08-data-types-classes.html#lab-1-feedback",
     "href": "slides/08-data-types-classes.html#lab-1-feedback",
     "title": "Data types and classes",
     "section": "Lab 1 feedback",
-    "text": "Lab 1 feedback\n\n\nDescribing a distribution:\n\nshape (modality and skewness)\ncenter\nspread\nunusual observations (and, where possible, explanation for why they’re unusual)\n\n\nDescribing a relationship:\n\ndirection (positive or negative)\nform (linear or non-linear)\nstrength\nunusual observations (and, where possible, explanation for why they’re unusual)"
+    "text": "Lab 1 feedback\n\n\nDescribing a distribution:\n\nshape (modality and skewness)\ncenter (with calculated value or estimated value or range)\nspread (with calculated value or estimated value or range)\nunusual observations (and, where possible, explanation for why they’re unusual)\n\n\nDescribing a relationship:\n\ndirection (positive or negative)\nform (linear or non-linear)\nstrength\nunusual observations (and, where possible, explanation for why they’re unusual)"
   },
   {
     "objectID": "slides/08-data-types-classes.html#lab-1-commits",
@@ -3821,21 +3821,21 @@
     "href": "slides/08-data-types-classes.html#how-many-classes-do-you-have-on-tuesdays",
     "title": "Data types and classes",
     "section": "How many classes do you have on Tuesdays?",
-    "text": "How many classes do you have on Tuesdays?\n\nstudents\n\n# A tibble: 5 × 3\n  Timestamp     How many classes do you have on…¹ `What year are you?`\n  &lt;chr&gt;                                     &lt;dbl&gt; &lt;chr&gt;               \n1 9/23/24 19:57                                 2 Sophomore           \n2 9/23/24 19:58                                 3 First-year          \n3 9/23/24 20:06                                 2 Sophomore           \n4 9/23/24 20:09                                 2 Sophomore           \n5 9/23/24 21:48                                 0 Senior              \n# ℹ abbreviated name: ¹​`How many classes do you have on Tuesdays?`"
+    "text": "How many classes do you have on Tuesdays?\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     How many classes do you have on…¹ `What year are you?`\n  &lt;chr&gt;                                     &lt;dbl&gt; &lt;chr&gt;               \n1 9/23/24 19:57                                 2 Sophomore           \n2 9/23/24 19:58                                 3 First-year          \n3 9/23/24 20:06                                 2 Sophomore           \n4 9/23/24 20:09                                 2 Sophomore           \n5 9/23/24 21:48                                 0 Senior              \n# ℹ abbreviated name: ¹​`How many classes do you have on Tuesdays?`"
   },
   {
     "objectID": "slides/08-data-types-classes.html#rename-variables",
     "href": "slides/08-data-types-classes.html#rename-variables",
     "title": "Data types and classes",
     "section": "\nrename() variables",
-    "text": "rename() variables\nTo make them easier to work with…\n\nstudents &lt;- students |&gt;\n  rename(\n    tue_classes = `How many classes do you have on Tuesdays?`,\n    year = `What year are you?`\n  )"
+    "text": "rename() variables\nTo make them easier to work with…\n\nsurvey &lt;- survey |&gt;\n  rename(\n    tue_classes = `How many classes do you have on Tuesdays?`,\n    year = `What year are you?`\n  )"
   },
   {
     "objectID": "slides/08-data-types-classes.html#variable-types",
     "href": "slides/08-data-types-classes.html#variable-types",
     "title": "Data types and classes",
     "section": "Variable types",
-    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nstudents\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
+    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
   },
   {
     "objectID": "slides/08-data-types-classes.html#lets-attempt-to-clean-it-up",
@@ -3968,21 +3968,21 @@
     "href": "slides/08-data-types-classes.html#read-data-in-as-character-strings",
     "title": "Data types and classes",
     "section": "Read data in as character strings",
-    "text": "Read data in as character strings\n\nstudents\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
+    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
   },
   {
     "objectID": "slides/08-data-types-classes.html#but-coerce-when-plotting",
     "href": "slides/08-data-types-classes.html#but-coerce-when-plotting",
     "title": "Data types and classes",
     "section": "But coerce when plotting",
-    "text": "But coerce when plotting\n\nggplot(students, mapping = aes(x = year)) +\n  geom_bar()"
+    "text": "But coerce when plotting\n\nggplot(survey, mapping = aes(x = year)) +\n  geom_bar()"
   },
   {
     "objectID": "slides/08-data-types-classes.html#use-forcats-to-reorder-levels",
     "href": "slides/08-data-types-classes.html#use-forcats-to-reorder-levels",
     "title": "Data types and classes",
     "section": "Use forcats to reorder levels",
-    "text": "Use forcats to reorder levels\n\nstudents |&gt;\n  mutate(year = fct_relevel(year, \"First-year\", \"Sophomore\", \"Junior\", \"Senior\")) |&gt;\n  ggplot(mapping = aes(x = year)) +\n  geom_bar()\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `year = fct_relevel(year, \"First-year\", \"Sophomore\",\n  \"Junior\", \"Senior\")`.\nCaused by warning:\n! 1 unknown level in `f`: Junior"
+    "text": "Use forcats to reorder levels"
   },
   {
     "objectID": "slides/08-data-types-classes.html#a-peek-into-forcats",
@@ -3996,14 +3996,14 @@
     "href": "slides/08-data-types-classes-slides.html#while-you-wait",
     "title": "Data types and classes",
     "section": "While you wait…",
-    "text": "While you wait…\n\n\n\nLoading…\n\nPrepare for today’s application exercise: ae-07-taxes-join\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-07-taxes-join.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
+    "text": "While you wait…\n\n\n\nLoading…\n\nPrepare for today’s application exercise: ae-08-durham-climate-factors\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-08-durham-climate-factors.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
     "objectID": "slides/08-data-types-classes-slides.html#lab-1-feedback",
     "href": "slides/08-data-types-classes-slides.html#lab-1-feedback",
     "title": "Data types and classes",
     "section": "Lab 1 feedback",
-    "text": "Lab 1 feedback\n\n\nDescribing a distribution:\n\nshape (modality and skewness)\ncenter\nspread\nunusual observations (and, where possible, explanation for why they’re unusual)\n\n\nDescribing a relationship:\n\ndirection (positive or negative)\nform (linear or non-linear)\nstrength\nunusual observations (and, where possible, explanation for why they’re unusual)"
+    "text": "Lab 1 feedback\n\n\nDescribing a distribution:\n\nshape (modality and skewness)\ncenter (with calculated value or estimated value or range)\nspread (with calculated value or estimated value or range)\nunusual observations (and, where possible, explanation for why they’re unusual)\n\n\nDescribing a relationship:\n\ndirection (positive or negative)\nform (linear or non-linear)\nstrength\nunusual observations (and, where possible, explanation for why they’re unusual)"
   },
   {
     "objectID": "slides/08-data-types-classes-slides.html#lab-1-commits",
@@ -4024,21 +4024,21 @@
     "href": "slides/08-data-types-classes-slides.html#how-many-classes-do-you-have-on-tuesdays",
     "title": "Data types and classes",
     "section": "How many classes do you have on Tuesdays?",
-    "text": "How many classes do you have on Tuesdays?\n\nstudents\n\n# A tibble: 5 × 3\n  Timestamp     How many classes do you have on…¹ `What year are you?`\n  &lt;chr&gt;                                     &lt;dbl&gt; &lt;chr&gt;               \n1 9/23/24 19:57                                 2 Sophomore           \n2 9/23/24 19:58                                 3 First-year          \n3 9/23/24 20:06                                 2 Sophomore           \n4 9/23/24 20:09                                 2 Sophomore           \n5 9/23/24 21:48                                 0 Senior              \n# ℹ abbreviated name: ¹​`How many classes do you have on Tuesdays?`"
+    "text": "How many classes do you have on Tuesdays?\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     How many classes do you have on…¹ `What year are you?`\n  &lt;chr&gt;                                     &lt;dbl&gt; &lt;chr&gt;               \n1 9/23/24 19:57                                 2 Sophomore           \n2 9/23/24 19:58                                 3 First-year          \n3 9/23/24 20:06                                 2 Sophomore           \n4 9/23/24 20:09                                 2 Sophomore           \n5 9/23/24 21:48                                 0 Senior              \n# ℹ abbreviated name: ¹​`How many classes do you have on Tuesdays?`"
   },
   {
     "objectID": "slides/08-data-types-classes-slides.html#rename-variables",
     "href": "slides/08-data-types-classes-slides.html#rename-variables",
     "title": "Data types and classes",
     "section": "\nrename() variables",
-    "text": "rename() variables\nTo make them easier to work with…\n\nstudents &lt;- students |&gt;\n  rename(\n    tue_classes = `How many classes do you have on Tuesdays?`,\n    year = `What year are you?`\n  )"
+    "text": "rename() variables\nTo make them easier to work with…\n\nsurvey &lt;- survey |&gt;\n  rename(\n    tue_classes = `How many classes do you have on Tuesdays?`,\n    year = `What year are you?`\n  )"
   },
   {
     "objectID": "slides/08-data-types-classes-slides.html#variable-types",
     "href": "slides/08-data-types-classes-slides.html#variable-types",
     "title": "Data types and classes",
     "section": "Variable types",
-    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nstudents\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
+    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
   },
   {
     "objectID": "slides/08-data-types-classes-slides.html#lets-attempt-to-clean-it-up",
@@ -4171,21 +4171,21 @@
     "href": "slides/08-data-types-classes-slides.html#read-data-in-as-character-strings",
     "title": "Data types and classes",
     "section": "Read data in as character strings",
-    "text": "Read data in as character strings\n\nstudents\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
+    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
   },
   {
     "objectID": "slides/08-data-types-classes-slides.html#but-coerce-when-plotting",
     "href": "slides/08-data-types-classes-slides.html#but-coerce-when-plotting",
     "title": "Data types and classes",
     "section": "But coerce when plotting",
-    "text": "But coerce when plotting\n\nggplot(students, mapping = aes(x = year)) +\n  geom_bar()"
+    "text": "But coerce when plotting\n\nggplot(survey, mapping = aes(x = year)) +\n  geom_bar()"
   },
   {
     "objectID": "slides/08-data-types-classes-slides.html#use-forcats-to-reorder-levels",
     "href": "slides/08-data-types-classes-slides.html#use-forcats-to-reorder-levels",
     "title": "Data types and classes",
     "section": "Use forcats to reorder levels",
-    "text": "Use forcats to reorder levels\n\nstudents |&gt;\n  mutate(year = fct_relevel(year, \"First-year\", \"Sophomore\", \"Junior\", \"Senior\")) |&gt;\n  ggplot(mapping = aes(x = year)) +\n  geom_bar()\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `year = fct_relevel(year, \"First-year\", \"Sophomore\",\n  \"Junior\", \"Senior\")`.\nCaused by warning:\n! 1 unknown level in `f`: Junior"
+    "text": "Use forcats to reorder levels"
   },
   {
     "objectID": "slides/08-data-types-classes-slides.html#a-peek-into-forcats",
