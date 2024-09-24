@@ -1,0 +1,104 @@
+---
+title: "AE 08: Durham climate + factors"
+---
+
+## Getting started
+
+### Packages
+
+We will use the **tidyverse** package in this application exercise.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+```
+
+### Data
+
+The data come from <https://www.usclimatedata.com/climate/durham/north-carolina/united-states/usnc0192> and are stored as `durham-climate.csv` in the `data` folder.
+
+```{r}
+#| label: load-data
+#| message: false
+durham_climate <- read_csv("data/durham-climate.csv")
+```
+
+And let's take a look at the data.
+
+```{r}
+#| label: view-data
+durham_climate
+```
+
+## Reorder
+
+What's wrong with the following plot?
+
+Add your response here.
+
+```{r}
+#| label: avg-high-broken
+#| fig-width: 8
+#| fig-asp: 0.4
+#| out-width: 100%
+ggplot(
+  durham_climate, 
+  aes(x = month, y = avg_high_f, group = 1)
+  ) +
+  geom_line() +
+  geom_point(
+    shape = "circle filled", size = 2,
+    color = "black", fill = "white", stroke = 1
+  ) +
+  labs(
+    x = "Month",
+    y = "Average high temperature (F)",
+    title = "Durham climate"
+  )
+```
+
+Fix the plot.
+
+```{r}
+#| label: avg-high-fixed
+#| fig-width: 8
+#| fig-asp: 0.4
+#| out-width: 100%
+# add code here
+```
+
+## Recode and reorder
+
+Update the plot above, coloring points based on season.
+Additionally:
+
+-   Make sure the legend is on top of the plot and the seasons appear in the legend in the order they appear in the plot (Winter, Spring, Summer, Fall).
+
+-   Use `"circle filled"` as the `shape` for points, set their `size` to 3 points, outline (`stroke`) to 1 point, and fill them in with the following colors:
+
+    -   Winter: `lightskyblue1`
+    -   Spring: `chartreuse3`
+    -   Summer: `gold2`
+    -   Fall: `lightsalmon4`
+
+```{r}
+#| label: avg-high-seasons
+#| fig-width: 8
+#| fig-asp: 0.4
+#| out-width: 100%
+# add code here
+```
+
+## Pivot
+
+Overlay lines for both high and low temperatures on the same plot.
+Additionally, use different colors for the two lines – a darker color for high and a lighter color for low temperatures.
+
+```{r}
+#| label: avg-seasons
+#| fig-width: 8
+#| fig-asp: 0.4
+#| out-width: 100%
+# add code here
+```
