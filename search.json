@@ -3821,7 +3821,7 @@
     "href": "slides/08-data-types-classes.html#how-many-classes-do-you-have-on-tuesdays",
     "title": "Data types and classes",
     "section": "How many classes do you have on Tuesdays?",
-    "text": "How many classes do you have on Tuesdays?\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     How many classes do you have on…¹ `What year are you?`\n  &lt;chr&gt;                                     &lt;dbl&gt; &lt;chr&gt;               \n1 9/23/24 19:57                                 2 Sophomore           \n2 9/23/24 19:58                                 3 First-year          \n3 9/23/24 20:06                                 2 Sophomore           \n4 9/23/24 20:09                                 2 Sophomore           \n5 9/23/24 21:48                                 0 Senior              \n# ℹ abbreviated name: ¹​`How many classes do you have on Tuesdays?`"
+    "text": "How many classes do you have on Tuesdays?\n\nsurvey\n\n# A tibble: 11 × 3\n   Timestamp     How many classes do you have o…¹ `What year are you?`\n   &lt;chr&gt;         &lt;chr&gt;                            &lt;chr&gt;               \n 1 9/23/24 19:57 2                                Sophomore           \n 2 9/23/24 19:58 3                                First-year          \n 3 9/23/24 20:06 2                                Sophomore           \n 4 9/23/24 20:09 2                                Sophomore           \n 5 9/23/24 21:48 0                                Senior              \n 6 9/24/24 9:44  2                                First-year          \n 7 9/24/24 10:15 2                                Senior              \n 8 9/24/24 10:50 2                                Sophomore           \n 9 9/24/24 10:54 3                                First-year          \n10 9/24/24 11:08 2                                Senior              \n11 9/24/24 11:15 Just this one!                   Sophomore           \n# ℹ abbreviated name: ¹​`How many classes do you have on Tuesdays?`"
   },
   {
     "objectID": "slides/08-data-types-classes.html#rename-variables",
@@ -3835,7 +3835,7 @@
     "href": "slides/08-data-types-classes.html#variable-types",
     "title": "Data types and classes",
     "section": "Variable types",
-    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
+    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nsurvey\n\n# A tibble: 11 × 3\n   Timestamp     tue_classes    year      \n   &lt;chr&gt;         &lt;chr&gt;          &lt;chr&gt;     \n 1 9/23/24 19:57 2              Sophomore \n 2 9/23/24 19:58 3              First-year\n 3 9/23/24 20:06 2              Sophomore \n 4 9/23/24 20:09 2              Sophomore \n 5 9/23/24 21:48 0              Senior    \n 6 9/24/24 9:44  2              First-year\n 7 9/24/24 10:15 2              Senior    \n 8 9/24/24 10:50 2              Sophomore \n 9 9/24/24 10:54 3              First-year\n10 9/24/24 11:08 2              Senior    \n11 9/24/24 11:15 Just this one! Sophomore"
   },
   {
     "objectID": "slides/08-data-types-classes.html#lets-attempt-to-clean-it-up",
@@ -3968,7 +3968,7 @@
     "href": "slides/08-data-types-classes.html#read-data-in-as-character-strings",
     "title": "Data types and classes",
     "section": "Read data in as character strings",
-    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
+    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 11 × 3\n   Timestamp     tue_classes    year      \n   &lt;chr&gt;         &lt;chr&gt;          &lt;chr&gt;     \n 1 9/23/24 19:57 2              Sophomore \n 2 9/23/24 19:58 3              First-year\n 3 9/23/24 20:06 2              Sophomore \n 4 9/23/24 20:09 2              Sophomore \n 5 9/23/24 21:48 0              Senior    \n 6 9/24/24 9:44  2              First-year\n 7 9/24/24 10:15 2              Senior    \n 8 9/24/24 10:50 2              Sophomore \n 9 9/24/24 10:54 3              First-year\n10 9/24/24 11:08 2              Senior    \n11 9/24/24 11:15 Just this one! Sophomore"
   },
   {
     "objectID": "slides/08-data-types-classes.html#but-coerce-when-plotting",
@@ -4024,7 +4024,7 @@
     "href": "slides/08-data-types-classes-slides.html#how-many-classes-do-you-have-on-tuesdays",
     "title": "Data types and classes",
     "section": "How many classes do you have on Tuesdays?",
-    "text": "How many classes do you have on Tuesdays?\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     How many classes do you have on…¹ `What year are you?`\n  &lt;chr&gt;                                     &lt;dbl&gt; &lt;chr&gt;               \n1 9/23/24 19:57                                 2 Sophomore           \n2 9/23/24 19:58                                 3 First-year          \n3 9/23/24 20:06                                 2 Sophomore           \n4 9/23/24 20:09                                 2 Sophomore           \n5 9/23/24 21:48                                 0 Senior              \n# ℹ abbreviated name: ¹​`How many classes do you have on Tuesdays?`"
+    "text": "How many classes do you have on Tuesdays?\n\nsurvey\n\n# A tibble: 11 × 3\n   Timestamp     How many classes do you have o…¹ `What year are you?`\n   &lt;chr&gt;         &lt;chr&gt;                            &lt;chr&gt;               \n 1 9/23/24 19:57 2                                Sophomore           \n 2 9/23/24 19:58 3                                First-year          \n 3 9/23/24 20:06 2                                Sophomore           \n 4 9/23/24 20:09 2                                Sophomore           \n 5 9/23/24 21:48 0                                Senior              \n 6 9/24/24 9:44  2                                First-year          \n 7 9/24/24 10:15 2                                Senior              \n 8 9/24/24 10:50 2                                Sophomore           \n 9 9/24/24 10:54 3                                First-year          \n10 9/24/24 11:08 2                                Senior              \n11 9/24/24 11:15 Just this one!                   Sophomore           \n# ℹ abbreviated name: ¹​`How many classes do you have on Tuesdays?`"
   },
   {
     "objectID": "slides/08-data-types-classes-slides.html#rename-variables",
@@ -4038,7 +4038,7 @@
     "href": "slides/08-data-types-classes-slides.html#variable-types",
     "title": "Data types and classes",
     "section": "Variable types",
-    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
+    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nsurvey\n\n# A tibble: 11 × 3\n   Timestamp     tue_classes    year      \n   &lt;chr&gt;         &lt;chr&gt;          &lt;chr&gt;     \n 1 9/23/24 19:57 2              Sophomore \n 2 9/23/24 19:58 3              First-year\n 3 9/23/24 20:06 2              Sophomore \n 4 9/23/24 20:09 2              Sophomore \n 5 9/23/24 21:48 0              Senior    \n 6 9/24/24 9:44  2              First-year\n 7 9/24/24 10:15 2              Senior    \n 8 9/24/24 10:50 2              Sophomore \n 9 9/24/24 10:54 3              First-year\n10 9/24/24 11:08 2              Senior    \n11 9/24/24 11:15 Just this one! Sophomore"
   },
   {
     "objectID": "slides/08-data-types-classes-slides.html#lets-attempt-to-clean-it-up",
@@ -4171,7 +4171,7 @@
     "href": "slides/08-data-types-classes-slides.html#read-data-in-as-character-strings",
     "title": "Data types and classes",
     "section": "Read data in as character strings",
-    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 5 × 3\n  Timestamp     tue_classes year      \n  &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     \n1 9/23/24 19:57           2 Sophomore \n2 9/23/24 19:58           3 First-year\n3 9/23/24 20:06           2 Sophomore \n4 9/23/24 20:09           2 Sophomore \n5 9/23/24 21:48           0 Senior"
+    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 11 × 3\n   Timestamp     tue_classes    year      \n   &lt;chr&gt;         &lt;chr&gt;          &lt;chr&gt;     \n 1 9/23/24 19:57 2              Sophomore \n 2 9/23/24 19:58 3              First-year\n 3 9/23/24 20:06 2              Sophomore \n 4 9/23/24 20:09 2              Sophomore \n 5 9/23/24 21:48 0              Senior    \n 6 9/24/24 9:44  2              First-year\n 7 9/24/24 10:15 2              Senior    \n 8 9/24/24 10:50 2              Sophomore \n 9 9/24/24 10:54 3              First-year\n10 9/24/24 11:08 2              Senior    \n11 9/24/24 11:15 Just this one! Sophomore"
   },
   {
     "objectID": "slides/08-data-types-classes-slides.html#but-coerce-when-plotting",
