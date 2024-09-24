@@ -13,8 +13,6 @@ webr:
     - tidyverse
   resources:
     - https://raw.githubusercontent.com/sta199-f24/sta199-f24.github.io/refs/heads/main/slides/data/survey-2024-09-24.csv
-execute: 
-  freeze: false
 editor_options: 
   chunk_output_type: console
 ---
@@ -33,7 +31,7 @@ survey <- read_csv("survey-2024-09-24")
 
 <!-- end: webr fodder -->
 
-<!--# hello -->
+<!--# mello -->
 
 <!-- begin: ae definition -->
 
