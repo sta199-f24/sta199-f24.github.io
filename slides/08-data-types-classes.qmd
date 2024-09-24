@@ -33,6 +33,8 @@ survey <- read_csv("survey-2024-09-24")
 
 <!-- end: webr fodder -->
 
+<!--# hello -->
+
 <!-- begin: ae definition -->
 
 ```{r}
