@@ -1,9 +1,340 @@
 ---
 title: Lab 4
-subtitle: To be posted
+subtitle: Everything so far I
 categories: Lab
 description: "Mon, Oct 7 at 8:30 am"
 draft: true
+editor_options: 
+  chunk_output_type: console
 ---
 
-To be posted soon.
+# Introduction
+
+In this lab you'll both review topics you've worked with in previous labs and practice importing data and dive into the concepts of data types and classes.
+
+::: callout-note
+This lab assumes you've completed the labs so far and doesn't repeat setup and overview content from those labs.
+If you have not yet done those, you should go back and review the previous labs before starting on this one.
+:::
+
+## Learning objectives
+
+By the end of the lab, you will...
+
+-   <!--# TO DO: Add learning objectives. -->
+
+And, as usual, you will also
+
+-   Get more experience with data science workflow using R, RStudio, Git, and GitHub
+-   Further your reproducible authoring skills with Quarto
+-   Improve your familiarity with version control using Git and GitHub
+
+## Getting started
+
+Log in to RStudio, clone your `lab-4` repo from GitHub, open your `lab-4.qmd` document, and get started!
+
+::: {.callout-tip collapse="true"}
+## Click here if you prefer to see step-by-step instructions
+
+### Step 1: Log in to RStudio
+
+-   Go to <https://cmgr.oit.duke.edu/containers> and log in with your Duke NetID and Password.
+-   Click `STA198-199` under My reservations to log into your container. You should now see the RStudio environment.
+
+### Step 2: Clone the repo & start new RStudio project
+
+-   Go to the course organization at [github.com/sta199-f24](https://github.com/sta199-f24) organization on GitHub.
+    Click on the repo with the prefix **lab-4**.
+    It contains the starter documents you need to complete the lab.
+
+-   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**).
+    Click on the clipboard icon to copy the repo URL.
+
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
+-   Click *lab-4.qmd* to open the template Quarto file.
+    This is where you will write up your code and narrative for the lab.
+
+### Step 3: Update the YAML
+
+In `lab-4.qmd`, update the `author` field to your name, render your document and examine the changes.
+Then, in the Git pane, click on **Diff** to view your changes, add a commit message (e.g., "Added author name"), and click **Commit**.
+Then, push the changes to your GitHub repository, and in your browser confirm that these changes have indeed propagated to your repository.
+:::
+
+::: callout-important
+If you run into any issues with the first steps outlined above, flag a TA for help before proceeding.
+:::
+
+## Packages
+
+In this lab we will work with the **tidyverse** package, which is a collection of packages for doing data analysis in a "tidy" way.
+We'll also use the **palmerpenguins** package.
+
+```{r}
+#| eval: true
+#| message: false
+library(tidyverse)
+library(palmerpenguins)
+```
+
+-   **Run** the code cell by clicking on the green triangle (play) button for the code cell labeled `load-packages`. This loads the package to make its features (the functions and datasets in it) be accessible from your *Console*.
+-   Then, **render** the document which loads this package to make its features (the functions and datasets in it) be available for other code cells in your Quarto document.
+
+## Guidelines
+
+{{< include _guidelines.qmd >}}
+
+# Questions
+
+## Part 1 - `mtcars`
+
+In this part you'll work with one of the most basic, most overused datasets in R: `mtcars`.
+The data in this dataset come from the 1974 *Motor Trend* US magazine (so, yes, they're old!) and provide information on fuel efficiency as well as other characteristics of the cars.
+
+### Question 1
+
+Since the dataset is used in many code examples, it's not unexpected that some analyses of the data are good and some not so much.
+
+::: callout-tip
+For both parts of this question, you should review the data dictionary that is in the documentation for the dataset which you can find at <https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html> or by typing `?mtcars` in your Console.
+:::
+
+a\.
+You come across the following visualization of these data.
+First, determine what is wrong with this visualization and describe it in one sentence.
+Then, fix and improve the visualization.
+As part of your improvement, make sure your legend
+
+-   is on top of the plot,
+-   is informative, and
+-   lists levels in the order they appear in the plot.
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg, color = am)) +
+  geom_point() +
+  labs(
+    x = "Weight (1000 lbs)",
+    y = "Miles / gallon"
+  )
+```
+
+b\.
+Update your plot from part (a) further, this time using different shaped points for cars with V-shaped and straight engines.
+Once again, some requirements for your legend – it should be informative and on the right of the plot.
+
+### Question 2
+
+Your task is to make your plot from Question 1b as ugly and as ineffective as possible.
+Change colors, axes, fonts, theme, or anything else you can think of in the code chunk below.
+You can also search online for other themes, fonts, etc. that you want to tweak.
+Try to make it as ugly as possible, the sky is the limit!
+You must make at least 5 updates to the plot.
+
+Your answer must include
+
+-   a list of the at least 5 updates you've made to your plot from Question 1b, and
+
+-   1-2 sentence explanation of why the plot you created is *ugly* (to you, at least) and ineffective.
+
+::: render-commit-push
+Render, commit, and push your work so far.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
+
+## Part 2 - All about Quarto
+
+### Question 3
+
+You have the following code chunk:
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+
+Add the following code cell options, one at a time, and set each to `false` and then to `true`.
+After each value, render your document and observe its effect.
+Ultimately, choose the values that are the most appropriate for this code cell.
+Based on the behaviors you observe, describe what each code cell option does.
+
+-   `echo`
+
+-   `warning`
+
+-   `eval`
+
+### Question 4
+
+a.  You have the following code cell again.
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+
+Add `fig-width` and `fig-asp` as code chunk options.
+Try setting `fig-width` to values between 1 and 10.
+Try setting `fig-asp` to values between 0.1 and 1.
+Re-render the document after each value and observe its effect.
+Ultimately, choose values that make the plot look visually pleasing in the rendered document.
+Based on the behavior you observe, describe what each chunk option does.
+
+b\.
+You have the following code cell, but look carefully, it’s not exactly the same!
+
+```{r}
+gplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+
+Add `error` as a code chunk option and set it to `false` and then set it to `true`.
+After each value, render your document and observe its effect.
+Ultimately, choose the value that allows you to render your document without altering the code.
+Based on the behavior you observe, describe what this code chunk option does.
+
+::: callout-tip
+Reading [the documentation](https://quarto.org/docs/reference/formats/pdf.html#execution) might also be hepful.
+:::
+
+::: render-commit-push
+Render, commit, and push your work so far.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
+
+The data frame you will be working with in this part is called `datasaurus_dozen` and it's in the **datasauRus** package.
+This single data frame contains 13 datasets, designed to show us why data visualization is important and how summary statistics alone can be misleading.
+The different datasets are marked by the `dataset` variable, as shown in @fig-datasaurus.
+
+![The \`datasaurus_dozen\` data frame stacks 13 datasets on top of each other. This figure shows the first three datasets.](images/datasaurus-dozen.png){#fig-datasaurus fig-align="center" width="432"}
+
+::: callout-note
+If it's confusing that the data frame is called `datasaurus_dozen` when it contains 13 datasets, you're not alone!
+Have you heard of a [baker's dozen](https://www.mentalfloss.com/article/32259/why-bakers-dozen-13)?
+:::
+
+Here is a peek at the top 10 rows of the dataset:
+
+```{r}
+#| eval: true
+
+datasaurus_dozen
+```
+
+## Part 3 - DatasauRus
+
+The data frame you will be working with in this part is called `datasaurus_dozen` and it's in the **datasauRus** package.
+This single data frame contains 13 datasets, designed to show us why data visualization is important and how summary statistics alone can be misleading.
+The different datasets are marked by the `dataset` variable, as shown in @fig-datasaurus.
+
+![The \`datasaurus_dozen\` data frame stacks 13 datasets on top of each other. This figure shows the first three datasets.](images/lab-4/datasaurus-dozen.png){fig-align="center" width="432"}
+
+::: callout-note
+If it's confusing that the data frame is called `datasaurus_dozen` when it contains 13 datasets, you're not alone!
+Have you heard of a [baker's dozen](https://www.mentalfloss.com/article/32259/why-bakers-dozen-13)?
+:::
+
+Here is a peek at the top 10 rows of the dataset:
+
+```{r}
+#| eval: true
+datasaurus_dozen
+```
+
+### Question 5
+
+In a single pipeline, calculate the mean of `x`, mean of `y`, standard deviation of `x`, standard deviation of `y`, and the correlation between `x` and `y` for each level of the `dataset` variable.
+Then, in 1-2 sentences, comment on how these summary statistics compare across groups (datasets).
+
+::: callout-tip
+There are 13 groups but `tibble`s only print out 10 rows by default.
+Add `print(n = 13)` as the last step of your pipeline to display all rows.
+:::
+
+### Question 6
+
+Create a scatterplot of `y` versus `x` and color and facet it by `dataset`.
+Then, in 1-2 sentences, how these plots compare across groups (datasets).
+How does your response in this question compare to your response to the previous question and what does this say about using visualizations and summary statistics when getting to know a dataset?
+
+::: callout-tip
+When you both color and facet by the same variable, you'll end up with a redundant legend.
+Turn off the legend by adding `show.legend = FALSE` to the geom creating the legend.
+:::
+
+::: render-commit-push
+Render, commit, and push one last time.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
+
+## Part 4 - Election polling
+
+SurveyUSA polled 900 NC adults between September 4-7, 2024.
+Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.[^1]
+The following question was asked to these 771 adults:
+
+[^1]: Full survey results can be found at <https://www.surveyusa.com/client/PollReport.aspx?g=c6995e17-3837-413e-ac98-3684e1c74dc1>.
+
+> Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?
+
+Responses were broken down into the following categories:
+
+| Variable | Levels                                     |
+|:---------|:-------------------------------------------|
+| Age      | 18-49; 50+                                 |
+| Opinion  | Remain Against The Law; Be Made Legal; Not Sure |
+
+Of the 771 responses, 391 were between the ages of 18-49.
+Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
+Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
+
+### Question 8
+
+a.  Fill in the code below to create a two-way table that summarizes these data.
+
+    ```{r}
+    #| eval: false
+
+    survey_counts <- tibble( 
+      age = c(),
+      opinion = c(),
+      n = c()
+      )
+
+    survey_counts |>
+      pivot_wider( 
+        names_from = ___,
+        values_from = ___
+      ) |>
+      kable()
+    ```
+
+For parts b-d below, use a your response single pipeline starting with `survey_counts`, calculate the desired proportions, and make sure the result is an **ungrouped** data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you're interested in.
+
+b.  Calculate the proportions of 18-49 year olds and 50+ year olds in this sample.
+
+c.  Calculate the proportions of those who think medical marijuana should remain against the law, should be made legal, and who are not sure.
+
+d.  Calculate the proportions of individuals in this sample who who think medical marijuana should remain against the law, should be made legal, and who are not sure
+
+    - among those who are 18-49 years old and
+    - among those who are 50+ years old.
+
+### Question 9
+
+a.  Create a visualization that can be used to evaluate the relationship between `age` and `opinion` on legalizing medical marijuana in North Carolina based on this survey's results.
+
+    ::: callout-tip
+    Your visualization should display the proportions you calculated in Question 8d.
+    :::
+
+b.  Based on your calculations so far, as well as your visualization, write 1-2 sentences that describe the relationship, in this sample, between age and opinion on legalizing medical marijuana in North Carolina.
+
+::: render-commit-push
+Render, commit, and push one last time.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
