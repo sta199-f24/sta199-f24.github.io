@@ -72,8 +72,10 @@ If you run into any issues with the first steps outlined above, flag a TA for he
 
 ## Packages
 
-In this lab we will work with the **tidyverse** package, which is a collection of packages for doing data analysis in a "tidy" way.
-We'll also use the **palmerpenguins** package.
+In this lab we will work with the 
+
+- **tidyverse** package for doing data analysis in a "tidy" way and
+- **palmerpenguins** and **datasauRus** packages for some datasets
 
 ```{r}
 #| eval: true
