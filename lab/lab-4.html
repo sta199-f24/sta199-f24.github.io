@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.56">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="description" content="Mon, Oct 7 at 8:30 am">
-
 <title>Lab 4 – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,8 +18,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -42,8 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -69,10 +98,7 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<meta name="quarto:status" content="draft">
-
-
+}</script><meta name="quarto:status" content="draft">
 <meta property="og:title" content="Lab 4 – STA 199">
 <meta property="og:description" content="Mon, Oct 7 at 8:30 am">
 <meta property="og:site_name" content="STA 199">
@@ -82,13 +108,10 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -99,23 +122,18 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f24" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
     <div class="dropdown">
       <a href="" title="Support" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Support"><i class="bi bi-life-preserver"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
+<li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">
               <i class="bi bi-person-raised-hand pe-1"></i>
             Office hours
@@ -134,11 +152,11 @@ ul.task-list li input[type="checkbox"] {
             </a>
           </li>
       </ul>
-    </div>
+</div>
     <div class="dropdown">
       <a href="" title="Canvas" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Canvas"><i class="bi bi-file-check-fill"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
-          <li>
+<li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/39994/announcements">
               <i class="bi bi-megaphone-fill pe-1"></i>
             Announcements
@@ -157,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
             </a>
           </li>
       </ul>
-    </div>
+</div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
@@ -168,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
@@ -176,8 +194,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -220,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -229,8 +247,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
@@ -261,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -270,8 +288,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/description.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Description</span></a>
@@ -314,7 +332,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab.html" class="sidebar-item-text sidebar-link">
@@ -334,20 +352,68 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+<li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines">Guidelines</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
+  <ul class="collapse">
+<li>
+<a href="#part-1---mtcars" id="toc-part-1---mtcars" class="nav-link" data-scroll-target="#part-1---mtcars">Part 1 - <code>mtcars</code></a>
+  <ul class="collapse">
+<li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-2---all-about-quarto" id="toc-part-2---all-about-quarto" class="nav-link" data-scroll-target="#part-2---all-about-quarto">Part 2 - All about Quarto</a>
+  <ul class="collapse">
+<li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-3---datasaurus" id="toc-part-3---datasaurus" class="nav-link" data-scroll-target="#part-3---datasaurus">Part 3 - DatasauRus</a>
+  <ul class="collapse">
+<li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-4---election-polling" id="toc-part-4---election-polling" class="nav-link" data-scroll-target="#part-4---election-polling">Part 4 - Election polling</a>
+  <ul class="collapse">
+<li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-2---team-usa-at-the-olympics" id="toc-part-2---team-usa-at-the-olympics" class="nav-link" data-scroll-target="#part-2---team-usa-at-the-olympics">Part 2 - Team USA at the Olympics</a>
+  <ul class="collapse">
+<li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+  <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Lab 4</h1>
-<p class="subtitle lead">To be posted</p>
+<p class="subtitle lead">Everything so far I</p>
   <div class="quarto-categories">
     <div class="quarto-category">Lab</div>
   </div>
@@ -369,15 +435,414 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><section id="introduction" class="level1"><h1>Introduction</h1>
+<p>In this lab you’ll both review topics you’ve worked with in previous labs and practice importing data and dive into the concepts of data types and classes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This lab assumes you’ve completed the labs so far and doesn’t repeat setup and overview content from those labs. If you have not yet done those, you should go back and review the previous labs before starting on this one.</p>
+</div>
+</div>
+<section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of the lab, you will…</p>
+<ul>
+<li><!--# TO DO: Add learning objectives. --></li>
+</ul>
+<p>And, as usual, you will also</p>
+<ul>
+<li>Get more experience with data science workflow using R, RStudio, Git, and GitHub</li>
+<li>Further your reproducible authoring skills with Quarto</li>
+<li>Improve your familiarity with version control using Git and GitHub</li>
+</ul></section><section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>Log in to RStudio, clone your <code>lab-4</code> repo from GitHub, open your <code>lab-4.qmd</code> document, and get started!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click here if you prefer to see step-by-step instructions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="step-1-log-in-to-rstudio" class="level3"><h3 class="anchored" data-anchor-id="step-1-log-in-to-rstudio">Step 1: Log in to RStudio</h3>
+<ul>
+<li>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and log in with your Duke NetID and Password.</li>
+<li>Click <code>STA198-199</code> under My reservations to log into your container. You should now see the RStudio environment.</li>
+</ul></section><section id="step-2-clone-the-repo-start-new-rstudio-project" class="level3"><h3 class="anchored" data-anchor-id="step-2-clone-the-repo-start-new-rstudio-project">Step 2: Clone the repo &amp; start new RStudio project</h3>
+<ul>
+<li><p>Go to the course organization at <a href="https://github.com/sta199-f24">github.com/sta199-f24</a> organization on GitHub. Click on the repo with the prefix <strong>lab-4</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
+<li><p>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</p></li>
+<li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</p></li>
+<li><p>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
+<li><p>Click <em>lab-4.qmd</em> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</p></li>
+</ul></section><section id="step-3-update-the-yaml" class="level3"><h3 class="anchored" data-anchor-id="step-3-update-the-yaml">Step 3: Update the YAML</h3>
+<p>In <code>lab-4.qmd</code>, update the <code>author</code> field to your name, render your document and examine the changes. Then, in the Git pane, click on <strong>Diff</strong> to view your changes, add a commit message (e.g., “Added author name”), and click <strong>Commit</strong>. Then, push the changes to your GitHub repository, and in your browser confirm that these changes have indeed propagated to your repository.</p>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you run into any issues with the first steps outlined above, flag a TA for help before proceeding.</p>
+</div>
+</div>
+</section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>In this lab we will work with the</p>
+<ul>
+<li>
+<strong>tidyverse</strong> package for doing data analysis in a “tidy” way and</li>
+<li>
+<strong>palmerpenguins</strong> and <strong>datasauRus</strong> packages for some datasets</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jumpingrivers/datasauRus">datasauRus</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>
+<strong>Run</strong> the code cell by clicking on the green triangle (play) button for the code cell labeled <code>load-packages</code>. This loads the package to make its features (the functions and datasets in it) be accessible from your <em>Console</em>.</li>
+<li>Then, <strong>render</strong> the document which loads this package to make its features (the functions and datasets in it) be available for other code cells in your Quarto document.</li>
+</ul></section><section id="guidelines" class="level2"><h2 class="anchored" data-anchor-id="guidelines">Guidelines</h2>
+<p>As we’ve discussed in lecture, your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.</p>
+<p>Additionally, code should follow the <a href="https://style.tidyverse.org/">tidyverse style</a>. Particularly,</p>
+<ul>
+<li><p>there should be spaces before and line breaks after each <code>+</code> when building a <code>ggplot</code>,</p></li>
+<li><p>there should also be spaces before and line breaks after each <code>|&gt;</code> in a data transformation pipeline,</p></li>
+<li><p>code should be properly indented,</p></li>
+<li><p>there should be spaces around <code>=</code> signs and spaces after commas.</p></li>
+</ul>
+<p>Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.</p>
+<p>Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to remind you to <strong>render, commit, and push</strong> your changes to GitHub.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to remind you to <strong>render, commit, and push</strong> your changes to GitHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.</p>
+</div>
+</div>
+</section></section><section id="questions" class="level1"><h1>Questions</h1>
+<section id="part-1---mtcars" class="level2"><h2 class="anchored" data-anchor-id="part-1---mtcars">Part 1 - <code>mtcars</code>
+</h2>
+<p>In this part you’ll work with one of the most basic, most overused datasets in R: <code>mtcars</code>. The data in this dataset come from the 1974 <em>Motor Trend</em> US magazine (so, yes, they’re old!) and provide information on fuel efficiency as well as other characteristics of the cars.</p>
+<section id="question-1" class="level3"><h3 class="anchored" data-anchor-id="question-1">Question 1</h3>
+<p>Since the dataset is used in many code examples, it’s not unexpected that some analyses of the data are good and some not so much.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For both parts of this question, you should review the data dictionary that is in the documentation for the dataset which you can find at <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html" class="uri">https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html</a> or by typing <code><a href="https://rdrr.io/r/datasets/mtcars.html">?mtcars</a></code> in your Console.</p>
+</div>
+</div>
+<p>a. You come across the following visualization of these data. First, determine what is wrong with this visualization and describe it in one sentence. Then, fix and improve the visualization. As part of your improvement, make sure your legend</p>
+<ul>
+<li>is on top of the plot,</li>
+<li>is informative, and</li>
+<li>lists levels in the order they appear in the plot.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">wt</span>, y <span class="op">=</span> <span class="va">mpg</span>, color <span class="op">=</span> <span class="va">am</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    x <span class="op">=</span> <span class="st">"Weight (1000 lbs)"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Miles / gallon"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>b. Update your plot from part (a) further, this time using different shaped points for cars with V-shaped and straight engines. Once again, some requirements for your legend – it should be informative and on the right of the plot.</p>
+</section><section id="question-2" class="level3"><h3 class="anchored" data-anchor-id="question-2">Question 2</h3>
+<p>Your task is to make your plot from Question 1b as ugly and as ineffective as possible. Change colors, axes, fonts, theme, or anything else you can think of in the code chunk below. You can also search online for other themes, fonts, etc. that you want to tweak. Try to make it as ugly as possible, the sky is the limit! You must make at least 5 updates to the plot.</p>
+<p>Your answer must include</p>
+<ul>
+<li><p>a list of the at least 5 updates you’ve made to your plot from Question 1b, and</p></li>
+<li><p>1-2 sentence explanation of why the plot you created is <em>ugly</em> (to you, at least) and ineffective.</p></li>
+</ul>
+<div class="render-commit-push">
+<p>Render, commit, and push your work so far. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+</div>
+</section></section><section id="part-2---all-about-quarto" class="level2"><h2 class="anchored" data-anchor-id="part-2---all-about-quarto">Part 2 - All about Quarto</h2>
+<section id="question-3" class="level3"><h3 class="anchored" data-anchor-id="question-3">Question 3</h3>
+<p>You have the following code chunk:</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, y <span class="op">=</span> <span class="va">bill_depth_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Add the following code cell options, one at a time, and set each to <code>false</code> and then to <code>true</code>. After each value, render your document and observe its effect. Ultimately, choose the values that are the most appropriate for this code cell. Based on the behaviors you observe, describe what each code cell option does.</p>
+<ul>
+<li><p><code>echo</code></p></li>
+<li><p><code>warning</code></p></li>
+<li><p><code>eval</code></p></li>
+</ul></section><section id="question-4" class="level3"><h3 class="anchored" data-anchor-id="question-4">Question 4</h3>
+<ol type="a">
+<li>You have the following code cell again.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, y <span class="op">=</span> <span class="va">bill_depth_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Add <code>fig-width</code> and <code>fig-asp</code> as code chunk options. Try setting <code>fig-width</code> to values between 1 and 10. Try setting <code>fig-asp</code> to values between 0.1 and 1. Re-render the document after each value and observe its effect. Ultimately, choose values that make the plot look visually pleasing in the rendered document. Based on the behavior you observe, describe what each chunk option does.</p>
+<p>b. You have the following code cell, but look carefully, it’s not exactly the same!</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">gplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, y <span class="op">=</span> <span class="va">bill_depth_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Add <code>error</code> as a code chunk option and set it to <code>false</code> and then set it to <code>true</code>. After each value, render your document and observe its effect. Ultimately, choose the value that allows you to render your document without altering the code. Based on the behavior you observe, describe what this code chunk option does.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Reading <a href="https://quarto.org/docs/reference/formats/pdf.html#execution">the documentation</a> might also be hepful.</p>
+</div>
+</div>
+<div class="render-commit-push">
+<p>Render, commit, and push your work so far. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+</div>
+<p>The data frame you will be working with in this part is called <code>datasaurus_dozen</code> and it’s in the <strong>datasauRus</strong> package. This single data frame contains 13 datasets, designed to show us why data visualization is important and how summary statistics alone can be misleading. The different datasets are marked by the <code>dataset</code> variable, as shown in <a href="#fig-datasaurus" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<div id="fig-datasaurus" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-datasaurus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/datasaurus-dozen.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="432">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datasaurus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The `datasaurus_dozen` data frame stacks 13 datasets on top of each other. This figure shows the first three datasets.
+</figcaption></figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If it’s confusing that the data frame is called <code>datasaurus_dozen</code> when it contains 13 datasets, you’re not alone! Have you heard of a <a href="https://www.mentalfloss.com/article/32259/why-bakers-dozen-13">baker’s dozen</a>?</p>
+</div>
+</div>
+<p>Here is a peek at the top 10 rows of the dataset:</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">datasaurus_dozen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,846 × 3
+   dataset     x     y
+   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+ 1 dino     55.4  97.2
+ 2 dino     51.5  96.0
+ 3 dino     46.2  94.5
+ 4 dino     42.8  91.4
+ 5 dino     40.8  88.3
+ 6 dino     38.7  84.9
+ 7 dino     35.6  79.9
+ 8 dino     33.1  77.6
+ 9 dino     29.0  74.5
+10 dino     26.2  71.4
+# ℹ 1,836 more rows</code></pre>
+</div>
+</div>
+</section></section><section id="part-3---datasaurus" class="level2"><h2 class="anchored" data-anchor-id="part-3---datasaurus">Part 3 - DatasauRus</h2>
+<p>The data frame you will be working with in this part is called <code>datasaurus_dozen</code> and it’s in the <strong>datasauRus</strong> package. This single data frame contains 13 datasets, designed to show us why data visualization is important and how summary statistics alone can be misleading. The different datasets are marked by the <code>dataset</code> variable, as shown in <a href="#fig-datasaurus" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/lab-4/datasaurus-dozen.png" class="img-fluid figure-img" width="432"></p>
+<figcaption>The `datasaurus_dozen` data frame stacks 13 datasets on top of each other. This figure shows the first three datasets.</figcaption></figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If it’s confusing that the data frame is called <code>datasaurus_dozen</code> when it contains 13 datasets, you’re not alone! Have you heard of a <a href="https://www.mentalfloss.com/article/32259/why-bakers-dozen-13">baker’s dozen</a>?</p>
+</div>
+</div>
+<p>Here is a peek at the top 10 rows of the dataset:</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">datasaurus_dozen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,846 × 3
+   dataset     x     y
+   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+ 1 dino     55.4  97.2
+ 2 dino     51.5  96.0
+ 3 dino     46.2  94.5
+ 4 dino     42.8  91.4
+ 5 dino     40.8  88.3
+ 6 dino     38.7  84.9
+ 7 dino     35.6  79.9
+ 8 dino     33.1  77.6
+ 9 dino     29.0  74.5
+10 dino     26.2  71.4
+# ℹ 1,836 more rows</code></pre>
+</div>
+</div>
+<section id="question-5" class="level3"><h3 class="anchored" data-anchor-id="question-5">Question 5</h3>
+<p>In a single pipeline, calculate the mean of <code>x</code>, mean of <code>y</code>, standard deviation of <code>x</code>, standard deviation of <code>y</code>, and the correlation between <code>x</code> and <code>y</code> for each level of the <code>dataset</code> variable. Then, in 1-2 sentences, comment on how these summary statistics compare across groups (datasets).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are 13 groups but <code>tibble</code>s only print out 10 rows by default. Add <code>print(n = 13)</code> as the last step of your pipeline to display all rows.</p>
+</div>
+</div>
+</section><section id="question-6" class="level3"><h3 class="anchored" data-anchor-id="question-6">Question 6</h3>
+<p>Create a scatterplot of <code>y</code> versus <code>x</code> and color and facet it by <code>dataset</code>. Then, in 1-2 sentences, how these plots compare across groups (datasets). How does your response in this question compare to your response to the previous question and what does this say about using visualizations and summary statistics when getting to know a dataset?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When you both color and facet by the same variable, you’ll end up with a redundant legend. Turn off the legend by adding <code>show.legend = FALSE</code> to the geom creating the legend.</p>
+</div>
+</div>
+<div class="render-commit-push">
+<p>Render, commit, and push one last time. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+</div>
+</section></section><section id="part-4---election-polling" class="level2"><h2 class="anchored" data-anchor-id="part-4---election-polling">Part 4 - Election polling</h2>
+<p>SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The following question was asked to these 771 adults:</p>
+<blockquote class="blockquote">
+<p>Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?</p>
+</blockquote>
+<p>Responses were broken down into the following categories:</p>
+<table class="caption-top table">
+<thead><tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Levels</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Age</td>
+<td style="text-align: left;">18-49; 50+</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Opinion</td>
+<td style="text-align: left;">Remain Against The Law; Be Made Legal; Not Sure</td>
+</tr>
+</tbody>
+</table>
+<p>Of the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.</p>
+<section id="question-7" class="level3"><h3 class="anchored" data-anchor-id="question-7">Question 7</h3>
+<ol type="a">
+<li>
+<p>Fill in the code below to create a two-way table that summarizes these data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>survey_counts <span class="ot">&lt;-</span> <span class="fu">tibble</span>( </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(),</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">opinion =</span> <span class="fu">c</span>(),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">c</span>()</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>survey_counts <span class="sc">|&gt;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>( </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> ___,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> ___</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</li>
+</ol>
+<p>For parts b-d below, use a your response single pipeline starting with <code>survey_counts</code>, calculate the desired proportions, and make sure the result is an <strong>ungrouped</strong> data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.</p>
+<ol start="2" type="a">
+<li><p>Calculate the proportions of 18-49 year olds and 50+ year olds in this sample.</p></li>
+<li><p>Calculate the proportions of those who think medical marijuana should remain against the law, should be made legal, and who are not sure.</p></li>
+<li>
+<p>Calculate the proportions of individuals in this sample who who think medical marijuana should remain against the law, should be made legal, and who are not sure</p>
+<ul>
+<li>among those who are 18-49 years old and</li>
+<li>among those who are 50+ years old.</li>
+</ul>
+</li>
+</ol></section><section id="question-8" class="level3"><h3 class="anchored" data-anchor-id="question-8">Question 8</h3>
+<ol type="a">
+<li>
+<p>Create a visualization that can be used to evaluate the relationship between <code>age</code> and <code>opinion</code> on legalizing medical marijuana in North Carolina based on this survey’s results.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your visualization should display the proportions you calculated in Question 8d.</p>
+</div>
+</div>
+</li>
+<li><p>Based on your calculations so far, as well as your visualization, write 1-2 sentences that describe the relationship, in this sample, between age and opinion on legalizing medical marijuana in North Carolina.</p></li>
+</ol>
+<div class="render-commit-push">
+<p>Render, commit, and push one last time. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+</div>
+</section></section><section id="part-2---team-usa-at-the-olympics" class="level2"><h2 class="anchored" data-anchor-id="part-2---team-usa-at-the-olympics">Part 2 - Team USA at the Olympics</h2>
+<section id="question-9" class="level3"><h3 class="anchored" data-anchor-id="question-9">Question 9</h3>
+<p>2020 vs.&nbsp;2024 Team USA roster</p>
+<ol type="a">
+<li><p>read from excel file with skip</p></li>
+<li><p>anti_join</p></li>
+<li><p>inner_join</p></li>
+</ol>
+<p>by name of athlete</p>
+</section><section id="question-10" class="level3"><h3 class="anchored" data-anchor-id="question-10">Question 10</h3>
+<p>Turns out spelling differences for someone obvious to most…</p>
+<p>fix</p>
+<p>and then do parts a and b again.</p>
 
 
-<p>To be posted soon.</p>
-
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<ol>
+<li id="fn1"><p>Full survey results can be found at <a href="https://www.surveyusa.com/client/PollReport.aspx?g=c6995e17-3837-413e-ac98-3684e1c74dc1" class="uri">https://www.surveyusa.com/client/PollReport.aspx?g=c6995e17-3837-413e-ac98-3684e1c74dc1</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -942,21 +1407,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2024, Mine Çetinkaya-Rundel</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
