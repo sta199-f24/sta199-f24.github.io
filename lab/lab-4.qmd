@@ -80,6 +80,7 @@ We'll also use the **palmerpenguins** package.
 #| message: false
 library(tidyverse)
 library(palmerpenguins)
+library(datasauRus)
 ```
 
 -   **Run** the code cell by clicking on the green triangle (play) button for the code cell labeled `load-packages`. This loads the package to make its features (the functions and datasets in it) be accessible from your *Console*.
@@ -292,7 +293,7 @@ Of the 771 responses, 391 were between the ages of 18-49.
 Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
 Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
 
-### Question 8
+### Question 7
 
 a.  Fill in the code below to create a two-way table that summarizes these data.
 
@@ -324,7 +325,7 @@ d.  Calculate the proportions of individuals in this sample who who think medica
     - among those who are 18-49 years old and
     - among those who are 50+ years old.
 
-### Question 9
+### Question 8
 
 a.  Create a visualization that can be used to evaluate the relationship between `age` and `opinion` on legalizing medical marijuana in North Carolina based on this survey's results.
 
@@ -338,3 +339,23 @@ b.  Based on your calculations so far, as well as your visualization, write 1-2 
 Render, commit, and push one last time.
 Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 :::
+
+## Part 2 - Team USA at the Olympics
+
+### Question 9
+
+2020 vs. 2024 Team USA roster
+
+a. anti_join
+
+b. inner_join
+
+by name of athlete
+
+### Question 10
+
+Turns out spelling differences for someone obvious to most...
+
+fix
+
+and then do parts a and b again.
