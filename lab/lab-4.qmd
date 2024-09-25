@@ -348,9 +348,11 @@ Make sure that you commit and push all changed documents and your Git pane is co
 
 2020 vs. 2024 Team USA roster
 
-a. anti_join
+a. read from excel file with skip
 
-b. inner_join
+b. anti_join
+
+c. inner_join
 
 by name of athlete
 
