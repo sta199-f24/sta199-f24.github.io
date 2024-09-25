@@ -323,6 +323,10 @@ Re-render the document after each value and observe its effect.
 Ultimately, choose values that make the plot look visually pleasing in the rendered document.
 Based on the behavior you observe, describe what each chunk option does.
 
+::: callout-tip
+Now that you've had more practice with figure sizing in Quarto documents, review all of the plots you made in this lab and adjust their widths and aspect rations to improve how they look in your rendered document.
+:::
+
 b\.
 You have the following code cell, but look carefully, it’s not exactly the same!
 
