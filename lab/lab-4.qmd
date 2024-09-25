@@ -274,7 +274,7 @@ Render, commit, and push one last time.
 Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 :::
 
-## Part 4 - Election polling
+## Part 4 - Medical marijuana in NC
 
 SurveyUSA polled 900 NC adults between September 4-7, 2024.
 Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.[^1]
