@@ -82,30 +82,7 @@ library(tidyverse)
 
 ## Guidelines
 
-As we've discussed in lecture, your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.
-
-Additionally, code should follow the [tidyverse style](https://style.tidyverse.org/).
-Particularly,
-
--   there should be spaces before and line breaks after each `+` when building a `ggplot`,
-
--   there should also be spaces before and line breaks after each `|>` in a data transformation pipeline,
-
--   code should be properly indented,
-
--   there should be spaces around `=` signs and spaces after commas.
-
-Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF.
-Long lines that run off the page should be split across multiple lines with line breaks.
-
-Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.
-There will be periodic reminders in this assignment to remind you to **render, commit, and push** your changes to GitHub.
-
-::: callout-important
-Continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.
-There will be periodic reminders in this assignment to remind you to **render, commit, and push** your changes to GitHub.
-You should have at least 3 commits with meaningful commit messages by the end of the assignment.
-:::
+{{< include _guidelines.qmd >}}
 
 # Questions
 
