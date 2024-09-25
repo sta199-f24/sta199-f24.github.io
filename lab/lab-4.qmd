@@ -94,12 +94,148 @@ library(datasauRus)
 
 # Questions
 
-## Part 1 - `mtcars`
+## Part 1 - Team USA at the Olympics
+
+### Question 1
+
+2020 vs. 2024 Team USA roster
+
+a. read from excel file with skip
+
+b. anti_join
+
+c. inner_join
+
+by name of athlete
+
+### Question 2
+
+Turns out spelling differences for someone obvious to most...
+
+fix
+
+and then do parts a and b again.
+
+## Part 2 - DatasauRus
+
+The data frame you will be working with in this part is called `datasaurus_dozen` and it's in the **datasauRus** package.
+This single data frame contains 13 datasets, designed to show us why data visualization is important and how summary statistics alone can be misleading.
+The different datasets are marked by the `dataset` variable, as shown in @fig-datasaurus.
+
+![The \`datasaurus_dozen\` data frame stacks 13 datasets on top of each other. This figure shows the first three datasets.](images/lab-4/datasaurus-dozen.png){fig-align="center" width="432"}
+
+::: callout-note
+If it's confusing that the data frame is called `datasaurus_dozen` when it contains 13 datasets, you're not alone!
+Have you heard of a [baker's dozen](https://www.mentalfloss.com/article/32259/why-bakers-dozen-13)?
+:::
+
+Here is a peek at the top 10 rows of the dataset:
+
+```{r}
+#| eval: true
+datasaurus_dozen
+```
+
+### Question 3
+
+In a single pipeline, calculate the mean of `x`, mean of `y`, standard deviation of `x`, standard deviation of `y`, and the correlation between `x` and `y` for each level of the `dataset` variable.
+Then, in 1-2 sentences, comment on how these summary statistics compare across groups (datasets).
+
+::: callout-tip
+There are 13 groups but `tibble`s only print out 10 rows by default.
+Add `print(n = 13)` as the last step of your pipeline to display all rows.
+:::
+
+### Question 4
+
+Create a scatterplot of `y` versus `x` and color and facet it by `dataset`.
+Then, in 1-2 sentences, how these plots compare across groups (datasets).
+How does your response in this question compare to your response to the previous question and what does this say about using visualizations and summary statistics when getting to know a dataset?
+
+::: callout-tip
+When you both color and facet by the same variable, you'll end up with a redundant legend.
+Turn off the legend by adding `show.legend = FALSE` to the geom creating the legend.
+:::
+
+::: render-commit-push
+Render, commit, and push one last time.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
+
+## Part 3 - Medical marijuana in NC
+
+SurveyUSA polled 900 NC adults between September 4-7, 2024.
+Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.[^1]
+The following question was asked to these 771 adults:
+
+[^1]: Full survey results can be found at <https://www.surveyusa.com/client/PollReport.aspx?g=c6995e17-3837-413e-ac98-3684e1c74dc1>.
+
+> Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?
+
+Responses were broken down into the following categories:
+
+| Variable | Levels                                     |
+|:---------|:-------------------------------------------|
+| Age      | 18-49; 50+                                 |
+| Opinion  | Remain Against The Law; Be Made Legal; Not Sure |
+
+Of the 771 responses, 391 were between the ages of 18-49.
+Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
+Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
+
+### Question 5
+
+a.  Fill in the code below to create a two-way table that summarizes these data.
+
+    ```{r}
+    #| eval: false
+
+    survey_counts <- tibble( 
+      age = c(),
+      opinion = c(),
+      n = c()
+      )
+
+    survey_counts |>
+      pivot_wider( 
+        names_from = ___,
+        values_from = ___
+      ) |>
+      kable()
+    ```
+
+For parts b-d below, use a your response single pipeline starting with `survey_counts`, calculate the desired proportions, and make sure the result is an **ungrouped** data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you're interested in.
+
+b.  Calculate the proportions of 18-49 year olds and 50+ year olds in this sample.
+
+c.  Calculate the proportions of those who think medical marijuana should remain against the law, should be made legal, and who are not sure.
+
+d.  Calculate the proportions of individuals in this sample who who think medical marijuana should remain against the law, should be made legal, and who are not sure
+
+    - among those who are 18-49 years old and
+    - among those who are 50+ years old.
+
+### Question 6
+
+a.  Create a visualization that can be used to evaluate the relationship between `age` and `opinion` on legalizing medical marijuana in North Carolina based on this survey's results.
+
+    ::: callout-tip
+    Your visualization should display the proportions you calculated in Question 8d.
+    :::
+
+b.  Based on your calculations so far, as well as your visualization, write 1-2 sentences that describe the relationship, in this sample, between age and opinion on legalizing medical marijuana in North Carolina.
+
+::: render-commit-push
+Render, commit, and push one last time.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
+
+## Part 4 - `mtcars`
 
 In this part you'll work with one of the most basic, most overused datasets in R: `mtcars`.
 The data in this dataset come from the 1974 *Motor Trend* US magazine (so, yes, they're old!) and provide information on fuel efficiency as well as other characteristics of the cars.
 
-### Question 1
+### Question 7
 
 Since the dataset is used in many code examples, it's not unexpected that some analyses of the data are good and some not so much.
 
@@ -130,7 +266,7 @@ b\.
 Update your plot from part (a) further, this time using different shaped points for cars with V-shaped and straight engines.
 Once again, some requirements for your legend – it should be informative and on the right of the plot.
 
-### Question 2
+### Question 8
 
 Your task is to make your plot from Question 1b as ugly and as ineffective as possible.
 Change colors, axes, fonts, theme, or anything else you can think of in the code chunk below.
@@ -149,9 +285,9 @@ Render, commit, and push your work so far.
 Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 :::
 
-## Part 2 - All about Quarto
+## Part 5 - All about Quarto
 
-### Question 3
+### Question 9
 
 You have the following code chunk:
 
@@ -171,7 +307,7 @@ Based on the behaviors you observe, describe what each code cell option does.
 
 -   `eval`
 
-### Question 4
+### Question 10
 
 a.  You have the following code cell again.
 
@@ -228,138 +364,4 @@ Here is a peek at the top 10 rows of the dataset:
 datasaurus_dozen
 ```
 
-## Part 3 - DatasauRus
 
-The data frame you will be working with in this part is called `datasaurus_dozen` and it's in the **datasauRus** package.
-This single data frame contains 13 datasets, designed to show us why data visualization is important and how summary statistics alone can be misleading.
-The different datasets are marked by the `dataset` variable, as shown in @fig-datasaurus.
-
-![The \`datasaurus_dozen\` data frame stacks 13 datasets on top of each other. This figure shows the first three datasets.](images/lab-4/datasaurus-dozen.png){fig-align="center" width="432"}
-
-::: callout-note
-If it's confusing that the data frame is called `datasaurus_dozen` when it contains 13 datasets, you're not alone!
-Have you heard of a [baker's dozen](https://www.mentalfloss.com/article/32259/why-bakers-dozen-13)?
-:::
-
-Here is a peek at the top 10 rows of the dataset:
-
-```{r}
-#| eval: true
-datasaurus_dozen
-```
-
-### Question 5
-
-In a single pipeline, calculate the mean of `x`, mean of `y`, standard deviation of `x`, standard deviation of `y`, and the correlation between `x` and `y` for each level of the `dataset` variable.
-Then, in 1-2 sentences, comment on how these summary statistics compare across groups (datasets).
-
-::: callout-tip
-There are 13 groups but `tibble`s only print out 10 rows by default.
-Add `print(n = 13)` as the last step of your pipeline to display all rows.
-:::
-
-### Question 6
-
-Create a scatterplot of `y` versus `x` and color and facet it by `dataset`.
-Then, in 1-2 sentences, how these plots compare across groups (datasets).
-How does your response in this question compare to your response to the previous question and what does this say about using visualizations and summary statistics when getting to know a dataset?
-
-::: callout-tip
-When you both color and facet by the same variable, you'll end up with a redundant legend.
-Turn off the legend by adding `show.legend = FALSE` to the geom creating the legend.
-:::
-
-::: render-commit-push
-Render, commit, and push one last time.
-Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
-:::
-
-## Part 4 - Medical marijuana in NC
-
-SurveyUSA polled 900 NC adults between September 4-7, 2024.
-Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.[^1]
-The following question was asked to these 771 adults:
-
-[^1]: Full survey results can be found at <https://www.surveyusa.com/client/PollReport.aspx?g=c6995e17-3837-413e-ac98-3684e1c74dc1>.
-
-> Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?
-
-Responses were broken down into the following categories:
-
-| Variable | Levels                                     |
-|:---------|:-------------------------------------------|
-| Age      | 18-49; 50+                                 |
-| Opinion  | Remain Against The Law; Be Made Legal; Not Sure |
-
-Of the 771 responses, 391 were between the ages of 18-49.
-Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
-Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
-
-### Question 7
-
-a.  Fill in the code below to create a two-way table that summarizes these data.
-
-    ```{r}
-    #| eval: false
-
-    survey_counts <- tibble( 
-      age = c(),
-      opinion = c(),
-      n = c()
-      )
-
-    survey_counts |>
-      pivot_wider( 
-        names_from = ___,
-        values_from = ___
-      ) |>
-      kable()
-    ```
-
-For parts b-d below, use a your response single pipeline starting with `survey_counts`, calculate the desired proportions, and make sure the result is an **ungrouped** data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you're interested in.
-
-b.  Calculate the proportions of 18-49 year olds and 50+ year olds in this sample.
-
-c.  Calculate the proportions of those who think medical marijuana should remain against the law, should be made legal, and who are not sure.
-
-d.  Calculate the proportions of individuals in this sample who who think medical marijuana should remain against the law, should be made legal, and who are not sure
-
-    - among those who are 18-49 years old and
-    - among those who are 50+ years old.
-
-### Question 8
-
-a.  Create a visualization that can be used to evaluate the relationship between `age` and `opinion` on legalizing medical marijuana in North Carolina based on this survey's results.
-
-    ::: callout-tip
-    Your visualization should display the proportions you calculated in Question 8d.
-    :::
-
-b.  Based on your calculations so far, as well as your visualization, write 1-2 sentences that describe the relationship, in this sample, between age and opinion on legalizing medical marijuana in North Carolina.
-
-::: render-commit-push
-Render, commit, and push one last time.
-Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
-:::
-
-## Part 2 - Team USA at the Olympics
-
-### Question 9
-
-2020 vs. 2024 Team USA roster
-
-a. read from excel file with skip
-
-b. anti_join
-
-c. inner_join
-
-by name of athlete
-
-### Question 10
-
-Turns out spelling differences for someone obvious to most...
-
-fix
-
-and then do parts a and b again.
