@@ -48,6 +48,16 @@ todays_ae <- "ae-09-age-gaps-sales-import"
 -   Wait till the you're prompted to work on the application exercise during class before editing the file.
 :::
 
+## Announcements
+
+Midterm things
+
+-   Focus
+-   Format
+-   Prep
+-   Review
+-   Accommodations
+
 # From last time
 
 ## Finish up: `ae-08-durham-climate-factors`
