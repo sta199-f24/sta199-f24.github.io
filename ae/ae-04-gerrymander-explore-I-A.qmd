@@ -1,9 +1,12 @@
 ---
 title: "AE 04: Gerrymandering + data exploration I"
 subtitle: "Suggested answers"
-categories: 
-  - Answers
 ---
+
+::: callout-important
+These are suggested answers.
+This document should be used as a reference only; it's not designed to be an exhaustive key.
+:::
 
 ## Getting started
 

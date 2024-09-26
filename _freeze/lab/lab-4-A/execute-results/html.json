@@ -1,0 +1,15 @@
+{
+  "hash": "1b6fbb157c6b453e40aaf04140163039",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Lab 4 - Key\ndraft: true\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n```\n:::\n\n\n\n\n\n## Question 1\n\na\\.\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nmtcars <- mtcars |>\n  mutate(\n    am = if_else(am == \"0\", \"Automatic\", \"Manual\"),\n    am = fct_relevel(am, \"Manual\", \"Automatic\")\n  )\n\nggplot(mtcars, aes(x = wt, y = mpg, color = am)) +\n  geom_point() +\n  labs(\n    x = \"Weight (1000 lbs)\",\n    y = \"Miles / gallon\",\n    color = \"Transmission\"\n  ) +\n  theme(legend.position = \"top\")\n```\n:::\n\n\n\n\n\nb\\.\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nmtcars <- mtcars |>\n  mutate(\n    vs = if_else(vs == 0, \"V-shaped\", \"Straight\")\n  )\n\nggplot(mtcars, aes(x = wt, y = mpg, color = am, shape = vs)) +\n  geom_point() +\n  labs(\n    x = \"Weight (1000 lbs)\",\n    y = \"Miles / gallon\",\n    shape = \"Engine\",\n    color = \"Transmission\"\n  )\n```\n:::\n\n\n\n\n\n## Question 2\n\nAnswers may vary.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

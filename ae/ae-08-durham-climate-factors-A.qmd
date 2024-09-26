@@ -1,10 +1,12 @@
 ---
 title: "AE 08: Durham climate + factors"
 subtitle: "Suggested answers"
-categories: 
-  - Application exercise
-  - Answers
 ---
+
+::: callout-important
+These are suggested answers.
+This document should be used as a reference only; it's not designed to be an exhaustive key.
+:::
 
 ## Getting started
 

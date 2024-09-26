@@ -1,8 +1,6 @@
 ---
 title: "AE 03: Bechdel + data visualization and transformation"
 subtitle: "Suggested answers"
-categories: 
-  - Answers
 ---
 
 ::: callout-important
