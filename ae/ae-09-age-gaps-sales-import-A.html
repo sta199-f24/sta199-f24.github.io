@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.56">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>AE 03: Bechdel + data visualization and transformation – STA 199</title>
+<title>AE 09: Age gaps + sales + import – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,11 +97,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<meta property="og:title" content="AE 03: Bechdel + data visualization and transformation – STA 199">
+}</script><meta name="quarto:status" content="draft">
+<meta property="og:title" content="AE 09: Age gaps + sales + import – STA 199">
 <meta property="og:description" content="Suggested answers">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="AE 03: Bechdel + data visualization and transformation – STA 199">
+<meta name="twitter:title" content="AE 09: Age gaps + sales + import – STA 199">
 <meta name="twitter:description" content="Suggested answers">
 <meta name="twitter:image" content="https://sta199-f24.github.io/ae/img/twitter-card.png">
 <meta name="twitter:creator" content="@minebocek">
@@ -110,11 +110,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 03: Bechdel + data visualization and transformation</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 09: Age gaps + sales + import</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -362,31 +362,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
   <ul class="collapse">
 <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#get-to-know-the-data" id="toc-get-to-know-the-data" class="nav-link" data-scroll-target="#get-to-know-the-data">Get to know the data</a></li>
   </ul>
 </li>
-  <li>
-<a href="#bechdel-test-results" id="toc-bechdel-test-results" class="nav-link" data-scroll-target="#bechdel-test-results">Bechdel test results</a>
-  <ul class="collapse">
-<li><a href="#visualizing-data-with-ggplot2" id="toc-visualizing-data-with-ggplot2" class="nav-link" data-scroll-target="#visualizing-data-with-ggplot2">Visualizing data with <strong>ggplot2</strong></a></li>
-  <li><a href="#render-commit-and-push" id="toc-render-commit-and-push" class="nav-link" data-scroll-target="#render-commit-and-push">Render, commit, and push</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#return-on-investment" id="toc-return-on-investment" class="nav-link" data-scroll-target="#return-on-investment">Return-on-investment</a>
-  <ul class="collapse">
-<li><a href="#step-1---your-turn" id="toc-step-1---your-turn" class="nav-link" data-scroll-target="#step-1---your-turn">Step 1 - Your turn</a></li>
-  <li><a href="#step-2---demo" id="toc-step-2---demo" class="nav-link" data-scroll-target="#step-2---demo">Step 2 - Demo</a></li>
-  <li><a href="#step-3---demo" id="toc-step-3---demo" class="nav-link" data-scroll-target="#step-3---demo">Step 3 - Demo</a></li>
-  <li><a href="#render-commit-and-push-1" id="toc-render-commit-and-push-1" class="nav-link" data-scroll-target="#render-commit-and-push-1">Render, commit, and push</a></li>
-  </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/ae/ae-03-bechdel-data-viz-transform-A.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  <li><a href="#part-1-hollywood-relationships" id="toc-part-1-hollywood-relationships" class="nav-link" data-scroll-target="#part-1-hollywood-relationships">Part 1: Hollywood relationships</a></li>
+  <li><a href="#part-2-sales" id="toc-part-2-sales" class="nav-link" data-scroll-target="#part-2-sales">Part 2: Sales</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/ae/ae-09-age-gaps-sales-import-A.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">AE 03: Bechdel + data visualization and transformation</h1>
+<h1 class="title">AE 09: Age gaps + sales + import</h1>
 <p class="subtitle lead">Suggested answers</p>
   <div class="quarto-categories">
     <div class="quarto-category">Application exercise</div>
@@ -417,150 +401,111 @@ Important
 <p>These are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key.</p>
 </div>
 </div>
-<p>In this mini-analysis, we’ll continue our exploration of the <code>bechdel</code> dataset, which contains information on whether the movies in the data pass the <a href="https://en.wikipedia.org/wiki/Bechdel_test">Bechdel test</a> (a measure of the representation of women in fiction).</p>
 <section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <section id="packages" class="level3"><h3 class="anchored" data-anchor-id="packages">Packages</h3>
-<p>We’ll use the <strong>tidyverse</strong> package for this analysis.</p>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="data" class="level3"><h3 class="anchored" data-anchor-id="data">Data</h3>
-<p>The data are stored as a CSV (comma-separated values) file in your repository’s <code>data</code> folder. Let’s read it from there and save it as an object called <code>bechdel</code>.</p>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bechdel</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/bechdel.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="get-to-know-the-data" class="level3"><h3 class="anchored" data-anchor-id="get-to-know-the-data">Get to know the data</h3>
-<p>We can use the <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> function to get an overview (or “glimpse”) of the data.</p>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">bechdel</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 1,615
-Columns: 7
-$ title       &lt;chr&gt; "21 &amp; Over", "Dredd 3D", "12 Years a Slave", "2 Guns", "42…
-$ year        &lt;dbl&gt; 2013, 2012, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013…
-$ gross_2013  &lt;dbl&gt; 67878146, 55078343, 211714070, 208105475, 190040426, 18416…
-$ budget_2013 &lt;dbl&gt; 13000000, 45658735, 20000000, 61000000, 40000000, 22500000…
-$ roi         &lt;dbl&gt; 5.221396, 1.206305, 10.585703, 3.411565, 4.751011, 0.81851…
-$ binary      &lt;chr&gt; "FAIL", "PASS", "FAIL", "FAIL", "FAIL", "FAIL", "FAIL", "P…
-$ clean_test  &lt;chr&gt; "notalk", "ok", "notalk", "notalk", "men", "men", "notalk"…</code></pre>
-</div>
-</div>
-<ul>
-<li>What does each observation (row) in the data set represent?</li>
-</ul>
-<p>Each observation represents a movie.</p>
-<ul>
-<li>How many observations (rows) are in the data set?</li>
-</ul>
-<p>There are 1615 movies in the dataset.</p>
-<ul>
-<li>How many variables (columns) are in the data set?</li>
-</ul>
-<p>There are 7 columns in the dataset.</p>
-</section></section><section id="bechdel-test-results" class="level2"><h2 class="anchored" data-anchor-id="bechdel-test-results">Bechdel test results</h2>
-<section id="visualizing-data-with-ggplot2" class="level3"><h3 class="anchored" data-anchor-id="visualizing-data-with-ggplot2">Visualizing data with <strong>ggplot2</strong>
-</h3>
-<p>Create a bar plot of the <code>clean_test</code> variable:</p>
+<p>We will use the following two packages in this application exercise.</p>
 <ul>
 <li>
-<code>ok</code> = passes test</li>
-<li><code>dubious</code></li>
+<strong>tidyverse</strong>: For data import, wrangling, and visualization.</li>
 <li>
-<code>men</code> = women only talk about men</li>
-<li>
-<code>notalk</code> = women don’t talk to each other</li>
-<li>
-<code>nowomen</code> = fewer than two women</li>
+<strong>readxl:</strong> For importing data from Excel.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">bechdel</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">clean_test</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
-<span>    x <span class="op">=</span> <span class="st">"Bechdel test result"</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">"Count"</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="ae-03-bechdel-data-viz-transform-A_files/figure-html/clean-test-bar-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<p>What types of movies are more common, those that pass or do not pass the test?</p>
-<p>If we consider “dubious” to be no, movies that don’t pass the test are more common.</p>
-</section><section id="render-commit-and-push" class="level3"><h3 class="anchored" data-anchor-id="render-commit-and-push">Render, commit, and push</h3>
-<ol type="1">
-<li><p>Render your Quarto document.</p></li>
-<li><p>Go to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.</p></li>
-<li><p>Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.</p></li>
-<li><p>Go to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!</p></li>
-</ol></section></section><section id="return-on-investment" class="level2"><h2 class="anchored" data-anchor-id="return-on-investment">Return-on-investment</h2>
-<p>Let’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.</p>
-<section id="step-1---your-turn" class="level3"><h3 class="anchored" data-anchor-id="step-1---your-turn">Step 1 - Your turn</h3>
-<p>Create side-by-side box plots of <code>roi</code> by <code>clean_test</code> where the boxes are colored by <code>binary</code>.</p>
+</section></section><section id="part-1-hollywood-relationships" class="level2"><h2 class="anchored" data-anchor-id="part-1-hollywood-relationships">Part 1: Hollywood relationships</h2>
+<p>Load the data from <code>age-gaps.csv</code> in your <code>data</code> and assign it to <code>age_gaps</code>. Confirm that this new object appears in your Environment tab. Click on the <em>name of the object</em> in your Environment tab to pop open the data in the data viewer.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">bechdel</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">roi</span>, y <span class="op">=</span> <span class="va">clean_test</span>, color <span class="op">=</span> <span class="va">binary</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
-<span>    x <span class="op">=</span> <span class="st">"Return on investment"</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">"Bechdel test result"</span>,</span>
-<span>    color <span class="op">=</span> <span class="st">"Pass / Fail"</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="ae-03-bechdel-data-viz-transform-A_files/figure-html/roi-zoom-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="step-2---demo" class="level3"><h3 class="anchored" data-anchor-id="step-2---demo">Step 2 - Demo</h3>
-<p>What are the movies with <em>very</em> high returns on investment?</p>
-<div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bechdel</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">roi</span> <span class="op">&gt;</span> <span class="fl">400</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 7
-  title                    year gross_2013 budget_2013   roi binary clean_test
-  &lt;chr&gt;                   &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
-1 Paranormal Activity      2007  339424558      505595  671. FAIL   dubious   
-2 The Blair Witch Project  1999  543776715      839077  648. PASS   ok        
-3 El Mariachi              1992    6778946       11622  583. FAIL   nowomen   </code></pre>
-</div>
-</div>
-</section><section id="step-3---demo" class="level3"><h3 class="anchored" data-anchor-id="step-3---demo">Step 3 - Demo</h3>
-<p>Expand on your plot from the previous step to zoom in on movies with <code>roi &lt; ___</code> to get a better view of how the medians across the categories compare.</p>
-<div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">bechdel</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">roi</span>, y <span class="op">=</span> <span class="va">clean_test</span>, color <span class="op">=</span> <span class="va">binary</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
-<span>    x <span class="op">=</span> <span class="st">"Return on investment"</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">"Bechdel test result"</span>,</span>
-<span>    color <span class="op">=</span> <span class="st">"Pass / Fail"</span></span>
-<span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html">coord_cartesian</a></span><span class="op">(</span>xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">16</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">age_gaps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/age-gaps.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 15 rows containing non-finite outside the scale range
-(`stat_boxplot()`).</code></pre>
+<pre><code>Rows: 1155 Columns: 13
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (6): movie_name, director, actor_1_name, actor_2_name, character_1_gend...
+dbl  (5): release_year, age_difference, couple_number, actor_1_age, actor_2_age
+date (2): actor_1_birthdate, actor_2_birthdate
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="ae-03-bechdel-data-viz-transform-A_files/figure-html/roi-test-zoom-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+</div>
+<p>Create a subset of the data frame for heterosexual relationships on screen.</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">age_gaps_heterosexual</span> <span class="op">&lt;-</span> <span class="va">age_gaps</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">character_1_gender</span> <span class="op">!=</span> <span class="va">character_2_gender</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Split the data for heterosexual relationships into three – where woman is older, where man is older, where they are the same age. Save these subsets as two appropriately named data frames. <em>Remember:</em> Use concise and evocative names. Confirm that these new objects appear in your Environment tab and that the sum of the number of observations in the two new data frames add to the number of observations in the original data frame.</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">age_gaps_heterosexual</span> <span class="op">&lt;-</span> <span class="va">age_gaps_heterosexual</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    older <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
+<span>      <span class="va">character_1_gender</span> <span class="op">==</span> <span class="st">"woman"</span> <span class="op">&amp;</span> <span class="va">actor_1_age</span> <span class="op">&gt;</span> <span class="va">actor_2_age</span> <span class="op">~</span> <span class="st">"woman older"</span>,</span>
+<span>      <span class="va">character_2_gender</span> <span class="op">==</span> <span class="st">"woman"</span> <span class="op">&amp;</span> <span class="va">actor_2_age</span> <span class="op">&gt;</span> <span class="va">actor_1_age</span> <span class="op">~</span> <span class="st">"woman older"</span>,</span>
+<span>      <span class="va">character_1_gender</span> <span class="op">==</span> <span class="st">"man"</span>   <span class="op">&amp;</span> <span class="va">actor_1_age</span> <span class="op">&gt;</span> <span class="va">actor_2_age</span> <span class="op">~</span> <span class="st">"man older"</span>,</span>
+<span>      <span class="va">character_2_gender</span> <span class="op">==</span> <span class="st">"man"</span>   <span class="op">&amp;</span> <span class="va">actor_2_age</span> <span class="op">&gt;</span> <span class="va">actor_1_age</span> <span class="op">~</span> <span class="st">"man older"</span>,</span>
+<span>      <span class="va">actor_1_age</span> <span class="op">==</span> <span class="va">actor_2_age</span> <span class="op">~</span> <span class="st">"same age"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">woman_older</span> <span class="op">&lt;-</span> <span class="va">age_gaps_heterosexual</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">older</span> <span class="op">==</span> <span class="st">"woman older"</span><span class="op">)</span></span>
+<span><span class="va">man_older</span>   <span class="op">&lt;-</span> <span class="va">age_gaps_heterosexual</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">older</span> <span class="op">==</span> <span class="st">"man older"</span><span class="op">)</span></span>
+<span><span class="va">same_age</span>    <span class="op">&lt;-</span> <span class="va">age_gaps_heterosexual</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">older</span> <span class="op">==</span> <span class="st">"same age"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">woman_older</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">man_older</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">same_age</span><span class="op">)</span><span class="op">)</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">age_gaps_heterosexual</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
 </div>
 </div>
+<p>Write out the three new datasets you created into the <code>data</code> folder:</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">woman_older</span>, file <span class="op">=</span> <span class="st">"data/woman-older.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">man_older</span>, file <span class="op">=</span> <span class="st">"data/man-older.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">same_age</span>, file <span class="op">=</span> <span class="st">"data/same-age.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>What does this plot say about return-on-investment on movies that pass the Bechdel test?</p>
-<p>Movies that pass the Bechdel test typically have an higher return-on-investment than those that do not.</p>
-</section><section id="render-commit-and-push-1" class="level3"><h3 class="anchored" data-anchor-id="render-commit-and-push-1">Render, commit, and push</h3>
-<ol type="1">
-<li><p>Render your Quarto document.</p></li>
-<li><p>Go to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.</p></li>
-<li><p>Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.</p></li>
-<li><p>Go to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!</p></li>
-</ol>
+</section><section id="part-2-sales" class="level2"><h2 class="anchored" data-anchor-id="part-2-sales">Part 2: Sales</h2>
+<p>Sales data are stored in an Excel file that looks like the following:</p>
+<p><img src="https://sta199-s24.github.io/images/sales-excel.png" class="img-fluid"></p>
+<p>Read in the Excel file called <code>sales.xlsx</code> from the <code>data-raw/</code> folder such that it looks like the following.</p>
+<p><img src="https://sta199-s24.github.io/images/sales-1.png" class="img-fluid" width="200"></p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_raw</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span></span>
+<span>  <span class="st">"data/sales.xlsx"</span>, </span>
+<span>  skip <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>  col_names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"id"</span>, <span class="st">"n"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Stretch goal:</strong> Manipulate the sales data such such that it looks like the following.</p>
+<p><img src="https://sta199-s24.github.io/images/sales-2.png" class="img-fluid" width="200"></p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales</span> <span class="op">&lt;-</span> <span class="va">sales_raw</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    is_brand_name <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">id</span>, <span class="st">"Brand"</span><span class="op">)</span>,</span>
+<span>    brand <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">is_brand_name</span>, <span class="va">id</span>, <span class="cn">NA</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/fill.html">fill</a></span><span class="op">(</span><span class="va">brand</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">is_brand_name</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">brand</span>, <span class="va">id</span>, <span class="va">n</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">sales</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 3
+  brand   id    n    
+  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;
+1 Brand 1 1234  8    
+2 Brand 1 8721  2    
+3 Brand 1 1822  3    
+4 Brand 2 3333  1    
+5 Brand 2 2156  3    
+6 Brand 2 3987  6    
+7 Brand 2 3216  5    </code></pre>
+</div>
+</div>
+<p>Why should we bother with writing code for reading the data in by skipping columns and assigning variable names as well as cleaning it up in multiple steps instead of opening the Excel file and editing the data in there to prepare it for a clean import?</p>
+<p>Because the code allows us to struggle once and re-use for future datasets and leaves a transparent trail of our modifications while manipulating the data in Excel directly is neither reproducible nor reusable.</p>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1131,7 +1076,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/ae/ae-03-bechdel-data-viz-transform-A.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/ae/ae-09-age-gaps-sales-import-A.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
