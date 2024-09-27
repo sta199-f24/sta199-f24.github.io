@@ -1,7 +1,6 @@
 ---
 title: "AE 09: Age gaps + sales + import"
 subtitle: "Suggested answers"
-draft: true
 ---
 
 ::: callout-important

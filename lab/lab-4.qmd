@@ -72,15 +72,17 @@ If you run into any issues with the first steps outlined above, flag a TA for he
 
 ## Packages
 
-In this lab we will work with the 
+In this lab we will work with the
 
-- **tidyverse** package for doing data analysis in a "tidy" way and
-- **palmerpenguins** and **datasauRus** packages for some datasets
+-   **tidyverse** package for doing data analysis in a "tidy" way,
+-   **janitor** package for cleaning up variable names, and
+-   **palmerpenguins** and **datasauRus** packages for some datasets
 
 ```{r}
 #| eval: true
 #| message: false
 library(tidyverse)
+library(janitor)
 library(palmerpenguins)
 library(datasauRus)
 ```
@@ -96,25 +98,60 @@ library(datasauRus)
 
 ## Part 1 - Team USA at the Olympics
 
+For this part you'll work with data from the rosters of Team USA from 2020 and 2024 Olympics.
+The data come from <https://www.teamusa.com> and the rosters for the two games are in a single Excel file (`team-usa.xlsx` in your `data` folder), accross two separate spreadsheets within that file.
+@fig-olympics-sheets shows screenshots of these spreadsheets.
+
+::: {#fig-olympics-sheets layout-ncol=2}
+
+![Team USA 2020](images/lab-4/team-usa-2020.png)
+
+![Team USA 2024](images/lab-4/team-usa-2024.png)
+
+Excel file with two sheets for rosters of Team USA 2020 and 2024.
+:::
+
+Your goal is to answer questions around athletes that competed in both games and only one of the games.
+
 ### Question 1
 
-2020 vs. 2024 Team USA roster
+a.  Read data in from the two sheets of `team-usa.xlsx` as two separate data frames called `team_usa_2020` and `team_usa_2024`.
 
-a. read from excel file with skip
+::: callout-tip
+You can see the names of the sheets in the screenshots in @fig-olympics-sheets or you can also use the `excel_sheets()` function.
+Additionally, note that the first row of the sheets contain a logo and a title describing the contents of the data, and not the header row containing variable names.
+:::
 
-b. anti_join
+b.  Read the documentation for the `clean_names()` function from the **janitor** package at <https://sfirke.github.io/janitor/reference/clean_names.html>. 
+Use this function to "clean" the variable names of `team_usa_2020` and `team_usa_2024` and save the data frames with the new variable names.
 
-c. inner_join
+c.  Create a new variable in both of the datasets called `name` that:
 
-by name of athlete
+    - `paste()`s together the `first_name` and `last_name` variables with a space in between and
+    - is the first variable in the resulting data frame.
 
-### Question 2
+d.  Using the appropriate `*_join()` function, determine how many athletes participated in both Olympic Games?
 
-Turns out spelling differences for someone obvious to most...
+::: callout-important
+Your answer to this question, based on the data frames you created, should be 0, even if it doesn't make sense in context of actual Olympic athletes.
+:::
 
-fix
+## Question 2
 
-and then do parts a and b again.
+If you have even a passing knowledge of the Olympic Games, you might know that there are some athletes that participated in both the 2020 and 2024 games, e.g., Simone Biles, Katie Ledecky, etc.
+
+a.  The reason why athlete names didn't match across the two dataa frames is that in one data frame names are in UPPER CASE and in the other they're in Title Case.
+    Update the 2020 data frame to make `name` all upper case.
+    Display the first 10 rows of `team_usa_2020` with upper cse `name`s.
+
+::: callout-important
+Your answer must use the `str_to_upper()` function.
+:::
+
+b.  Let's try that question again: How many athletes participated in both Olympic Games?
+
+c.  How many athletes participated in the 2020 Olympic Games, but not the 2024 Olympic Games?
+    How many athletes participated in the 2024 Olympic Games, but not the 2020 Olympic Games?
 
 ## Part 2 - DatasauRus
 
@@ -122,7 +159,7 @@ The data frame you will be working with in this part is called `datasaurus_dozen
 This single data frame contains 13 datasets, designed to show us why data visualization is important and how summary statistics alone can be misleading.
 The different datasets are marked by the `dataset` variable, as shown in @fig-datasaurus.
 
-![The \`datasaurus_dozen\` data frame stacks 13 datasets on top of each other. This figure shows the first three datasets.](images/lab-4/datasaurus-dozen.png){fig-align="center" width="432"}
+![The \`datasaurus_dozen\` data frame stacks 13 datasets on top of each other. This figure shows the first three datasets.](images/lab-4/datasaurus-dozen.png){#fig-datasaurus fig-align="center" width="432"}
 
 ::: callout-note
 If it's confusing that the data frame is called `datasaurus_dozen` when it contains 13 datasets, you're not alone!
@@ -158,7 +195,7 @@ Turn off the legend by adding `show.legend = FALSE` to the geom creating the leg
 :::
 
 ::: render-commit-push
-Render, commit, and push one last time.
+Render, commit, and push your changes.
 Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 :::
 
@@ -170,13 +207,14 @@ The following question was asked to these 771 adults:
 
 [^1]: Full survey results can be found at <https://www.surveyusa.com/client/PollReport.aspx?g=c6995e17-3837-413e-ac98-3684e1c74dc1>.
 
-> Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?
+> Should the use of marijuana for medical use remain against the law in North Carolina?
+> Or be legalized?
 
 Responses were broken down into the following categories:
 
-| Variable | Levels                                     |
-|:---------|:-------------------------------------------|
-| Age      | 18-49; 50+                                 |
+| Variable | Levels                                          |
+|:---------|:------------------------------------------------|
+| Age      | 18-49; 50+                                      |
 | Opinion  | Remain Against The Law; Be Made Legal; Not Sure |
 
 Of the 771 responses, 391 were between the ages of 18-49.
@@ -200,8 +238,7 @@ a.  Fill in the code below to create a two-way table that summarizes these data.
       pivot_wider( 
         names_from = ___,
         values_from = ___
-      ) |>
-      kable()
+      )
     ```
 
 For parts b-d below, use a your response single pipeline starting with `survey_counts`, calculate the desired proportions, and make sure the result is an **ungrouped** data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you're interested in.
@@ -212,8 +249,8 @@ c.  Calculate the proportions of those who think medical marijuana should remain
 
 d.  Calculate the proportions of individuals in this sample who who think medical marijuana should remain against the law, should be made legal, and who are not sure
 
-    - among those who are 18-49 years old and
-    - among those who are 50+ years old.
+    -   among those who are 18-49 years old and
+    -   among those who are 50+ years old.
 
 ### Question 6
 
@@ -349,8 +386,6 @@ Render, commit, and push your work so far.
 Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 :::
 
-
-
 ::: callout-note
 If it's confusing that the data frame is called `datasaurus_dozen` when it contains 13 datasets, you're not alone!
 Have you heard of a [baker's dozen](https://www.mentalfloss.com/article/32259/why-bakers-dozen-13)?
@@ -363,5 +398,3 @@ Here is a peek at the top 10 rows of the dataset:
 
 datasaurus_dozen
 ```
-
-
