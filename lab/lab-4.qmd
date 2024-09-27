@@ -102,8 +102,7 @@ For this part you'll work with data from the rosters of Team USA from 2020 and 2
 The data come from <https://www.teamusa.com> and the rosters for the two games are in a single Excel file (`team-usa.xlsx` in your `data` folder), accross two separate spreadsheets within that file.
 @fig-olympics-sheets shows screenshots of these spreadsheets.
 
-::: {#fig-olympics-sheets layout-ncol=2}
-
+::: {#fig-olympics-sheets layout-ncol="2"}
 ![Team USA 2020](images/lab-4/team-usa-2020.png)
 
 ![Team USA 2024](images/lab-4/team-usa-2024.png)
@@ -122,13 +121,13 @@ You can see the names of the sheets in the screenshots in @fig-olympics-sheets o
 Additionally, note that the first row of the sheets contain a logo and a title describing the contents of the data, and not the header row containing variable names.
 :::
 
-b.  Read the documentation for the `clean_names()` function from the **janitor** package at <https://sfirke.github.io/janitor/reference/clean_names.html>. 
-Use this function to "clean" the variable names of `team_usa_2020` and `team_usa_2024` and save the data frames with the new variable names.
+b.  Read the documentation for the `clean_names()` function from the **janitor** package at <https://sfirke.github.io/janitor/reference/clean_names.html>.
+    Use this function to "clean" the variable names of `team_usa_2020` and `team_usa_2024` and save the data frames with the new variable names.
 
 c.  Create a new variable in both of the datasets called `name` that:
 
-    - `paste()`s together the `first_name` and `last_name` variables with a space in between and
-    - is the first variable in the resulting data frame.
+    -   `paste()`s together the `first_name` and `last_name` variables with a space in between and
+    -   is the first variable in the resulting data frame.
 
 d.  Using the appropriate `*_join()` function, determine how many athletes participated in both Olympic Games?
 
@@ -140,9 +139,7 @@ Your answer to this question, based on the data frames you created, should be 0,
 
 If you have even a passing knowledge of the Olympic Games, you might know that there are some athletes that participated in both the 2020 and 2024 games, e.g., Simone Biles, Katie Ledecky, etc.
 
-a.  The reason why athlete names didn't match across the two dataa frames is that in one data frame names are in UPPER CASE and in the other they're in Title Case.
-    Update the 2020 data frame to make `name` all upper case.
-    Display the first 10 rows of `team_usa_2020` with upper cse `name`s.
+a.  The reason why athlete names didn't match across the two dataa frames is that in one data frame names are in UPPER CASE and in the other they're in Title Case. Update the 2020 data frame to make `name` all upper case. Display the first 10 rows of `team_usa_2020` with upper cse `name`s.
 
 ::: callout-important
 Your answer must use the `str_to_upper()` function.
