@@ -375,9 +375,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#part-1---team-usa-at-the-olympics" id="toc-part-1---team-usa-at-the-olympics" class="nav-link" data-scroll-target="#part-1---team-usa-at-the-olympics">Part 1 - Team USA at the Olympics</a>
   <ul class="collapse">
 <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
-  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
   </ul>
 </li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
   <li>
 <a href="#part-2---datasaurus" id="toc-part-2---datasaurus" class="nav-link" data-scroll-target="#part-2---datasaurus">Part 2 - DatasauRus</a>
   <ul class="collapse">
@@ -509,12 +509,15 @@ Important
 <p>In this lab we will work with the</p>
 <ul>
 <li>
-<strong>tidyverse</strong> package for doing data analysis in a “tidy” way and</li>
+<strong>tidyverse</strong> package for doing data analysis in a “tidy” way,</li>
+<li>
+<strong>janitor</strong> package for cleaning up variable names, and</li>
 <li>
 <strong>palmerpenguins</strong> and <strong>datasauRus</strong> packages for some datasets</li>
 </ul>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sfirke/janitor">janitor</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jumpingrivers/datasauRus">datasauRus</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -548,23 +551,101 @@ Important
 </div>
 </section></section><section id="questions" class="level1"><h1>Questions</h1>
 <section id="part-1---team-usa-at-the-olympics" class="level2"><h2 class="anchored" data-anchor-id="part-1---team-usa-at-the-olympics">Part 1 - Team USA at the Olympics</h2>
-<section id="question-1" class="level3"><h3 class="anchored" data-anchor-id="question-1">Question 1</h3>
-<p>2020 vs.&nbsp;2024 Team USA roster</p>
-<ol type="a">
-<li><p>read from excel file with skip</p></li>
-<li><p>anti_join</p></li>
-<li><p>inner_join</p></li>
-</ol>
-<p>by name of athlete</p>
-</section><section id="question-2" class="level3"><h3 class="anchored" data-anchor-id="question-2">Question 2</h3>
-<p>Turns out spelling differences for someone obvious to most…</p>
-<p>fix</p>
-<p>and then do parts a and b again.</p>
-</section></section><section id="part-2---datasaurus" class="level2"><h2 class="anchored" data-anchor-id="part-2---datasaurus">Part 2 - DatasauRus</h2>
-<p>The data frame you will be working with in this part is called <code>datasaurus_dozen</code> and it’s in the <strong>datasauRus</strong> package. This single data frame contains 13 datasets, designed to show us why data visualization is important and how summary statistics alone can be misleading. The different datasets are marked by the <code>dataset</code> variable, as shown in <strong>?@fig-datasaurus</strong>.</p>
+<p>For this part you’ll work with data from the rosters of Team USA from 2020 and 2024 Olympics. The data come from <a href="https://www.teamusa.com" class="uri">https://www.teamusa.com</a> and the rosters for the two games are in a single Excel file (<code>team-usa.xlsx</code> in your <code>data</code> folder), accross two separate spreadsheets within that file. <a href="#fig-olympics-sheets" class="quarto-xref">Figure&nbsp;1</a> shows screenshots of these spreadsheets.</p>
+<div id="fig-olympics-sheets" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-olympics-sheets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/lab-4/datasaurus-dozen.png" class="img-fluid figure-img" width="432"></p>
-<figcaption>The `datasaurus_dozen` data frame stacks 13 datasets on top of each other. This figure shows the first three datasets.</figcaption></figure>
+<figure class="figure"><p><img src="images/lab-4/team-usa-2020.png" class="img-fluid figure-img"></p>
+<figcaption>Team USA 2020</figcaption></figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/lab-4/team-usa-2024.png" class="img-fluid figure-img"></p>
+<figcaption>Team USA 2024</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-olympics-sheets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Excel file with two sheets for rosters of Team USA 2020 and 2024.
+</figcaption></figure>
+</div>
+<p>Your goal is to answer questions around athletes that competed in both games and only one of the games.</p>
+<section id="question-1" class="level3"><h3 class="anchored" data-anchor-id="question-1">Question 1</h3>
+<ol type="a">
+<li>Read data in from the two sheets of <code>team-usa.xlsx</code> as two separate data frames called <code>team_usa_2020</code> and <code>team_usa_2024</code>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can see the names of the sheets in the screenshots in <a href="#fig-olympics-sheets" class="quarto-xref">Figure&nbsp;1</a> or you can also use the <code>excel_sheets()</code> function. Additionally, note that the first row of the sheets contain a logo and a title describing the contents of the data, and not the header row containing variable names.</p>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>Read the documentation for the <code><a href="https://sfirke.github.io/janitor/reference/clean_names.html">clean_names()</a></code> function from the <strong>janitor</strong> package at <a href="https://sfirke.github.io/janitor/reference/clean_names.html" class="uri">https://sfirke.github.io/janitor/reference/clean_names.html</a>. Use this function to “clean” the variable names of <code>team_usa_2020</code> and <code>team_usa_2024</code> and save the data frames with the new variable names.</p></li>
+<li>
+<p>Create a new variable in both of the datasets called <code>name</code> that:</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code>s together the <code>first_name</code> and <code>last_name</code> variables with a space in between and</li>
+<li>is the first variable in the resulting data frame.</li>
+</ul>
+</li>
+<li><p>Using the appropriate <code>*_join()</code> function, determine how many athletes participated in both Olympic Games?</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your answer to this question, based on the data frames you created, should be 0, even if it doesn’t make sense in context of actual Olympic athletes.</p>
+</div>
+</div>
+</section></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>If you have even a passing knowledge of the Olympic Games, you might know that there are some athletes that participated in both the 2020 and 2024 games, e.g., Simone Biles, Katie Ledecky, etc.</p>
+<ol type="a">
+<li>The reason why athlete names didn’t match across the two dataa frames is that in one data frame names are in UPPER CASE and in the other they’re in Title Case. Update the 2020 data frame to make <code>name</code> all upper case. Display the first 10 rows of <code>team_usa_2020</code> with upper cse <code>name</code>s.</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your answer must use the <code><a href="https://stringr.tidyverse.org/reference/case.html">str_to_upper()</a></code> function.</p>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>Let’s try that question again: How many athletes participated in both Olympic Games?</p></li>
+<li><p>How many athletes participated in the 2020 Olympic Games, but not the 2024 Olympic Games? How many athletes participated in the 2024 Olympic Games, but not the 2020 Olympic Games?</p></li>
+</ol></section><section id="part-2---datasaurus" class="level2"><h2 class="anchored" data-anchor-id="part-2---datasaurus">Part 2 - DatasauRus</h2>
+<p>The data frame you will be working with in this part is called <code>datasaurus_dozen</code> and it’s in the <strong>datasauRus</strong> package. This single data frame contains 13 datasets, designed to show us why data visualization is important and how summary statistics alone can be misleading. The different datasets are marked by the <code>dataset</code> variable, as shown in <a href="#fig-datasaurus" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<div id="fig-datasaurus" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-datasaurus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/lab-4/datasaurus-dozen.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="432">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datasaurus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The `datasaurus_dozen` data frame stacks 13 datasets on top of each other. This figure shows the first three datasets.
+</figcaption></figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -630,7 +711,7 @@ Tip
 </div>
 </div>
 <div class="render-commit-push">
-<p>Render, commit, and push one last time. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+<p>Render, commit, and push your changes. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
 </div>
 </section></section><section id="part-3---medical-marijuana-in-nc" class="level2"><h2 class="anchored" data-anchor-id="part-3---medical-marijuana-in-nc">Part 3 - Medical marijuana in NC</h2>
 <p>SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The following question was asked to these 771 adults:</p>
@@ -670,8 +751,7 @@ Tip
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>( </span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> ___,</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> ___</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </li>
 </ol>
