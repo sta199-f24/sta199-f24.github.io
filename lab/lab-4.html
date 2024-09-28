@@ -375,9 +375,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#part-1---team-usa-at-the-olympics" id="toc-part-1---team-usa-at-the-olympics" class="nav-link" data-scroll-target="#part-1---team-usa-at-the-olympics">Part 1 - Team USA at the Olympics</a>
   <ul class="collapse">
 <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
   </ul>
 </li>
-  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
   <li>
 <a href="#part-2---datasaurus" id="toc-part-2---datasaurus" class="nav-link" data-scroll-target="#part-2---datasaurus">Part 2 - DatasauRus</a>
   <ul class="collapse">
@@ -436,7 +436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><section id="introduction" class="level1"><h1>Introduction</h1>
-<p>In this lab you’ll both review topics you’ve worked with in previous labs and practice importing data and dive into the concepts of data types and classes.</p>
+<p>In this lab, you’ll review topics you’ve worked with in previous labs, practice importing data, and dive into the concepts of data types and classes.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -447,7 +447,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This lab assumes you’ve completed the labs so far and doesn’t repeat setup and overview content from those labs. If you have not yet done those, you should go back and review the previous labs before starting on this one.</p>
+<p>This lab assumes you’ve completed the labs so far and doesn’t repeat setup and overview content from those labs. If you haven’t done those yet, you should review the previous labs before starting on this one.</p>
 </div>
 </div>
 <section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
@@ -478,10 +478,10 @@ Click here if you prefer to see step-by-step instructions
 <ul>
 <li>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and log in with your Duke NetID and Password.</li>
 <li>Click <code>STA198-199</code> under My reservations to log into your container. You should now see the RStudio environment.</li>
-</ul></section><section id="step-2-clone-the-repo-start-new-rstudio-project" class="level3"><h3 class="anchored" data-anchor-id="step-2-clone-the-repo-start-new-rstudio-project">Step 2: Clone the repo &amp; start new RStudio project</h3>
+</ul></section><section id="step-2-clone-the-repo-start-a-new-rstudio-project" class="level3"><h3 class="anchored" data-anchor-id="step-2-clone-the-repo-start-a-new-rstudio-project">Step 2: Clone the repo &amp; start a new RStudio project</h3>
 <ul>
 <li><p>Go to the course organization at <a href="https://github.com/sta199-f24">github.com/sta199-f24</a> organization on GitHub. Click on the repo with the prefix <strong>lab-4</strong>. It contains the starter documents you need to complete the lab.</p></li>
-<li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
+<li><p>Click on the green <strong>CODE</strong> button and select <strong>Use SSH</strong>. This might already be selected by default; if it is, you’ll see the text <strong>Clone with SSH</strong>. Click on the clipboard icon to copy the repo URL.</p></li>
 <li><p>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</p></li>
 <li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</p></li>
 <li><p>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
@@ -506,7 +506,7 @@ Important
 </div>
 </div>
 </section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
-<p>In this lab we will work with the</p>
+<p>In this lab, we will work with the</p>
 <ul>
 <li>
 <strong>tidyverse</strong> package for doing data analysis in a “tidy” way,</li>
@@ -523,8 +523,8 @@ Important
 </div>
 <ul>
 <li>
-<strong>Run</strong> the code cell by clicking on the green triangle (play) button for the code cell labeled <code>load-packages</code>. This loads the package to make its features (the functions and datasets in it) be accessible from your <em>Console</em>.</li>
-<li>Then, <strong>render</strong> the document which loads this package to make its features (the functions and datasets in it) be available for other code cells in your Quarto document.</li>
+<strong>Run</strong> the code cell by clicking on the green triangle (play) button for the code cell labeled <code>load-packages</code>. This loads the package so that its features (the functions and datasets in it) are accessible from your <em>Console</em>.</li>
+<li>Then, <strong>render</strong> the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document.</li>
 </ul></section><section id="guidelines" class="level2"><h2 class="anchored" data-anchor-id="guidelines">Guidelines</h2>
 <p>As we’ve discussed in lecture, your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.</p>
 <p>Additionally, code should follow the <a href="https://style.tidyverse.org/">tidyverse style</a>. Particularly,</p>
@@ -551,7 +551,7 @@ Important
 </div>
 </section></section><section id="questions" class="level1"><h1>Questions</h1>
 <section id="part-1---team-usa-at-the-olympics" class="level2"><h2 class="anchored" data-anchor-id="part-1---team-usa-at-the-olympics">Part 1 - Team USA at the Olympics</h2>
-<p>For this part you’ll work with data from the rosters of Team USA from 2020 and 2024 Olympics. The data come from <a href="https://www.teamusa.com" class="uri">https://www.teamusa.com</a> and the rosters for the two games are in a single Excel file (<code>team-usa.xlsx</code> in your <code>data</code> folder), accross two separate spreadsheets within that file. <a href="#fig-olympics-sheets" class="quarto-xref">Figure&nbsp;1</a> shows screenshots of these spreadsheets.</p>
+<p>For this part, you’ll work with data from the rosters of Team USA from the 2020 and 2024 Olympics. The data come from <a href="https://www.teamusa.com" class="uri">https://www.teamusa.com</a> and the rosters for the two games are in a single Excel file (<code>team-usa.xlsx</code> in your <code>data</code> folder), accross two separate spreadsheets within that file. <a href="#fig-olympics-sheets" class="quarto-xref">Figure&nbsp;1</a> shows screenshots of these spreadsheets.</p>
 <div id="fig-olympics-sheets" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-olympics-sheets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
@@ -573,10 +573,10 @@ Important
 Figure&nbsp;1: Excel file with two sheets for rosters of Team USA 2020 and 2024.
 </figcaption></figure>
 </div>
-<p>Your goal is to answer questions around athletes that competed in both games and only one of the games.</p>
+<p>Your goal is to answer questions about athletes who competed in both games and only one of the games.</p>
 <section id="question-1" class="level3"><h3 class="anchored" data-anchor-id="question-1">Question 1</h3>
 <ol type="a">
-<li>Read data in from the two sheets of <code>team-usa.xlsx</code> as two separate data frames called <code>team_usa_2020</code> and <code>team_usa_2024</code>.</li>
+<li>Read data from the two sheets of <code>team-usa.xlsx</code> as two separate data frames called <code>team_usa_2020</code> and <code>team_usa_2024</code>.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -588,7 +588,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can see the names of the sheets in the screenshots in <a href="#fig-olympics-sheets" class="quarto-xref">Figure&nbsp;1</a> or you can also use the <code>excel_sheets()</code> function. Additionally, note that the first row of the sheets contain a logo and a title describing the contents of the data, and not the header row containing variable names.</p>
+<p>The names of the sheets are shown in the screenshots in <a href="#fig-olympics-sheets" class="quarto-xref">Figure&nbsp;1</a>, or you can use the <code>excel_sheets()</code> function to discover them. Additionally, note that the first row of the sheets contain a logo and a title describing the contents of the data, and not the header row containing variable names.</p>
 </div>
 </div>
 <ol start="2" type="a">
@@ -616,10 +616,10 @@ Important
 <p>Your answer to this question, based on the data frames you created, should be 0, even if it doesn’t make sense in context of actual Olympic athletes.</p>
 </div>
 </div>
-</section></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+</section><section id="question-2" class="level3"><h3 class="anchored" data-anchor-id="question-2">Question 2</h3>
 <p>If you have even a passing knowledge of the Olympic Games, you might know that there are some athletes that participated in both the 2020 and 2024 games, e.g., Simone Biles, Katie Ledecky, etc.</p>
 <ol type="a">
-<li>The reason why athlete names didn’t match across the two dataa frames is that in one data frame names are in UPPER CASE and in the other they’re in Title Case. Update the 2020 data frame to make <code>name</code> all upper case. Display the first 10 rows of <code>team_usa_2020</code> with upper cse <code>name</code>s.</li>
+<li>The reason why athlete names didn’t match across the two data frames is that in one data frame, names are in UPPER CASE, and in the other, they’re in Title Case. Update the 2020 data frame to make <code>name</code> all upper case. Display the first 10 rows of <code>team_usa_2020</code> with upper case names.</li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -636,8 +636,8 @@ Important
 </div>
 <ol start="2" type="a">
 <li><p>Let’s try that question again: How many athletes participated in both Olympic Games?</p></li>
-<li><p>How many athletes participated in the 2020 Olympic Games, but not the 2024 Olympic Games? How many athletes participated in the 2024 Olympic Games, but not the 2020 Olympic Games?</p></li>
-</ol></section><section id="part-2---datasaurus" class="level2"><h2 class="anchored" data-anchor-id="part-2---datasaurus">Part 2 - DatasauRus</h2>
+<li><p>How many athletes participated in the 2020 Olympic Games but not the 2024 Olympic Games? How many athletes participated in the 2024 Olympic Games but not the 2020 Olympic Games?</p></li>
+</ol></section></section><section id="part-2---datasaurus" class="level2"><h2 class="anchored" data-anchor-id="part-2---datasaurus">Part 2 - DatasauRus</h2>
 <p>The data frame you will be working with in this part is called <code>datasaurus_dozen</code> and it’s in the <strong>datasauRus</strong> package. This single data frame contains 13 datasets, designed to show us why data visualization is important and how summary statistics alone can be misleading. The different datasets are marked by the <code>dataset</code> variable, as shown in <a href="#fig-datasaurus" class="quarto-xref">Figure&nbsp;2</a>.</p>
 <div id="fig-datasaurus" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-datasaurus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -692,7 +692,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There are 13 groups but <code>tibble</code>s only print out 10 rows by default. Add <code>print(n = 13)</code> as the last step of your pipeline to display all rows.</p>
+<p>There are 13 groups but <code>tibble</code>s only print out 10 rows by default. To display all rows, add <code>print(n = 13)</code> as the last step of your pipeline.</p>
 </div>
 </div>
 </section><section id="question-4" class="level3"><h3 class="anchored" data-anchor-id="question-4">Question 4</h3>
@@ -711,7 +711,7 @@ Tip
 </div>
 </div>
 <div class="render-commit-push">
-<p>Render, commit, and push your changes. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+<p>Render, commit, and push your changes. Make sure that you commit and push all changed documents and that your Git pane is completely empty before proceeding.</p>
 </div>
 </section></section><section id="part-3---medical-marijuana-in-nc" class="level2"><h2 class="anchored" data-anchor-id="part-3---medical-marijuana-in-nc">Part 3 - Medical marijuana in NC</h2>
 <p>SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The following question was asked to these 771 adults:</p>
@@ -757,10 +757,10 @@ Tip
 </ol>
 <p>For parts b-d below, use a your response single pipeline starting with <code>survey_counts</code>, calculate the desired proportions, and make sure the result is an <strong>ungrouped</strong> data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.</p>
 <ol start="2" type="a">
-<li><p>Calculate the proportions of 18-49 year olds and 50+ year olds in this sample.</p></li>
+<li><p>Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample.</p></li>
 <li><p>Calculate the proportions of those who think medical marijuana should remain against the law, should be made legal, and who are not sure.</p></li>
 <li>
-<p>Calculate the proportions of individuals in this sample who who think medical marijuana should remain against the law, should be made legal, and who are not sure</p>
+<p>Calculate the proportions of individuals in this sample who think medical marijuana should remain against the law, should be made legal, and who are not sure</p>
 <ul>
 <li>among those who are 18-49 years old and</li>
 <li>among those who are 50+ years old.</li>
@@ -787,11 +787,11 @@ Tip
 <li><p>Based on your calculations so far, as well as your visualization, write 1-2 sentences that describe the relationship, in this sample, between age and opinion on legalizing medical marijuana in North Carolina.</p></li>
 </ol>
 <div class="render-commit-push">
-<p>Render, commit, and push one last time. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+<p>Render, commit, and push one last time. Make sure that you commit and push all changed documents and that your Git pane is completely empty before proceeding.</p>
 </div>
 </section></section><section id="part-4---mtcars" class="level2"><h2 class="anchored" data-anchor-id="part-4---mtcars">Part 4 - <code>mtcars</code>
 </h2>
-<p>In this part you’ll work with one of the most basic, most overused datasets in R: <code>mtcars</code>. The data in this dataset come from the 1974 <em>Motor Trend</em> US magazine (so, yes, they’re old!) and provide information on fuel efficiency as well as other characteristics of the cars.</p>
+<p>In this part, you’ll work with one of the most basic and overused datasets in R: <code>mtcars</code>. The data in this dataset come from the 1974 Motor Trend US magazine (so, yes, they’re old!) and provide information on fuel efficiency and other car characteristics.</p>
 <section id="question-7" class="level3"><h3 class="anchored" data-anchor-id="question-7">Question 7</h3>
 <p>Since the dataset is used in many code examples, it’s not unexpected that some analyses of the data are good and some not so much.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -823,14 +823,14 @@ Tip
 </div>
 <p>b. Update your plot from part (a) further, this time using different shaped points for cars with V-shaped and straight engines. Once again, some requirements for your legend – it should be informative and on the right of the plot.</p>
 </section><section id="question-8" class="level3"><h3 class="anchored" data-anchor-id="question-8">Question 8</h3>
-<p>Your task is to make your plot from Question 1b as ugly and as ineffective as possible. Change colors, axes, fonts, theme, or anything else you can think of in the code chunk below. You can also search online for other themes, fonts, etc. that you want to tweak. Try to make it as ugly as possible, the sky is the limit! You must make at least 5 updates to the plot.</p>
+<p>Your task is to make your plot from Question 1b as ugly and as ineffective as possible. Change colors, axes, fonts, themes, or anything else you can think of in the code chunk below. You can also search online for other themes, fonts, etc. that you want to tweak. Try to make it as ugly as possible, the sky is the limit! You must make at least 5 updates to the plot.</p>
 <p>Your answer must include</p>
 <ul>
 <li><p>a list of the at least 5 updates you’ve made to your plot from Question 1b, and</p></li>
 <li><p>1-2 sentence explanation of why the plot you created is <em>ugly</em> (to you, at least) and ineffective.</p></li>
 </ul>
 <div class="render-commit-push">
-<p>Render, commit, and push your work so far. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+<p>Render, commit, and push your work so far. Make sure that you commit and push all changed documents and that your Git pane is completely empty before proceeding.</p>
 </div>
 </section></section><section id="part-5---all-about-quarto" class="level2"><h2 class="anchored" data-anchor-id="part-5---all-about-quarto">Part 5 - All about Quarto</h2>
 <section id="question-9" class="level3"><h3 class="anchored" data-anchor-id="question-9">Question 9</h3>
@@ -882,44 +882,11 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Reading <a href="https://quarto.org/docs/reference/formats/pdf.html#execution">the documentation</a> might also be hepful.</p>
+<p>Reading <a href="https://quarto.org/docs/reference/formats/pdf.html#execution">the documentation</a> might also be helpful.</p>
 </div>
 </div>
 <div class="render-commit-push">
-<p>Render, commit, and push your work so far. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If it’s confusing that the data frame is called <code>datasaurus_dozen</code> when it contains 13 datasets, you’re not alone! Have you heard of a <a href="https://www.mentalfloss.com/article/32259/why-bakers-dozen-13">baker’s dozen</a>?</p>
-</div>
-</div>
-<p>Here is a peek at the top 10 rows of the dataset:</p>
-<div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">datasaurus_dozen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,846 × 3
-   dataset     x     y
-   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
- 1 dino     55.4  97.2
- 2 dino     51.5  96.0
- 3 dino     46.2  94.5
- 4 dino     42.8  91.4
- 5 dino     40.8  88.3
- 6 dino     38.7  84.9
- 7 dino     35.6  79.9
- 8 dino     33.1  77.6
- 9 dino     29.0  74.5
-10 dino     26.2  71.4
-# ℹ 1,836 more rows</code></pre>
-</div>
+<p>Render, commit, and push your work. Make sure that you commit and push all changed documents and that your Git pane is completely empty before proceeding.</p>
 </div>
 
 
