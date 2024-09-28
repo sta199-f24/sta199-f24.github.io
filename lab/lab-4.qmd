@@ -18,9 +18,11 @@ If you haven't done those yet, you should review the previous labs before starti
 
 By the end of the lab, you will...
 
--   <!--# TO DO: Add learning objectives. -->
+-   Learn to read data in from Excel spreadsheets
+-   Gain more experience with joining and pivoting data frames
+-   ...
 
-And, as usual, you will also
+And, as usual, you will also...
 
 -   Get more experience with data science workflow using R, RStudio, Git, and GitHub
 -   Further your reproducible authoring skills with Quarto
