@@ -254,7 +254,7 @@ d.  Calculate the proportions of individuals in this sample who think medical ma
 a.  Create a visualization that can be used to evaluate the relationship between `age` and `opinion` on legalizing medical marijuana in North Carolina based on this survey's results.
 
     ::: callout-tip
-    Your visualization should display the proportions you calculated in Question 8d.
+    Your visualization should display the proportions you calculated in Question 5d.
     :::
 
 b.  Based on your calculations so far, as well as your visualization, write 1-2 sentences that describe the relationship, in this sample, between age and opinion on legalizing medical marijuana in North Carolina.
@@ -302,7 +302,7 @@ Once again, some requirements for your legend – it should be informative and o
 
 ### Question 8
 
-Your task is to make your plot from Question 1b as ugly and as ineffective as possible.
+Your task is to make your plot from Question 7b as ugly and as ineffective as possible.
 Change colors, axes, fonts, themes, or anything else you can think of in the code chunk below.
 You can also search online for other themes, fonts, etc. that you want to tweak.
 Try to make it as ugly as possible, the sky is the limit!
@@ -310,7 +310,7 @@ You must make at least 5 updates to the plot.
 
 Your answer must include
 
--   a list of the at least 5 updates you've made to your plot from Question 1b, and
+-   a list of the at least 5 updates you've made to your plot from Question 7b, and
 
 -   1-2 sentence explanation of why the plot you created is *ugly* (to you, at least) and ineffective.
 
