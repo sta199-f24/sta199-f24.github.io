@@ -94,6 +94,11 @@ library(datasauRus)
 
 {{< include _guidelines.qmd >}}
 
+::: callout-important
+Starting with this lab, you are expected to pay attention to [code smell](https://en.wikipedia.org/wiki/Code_smell) in addition to code style and readability.
+You should review and improve your code to avoid redundant steps (e.g., grouping, ungrouping, and grouping again by the same variable in a pipeline), using inconsistent syntax (e.g., `!` to say "not" in one place and `-` in another place), etc.
+:::
+
 # Questions
 
 ## Part 1 - Team USA at the Olympics
