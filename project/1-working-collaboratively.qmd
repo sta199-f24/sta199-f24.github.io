@@ -38,7 +38,7 @@ Once everyone's team names are in, your project repos will be created (give your
 
 # Merge conflicts
 
-When you and your teammates work on the lines of code within a document, and both try to push your changes, you will run into issues.
+When you and your teammates work on the lines of code within a document and both try to push your changes, you will run into issues.
 Merge conflicts happen when you merge branches that have competing changes, and Git needs your help to decide which changes to incorporate in the final merge.
 
 Our first task today is to walk you through a merge conflict!
@@ -96,8 +96,6 @@ If you feel like you won't be able to resist the urge to touch your computer whe
 
 Everyone should have the repo cloned and know which role number(s) they are.
 
-Also, any teammates who haven't done this before should go to their Terminal and type `git config pull.rebase false` to set up their preferences for pulling.
-
 #### Role 1
 
 -   Go to `about.qmd` in your project repo. Change the `[team name]` to your actual team name.
@@ -132,8 +130,8 @@ Make sure the previous role has finished before moving on to the next step.
 
 #### Role 3
 
--   Change the a name of the first team member.
--   Render the project by clicking on Render in the Build tab, commit, push. You should get an error.
+-   Change the name of the first team member.
+-   Render the project by clicking on Render in the Build tab, commit, and push. You should get an error.
 -   Pull. No merge conflicts should occur, but you should see a message about merging.
 -   Now push.
 
@@ -143,8 +141,8 @@ Make sure the previous role has finished before moving on to the next step.
 
 #### Role 4
 
--   Change the a name of the first team member to something other than what the previous team member did.
--   Render the project by clicking on Render in the Build tab, commit, push. You should get an error.
+-   Change the name of the first team member to something other than what the previous team member did.
+-   Render the project by clicking on Render in the Build tab, commit, and push. You should get an error.
 -   Pull. Take a look at the document with the merge conflict. Clear the merge conflict by choosing the correct/preferred change. Render the project by clicking on Render in the Build tab, commit, and push.
 
 ::: callout-important
@@ -153,7 +151,7 @@ Make sure the previous role has finished before moving on to the next step.
 
 #### Role 5
 
--   Change the a name of the rest of the team members and add descriptions for each person with the help of your team members. Role 5 should be the only one typing, the others should help verbally.
+-   Change the name of the rest of the team members and add descriptions for each person with the help of your team members. Role 5 should be the only one typing; the others should help verbally.
 -   Render the project by clicking on Render in the Build tab and commit. Discuss as a team what you expect to happen when you hit push. Should there be a merge conflict error or not?
 -   If there is a merge conflict, fix it. If not, push your changes.
 
