@@ -3,7 +3,8 @@ title: Midterm Review
 subtitle: Questions
 format:
   html: default
-  pdf: default
+  pdf: 
+    linkcolor: "black"
 execute:
   echo: false
 ---
