@@ -96,7 +96,6 @@ Explain your reasoning.
 #| fig-cap: Option 1
 #| fig-width: 8
 #| fig-asp: 0.5
-
 ggplot(blizzard_salary, aes(x = annual_salary)) +
   geom_histogram(binwidth = 10000, color = "white") +
   facet_wrap(~salary_type, ncol = 1) +
