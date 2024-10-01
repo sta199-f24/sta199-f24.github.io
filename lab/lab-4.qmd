@@ -20,7 +20,7 @@ By the end of the lab, you will...
 
 -   Learn to read data in from Excel spreadsheets
 -   Gain more experience with joining and pivoting data frames
--   ...
+-   Review Quarto cell options
 
 And, as usual, you will also...
 
@@ -75,6 +75,7 @@ If you run into any issues with the first steps outlined above, flag a TA for he
 In this lab, we will work with the
 
 -   **tidyverse** package for doing data analysis in a "tidy" way,
+-   **readxl** package for reading in Excel files,
 -   **janitor** package for cleaning up variable names, and
 -   **palmerpenguins** and **datasauRus** packages for some datasets
 
@@ -82,6 +83,7 @@ In this lab, we will work with the
 #| eval: true
 #| message: false
 library(tidyverse)
+library(readxl)
 library(janitor)
 library(palmerpenguins)
 library(datasauRus)
@@ -93,6 +95,11 @@ library(datasauRus)
 ## Guidelines
 
 {{< include _guidelines.qmd >}}
+
+::: callout-important
+Starting with this lab, you are expected to pay attention to [code smell](https://en.wikipedia.org/wiki/Code_smell) in addition to code style and readability.
+You should review and improve your code to avoid redundant steps (e.g., grouping, ungrouping, and grouping again by the same variable in a pipeline), using inconsistent syntax (e.g., `!` to say "not" in one place and `-` in another place), etc.
+:::
 
 # Questions
 
