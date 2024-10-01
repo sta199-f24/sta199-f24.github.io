@@ -31,7 +31,7 @@ options(width = 60)
 
 ```{r}
 #| include: false
-todays_ae <- "ae-09-age-gaps-sales-import"
+todays_ae <- "ae-10-chronicle-scrape"
 ```
 
 <!-- end: ae definition -->
@@ -308,7 +308,7 @@ Code for the earlier plot:
 
 ## Where is the data coming from? {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="20%"}
 [![](images/10/chronicle-opinion-page.png){fig-align="center" width="800"}](https://www.dukechronicle.com/section/opinion?page=1&per_page=500)
 :::
@@ -318,7 +318,7 @@ Code for the earlier plot:
 chronicle
 ```
 :::
-:::
+:::::
 
 # Web scraping
 
@@ -364,7 +364,7 @@ Most of the data on the web is still largely available as HTML - while it is str
 
 ## rvest {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 -   The **rvest** package makes basic processing and manipulation of HTML data straight forward
 -   It's designed to work with pipelines built with `|>`
@@ -380,7 +380,7 @@ library(rvest)
 ::: {.column width="50%"}
 [![](images/10/rvest.png){fig-alt="rvest hex logo" fig-align="right" width="400"}](https://rvest.tidyverse.org/)
 :::
-:::
+:::::
 
 ## rvest {.smaller}
 
@@ -486,15 +486,15 @@ read_html(html) |> html_elements("div") |> html_text()
 -   Some examples of basic selector syntax is below,
 
 ::: small
-| Selector            | Example         | Description                                        |
-|:----------------|:----------------|:--------------------------------------|
-| .class              | `.title`        | Select all elements with class="title"             |
-| #id                 | `#name`         | Select all elements with id="name"                 |
-| element             | `p`             | Select all \<p\> elements                          |
-| element element     | `div p`         | Select all \<p\> elements inside a \<div\> element |
-| element\>element    | `div > p`       | Select all \<p\> elements with \<div\> as a parent |
-| \[attribute\]       | `[class]`       | Select all elements with a class attribute         |
-| \[attribute=value\] | `[class=title]` | Select all elements with class="title"             |
+| Selector | Example | Description |
+|:-----------------|:-----------------|:------------------------------------|
+| .class | `.title` | Select all elements with class="title" |
+| #id | `#name` | Select all elements with id="name" |
+| element | `p` | Select all \<p\> elements |
+| element element | `div p` | Select all \<p\> elements inside a \<div\> element |
+| element\>element | `div > p` | Select all \<p\> elements with \<div\> as a parent |
+| \[attribute\] | `[class]` | Select all elements with a class attribute |
+| \[attribute=value\] | `[class=title]` | Select all elements with class="title" |
 :::
 
 ## CSS classes and ids
@@ -578,7 +578,7 @@ How many articles are on the page?
 
 ## Goal
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 -   Scrape data and organize it in a tidy format in R
 -   Perform light text parsing to clean data
@@ -588,7 +588,7 @@ How many articles are on the page?
 ::: {.column width="50%"}
 ![](images/10/chronicle-data.png){fig-align="center"}
 :::
-:::
+:::::
 
 ## `ae-09`
 
