@@ -2804,7 +2804,7 @@
     "href": "slides/10-web-scraping-slides.html#while-you-wait",
     "title": "Web scaping",
     "section": "While you wait…",
-    "text": "While you wait…\n\n\n\nIf you haven’t yet done so: Install a Chrome browser and the SelectorGadget extension:\n\nChrome\nSelectorGadget\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-09-age-gaps-sales-import.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
+    "text": "While you wait…\n\n\n\nIf you haven’t yet done so: Install a Chrome browser and the SelectorGadget extension:\n\nChrome\nSelectorGadget\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-10-chronicle-scrape.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
     "objectID": "slides/10-web-scraping-slides.html#announcements",
@@ -3070,7 +3070,7 @@
     "href": "slides/10-web-scraping.html#while-you-wait",
     "title": "Web scaping",
     "section": "While you wait…",
-    "text": "While you wait…\n\n\n\nIf you haven’t yet done so: Install a Chrome browser and the SelectorGadget extension:\n\nChrome\nSelectorGadget\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-09-age-gaps-sales-import.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
+    "text": "While you wait…\n\n\n\nIf you haven’t yet done so: Install a Chrome browser and the SelectorGadget extension:\n\nChrome\nSelectorGadget\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-10-chronicle-scrape.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
     "objectID": "slides/10-web-scraping.html#announcements",
