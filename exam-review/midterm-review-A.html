@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.12">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,11 +34,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-fd7301ae7f97a86ef1a97ba47a14c320.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-fd7301ae7f97a86ef1a97ba47a14c320.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d6a4e652ab744161b9f6ea6865bd5866.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
@@ -362,7 +362,46 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To be posted.</p>
+<ol type="1">
+<li><p>b, c, f, g -</p>
+<ul>
+<li><p>The <code>blizzard_salary</code> dataset has 409 rows.</p></li>
+<li><p>The <code>percent_incr</code> variable is numerical and continuous.</p></li>
+<li><p>The <code>salary_type</code> variable is categorical.</p></li>
+</ul></li>
+<li><p>Figure 1 - A shared x-axis makes it easier to compare summary statistics for the variable on the x-axis.</p></li>
+<li><p>c - It’s a value higher than the median for hourly but lower than the mean for salaried.</p></li>
+<li><p>b - There is more variability around the mean compared to the hourly distribution.</p></li>
+<li><p>a, b, e - Pie charts and waffle charts are for visualizing distributions of categorical data only. Scatterplots are for visualizing the relationship between two numerical variables.</p></li>
+<li><p>c - <code>mutate()</code> is used to create or modify a variable.</p></li>
+<li><p>a - <code>"Poor", "Successful", "High", "Top"</code></p></li>
+<li><p>b - Option 2. The plot in Option 1 shows the number of employees with a given performance rating for each salary type while the plot in Option 2 gives the proportion of employees with a given performance rating for each salary type. In order to assess the relationship between these variables (e.g., how much more likely is a Top rating among Salaried vs.&nbsp;Hourly workers), we need the proportions, not the counts.</p></li>
+<li><p>There may be some <code>NA</code>s in these two variables that are not visible in the plot.</p></li>
+<li><p>The proportions under Hourly would go in the Hourly bar, and those under Salaried would go in the Salaried bar.</p></li>
+<li><p>c - <code>filter(salary_type != "Hourly" &amp; performance_rating == "Poor")</code> - There are 5 observations for <strong>“not Hourly”</strong> <strong>“and”</strong> Poor.</p></li>
+<li><p>a - <code>arrange()</code> - The result is arranged in increasing order of <code>annual_salary</code>, which is the default for <code>arrange()</code>.</p></li>
+<li><p>c, d, e, f.</p></li>
+<li><p>Part 1: The following should be fixed:</p>
+<ul>
+<li><p>There should be a <code>|</code> after <code>#</code> before <code>label</code></p></li>
+<li><p>There should be a <code>:</code> after label, not <code>=</code></p></li>
+<li><p>There shouldn’t be a space in the chunk label, it should be <code>plot-blizzard</code></p></li>
+<li><p>There should be spaces after commas in the code</p></li>
+<li><p>There should be spaces on both sides of <code>=</code> in the code</p></li>
+<li><p>There should be a space before <code>+</code></p></li>
+<li><p><code>geom_boxplot()</code> should be on the next line and indented</p></li>
+<li><p>There should be a <code>+</code> at the end of the <code>geom_boxplot()</code> line</p></li>
+<li><p><code>labs()</code> should be indented</p></li>
+</ul>
+<p>Part 2: The warning is caused by <code>NA</code> in the data. It means that 39 observations were <code>NA</code>s and are not plotted/represented on the plot.</p></li>
+<li><p>Part 1:</p>
+<ol type="1">
+<li>Render: Run all of the code and render all of the text in the document and produce an output.</li>
+<li>Commit: Take a snapshot of your changes in Git with an appropriate message.</li>
+<li>Push: Send your changes off to GitHub.</li>
+</ol>
+<p>Part 2: c - Rendering or committing isn’t sufficient to send your changes to your GitHub repository, a push is needed. A pull is also not needed to view the changes in the browser.</p></li>
+</ol>
 
 
 
