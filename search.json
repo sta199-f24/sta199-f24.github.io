@@ -1890,11 +1890,18 @@
     "text": "ae-07-taxes-join\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-07-taxes-join.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
+    "objectID": "slides/11-midterm-review-slides.html#while-you-wait",
+    "href": "slides/11-midterm-review-slides.html#while-you-wait",
+    "title": "Midterm review",
+    "section": "While you wait…",
+    "text": "While you wait…\n\nGo to your ae project in RStudio\nMake sure you have each piece of information we need extracted from The Chronicle opinion page – up to create a data frame in chronicle-scrape.R."
+  },
+  {
     "objectID": "slides/11-midterm-review-slides.html#announcements",
     "href": "slides/11-midterm-review-slides.html#announcements",
     "title": "Midterm review",
     "section": "Announcements",
-    "text": "Announcements\nMidterm things:\n\nExam room: Bio Sci 111 or Gross Hall 107\nCheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nReminder: Academic dishonesty / Duke Community Standard"
+    "text": "Announcements\nMidterm things:\n\nExam room: Bio Sci 111 or Gross Hall 107\nCheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nAlso bring a pencil and eraser (you’re allowed to use a pen, but you might not want to)\nReminder: Academic dishonesty / Duke Community Standard"
   },
   {
     "objectID": "slides/11-midterm-review-slides.html#opinion-articles-in-the-chronicle",
@@ -2142,11 +2149,18 @@
     "text": "Aside: |"
   },
   {
+    "objectID": "slides/11-midterm-review.html#while-you-wait",
+    "href": "slides/11-midterm-review.html#while-you-wait",
+    "title": "Midterm review",
+    "section": "While you wait…",
+    "text": "While you wait…\n\nGo to your ae project in RStudio\nMake sure you have each piece of information we need extracted from The Chronicle opinion page – up to create a data frame in chronicle-scrape.R."
+  },
+  {
     "objectID": "slides/11-midterm-review.html#announcements",
     "href": "slides/11-midterm-review.html#announcements",
     "title": "Midterm review",
     "section": "Announcements",
-    "text": "Announcements\nMidterm things:\n\nExam room: Bio Sci 111 or Gross Hall 107\nCheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nReminder: Academic dishonesty / Duke Community Standard"
+    "text": "Announcements\nMidterm things:\n\nExam room: Bio Sci 111 or Gross Hall 107\nCheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nAlso bring a pencil and eraser (you’re allowed to use a pen, but you might not want to)\nReminder: Academic dishonesty / Duke Community Standard"
   },
   {
     "objectID": "slides/11-midterm-review.html#opinion-articles-in-the-chronicle",
