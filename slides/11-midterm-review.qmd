@@ -46,6 +46,12 @@ todays_ae <- "ae-10-chronicle-scrape"
 
 # Warm-up
 
+## While you wait...
+
+-   Go to your ae project in RStudio
+
+-   Make sure you have each piece of information we need extracted from The Chronicle opinion page – up to `create a data frame` in `chronicle-scrape.R`.
+
 ## Announcements
 
 Midterm things:
@@ -53,6 +59,8 @@ Midterm things:
 -   Exam room: Bio Sci 111 or Gross Hall 107
 
 -   Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you
+
+-   Also bring a pencil and eraser (you're allowed to use a pen, but you might not want to)
 
 -   Reminder: Academic dishonesty / Duke Community Standard
 
@@ -77,7 +85,7 @@ Midterm things:
 ::: appex
 -   Go to your ae project in RStudio.
 
--   Open `chronicle-scrape.R` and  `ae-10-chronicle-scrape.qmd`.
+-   Open `chronicle-scrape.R` and `ae-10-chronicle-scrape.qmd`.
 :::
 
 ## Recap
@@ -112,17 +120,17 @@ Midterm things:
 
 ## Your document environment vs. your global environment
 
-- Objects you define in your Quarto document are available in your Quarto document, and if you ran that code cell individually, they will also be available in your global environment 
+-   Objects you define in your Quarto document are available in your Quarto document, and if you ran that code cell individually, they will also be available in your global environment
 
-- Objects you define in your global environment are not, by default, available in your Quarto document
+-   Objects you define in your global environment are not, by default, available in your Quarto document
 
 ## Recipe for success for reproducible documents
 
-- Render -- after each "win" or at each stopping point
+-   Render -- after each "win" or at each stopping point
 
-- Commit -- all files, with a commit message that describes the substance of what you did
+-   Commit -- all files, with a commit message that describes the substance of what you did
 
-- Push -- to make sure files are updated on GitHub as well
+-   Push -- to make sure files are updated on GitHub as well
 
 # Questions... or...
 
@@ -501,11 +509,3 @@ loan50 |>
 ```
 
 # Other questions?
-
-
-
-
-
-
-
-
