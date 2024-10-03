@@ -124,6 +124,8 @@ Midterm things:
 
 - Push -- to make sure files are updated on GitHub as well
 
+# Questions... or...
+
 # Time permitting: Type coercion
 
 ## Explicit vs. implicit type coercion
