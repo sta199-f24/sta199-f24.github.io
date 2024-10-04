@@ -6355,7 +6355,7 @@
     "href": "ae.html",
     "title": "Application exercises",
     "section": "",
-    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 2 pm) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: UN Votes\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\nSuggested answers\n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\n \n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\n \n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\n \n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\nSuggested answers\n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\n \n\n\n\n\nAE 07: Sales taxes + data joining\n\n\nSuggested answers\n\n\n\n\nAE 07: Sales taxes + data joining\n\n\n \n\n\n\n\nAE 08: Durham climate + factors\n\n\nSuggested answers\n\n\n\n\nAE 08: Durham climate + factors\n\n\n \n\n\n\n\nAE 09: Age gaps + sales + import\n\n\nSuggested answers\n\n\n\n\nAE 09: Age gaps + sales + import\n\n\n \n\n\n\n\nAE 10: Opinion articles in The Chronicle\n\n\n \n\n\n\n\n\nNo matching items\n\n\n\nMore AEs to be added as the semester progresses.",
+    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 2 pm) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: UN Votes\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\nSuggested answers\n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\n \n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\n \n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\n \n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\nSuggested answers\n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\n \n\n\n\n\nAE 07: Sales taxes + data joining\n\n\nSuggested answers\n\n\n\n\nAE 07: Sales taxes + data joining\n\n\n \n\n\n\n\nAE 08: Durham climate + factors\n\n\nSuggested answers\n\n\n\n\nAE 08: Durham climate + factors\n\n\n \n\n\n\n\nAE 09: Age gaps + sales + import\n\n\nSuggested answers\n\n\n\n\nAE 09: Age gaps + sales + import\n\n\n \n\n\n\n\nAE 10: Opinion articles in The Chronicle\n\n\nSuggested answers\n\n\n\n\nAE 10: Opinion articles in The Chronicle\n\n\n \n\n\n\n\n\nNo matching items\n\n\n\nMore AEs to be added as the semester progresses.",
     "crumbs": [
       "Application exercises"
     ]
@@ -6716,6 +6716,27 @@
     "title": "AE 09: Age gaps + sales + import",
     "section": "Part 2: Sales",
     "text": "Part 2: Sales\nSales data are stored in an Excel file that looks like the following:\n\nRead in the Excel file called sales.xlsx from the data folder such that it looks like the following.\n\n\n# add code here\n\nStretch goal: Manipulate the sales data such such that it looks like the following.\n\n\n# add code here\n\nWhy should we bother with writing code for reading the data in by skipping columns and assigning variable names as well as cleaning it up in multiple steps instead of opening the Excel file and editing the data in there to prepare it for a clean import?\nAdd response here."
+  },
+  {
+    "objectID": "ae/ae-10-chronicle-scrape-A.html",
+    "href": "ae/ae-10-chronicle-scrape-A.html",
+    "title": "AE 10: Opinion articles in The Chronicle",
+    "section": "",
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as reference only, it’s not designed to be an exhaustive key."
+  },
+  {
+    "objectID": "ae/ae-10-chronicle-scrape-A.html#part-1---data-scraping",
+    "href": "ae/ae-10-chronicle-scrape-A.html#part-1---data-scraping",
+    "title": "AE 10: Opinion articles in The Chronicle",
+    "section": "Part 1 - Data scraping",
+    "text": "Part 1 - Data scraping\nSee chronicle-scrape.R for suggested scraping code."
+  },
+  {
+    "objectID": "ae/ae-10-chronicle-scrape-A.html#part-2---data-analysis",
+    "href": "ae/ae-10-chronicle-scrape-A.html#part-2---data-analysis",
+    "title": "AE 10: Opinion articles in The Chronicle",
+    "section": "Part 2 - Data analysis",
+    "text": "Part 2 - Data analysis\nLet’s start by loading the packages we will need:\n\nlibrary(tidyverse)\n\n\nLoad the data you saved into the data folder and name it chronicle.\n\n\nchronicle &lt;- read_csv(\"data/chronicle.csv\")\n\n\nWho are the most prolific authors of the 100 most recent opinion articles in The Chronicle?\n\n\nchronicle |&gt;\n  count(author, sort = TRUE)\n\n# A tibble: 191 × 2\n   author             n\n   &lt;chr&gt;          &lt;int&gt;\n 1 Luke A. Powery    32\n 2 Advikaa Anand     26\n 3 Heidi Smith       26\n 4 Nik Narain        23\n 5 Monday Monday     20\n 6 Aaron Siegle      15\n 7 Anna Garziera     15\n 8 Sonia Green       12\n 9 Linda Cao         10\n10 Angikar Ghosal     9\n# ℹ 181 more rows\n\n\n\nDraw a line plot of the number of opinion articles published per day in The Chronicle.\n\n\nchronicle |&gt;\n  count(date) |&gt;\n  ggplot(aes(x = date, y = n, group = 1)) +\n  geom_line()\n\n\n\n\n\n\n\n\nWhat percent of the most recent 100 opinion articles in The Chronicle mention “climate” in their title?\n\n\nchronicle |&gt;\n  mutate(\n    title = str_to_lower(title),\n    climate = if_else(str_detect(title, \"climate\"), \"mentioned\", \"not mentioned\")\n    ) |&gt;\n  count(climate) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 2 × 3\n  climate           n  prop\n  &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt;\n1 mentioned        11 0.022\n2 not mentioned   489 0.978\n\n\n\nWhat percent of the most recent 100 opinion articles in The Chronicle mention “climate” in their title or abstract?\n\n\nchronicle |&gt;\n  mutate(\n    title = str_to_lower(title),\n    abstract = str_to_lower(abstract),\n    climate = if_else(\n      str_detect(title, \"climate\") | str_detect(abstract, \"climate\"), \n      \"mentioned\", \n      \"not mentioned\"\n      )\n    ) |&gt;\n  count(climate) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 2 × 3\n  climate           n  prop\n  &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt;\n1 mentioned        16 0.032\n2 not mentioned   484 0.968\n\n\n\nCome up with another question and try to answer it using the data.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-04-gerrymander-explore-I-A.html",
