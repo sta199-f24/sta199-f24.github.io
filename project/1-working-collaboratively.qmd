@@ -4,6 +4,11 @@ subtitle: "Milestone 1"
 categories: "Project"
 ---
 
+::: callout-important
+You must attend this lab in person and participate in the merge conflict activity to be eligible for the points for this milestone.
+Team members who are not in lab in person for this activity will not be eligible for these points, regardless of their contribution level throughout the rest of the project.
+:::
+
 Data science is a collaborative discipline.
 Pretty much no data scientist works alone, so neither should you!
 In this course you'll collaborate with teammates on the project.
@@ -176,4 +181,4 @@ Once done, click *Render* in the build tab, commit, and push.
 # Grading
 
 We will evaluate the first milestone of your project based on your participation in this activity.
-Each team member who participates in the activity during the lab session will earn 5 points towards their project.
+Each team member who participates in the activity in person during the lab session will earn 5 points towards their project.
