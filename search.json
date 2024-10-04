@@ -7027,7 +7027,7 @@
     "href": "project/2-proposal.html",
     "title": "Proposal",
     "section": "",
-    "text": "The goals of this milestone are as follows:\n\nDiscuss topics you’re interested in investigating and find data sets on those topics.\nIdentify 3 data sets you’re interested in potentially using for the project.\nGet these datasets into R.\nWrite up reasons and justifications for why you want to work with these datasets.\nReview your team contract.\n\n\n\n\n\n\n\nImportant\n\n\n\nYou must use one of the data sets in the proposal for the final project, unless instructed otherwise when given feedback.",
+    "text": "The goals of this milestone are as follows:\n\nDiscuss topics you’re interested in investigating and find data sets on those topics.\nIdentify 2 data sets you’re interested in potentially using for the project.\nGet these datasets into R.\nWrite up reasons and justifications for why you want to work with these datasets.\nReview your team contract.\n\n\n\n\n\n\n\nImportant\n\n\n\nYou must use one of the data sets in the proposal for the final project, unless instructed otherwise when given feedback.",
     "crumbs": [
       "Project",
       "Milestone 2"
@@ -7083,6 +7083,17 @@
     "title": "Proposal",
     "section": "Glimpse of data",
     "text": "Glimpse of data\nFor each data set:\n\nPlace the file containing your data in the data folder of the project repo.\nUse the glimpse() function to provide a glimpse of the data set.",
+    "crumbs": [
+      "Project",
+      "Milestone 2"
+    ]
+  },
+  {
+    "objectID": "project/2-proposal.html#data-dictionary",
+    "href": "project/2-proposal.html#data-dictionary",
+    "title": "Proposal",
+    "section": "Data dictionary",
+    "text": "Data dictionary\nFor each data set, add a data dictionary to the README.md file in the data folder describing each variable.",
     "crumbs": [
       "Project",
       "Milestone 2"
