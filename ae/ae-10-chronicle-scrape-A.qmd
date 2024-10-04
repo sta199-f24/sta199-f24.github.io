@@ -1,7 +1,6 @@
 ---
 title: "AE 10: Opinion articles in The Chronicle"
 subtitle: "Suggested answers"
-draft: true
 editor_options: 
   chunk_output_type: console
 ---
@@ -13,7 +12,7 @@ This document should be used as reference only, it's not designed to be an exhau
 
 ## Part 1 - Data scraping
 
-See [`chronicle-scrape.R`](https://github.com/sta199-f22-1/sta199-f22-1.github.io/blob/main/ae/_chronicle-scrape-A.R) for suggested scraping code.
+See [`chronicle-scrape.R`](https://github.com/sta199-f24/sta199-f24.github.io/blob/main/ae/_chronicle-scrape-A.R) for suggested scraping code.
 
 ## Part 2 - Data analysis
 
