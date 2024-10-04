@@ -457,21 +457,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="resize-figures">Resize figures</h2>
 <p>Resize plots and figures, so you have more space for the narrative. Resize individual figures: Set <code>fig-width</code> and <code>fig-height</code> in chunk options, e.g.,</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: fenced</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: plot1</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>replacing <code>plot1</code> with a meaningful label and the height and width with values appropriate for your write up.</p>
-<p>Resize all figures: Include the <code>fig-height</code> and <code>fig-width</code> options in the YAML header as shown below:</p>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: code-cell-label</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-asp: 0.628</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>replacing <code>code-cell-label</code> with a meaningful label and the height and width with values appropriate for your write up.</p>
+<p>Resize all figures: Include the <code>fig-width</code> and <code>fig-asp</code> options in the YAML header as shown below:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fig-height</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fig-width</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fig-width</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fig-asp</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.628</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Replace the height and width values with values appropriate for your write up.</p>
 </section>
 <section id="arranging-plots" class="level2">
 <h2 class="anchored" data-anchor-id="arranging-plots">Arranging plots</h2>
 <p>Arrange plots in a grid, instead of one after the other. This is especially useful when displaying plots for exploratory data analysis and to check assumptions.</p>
-<p>If you’re using ggplot2 functions, the <a href="https://patchwork.data-imaginist.com/">patchwork package</a> makes it easy to arrange plots in a grid.</p>
-<p><em>More to be added soon…</em></p>
+<p>The <a href="https://patchwork.data-imaginist.com/">patchwork package</a> makes it easy to arrange plots in a grid.</p>
 
 
 </section>
