@@ -10,7 +10,7 @@ The goals of this milestone are as follows:
 
 -   Discuss topics you're interested in investigating and find data sets on those topics.
 
--   Identify 3 data sets you're interested in potentially using for the project.
+-   Identify 2 data sets you're interested in potentially using for the project.
 
 -   Get these datasets into R.
 
@@ -127,16 +127,21 @@ For each data set:
 -   Place the file containing your data in the `data` folder of the project repo.
 -   Use the `glimpse()` function to provide a glimpse of the data set.
 
+## Data dictionary
+
+For each data set, add a data dictionary to the `README.md` file in the `data` folder describing each variable.
+
 # Grading
 
-| Total                   | 10 pts |
-|-------------------------|--------|
-| Introduction and data   | 3      |
-| Research question       | 3      |
-| Glimpse of data         | 3      |
-| Workflow and formatting | 1      |
+| Total                   | 10 pts                    |
+|-------------------------|---------------------------|
+| Introduction and data   | 2 (1 pt for each dataset) |
+| Research question       | 2 (1 pt for each dataset) |
+| Glimpse of data         | 2 (1 pt for each dataset) |
+| Data dictionary         | 2 (1 pt for each dataset) |
+| Workflow and formatting | 2                         |
 
-Each component will be graded as follows:
+Each of the first four components will be graded as follows:
 
 -   **Meets expectations (full credit)**: All required elements are completed and are accurate.
     The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.
@@ -146,6 +151,17 @@ Each component will be graded as follows:
 
 -   **Does not meet expectations (no credit)**: Major elements missing.
     Work is not neatly formatted and would not be presentable in a professional setting.
+
+Additionally, the workflow component will be graded based on:
+
+-   organization
+-   code style
+-   informative commit messages
+-   commits from each team member
+
+::: callout-important
+Each team member must contribute, with commits, to the project proposal in order to be eligible for full credit for workflow and formatting.
+:::
 
 It is critical to check feedback on your project proposal.
 Even if you earn full credit, it may not mean that your proposal is perfect.
