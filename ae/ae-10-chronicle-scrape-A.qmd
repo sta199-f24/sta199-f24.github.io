@@ -1,7 +1,6 @@
 ---
 title: "AE 10: Opinion articles in The Chronicle"
 subtitle: "Suggested answers"
-draft: true
 editor_options: 
   chunk_output_type: console
 ---
