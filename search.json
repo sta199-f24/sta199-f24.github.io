@@ -92,7 +92,7 @@
     "href": "project/1-working-collaboratively.html",
     "title": "Working collaboratively",
     "section": "",
-    "text": "Data science is a collaborative discipline. Pretty much no data scientist works alone, so neither should you! In this course you’ll collaborate with teammates on the project.\nThe first milestone of the project, today’s activity, will introduce you to the technical aspects of collaborating on a reproducible data science project that is version controlled by Git and hosted on GitHub in a repository shared by all teammates.\nYes, this means you and all of your teammates will be pushing to the same repository! Sometimes things will go swimmingly, and sometimes you’ll run into merge conflicts.",
+    "text": "Important\n\n\n\nYou must attend this lab in person and participate in the merge conflict activity to be eligible for the points for this milestone. Team members who are not in lab in person for this activity will not be eligible for these points, regardless of their contribution level throughout the rest of the project.\nData science is a collaborative discipline. Pretty much no data scientist works alone, so neither should you! In this course you’ll collaborate with teammates on the project.\nThe first milestone of the project, today’s activity, will introduce you to the technical aspects of collaborating on a reproducible data science project that is version controlled by Git and hosted on GitHub in a repository shared by all teammates.\nYes, this means you and all of your teammates will be pushing to the same repository! Sometimes things will go swimmingly, and sometimes you’ll run into merge conflicts.",
     "crumbs": [
       "Project",
       "Milestone 1"
