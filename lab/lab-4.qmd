@@ -3,6 +3,7 @@ title: Lab 4
 subtitle: Everything so far I
 categories: Lab
 description: "Mon, Oct 7 at 8:30 am"
+lightbox: true
 ---
 
 # Introduction
