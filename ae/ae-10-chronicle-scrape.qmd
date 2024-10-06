@@ -25,7 +25,7 @@ library(tidyverse)
 # add code here
 ```
 
--   Who are the most prolific authors of the 100 most recent opinion articles in The Chronicle?
+-   Who are the most prolific authors of the 500 most recent opinion articles in The Chronicle?
 
 ```{r}
 #| label: count-authors
