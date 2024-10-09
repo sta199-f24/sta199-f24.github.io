@@ -70,7 +70,7 @@ You shouldn't feel constrained to datasets that are already in a tidy format, yo
 -   [NYC OpenData](https://opendata.cityofnewyork.us/)
 -   [Open access to Scotland's official statistics](https://statistics.gov.scot/home)
 -   [Pew Research](https://www.pewresearch.org/download-datasets/)
--   [PRISM Data Archive Project](https://www.icpsr.umich.edu/icpsrweb/content/ICPSR/fenway.html)
+-   [PRISM Data Archive Project](https://www.icpsr.umich.edu/web/pages/index.html)
 -   [Responsible Datasets in Context](https://www.responsible-datasets-in-context.com/datasets.html)
 -   [Statistics Canada](https://www.statcan.gc.ca/en/start)
 -   [TidyTuesday](https://github.com/rfordatascience/tidytuesday)
