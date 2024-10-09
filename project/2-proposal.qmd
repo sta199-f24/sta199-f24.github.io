@@ -85,6 +85,7 @@ You shouldn't feel constrained to datasets that are already in a tidy format, yo
 -   [Awesome public datasets](https://github.com/awesomedata/awesome-public-datasets)
 -   [Durham Open Data Portal](https://live-durhamnc.opendata.arcgis.com/)
 -   [Edinburgh Open Data](https://edinburghopendata.info/)
+-   [FiveThirtyEight](https://data.fivethirtyeight.com/)
 
 # Components
 
