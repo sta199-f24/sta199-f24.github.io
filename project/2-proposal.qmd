@@ -9,13 +9,9 @@ categories: "Project"
 The goals of this milestone are as follows:
 
 -   Discuss topics you're interested in investigating and find data sets on those topics.
-
 -   Identify 2 data sets you're interested in potentially using for the project.
-
 -   Get these datasets into R.
-
 -   Write up reasons and justifications for why you want to work with these datasets.
-
 -   Review your team contract.
 
 ::: callout-important
