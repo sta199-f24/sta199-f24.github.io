@@ -9,9 +9,13 @@ categories: "Project"
 The goals of this milestone are as follows:
 
 -   Discuss topics you're interested in investigating and find data sets on those topics.
+
 -   Identify 2 data sets you're interested in potentially using for the project.
+
 -   Get these datasets into R.
+
 -   Write up reasons and justifications for why you want to work with these datasets.
+
 -   Review your team contract.
 
 ::: callout-important
@@ -24,9 +28,9 @@ You must use one of the data sets in the proposal for the final project, unless 
 
 The data sets should meet the following criteria:
 
--   At least 500 observations
+-   At least 500 observations.
 
--   At least 8 columns
+-   At least 8 columns.
 
 -   At least 6 of the columns must be useful and unique explanatory variables.
 
@@ -46,18 +50,18 @@ If you set your hearts on a dataset that has fewer observations or variables tha
 You can find data wherever you like, but here are some recommendations to get you started.
 You shouldn't feel constrained to datasets that are already in a tidy format, you can start with data that needs cleaning and tidying, scrape data off the web, or collect your own data.
 
--   [Awesome public datasets](https://github.com/awesomedata/awesome-public-datasets)
+-   [UNICEF Data](https://data.unicef.org/)
+-   [Youth Risk Behavior Surveillance System (YRBSS)](https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-Youth-Risk-Behavior-Surveillance-System-YRBSS/q6p7-56au)
+-   [Google Dataset Search](https://datasetsearch.research.google.com/)
+-   [Data is Plural](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0)
+-   [Election Studies](https://electionstudies.org//)
+-   [US Census Data](https://www.census.gov/data.html)
+-   [World Bank Data](https://datacatalog.worldbank.org/home)
 -   [Bikeshare data portal](https://www.bikeshare.com/data/)
 -   [CDC](https://www.cdc.gov/datastatistics/)
--   [Data.gov](https://www.data.gov/)
--   [Data is Plural](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0)
--   [Durham Open Data Portal](https://live-durhamnc.opendata.arcgis.com/)
--   [Edinburgh Open Data](https://edinburghopendata.info/)
--   [Election Studies](https://electionstudies.org//)
 -   [European Statistics](https://ec.europa.eu/eurostat/)
 -   [CORGIS: The Collection of Really Great, Interesting, Situated Datasets](https://think.cs.vt.edu/corgis/csv/)
 -   [General Social Survey](https://gss.norc.org/)
--   [Google Dataset Search](https://datasetsearch.research.google.com/)
 -   [Harvard Dataverse](https://dataverse.harvard.edu/)
 -   [International Monetary Fund](https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&sId=1479329328660)
 -   [IPUMS survey data from around the world](https://ipums.org/)
@@ -73,14 +77,14 @@ You shouldn't feel constrained to datasets that are already in a tidy format, yo
 -   [The National Bureau of Economic Research](https://www.nber.org/research/data?page=1&perPage=50)
 -   [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)
 -   [UK Government Data](https://data.gov.uk/)
--   [UNICEF Data](https://data.unicef.org/)
 -   [United Nations Data](http://data.un.org/)
 -   [United Nations Statistics Division](https://unstats.un.org/UNSDWebsite/)
--   [US Census Data](https://www.census.gov/data.html)
 -   [US Government Data](https://sctyner.github.io/static/presentations/Misc/GraphicsGroupISU/2018-11-16-us-govt-data.html)
--   [World Bank Data](https://datacatalog.worldbank.org/home)
--   [Youth Risk Behavior Surveillance System (YRBSS)](https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-Youth-Risk-Behavior-Surveillance-System-YRBSS/q6p7-56au)
 -   [FRED Economic Data](https://fred.stlouisfed.org/)
+-   [Data.gov](https://www.data.gov/)
+-   [Awesome public datasets](https://github.com/awesomedata/awesome-public-datasets)
+-   [Durham Open Data Portal](https://live-durhamnc.opendata.arcgis.com/)
+-   [Edinburgh Open Data](https://edinburghopendata.info/)
 
 # Components
 
@@ -112,8 +116,11 @@ When writing a research question, please think about the following:
 For each data set, include the following:
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
+
 -   Statement on why this question is important.
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
+
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
 ## Glimpse of data
