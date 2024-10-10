@@ -73,7 +73,9 @@ Prepare for today's application exercise: **`{r} todays_ae`**
 
 ## Code smell {.smaller}
 
-> One way to look at smells is with respect to principles and quality: "Smells are certain structures in the code that indicate violation of fundamental design principles and negatively impact design quality". Code smells are usually not bugs; they are not technically incorrect and do not prevent the program from functioning. Instead, they indicate weaknesses in design that may slow down development or increase the risk of bugs or failures in the future.
+> One way to look at smells is with respect to principles and quality: "Smells are certain structures in the code that indicate violation of fundamental design principles and negatively impact design quality".
+> Code smells are usually not bugs; they are not technically incorrect and do not prevent the program from functioning.
+> Instead, they indicate weaknesses in design that may slow down development or increase the risk of bugs or failures in the future.
 
 ::: aside
 Source: [Code smell on Wikipedia](https://en.wikipedia.org/wiki/Code_smell)
@@ -83,15 +85,15 @@ Source: [Code smell on Wikipedia](https://en.wikipedia.org/wiki/Code_smell)
 
 Follow the [Tidyverse style guide](https://style.tidyverse.org/):
 
-- Spaces before and line breaks after each `+` when building a ggplot
+-   Spaces before and line breaks after each `+` when building a ggplot
 
-- Spaces before and line breaks after each `|>` in a data transformation pipeline,
+-   Spaces before and line breaks after each `|>` in a data transformation pipeline,
 
-- Proper indentation
+-   Proper indentation
 
-- Spaces around `=` signs and spaces after commas
+-   Spaces around `=` signs and spaces after commas
 
-- Lines should not span more than 80 characters, long lines should be broken up with each argument on its own line
+-   Lines should not span more than 80 characters, long lines should be broken up with each argument on its own line
 
 ## `{r} todays_ae` {.smaller}
 
@@ -116,29 +118,40 @@ How are you using Chat GPT or similar AI tools for this class?
 ## Example 1 - From Lab 4 {.smaller .scrollable}
 
 ::: question
-SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: "Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?" 
+SurveyUSA polled 900 NC adults between September 4-7, 2024.
+Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.
+The following question was asked to these 771 adults: "Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?"
 
-Of the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
+Of the 771 responses, 391 were between the ages of 18-49.
+Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
+Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
 
-Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample. make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.
+Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample.
+make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.
 :::
 
 ## Chat GPT - Take 1 prompt {.smaller .scrollable}
 
 ::: question
-What is wrong with this prompt? How would you correct it?
+What is wrong with this prompt?
+How would you correct it?
 :::
 
-> SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: "Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?" 
+> SurveyUSA polled 900 NC adults between September 4-7, 2024.
+> Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.
+> The following question was asked to these 771 adults: "Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?"
 
-> Of the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
+> Of the 771 responses, 391 were between the ages of 18-49.
+> Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
+> Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
 
-> Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample. Make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.
+> Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample.
+> Make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.
 
 ## Chat GPT - Take 1 response
 
 ::: question
-Identify at least one mistake or code smell/style issue with the code below. 
+Identify at least one mistake or code smell/style issue with the code below.
 :::
 
 ```{webr}
@@ -345,10 +358,13 @@ csi
 
 ## Midsemester course evaluation
 
-- Anonymous
+Take a few minutes to fill it out on Canvas \> Quizzes
 
-- Optional
+-   Anonymous
 
-- Much appreciated!
+-   Optional
 
-Take a few minutes to fill it out on Canvas > Quizzes
+-   Much appreciated!
+
+And good luck with the rest of the take-home midterm!
+♥️
