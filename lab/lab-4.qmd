@@ -246,7 +246,7 @@ a.  Fill in the code below to create a two-way table that summarizes these data.
       )
     ```
 
-For parts b-d below, use a your response single pipeline starting with `survey_counts`, calculate the desired proportions, and make sure the result is an **ungrouped** data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you're interested in.
+For parts b-d below, use a single pipeline starting with `survey_counts`, calculate the desired proportions, and make sure the result is an **ungrouped** data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you're interested in.
 
 b.  Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample.
 
