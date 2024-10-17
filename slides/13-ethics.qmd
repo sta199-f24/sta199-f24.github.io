@@ -45,7 +45,7 @@ todays_ae <- NULL
 
 # Warm-up
 
-## Announcements {.smaller}
+## Announcements
 
 -   Peer evaluation 1 due by 5:00 pm Friday (Oct 18) -- look for an email from TEAMMATES
 
