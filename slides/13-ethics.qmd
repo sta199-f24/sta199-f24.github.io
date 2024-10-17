@@ -49,6 +49,8 @@ todays_ae <- NULL
 
 -   Peer evaluation 1 due by 5:00 pm Friday (Oct 18) -- look for an email from TEAMMATES
 
+-   My office hours this week: 4:30 - 6:30 pm on Friday at Old Chem 213, back to normal next week
+
 -   Lab on Monday: Work on project proposals!
 
 # Misrepresentation
