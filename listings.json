@@ -1,11 +1,38 @@
 [
   {
-    "listing": "/exam-review.html",
+    "listing": "/course-team.html",
     "items": [
-      "/exam-review/final-review.html",
-      "/exam-review/final-review-A.html",
-      "/exam-review/midterm-review.html",
-      "/exam-review/midterm-review-A.html"
+      "/ta/anmol.html",
+      "/ta/aurora.html",
+      "/ta/avery.html",
+      "/ta/dav.html",
+      "/ta/dom.html",
+      "/ta/emily.html",
+      "/ta/federico.html",
+      "/ta/grace.html",
+      "/ta/hyunjin.html",
+      "/ta/janice.html",
+      "/ta/jasmine.html",
+      "/ta/john.html",
+      "/ta/jonathan.html",
+      "/ta/kareena.html",
+      "/ta/liane.html",
+      "/ta/lynn.html",
+      "/ta/marie.html",
+      "/ta/netra.html",
+      "/ta/noah.html",
+      "/ta/sarah.html",
+      "/ta/sonya.html"
+    ]
+  },
+  {
+    "listing": "/lab.html",
+    "items": [
+      "/lab/lab-0.html",
+      "/lab/lab-1.html",
+      "/lab/lab-2.html",
+      "/lab/lab-3.html",
+      "/lab/lab-4.html"
     ]
   },
   {
@@ -35,39 +62,12 @@
     ]
   },
   {
-    "listing": "/lab.html",
+    "listing": "/exam-review.html",
     "items": [
-      "/lab/lab-0.html",
-      "/lab/lab-1.html",
-      "/lab/lab-2.html",
-      "/lab/lab-3.html",
-      "/lab/lab-4.html"
-    ]
-  },
-  {
-    "listing": "/course-team.html",
-    "items": [
-      "/ta/anmol.html",
-      "/ta/aurora.html",
-      "/ta/avery.html",
-      "/ta/dav.html",
-      "/ta/dom.html",
-      "/ta/emily.html",
-      "/ta/federico.html",
-      "/ta/grace.html",
-      "/ta/hyunjin.html",
-      "/ta/janice.html",
-      "/ta/jasmine.html",
-      "/ta/john.html",
-      "/ta/jonathan.html",
-      "/ta/kareena.html",
-      "/ta/liane.html",
-      "/ta/lynn.html",
-      "/ta/marie.html",
-      "/ta/netra.html",
-      "/ta/noah.html",
-      "/ta/sarah.html",
-      "/ta/sonya.html"
+      "/exam-review/final-review.html",
+      "/exam-review/final-review-A.html",
+      "/exam-review/midterm-review.html",
+      "/exam-review/midterm-review-A.html"
     ]
   }
 ]
