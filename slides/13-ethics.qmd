@@ -732,7 +732,7 @@ A conversation with UCLA internet studies scholar Safiya Noble \
 
 by Julia Busiek
 
-## Parting thoughts
+## Parting thoughts {.smaller}
 
 - At some point during your data science learning journey you will learn tools that can be used unethically
 
