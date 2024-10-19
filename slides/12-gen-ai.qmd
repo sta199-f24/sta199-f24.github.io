@@ -1,0 +1,370 @@
+---
+title: "Working with Generative AI tools"
+subtitle: "Lecture 12"
+date: "2024-10-10"
+format: 
+  live-revealjs: 
+    output-file: 12-gen-ai-slides.html
+webr:
+  cell-options:
+    autorun: false
+  packages:
+    - tidyverse
+  resources:
+    - https://raw.githubusercontent.com/sta199-f24/sta199-f24.github.io/main/slides/data/tv.csv
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+tv <- read_csv("https://raw.githubusercontent.com/sta199-f24/sta199-f24.github.io/main/slides/data/tv.csv")
+```
+
+<!-- end: webr fodder -->
+
+<!-- begin: ae definition -->
+
+```{r}
+#| include: false
+todays_ae <- "ae-11-un-votes-revisit-chatgpt"
+```
+
+<!-- end: ae definition -->
+
+# Warm-up
+
+## While you wait... {.smaller}
+
+Prepare for today's application exercise: **`{r} todays_ae`**
+
+::: appex
+-   Go to your `ae` project in RStudio.
+
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   Click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Wait till the you're prompted to work on the application exercise during class before editing the file.
+:::
+
+## Announcements {.smaller}
+
+-   Midterm take-home due at 5:00 pm tomorrow (Friday, Oct 11)
+    -   Upload to Gradescope **and**
+    -   Commit and push to your GitHub repo
+
+. . .
+
+-   Midsemester course evaluation due at midnight tonight (optional) -- there will be some time at the end of class today to fill them out
+
+-   Peer evaluation 1 due by 5:00 pm next Friday (Oct 18) -- look for an email from TEAMMATES
+
+-   Readings and videos for next Thursday's class posted on the course website
+
+# Code smell and style
+
+## Code smell {.smaller}
+
+> One way to look at smells is with respect to principles and quality: "Smells are certain structures in the code that indicate violation of fundamental design principles and negatively impact design quality".
+> Code smells are usually not bugs; they are not technically incorrect and do not prevent the program from functioning.
+> Instead, they indicate weaknesses in design that may slow down development or increase the risk of bugs or failures in the future.
+
+::: aside
+Source: [Code smell on Wikipedia](https://en.wikipedia.org/wiki/Code_smell)
+:::
+
+## Code style {.smaller}
+
+Follow the [Tidyverse style guide](https://style.tidyverse.org/):
+
+-   Spaces before and line breaks after each `+` when building a ggplot
+
+-   Spaces before and line breaks after each `|>` in a data transformation pipeline,
+
+-   Proper indentation
+
+-   Spaces around `=` signs and spaces after commas
+
+-   Lines should not span more than 80 characters, long lines should be broken up with each argument on its own line
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through Part 1 of the application exercise in class, and render, commit, and push your edits by the end of class.
+:::
+
+# The 🐘 in the room: Chat GPT (and friends)
+
+## Take a pulse
+
+::: question
+How are you using Chat GPT or similar AI tools for this class?
+:::
+
+## Example 1 - From Lab 4 {.smaller .scrollable}
+
+::: question
+SurveyUSA polled 900 NC adults between September 4-7, 2024.
+Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.
+The following question was asked to these 771 adults: "Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?"
+
+Of the 771 responses, 391 were between the ages of 18-49.
+Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
+Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
+
+Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample.
+make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.
+:::
+
+## Chat GPT - Take 1 prompt {.smaller .scrollable}
+
+::: question
+What is wrong with this prompt?
+How would you correct it?
+:::
+
+> SurveyUSA polled 900 NC adults between September 4-7, 2024.
+> Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.
+> The following question was asked to these 771 adults: "Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?"
+
+> Of the 771 responses, 391 were between the ages of 18-49.
+> Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
+> Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
+
+> Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample.
+> Make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.
+
+## Chat GPT - Take 1 response
+
+::: question
+Identify at least one mistake or code smell/style issue with the code below.
+:::
+
+```{webr}
+library(dplyr)
+
+# Create the initial data frame with counts
+survey_counts <- tibble( 
+  age = c("18-49", "18-49", "18-49", "50+", "50+", "50+"),
+  opinion = c("Against", "Legal", "Not sure", "Against", "Legal", "Not sure"),
+  n = c(59, 292, 40, 67, 245, 59)
+)
+
+# Group by age and summarize total counts
+age_totals <- survey_counts %>%
+  group_by(age) %>%
+  summarize(total_count = sum(n)) %>%
+  ungroup()
+
+# Calculate the overall total
+overall_total <- sum(age_totals$total_count)
+
+# Add the proportion column
+age_totals <- age_totals %>%
+  mutate(proportion = total_count / overall_total)
+
+# Resulting data frame
+age_totals
+```
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through Part 2 of the application exercise in class, and render, commit, and push your edits by the end of class.
+:::
+
+## Let's follow along with Chat GPT...
+
+<https://chatgpt.com/share/6707d8c3-98c4-8000-9732-e65bc5be916b>
+
+## Example 2 {.smaller}
+
+::: question
+Each CSI franchise includes a number of series, each with the character string `"CSI"` (in capital letters) in their title.
+Using this information, create a new data frame called `csi` that only has titles from the CSI-verse and all of the columns from `tv` for these titles.
+Then, display the first 10 rows of `csi`.
+**Note:** The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired.
+:::
+
+## Chat GPT - Take 1 prompt
+
+> Each CSI franchise includes a number of series, each with the character string `"CSI"` (in capital letters) in their title.
+> Using this information, create a new data frame called `csi` that only has titles from the CSI-verse and all of the columns from `tv` for these titles.
+> Then, display the first 10 rows of `csi`.
+> **Note:** The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired.
+
+## Chat GPT - Take 1 response {.xsmall}
+
+> Certainly!
+> To filter the `tv` data frame to include only titles from the CSI-verse, you can use the `filter` function from the `dplyr` package.
+> Here's the code:
+>
+> ``` r
+> library(dplyr)
+>
+> # Assuming your dataset is named 'tv'
+> csi <- tv %>%
+>   filter(str_detect(title, "CSI", case_insensitive = TRUE))
+>
+> # Display the first 10 rows of the 'csi' data frame
+> head(csi, 10)
+> ```
+>
+> This code uses the `filter` function to select rows where the `title` column contains the string "CSI" (case-insensitive).
+> The resulting data frame, `csi`, will include only titles from the CSI-verse along with all the columns from the original `tv` data frame.
+> Make sure to replace 'tv' with the actual name of your dataset.
+
+## Chat GPT - Take 1 code {.xsmall}
+
+::: question
+What is wrong with the following code?
+:::
+
+```{webr}
+#| message: false
+tv <- read_csv("data/tv.csv")
+```
+
+```{webr}
+library(dplyr)
+
+# Assuming your dataset is named 'tv'
+csi <- tv %>%
+  filter(str_detect(title, "CSI", case_insensitive = TRUE))
+
+# Display the first 10 rows of the 'csi' data frame
+head(csi, 10)
+```
+
+## Chat GPT - Take 2 prompt
+
+> str_detect doesn't have a case_insensitive argument, can you try again?
+
+## Chat GPT - Take 2 response {.xsmall}
+
+> You are correct, and I appreciate your understanding.
+> The `str_detect` function itself doesn't have a `case_insensitive` argument.
+> Instead, you can use the `str_which` function along with the `case_insensitive` argument in the `filter` function.
+> Here's the corrected code:
+>
+> ``` r
+> library(dplyr)
+>
+> # Assuming your dataset is named 'tv'
+> csi <- tv %>%
+>   filter(str_detect(title, "CSI", ignore_case = TRUE))
+>
+> # Display the first 10 rows of the 'csi' data frame
+> head(csi, 10)
+> ```
+>
+> This code uses `str_detect` within the `filter` function and includes the `ignore_case = TRUE` argument to perform a case-insensitive search.
+> The resulting `csi` data frame will contain only titles from the CSI-verse along with all the columns from the original `tv` data frame.
+> Make sure to replace 'tv' with the actual name of your dataset.
+
+## Chat GPT - Take 2 code {.smaller}
+
+```{webr}
+#| error: true
+
+library(dplyr)
+
+# Assuming your dataset is named 'tv'
+csi <- tv %>%
+  filter(str_detect(title, "CSI", ignore_case = TRUE))
+
+# Display the first 10 rows of the 'csi' data frame
+head(csi, 10)
+```
+
+## Chat GPT - Take 3 prompt
+
+> str_detect doesn't have an ignore_case argument either, can you try again?
+
+## Chat GPT - Take 3 response {.xsmall}
+
+> I apologize for the oversight.
+> It seems there was a mistake in my responses.
+> To perform a case-insensitive search, you can use the `stringi` package along with `stri_detect_regex`.
+> Here's the corrected code:
+>
+> ``` r
+> library(dplyr)
+> library(stringi)
+>
+> # Assuming your dataset is named 'tv'
+> csi <- tv %>%
+>   filter(stri_detect_regex(title, "CSI", case_insensitive = TRUE))
+>
+> # Display the first 10 rows of the 'csi' data frame
+> head(csi, 10)
+> ```
+>
+> This code uses `stri_detect_regex` from the `stringi` package within the `filter` function, and it includes the `case_insensitive = TRUE` argument for a case-insensitive search.
+> The resulting `csi` data frame will contain only titles from the CSI-verse along with all the columns from the original `tv` data frame.
+> Make sure to replace 'tv' with the actual name of your dataset.
+
+## Let's go back to Take 1 {.smaller}
+
+and edit it a bit:
+
+```{webr}
+tv |>
+  filter(str_detect(title, "CSI"))
+```
+
+## Let's go back to Take 1 {.smaller}
+
+```{webr}
+csi <- tv |>
+  filter(str_detect(title, "CSI"))
+
+csi
+```
+
+## Guidelines and best practices for using Chat GPT {.smaller}
+
+::: incremental
+-   Do [**not**]{.underline} just copy-paste the prompt – for appropriate academic conduct, for your own learning, and for getting to better results faster
+-   Engineer the prompt until the response starts to look like code you're learning in the course
+-   If the response is not correct, ask for a correction
+-   If the response doesn't follow the guidelines, ask for a correction
+-   When you ask for a correction, be ready for it to "correct" (i.e., change) more than you asked for
+-   Do not just copy-paste code from Chat GPT responses, run it line-by-line and edit as needed -- Chat GPT does not execute R code so there's no guarantee any of the code it gives you works
+-   Watch out for clear mistakes in the response: do not keep loading packages that are already loaded, use the base pipe `|>`, use the tidyverse style, do not use unnecessary `print()` statements, be critical of code smell, etc.
+:::
+
+# Time permitting
+
+## Midsemester course evaluation
+
+Take a few minutes to fill it out on Canvas \> Quizzes
+
+-   Anonymous
+
+-   Optional
+
+-   Much appreciated!
+
+And good luck with the rest of the take-home midterm!
+♥️

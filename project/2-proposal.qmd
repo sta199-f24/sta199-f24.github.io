@@ -10,7 +10,7 @@ The goals of this milestone are as follows:
 
 -   Discuss topics you're interested in investigating and find data sets on those topics.
 
--   Identify 3 data sets you're interested in potentially using for the project.
+-   Identify 2 data sets you're interested in potentially using for the project.
 
 -   Get these datasets into R.
 
@@ -28,9 +28,9 @@ You must use one of the data sets in the proposal for the final project, unless 
 
 The data sets should meet the following criteria:
 
--   At least 500 observations
+-   At least 500 observations.
 
--   At least 8 columns
+-   At least 8 columns.
 
 -   At least 6 of the columns must be useful and unique explanatory variables.
 
@@ -50,18 +50,18 @@ If you set your hearts on a dataset that has fewer observations or variables tha
 You can find data wherever you like, but here are some recommendations to get you started.
 You shouldn't feel constrained to datasets that are already in a tidy format, you can start with data that needs cleaning and tidying, scrape data off the web, or collect your own data.
 
--   [Awesome public datasets](https://github.com/awesomedata/awesome-public-datasets)
+-   [UNICEF Data](https://data.unicef.org/)
+-   [Youth Risk Behavior Surveillance System (YRBSS)](https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-Youth-Risk-Behavior-Surveillance-System-YRBSS/q6p7-56au)
+-   [Google Dataset Search](https://datasetsearch.research.google.com/)
+-   [Data is Plural](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0)
+-   [Election Studies](https://electionstudies.org//)
+-   [US Census Data](https://www.census.gov/data.html)
+-   [World Bank Data](https://datacatalog.worldbank.org/home)
 -   [Bikeshare data portal](https://www.bikeshare.com/data/)
 -   [CDC](https://www.cdc.gov/datastatistics/)
--   [Data.gov](https://www.data.gov/)
--   [Data is Plural](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0)
--   [Durham Open Data Portal](https://live-durhamnc.opendata.arcgis.com/)
--   [Edinburgh Open Data](https://edinburghopendata.info/)
--   [Election Studies](https://electionstudies.org//)
 -   [European Statistics](https://ec.europa.eu/eurostat/)
 -   [CORGIS: The Collection of Really Great, Interesting, Situated Datasets](https://think.cs.vt.edu/corgis/csv/)
 -   [General Social Survey](https://gss.norc.org/)
--   [Google Dataset Search](https://datasetsearch.research.google.com/)
 -   [Harvard Dataverse](https://dataverse.harvard.edu/)
 -   [International Monetary Fund](https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&sId=1479329328660)
 -   [IPUMS survey data from around the world](https://ipums.org/)
@@ -70,21 +70,22 @@ You shouldn't feel constrained to datasets that are already in a tidy format, yo
 -   [NYC OpenData](https://opendata.cityofnewyork.us/)
 -   [Open access to Scotland's official statistics](https://statistics.gov.scot/home)
 -   [Pew Research](https://www.pewresearch.org/download-datasets/)
--   [PRISM Data Archive Project](https://www.icpsr.umich.edu/icpsrweb/content/ICPSR/fenway.html)
+-   [PRISM Data Archive Project](https://www.icpsr.umich.edu/web/pages/index.html)
 -   [Responsible Datasets in Context](https://www.responsible-datasets-in-context.com/datasets.html)
 -   [Statistics Canada](https://www.statcan.gc.ca/en/start)
 -   [TidyTuesday](https://github.com/rfordatascience/tidytuesday)
 -   [The National Bureau of Economic Research](https://www.nber.org/research/data?page=1&perPage=50)
 -   [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)
 -   [UK Government Data](https://data.gov.uk/)
--   [UNICEF Data](https://data.unicef.org/)
 -   [United Nations Data](http://data.un.org/)
 -   [United Nations Statistics Division](https://unstats.un.org/UNSDWebsite/)
--   [US Census Data](https://www.census.gov/data.html)
 -   [US Government Data](https://sctyner.github.io/static/presentations/Misc/GraphicsGroupISU/2018-11-16-us-govt-data.html)
--   [World Bank Data](https://datacatalog.worldbank.org/home)
--   [Youth Risk Behavior Surveillance System (YRBSS)](https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-Youth-Risk-Behavior-Surveillance-System-YRBSS/q6p7-56au)
 -   [FRED Economic Data](https://fred.stlouisfed.org/)
+-   [Data.gov](https://www.data.gov/)
+-   [Awesome public datasets](https://github.com/awesomedata/awesome-public-datasets)
+-   [Durham Open Data Portal](https://live-durhamnc.opendata.arcgis.com/)
+-   [Edinburgh Open Data](https://edinburghopendata.info/)
+-   [FiveThirtyEight](https://data.fivethirtyeight.com/)
 
 # Components
 
@@ -116,8 +117,11 @@ When writing a research question, please think about the following:
 For each data set, include the following:
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
+
 -   Statement on why this question is important.
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
+
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
 ## Glimpse of data
@@ -127,16 +131,21 @@ For each data set:
 -   Place the file containing your data in the `data` folder of the project repo.
 -   Use the `glimpse()` function to provide a glimpse of the data set.
 
+## Data dictionary
+
+For each data set, add a data dictionary to the `README.md` file in the `data` folder describing each variable.
+
 # Grading
 
-| Total                   | 10 pts |
-|-------------------------|--------|
-| Introduction and data   | 3      |
-| Research question       | 3      |
-| Glimpse of data         | 3      |
-| Workflow and formatting | 1      |
+| Total                   | 10 pts                    |
+|-------------------------|---------------------------|
+| Introduction and data   | 2 (1 pt for each dataset) |
+| Research question       | 2 (1 pt for each dataset) |
+| Glimpse of data         | 2 (1 pt for each dataset) |
+| Data dictionary         | 2 (1 pt for each dataset) |
+| Workflow and formatting | 2                         |
 
-Each component will be graded as follows:
+Each of the first four components will be graded as follows:
 
 -   **Meets expectations (full credit)**: All required elements are completed and are accurate.
     The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.
@@ -146,6 +155,17 @@ Each component will be graded as follows:
 
 -   **Does not meet expectations (no credit)**: Major elements missing.
     Work is not neatly formatted and would not be presentable in a professional setting.
+
+Additionally, the workflow component will be graded based on:
+
+-   organization
+-   code style
+-   informative commit messages
+-   commits from each team member
+
+::: callout-important
+Each team member must contribute, with commits, to the project proposal in order to be eligible for full credit for workflow and formatting.
+:::
 
 It is critical to check feedback on your project proposal.
 Even if you earn full credit, it may not mean that your proposal is perfect.

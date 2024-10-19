@@ -1,0 +1,745 @@
+---
+title: "Data science ethics"
+subtitle: "Lecture 13"
+date: "2024-10-17"
+format: 
+  live-revealjs: 
+    output-file: 13-ethics-slides.html
+webr:
+  cell-options:
+    autorun: false
+  packages:
+    - tidyverse
+    - scales
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+```{r}
+#| include: false
+library(tidyverse)
+library(scales)
+```
+
+<!-- end: webr fodder -->
+
+<!-- begin: ae definition -->
+
+```{r}
+#| include: false
+todays_ae <- NULL
+```
+
+<!-- end: ae definition -->
+
+# Warm-up
+
+## Announcements
+
+-   Peer evaluation 1 due by 5:00 pm Friday (Oct 18) -- look for an email from TEAMMATES
+
+-   My office hours this week: 4:30 - 6:30 pm on Friday at Old Chem 213, back to normal next week
+
+-   Lab on Monday: Work on project proposals!
+
+# Misrepresentation
+
+## Misrepresenting data science results {.smaller}
+
+Some common ways people do this, either intentionally or unintentionally, include:
+
+::: incremental
+-   Claiming **causality** where it's not in the scope of inference of the underlying study
+
+-   Distorting **axes and scales** to make the data tell a different story
+
+-   Visualizing **spatial areas instead of human density** for issues that depend on and affect humans
+
+-   Omitting **uncertainty** in reporting
+:::
+
+## Causality - TIME coverage
+
+::: question
+How plausible is the statement in the title of this article?
+:::
+
+![](images/13/exercise-cancer-time.png)
+
+::: aside
+Alice Park.
+[Exercise Can Lower Risk of Some Cancers By 20%](https://time.com/4330041/reduce-cancer-risk-exercise/).
+Time Magazine.
+16 May 2016.
+:::
+
+## Causality - LA Times coverage
+
+::: question
+What does "research shows" mean?
+:::
+
+![](images/13/exercise-cancer-latimes.png)
+
+::: aside
+Melissa Healy.
+[Exercising drives down risk for 13 cancers, research shows](https://www.latimes.com/science/sciencenow/la-sci-sn-exercising-cancer-20160516-story.html).\
+Los Angeles Times.
+16 May 2016.
+:::
+
+## Causality - Original study {.smaller}
+
+Moore, Steven C., et al. [**"Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults."**](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2521826) JAMA internal medicine 176.6 (2016): 816-825.
+
+-   **Volunteers** were **asked** about their physical activity level over the preceding year.
+-   Half exercised less than about 150 minutes per week, half exercised more.
+-   Compared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.
+-   Researchers found no association between exercising and 13 other cancers (e.g. pancreatic, ovarian, and brain).
+
+::: notes
+Carl Bergstrom and Jevin West.
+[Calling Bullshit: The art of skepticism in a data-driven world](https://www.callingbullshit.org/).\
+Random House, 2020.\
+Sharon Begley.
+["Does exercise prevent cancer?"](https://www.statnews.com/2016/05/16/exercise-prevent-cancer/).
+StatNews.
+16 May 2016.
+:::
+
+## Axes and scales - Tax cuts {.smaller}
+
+::: question
+What is the difference between these two pictures?
+Which presents a better way to represent these data?
+:::
+
+![](images/13/axis-start-at-0.png)
+
+::: aside
+Christopher Ingraham.
+["You’ve been reading charts wrong. Here’s how a pro does it."](https://www.washingtonpost.com/business/2019/10/14/youve-been-reading-charts-wrong-heres-how-pro-does-it/).
+The Washington Post.
+14 October 2019.
+:::
+
+## Axes and scales - Cost of gas {.smaller}
+
+::: question
+What is wrong with this picture?
+How would you correct it?
+:::
+
+![](images/13/cost-of-gas.png)
+
+## Axes and scales - Cost of gas {.scrollable}
+
+```{webr}
+#| out-width: 100%
+df <- tibble(
+  date = ymd(c("2019-11-01", "2020-10-25", "2020-11-01")),
+  cost = c(3.17, 3.51, 3.57)
+)
+ggplot(df, aes(x = date, y = cost, group = 1)) +
+  geom_point() +
+  geom_line() +
+  geom_label(aes(label = cost), hjust = -0.25) +
+  labs(
+    title = "Cost of gas",
+    subtitle = "National average",
+    x = NULL, y = NULL, 
+    caption = "Source: AAA Fuel Gauge Report"
+  ) +
+  scale_x_continuous(
+    breaks = ymd(c("2019-11-01", "2020-10-25", "2020-11-01")), 
+    labels = c("Last year", "Last week", "Current"),
+    guide = guide_axis(angle = 90),
+    limits = ymd(c("2019-11-01", "2020-11-29")),
+    minor_breaks = ymd(c("2019-11-01", "2020-10-25", "2020-11-01"))
+  ) +
+  scale_y_continuous(labels = label_dollar())
+```
+
+## Axes and scales - COVID in GA {.smaller}
+
+::: question
+What is wrong with this picture?
+How would you correct it?
+:::
+
+![](images/13/ga-dph-declining-bars.jpg){width="750"}
+
+::: aside
+Georgia Department of Public Health.
+11 May 2020.
+:::
+
+## Axes and scales - COVID in GA
+
+![](images/13/ga-dph-corrected-bars.png){width="900"}
+
+::: aside
+Lucy D'Agostino McGowan.
+[Graph detective](https://livefreeordichotomize.com/posts/2020-05-17-graph-detective/).
+Live Free or Dichotomize.
+17 May 2020.
+:::
+
+## Axes and scales - PP services {.smaller}
+
+::: columns
+::: {.column width="40%"}
+::: question
+What is wrong with this picture?
+How would you correct it?
+:::
+
+:::
+::: {.column width="60%"}
+![](images/13/pp-misleading.png)
+:::
+:::
+
+::: aside
+Timothy B. Lee.
+[Whatever you think of Planned Parenthood, this is a terrible and dishonest chart](https://www.vox.com/2015/9/29/9417845/planned-parenthood-terrible-chart).
+Vox.
+29 September 2019.
+:::
+
+## Axes and scales - PP services {.scrollable}
+
+```{webr}
+pp <- tibble(
+  year = c(2006, 2006, 2013, 2013),
+  service = c("Abortion", "Cancer", "Abortion", "Cancer"),
+  n = c(289750, 2007371, 327000, 935573)
+)
+
+ggplot(pp, aes(x = year, y = n, color = service)) +
+  geom_point(size = 2) +
+  geom_line(linewidth = 1) +
+  geom_text(aes(label = n), nudge_y = 100000) +
+  geom_text(
+    aes(label = year), 
+    nudge_y = 200000, 
+    color = "darkgray"
+  ) +
+  labs(
+    title = "Services provided by Planned Parenthood",
+    caption = "Source: Planned Parenthood",
+    x = NULL,
+    y = NULL
+  ) +
+  scale_x_continuous(breaks = c(2006, 2013)) +
+  scale_y_continuous(labels = label_number(big.mark = ",")) +
+  scale_color_manual(values = c("red", "purple")) +
+  annotate(
+    geom = "text",
+    label = "Abortions",
+    x = 2009.5,
+    y = 400000,
+    color = "red"
+  ) +
+  annotate(
+    geom = "text",
+    label = "Cancer screening\nand prevention services",
+    x = 2010.5,
+    y = 1600000, 
+    color = "purple"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+## Maps and areas - Voting map
+
+::: question
+Do you recognize this map?
+What does it show?
+:::
+
+![](images/13/election-2016-county.png)
+
+::: aside
+Lazaro Gamio.
+["Election maps are telling you big lies about small things"](https://www.washingtonpost.com/graphics/politics/2016-election/how-election-maps-lie/).
+The Washington Post.
+1 Nov 2016.
+:::
+
+## Maps and areas - Two alternate tales
+
+::::: columns
+::: column
+![](images/13/citizens-for-trump.png){width="350"}
+:::
+
+::: column
+![](images/13/counties-for-trump.png){width="350"}
+:::
+:::::
+
+::: aside
+Alberto Cairo.
+[Visual Trumpery talk](https://visualtrumperytour.wordpress.com/).
+:::
+
+## Maps and areas - Voting percentages
+
+![](images/13/cairo-vote-percentages.png){width="800"}
+
+::: aside
+Alberto Cairo.
+[Visual Trumpery talk](https://visualtrumperytour.wordpress.com/).
+:::
+
+## Maps and areas - Voting percentages
+
+![](images/13/cairo-what-matters.png)
+
+::: aside
+Alberto Cairo.
+[Visual Trumpery talk](https://visualtrumperytour.wordpress.com/).
+:::
+
+## Uncertainty - Catalan independence {.smaller}
+
+On December 19, 2014, the front page of Spanish national newspaper El País read *"Catalan public opinion swings toward 'no' for independence, says survey"*.
+
+```{r}
+#| label: catalan-misleading
+#| echo: false
+#| fig-asp: 0.4
+#| out-width: 100%
+catalan <- tibble(
+  response = c("No", "Yes", "No answer"),
+  rate     = c(45.3, 44.5, 10.2)
+) |>
+  mutate(response = fct_relevel(response, "No", "Yes", "No answer"))
+
+ggplot(catalan, aes(y = fct_rev(response), x = rate, color = response, group = response)) +
+  geom_point(size = 3) +
+  geom_segment(
+    aes(
+      x = 0, xend = rate,
+      y = fct_rev(response), yend = fct_rev(response)
+    ),
+    linewidth = 2
+  ) +
+  scale_color_manual(values = c("#5C8AA9", "#9D303A", "gray")) +
+  scale_x_continuous(labels = label_percent(scale = 1)) +
+  guides(color = "none") +
+  theme_minimal(base_size = 16) +
+  labs(
+    title = "Do you want Catalonia to become an independent state?",
+    caption = "Margin of error: +/-2.95% at 95% confidence level",
+    x = NULL, y = NULL
+  )
+```
+
+::: aside
+Alberto Cairo.
+[The truthful art: Data, charts, and maps for communication](http://www.thefunctionalart.com/p/the-truthful-art-book.html).
+New Riders, 2016.
+:::
+
+## Uncertainty - Catalan independence {.smaller}
+
+```{r}
+#| label: catalan-corrected
+#| echo: false
+#| out-width: 100%
+#| fig-asp: 0.4
+catalan <- catalan |>
+  mutate(
+    low = rate - 2.95,
+    high = rate + 2.95
+  )
+ggplot(catalan, aes(y = fct_rev(response), x = rate, color = response, group = response)) +
+  geom_segment(
+    aes(
+      x = low, xend = high,
+      y = fct_rev(response), 
+      yend = fct_rev(response)
+    ),
+    linewidth = 0.8, color = "black"
+  ) +
+  geom_point(size = 4) +
+  scale_color_manual(values = c("#5C8AA9", "#9D303A", "gray")) +
+  scale_x_continuous(labels = label_percent(scale = 1)) +
+  guides(color = "none") +
+  theme_minimal(base_size = 16) +
+  labs(
+    title = "Do you want Catalonia to become an independent state?",
+    caption = "The probability of the tiny difference between the\n'No' and 'Yes' being just due to random chance is very high.",
+    x = NULL, y = NULL
+  )
+```
+
+::: aside
+Alberto Cairo.
+["Uncertainty and Graphicacy: How Should Statisticians Journalists and Designers Reveal Uncertainty in Graphics for Public Consumption?"](https://ec.europa.eu/eurostat/cros/powerfromstatistics/OR/PfS-OutlookReport-Cairo.pdf), Power from Statistics: Data Information and Knowledge, 2017.
+:::
+
+# Privacy
+
+## "Your" data
+
+-   Every time we use apps, websites, and devices, our data is being collected and used or sold to others.
+
+-   More importantly, decisions are made by law enforcement, financial institutions, and governments based on data that directly affect the lives of people.
+
+## Privacy of your data {.smaller}
+
+::: question
+What pieces of data have you left on the internet today?
+Think through everything you've logged into, clicked on, checked in, either actively or automatically, that might be tracking you.
+Do you know where that data is stored?
+Who it can be accessed by?
+Whether it's shared with others?
+:::
+
+## Sharing your data {.smaller}
+
+::: question
+What are you OK with sharing?
+:::
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+-   Name
+-   Age
+-   Email
+-   Phone Number
+-   List of every video you watch
+-   List of every video you comment on
+:::
+:::
+
+::: {.column width="50%"}
+::: incremental
+-   How you type: speed, accuracy
+-   How long you spend on different content
+-   List of all your private messages (date, time, person sent to)
+-   Info about your photos (how it was taken, where it was taken (GPS), when it was taken)
+:::
+:::
+:::
+
+## What does Google think/know about you?
+
+::: question
+Have you ever thought about why you're seeing an ad on Google?
+Google it!
+Try to figure out if you have ad personalization on and how your ads are personalized.
+:::
+
+## Your browsing history
+
+::: question
+Which of the following are you OK with your browsing history to be used towards?
+:::
+
+::: incremental
+-   For serving you targeted ads
+-   To score you as a candidate for a job
+-   To predict your race/ethnicity for voting purposes
+:::
+
+## Who else gets to use your data?
+
+::: question
+Suppose you create a profile on a social media site and share your personal information on your profile.
+Who else gets to use that data?
+:::
+
+::: incremental
+-   Companies the social media company has a connection to?
+-   Companies the social media company sells your data to?
+-   Researchers?
+:::
+
+## AOL search data leak {.smaller}
+
+![](images/13/aol-data-leak.png){width="800"}
+
+::: aside
+Michael Barbaro and Tom Zeller Jr. [A Face Is Exposed for AOL Searcher No. 4417749](https://www.nytimes.com/2006/08/09/technology/09aol.html).  
+New York Times. 9 August 2006.
+:::
+
+## OK Cupid data breach
+
+- In 2016, researchers published data of 70,000 OkCupid users—including usernames, political leanings, drug usage, and intimate sexual details
+
+- Researchers didn't release the real names and pictures of OKCupid users, but their identities could easily be uncovered from the details provided, e.g. usernames
+
+## OK Cupid data breach
+
+![](images/13/okcupid-tweet.png)
+
+## OK Cupid data breach
+
+>Some may object to the ethics of gathering and releasing this data. However, all the data found in the dataset are or were already publicly available, so releasing this dataset merely presents it in a more useful form. 
+>
+>Researchers Emil Kirkegaard and Julius Daugbjerg Bjerrekær
+
+## Data privacy
+
+::: question
+In analysis of data that individuals willingly shared publicly on a given platform (e.g. social media), how do you make sure you don't violate reasonable expectations of privacy?
+:::
+
+# Algorithmic bias
+
+## Garbage in, garbage out
+
+- In statistical modeling and inference we talk about "garbage in, garbage out" – if you don’t have good (random, representative) data, results of your analysis will not be reliable or generalizable.
+
+- Corollary: Bias in, bias out.
+
+## Google Translate {.smaller}
+
+::: question
+What might be the reason for Google’s gendered translation? How do ethics play into this situation?
+:::
+
+![](images/13/google-translate.png)
+
+::: aside
+Source: [Engadget - Google is working to remove gender bias in its translations](https://www.engadget.com/2018-12-07-google-remove-gender-bias-translations.html)
+:::
+
+## Machine Bias {.smaller}
+
+2016 ProPublica article on algorithm used for rating a defendant's risk of future crime:
+
+::: columns
+::: {.column width="70%"}
+> In forecasting who would re-offend, the algorithm made mistakes with black and white defendants at roughly the same rate but in very different ways.
+>
+> -   The formula was particularly likely to falsely flag black defendants as future criminals, wrongly labeling them this way at almost twice the rate as white defendants.
+>
+> -   White defendants were mislabeled as low risk more often than black defendants.
+:::
+
+::: {.column width="30%"}
+![](images/13/machine-bias.png){fig-align="center" width="800"}
+:::
+:::
+
+::: aside
+Source: [ProPublica](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
+:::
+
+## Risk score errors
+
+::: columns
+::: {.column width="35%"}
+::: question
+What is common among the defendants who were assigned a high/low risk score for reoffending?
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="30%"}
+![](images/13/machine-bias-petty-theft-1.png){fig-align="center" width="300" height="250"} ![](images/13/machine-bias-petty-theft-2.png){fig-align="center" width="300" height="180"}
+:::
+
+::: {.column width="30%"}
+![](images/13/machine-bias-drug-posession-1.png){fig-align="center" width="300" height="250"} ![](images/13/machine-bias-drug-posession-2.png){fig-align="center" width="300" height="180"}
+:::
+:::
+
+## Risk scores
+
+::: columns
+::: {.column width="35%"}
+::: question
+How can an algorithm that doesn't use race as input data be racist?
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+![](images/13/machine-bias-risk-scores.png){fig-align="center" width="480"}
+:::
+:::
+
+## Predicting ethnicity {.xxsmall}
+
+[Improving Ecological Inference by Predicting Individual Ethnicity from Voter Registration Record](https://imai.fas.harvard.edu/research/race.html) (Imran and Khan, 2016)
+
+> In both political behavior research and voting rights litigation, turnout and vote choice for different racial groups are often inferred using aggregate election results and racial composition.
+> Over the past several decades, many statistical methods have been proposed to address this ecological inference problem.
+> We propose an alternative method to reduce aggregation bias by predicting individual-level ethnicity from voter registration records.
+> Building on the existing methodological literature, we use Bayes’s rule to combine the Census Bureau’s Surname List with various information from geocoded voter registration records.
+> We evaluate the performance of the proposed methodology using approximately nine million voter registration records from Florida, where self-reported ethnicity is available.
+> We find that it is possible to reduce the false positive rate among Black and Latino voters to 6% and 3%, respectively, while maintaining the true positive rate above 80%.
+> Moreover, we use our predictions to estimate turnout by race and find that our estimates yields substantially less amounts of bias and root mean squared error than standard ecological inference estimates.
+> We provide open-source software to implement the proposed methodology.
+> The open-source software is available for implementing the proposed methodology.
+
+## **wru** package
+
+The said “source software” is the wru package: <https://github.com/kosukeimai/wru>.
+
+::: question
+Do you have any ethical concerns about installing this package?
+:::
+
+## **wru** package {.smaller}
+
+::: question
+Was the publication of this model ethical?
+Does the open-source nature of the code affect your answer?
+Is it ethical to use this software?
+Does your answer change depending on the intended use?
+:::
+
+```{r}
+#| cache: true
+#| message: false
+library(wru)
+predict_race(voter.file = voters, surname.only = TRUE) |>
+  select(surname, contains("pred"))
+```
+
+## **wru** package {.smaller}
+
+```{r}
+#| cache: true
+#| message: false
+#| warning: false
+
+me <- tibble(surname = "Çetinkaya-Rundel")
+
+predict_race(voter.file = me, surname.only = TRUE)
+```
+
+# Further reading
+
+## How Charts Lie
+
+::::: columns
+::: column
+![](images/13/cairo-how-charts-lie.jpg){width="400"}
+:::
+
+::: column
+[How Charts Lie](http://www.thefunctionalart.com/p/reviews.html)
+
+Getting Smarter about Visual Information
+
+by Alberto Cairo
+:::
+:::::
+
+## Calling Bullshit
+
+::::: columns
+::: column
+![](images/13/calling-bullshit.png){width="400"}
+:::
+
+::: column
+[Calling Bullshit](https://www.callingbullshit.org/)\
+The Art of Skepticism in a\
+Data-Driven World
+
+by Carl Bergstrom and Jevin West
+:::
+:::::
+
+## Machine Bias
+
+::::: columns
+::: column
+![](images/13/propublica-machine-bias.png){width="400"}
+:::
+
+::: column
+[Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) \
+
+by Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner
+:::
+:::::
+
+## Ethics and Data Science
+
+::::: columns
+::: column
+![](images/13/ethics-data-science.jpg){width="400"}
+:::
+
+::: column
+[Ethics and Data Science](https://www.amazon.com/Ethics-Data-Science-Mike-Loukides-ebook/dp/B07GTC8ZN7) \
+
+by Mike Loukides, Hilary Mason, DJ Patil  
+(Free Kindle download)
+:::
+:::::
+
+## Weapons of Math Destruction
+
+::::: columns
+::: column
+![](images/13/weapons-of-math-destruction.jpg){width="400"}
+:::
+
+::: column
+[Weapons of Math Destruction](https://www.penguin.co.uk/books/304/304513/weapons-of-math-destruction/9780141985411.html)  
+How Big Data Increases Inequality and Threatens Democracy \
+
+by Cathy O'Neil
+:::
+:::::
+
+## Algorithms of Oppression
+
+::::: columns
+::: column
+![](images/13/algorithms-of-oppression.jpg){width="400"}
+:::
+
+::: column
+[Algorithms of Oppression](https://nyupress.org/9781479837243/algorithms-of-oppression/)  
+How Search Engines Reinforce Racism \
+
+by Safiya Umoja Noble
+:::
+:::::
+
+## And more recently...
+
+[How AI discriminates and what that means for your Google habit](https://newsroom.ucla.edu/stories/how-ai-discriminates-and-what-that-means-for-your-google-habit)  
+A conversation with UCLA internet studies scholar Safiya Noble \
+
+by Julia Busiek
+
+## Parting thoughts {.smaller}
+
+- At some point during your data science learning journey you will learn tools that can be used unethically
+
+- You might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)
+
+::: question
+How do you train yourself to make the right decisions (or reduce the likelihood of accidentally making the wrong decisions) at those points?
+:::

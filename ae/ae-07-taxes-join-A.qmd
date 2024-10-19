@@ -1,10 +1,12 @@
 ---
 title: "AE 07: Sales taxes + data joining"
 subtitle: "Suggested answers"
-categories: 
-  - Answers
-draft: false
 ---
+
+::: callout-important
+These are suggested answers.
+This document should be used as a reference only; it's not designed to be an exhaustive key.
+:::
 
 ## Getting started
 

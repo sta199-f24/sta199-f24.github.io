@@ -69,19 +69,19 @@ Resize individual figures: Set `fig-width` and `fig-height` in chunk options, e.
 
 ``` r
 #| echo: fenced
-#| label: plot1
-#| fig-height: 3
+#| label: code-cell-label
 #| fig-width: 5
+#| fig-asp: 0.628
 ```
 
-replacing `plot1` with a meaningful label and the height and width with values appropriate for your write up.
+replacing `code-cell-label` with a meaningful label and the height and width with values appropriate for your write up.
 
-Resize all figures: Include the `fig-height` and `fig-width` options in the YAML header as shown below:
+Resize all figures: Include the `fig-width` and `fig-asp` options in the YAML header as shown below:
 
 ``` yaml
 execute:
-  fig-height: 3
   fig-width: 5
+  fig-asp: 0.628
 ```
 
 Replace the height and width values with values appropriate for your write up.
@@ -91,6 +91,4 @@ Replace the height and width values with values appropriate for your write up.
 Arrange plots in a grid, instead of one after the other.
 This is especially useful when displaying plots for exploratory data analysis and to check assumptions.
 
-If you’re using ggplot2 functions, the [patchwork package](https://patchwork.data-imaginist.com/) makes it easy to arrange plots in a grid.
-
-*More to be added soon...*
+The [patchwork package](https://patchwork.data-imaginist.com/) makes it easy to arrange plots in a grid.

@@ -1,0 +1,120 @@
+---
+title: "AE 09: Age gaps + sales + import"
+subtitle: "Suggested answers"
+---
+
+::: callout-important
+These are suggested answers.
+This document should be used as a reference only; it's not designed to be an exhaustive key.
+:::
+
+## Getting started
+
+### Packages
+
+We will use the following two packages in this application exercise.
+
+-   **tidyverse**: For data import, wrangling, and visualization.
+-   **readxl:** For importing data from Excel.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(readxl)
+```
+
+## Part 1: Hollywood relationships
+
+Load the data from `age-gaps.csv` in your `data` and assign it to `age_gaps`.
+Confirm that this new object appears in your Environment tab.
+Click on the *name of the object* in your Environment tab to pop open the data in the data viewer.
+
+```{r}
+#| label: age-gaps-import
+age_gaps <- read_csv("data/age-gaps.csv")
+```
+
+Create a subset of the data frame for heterosexual relationships on screen.
+
+```{r}
+#| label: age-gaps-hetero
+age_gaps_heterosexual <- age_gaps |>
+  filter(character_1_gender != character_2_gender)
+```
+
+Split the data for heterosexual relationships into three -- where woman is older, where man is older, where they are the same age.
+Save these subsets as two appropriately named data frames.
+*Remember:* Use concise and evocative names.
+Confirm that these new objects appear in your Environment tab and that the sum of the number of observations in the two new data frames add to the number of observations in the original data frame.
+
+```{r}
+#| label: age-gaps-split
+age_gaps_heterosexual <- age_gaps_heterosexual |>
+  mutate(
+    older = case_when(
+      character_1_gender == "woman" & actor_1_age > actor_2_age ~ "woman older",
+      character_2_gender == "woman" & actor_2_age > actor_1_age ~ "woman older",
+      character_1_gender == "man"   & actor_1_age > actor_2_age ~ "man older",
+      character_2_gender == "man"   & actor_2_age > actor_1_age ~ "man older",
+      actor_1_age == actor_2_age ~ "same age"
+    )
+  )
+
+woman_older <- age_gaps_heterosexual |> filter(older == "woman older")
+man_older   <- age_gaps_heterosexual |> filter(older == "man older")
+same_age    <- age_gaps_heterosexual |> filter(older == "same age")
+
+(nrow(woman_older) + nrow(man_older) + nrow(same_age)) == nrow(age_gaps_heterosexual)
+```
+
+Write out the three new datasets you created into the `data` folder:
+
+```{r}
+#| label: age-gaps-export
+#| eval: false
+write_csv(woman_older, file = "data/woman-older.csv")
+write_csv(man_older, file = "data/man-older.csv")
+write_csv(same_age, file = "data/same-age.csv")
+```
+
+## Part 2: Sales
+
+Sales data are stored in an Excel file that looks like the following:
+
+![](https://sta199-s24.github.io/images/sales-excel.png)
+
+Read in the Excel file called `sales.xlsx` from the `data-raw/` folder such that it looks like the following.
+
+![](https://sta199-s24.github.io/images/sales-1.png){width="200"}
+
+```{r}
+#| label: sales-import
+sales_raw <- read_excel(
+  "data/sales.xlsx", 
+  skip = 3,
+  col_names = c("id", "n")
+  )
+```
+
+**Stretch goal:** Manipulate the sales data such such that it looks like the following.
+
+![](https://sta199-s24.github.io/images/sales-2.png){width="200"}
+
+```{r}
+#| label: sales-cleanup
+sales <- sales_raw |>
+  mutate(
+    is_brand_name = str_detect(id, "Brand"),
+    brand = if_else(is_brand_name, id, NA)
+  ) |>
+  fill(brand) |>
+  filter(!is_brand_name) |>
+  select(brand, id, n)
+
+sales
+```
+
+Why should we bother with writing code for reading the data in by skipping columns and assigning variable names as well as cleaning it up in multiple steps instead of opening the Excel file and editing the data in there to prepare it for a clean import?
+
+Because the code allows us to struggle once and re-use for future datasets and leaves a transparent trail of our modifications while manipulating the data in Excel directly is neither reproducible nor reusable.

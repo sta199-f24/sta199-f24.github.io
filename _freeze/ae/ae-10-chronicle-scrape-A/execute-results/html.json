@@ -1,0 +1,17 @@
+{
+  "hash": "15e6c7ad5c01cf5846903124f9b34f48",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"AE 10: Opinion articles in The Chronicle\"\nsubtitle: \"Suggested answers\"\neditor_options: \n  chunk_output_type: console\n---\n\n\n\n::: callout-important\nThese are suggested answers.\nThis document should be used as reference only, it's not designed to be an exhaustive key.\n:::\n\n## Part 1 - Data scraping\n\nSee [`chronicle-scrape.R`](https://github.com/sta199-f24/sta199-f24.github.io/blob/main/ae/_chronicle-scrape-A.R) for suggested scraping code.\n\n## Part 2 - Data analysis\n\nLet's start by loading the packages we will need:\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n```\n:::\n\n\n\n-   Load the data you saved into the `data` folder and name it `chronicle`.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nchronicle <- read_csv(\"data/chronicle.csv\")\n```\n:::\n\n\n\n-   Who are the most prolific authors of the 500 most recent opinion articles in The Chronicle?\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nchronicle |>\n  count(author, sort = TRUE)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n# A tibble: 191 × 2\n   author             n\n   <chr>          <int>\n 1 Luke A. Powery    32\n 2 Advikaa Anand     26\n 3 Heidi Smith       26\n 4 Nik Narain        23\n 5 Monday Monday     20\n 6 Aaron Siegle      15\n 7 Anna Garziera     15\n 8 Sonia Green       12\n 9 Linda Cao         10\n10 Angikar Ghosal     9\n# ℹ 181 more rows\n```\n\n\n:::\n:::\n\n\n\n-   Draw a line plot of the number of opinion articles published per day in The Chronicle.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nchronicle |>\n  count(date) |>\n  ggplot(aes(x = date, y = n, group = 1)) +\n  geom_line()\n```\n\n::: {.cell-output-display}\n![](ae-10-chronicle-scrape-A_files/figure-html/articles-per-day-1.png){width=672}\n:::\n:::\n\n\n\n-   What percent of the most recent 100 opinion articles in The Chronicle mention \"climate\" in their title?\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nchronicle |>\n  mutate(\n    title = str_to_lower(title),\n    climate = if_else(str_detect(title, \"climate\"), \"mentioned\", \"not mentioned\")\n    ) |>\n  count(climate) |>\n  mutate(prop = n / sum(n))\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n# A tibble: 2 × 3\n  climate           n  prop\n  <chr>         <int> <dbl>\n1 mentioned        11 0.022\n2 not mentioned   489 0.978\n```\n\n\n:::\n:::\n\n\n\n-   What percent of the most recent 100 opinion articles in The Chronicle mention \"climate\" in their title or abstract?\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nchronicle |>\n  mutate(\n    title = str_to_lower(title),\n    abstract = str_to_lower(abstract),\n    climate = if_else(\n      str_detect(title, \"climate\") | str_detect(abstract, \"climate\"), \n      \"mentioned\", \n      \"not mentioned\"\n      )\n    ) |>\n  count(climate) |>\n  mutate(prop = n / sum(n))\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n# A tibble: 2 × 3\n  climate           n  prop\n  <chr>         <int> <dbl>\n1 mentioned        16 0.032\n2 not mentioned   484 0.968\n```\n\n\n:::\n:::\n\n\n\n-   Come up with another question and try to answer it using the data.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n",
+    "supporting": [
+      "ae-10-chronicle-scrape-A_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

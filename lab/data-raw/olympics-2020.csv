@@ -1,0 +1,622 @@
+First Name,Last Name,Sport,Hometown City,Hometown State,Gender,Event
+Brandon,Dickson,Baseball,Prattville,Alabama,Male,Baseball
+David,Robertson,Baseball,Tuscaloosa,Alabama,Male,Baseball
+James,Hall,Shooting,Anniston,Alabama,Male,10m Air Pistol Men
+Sandra,Uptagrafft,Shooting,Phenix City,Alabama,Female,"10m Air Pistol Women, 25m Pistol Women"
+Haylie,McCleney,Softball (Women),Morris,Alabama,Female,Softball
+Paige,Madden,Swimming,Mobile,Alabama,Female,W 400m Freestyle
+Zach,Harting,Swimming,Madison,Alabama,Male,M 200m Butterfly
+JuVaughn,Harrison,Track and Field,Huntsville,Alabama,Male,"M High Jump, M Long Jump"
+Quanesha,Burks,Track and Field,Harselle,Alabama,Female,W Long Jump
+Alev,Kelter,Rugby (Women),Eagle River,Alaska,Female,Rugby (Women)
+Lydia,Jacoby,Swimming,Seward,Alaska,Female,W 100m Breaststroke
+Brady,Ellison,Archery,Globe,Arizona,Male,"M Individual, M Team"
+Jamie,Westbrook,Baseball,Chandler,Arizona,Male,Baseball
+Brandon,McNulty,Cycling,Phoenix,Arizona,Male,"M Individual Time Trial, M Road Race"
+Corben,Sharrah,Cycling,Tucson,Arizona,Male,Men - BMX
+Delaney,Schnell,Diving,Tucson,Arizona,Female,"W 10m Platform, W Sync 10m Platform"
+Jade,Carey,Gymnastic (Artistic),Phoenix,Arizona,Female,Gymnastic (Artistic) Women
+Mykayla,Skinner,Gymnastic (Artistic),Gilbert,Arizona,Female,Gymnastic (Artistic) Women
+Brett,Thompson,Rugby (Men),Tempe,Arizona,Male,Rugby (Men)
+Maceo,Brown,Rugby (Men),Tempe,Arizona,Male,Rugby (Men)
+Alana,Smith,Skateboarding,Mesa,Arizona,Female,W Street
+Jagger,Eaton,Skateboarding,Mesa,Arizona,Male,M Street
+Julie,Ertz,Soccer (Women),Mesa,Arizona,Female,Soccer (Women)
+Bethanie,Mattek-Sands,Tennis,Phoenix,Arizona,Female,W Doubles
+Abdi,Abdirahman,Track and Field,Tucson,Arizona,Male,M Marathon
+Aliphine,Tuliamuk,Track and Field,Flagstaff,Arizona,Female,W Marathon
+Will,Claye,Track and Field,Phoenix,Arizona,Male,M Triple Jump
+Sarah,Sponcil,Volleyball (Beach),Phoenix,Arizona,Female,Volleyball (Beach) Women
+Kayla,Miracle,Wrestling,Phoenix,Arizona,Female,W Freestyle 62kg
+Kayle,Browning,Shooting,Wooster,Arkansas,Female,Trap Women
+Tara,Davis,Track and Field,Fayetteville,Arkansas,Female,W Long Jump
+Jack,Williams,Archery,Chula Vista,California,Male,"M Individual, M Team"
+Phillip,Chew,Badminton,Orange,California,Male,M Doubles
+Ryan,Chew,Badminton,Orange,California,Male,M Doubles
+Timothy,Lam,Badminton,Mountain View,California,Male,M Singles
+Anthony,Gose,Baseball,Bellflower,California,Male,Baseball
+Eric,Filia,Baseball,Huntington Beach,California,Male,Baseball
+Joe,Ryan,Baseball,San Francisco,California,Male,Baseball
+Nick,Allen,Baseball,San Diego,California,Male,Baseball
+Katie Lou,Samuelson,Basketball (3x3),Huntington Beach,California,Female,Basketball (3x3) (Women)
+Kelsey,Plum,Basketball (3x3),Poway,California,Female,Basketball (3x3) (Women)
+Damian,Lillard,Basketball (Men),Oakland,California,Male,Basketball (Men)
+Jrue,Holiday,Basketball (Men),Los Angeles,California,Male,Basketball (Men)
+Kevin,Love,Basketball (Men),Santa Monica,California,Male,Basketball (Men)
+Chelsea,Gray,Basketball (Women),Hayward,California,Female,Basketball (Women)
+Diana,Taurasi,Basketball (Women),Chino,California,Female,Basketball (Women)
+Richard,Torrez,Boxing,Tulare,California,Male,M Super Heavy (+91kg)
+Amber,Neben,Cycling,Lake Forest,California,Female,W Individual Time Trial
+Coryn,Rivera,Cycling,Newport Beach,California,Female,W Road Race
+Gavin,Hoover,Cycling,Manhattan Beach,California,Male,"M Madison, M Omnium"
+Haley,Batten,Cycling,Los Gatos,California,Female,W Cross-country - MTB
+Jennifer,Valente,Cycling,San Diego,California,Female,"W Madison, W Omnium, W Team Pursuit"
+Kate,Courtney,Cycling,Kentfield,California,Female,W Cross-country - MTB
+Leah,Thomas,Cycling,Boulder Creek,California,Female,W Road Race
+Megan,Jastrab,Cycling,Apple Valley,California,Female,W Madison
+Ruth,Winder,Cycling,Lafayette,California,Female,W Road Race
+Brandon,Loschiavo,Diving,Huntington Beach,California,Male,M 10m Platform
+Sabine,Schut-Kery,Equestrian,Thousand Oaks,California,Female,"Dressage Individual, Dressage Team"
+Steffen,Peters,Equestrian,San Diego,California,Female,"Dressage Individual, Dressage Team"
+Alexander,Massialas,Fencing,San Francisco,California,Male,"M Foil Individual, M Foil Team"
+Nick,Itkin,Fencing,Los Angeles,California,Male,"M Foil Individual, M Foil Team"
+Bryson,Dechambeau,Golf,Clovis,California,Male,M Individual Stroke Play
+Colin,Morikawa,Golf,La Canada,California,Male,M Individual Stroke Play
+Xander,Schauffele,Golf,San Diego,California,Male,M Individual Stroke Play
+Samuel,Mikulak,Gymnastic (Artistic),Newport Beach,California,Male,Gymnastic (Artistic) Men
+Isabelle,Connor,Gymnastics (Rhythmic),Manhattan Beach,California,Female,Group All-Around
+Nicole,Ahsinger,Gymnastics (Trampoline),San Diego,California,Female,Gymnastics (Trampoline) Women
+Sakura,Kokumai,Karate,Stevenson Ranch,California,Female,W KataCalifornia (126) - Continued
+Kara,Kohler,Rowing,Clayton,California,Female,W Single Sculls
+Michelle,Sechser,Rowing,Folsom,California,Female,Ltweight Womens Dble Sculls
+Danny,Barrett,Rugby (Men),Pacifica,California,Male,Rugby (Men)
+Folau,Niua,Rugby (Men),East Palo Alto,California,Male,Rugby (Men)
+Matai,Leuta,Rugby (Men),Marina,California,Male,Rugby (Men)
+Steve,Tomasin,Rugby (Men),Santa Rosa,California,Male,Rugby (Men)
+Kayla,Canett,Rugby (Women),Fallbrook,California,Female,Rugby (Women)
+Naya,Tapper,Rugby (Women),Beaufort,California,Female,Rugby (Women)
+Nia,Toliver*,Rugby (Women),Los Angeles,California,Female,Rugby (Women)
+Charlie,Buckingham,Sailing,Newport Beach,California,Male,Laser Men
+Riley,Gibbs,Sailing,Long Beach,California,Female,Nacra 17 Mixed
+Brian,Burrows,Shooting,Fallbrook,California,Male,Trap Men
+Sagen,Maddalena,Shooting,Groveland,California,Female,50m Rifle 3 Positions Women
+Brighton,Zeuner,Skateboarding,Newport Beach,California,Female,W Park
+Bryce,Wettstein,Skateboarding,Encinitas,California,Female,W Park
+Cory,Juneau,Skateboarding,San Diego,California,Male,M Park
+Jordyn,Barratt,Skateboarding,Oceanside,California,Female,W Park
+Nyjah,Huston,Skateboarding,Laguna Beach,California,Male,M Street
+Abigail,Dahlkemper,Soccer (Women),Menlo Park,California,Female,Soccer (Women)
+Alex,Morgan,Soccer (Women),Diamond Bar,California,Female,Soccer (Women)
+Catarina,Macario*,Soccer (Women),Los Angeles,California,Female,Soccer (Women)
+Christen,Press,Soccer (Women),Palos Verdes Estates,California,Female,Soccer (Women)
+Lynn,Williams*,Soccer (Women),Fresno,California,Female,Soccer (Women)
+Megan,Rapinoe,Soccer (Women),Redding,California,Female,Soccer (Women)
+Tierna,Davidson,Soccer (Women),Menlo Park,California,Female,Soccer (Women)
+Alison,Aguilar,Softball (Women),Orangevale,California,Female,Softball
+Allyson,Carda,Softball (Women),Elk Grove,California,Female,Softball
+Aubree,Munro,Softball (Women),Brea,California,Female,Softball
+Dejah,Mulipola,Softball (Women),Anaheim,California,Female,Softball
+Delaney,Spaulding,Softball (Women),Rancho Cucamonga,California,Female,Softball
+Janette,Reed,Softball (Women),Placentia,California,Female,SoftballCalifornia (126) - Continued
+Madilyn,Nickles,Softball (Women),Merced,California,Female,Softball
+Monica,Abbott,Softball (Women),Salinas,California,Female,Softball
+Rachel,Garcia,Softball (Women),Palmdale,California,Female,Softball
+Valerie,Arioto,Softball (Women),Pleasanton,California,Female,Softball
+Kolohe,Andino,Surfing,San Clemente,California,Male,Surfing (Men)
+Abbey,Weitzeil,Swimming,Santa Clarita,California,Female,"W 100m Freestyle, W 50m Freestyle"
+Bryce,Mefford,Swimming,El Dorado Hills,California,Male,M 200m Backstroke
+Haley,Anderson,Swimming,Granite Bay,California,Female,W 10km
+Jake,Mitchell,Swimming,Folsom,California,Male,M 400m Freestyle
+Jordan,Wilimovsky,Swimming,Malibou,California,Male,M 10km
+Kathryn,McLaughlin,Swimming,Dana Point,California,Female,W 200m Free (R)
+Michael,Andrew,Swimming,Encinitas,California,Male,"M 100m Breaststroke, M 200m Individual Medley, M 50m Freestyle"
+Tom,Shields,Swimming,Huntington Beach,California,Male,M 100m Butterfly
+Kanak,Jha,Table Tennis,Milpitas,California,Male,"M Singles, M Team"
+Lily,Zhang,Table Tennis,Palo Alto,California,Female,"W Singles, W Team"
+Nikhil,Kumar,Table Tennis,San Jose,California,Male,"M Singles, M Team"
+Xin,Zhou,Table Tennis,Milpitas,California,Male,M Team
+Marcos,Giron,Tennis,Thousand Oaks,California,Male,M Singles
+Allyson,Felix,Track and Field,Los Angeles,California,Female,"W 4 x 400m Relay, W 400m"
+Brooke,Andersen,Track and Field,Vista,California,Female,W Hammer Throw
+Chris,Benard,Track and Field,Corona,California,Male,M Triple Jump
+Cravon,Gillespie,Track and Field,Pasadena,California,Male,M 4 x 100m Relay
+Isaiah,Jewett,Track and Field,Inglewood,California,Male,M 800mCalifornia (126) - Continued
+Jenna,Prandini,Track and Field,Clovis,California,Female,"W 100m, W 200m, W 4 x 100m Relay"
+Kendall,Ellis,Track and Field,North Hollywood,California,Female,"W 4 x 400m Relay, W 400m"
+Michael,Norman,Track and Field,Murrieta,California,Male,"M 4 x 400m Relay, M 400m"
+Nick,Christie,Track and Field,San Diego,California,Male,M 20km Race Walk
+Rachel,McCoy,Track and Field,Inland Empire,California,Female,W High Jump
+Robyn,Stevens,Track and Field,Vacaville,California,Female,W 20km Race Walk
+Katie,Zaferes,Triathlon,Santa Cruz,California,Female,W Individual
+Alix,Klineman,Volleyball (Beach),Manhattan Beach,California,Female,Volleyball (Beach) Women
+April,Ross,Volleyball (Beach),Costa Mesa,California,Female,Volleyball (Beach) Women
+Kelly,Claes,Volleyball (Beach),Fullerton,California,Female,Volleyball (Beach) Women
+David,Smith,Volleyball (Men),Saugus,California,Male,Volleyball (Men)
+Garrett,Muagututia,Volleyball (Men),Oceanside,California,Male,Volleyball (Men)
+Kyle,Ensing,Volleyball (Men),Valencia,California,Male,Volleyball (Men)
+Taylor,Sander,Volleyball (Men),Corona,California,Male,Volleyball (Men)
+Torey,DeFalco,Volleyball (Men),Huntington Beach,California,Male,Volleyball (Men)
+Justine,Wong-Orantes,Volleyball (Women),Cypress,California,Female,Volleyball (Women)
+Alex,Wolf,Water Polo (Men),Huntington Beach,California,Male,Water Polo (Men)
+Alex,Bowen,Water Polo (Men),Santee,California,Male,Water Polo (Men)
+Alex,Obert,Water Polo (Men),Loomis,California,Male,Water Polo (Men)
+Ben,Hallock,Water Polo (Men),Studio City,California,Male,Water Polo (Men)
+Drew,Holland,Water Polo (Men),Orinda,California,Male,Water Polo (Men)
+Dylan,Woodhead,Water Polo (Men),San Anselmo,California,Male,Water Polo (Men)
+Hannes,Daube,Water Polo (Men),Long Beach,California,Male,Water Polo (Men)
+Jesse,Smith*,Water Polo (Men),Coronado,California,Male,Water Polo (Men)
+Johnny,Hooper,Water Polo (Men),Los Angeles,California,Male,Water Polo (Men)
+Marko,Vavic,Water Polo (Men),Rancho Palos Verdes,California,Male,Water Polo (Men)
+Max,Irving,Water Polo (Men),Long Beach,California,Male,Water Polo (Men)
+Alys,Williams,Water Polo (Women),Huntington Beach,California,Female,Water Polo (Women)
+Aria,Fischer,Water Polo (Women),Laguna Beach,California,Female,Water Polo (Women)
+Amanda,Longan,Water Polo (Women),Moorpark,California,Female,Water Polo (Women)
+Jamie,Neushul*,Water Polo (Women),Isla Vista,California,Female,Water Polo (Women)
+Kaleigh,Gilchrist,Water Polo (Women),Newport Beach,California,Female,Water Polo (Women)
+Madeline,Musselman,Water Polo (Women),Newport Beach,California,Female,Water Polo (Women)
+Makenzie,Fischer,Water Polo (Women),Laguna Beach,California,Female,Water Polo (Women)
+Maggie,Steffens,Water Polo (Women),Danville,California,Female,Water Polo (Women)
+Melissa,Seidemann,Water Polo (Women),Walnut Creek,California,Female,Water Polo (Women)
+Paige,Hauschild,Water Polo (Women),Santa Barbara,California,Female,Water Polo (Women)
+Rachel,Fattal,Water Polo (Women),Seal Beach,California,Female,Water Polo (Women)
+Stephanie,Haralabidis,Water Polo (Women),Long Beach,California,Female,Water Polo (Women)
+Sarah,Robles,Weightlifting,Desert Hot Springs,California,Female,W +87kg
+Zachary,Lokken,Canoe/Kayak,Durango,Colorado,Male,M Canoe
+Christopher,Blevins,Cycling,Durango,Colorado,Male,M Cross-country - MTB
+Erin,Huck,Cycling,Boulder,Colorado,Female,W Cross-country - MTB
+Maddie,Godby,Cycling,Louisville,Colorado,Female,"W Keirin, W Sprint"
+Yul,Moldauer,Gymnastic (Artistic),Arvada,Colorado,Male,Gymnastic (Artistic) Men
+Amro,Elgeziry,Pentathlon,Colorado Springs,Colorado,Male,M Individual
+Samantha,Schultz,Pentathlon,Littleton,Colorado,Female,W Individual
+Jessica,Thoennes,Rowing,Denver,Colorado,Female,W Eight
+Kendall,Chase,Rowing,Evergreen,Colorado,Female,W Four
+Cody,Melphy*,Rugby (Men),Littleton,Colorado,Male,Rugby (Men)
+Amber,English,Shooting,Colorado Springs,Colorado,Female,Skeet Women
+Lucas,Kozeniesky,Shooting,Colorado Springs,Colorado,Male,10m Air Rifle Men
+William,Shaner,Shooting,Colorado Springs,Colorado,Male,10m Air Rifle Men
+Lindsey,Horan,Soccer (Women),Golden,Colorado,Female,Soccer (Women)
+Brooke,Raboutou,Sport Climbing,Boulder,Colorado,Female,W CombinedColorado (34) - Continued
+Colin,Duffy,Sport Climbing,Broomfield,Colorado,Male,M Combined
+Anastasija,Zolotic,Taekwondo,Colorado Springs,Colorado,Female,Women -57kg
+Annie,Kunz,Track and Field,Denver,Colorado,Female,W Heptathlon
+Benard,Keter,Track and Field,Colorado Springs,Colorado,Male,M 3000m Steeplechase
+Elise,Cranny,Track and Field,Boulder,Colorado,Female,"W 10,000m, W 5000m"
+Emma,Coburn,Track and Field,Crested Butte,Colorado,Female,W 3000m Steeplechase
+Hillary,Bor,Track and Field,Colorado Springs,Colorado,Male,M 3000m Steeplechase
+Mason,Finley,Track and Field,Chaffee County,Colorado,Male,M Discus Throw
+Paul,Chelimo,Track and Field,Colorado Springs,Colorado,Male,M 5000m
+Valarie,Allman,Track and Field,Longmont,Colorado,Female,W Discus Throw
+Valerie,Constien,Track and Field,Edwards,Colorado,Female,W 3000m Steeplechase
+William,Kincaid,Track and Field,Littleton,Colorado,Male,"M 10,000m, M 5000m"
+Kevin,McDowell,Triathlon,Colorado Springs,Colorado,Male,"M Individual, Mixed Relay"
+Summer,Rappaport,Triathlon,Thornton,Colorado,Female,"Mixed Relay, W Individual"
+Haleigh,Washington,Volleyball (Women),Colorado Springs,Colorado,Female,Volleyball (Women)
+Jordyn,Poulter,Volleyball (Women),Aurora,Colorado,Female,Volleyball (Women)
+Adeline,Gray,Wrestling,Denver,Colorado,Female,W Freestyle 76kg
+Ildar,Hafizov,Wrestling,Colorado Springs,Colorado,Male,M Greco-Roman 60kg
+Jacarra,Winchester,Wrestling,San Leandro,Colorado,Female,W Freestyle 53kg
+Tracy,Hancock,Wrestling,Fountain,Colorado,Male,M Greco-Roman 97kg
+Austin,Hack,Rowing,Old Lyme,Connecticut,Male,M Eight
+Liam,Corrigan,Rowing,Old Lyme,Connecticut,Male,M Eight
+Alexis,Sablone,Skateboarding,Old Saybrook,Connecticut,Female,W Street
+Alyssa,Naeher,Soccer (Women),Stratford,Connecticut,Female,Soccer (Women)
+Kieran,Smith,Swimming,Ridgefield,Connecticut,Male,"M 200m Freestyle, M 400m FreestyleDelaware (1)"
+Marquis,Dendy,Track and Field,Wilmington,Delaware,Male,M Long Jump
+Kevin,Durant,Basketball (Men),Washington,D.C.,Male,Basketball (Men)
+Katharine,Holmes,Fencing,Washington,D.C.,Female,"W Epee Individual, W Epee Team"
+Frances,Tiafoe,Tennis,Washington,D.C.,Male,"M Doubles, M Singles"
+Taylor,Knibb,Triathlon,Washington,D.C.,Female,"Mixed Relay, W Individual"
+Eddy,Alvarez,Baseball,Miami,Florida,Male,Baseball
+Mark,Kolozsvary,Baseball,Eustis,Florida,Male,Baseball
+Nick,Martinez,Baseball,Miami,Florida,Male,Baseball
+Triston,Casas,Baseball,Pembroke Pines,Florida,Male,Baseball
+Sylvia,Fowles,Basketball (Women),Miami,Florida,Female,Basketball (Women)
+Lily,Williams,Cycling,Tallahassee,Florida,Female,W Team Pursuit
+Jordan,Windle,Diving,Fort Lauderdale,Florida,Male,M 10m Platform
+Adrienne,Lyle,Equestrian,Wellington,Florida,Female,"Dressage Individual, Dressage Team"
+Laura,Kraut,Equestrian,Wellington,Florida,Female,"Jumping Individual, Jumping Team"
+Kent,Farrington,Equestrian,Wellington,Florida,Male,"Jumping Individual, Jumping Team"
+Jessica,Korda,Golf,Jupiter,Florida,Female,W Individual Stroke Play
+Lexi,Thompson,Golf,Coral Springs,Florida,Female,W Individual Stroke Play
+Nelly,Korda,Golf,Bradenton,Florida,Female,W Individual Stroke Play
+Angelica,Delgado,Judo,Miami,Florida,Female,Women -52 kg
+Ariel,Torres,Karate,Hialeah,Florida,Male,M Kata
+Ben,Davison,Rowing,Inverness,Florida,Male,M Eight
+Clark,Dean,Rowing,Sarasota,Florida,Male,M FourFlorida (51) - Continued
+Katelin,Guregian,Rowing,Orlando,Florida,Female,W Eight
+Perry,Baker,Rugby (Men),Flagler Palm Coast,Florida,Male,Rugby (Men)
+Anna,Weis,Sailing,Fort Lauderdale,Florida,Female,Nacra 17 Mixed
+David,Hughes,Sailing,Miami,Florida,Male,470 Men
+Lara,Dallman-Weiss,Sailing,Miami,Florida,Female,470 Women
+Luke,Muller,Sailing,Fort Pierce,Florida,Male,Finn Men
+Nikole,Barnes,Sailing,Miami,Florida,Female,470 Women
+Paige,Railey,Sailing,Clearwater,Florida,Female,Laser Radial Women
+Pedro,Pascual,Sailing,Miami,Florida,Male,RS X Men
+Mary,Tucker,Shooting,Sarasota,Florida,Female,"10m Air Rifle Women, 50m Rifle 3 Positions Women"
+Jake,Ilardi,Skateboarding,Osprey,Florida,Male,M Street
+Zion,Wright,Skateboarding,Jupiter,Florida,Male,M Park
+Michelle,Moultrie,Softball (Women),Jacksonville,Florida,Female,Softball
+Caroline,Marks,Surfing,Melbourne Beach,Florida,Female,Surfing (Women)
+Caeleb,Dressel,Swimming,Orange Park,Florida,Male,"M 100m Butterfly, M 100m Freestyle, M 50m Freestyle"
+Emma,Weyant,Swimming,Sarasota,Florida,Female,W 400m Individual Medley
+Bobby,Finke,Swimming,Clearwater,Florida,Male,"M 1500m Freestyle, M 800m Freestyle"
+Ryan,Murphy,Swimming,Ponte Vedra Beach,Florida,Male,"M 100m Backstroke, M 200m Backstroke"
+Alison,Riske,Tennis,Orlando,Florida,Female,W Singles
+Coco,Gauff,Tennis,Boynton Beach,Florida,Female,"W Doubles, W Singles"
+Nicole,Melichar,Tennis,Stuart,Florida,Female,W Doubles
+Donald,Scott,Track and Field,Apopka,Florida,Male,M Triple Jump
+Erriyon,Knighton,Track and Field,Tampa,Florida,Male,M 200m
+Garrett,Scantling,Track and Field,Jacksonville,Florida,Male,M Decathlon
+Jessica,Ramsey,Track and Field,Boynton Beach,Florida,Female,W Shot PutFlorida (51) - Continued
+Kaylin,Whitney,Track and Field,Clermont,Florida,Female,W 4 x 400m Relay
+Teahna,Daniels,Track and Field,Orlando,Florida,Female,"W 100m, W 4 x 100m Relay"
+Trayvon,Bromell,Track and Field,St. Petersburg,Florida,Male,"M 100m, M 4 x 100m Relay"
+Nicholas,Lucena,Volleyball (Beach),Cooper City,Florida,Male,Volleyball (Beach) Men
+Philip,Dalhausser,Volleyball (Beach),Ormond Beach,Florida,Male,Volleyball (Beach) Men
+Foluke,Akinradewo,Volleyball (Women),Fort Lauderdale,Florida,Female,Volleyball (Women)
+Ashleigh,Johnson,Water Polo (Women),Miami,Florida,Female,Water Polo (Women)
+Mattie,Rogers,Weightlifting,Apopka,Florida,Female,W 87kg
+Alejandro,Sancho,Wrestling,Miami,Florida,Male,M Greco-Roman 67kg
+Anthony,Carter,Baseball,Lawrence,Georgia,Male,Baseball
+Tyler,Austin,Baseball,Conyers,Georgia,Male,Baseball
+Edwin,Jackson Jr.,Baseball,Columbus,Georgia,Male,Baseball
+Allisha,Gray,Basketball (3x3),Sandersville,Georgia,Female,Basketball (3x3) (Women)
+Brody,Malone,Gymnastic (Artistic),Summerville,Georgia,Male,Gymnastic (Artistic) Men
+Henry,Leverett,Shooting,Bainbridge,Georgia,Male,25m Rapid Fire Pistol Men
+Jack,Leverett III,Shooting,Bainbridge,Georgia,Male,25m Rapid Fire Pistol Men
+Vincent,Hancock,Shooting,Eatonton,Georgia,Male,Skeet Men
+Emily,Sonnett,Soccer (Women),Marietta,Georgia,Female,Soccer (Women)
+Jane,Campbell*,Soccer (Women),Kennesaw,Georgia,Female,Soccer (Women)
+Kelley,O'Hara,Soccer (Women),Fayetteville,Georgia,Female,Soccer (Women)
+Brooks,Curry,Swimming,Dunwoody,Georgia,Male,M 100m Free (R)
+Jay,Litherland,Swimming,Athens,Georgia,Male,M 400m Individual Medley
+Gunnar,Bentz,Swimming,Atlanta,Georgia,Male,M 200m Butterfly
+Natalie,Hinds,Swimming,Athens,Georgia,Female,W 100m Free (R)
+Daniel,Haugh,Track and Field,Marietta,Georgia,Male,M Hammer Throw
+Daniel,Roberts,Track and Field,Atlanta,Georgia,Male,M 110m Hurdles
+Elija,Godwin,Track and Field,Covington,Georgia,Male,4 x 400m Relay MixedGeorgia (20) - Continued
+Javianne,Oliver,Track and Field,Monroe,Georgia,Female,"W 100m, W 4 x 100m Relay"
+Kendell,Williams,Track and Field,Kennesaw,Georgia,Female,W Heptathlon
+Kenny,Selmon,Track and Field,Atlanta,Georgia,Male,M 400m Hurdles
+Martin,Iosefo,Rugby (Men),Wahiawa,Hawaii,Male,Rugby (Men)
+Heimana,Reynolds,Skateboarding,Honolulu,Hawaii,Male,M Park
+Carissa,Moore,Surfing,Honolulu,Hawaii,Female,Surfing (Women)
+John,Florence,Surfing,Haleiwa,Hawaii,Male,Surfing (Men)
+Taylor,Crabb,Volleyball (Beach),Honolulu,Hawaii,Male,Volleyball (Beach) Men
+Erik,Shoji,Volleyball (Men),Honolulu,Hawaii,Male,Volleyball (Men)
+Kawika,Shoji,Volleyball (Men),Honolulu,Hawaii,Male,Volleyball (Men)
+Micah,Christenson,Volleyball (Men),Honolulu,Hawaii,Male,Volleyball (Men)
+Jewell,Loyd,Basketball (Women),Lincolnwood,Illinois,Female,Basketball (Women)
+Anne-Elizabeth,Stone,Fencing,Chicago,Illinois,Female,"W Sabre Individual, W Sabre Team"
+Camilla,Feeley,Gymnastics (Rhythmic),Deerfield,Illinois,Female,Group All-Around
+Evita,Griskenas,Gymnastics (Rhythmic),Orland Park,Illinois,Female,Individual All-Around
+Laura,Zeng,Gymnastics (Rhythmic),Libertyville,Illinois,Female,Individual All-Around
+Lili,Mizuno,Gymnastics (Rhythmic),Northbrook,Illinois,Female,Group All-Around
+Nicole,Sladkov,Gymnastics (Rhythmic),Vernon Hills,Illinois,Female,Group All-Around
+Nefeli,Papadakis,Judo,Gurnee,Illinois,Female,Women -78 kg
+Lauren,Doyle,Rugby (Women),Boody,Illinois,Female,Rugby (Women)
+Maggie,Shea,Sailing,Wilmette,Illinois,Female,49er FX Women
+Casey,Krueger*,Soccer (Women),Naperville,Illinois,Female,Soccer (Women)
+Olivia,Smoliga,Swimming,Chicago,Illinois,Female,W 100m Free (R)
+Darryl,Sullivan Jr,Track and Field,Marion,Illinois,Male,M High Jump
+David,Kendziera,Track and Field,Mt. Prospect,Illinois,Male,M 400m Hurdles
+Kelsey,Card,Track and Field,Carlinville,Illinois,Female,W Discus ThrowIllinois (19) - Continued
+Tori,Franklin,Track and Field,Chicago,Illinois,Female,W Triple Jump
+Zach,Ziemek,Track and Field,Itasca,Illinois,Male,M Decathlon
+Thomas,Jaeschke,Volleyball (Men),Wheaton,Illinois,Male,Volleyball (Men)
+Kelsey,Robinson,Volleyball (Women),Bartlett,Illinois,Female,Volleyball (Women)
+Michelle,Bartsch-Hackley,Volleyball (Women),Champaign,Illinois,Female,Volleyball (Women)
+Skylar,Diggins-Smith,Basketball (Women),South Bend,Indiana,Female,Basketball (Women)
+Chloe,Dygert,Cycling,Brownsburg,Indiana,Female,"W Individual Time Trial, W Road Race, W Team Pursuit"
+Felicia,Stancil,Cycling,Indianapolis,Indiana,Female,Women - BMX
+Alec,Yoder,Gymnastic (Artistic),Indianapolis,Indiana,Male,Gymnastic (Artistic) Men
+Joe,Schroeder,Rugby (Men),Westfield,Indiana,Male,Rugby (Men)
+Blake,Pieroni,Swimming,Chesterton,Indiana,Male,M 100m Free (R)
+Drew,Kibler,Swimming,Carmel,Indiana,Male,M 200m Free (R)
+Michael,Brinegar,Swimming,Columbus,Indiana,Male,"M 1500m Freestyle, M 800m Freestyle"
+Lilly,King,Swimming,Evansville,Indiana,Female,"W 100m Breaststroke, W 200m Breaststroke"
+Rajeev,Ram,Tennis,Carmel,Indiana,Male,M Doubles
+Cole,Hocker,Track and Field,Indianapolis,Indiana,Male,M 1500m
+Lynna,Irby,Track and Field,Indianapolis,Indiana,Female,4 x 400m Relay Mixed
+Rachel,Dincoff,Track and Field,Auburn,Indiana,Female,W Discus Throw
+Andrea,Drews,Volleyball (Women),Elkhart,Indiana,Female,Volleyball (Women)
+Sarah,Hildebrandt,Wrestling,Granger,Indiana,Female,W Freestyle 50kg
+Karissa,Schweizer,Track and Field,Urbandale,Iowa,Female,"W 10,000m, W 5000m"
+Thomas,Gilman,Wrestling,Iowa City,Iowa,Male,M Freestyle 57kgKansas (4)
+Derek,Starling,Baseball,Gardner,Kansas,Male,Baseball
+Derrick,Mein,Shooting,Paola,Kansas,Male,Trap Men
+Adrianna,Franch,Soccer (Women),Salina,Kansas,Female,Soccer (Women)
+Kelsey,Stewart,Softball (Women),Wichita,Kansas,Female,Softball
+Gerek,Meinhardt,Fencing,Lexington,Kentucky,Male,"M Foil Individual, M Foil Team"
+Lee,Kiefer,Fencing,Lexington,Kentucky,Female,"W Foil Individual, W Foil Team"
+Justin,Thomas,Golf,Louisville,Kentucky,Male,M Individual Stroke Play
+Brooke,Forde,Swimming,Louisville,Kentucky,Female,W 200m Free (R)
+Ronnie,Baker,Track and Field,Louisville,Kentucky,Male,"M 100m, M 4 x 100m Relay"
+Yared,Nuguse,Track and Field,Louisville,Kentucky,Male,M 1500m
+Aliaksei,Shostak,Gymnastics (Trampoline),Lafayette,Louisiana,Male,Gymnastics (Trampoline) Men
+Meghan,O'Leary,Rowing,Baton Rouge,Louisiana,Female,W Quadruple Sculls
+Aleia,Hobbs,Track and Field,New Orleans,Louisiana,Female,W 4 x 100m Relay
+Morgann,LeLeux,Track and Field,New Iberia,Louisiana,Female,W Pole Vault
+Vernon,Norwood,Track and Field,New Orleans,Louisiana,Male,M 4 x 400m Relay
+Rachel,Schneider,Track and Field,Sanford,Maine,Female,W 5000m
+Abby,Gustaitis,Rugby (Women),White Hall,Maryland,Female,Rugby (Women)
+Farrah,Hall,Sailing,Annapolis,Maryland,Female,RS X Women
+Andrew,Wilson,Swimming,Bethesda,Maryland,Male,"M 100m Breaststroke, M 200m BreaststrokeMaryland (9) - Continued"
+Chase,Kalisz,Swimming,Bel Air,Maryland,Male,"M 200m Individual Medley, M 400m Individual Medley"
+Katie,Ledecky,Swimming,Bethesda,Maryland,Female,"W 1500m Freestyle, W 200m Freestyle, W 400m Freestyle, W 800m Freestyle"
+Phoebe,Bacon,Swimming,Chevy Chase,Maryland,Female,W 200m Backstroke
+Christina,Clemons,Track and Field,Landover,Maryland,Female,W 100m Hurdles
+Helen,Maroulis,Wrestling,Rockville,Maryland,Female,W Freestyle 57kg
+Kyle,Snyder,Wrestling,Woodbine,Maryland,Male,M Freestyle 97kg
+Jennifer,Mucino-Fernandez,Archery,Boston,Massachusetts,Female,"W Individual, W Team"
+Lindi,Schroeder,Artistic Swimming,Andover,Massachusetts,Female,Duet
+Rashida,Ellis,Boxing,Lynn,Massachusetts,Female,W Light (57-60kg)
+Michael,Hixon,Diving,Amherst,Massachusetts,Male,M Synch 3m Springboard
+Andrew,Mackiewicz,Fencing,Westwood,Massachusetts,Male,"M Sabre Individual, M Sabre Team"
+Eli,Dershwitz,Fencing,Sherborn,Massachusetts,Male,"M Sabre Individual, M Sabre Team"
+Alexander,Richards,Rowing,Watertown,Massachusetts,Male,M Eight
+Andrew,Reed,Rowing,Wayland,Massachusetts,Male,M Four
+Cicely,Madden,Rowing,Weston,Massachusetts,Female,W Quadruple Sculls
+Genevra,Stone,Rowing,Newton,Massachusetts,Female,W Double Sculls
+Gia,Doonan,Rowing,Rochester,Massachusetts,Female,W Eight
+Conor,Harrity,Rowing,Weston,Massachusetts,Male,M Eight
+Kristina,Wagner,Rowing,Weston,Massachusetts,Female,W Double Sculls
+Regina,Salmons,Rowing,Methuen,Massachusetts,Female,W Eight
+Madison,Hughes,Rugby (Men),Lancaster,Massachusetts,Male,Rugby (Men)
+Kristi,Kirshe,Rugby (Women),Franklin,Massachusetts,Female,Rugby (Women)
+Kristen,Mewis,Soccer (Women),Hanson,Massachusetts,Female,Soccer (Women)
+Samantha,Mewis,Soccer (Women),Hanson,Massachusetts,Female,Soccer (Women)
+Gabrielle,Thomas,Track and Field,Northampton,Massachusetts,Female,"W 100m, W 200m"
+Heather,MacLean,Track and Field,Peabody,Massachusetts,Female,W 1500m
+Molly,Seidel,Track and Field,Boston,Massachusetts,Female,W Marathon
+Devin,Booker,Basketball (Men),Grand Rapids,Michigan,Male,Basketball (Men)
+Draymond,Green,Basketball (Men),Saginaw,Michigan,Male,Basketball (Men)
+Hannah,Roberts,Cycling,Buchanan,Michigan,Female,W Park - BMF
+Ellen,Tomek,Rowing,Flushing,Michigan,Female,W Quadruple Sculls
+Grace,Luczak,Rowing,Ann Arbor,Michigan,Female,W Four
+Amanda,Chidester,Softball (Women),Ann Arbor,Michigan,Female,Softball
+Allison,Schmitt,Swimming,Canton,Michigan,Female,W 200m Freestyle
+Annie,Lazor,Swimming,Beverly Hills,Michigan,Female,W 200m Breaststroke
+Catie,DeLoof,Swimming,Grosse Pointe Park,Michigan,Female,W 100m Free (R)
+Anavia,Battle,Track and Field,Inkster,Michigan,Female,W 200m
+Grant,Fisher,Track and Field,Grand Blanc,Michigan,Male,"M 10,000m, M 5000m"
+Steven,Bastien,Track and Field,Ann Arbor,Michigan,Male,M Decathlon
+Taylor,Manson,Track and Field,Lansing,Michigan,Female,4 x 400m Relay Mixed
+Kate,Nye,Weightlifting,Rochester,Michigan,Female,W 76kg
+Alise,Willoughby,Cycling,St. Cloud,Minnesota,Female,Women - BMX
+Shane,Wiskus,Gymnastic (Artistic),Spring Park,Minnesota,Male,Gymnastic (Artistic) Men
+Grace,McCallum,Gymnastic (Artistic),Isanti,Minnesota,Female,Gymnastic (Artistic) Women
+Sunisa,Lee,Gymnastic (Artistic),St. Paul,Minnesota,Female,Gymnastic (Artistic) Women
+Patrick,Sunderman,Shooting,Farmington,Minnesota,Male,50m Rifle 3 Positions Men
+Kyra,Condie,Sport Climbing,Shoreview,Minnesota,Female,W Combined
+Regan,Smith,Swimming,Lakeville,Minnesota,Female,"W 100m Backstroke, W 200m Butterfly"
+Joe,Klecker,Track and Field,Hopkins,Minnesota,Male,"M 10,000mMinnesota (12) - Continued"
+Mason,Ferlic,Track and Field,Minneapolis,Minnesota,Male,M 3000m Steeplechase
+Payton,Otterdahl,Track and Field,Rosemount,Minnesota,Male,M Shot Put
+Jordan,Thompson,Volleyball (Women),Minneapolis,Minnesota,Female,Volleyball (Women)
+Gable,Steveson,Wrestling,Minneapolis,Minnesota,Male,M Freestyle 125kg
+Brittney,Reese,Track and Field,Gulfport,Mississippi,Female,W Long Jump
+Cory,McGee,Track and Field,Pass Christian,Mississippi,Female,W 1500m
+Erica,Bougard,Track and Field,Byhalia,Mississippi,Female,W Heptathlon
+Sam,Kendricks,Track and Field,Oxford,Mississippi,Male,M Pole Vault
+Shelby,McEwen,Track and Field,Abbeville,Mississippi,Male,M High Jump
+Bradley,Beal,Basketball (Men),St. Louis,Missouri,Male,Basketball (Men)
+Jayson,Tatum,Basketball (Men),St. Louis,Missouri,Male,Basketball (Men)
+Napheesa,Collier,Basketball (Women),St. Charles,Missouri,Female,Basketball (Women)
+Tyler,Downs,Diving,Ballwin,Missouri,Male,M 3m Springboard
+Becky,Sauerbrunn,Soccer (Women),St. Louis,Missouri,Female,Soccer (Women)
+Christopher,Nilsen,Track and Field,Kansas City,Missouri,Male,M Pole Vault
+Courtney,Frerichs,Track and Field,Nixa,Missouri,Female,W 3000m Steeplechase
+Deanna,Price,Track and Field,Old Monroe/Troy,Missouri,Female,W Hammer Throw
+Gwen,Berry,Track and Field,St. Louis,Missouri,Female,W Hammer Throw
+KC,Lightfoot,Track and Field,Lee's Summit,Missouri,Male,M Pole Vault
+Nicole,Heavirland,Rugby (Women),Whitefish,Montana,Female,Rugby (Women)
+Alison,Weisz,Shooting,Belgrade,Montana,Female,10m Air Rifle Women
+Nickolaus,Mowrer,Shooting,Butte,Montana,Male,"10m Air Pistol Men, 50m Rifle 3 Positions MenNebraska (2)"
+Maggie,Malone,Track and Field,Geneva,Nebraska,Female,W Javelin Throw
+Jordan,Larson,Volleyball (Women),Hooper,Nebraska,Female,Volleyball (Women)
+Beiwen,Zhang,Badminton,Las Vegas,Nevada,Female,W Singles
+Yarisel,Ramirez,Boxing,Las Vegas,Nevada,Female,W Feather (54-57kg)
+Connor,Fields,Cycling,Las Vegas,Nevada,Male,Men - BMX
+Perris,Benegas,Cycling,Reno,Nevada,Female,W Park - BMF
+Krysta,Palmer,Diving,Gardnerville,Nevada,Female,"W 3m Springboard, W Sync 3m Springboard"
+Danielle,Kang,Golf,Las Vegas,Nevada,Female,W Individual Stroke Play
+Alexis,Lagan,Shooting,Boulder City,Nevada,Female,"10m Air Pistol Women, 25m Pistol Women"
+Arabella,Sims,Swimming,Henderson,Nevada,Female,W 200m Free (R)
+Bowen,Becker,Swimming,Reno,Nevada,Male,M 100m Free (R)
+Erica,Sullivan,Swimming,Las Vegas,Nevada,Female,W 1500m Freestyle
+Katie,Grimes,Swimming,Las Vegas,Nevada,Female,W 800m Freestyle
+Vashti,Cunningham,Track and Field,Las Vegas,Nevada,Female,W High Jump
+Ben,Stevenson,Water Polo (Men),Reno,Nevada,Male,Water Polo (Men)
+Jessica,Parratto,Diving,Dover,New Hampshire,Female,W Sync 10m Platform
+Todd,Frazier,Baseball,Toms River,New Jersey,Male,Baseball
+Edrice,Adebayo,Basketball (Men),Newark,New Jersey,Male,Basketball (Men)
+Sue,Bird,Basketball (Women),Syosset,New Jersey,Female,Basketball (Women)
+Jessica,Springsteen,Equestrian,Colts Neck,New Jersey,Female,"Jumping Individual, Jumping Team"
+Dagmara,Wozniak,Fencing,Avenel,New Jersey,Female,"W Sabre Individual, W Sabre TeamNew Jersey (20) - Continued"
+Jackie,Dubrovich,Fencing,Riverdale,New Jersey,Female,"W Foil Individual, W Foil Team"
+Elizaveta,Pletneva,Gymnastics (Rhythmic),Caldwell,New Jersey,Female,Group All-Around
+Colton,Brown,Judo,Piscataway,New Jersey,Male,Men -90 kg
+Mary,Reckford,Rowing,Short Hills,New Jersey,Female,Ltweight Womens Dble Sculls
+Tracy,Eisser,Rowing,Fair Lawn,New Jersey,Female,W Pair
+Carli,Lloyd,Soccer (Women),Delran,New Jersey,Female,Soccer (Women)
+Tobin,Heath,Soccer (Women),Basking Ridge,New Jersey,Female,Soccer (Women)
+Nic,Fink,Swimming,Morristown,New Jersey,Male,M 200m Breaststroke
+Athing,Mu,Track and Field,Trenton,New Jersey,Female,W 800m
+Curtis,Thompson,Track and Field,Florence,New Jersey,Male,M Javelin Throw
+English,Gardner,Track and Field,Willingboro,New Jersey,Female,W 4 x 100m Relay
+Keturah,Orji,Track and Field,Mount Olive,New Jersey,Female,W Triple Jump
+Sam,Mattis,Track and Field,East Brunswick,New Jersey,Male,M Discus Throw
+Sydney,McLaughlin,Track and Field,Dunellen,New Jersey,Female,W 400m Hurdles
+Morgan,Pearson,Triathlon,New Vernon,New Jersey,Male,"M Individual, Mixed Relay"
+Mariah,Duran,Skateboarding,Albuquerque,New Mexico,Female,W Street
+Anita,Alvarez,Artistic Swimming,Kenmore,New York,Female,Duet
+Patrick,Kivlehan,Baseball,West Nyack,New York,Male,Baseball
+Stefanie,Dolson,Basketball (3x3),Port Jervis,New York,Female,Basketball (3x3) (Women)
+Breanna,Stewart,Basketball (Women),North Syracuse,New York,Female,Basketball (Women)
+Tina,Charles,Basketball (Women),Jamaica,New York,Female,Basketball (Women)
+Emma,White,Cycling,Duanesburg,New York,Female,W Team Pursuit
+Curtis,McDowald,Fencing,Jamaica,New York,Male,"M Epee Individual, M Epee Team"
+Daryl,Homer,Fencing,Bronx,New York,Male,"M Sabre Individual, M Sabre TeamNew York (27) - Continued"
+Nicole,Ross,Fencing,New York,New York,Female,"W Foil Individual, W Foil Team"
+Yeisser,Ramirez,Fencing,New York,New York,Male,"M Epee Individual, M Epee Team"
+Nina,Cutro-Kelly,Judo,Albany,New York,Female,Women +78 kg
+Brian,Irr,Karate,Newfane,New York,Male,M Kumite +75kg
+Brooke,Mooney,Rowing,Keene Valley,New York,Female,W Eight
+Charlotte,Buck,Rowing,Nyack,New York,Female,W Eight
+Kristine,O'Brien,Rowing,Massapequa Park,New York,Female,W Eight
+Meghan,Musnicki,Rowing,Naples,New York,Female,W Eight
+Olivia,Coffey,Rowing,Watkins Glen,New York,Female,W Eight
+Crystal,Dunn,Soccer (Women),Rockville Centre,NA,Female,Soccer (Women)
+Ashley,Twichell,Swimming,Fayetteville,New York,Female,W 10km
+Katie,Douglass,Swimming,Pelham,New York,Female,W 200m Individual Medley
+Juan,Liu,Table Tennis,College Point,New York,Female,"W Singles, W Team"
+Jessica,Pegula,Tennis,Buffalo,New York,Female,"W Doubles, W Singles"
+Dalilah,Muhammad,Track and Field,Jamaica,New York,Female,W 400m Hurdles
+Rai,Benjamin,Track and Field,Mount Vernon,New York,Male,M 400m Hurdles
+Rudy,Winkler,Track and Field,Sand Lake,New York,Male,M Hammer Throw
+Matthew,Anderson,Volleyball (Men),West Seneca,New York,Male,Volleyball (Men)
+Kyle,Dake,Wrestling,Lansing,New York,Male,M Freestyle 74kg
+Ryder,Ryan,Baseball,Huntersville,North Carolina,Male,Baseball
+Tim,Federowicz,Baseball,Chapel Hill,North Carolina,Male,Baseball
+Naomi,Graham,Boxing,Fayetteville,North Carolina,Female,W Middle (69-75kg)
+Evy,Leibfarth,Canoe/Kayak,Bryson City,North Carolina,Female,"W Canoe, W Kayak"
+Michal,Smolen,Canoe/Kayak,Charlotte,North Carolina,Male,M KayakNorth Carolina (13) - Continued
+Andrew,Capobianco,Diving,Holly Springs,North Carolina,Male,"M 3m Springboard, M Synch 3m Springboard"
+Claire,Curzan,Swimming,Cary,North Carolina,Female,W 100m Butterfly
+Tommy,Paul,Tennis,Greenville,North Carolina,Male,M Singles
+Anna,Cockrell,Track and Field,Charlotte,North Carolina,Female,"W 100m Hurdles, W 400m Hurdles"
+Gabriele,Cunningham,Track and Field,Charlotte,North Carolina,Female,W 100m Hurdles
+Kendra,Harrison,Track and Field,Clayton,North Carolina,Female,W 100m Hurdles
+Randolph,Ross,Track and Field,Raleigh,North Carolina,Male,"M 4 x 400m Relay, M 400m"
+Caine,Wilkes,Weightlifting,Indian Trail,North Carolina,Male,M +109kg
+Jacob,Wukie,Archery,Fremont,Ohio,Male,"M Individual, M Team"
+Delante,Johnson,Boxing,Cleveland,Ohio,Male,M Welter (63-69kg)
+Duke,Ragan,Boxing,Cincinnati,Ohio,Male,M Feather (52-57kg)
+Oshae,Jones,Boxing,Toledo,Ohio,Female,W Welter (64-69kg)
+Nick,Bruce,Cycling,Hubbard,Ohio,Male,M Park - BMF
+Carlin,Isles,Rugby (Men),Massillon,Ohio,Male,Rugby (Men)
+Rose,Lavelle,Soccer (Women),Cincinnati,Ohio,Female,Soccer (Women)
+Hunter,Armstrong,Swimming,Dover,Ohioo,Male,M 100m Backstroke
+Zachary,Apple,Swimming,Trenton,Ohio,Male,M 100m Freestyle
+Adelaide,Aquilla,Track and Field,Westlake,Ohio,Female,W Shot Put
+Clayton,Murphy,Track and Field,New Madison,Ohio,Male,M 800m
+Katie,Nageotte,Track and Field,Olmsted Falls,Ohio,Female,W Pole Vault
+Reggie,Jagers III,Track and Field,Cleveland,Ohio,Male,M Discus Throw
+Maxwell,Holt,Volleyball (Men),Cincinnati,Ohio,Male,Volleyball (Men)
+Patrick,Callan,Swimming,Tulsa,Oklahoma,Male,M 200m Free (R)
+Micha,Hancock,Volleyball (Women),Edmond,Oklahoma,Female,Volleyball (Women)
+Jerami,Grant,Basketball (Men),Portland,Oregon,Male,Basketball (Men)
+Mariel,Zagunis,Fencing,Portland,Oregon,Female,"W Sabre Individual, W Sabre Team"
+Devon,Allen,Track and Field,Eugene,Oregon,Male,M 110m Hurdles
+Galen,Rupp,Track and Field,Portland,Oregon,Male,M Marathon
+Matthew,Centrowitz,Track and Field,Portland,Oregon,Male,M 1500m
+Micah,Williams,Track and Field,Portland,Oregon,Male,M 4 x 100m Relay
+Ryan,Crouser,Track and Field,Boring,Oregon,Male,M Shot Put
+Sally,Kipyego,Track and Field,Eugene,Oregon,Female,W Marathon
+Kimberly,Hill,Volleyball (Women),Portland,Oregon,Female,Volleyball (Women)
+Casey,Kaufhold,Archery,Lancaster,Pennsylvania,Female,"W Individual, W Team"
+Scott,McGough,Baseball,Pittsburgh,Pennsylvania,Male,Baseball
+Payton,Ridenour,Cycling,Pottstown,Pennsylvania,Female,Women - BMX
+Boyd,Martin,Equestrian,Cochranville,Pennsylvania,Male,"Eventing Individual, Eventing Team"
+Phillip,Dutton,Equestrian,West Grove,Pennsylvania,Female,"Eventing Individual, Eventing Team"
+Jacob,Hoyle,Fencing,Wallingford,Pennsylvania,Male,"M Epee Individual, M Epee Team"
+Alex,Miklasevich,Rowing,Pittsburgh,Pennsylvania,Male,M Eight
+Julian,Venonsky,Rowing,Philadelphia,Pennsylvania,Male,M Eight
+Justin,Best,Rowing,Kennett Square,Pennsylvania,Male,M Eight
+Michael,Grady,Rowing,Pittsburgh,Pennsylvania,Male,M Four
+Nicholas,Mead,Rowing,Strafford,Pennsylvania,Male,M Eight
+Ariana,Ramsey,Rugby (Women),Philadelphia,Pennsylvania,Female,Rugby (Women)
+Kris,Thomas,Rugby (Women),Philadelphia,Pennsylvania,Female,Rugby (Women)
+Hali,Flickinger,Swimming,Spring Grove,Pennsylvania,Female,"W 200m Butterfly, W 400m Individual Medley"
+Jennifer,Brady,Tennis,Harrisburg,Pennsylvania,Female,W Singles
+Ajee,Wilson,Track and Field,Philadelphia,Pennsylvania,Female,W 800mPennsylvania (21) - Continued
+Joseph,Kovacs,Track and Field,Nazareth,Pennsylvania,Male,M Shot Put
+Michael,Shuey,Track and Field,Johnsonburg,Pennsylvania,Male,M Javelin Throw
+Mitchell,Stahl,Volleyball (Men),Chambersburg,Pennsylvania,Male,Volleyball (Men)
+David,Taylor,Wrestling,State College,Pennsylvania,Male,M Freestyle 86kg
+John,Stefanowicz,Wrestling,New Park,Pennsylvania,Male,M Greco-Roman 87kg
+Anders,Weiss,Rowing,Barrington,Rhode Island,Male,M Four
+Stuart,McNay,Sailing,Providence,Rhode Island,Male,470 Men
+Emily,Sisson,Track and Field,Providence,Rhode Island,Female,"W 10,000m"
+Khris,Middleton,Basketball (Men),Charleston,South Carolina,Male,Basketball (Men)
+A'ja,Wilson,Basketball (Women),Columbia,South Carolina,Female,Basketball (Women)
+Doug,Payne,Equestrian,Aiken,South Carolina,Female,"Eventing Individual, Eventing Team"
+Quanera,Hayes,Track and Field,Dillon,South Carolina,Female,"W 4 x 400m Relay, W 400m"
+Raven,Saunders,Track and Field,Charleston,South Carolina,Female,W Shot Put
+Sandi,Morris,Track and Field,Greenville,South Carolina,Female,W Pole Vault
+Wadeline,Jonathas,Track and Field,Columbia,South Carolina,Female,"W 4 x 400m Relay Y QLF, W 400m"
+Clarence,Cummings,Weightlifting,Beaufort,South Carolina,Male,M 73kg
+Paige,McPherson,Taekwondo,Sturgis,South Dakota,Female,Women -67kg
+Alex,Walsh,Swimming,Nashville,Tennessee,Female,W 200m Individual Medley
+Erika,Brown,Swimming,Knoxville,Tennessee,Female,W 100m Freestyle
+Tennys,Sandgren,Tennis,Gallatin,Tennessee,Male,"M Doubles, M SinglesTennessee (5) - Continued"
+Alex,Young,Track and Field,La Vergne,Tennessee,Male,M Hammer Throw
+Wesley,Kitts,Weightlifting,Knoxville,Tennessee,Male,M 109kg
+Mackenzie,Brown,Archery,Flint,Texas,Female,"W Individual, W Team"
+Scott,Kazmir,Baseball,Cypress Falls,Texas,Male,Baseball
+Shane,Baz,Baseball,Cypress,Texas,Male,Baseball
+Simeon,Woods Richardson,Baseball,Sugar Land,Texas,Male,Baseball
+Ariel,Atkins,Basketball (Women),Dallas,Texas,Female,Basketball (Women)
+Brittney,Griner,Basketball (Women),Houston,Texas,Female,Basketball (Women)
+Virginia,Fuchs,Boxing,Houston,Texas,Female,W Fly (48-51kg)
+Lawson,Craddock,Cycling,Houston,Texas,Male,"M Individual Time Trial, M Road Race"
+Alison,Gibson,Diving,Austin,Texas,Female,W Sync 3m Springboard
+Hailey,Hernandez,Diving,Southlake,Texas,Female,W 3m Springboard
+Courtney,Hurley,Fencing,San Antonio,Texas,Female,"W Epee Individual, W Epee Team"
+Kelley,Hurley,Fencing,San Antonio,Texas,Female,"W Epee Individual, W Epee Team"
+Simone,Biles,Gymnastic (Artistic),Spring,Texas,Female,Gymnastic (Artistic) Women
+Thomas,Scott,Karate,Richardson,Texas,Male,M Kumite -75kg
+Kevon,Williams,Rugby (Men),Houston,Texas,Male,Rugby (Men)
+Austen,Smith,Shooting,Keller,Texas,Female,Skeet Women
+Phillip,Jungman,Shooting,Caldwell,Texas,Male,Skeet Men
+Catherine,Osterman,Softball (Women),Houston,Texas,Female,Softball
+Simone,Manuel,Swimming,Sugar Land,Texas,Female,W 50m Freestyle
+Huijing,Wang,Table Tennis,Sugar Land,Texas,Female,W Team
+Austin,Krajicek,Tennis,Plano,Texas,Male,M Doubles
+Ariana,Ince,Track and Field,Gonzales,Texas,Female,W Javelin Throw
+Bryce,Deadmon,Track and Field,Missouri City,Texas,Female,4 x 400m Relay MixedTexas (31) - Continued
+Bryce,Hoppel,Track and Field,Midland,Texas,Male,M 800m
+Fred,Kerley,Track and Field,San Antonio,Texas,Male,"M 100m, M 200m, M 4 x 100m Relay"
+Jasmine,Moore,Track and Field,Grand Prairie,Texas,Female,W Triple Jump
+Raevyn,Rogers,Track and Field,Houston,Texas,Female,W 800m
+Steffin,McCarter,Track and Field,Copperas Cove,Texas,Male,M Long Jump
+Chiaka,Ogbogu,Volleyball (Women),Coppell,Texas,Female,Volleyball (Women)
+Jourdan,Delacruz,Weightlifting,Wylie,Texas,Female,W 49kg
+Tamyra,Mensah-Stock,Wrestling,Katy,Texas,Female,W Freestyle 68kg
+Jordan,Matyas,Rugby (Women),Calgary,Utah,Female,Rugby (Women)
+Nathaniel,Coleman,Sport Climbing,Salt Lake City,Utah,Male,M Combined
+Rhyan,White,Swimming,Herriman,Utah,Female,"W 100m Backstroke, W 200m Backstroke"
+Jacob,Gibb,Volleyball (Beach),Bountiful,Utah,Male,Volleyball (Beach) Men
+Ilona,Maher,Rugby (Women),Burlington,Vermont,Female,Rugby (Women)
+Elinor,Purrier,Track and Field,Montgomery,Vermont,Female,W 1500m
+Keyshawn,Davis,Boxing,Norfolk,Virginia,Male,M Light (57-63kg)
+Troy,Isley,Boxing,Alexandria,Virginia,Male,M Middle (69-75kg)
+Justin,Dowell,Cycling,Virginia Beach,Virginia,Male,M Park - BMF
+Claire,Collins,Rowing,McLean,Virginia,Female,W Four
+Cheta,Emba,Rugby (Women),Richmond,Virginia,Female,Rugby (Women)
+Andrew,Seliskar,Swimming,McLean,Virginia,Male,M 200m Free (R)
+Townley,Haas,Swimming,Henrico,Virginia,Male,M 200m Freestyle
+Torri,Huske,Swimming,Arlington,Virginia,Female,W 100m Butterfly
+Grant,Holloway,Track and Field,Chesapeake,Virginia,Male,M 110m HurdlesVirginia (13) - Continued
+Michael,Cherry,Track and Field,Chesapeake,Virginia,Male,"M 4 x 400m Relay, M 400m"
+Noah,Lyles,Track and Field,Alexandria,Virginia,Male,M 200m
+Trevor,Stewart,Track and Field,Lorton,Virginia,Male,"M 4 x 400m Relay, M 400m"
+Ty,Butts-Townsend,Track and Field,Hampton,Virginia,Female,W High Jump
+Zach,Lavine,Basketball (Men),Renton,Washington,Male,Basketball (Men)
+Nevin,Harrison,Canoe/Kayak,Seattle,Washington,Female,W Canoe Single 200m
+Adrian,Hegyvary,Cycling,Seattle,Washington,Male,M Madison
+Katrina,Young,Diving,Seattle,Washington,Female,W 10m Platform
+Jordan,Chiles,Gymnastic (Artistic),Vancouver,Washington,Female,Gymnastic (Artistic) Women
+Jacob,Riley,Track and Field,Bellingham,Washington,Male,M Marathon
+Kara,Winger,Track and Field,Vancouver,Washington,Female,W Javelin Throw
+Harrison,Maurus,Weightlifting,Auburn,Washington,Male,M 81kg
+Alison,Rusher,Rowing,West Bend,Wisconsin,Female,W Quadruple Sculls
+Madeleine,Wanamaker,Rowing,Neenah,Wisconsin,Female,W Four
+Megan,Kalmoe,Rowing,Saint Croix Falls,Wisconsin,Female,W Pair
+Stephanie,Roble,Sailing,East Troy,Wisconsin,Female,49er FX Women
+Madelynn,Bernau,Shooting,Waterford,Wisconsin,Female,Trap Women
+Alicia,Monson,Track and Field,Amery,Wisconsin,Female,"W 10,000m"
+Kenneth,Bednarek,Track and Field,Rice Lake,Wisconsin,Male,"M 100m, M 200m"
+Luca,Cupido,Water Polo (Men),Santa Margherita Ligure,Italy,Male,Water Polo (Men)
+Jack,Lopez,Baseball,Toa Alta,Puerto Rico,Male,Baseball

@@ -1,0 +1,653 @@
+---
+title: "Web scaping"
+subtitle: "Lecture 10"
+date: "2024-10-01"
+format: 
+  live-revealjs: 
+    output-file: 10-web-scraping-slides.html
+    webr:
+      cell-options:
+        autorun: false
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+<!-- end: webr fodder -->
+
+<!--# mello -->
+
+<!-- begin: ae definition -->
+
+```{r}
+#| include: false
+todays_ae <- "ae-10-chronicle-scrape"
+```
+
+<!-- end: ae definition -->
+
+# Warm-up
+
+## While you wait... {.smaller}
+
+::: appex
+-   If you haven't yet done so: Install a Chrome browser and the SelectorGadget extension:
+
+    -   [Chrome](https://www.google.com/chrome/)
+
+    -   [SelectorGadget](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en)
+
+-   Go to your `ae` project in RStudio.
+
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   Click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Wait till the you're prompted to work on the application exercise during class before editing the file.
+:::
+
+## Announcements
+
+Midterm things:
+
+-   Practice midterm: Posted on the course website
+-   Lecture recordings: Available until the in-class midterm, link emailed earlier today
+-   Application exercise catch-up: Complete all application exercises up to the midterm by the in-class midterm (and get any missed points!)
+-   Midterm review: In class on Thursday, come with questions!
+
+# From last time
+
+## Age gaps
+
+Data prep:
+
+```{r}
+#| label: age-gaps-prep
+#| message: false
+library(tidyverse)
+
+age_gaps <- read_csv("data/age-gaps.csv")
+
+age_gaps_heterosexual <- age_gaps |>
+  filter(character_1_gender != character_2_gender)
+```
+
+## Age gaps {.smaller}
+
+Label the data:
+
+```{r}
+#| label: age-gaps-label
+#| code-line-numbers: "|2,10|3|4,5|6,7|8"
+age_gaps_heterosexual <- age_gaps_heterosexual |>
+  mutate(
+    older = case_when(
+      character_1_gender == "woman" & actor_1_age > actor_2_age ~ "woman older",
+      character_2_gender == "woman" & actor_2_age > actor_1_age ~ "woman older",
+      character_1_gender == "man"   & actor_1_age > actor_2_age ~ "man older",
+      character_2_gender == "man"   & actor_2_age > actor_1_age ~ "man older",
+      actor_1_age == actor_2_age ~ "same age"
+    )
+  )
+```
+
+## Age gaps
+
+Age gaps split:
+
+```{r}
+#| label: age-gaps-split
+woman_older <- age_gaps_heterosexual |> 
+  filter(older == "woman older")
+man_older   <- age_gaps_heterosexual |> 
+  filter(older == "man older")
+same_age    <- age_gaps_heterosexual |>
+  filter(older == "same age")
+```
+
+. . .
+
+Check:
+
+```{r}
+#| label: age-gaps-split-check
+(
+  nrow(woman_older) + nrow(man_older) + nrow(same_age)
+) == nrow(age_gaps_heterosexual)
+```
+
+## Age gaps
+
+Write data
+
+```{r}
+#| label: age-gaps-export
+#| eval: false
+write_csv(woman_older, file = "data/woman-older.csv")
+write_csv(man_older, file = "data/man-older.csv")
+write_csv(same_age, file = "data/same-age.csv")
+```
+
+# Data on the web
+
+## Reading The Chronicle
+
+::: question
+How often do you read The Chronicle?
+
+-   Every day
+
+-   3-5 times a week
+
+-   Once a week
+
+-   Rarely
+:::
+
+## Reading The Chronicle
+
+::: question
+What do you think is the most common word in the titles of The Chronicle opinion pieces?
+:::
+
+## Analyzing The Chronicle
+
+```{r}
+#| label: load-chronicle-data
+#| include: false
+library(tidytext)
+chronicle <- read_csv("data/chronicle.csv")
+```
+
+```{r}
+#| label: chronicle-common-words
+#| echo: false
+#| message: false
+stop_words <- read_csv("data/stop-words.csv")
+chronicle |>
+  tidytext::unnest_tokens(word, title) |>
+  mutate(word = str_replace_all(word, "’", "'")) |>
+  anti_join(stop_words) |>
+  count(word, sort = TRUE) |>
+  filter(word != "duke's") |>
+  slice_head(n = 20) |>
+  mutate(word = fct_reorder(word, n)) |>
+  ggplot(aes(y = word, x = n, fill = log(n))) +
+  geom_col(show.legend = FALSE) +
+  theme_minimal(base_size = 16) +
+  labs(
+    x = "Number of mentions",
+    y = "Word",
+    title = "The Chronicle - Opinion pieces",
+    subtitle = "Common words in the 500 most recent opinion pieces",
+    caption = "Source: Data scraped from The Chronicle on Sep 30, 2024"
+  ) +
+  theme(
+    plot.title.position = "plot",
+    plot.caption = element_text(color = "gray30")
+  )
+```
+
+## Reading The Chronicle
+
+::: question
+How do you think the sentiments in opinion pieces in The Chronicle compare across authors?
+Roughly the same?
+Wildly different?
+Somewhere in between?
+:::
+
+## Analyzing The Chronicle
+
+```{r}
+#| label: chronicle-sentiments
+#| echo: false
+#| message: false
+#| fig-asp: 0.75
+#| fig-width: 7
+#| fig-align: center
+afinn_sentiments <- read_csv("data/afinn-sentiments.csv")
+chronicle |>
+  tidytext::unnest_tokens(word, abstract) |>
+  mutate(word = str_replace_all(word, "’", "'")) |>
+  anti_join(stop_words) |>
+  left_join(afinn_sentiments) |> 
+  group_by(author, title) |>
+  summarize(total_sentiment = sum(value, na.rm = TRUE), .groups = "drop") |>
+  group_by(author) |>
+  summarize(
+    n_articles = n(),
+    avg_sentiment = mean(total_sentiment, na.rm = TRUE),
+  ) |>
+  filter(n_articles > 1 & !is.na(author)) |>
+  arrange(desc(avg_sentiment)) |>
+  slice(c(1:10, 40:49)) |>
+  mutate(
+    author = fct_reorder(author, avg_sentiment),
+    neg_pos = if_else(avg_sentiment < 0, "neg", "pos"),
+    label_position = if_else(neg_pos == "neg", 0.25, -0.25)
+  ) |>
+  ggplot(aes(y = author, x = avg_sentiment)) +
+  geom_col(aes(fill = neg_pos), show.legend = FALSE) +
+  geom_text(
+    aes(x = label_position, label = author, color = neg_pos),
+    hjust = c(rep(1,10), rep(0, 10)),
+    show.legend = FALSE,
+    fontface = "bold"
+  ) +
+  geom_text(
+    aes(label = round(avg_sentiment, 1)),
+    hjust = c(rep(1.25, 10), rep(-0.25, 10)),
+    color = "white",
+    fontface = "bold"
+  ) +
+  scale_fill_manual(values = c("neg" = "#4d4009", "pos" = "#FF4B91")) +
+  scale_color_manual(values = c("neg" = "#4d4009", "pos" = "#FF4B91")) +
+  coord_cartesian(xlim = c(-8, 8)) +
+  labs(
+    x = "negative  ←     Average sentiment score (AFINN)     →  positive",
+    y = NULL,
+    title = "The Chronicle - Opinion pieces\nAverage sentiment scores of abstracts by author",
+    subtitle = "Top 10 average positive and negative scores",
+    caption = "Source: Data scraped from The Chronicle on Sep 30, 2024"
+  ) +
+  theme_void(base_size = 16) +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5, margin = unit(c(0.5, 0, 1, 0), "lines")),
+    axis.title.x = element_text(color = "gray30", size = 12),
+    plot.caption = element_text(color = "gray30", size = 10)
+  )
+```
+
+## All of this analysis is done in R! {.centered}
+
+::: hand
+(mostly) with tools you already know!
+:::
+
+## Common words in The Chronicle titles {.smaller}
+
+Code for the earlier plot:
+
+```{r}
+#| ref.label: chronicle-common-words
+#| fig-show: hide
+#| message: false
+#| code-line-numbers: "|2-3|5|6|8|9|10-23"
+```
+
+## Avg sentiment scores of abstracts {.smaller}
+
+Code for the earlier plot:
+
+```{r}
+#| ref.label: chronicle-sentiments
+#| fig-show: hide
+#| message: false
+#| code-line-numbers: "|2-3|5|6|7-8|9-13|22-52"
+```
+
+## Where is the data coming from? {.smaller}
+
+::: center
+<https://www.dukechronicle.com/section/opinion>
+:::
+
+[![](images/10/chronicle-opinion-page.png){fig-align="center" width="800"}](https://www.dukechronicle.com/section/opinion?page=1&per_page=500)
+
+## Where is the data coming from? {.smaller}
+
+::::: columns
+::: {.column width="20%"}
+[![](images/10/chronicle-opinion-page.png){fig-align="center" width="800"}](https://www.dukechronicle.com/section/opinion?page=1&per_page=500)
+:::
+
+::: {.column width="80%"}
+```{r}
+chronicle
+```
+:::
+:::::
+
+# Web scraping
+
+## Scraping the web: what? why? {.smaller}
+
+-   Increasing amount of data is available on the web
+
+-   These data are provided in an unstructured format: you can always copy&paste, but it's time-consuming and prone to errors
+
+-   Web scraping is the process of extracting this information automatically and transform it into a structured dataset
+
+-   Two different scenarios:
+
+    -   Screen scraping: extract data from source code of website, with html parser (easy) or regular expression matching (less easy).
+
+    -   Web APIs (application programming interface): website offers a set of structured http requests that return JSON or XML files.
+
+## Hypertext Markup Language {.smaller}
+
+Most of the data on the web is still largely available as HTML - while it is structured (hierarchical) it often is not available in a form useful for analysis (flat / tidy).
+
+::: small
+``` html
+<html>
+  <head>
+    <title>This is a title</title>
+  </head>
+  <body>
+    <p align="center">Hello world!</p>
+    <br/>
+    <div class="name" id="first">John</div>
+    <div class="name" id="last">Doe</div>
+    <div class="contact">
+      <div class="home">555-555-1234</div>
+      <div class="home">555-555-2345</div>
+      <div class="work">555-555-9999</div>
+      <div class="fax">555-555-8888</div>
+    </div>
+  </body>
+</html>
+```
+:::
+
+## rvest {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+-   The **rvest** package makes basic processing and manipulation of HTML data straight forward
+-   It's designed to work with pipelines built with `|>`
+-   [rvest.tidyverse.org](https://rvest.tidyverse.org)
+
+```{r}
+#| message: false
+
+library(rvest)
+```
+:::
+
+::: {.column width="50%"}
+[![](images/10/rvest.png){fig-alt="rvest hex logo" fig-align="right" width="400"}](https://rvest.tidyverse.org/)
+:::
+:::::
+
+## rvest {.smaller}
+
+Core functions:
+
+-   `read_html()` - read HTML data from a url or character string.
+
+-   `html_elements()` - select specified elements from the HTML document using CSS selectors (or xpath).
+
+-   `html_element()` - select a single element from the HTML document using CSS selectors (or xpath).
+
+-   `html_table()` - parse an HTML table into a data frame.
+
+-   `html_text()` / `html_text2()` - extract tag's text content.
+
+-   `html_name` - extract a tag/element's name(s).
+
+-   `html_attrs` - extract all attributes.
+
+-   `html_attr` - extract attribute value(s) by name.
+
+## html, rvest, & xml2 {.smaller}
+
+```{r}
+html <- 
+'<html>
+  <head>
+    <title>This is a title</title>
+  </head>
+  <body>
+    <p align="center">Hello world!</p>
+    <br/>
+    <div class="name" id="first">John</div>
+    <div class="name" id="last">Doe</div>
+    <div class="contact">
+      <div class="home">555-555-1234</div>
+      <div class="home">555-555-2345</div>
+      <div class="work">555-555-9999</div>
+      <div class="fax">555-555-8888</div>
+    </div>
+  </body>
+</html>'
+```
+
+. . .
+
+```{r}
+read_html(html)
+```
+
+## Selecting elements {.smaller}
+
+```{r}
+read_html(html) |> html_elements("p")
+```
+
+. . .
+
+```{r}
+read_html(html) |> html_elements("p") |> html_text()
+```
+
+. . .
+
+```{r}
+read_html(html) |> html_elements("p") |> html_name()
+```
+
+. . .
+
+```{r}
+read_html(html) |> html_elements("p") |> html_attrs()
+```
+
+. . .
+
+```{r}
+read_html(html) |> html_elements("p") |> html_attr("align")
+```
+
+## More selecting tags {.smaller}
+
+::: medium
+```{r}
+read_html(html) |> html_elements("div")
+```
+:::
+
+. . .
+
+::: medium
+```{r}
+read_html(html) |> html_elements("div") |> html_text()
+```
+:::
+
+## CSS selectors {.smaller}
+
+-   We will use a tool called SelectorGadget to help us identify the HTML elements of interest by constructing a CSS selector which can be used to subset the HTML document.
+
+. . .
+
+-   Some examples of basic selector syntax is below,
+
+::: small
+| Selector | Example | Description |
+|:-----------------|:-----------------|:-----------------------------------|
+| .class | `.title` | Select all elements with class="title" |
+| #id | `#name` | Select all elements with id="name" |
+| element | `p` | Select all \<p\> elements |
+| element element | `div p` | Select all \<p\> elements inside a \<div\> element |
+| element\>element | `div > p` | Select all \<p\> elements with \<div\> as a parent |
+| \[attribute\] | `[class]` | Select all elements with a class attribute |
+| \[attribute=value\] | `[class=title]` | Select all elements with class="title" |
+:::
+
+## CSS classes and ids
+
+```{r}
+read_html(html) |> html_elements(".name")
+```
+
+. . .
+
+```{r}
+read_html(html) |> html_elements("div.name")
+```
+
+. . .
+
+```{r}
+read_html(html) |> html_elements("#first")
+```
+
+## Text with `html_text()` vs. `html_text2()` {.smaller}
+
+```{r}
+html = read_html(
+  "<p>  
+    This is the first sentence in the paragraph.
+    This is the second sentence that should be on the same line as the first sentence.<br>This third sentence should start on a new line.
+  </p>"
+)
+```
+
+. . .
+
+```{r}
+html |> html_text()
+html |> html_text2()
+```
+
+## HTML tables with `html_table()` {.smaller}
+
+```{r}
+html_table = 
+'<html>
+  <head>
+    <title>This is a title</title>
+  </head>
+  <body>
+    <table>
+      <tr> <th>a</th> <th>b</th> <th>c</th> </tr>
+      <tr> <td>1</td> <td>2</td> <td>3</td> </tr>
+      <tr> <td>2</td> <td>3</td> <td>4</td> </tr>
+      <tr> <td>3</td> <td>4</td> <td>5</td> </tr>
+    </table>
+  </body>
+</html>'
+```
+
+. . .
+
+```{r}
+read_html(html_table) |>
+  html_elements("table") |> 
+  html_table()
+```
+
+## SelectorGadget
+
+**SelectorGadget** ([selectorgadget.com](http://selectorgadget.com)) is a javascript based tool that helps you interactively build an appropriate CSS selector for the content you are interested in.
+
+![](images/10/selectorgadget.png){fig-align="center" width="1000"}
+
+# Application exercise
+
+## Opinion articles in The Chronicle
+
+Go to <https://www.dukechronicle.com/section/opinion?page=1&per_page=500>.
+
+::: question
+How many articles are on the page?
+:::
+
+## Goal
+
+::::: columns
+::: {.column width="50%"}
+-   Scrape data and organize it in a tidy format in R
+-   Perform light text parsing to clean data
+-   Summarize and visualze the data
+:::
+
+::: {.column width="50%"}
+![](images/10/chronicle-data.png){fig-align="center"}
+:::
+:::::
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`* and *`chronicle-scrape.R`*.
+:::
+
+## Recap
+
+-   Use the SelectorGadget identify tags for elements you want to grab
+-   Use rvest to first read the whole page (into R) and then parse the object you've read in to the elements you're interested in
+-   Put the components together in a data frame (a tibble) and analyze it like you analyze any other data
+
+## A new R workflow {.smaller}
+
+-   When working in a Quarto document, your analysis is re-run each time you knit
+
+-   If web scraping in a Quarto document, you'd be re-scraping the data each time you knit, which is undesirable (and not *nice*)!
+
+-   An alternative workflow:
+
+    -   Use an R script to save your code
+    -   Saving interim data scraped using the code in the script as CSV or RDS files
+    -   Use the saved data in your analysis in your Quarto document
+
+# Web scraping considerations
+
+## Ethics: "Can you?" vs "Should you?"
+
+![](images/10/ok-cupid-1.png){fig-align="center" width="800"}
+
+::: aside
+Source: Brian Resnick, [Researchers just released profile data on 70,000 OkCupid users without permission](https://www.vox.com/2016/5/12/11666116/70000-okcupid-users-data-release), Vox.
+:::
+
+## "Can you?" vs "Should you?"
+
+![](images/10/ok-cupid-2.png){fig-align="center" width="699"}
+
+## Challenges: Unreliable formatting
+
+![](images/10/unreliable-formatting.png){fig-align="center" width="699"}
+
+::: aside
+[alumni.duke.edu/news/notable-alumni](https://alumni.duke.edu/news/notable-alumni)
+:::
+
+## Challenges: Data broken into many pages
+
+![](images/10/many-pages.png){fig-align="center"}
+
+## Workflow: Screen scraping vs. APIs
+
+Two different scenarios for web scraping:
+
+-   Screen scraping: extract data from source code of website, with html parser (easy) or regular expression matching (less easy)
+
+-   Web APIs (application programming interface): website offers a set of structured http requests that return JSON or XML files

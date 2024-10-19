@@ -1,0 +1,17 @@
+{
+  "hash": "00590ac1b260d7dbff0ac995d4875bee",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"AE 08: Durham climate + factors\"\n---\n\n\n\n\n## Getting started\n\n### Packages\n\nWe will use the **tidyverse** package in this application exercise.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n```\n:::\n\n\n\n\n### Data\n\nThe data come from <https://www.usclimatedata.com/climate/durham/north-carolina/united-states/usnc0192> and are stored as `durham-climate.csv` in the `data` folder.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndurham_climate <- read_csv(\"data/durham-climate.csv\")\n```\n:::\n\n\n\n\nAnd let's take a look at the data.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndurham_climate\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n# A tibble: 12 × 4\n   month     avg_high_f avg_low_f precipitation_in\n   <chr>          <dbl>     <dbl>            <dbl>\n 1 January           49        28             4.45\n 2 February          53        29             3.7 \n 3 March             62        37             4.69\n 4 April             71        46             3.43\n 5 May               79        56             4.61\n 6 June              85        65             4.02\n 7 July              89        70             3.94\n 8 August            87        68             4.37\n 9 September         81        60             4.37\n10 October           71        47             3.7 \n11 November          62        37             3.39\n12 December          53        30             3.43\n```\n\n\n:::\n:::\n\n\n\n\n## Reorder\n\nWhat's wrong with the following plot?\n\nAdd your response here.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(\n  durham_climate, \n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 2,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  )\n```\n\n::: {.cell-output-display}\n![](ae-08-durham-climate-factors_files/figure-html/avg-high-broken-1.png){width=100%}\n:::\n:::\n\n\n\n\nFix the plot.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\n\n## Recode and reorder\n\nUpdate the plot above, coloring points based on season.\nAdditionally:\n\n-   Make sure the legend is on top of the plot and the seasons appear in the legend in the order they appear in the plot (Winter, Spring, Summer, Fall).\n\n-   Use `\"circle filled\"` as the `shape` for points, set their `size` to 3 points, outline (`stroke`) to 1 point, and fill them in with the following colors:\n\n    -   Winter: `lightskyblue1`\n    -   Spring: `chartreuse3`\n    -   Summer: `gold2`\n    -   Fall: `lightsalmon4`\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n\n\n## Pivot\n\nOverlay lines for both high and low temperatures on the same plot.\nAdditionally, use different colors for the two lines – a darker color for high and a lighter color for low temperatures.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n",
+    "supporting": [
+      "ae-08-durham-climate-factors_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

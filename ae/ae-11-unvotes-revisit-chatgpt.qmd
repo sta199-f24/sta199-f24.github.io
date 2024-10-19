@@ -1,0 +1,129 @@
+---
+title: "AE 11: UN Votes - Revisit + Chat GPT adventures"
+---
+
+# Part 1: UN Votes - Revisit
+
+You've seen this analysis before.
+It's time to revisit it and clean it up for code smell, style, and readability.
+Make the necessary updates to the code to improve the code.
+Then, review the diff before you render, commit (with an appropriate message), and push.
+
+------------------------------------------------------------------------
+
+## Introduction
+
+How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues?
+Answering these questions (at a high level) is the focus of this analysis.
+
+### Packages
+
+We will use the **tidyverse**, **lubridate**, and **scales** packages for data wrangling and visualization, and the **DT** package for interactive display of tabular output, and the **unvotes** package for the data.
+
+```{r}
+#| label: load-packages
+library(tidyverse)
+library(scales)
+library(unvotes)
+library(ggthemes)
+```
+
+### Data
+
+The data we're using originally come from the **unvotes** package.
+In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis.
+
+```{r}
+#| label: join-data
+unvotes <- un_votes |>inner_join(un_roll_calls, by = join_by(rcid)) |>
+  inner_join(un_roll_call_issues, 
+by = join_by(rcid == rcid),relationship = "many-to-many")
+
+print(unvotes)
+```
+
+## UN voting patterns
+
+Let's create a data visualization that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.
+
+```{r}
+#| label: plot yearly yes issue
+#| warning: false
+#| fig-width: 10
+#| fig-height: 6
+
+
+library(ggplot2)
+unvotes |>
+  filter(country%in%c("United Kingdom", "United States", "Turkey")) |>
+    mutate(year = year(date))|>
+      group_by(country, year, issue) |>
+    summarize(percent_yes = mean(vote=="yes"),.groups = "drop") |>
+
+  
+ggplot(aes(x = year, 
+           y = percent_yes, 
+           color = country)) +
+  geom_smooth(method = "loess", se = FALSE) + facet_wrap(~issue) +
+              scale_color_colorblind() +
+  labs(
+    title = "Percentage of 'Yes' votes in the UN General Assembly",
+subtitle = "1946 to 2019",y = "% Yes",x = "Year",color = "Country"
+  )+
+   geom_point(alpha = 0.4)+scale_y_continuous(labels = percent)
+
+
+
+
+```
+
+## References
+
+1.  Robinson D (2021). *unvotes: United Nations General Assembly Voting Data*. R package version 0.3.0, <https://github.com/dgrtwo/unvotes>.
+2.  Erik Voeten "Data and Analyses of Voting in the UN General Assembly" Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).
+3.  Much of the analysis has been modeled on the examples presented in the [unvotes package vignette](https://cran.r-project.org/web/packages/unvotes/vignettes/unvotes.html).
+
+# Part 2: ChatGPT adventures
+
+Suppose you gave the following prompt THAT YOU SHOULDN'T HAVE IN THE FIRST PLACE to Chat GPT and it gave you the response provided below.
+Improve the code for correctness, code smell, style, and readability.
+
+------------------------------------------------------------------------
+
+> SurveyUSA polled 900 NC adults between September 4-7, 2024.
+> Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.
+> The following question was asked to these 771 adults: "Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?"
+>
+> Of the 771 responses, 391 were between the ages of 18-49.
+> Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
+> Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
+>
+> Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample.
+> Make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.
+
+```{r}
+library(dplyr)
+
+# Create the initial data frame with counts
+survey_counts <- tibble( 
+  age = c("18-49", "18-49", "18-49", "50+", "50+", "50+"),
+  opinion = c("Against", "Legal", "Not sure", "Against", "Legal", "Not sure"),
+  n = c(59, 292, 40, 67, 245, 59)
+)
+
+# Group by age and summarize total counts
+age_totals <- survey_counts %>%
+  group_by(age) %>%
+  summarize(total_count = sum(n)) %>%
+  ungroup()
+
+# Calculate the overall total
+overall_total <- sum(age_totals$total_count)
+
+# Add the proportion column
+age_totals <- age_totals %>%
+  mutate(proportion = total_count / overall_total)
+
+# Resulting data frame
+print(age_totals)
+```

@@ -26,10 +26,16 @@ editor_options:
 #| echo: false
 #| output: false
 options(width = 60)
-survey <- read_csv("survey-2024-09-24")
+survey <- read_csv("survey-2024-09-24.csv") |>
+  rename(
+    tue_classes = `How many classes do you have on Tuesdays?`,
+    year = `What year are you?`
+  )
 ```
 
 <!-- end: webr fodder -->
+
+<!--# hello -->
 
 <!-- begin: ae definition -->
 
@@ -44,16 +50,14 @@ todays_ae <- "ae-08-durham-climate-factors"
 
 ## While you wait... {.smaller}
 
-::: columns
+:::::: columns
 ::: {.column width="35%"}
 {{< qrcode https://forms.gle/J9Giy9sytk4KxVFo8 >}}
 
-```{=html}
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc9frzLIsVXJdrKrWxetCXtffs8C2sGv-UNFD3egfRNUtA3Pw/viewform?embedded=true" width="350" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-```
 :::
 
-::: {.column width="65%"}
+:::: {.column width="65%"}
 Prepare for today's application exercise: **`{r} todays_ae`**
 
 ::: appex
@@ -65,8 +69,8 @@ Prepare for today's application exercise: **`{r} todays_ae`**
 
 -   Wait till the you're prompted to work on the application exercise during class before editing the file.
 :::
-:::
-:::
+::::
+::::::
 
 ## Lab 1 feedback {.smaller}
 
@@ -161,7 +165,7 @@ survey |>
 
 ## Logical & character
 
-::: columns
+::::: columns
 ::: column
 **logical** - Boolean values `TRUE` and `FALSE`
 
@@ -181,11 +185,11 @@ typeof(TRUE)
 typeof("First-year")
 ```
 :::
-:::
+:::::
 
 ## Double & integer
 
-::: columns
+::::: columns
 ::: column
 **double** - floating point numerical values (default numerical type)
 
@@ -207,7 +211,7 @@ typeof(3L)
 typeof(1:3)
 ```
 :::
-:::
+:::::
 
 ## Concatenation {.smaller}
 
@@ -241,7 +245,7 @@ c(c("hi", "hello"), c("bye", "jello"))
 with intention...
 :::
 
-::: columns
+::::: columns
 ::: column
 ```{r}
 x <- 1:3
@@ -257,7 +261,7 @@ y
 typeof(y)
 ```
 :::
-:::
+:::::
 
 ## Converting between types
 
@@ -265,7 +269,7 @@ typeof(y)
 with intention...
 :::
 
-::: columns
+::::: columns
 ::: column
 ```{r}
 x <- c(TRUE, FALSE)
@@ -281,7 +285,7 @@ y
 typeof(y)
 ```
 :::
-:::
+:::::
 
 ## Converting between types
 
@@ -321,7 +325,7 @@ c(2L, "two")
 
 ## Explicit vs. implicit coercion
 
-::: columns
+::::: columns
 ::: column
 **Explicit coercion:**
 
@@ -333,7 +337,7 @@ When you call a function like `as.logical()`, `as.numeric()`, `as.integer()`, `a
 
 Happens when you use a vector in a specific context that expects a certain type of vector.
 :::
-:::
+:::::
 
 # Data classes
 
@@ -360,7 +364,7 @@ class_years <- factor(
 class_years
 ```
 
-::: columns
+::::: columns
 ::: {.column .fragment}
 ```{r}
 typeof(class_years)
@@ -372,7 +376,7 @@ typeof(class_years)
 class(class_years)
 ```
 :::
-:::
+:::::
 
 ## More on factors
 
@@ -422,7 +426,7 @@ df <- data.frame(x = 1:2, y = 3:4)
 df
 ```
 
-::: columns
+::::: columns
 ::: column
 ```{r}
 typeof(df)
@@ -434,7 +438,7 @@ typeof(df)
 class(df)
 ```
 :::
-:::
+:::::
 
 ## Lists {.smaller}
 

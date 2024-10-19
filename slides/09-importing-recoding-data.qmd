@@ -1,0 +1,158 @@
+---
+title: "Importing and recoding data"
+subtitle: "Lecture 9"
+date: "2024-09-26"
+format: 
+  live-revealjs: 
+    output-file: 09-importing-recoding-data-slides.html
+    webr:
+      cell-options:
+        autorun: false
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+<!-- end: webr fodder -->
+
+<!--# mello -->
+
+<!-- begin: ae definition -->
+
+```{r}
+#| include: false
+todays_ae <- "ae-09-age-gaps-sales-import"
+```
+
+<!-- end: ae definition -->
+
+# Warm-up
+
+## While you wait... {.smaller}
+
+::: appex
+-   Go to your `ae` project in RStudio.
+
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   Click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Wait till the you're prompted to work on the application exercise during class before editing the file.
+:::
+
+## Announcements
+
+Midterm things
+
+-   Focus
+-   Format
+-   Prep
+-   Review
+-   Accommodations
+
+# From last time
+
+## Finish up: `ae-08-durham-climate-factors`
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   Open `ae-08-durham-climate-factors.qmd` and pick up at "Recode and reorder".
+:::
+
+# Reading data into R
+
+## Reading rectangular data
+
+-   Using [**readr**](https://readr.tidyverse.org/):
+    -   Most commonly: `read_csv()`
+    -   Maybe also: `read_tsv()`, `read_delim()`, etc.
+
+. . .
+
+-   Using [**readxl**](https://readxl.tidyverse.org/): `read_excel()`
+
+. . .
+
+-   Using [**googlesheets4**](https://googlesheets4.tidyverse.org/): `read_sheet()` -- We haven't covered this in the videos, but might be useful for your projects
+
+# Application exercise
+
+## Goal 1: Reading and writing CSV files
+
+-   Read a CSV file
+
+-   Split it into subsets based on features of the data
+
+-   Write out subsets as CSV files
+
+## Age gap in Hollywood relationships {.smaller}
+
+:::::: columns
+:::: {.column width="25%"}
+::: question
+What is the story in this visualization?
+:::
+::::
+
+::: {.column width="75%"}
+![](images/09/hollywood-ages.jpeg){fig-align="center" width="600"}
+:::
+::::::
+
+## `{r} todays_ae` - Part 1 {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through **Part 1** of the application exercise in class, and render, commit, and push your edits.
+:::
+
+## Goal 2: Reading Excel files
+
+-   Read an Excel file with non-tidy data
+
+-   Tidy it up!
+
+## Sales data
+
+![](images/09/sales-excel.png)
+
+. . .
+
+::: question
+Are these data tidy?
+Why or why not?
+:::
+
+## Sales data
+
+::: question
+What "data moves" do we need to go from the original, non-tidy data to this, tidy one?
+:::
+
+![](images/09/sales-2.png){width="150"}
+
+## `{r} todays_ae` - Part 2 {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through **Part 2** of the application exercise in class, and render, commit, and push your edits.
+:::

@@ -1,0 +1,511 @@
+---
+title: "Midterm review"
+subtitle: "Lecture 11"
+date: "2024-10-03"
+format: 
+  live-revealjs: 
+    output-file: 11-midterm-review-slides.html
+    webr:
+      cell-options:
+        autorun: true
+      packages:
+        - tidyverse
+        - openintro
+        - ggthemes
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+```{r}
+#| include: false
+library(ggthemes)
+library(openintro)
+```
+
+<!-- end: webr fodder -->
+
+<!-- begin: ae definition -->
+
+```{r}
+#| include: false
+todays_ae <- "ae-10-chronicle-scrape"
+```
+
+<!-- end: ae definition -->
+
+# Warm-up
+
+## While you wait...
+
+-   Go to your ae project in RStudio
+
+-   Make sure you have each piece of information we need extracted from The Chronicle opinion page – up to `create a data frame` in `chronicle-scrape.R`.
+
+## Announcements
+
+Midterm things:
+
+-   Exam room: Bio Sci 111 or Gross Hall 107
+
+-   Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you
+
+-   Also bring a pencil and eraser (you're allowed to use a pen, but you might not want to)
+
+-   Reminder: Academic dishonesty / Duke Community Standard
+
+# From last time: `ae-10`
+
+## Opinion articles in The Chronicle
+
+::::: columns
+::: {.column width="50%"}
+-   Scrape data and organize it in a tidy format in R
+-   Perform light text parsing to clean data
+-   Summarize and visualize the data
+:::
+
+::: {.column width="50%"}
+![](images/10/chronicle-data.png){fig-align="center"}
+:::
+:::::
+
+## `ae-10-chronicle-scrape` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   Open `chronicle-scrape.R` and `ae-10-chronicle-scrape.qmd`.
+:::
+
+## Recap
+
+-   Use the SelectorGadget identify tags for elements you want to grab
+-   Use rvest to first read the whole page (into R) and then parse the object you've read in to the elements you're interested in
+-   Put the components together in a data frame (a tibble) and analyze it like you analyze any other data
+
+## A new R workflow {.smaller}
+
+-   When working in a Quarto document, your analysis is re-run each time you knit
+
+-   If web scraping in a Quarto document, you'd be re-scraping the data each time you knit, which is undesirable (and not *nice*)!
+
+-   An alternative workflow:
+
+    -   Use an R script to save your code
+    -   Saving interim data scraped using the code in the script as CSV or RDS files
+    -   Use the saved data in your analysis in your Quarto document
+
+# From a previous time: `ae-09-age-gaps-sales-import` - Part 2
+
+## `ae-09-age-gaps-sales-import` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   Open `ae-09-age-gaps-sales-import.qmd` - Part 2.
+:::
+
+# Review: Quarto workflow
+
+## Your document environment vs. your global environment
+
+-   Objects you define in your Quarto document are available in your Quarto document, and if you ran that code cell individually, they will also be available in your global environment
+
+-   Objects you define in your global environment are not, by default, available in your Quarto document
+
+## Recipe for success for reproducible documents
+
+-   Render -- after each "win" or at each stopping point
+
+-   Commit -- all files, with a commit message that describes the substance of what you did
+
+-   Push -- to make sure files are updated on GitHub as well
+
+# Questions... or...
+
+# Time permitting: Type coercion
+
+## Explicit vs. implicit type coercion
+
+-   Explicit type coercion: You ask R to change the type of a variable
+
+-   Implicit type coercion: R changes / makes assumptions for you about the type of a variable without you asking for it
+
+    -   This happens because in a vector, you can't have multiple types of values
+
+## Vectors {.smaller}
+
+::: incremental
+-   A vector is a collection of values
+
+    -   Atomic vectors can only contain values of the same type
+
+    -   Lists can contain values of different types
+
+-   Why do we care?
+    Because each column of a data frame is a vector.
+:::
+
+. . .
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+```{r}
+#| code-line-numbers: "|2|3|4"
+df <- tibble(
+  x = c(1, 2, 3),          # numeric (double)
+  y = c("a", "b", "c"),    # character
+  z = c(TRUE, FALSE, TRUE) # logical
+)
+df
+```
+
+## Explicit coercion
+
+✅ From numeric to character
+
+```{r}
+#| code-line-numbers: "|2"
+df |>
+  mutate(x_new = as.character(x))
+```
+
+## Explicit coercion
+
+❌ From character to numeric
+
+```{r}
+#| code-line-numbers: "|2"
+df |>
+  mutate(y_new = as.numeric(y))
+```
+
+## Implicit coercion
+
+::: question
+Which of the column types were implicitly coerced?
+:::
+
+```{r}
+#| code-line-numbers: "|2|3"
+df <- tibble(
+  w = c(1, 2, 3),
+  x = c("a", "b", 4),
+  y = c("c", "d", NA),
+  z = c(5, 6, NA),
+)
+df
+```
+
+## Collecting data {.smaller}
+
+::: question
+Suppose you conduct a survey and ask students their student ID number and number of credits they're taking this semester.
+What is the type of each variable?
+:::
+
+. . .
+
+```{r}
+#| code-line-numbers: "|2|3"
+survey_raw <- tibble(
+  student_id = c(273674, 298765, 287129, "I don't remember"),
+  n_credits = c(4, 4.5, "I'm not sure yet", "2 - underloading")
+)
+survey_raw
+```
+
+## Cleaning data {.smaller}
+
+```{r}
+#| code-line-numbers: "|2|3"
+survey <- survey_raw |>
+  mutate(
+    student_id = if_else(student_id == "I don't remember", NA, student_id),
+    n_credits = case_when(
+      n_credits == "I'm not sure yet" ~ NA,
+      n_credits == "2 - underloading" ~ "2",
+      .default = n_credits
+    ),
+    n_credits = as.numeric(n_credits)
+  )
+survey
+```
+
+## Cleaning data -- alternative {.smaller}
+
+```{r}
+#| code-line-numbers: "|2|3"
+survey <- survey_raw |>
+  mutate(
+    student_id = parse_number(student_id),
+    n_credits = parse_number(n_credits)
+  )
+survey
+```
+
+## Recap: Type coercion
+
+::: incremental
+-   If variables in a data frame have multiple types of values, R will coerce them into a single type, which may or may not be what you want.
+
+-   If what R does by default is not what you want, you can use explicit coercion functions like `as.numeric()`, `as.character()`, etc. to turn them into the types you want them to be, which will generally also involve cleaning up the features of the data that caused the unwanted implicit coercion in the first place.
+:::
+
+# Time permitting: Aesthetic mappings
+
+## `openintro::loan50`
+
+```{webr}
+#| message: false
+library(tidyverse)
+library(openintro)
+library(ggthemes)
+```
+
+```{webr}
+loan50 |>
+  select(annual_income, interest_rate, homeownership)
+```
+
+## Aesthetic mappings
+
+::: question
+What will the following code result in?
+:::
+
+```{webr}
+#| label: mapping
+#| autorun: false
+ggplot(
+  loan50,
+  aes(
+    x = annual_income, y = interest_rate,
+    color = homeownership, shape = homeownership
+  )
+) +
+  geom_point() +
+  scale_color_colorblind()
+```
+
+## Global mappings
+
+::: question
+What will the following code result in?
+:::
+
+```{webr}
+#| label: global-mapping
+#| autorun: false
+ggplot(
+  loan50,
+  aes(
+  x = annual_income, y = interest_rate, 
+  color = homeownership, shape = homeownership
+  )
+) +
+  geom_point() +
+  geom_smooth(se = FALSE) +
+  scale_color_colorblind()
+```
+
+## Local mappings
+
+::: question
+What will the following code result in?
+:::
+
+```{webr}
+#| label: mapping-local
+#| autorun: false
+ggplot(
+  loan50,
+  aes(x = annual_income, y = interest_rate)
+) +
+  geom_point(aes(color = homeownership)) +
+  geom_smooth(se = FALSE) +
+  scale_color_colorblind()
+```
+
+## Mapping vs. setting
+
+::: question
+What will the following code result in?
+:::
+
+```{webr}
+#| label: mapping-setting
+#| autorun: false
+ggplot(
+  loan50,
+  aes(x = annual_income, y = interest_rate)
+) +
+  geom_point(aes(color = homeownership)) +
+  geom_smooth(color = "red", se = FALSE) +
+  scale_color_colorblind()
+```
+
+## Recap: Aesthetic mappings
+
+::: incremental
+-   Aesthetic mapping defined at the *global* level will be used by all `geom`s for which the aesthetic is defined.
+
+-   Aesthetic mapping defined at the *local* level will be used only by the `geom`s they're defined for.
+:::
+
+## Aside: Legends
+
+```{webr}
+#| fig-width: 8
+#| fig-asp: 0.5
+ggplot(
+  loan50,
+  aes(x = annual_income, y = interest_rate, color = homeownership, shape = homeownership)
+) +
+  geom_point() +
+  scale_color_colorblind()
+```
+
+## Aside: Legends {.smaller}
+
+```{r}
+#| fig-width: 8
+#| fig-asp: 0.5
+#| code-line-numbers: "|7"
+ggplot(
+  loan50,
+  aes(x = annual_income, y = interest_rate, color = homeownership, shape = homeownership)
+) +
+  geom_point() +
+  scale_color_colorblind() +
+  labs(color = "Home ownership")
+```
+
+## Aside: Legends {.smaller}
+
+```{r}
+#| fig-width: 8
+#| fig-asp: 0.5
+#| code-line-numbers: "|8-9"
+ggplot(
+  loan50,
+  aes(x = annual_income, y = interest_rate, color = homeownership, shape = homeownership)
+) +
+  geom_point() +
+  scale_color_colorblind() +
+  labs(
+    color = "Home ownership",
+    shape = "Home ownership"
+  )
+```
+
+# Time permitting: Factors
+
+## Factors
+
+-   Factors are used for categorical variables -- variables that have a fixed and known set of possible values.
+
+-   They are also useful when you want to display character vectors in a non-alphabetical order.
+
+::: aside
+R4DS: <https://r4ds.hadley.nz/factors>.
+:::
+
+## Bar plot
+
+```{webr}
+ggplot(loan50, aes(x = homeownership)) +
+  geom_bar()
+```
+
+## Bar plot - reordered
+
+```{webr}
+loan50 |>
+  mutate(homeownership = fct_relevel(homeownership, "mortgage", "rent", "own")) |>
+  ggplot(aes(x = homeownership)) +
+  geom_bar()
+```
+
+## Frequency table
+
+```{webr}
+loan50 |>
+  count(homeownership)
+```
+
+## Bar plot - reordered
+
+```{webr}
+loan50 |>
+  mutate(homeownership = fct_relevel(homeownership, "own", "rent", "mortgage")) |>
+  count(homeownership)
+```
+
+## Under the hood
+
+```{webr}
+class(loan50$homeownership)
+```
+
+. . .
+
+```{webr}
+typeof(loan50$homeownership)
+```
+
+. . .
+
+```{webr}
+levels(loan50$homeownership)
+```
+
+## Recap: Factors
+
+::: incremental
+-   The **forcats** package has a bunch of functions (that start with `fct_*()`) for dealing with factors and their levels: <https://forcats.tidyverse.org/reference/index.html>
+
+-   Factors and the order of their levels are relevant for displays (tables, plots) and they'll be relevant for modeling (later in the course)
+
+-   `factor` is a data **class**
+:::
+
+## Aside: `==`
+
+```{webr}
+loan50 |>
+  mutate(homeownership_new = if_else(homeownership == "rent", "don't own", homeownership)) |>
+  distinct(homeownership, homeownership_new)
+```
+
+## Aside: `|`
+
+```{webr}
+loan50 |>
+  mutate(homeownership_new = if_else(homeownership == "rent" | homeownership == "mortgage", "don't own", homeownership)) |>
+  distinct(homeownership, homeownership_new)
+```
+
+## Aside: `|`
+
+```{webr}
+loan50 |>
+  mutate(homeownership_new = if_else(homeownership %in% c("rent", "mortgage"), "don't own", homeownership)) |>
+  distinct(homeownership, homeownership_new)
+```
+
+# Other questions?

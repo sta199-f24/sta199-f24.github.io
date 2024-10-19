@@ -2,6 +2,8 @@
 title: "STA 199: Introduction to Data Science and Statistical Thinking"
 execute: 
   freeze: false
+editor_options: 
+  chunk_output_type: console
 ---
 
 This page contains an outline of the topics, content, and assignments for the semester.
@@ -16,7 +18,7 @@ library(gt)
 library(tidyverse)
 gs4_deauth()
 d <- read_sheet("https://docs.google.com/spreadsheets/d/1tHdQiEaMW5qE8oKsG4lTMWk60HtxKhtm95zZcDNacdc/edit?usp=sharing", sheet = "Schedule")
-prepare_cutoff_date <- as.Date("2024-10-07")
+prepare_cutoff_date <- as.Date("2024-11-22")
 ```
 
 ```{r}

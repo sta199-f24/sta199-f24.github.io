@@ -1,0 +1,89 @@
+---
+title: "AE 10: Opinion articles in The Chronicle"
+subtitle: "Suggested answers"
+editor_options: 
+  chunk_output_type: console
+---
+
+::: callout-important
+These are suggested answers.
+This document should be used as reference only, it's not designed to be an exhaustive key.
+:::
+
+## Part 1 - Data scraping
+
+See [`chronicle-scrape.R`](https://github.com/sta199-f24/sta199-f24.github.io/blob/main/ae/_chronicle-scrape-A.R) for suggested scraping code.
+
+## Part 2 - Data analysis
+
+Let's start by loading the packages we will need:
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+```
+
+-   Load the data you saved into the `data` folder and name it `chronicle`.
+
+```{r}
+#| label: load-data
+#| message: false
+chronicle <- read_csv("data/chronicle.csv")
+```
+
+-   Who are the most prolific authors of the 500 most recent opinion articles in The Chronicle?
+
+```{r}
+#| label: count-authors
+chronicle |>
+  count(author, sort = TRUE)
+```
+
+-   Draw a line plot of the number of opinion articles published per day in The Chronicle.
+
+```{r}
+#| label: articles-per-day
+chronicle |>
+  count(date) |>
+  ggplot(aes(x = date, y = n, group = 1)) +
+  geom_line()
+```
+
+-   What percent of the most recent 100 opinion articles in The Chronicle mention "climate" in their title?
+
+```{r}
+#| label: climate-title
+chronicle |>
+  mutate(
+    title = str_to_lower(title),
+    climate = if_else(str_detect(title, "climate"), "mentioned", "not mentioned")
+    ) |>
+  count(climate) |>
+  mutate(prop = n / sum(n))
+```
+
+-   What percent of the most recent 100 opinion articles in The Chronicle mention "climate" in their title or abstract?
+
+```{r}
+#| label: climate-title-abstract
+chronicle |>
+  mutate(
+    title = str_to_lower(title),
+    abstract = str_to_lower(abstract),
+    climate = if_else(
+      str_detect(title, "climate") | str_detect(abstract, "climate"), 
+      "mentioned", 
+      "not mentioned"
+      )
+    ) |>
+  count(climate) |>
+  mutate(prop = n / sum(n))
+```
+
+-   Come up with another question and try to answer it using the data.
+
+```{r}
+#| label: add-label
+# add code here
+```

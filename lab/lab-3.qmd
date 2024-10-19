@@ -41,7 +41,7 @@ Log in to RStudio, clone your `lab-3` repo from GitHub, open your `lab-3.qmd` do
 ### Step 2: Clone the repo & start new RStudio project
 
 -   Go to the course organization at [github.com/sta199-f24](https://github.com/sta199-f24) organization on GitHub.
-    Click on the repo with the prefix **lab-2**.
+    Click on the repo with the prefix **lab-3**.
     It contains the starter documents you need to complete the lab.
 
 -   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**).
@@ -53,12 +53,12 @@ Log in to RStudio, clone your `lab-3` repo from GitHub, open your `lab-3.qmd` do
 
 -   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
 
--   Click *lab-2.qmd* to open the template Quarto file.
+-   Click *lab-3.qmd* to open the template Quarto file.
     This is where you will write up your code and narrative for the lab.
 
 ### Step 3: Update the YAML
 
-In `lab-2.qmd`, update the `author` field to your name, render your document and examine the changes.
+In `lab-3.qmd`, update the `author` field to your name, render your document and examine the changes.
 Then, in the Git pane, click on **Diff** to view your changes, add a commit message (e.g., "Added author name"), and click **Commit**.
 Then, push the changes to your GitHub repository, and in your browser confirm that these changes have indeed propagated to your repository.
 :::
@@ -82,30 +82,7 @@ library(tidyverse)
 
 ## Guidelines
 
-As we've discussed in lecture, your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.
-
-Additionally, code should follow the [tidyverse style](https://style.tidyverse.org/).
-Particularly,
-
--   there should be spaces before and line breaks after each `+` when building a `ggplot`,
-
--   there should also be spaces before and line breaks after each `|>` in a data transformation pipeline,
-
--   code should be properly indented,
-
--   there should be spaces around `=` signs and spaces after commas.
-
-Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF.
-Long lines that run off the page should be split across multiple lines with line breaks.
-
-Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.
-There will be periodic reminders in this assignment to remind you to **render, commit, and push** your changes to GitHub.
-
-::: callout-important
-Continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.
-There will be periodic reminders in this assignment to remind you to **render, commit, and push** your changes to GitHub.
-You should have at least 3 commits with meaningful commit messages by the end of the assignment.
-:::
+{{< include _guidelines.qmd >}}
 
 # Questions
 
