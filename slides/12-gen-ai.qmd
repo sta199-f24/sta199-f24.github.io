@@ -328,14 +328,14 @@ head(csi, 10)
 
 and edit it a bit:
 
-```{webrr}
+```{webr}
 tv |>
   filter(str_detect(title, "CSI"))
 ```
 
 ## Let's go back to Take 1 {.smaller}
 
-```{webrr}
+```{webr}
 csi <- tv |>
   filter(str_detect(title, "CSI"))
 
