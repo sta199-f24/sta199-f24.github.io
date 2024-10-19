@@ -16,7 +16,7 @@ library(gt)
 library(tidyverse)
 gs4_deauth()
 d <- read_sheet("https://docs.google.com/spreadsheets/d/1tHdQiEaMW5qE8oKsG4lTMWk60HtxKhtm95zZcDNacdc/edit?usp=sharing", sheet = "Schedule")
-prepare_cutoff_date <- as.Date("2024-10-18")
+prepare_cutoff_date <- as.Date("2024-10-31")
 ```
 
 ```{r}
