@@ -74,6 +74,7 @@ You shouldn't feel constrained to datasets that are already in a tidy format, yo
 -   [Statistics Canada](https://www.statcan.gc.ca/en/start)
 -   [TidyTuesday](https://github.com/rfordatascience/tidytuesday)
 -   [The National Bureau of Economic Research](https://www.nber.org/research/data?page=1&perPage=50)
+-   [UCI Machine Learning Repository](https://archive.ics.uci.edu)
 -   [UK Government Data](https://data.gov.uk/)
 -   [United Nations Data](http://data.un.org/)
 -   [United Nations Statistics Division](https://unstats.un.org/UNSDWebsite/)
