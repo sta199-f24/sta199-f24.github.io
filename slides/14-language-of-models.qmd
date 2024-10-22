@@ -59,7 +59,7 @@ todays_ae <- "ae-12-modeling-fish"
 
 ## Announcements
 
--   ...
+-   Project proposals due next Monday
 
 # Midsemester feedback
 
@@ -102,7 +102,6 @@ Can you guess what this box plot represents?
 ## Video watching patterns
 
 ![](images/14/media_type.png)
-
 
 # Prediction / classification
 
