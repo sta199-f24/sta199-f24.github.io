@@ -57,10 +57,9 @@ You shouldn't feel constrained to datasets that are already in a tidy format, yo
 -   [Election Studies](https://electionstudies.org//)
 -   [US Census Data](https://www.census.gov/data.html)
 -   [World Bank Data](https://datacatalog.worldbank.org/home)
--   [Bikeshare data portal](https://www.bikeshare.com/data/)
 -   [CDC](https://www.cdc.gov/datastatistics/)
 -   [European Statistics](https://ec.europa.eu/eurostat/)
--   [CORGIS: The Collection of Really Great, Interesting, Situated Datasets](https://think.cs.vt.edu/corgis/csv/)
+-   [CORGIS: The Collection of Really ](https://think.cs.vt.edu/corgis/csv/)[Great](https://corgis-edu.github.io/corgis/csv/)[, Interesting, Situated Datasets](https://think.cs.vt.edu/corgis/csv/)
 -   [General Social Survey](https://gss.norc.org/)
 -   [Harvard Dataverse](https://dataverse.harvard.edu/)
 -   [International Monetary Fund](https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&sId=1479329328660)
@@ -75,7 +74,7 @@ You shouldn't feel constrained to datasets that are already in a tidy format, yo
 -   [Statistics Canada](https://www.statcan.gc.ca/en/start)
 -   [TidyTuesday](https://github.com/rfordatascience/tidytuesday)
 -   [The National Bureau of Economic Research](https://www.nber.org/research/data?page=1&perPage=50)
--   [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)
+-   [UCI Machine Learning Repository](https://archive.ics.uci.edu)
 -   [UK Government Data](https://data.gov.uk/)
 -   [United Nations Data](http://data.un.org/)
 -   [United Nations Statistics Division](https://unstats.un.org/UNSDWebsite/)
@@ -116,13 +115,16 @@ When writing a research question, please think about the following:
 
 For each data set, include the following:
 
--   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
+-   A well formulated research question.
+    (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
 -   Statement on why this question is important.
 
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
--   Identify the types of variables in your research question. Categorical? Quantitative?
+-   Identify the types of variables in your research question.
+    Categorical?
+    Quantitative?
 
 ## Glimpse of data
 
