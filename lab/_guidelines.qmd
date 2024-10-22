@@ -14,9 +14,6 @@ Particularly,
 Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF.
 Long lines that run off the page should be split across multiple lines with line breaks.
 
-Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.
-There will be periodic reminders in this assignment to remind you to **render, commit, and push** your changes to GitHub.
-
 ::: callout-important
 Continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.
 There will be periodic reminders in this assignment to remind you to **render, commit, and push** your changes to GitHub.
