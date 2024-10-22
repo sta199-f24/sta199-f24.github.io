@@ -61,13 +61,56 @@ todays_ae <- "ae-12-modeling-fish"
 
 -   ...
 
+# Midsemester feedback
+
+## Course pace
+
+![](images/14/midsemester-survey/course_pace.png)
+
+## Lecture pace
+
+![](images/14/midsemester-survey/lecture_pace.png)
+
+## Engagement
+
+![](images/14/midsemester-survey/engagement.png)
+
+## Resources
+
+![](images/14/midsemester-survey/resources.png)
+
+## Learn best
+
+![](images/14/midsemester-survey/learn_best.png)
+
+## Lecture
+
+![](images/14/midsemester-survey/lecture.png)
+
+## Difficulty
+
+![](images/14/midsemester-survey/difficulty.png)
+
+## Guess
+
+::: question
+Can you guess what this box plot represents?
+:::
+
+![](images/14/media_title.png)
+
+## Video watching patterns
+
+![](images/14/media_type.png)
+
+
+# Prediction / classification
+
 ## Goals
 
 -   What is a model?
 -   Why do we model?
 -   What is correlation?
-
-# Prediction / classification
 
 ## Let's drive a Tesla!
 
