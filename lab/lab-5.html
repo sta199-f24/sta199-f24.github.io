@@ -399,23 +399,24 @@ window.Quarto = {
   <ul class="collapse">
 <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
   </ul>
 </li>
   <li>
 <a href="#part-2---parasites" id="toc-part-2---parasites" class="nav-link" data-scroll-target="#part-2---parasites">Part 2 - Parasites</a>
   <ul class="collapse">
-<li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
-  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+<li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
   <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
   </ul>
 </li>
   <li>
 <a href="#part-3---misrepresentation" id="toc-part-3---misrepresentation" class="nav-link" data-scroll-target="#part-3---misrepresentation">Part 3 - Misrepresentation</a>
   <ul class="collapse">
-<li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
-  <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+<li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+  <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
   </ul>
 </li>
   <li><a href="#part-4---coded-bias" id="toc-part-4---coded-bias" class="nav-link" data-scroll-target="#part-4---coded-bias">Part 4 - Coded Bias</a></li>
@@ -464,7 +465,9 @@ Note
 <section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>By the end of the lab, you will…</p>
 <ul>
-<li>[TO DO: Add learning objectives]</li>
+<li>Fit linear regression models and interpret model coefficients in context of the data and research question.</li>
+<li>Transform data using a log-transformation for a better model fit.</li>
+<li>Evaluate the validity of a data visualization and correct any misleading mistakes.</li>
 </ul>
 <p>And, as usual, you will also…</p>
 <ul>
@@ -576,10 +579,12 @@ Important
 <p>We are interested in the impact of smoking during pregnancy. Since it is not possible to run a randomized controlled experiment to investigate this impact, we will instead use a data set has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. This is a random sample of 1,000 cases from a data set released in 2014 by the state of North Carolina. The data set is called <code>births14</code>, and it is included in the <strong>openintro</strong> package you loaded at the beginning of the assignment.</p>
 <ol type="a">
 <li><p>Create a version of the <code>births14</code> data set dropping observations where there are <code>NA</code>s for <code>habit</code>. You can call this version <code>births14_habitgiven</code>.</p></li>
-<li><p>Plotting the data is a useful first step because it helps us quickly visualize trends, identify strong associations, and develop research questions. Create an appropriate plot displaying the relationship between <code>weight</code> and <code>habit</code>. In 2-3 sentences, discuss the relationships observed.</p></li>
-<li><p>Now, fit a linear model that predicts <code>weight</code> from <code>habit</code>. Provide the tidy summary output below.</p></li>
-<li>
-<p>Write the estimated least squares regression line below using proper notation.</p>
+<li><p>Plotting the data is a useful first step because it helps us quickly visualize trends, identify strong associations, and develop research questions. Create an appropriate plot displaying the relationship between <code>weight</code> and <code>habit</code>. In 2-3 sentences, discuss the relationship observed.</p></li>
+</ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<ol type="a">
+<li><p>Fit a linear model that predicts <code>weight</code> from <code>habit</code> and save the model object. Then, provide the tidy summary output.</p></li>
+<li><p>Write the estimated least squares regression line below using proper notation.</p></li>
+</ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -593,10 +598,12 @@ Tip
 <p>If you need to type an equation using proper notation, type your answers in-between <code>$$</code> and <code>$$</code>. You may use <code>\hat{example}</code> to put a hat on a character.</p>
 </div>
 </div>
-</li>
-</ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<ol start="3" type="a">
+<li><p>Interpret the intercept in the context of the data and the research question. Is the intercept meaningful in this context? Why or why not?</p></li>
+<li><p>Interpret the slope in the context of the data and the research question.</p></li>
+</ol></section><section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <ol type="a">
-<li><p>Another researcher is interested in assessing the relationship between babies’ weights and mothers’ ages. Fit another linear model to investigate this relationship. Provide the summary output below.</p></li>
+<li><p>Another researcher is interested in assessing the relationship between babies’ weights and mothers’ ages. Fit another linear model predicting <code>weight</code> to investigate this relationship and save the model object. Then, provide the tidy summary output.</p></li>
 <li><p>In 2-3 sentences, explain how the regression line to model these data is fit, i.e., based on what criteria R determines the regression line.</p></li>
 <li><p>Interpret the intercept in the context of the data and the research question. Is the intercept meaningful in this context? Why or why not?</p></li>
 <li><p>Interpret the slope in the context of the data and the research question.</p></li>
@@ -614,21 +621,21 @@ Tip
 <li><p><code>parsim</code>: a measure of parasite similarity (proportion of parasites shared between species, ranges from 0 to 1.)</p></li>
 </ul>
 <p>The data are available in <code>parasites.csv</code> in your <code>data</code> folder.</p>
-<section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
 <p>Let’s start by reading in the <code>parasites</code> data and examining the relationship between <code>divergence_time</code> and <code>parsim</code>.</p>
 <ol type="a">
 <li><p>Load the data and save the data frame as <code>parasites</code>.</p></li>
 <li><p>Based on the goals of the analysis, what is the response variable?</p></li>
 <li><p>Visualize the relationship between the two variables.</p></li>
 <li><p>Use the visualization to describe the relationship between the two variables.</p></li>
-</ol></section><section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+</ol></section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p>Next, model this relationship.</p>
 <ol type="a">
 <li><p>Fit the model and write the estimated regression equation.</p></li>
 <li><p>Interpret the slope and the intercept in the context of the data.</p></li>
 <li><p>Recreate the visualization from Question 3, this time adding a regression line to the visualization.</p></li>
 <li><p>What do you notice about the prediction (regression) line that may be strange, particularly for very large divergence times?</p></li>
-</ol></section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+</ol></section><section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
 <p>Since <code>parsim</code> takes values between 0 and 1, we want to transform this variable so that it can range between (−∞,+∞). This will be better suited for fitting a regression model (and interpreting predicted values!)</p>
 <ol type="a">
 <li>
@@ -649,7 +656,7 @@ Note
 </li>
 <li><p>Then, visualize the relationship between divergence_time and <code>transformed_parsim</code>. Add a regression line to your visualization.</p></li>
 <li><p>Write a 1-2 sentence description of what you observe in the visualization.</p></li>
-</ol></section><section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+</ol></section><section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
 <p><em>Which variable is the strongest individual predictor of parasite similarity between species?</em></p>
 <p>To answer this question, begin by fitting a linear regression model to each pair of variables. Do not report the model outputs in a tidy format but save each one as <code>dt_model</code>, <code>dist_model</code>, <code>BM_model</code>, and <code>prec_model</code>, respectively.</p>
 <ul>
@@ -661,7 +668,7 @@ Note
 <ol type="a">
 <li><p>Report the slopes for each of these models. Use proper notation.</p></li>
 <li><p>To answer the question of interest, would it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?</p></li>
-</ol></section><section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+</ol></section><section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
 <p>Now, what if we calculated <span class="math inline">\(R^2\)</span> to help answer our question? To compare the explanatory power of each individual predictor, we will look at <span class="math inline">\(R^2\)</span> between the models. <span class="math inline">\(R^2\)</span> is a measure of how much of the variability in the response variable is explained by the model.</p>
 <p>As you may have guessed from the name <span class="math inline">\(R^2\)</span> can be calculated by squaring the correlation when we have a simple linear regression model. The correlation r takes values -1 to 1, therefore, <span class="math inline">\(R^2\)</span> takes values 0 to 1. Intuitively, if r=1 or −1, then <span class="math inline">\(R^2\)</span>=1, indicating the model is a perfect fit for the data. If r≈0 then <span class="math inline">\(R^2\)</span>≈0, indicating the model is a very bad fit for the data.</p>
 <p>You can calculate <span class="math inline">\(R^2\)</span> using the glance function. For example, you can calculate <span class="math inline">\(R^2\)</span> for <code>dt_model</code> using the code <code>glance(dt_model)$r.squared</code>.</p>
@@ -669,7 +676,7 @@ Note
 <li><p>Calculate and report <span class="math inline">\(R^2\)</span> for each model fit in the previous exercise.</p></li>
 <li><p>To answer our question of interest, would it be useful to compare the <span class="math inline">\(R^2\)</span> in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?</p></li>
 </ol></section></section><section id="part-3---misrepresentation" class="level1"><h1>Part 3 - Misrepresentation</h1>
-<section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+<section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
 <p>The following chart was <a href="https://twitter.com/GraphCrimes/status/1566264004288331776">shared</a> by @GraphCrimes on X/Twitter on September 3, 2022.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/lab-5/private-sector.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -679,7 +686,7 @@ Note
 <li>What is misleading about this graph?</li>
 <li>Suppose you wanted to recreate this plot, with improvements to avoid its misleading pitfalls from part (a). You would obviously need the data from the survey in order to be able to do that. How many observations would this data have? How many variables (at least) should it have, and what should those variables be?</li>
 <li>Load the data for this survey from <code>data/survation.csv</code>. Confirm that the data match the percentages from the visualization. That is, calculate the percentages of public sector, private sector, don’t know for each of the services and check that they match the percentages from the plot.</li>
-</ol></section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+</ol></section><section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
 <p>Create an improved version of the visualization. Your improved visualization:</p>
 <ul>
 <li><p>should also be a stacked bar chart with services on the y-axis, presented in the same order as the original plot, and services to create the segments of the plot, and presented in the same order as the original plot</p></li>
