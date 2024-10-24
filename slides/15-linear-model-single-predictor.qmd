@@ -1,7 +1,7 @@
 ---
-title: "Language of models"
-subtitle: "Lecture 14"
-date: "2024-10-22"
+title: "Linear models with a single predictor"
+subtitle: "Lecture 15"
+date: "2024-10-24"
 format: 
   live-revealjs: 
     output-file: 15-linear-model-single-predictor-slides.html
