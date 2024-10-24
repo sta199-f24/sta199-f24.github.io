@@ -21,7 +21,7 @@ If you haven't done those yet, you should review the previous labs before starti
 
 By the end of the lab, you will...
 
--   [TO DO: Add learning objectives]
+-   \[TO DO: Add learning objectives\]
 
 And, as usual, you will also...
 
@@ -98,7 +98,6 @@ You are also expected to pay attention to [code smell](https://en.wikipedia.org/
 You should review and improve your code to avoid redundant steps (e.g., grouping, ungrouping, and grouping again by the same variable in a pipeline), using inconsistent syntax (e.g., `!` to say "not" in one place and `-` in another place), etc.
 :::
 
-
 # Part 1 - Smoking during pregnancy
 
 ## Question 1
@@ -113,23 +112,31 @@ a.  Create a version of the `births14` data set dropping observations where ther
 
 b.  Plotting the data is a useful first step because it helps us quickly visualize trends, identify strong associations, and develop research questions.
     Create an appropriate plot displaying the relationship between `weight` and `habit`.
-    In 2-3 sentences, discuss the relationships observed.
-
-c.  Now, fit a linear model that predicts `weight` from `habit`.
-    Provide the tidy summary output below.
-
-d.  Write the estimated least squares regression line below using proper notation.
-
-    ::: callout-tip
-    If you need to type an equation using proper notation, type your answers in-between `$$` and `$$`.
-    You may use `\hat{example}` to put a hat on a character.
-    :::
+    In 2-3 sentences, discuss the relationship observed.
 
 ## Question 2
 
+a.  Fit a linear model that predicts `weight` from `habit` and save the model object.
+    Then, provide the tidy summary output.
+
+b.  Write the estimated least squares regression line below using proper notation.
+
+::: callout-tip
+If you need to type an equation using proper notation, type your answers in-between `$$` and `$$`.
+You may use `\hat{example}` to put a hat on a character.
+:::
+
+c.  Interpret the intercept in the context of the data and the research question.
+Is the intercept meaningful in this context?
+Why or why not?
+
+d.  Interpret the slope in the context of the data and the research question.
+
+## Question 3
+
 a.  Another researcher is interested in assessing the relationship between babies’ weights and mothers’ ages.
-    Fit another linear model to investigate this relationship.
-    Provide the summary output below.
+    Fit another linear model predicting `weight` to investigate this relationship and save the model object.
+    Then, provide the tidy summary output.
 
 b.  In 2-3 sentences, explain how the regression line to model these data is fit, i.e., based on what criteria R determines the regression line.
 
@@ -168,7 +175,7 @@ Subsequent columns describe metrics that compare the species:
 
 The data are available in `parasites.csv` in your `data` folder.
 
-## Question 3
+## Question 4
 
 Let’s start by reading in the `parasites` data and examining the relationship between `divergence_time` and `parsim`.
 
@@ -180,7 +187,7 @@ c.  Visualize the relationship between the two variables.
 
 d.  Use the visualization to describe the relationship between the two variables.
 
-## Question 4
+## Question 5
 
 Next, model this relationship.
 
@@ -192,7 +199,7 @@ c.  Recreate the visualization from Question 3, this time adding a regression li
 
 d.  What do you notice about the prediction (regression) line that may be strange, particularly for very large divergence times?
 
-## Question 5
+## Question 6
 
 Since `parsim` takes values between 0 and 1, we want to transform this variable so that it can range between (−∞,+∞).
 This will be better suited for fitting a regression model (and interpreting predicted values!)
@@ -209,7 +216,7 @@ b.  Then, visualize the relationship between divergence_time and `transformed_pa
 
 c.  Write a 1-2 sentence description of what you observe in the visualization.
 
-## Question 6
+## Question 7
 
 *Which variable is the strongest individual predictor of parasite similarity between species?*
 
@@ -230,7 +237,7 @@ a.  Report the slopes for each of these models.
 b.  To answer the question of interest, would it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity?
     Why or why not?
 
-## Question 7
+## Question 8
 
 Now, what if we calculated $R^2$ to help answer our question?
 To compare the explanatory power of each individual predictor, we will look at $R^2$ between the models.
@@ -251,7 +258,7 @@ b.  To answer our question of interest, would it be useful to compare the $R^2$ 
 
 # Part 3 - Misrepresentation
 
-## Question 8
+## Question 9
 
 The following chart was [shared](https://twitter.com/GraphCrimes/status/1566264004288331776) by \@GraphCrimes on X/Twitter on September 3, 2022.
 
@@ -261,7 +268,7 @@ a.  What is misleading about this graph?
 b.  Suppose you wanted to recreate this plot, with improvements to avoid its misleading pitfalls from part (a). You would obviously need the data from the survey in order to be able to do that. How many observations would this data have? How many variables (at least) should it have, and what should those variables be?
 c.  Load the data for this survey from `data/survation.csv`. Confirm that the data match the percentages from the visualization. That is, calculate the percentages of public sector, private sector, don't know for each of the services and check that they match the percentages from the plot.
 
-## Question 9
+## Question 10
 
 Create an improved version of the visualization.
 Your improved visualization:
