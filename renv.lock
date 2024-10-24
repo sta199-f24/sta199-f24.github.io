@@ -889,6 +889,16 @@
       "Repository": "CRAN",
       "Hash": "aa5e1cd11c2d15497494c5292d7ffcc8"
     },
+    "fivethirtyeight": {
+      "Package": "fivethirtyeight",
+      "Version": "0.6.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "16801472ed3455dfd53ed3ca1f5f6926"
+    },
     "fontawesome": {
       "Package": "fontawesome",
       "Version": "0.5.2",
