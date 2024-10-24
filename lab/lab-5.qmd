@@ -21,7 +21,9 @@ If you haven't done those yet, you should review the previous labs before starti
 
 By the end of the lab, you will...
 
--   \[TO DO: Add learning objectives\]
+-   Fit linear regression models and interpret model coefficients in context of the data and research question.
+-   Transform data using a log-transformation for a better model fit.
+-   Evaluate the validity of a data visualization and correct any misleading mistakes.
 
 And, as usual, you will also...
 
