@@ -54,14 +54,11 @@ ggplot(fish, aes(x = height, y = weight)) +
   )
 ```
 
--   If you were to draw a a straight line to best represent the relationship between the heights and weights of fish, where would it go?
-    Why?
+-   If you were to draw a a straight line to best represent the relationship between the heights and weights of fish, where would it go? Why?
 
 *Start from the bottom and go up. Identify the first and last point and draw a line through most the others.*
 
--   Now, let R draw the line for you.
-    Refer to the documentation at <https://ggplot2.tidyverse.org/reference/geom_smooth.html>.
-    Specifically, refer to the `method` section.
+-   Now, let R draw the line for you. Refer to the documentation at <https://ggplot2.tidyverse.org/reference/geom_smooth.html>. Specifically, refer to the `method` section.
 
 ```{r}
 #| label: plot-hw-lm
@@ -79,9 +76,7 @@ ggplot(fish, aes(x = height, y = weight)) +
 
 *Is there a relationship between fish heights and weights of fish?*
 
--   We can use this line to make predictions.
-    Predict what you think the weight of a fish would be with a height of 10 cm, 15 cm, and 20 cm.
-    Which prediction is considered extrapolation?
+-   We can use this line to make predictions. Predict what you think the weight of a fish would be with a height of 10 cm, 15 cm, and 20 cm. Which prediction is considered extrapolation?
 
 *At 10 cm, we estimate a weight of 375 grams. At 15 cm, we estimate a weight of 600 grams At 20 cm, we estimate a weight of 975 grams. 20 cm would be considered extrapolation.*
 
@@ -147,8 +142,7 @@ $\widehat{weight} = -288 + 60.9 \times height$
 
 We can also assess correlation between two quantitative variables.
 
--   What is correlation?
-    What are values correlation can take?
+-   What is correlation? What are values correlation can take?
 
 *Strength and direction of a linear relationship. It's bounded by -1 and 1.*
 
@@ -189,7 +183,7 @@ ggplot(fish,
 ggplot(fish, 
        aes(x = height, y = weight)) +
   geom_point() +
-  geom_smooth(method = "lm") +
+  geom_smooth(method = "loess") +
   labs(
     title = "Weights vs. heights of fish",
     x = "Height (cm)",

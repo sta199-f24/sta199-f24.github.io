@@ -10,7 +10,6 @@ webr:
     autorun: false
   packages:
     - tidyverse
-    - scales
 editor_options: 
   chunk_output_type: console
 ---
