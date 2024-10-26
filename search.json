@@ -4377,6 +4377,111 @@
     ]
   },
   {
+    "objectID": "lab/lab-5.html",
+    "href": "lab/lab-5.html",
+    "title": "Lab 5",
+    "section": "",
+    "text": "In this lab you’ll start your practice of statistical modeling. You’ll fit models, interpret model output, and make decisions about your data and research question based on the model results. And you’ll wrap up the lab revisiting the topic of data science ethics.\n\n\n\n\n\n\nNote\n\n\n\nThis lab assumes you’ve completed the labs so far and doesn’t repeat setup and overview content from those labs. If you haven’t done those yet, you should review the previous labs before starting on this one.\n\n\n\nBy the end of the lab, you will…\n\nFit linear regression models and interpret model coefficients in context of the data and research question.\nTransform data using a log-transformation for a better model fit.\nEvaluate the validity of a data visualization and correct any misleading mistakes.\n\nAnd, as usual, you will also…\n\nGet more experience with data science workflow using R, RStudio, Git, and GitHub\nFurther your reproducible authoring skills with Quarto\nImprove your familiarity with version control using Git and GitHub\n\nLog in to RStudio, clone your lab-5 repo from GitHub, open your lab-5.qmd document, and get started!\n\n\n\n\n\n\nClick here if you prefer to see step-by-step instructions\n\n\n\n\n\n\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA198-199 under My reservations to log into your container. You should now see the RStudio environment.\n\n\nGo to the course organization at github.com/sta199-f24 organization on GitHub. Click on the repo with the prefix lab-5. It contains the starter documents you need to complete the lab.\nClick on the green CODE button and select Use SSH. This might already be selected by default; if it is, you’ll see the text Clone with SSH. Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-5.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\nIn lab-5.qmd, update the author field to your name, render your document and examine the changes. Then, in the Git pane, click on Diff to view your changes, add a commit message (e.g., “Added author name”), and click Commit. Then, push the changes to your GitHub repository, and in your browser confirm that these changes have indeed propagated to your repository.\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nIf you run into any issues with the first steps outlined above, flag a TA for help before proceeding.\n\n\n\nIn this lab, we will work with the\n\n\ntidyverse package for doing data analysis in a “tidy” way,\n\ntidymodels package for modeling in a “tidy” way, and\n\nopenintro package for the dataset for Part 1.\n\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\n\n\n\nRun the code cell by clicking on the green triangle (play) button for the code cell labeled load-packages. This loads the package so that its features (the functions and datasets in it) are accessible from your Console.\nThen, render the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document.\n\nAs we’ve discussed in lecture, your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.\nAdditionally, code should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nFurthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.\n\n\n\n\n\n\nImportant\n\n\n\nContinuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to remind you to render, commit, and push your changes to GitHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nYou are also expected to pay attention to code smell in addition to code style and readability. You should review and improve your code to avoid redundant steps (e.g., grouping, ungrouping, and grouping again by the same variable in a pipeline), using inconsistent syntax (e.g., ! to say “not” in one place and - in another place), etc."
+  },
+  {
+    "objectID": "lab/lab-5.html#learning-objectives",
+    "href": "lab/lab-5.html#learning-objectives",
+    "title": "Lab 5",
+    "section": "",
+    "text": "By the end of the lab, you will…\n\nFit linear regression models and interpret model coefficients in context of the data and research question.\nTransform data using a log-transformation for a better model fit.\nEvaluate the validity of a data visualization and correct any misleading mistakes.\n\nAnd, as usual, you will also…\n\nGet more experience with data science workflow using R, RStudio, Git, and GitHub\nFurther your reproducible authoring skills with Quarto\nImprove your familiarity with version control using Git and GitHub"
+  },
+  {
+    "objectID": "lab/lab-5.html#getting-started",
+    "href": "lab/lab-5.html#getting-started",
+    "title": "Lab 5",
+    "section": "",
+    "text": "Log in to RStudio, clone your lab-5 repo from GitHub, open your lab-5.qmd document, and get started!\n\n\n\n\n\n\nClick here if you prefer to see step-by-step instructions\n\n\n\n\n\n\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA198-199 under My reservations to log into your container. You should now see the RStudio environment.\n\n\nGo to the course organization at github.com/sta199-f24 organization on GitHub. Click on the repo with the prefix lab-5. It contains the starter documents you need to complete the lab.\nClick on the green CODE button and select Use SSH. This might already be selected by default; if it is, you’ll see the text Clone with SSH. Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-5.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\nIn lab-5.qmd, update the author field to your name, render your document and examine the changes. Then, in the Git pane, click on Diff to view your changes, add a commit message (e.g., “Added author name”), and click Commit. Then, push the changes to your GitHub repository, and in your browser confirm that these changes have indeed propagated to your repository.\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nIf you run into any issues with the first steps outlined above, flag a TA for help before proceeding."
+  },
+  {
+    "objectID": "lab/lab-5.html#packages",
+    "href": "lab/lab-5.html#packages",
+    "title": "Lab 5",
+    "section": "",
+    "text": "In this lab, we will work with the\n\n\ntidyverse package for doing data analysis in a “tidy” way,\n\ntidymodels package for modeling in a “tidy” way, and\n\nopenintro package for the dataset for Part 1.\n\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\n\n\n\nRun the code cell by clicking on the green triangle (play) button for the code cell labeled load-packages. This loads the package so that its features (the functions and datasets in it) are accessible from your Console.\nThen, render the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document."
+  },
+  {
+    "objectID": "lab/lab-5.html#guidelines",
+    "href": "lab/lab-5.html#guidelines",
+    "title": "Lab 5",
+    "section": "",
+    "text": "As we’ve discussed in lecture, your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.\nAdditionally, code should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nFurthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.\n\n\n\n\n\n\nImportant\n\n\n\nContinuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to remind you to render, commit, and push your changes to GitHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nYou are also expected to pay attention to code smell in addition to code style and readability. You should review and improve your code to avoid redundant steps (e.g., grouping, ungrouping, and grouping again by the same variable in a pipeline), using inconsistent syntax (e.g., ! to say “not” in one place and - in another place), etc."
+  },
+  {
+    "objectID": "lab/lab-5.html#question-1",
+    "href": "lab/lab-5.html#question-1",
+    "title": "Lab 5",
+    "section": "Question 1",
+    "text": "Question 1\nWe are interested in the impact of smoking during pregnancy. Since it is not possible to run a randomized controlled experiment to investigate this impact, we will instead use a data set has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. This is a random sample of 1,000 cases from a data set released in 2014 by the state of North Carolina. The data set is called births14, and it is included in the openintro package you loaded at the beginning of the assignment.\n\nCreate a version of the births14 data set dropping observations where there are NAs for habit. You can call this version births14_habitgiven.\nPlotting the data is a useful first step because it helps us quickly visualize trends, identify strong associations, and develop research questions. Create an appropriate plot displaying the relationship between weight and habit. In 2-3 sentences, discuss the relationship observed."
+  },
+  {
+    "objectID": "lab/lab-5.html#question-2",
+    "href": "lab/lab-5.html#question-2",
+    "title": "Lab 5",
+    "section": "Question 2",
+    "text": "Question 2\n\nFit a linear model that predicts weight from habit and save the model object. Then, provide the tidy summary output.\nWrite the estimated least squares regression line below using proper notation.\n\n\n\n\n\n\n\nTip\n\n\n\nIf you need to type an equation using proper notation, type your answers in-between $$ and $$. You may use \\hat{example} to put a hat on a character.\n\n\n\nInterpret the intercept in the context of the data and the research question. Is the intercept meaningful in this context? Why or why not?\nInterpret the slope in the context of the data and the research question."
+  },
+  {
+    "objectID": "lab/lab-5.html#question-3",
+    "href": "lab/lab-5.html#question-3",
+    "title": "Lab 5",
+    "section": "Question 3",
+    "text": "Question 3\n\nAnother researcher is interested in assessing the relationship between babies’ weights and mothers’ ages. Fit another linear model predicting weight to investigate this relationship and save the model object. Then, provide the tidy summary output.\nIn 2-3 sentences, explain how the regression line to model these data is fit, i.e., based on what criteria R determines the regression line.\nInterpret the intercept in the context of the data and the research question. Is the intercept meaningful in this context? Why or why not?\nInterpret the slope in the context of the data and the research question."
+  },
+  {
+    "objectID": "lab/lab-5.html#question-4",
+    "href": "lab/lab-5.html#question-4",
+    "title": "Lab 5",
+    "section": "Question 4",
+    "text": "Question 4\nLet’s start by reading in the parasites data and examining the relationship between divergence_time and parsim.\n\nLoad the data and save the data frame as parasites.\nBased on the goals of the analysis, what is the response variable?\nVisualize the relationship between the two variables.\nUse the visualization to describe the relationship between the two variables."
+  },
+  {
+    "objectID": "lab/lab-5.html#question-5",
+    "href": "lab/lab-5.html#question-5",
+    "title": "Lab 5",
+    "section": "Question 5",
+    "text": "Question 5\nNext, model this relationship.\n\nFit the model and write the estimated regression equation.\nInterpret the slope and the intercept in the context of the data.\nRecreate the visualization from Question 3, this time adding a regression line to the visualization.\nWhat do you notice about the prediction (regression) line that may be strange, particularly for very large divergence times?"
+  },
+  {
+    "objectID": "lab/lab-5.html#question-6",
+    "href": "lab/lab-5.html#question-6",
+    "title": "Lab 5",
+    "section": "Question 6",
+    "text": "Question 6\nSince parsim takes values between 0 and 1, we want to transform this variable so that it can range between (−∞,+∞). This will be better suited for fitting a regression model (and interpreting predicted values!)\n\n\nUsing mutate, create a new variable transformed_parsim that is calculated as log(parsim/(1-parsim)). Add this variable to your data frame.\n\n\n\n\n\n\nNote\n\n\n\nlog() in R represents the nautral log.\n\n\n\nThen, visualize the relationship between divergence_time and transformed_parsim. Add a regression line to your visualization.\nWrite a 1-2 sentence description of what you observe in the visualization."
+  },
+  {
+    "objectID": "lab/lab-5.html#question-7",
+    "href": "lab/lab-5.html#question-7",
+    "title": "Lab 5",
+    "section": "Question 7",
+    "text": "Question 7\nWhich variable is the strongest individual predictor of parasite similarity between species?\nTo answer this question, begin by fitting a linear regression model to each pair of variables. Do not report the model outputs in a tidy format but save each one as dt_model, dist_model, BM_model, and prec_model, respectively.\n\ndivergence_time and transformed_parsim\ndistance and transformed_parsim\nBMdiff and transformed_parsim\nprecdiff and transformed_parsim\n\n\nReport the slopes for each of these models. Use proper notation.\nTo answer the question of interest, would it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?"
+  },
+  {
+    "objectID": "lab/lab-5.html#question-8",
+    "href": "lab/lab-5.html#question-8",
+    "title": "Lab 5",
+    "section": "Question 8",
+    "text": "Question 8\nNow, what if we calculated \\(R^2\\) to help answer our question? To compare the explanatory power of each individual predictor, we will look at \\(R^2\\) between the models. \\(R^2\\) is a measure of how much of the variability in the response variable is explained by the model.\nAs you may have guessed from the name \\(R^2\\) can be calculated by squaring the correlation when we have a simple linear regression model. The correlation r takes values -1 to 1, therefore, \\(R^2\\) takes values 0 to 1. Intuitively, if r=1 or −1, then \\(R^2\\)=1, indicating the model is a perfect fit for the data. If r≈0 then \\(R^2\\)≈0, indicating the model is a very bad fit for the data.\nYou can calculate \\(R^2\\) using the glance function. For example, you can calculate \\(R^2\\) for dt_model using the code glance(dt_model)$r.squared.\n\nCalculate and report \\(R^2\\) for each model fit in the previous exercise.\nTo answer our question of interest, would it be useful to compare the \\(R^2\\) in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?"
+  },
+  {
+    "objectID": "lab/lab-5.html#question-9",
+    "href": "lab/lab-5.html#question-9",
+    "title": "Lab 5",
+    "section": "Question 9",
+    "text": "Question 9\nThe following chart was shared by @GraphCrimes on X/Twitter on September 3, 2022.\n\n\n\n\n\nWhat is misleading about this graph?\nSuppose you wanted to recreate this plot, with improvements to avoid its misleading pitfalls from part (a). You would obviously need the data from the survey in order to be able to do that. How many observations would this data have? How many variables (at least) should it have, and what should those variables be?\nLoad the data for this survey from data/survation.csv. Confirm that the data match the percentages from the visualization. That is, calculate the percentages of public sector, private sector, don’t know for each of the services and check that they match the percentages from the plot."
+  },
+  {
+    "objectID": "lab/lab-5.html#question-10",
+    "href": "lab/lab-5.html#question-10",
+    "title": "Lab 5",
+    "section": "Question 10",
+    "text": "Question 10\nCreate an improved version of the visualization. Your improved visualization:\n\nshould also be a stacked bar chart with services on the y-axis, presented in the same order as the original plot, and services to create the segments of the plot, and presented in the same order as the original plot\nshould have the same legend location\nshould have the same title and caption\ndoes not need to have a bolded title or a gray background\n\nHow does the improved visualization look different than the original? Does it send a different message at a first glance?\n\n\n\n\n\n\nTip\n\n\n\nUse \\n to add a line break to your title. And note that since the title is very long, it might run off the page in your code. That’s ok!\nAdditionally, the colors used in the plot are gray, #FF3205, and #006697.\n\n\n\nRender, commit, and push one last time. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
     "objectID": "lab/lab-0.html",
     "href": "lab/lab-0.html",
     "title": "Lab 0",
@@ -4899,7 +5004,7 @@
     "href": "lab.html",
     "title": "Labs",
     "section": "",
-    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\nNo.\n\n\nTitle\n\n\nDue date\n\n\n\n\n\n\nLab 0\n\n\nHello, World and STA 199!\n\n\nEnd of lab on Mon, Aug 26\n\n\n\n\nLab 1\n\n\nFrom the Midwest to North Carolina\n\n\nDue Mon, Sep 16 at 8:30 am\n\n\n\n\nLab 2\n\n\nRevisiting the Midwest\n\n\nDue Mon, Sep 23 at 8:30 am\n\n\n\n\nLab 3\n\n\nInflation everywhere\n\n\nDue Mon, Sep 30 at 8:30 am\n\n\n\n\nLab 4\n\n\nEverything so far I\n\n\nMon, Oct 7 at 8:30 am\n\n\n\n\n\nNo matching items",
+    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\nNo.\n\n\nTitle\n\n\nDue date\n\n\n\n\n\n\nLab 0\n\n\nHello, World and STA 199!\n\n\nEnd of lab on Mon, Aug 26\n\n\n\n\nLab 1\n\n\nFrom the Midwest to North Carolina\n\n\nDue Mon, Sep 16 at 8:30 am\n\n\n\n\nLab 2\n\n\nRevisiting the Midwest\n\n\nDue Mon, Sep 23 at 8:30 am\n\n\n\n\nLab 3\n\n\nInflation everywhere\n\n\nDue Mon, Sep 30 at 8:30 am\n\n\n\n\nLab 4\n\n\nEverything so far I\n\n\nMon, Oct 7 at 8:30 am\n\n\n\n\nLab 5\n\n\nVisualize, model, interpret\n\n\nMon, Nov 4 at 8:30 am\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Labs"
     ]
