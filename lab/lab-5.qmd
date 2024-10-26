@@ -3,7 +3,7 @@ title: Lab 5
 subtitle: Visualize, model, interpret
 categories: Lab
 description: "Mon, Nov 4 at 8:30 am"
-draft: true
+draft: false
 ---
 
 # Introduction
@@ -129,8 +129,8 @@ You may use `\hat{example}` to put a hat on a character.
 :::
 
 c.  Interpret the intercept in the context of the data and the research question.
-Is the intercept meaningful in this context?
-Why or why not?
+    Is the intercept meaningful in this context?
+    Why or why not?
 
 d.  Interpret the slope in the context of the data and the research question.
 
