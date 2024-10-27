@@ -275,7 +275,7 @@ c.  Load the data for this survey from `data/survation.csv`. Confirm that the da
 Create an improved version of the visualization.
 Your improved visualization:
 
--   should also be a stacked bar chart with services on the y-axis, presented in the same order as the original plot, and services to create the segments of the plot, and presented in the same order as the original plot
+-   should also be a stacked bar chart with services on the y-axis and presented in the same order as the original plot; sectors should create segments of the plot using the same colors (colors do not have to be exact) and appear in the same order as the original plot
 
 -   should have the same legend location
 
