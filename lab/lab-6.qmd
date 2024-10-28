@@ -121,7 +121,7 @@ In this question you'll prepare the dataset you'll use in this part.
 
 a.  **Read:** Read the data and save it as an object called `gapminder_raw`.
 
-a.  **Filter:** For our analysis, we will only be working with data from 2023.
+b.  **Filter:** For our analysis, we will only be working with data from 2023.
     Filter the data set so only values from the year 2023 are included.
     Save this data set as `gapminder_raw_23` and use it for the remainder of this exercise and the following.
 
@@ -134,19 +134,24 @@ d.  **Clean:** First, figure out why `gdp_percap` is read in as a character vari
 
 ## Question 2
 
-We are interested in learning more about life expectancy in countries, and we’ll start with exploring the relationship between life expectancy and GDP.
-    Create two visualizations:
+We are interested in learning more about life expectancy in countries, and we’ll start by exploring the relationship between life expectancy and GDP.
+Create two visualizations:
 
--   Scatter plot of `life_exp` vs. `gdpPercap` vs.
+-   Scatter plot of `life_exp` vs. `gdp_percap` vs.
 
--   Scatter plot of `life_exp_log` vs. `gdpPercap_log`, where `life_exp_log` is a new variable you add to the data set by taking the natural log of `life_exp`.
+-   Scatter plot of `life_exp_log` vs. `gdp_percap_log`, where `life_exp_log` is a new variable you add to the data set by taking the natural log of `life_exp`.
 
 First describe the relationship between each pair of the variables.
 Then, comment on which relationship would be better modeled using a linear model, and explain your reasoning.
 
+::: callout-note
+The question isn't asking which of these relationships is clearly linear, but instead which would be better modeled using a linear model.
+:::
+
 ## Question 3
 
-a.  **Model fitting:** Fit a linear model predicting log life expectancy from gross domestic product. Display the tidy summary.
+a.  **Model fitting:** Fit a linear model predicting log life expectancy from gross domestic product.
+    Display the tidy summary.
 
 b.  **Model evaluation:**
 
@@ -154,13 +159,13 @@ b.  **Model evaluation:**
 
     -   Interpret R-squared in the context of the data and the research question.
 
-## Question 9
+## Question 4
 
-Next, we want to examine if the relationship between GDP and life expectancy that we observed in the previous exercise holds across all continents in our data.
-We’ll continue to work with logged life expectancy (`life_exp_log`) and data from 2007.
+Next, we want to examine if the relationship between life expectancy and GDP that we observed in the previous exercise holds across all continents in our data.
+We’ll continue to work with logged life expectancy (`life_exp_log`) and data from 2023.
 
-a.  **Justification:** Create a scatter plot of `life_exp` vs. `gdpPercap_log`, where the points are colored by `continent`.
-    Do you think the trend between `life_exp_log` and `gdpPercap` is different for different continents?
+a.  **Justification:** Create a scatter plot of `life_exp_log` vs. `gdp_percap`, where the points are colored by `continent`.
+    Do you think the trend between `life_exp_log` and `gdp_percap` is different for different continents?
     Justify your answer with specific features of the plot.
 
 b.  **Model fitting and interpretation:**
@@ -174,7 +179,7 @@ b.  **Model fitting and interpretation:**
 
 c.  **Prediction:** Predict the life expectacy of a country in Asia where the average life expectancy is 70 years old.
 
-## Question 10
+## Question 5
 
 Communication is a critical yet often overlooked part of data science.
 When we engage with our audience and capture their interest, we can ultimately better communicate what we are trying to share.
@@ -192,3 +197,247 @@ Then, write a paragraph (4-5 sentences) addressing the following:
 -   What are your general take-aways from this presentation?
 
 -   What are your general take-aways from how this presentation was given?
+
+# Part 2 - Bike rentals
+
+Bike sharing systems are new generation of traditional bike rentals where whole process from membership, rental and return back has become automatic.
+You are tasked to investigate the relationship between the temperature outside and the number of bikes rented in the Washington DC area between the years 2011 and 2022.
+You will be investigating data for the months June, July, September, and November.[^1]
+
+[^1]: Data subset from Progress in Artificial Intelligence, 2013.
+
+Below is a list of variables and their definitions:
+
+| Variable | Definition |
+|:---|:---|
+| `season` | Numerical representation of Spring (2), Summer (3), and Fall (4) |
+| `year` | Numerical representation of 2011 (0) or 2012 (1) |
+| `month` | Month in which data were collected |
+| `holiday` | Indicator variable for whether data were collected on a holiday (1) or not (0) |
+| `weekday` | Numerical representation of day of week |
+| `temp` | Temperature in Celsius |
+| `count` | Number of bike rentals for that day |
+
+## Question 6
+
+a.  Read in the data.
+    Then, create a scatter plot that investigates the relationship between the number of bikes rented and the temperature outside.
+    Include a straight line of best fit to help discuss the discovered relationship.
+    Summarize your findings in at most 4 sentences.
+
+b.  Another researcher suggests to look at the relationship between bikes rented and temperature by each of the four months of interest.
+    Recreate your plot in part a, and color the points by month.
+    Include a straight line for each of the four months to help discuss each month's relationship between bikes rented and temperature.
+    Summarize your findings in at most 4 sentences.
+
+Watch the following video on Simpson's Paradox [here](https://www.youtube.com/watch?v=ebEkn-BiW5k).
+After you do, please answer the following questions.
+
+c.  In your own words, summarize Simpson's Paradox in at most 4 sentences.
+
+d.  Compare and contrast your findings from part (a) and part (b).
+    What's different?
+
+e.  Think critically about your answer to part d.
+    What other context from this study could be creating this paradox?
+    That is, identify a potential confounding variable in this study.
+    Be sure to justify how your example could be a potential confounding variable by relating it back to both bike rentals and temperature.
+
+# Part 3 - Do you even lift?
+
+In this part, you will be working with data from [www.openpowerlifting.org](https://www.openpowerlifting.org/).
+This data was sourced from [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-10-08) and contains international powerlifting records at various meets.
+At each meet, each lifter gets three attempts at lifting max weight on three lifts: the bench press, squat and deadlift.
+
+```{r}
+#| label: load-data
+#| message: false
+
+ipf <- read_csv("data/ipf.csv")
+```
+
+The data dictionary for this dataset from TidyTuesday is reproduced below:
+
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| variable           | description                                                                                                                                                                                                                                                                     |
++:===================+:================================================================================================================================================================================================================================================================================+
+| `name`             | Individual lifter name                                                                                                                                                                                                                                                          |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `sex`              | Binary gender (M/F)                                                                                                                                                                                                                                                             |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `event`            | The type of competition that the lifter entered. Values are as follows:                                                                                                                                                                                                         |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   SBD: Squat-Bench-Deadlift, also commonly called "Full Power"                                                                                                                                                                                                                |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   BD: Bench-Deadlift, also commonly called "Ironman" or "Push-Pull"                                                                                                                                                                                                           |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   SD: Squat-Deadlift, very uncommon                                                                                                                                                                                                                                           |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   SB: Squat-Bench, very uncommon                                                                                                                                                                                                                                              |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   S: Squat-only                                                                                                                                                                                                                                                               |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   B: Bench-only                                                                                                                                                                                                                                                               |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   D: Deadlift-only                                                                                                                                                                                                                                                            |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `equipment`        | The equipment category under which the lifts were performed. Values are as follows:                                                                                                                                                                                             |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   Raw: Bare knees or knee sleeves                                                                                                                                                                                                                                             |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   Wraps: Knee wraps were allowed                                                                                                                                                                                                                                              |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   Single-ply: Equipped, single-ply suits                                                                                                                                                                                                                                      |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   Multi-ply: Equipped, multi-ply suits (includes Double-ply)                                                                                                                                                                                                                  |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   Straps: Allowed straps on the deadlift (used mostly for exhibitions, not real meets)                                                                                                                                                                                        |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `age`              | The age of the lifter on the start date of the meet, if known.                                                                                                                                                                                                                  |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `age_class`        | The age class in which the filter falls, for example `40-45`                                                                                                                                                                                                                    |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `division`         | Free-form UTF-8 text describing the division of competition, like `Open` or `Juniors 20-23` or `Professional`.                                                                                                                                                                  |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `bodyweight_kg`    | The recorded bodyweight of the lifter at the time of competition, to two decimal places.                                                                                                                                                                                        |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `weight_class_kg`  | The weight class in which the lifter competed, to two decimal places.                                                                                                                                                                                                           |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | Weight classes can be specified as a maximum or as a minimum. Maximums are specified by just the number, for example `90` means "up to (and including) 90kg." minimums are specified by a `+` to the right of the number, for example `90+` means "above (and excluding) 90kg." |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `best3squat_kg`    | Maximum of the first three successful attempts for the lift.                                                                                                                                                                                                                    |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | Rarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.                                                                                                                                                           |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `best3bench_kg`    | Maximum of the first three successful attempts for the lift.                                                                                                                                                                                                                    |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | Rarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.                                                                                                                                                           |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `best3deadlift_kg` | Maximum of the first three successful attempts for the lift.                                                                                                                                                                                                                    |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | Rarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.                                                                                                                                                           |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `place`            | The recorded place of the lifter in the given division at the end of the meet. Values are as follows:                                                                                                                                                                           |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   Positive number: the place the lifter came in.                                                                                                                                                                                                                              |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   G: Guest lifter. The lifter succeeded, but wasn't eligible for awards.                                                                                                                                                                                                      |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   DQ: Disqualified. Note that DQ could be for procedural reasons, not just failed attempts.                                                                                                                                                                                   |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   DD: Doping Disqualification. The lifter failed a drug test.                                                                                                                                                                                                                 |
+|                    |                                                                                                                                                                                                                                                                                 |
+|                    | -   NS: No-Show. The lifter did not show up on the meet day.                                                                                                                                                                                                                    |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `date`             | ISO 8601 Date of the event                                                                                                                                                                                                                                                      |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `federation`       | The federation that hosted the meet. (limited to IPF for this data subset)                                                                                                                                                                                                      |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `meet_name`        | The name of the meet. The name is defined to never include the year or the federation. For example, the meet officially called `2019 USAPL Raw National Championships` would have the MeetName `Raw National Championshps`.                                                     |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+For all of the following exercises, you should include units on axes labels, e.g. "Bench press (lbs)" or "Bench press (kg)".
+"Age (years)" etc.
+This is good practice.
+
+## Question 7
+
+Let's begin by taking a look at the **squat lifting** records.
+
+-   First, remove any observations that are negative for squat.
+-   Next, create a new column called `best3_squat_lbs` that converts the record from kilograms to pounds.
+
+You may need to google the conversion formula.
+Save your data frame as `ipf_squat`.
+Report the number of rows and columns of this new data frame using inline code.
+
+## Question 8
+
+Using the `ipf_squat` data frame you created, from the previous exercise, create a scatter plot to investigate the relationship between squat (in lbs) and age.
+Age should be on the x-axis.
+Adjust the `alpha` level of your points to get a better sense of the density of the data.
+Add a linear trend-line.
+Summarize the trend you observe in at most 4 sentences.
+
+## Question 9
+
+Write down the linear population model to predict lift squat lbs from age.
+Next, fit the linear model, and save it as `age_fit`.
+Re-write your previous equation replacing the population parameters with the numeric estimates.
+This is called the "fitted" linear model.
+Interpret each estimate of $\beta$.
+Are the interpretations sensible?
+
+## Question 10
+
+Building on your `ipf_squat` data frame, create a new column called `age2` that takes the age of each lifter and squares it.
+Save it to your data frame `ipf_squat`.
+Next, plot squat in lbs vs `age2` and add a linear best fit line.
+How does the fit of the model compare to the one from earlier?
+
+::: callout-tip
+To raise a value to a power, use `^` in R, e.g.: `2 ^ 2` gives you 4, `2 ^ 3` gives you 8, etc.
+:::
+
+## Question 11
+
+One metric to assess the fit of a model is the correlation squared, also known as $R^2$.
+Fit the age$^2$ model and save the object as `age2_fit`.
+Compare $R^2$ of the new model (squat vs. age$^2$) to the $R^2$ of the earlier model (squat vs. age).
+Which has a higher $R^2$?
+
+## Exercise 12
+
+Next, let's turn our attention to **dead lifting** records.
+Recreate the plot below.
+Make sure axes and title labels are exactly matching, including spelling, capitalization, etc.
+Based on the plot below, which impacts deadlift weight more, age category or sex?
+
+::: callout-note
+You will need to create a couple of new columns.
+One to classify age appropriately and one to convert `best3deadlift_kg` to the plotted units (lbs).
+Notice that there are no negative deadlift values on the x-axis.
+:::
+
+```{r}
+#| label: deadlift-age-sex-plot
+#| fig-width: 6
+#| fig-asp: 0.8
+#| echo: false
+
+ipf |>
+  mutate(Age = ifelse(age < 40, "Under 40", "40 or older")) |>
+  filter(!is.na(Age)) |>
+  filter(best3deadlift_kg > 0 ) |>
+  mutate(best3deadlift_lbs = best3deadlift_kg * 2.20462) |>
+  ggplot(aes(x = best3deadlift_lbs, fill = sex, color = sex))  +
+  geom_density(alpha = 0.5) +
+  facet_wrap(~ Age, ncol = 1) +
+  labs(
+    title = "Distribution of best deadlift in lbs by age grouping and sex", 
+    y = "Density", 
+    x = "Best deadlift (lbs)",
+    color = "Sex", fill = "Sex"
+  )
+```
+
+## Exercise 13
+
+Finally, let's turn our attention to **bench press** records.
+
+To begin, remove any observations that are negative for bench press, create two new columns: `best3bench_lbs` and `bodyweight_lbs`.
+Save the result in a new data frame called `ipf_bench`.
+
+Then, create a scatter plot to investigate the relationship between best bench press (in lbs) and the lifter's bodyweight (in lbs).
+Bodyweight should be on the x-axis.
+Add a linear trend-line.
+Be sure to label all axes and give the plot a title.
+Comment on what you observe.
+
+## Exercise 14
+
+Fit the linear model displayed in the previous exercise and write down the **fitted model equation** only, replacing $\hat{\beta}$s with their fitted estimates.
+Interpret the $\hat{\beta}$s (intercept and slope).
+Report $R^2$.
+Is body weight an important predictor of bench press ability?
+Why or why not?
