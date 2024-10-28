@@ -6,4 +6,189 @@ description: "Mon, Nov 11 at 8:30 am"
 draft: true
 ---
 
-To be posted.
+# Introduction
+
+In this lab you'll start your practice of statistical modeling.
+You'll fit models, interpret model output, and make decisions about your data and research question based on the model results.
+And you'll wrap up the lab revisiting the topic of data science ethics.
+
+::: callout-note
+This lab assumes you've completed the labs so far and doesn't repeat setup and overview content from those labs.
+If you haven't done those yet, you should review the previous labs before starting on this one.
+:::
+
+## Learning objectives
+
+By the end of the lab, you will...
+
+-   TO DO: Add LOs.
+
+And, as usual, you will also...
+
+-   Get more experience with data science workflow using R, RStudio, Git, and GitHub
+-   Further your reproducible authoring skills with Quarto
+-   Improve your familiarity with version control using Git and GitHub
+
+## Getting started
+
+Log in to RStudio, clone your `lab-5` repo from GitHub, open your `lab-5.qmd` document, and get started!
+
+::: {.callout-tip collapse="true"}
+## Click here if you prefer to see step-by-step instructions
+
+### Step 1: Log in to RStudio
+
+-   Go to <https://cmgr.oit.duke.edu/containers> and log in with your Duke NetID and Password.
+-   Click `STA198-199` under My reservations to log into your container. You should now see the RStudio environment.
+
+### Step 2: Clone the repo & start a new RStudio project
+
+-   Go to the course organization at [github.com/sta199-f24](https://github.com/sta199-f24) organization on GitHub.
+    Click on the repo with the prefix **lab-5**.
+    It contains the starter documents you need to complete the lab.
+
+-   Click on the green **CODE** button and select **Use SSH**. This might already be selected by default; if it is, you'll see the text **Clone with SSH**.
+    Click on the clipboard icon to copy the repo URL.
+
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
+-   Click *lab-5.qmd* to open the template Quarto file.
+    This is where you will write up your code and narrative for the lab.
+
+### Step 3: Update the YAML
+
+In `lab-5.qmd`, update the `author` field to your name, render your document and examine the changes.
+Then, in the Git pane, click on **Diff** to view your changes, add a commit message (e.g., "Added author name"), and click **Commit**.
+Then, push the changes to your GitHub repository, and in your browser confirm that these changes have indeed propagated to your repository.
+:::
+
+::: callout-important
+If you run into any issues with the first steps outlined above, flag a TA for help before proceeding.
+:::
+
+## Packages
+
+In this lab, we will work with the
+
+-   **tidyverse** package for doing data analysis in a "tidy" way,
+-   **tidymodels** package for modeling in a "tidy" way, and
+-   **openintro** package for the dataset for Part 1.
+
+```{r}
+#| eval: true
+#| message: false
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+```
+
+-   **Run** the code cell by clicking on the green triangle (play) button for the code cell labeled `load-packages`. This loads the package so that its features (the functions and datasets in it) are accessible from your *Console*.
+-   Then, **render** the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document.
+
+## Guidelines
+
+{{< include _guidelines.qmd >}}
+
+::: callout-important
+You are also expected to pay attention to [code smell](https://en.wikipedia.org/wiki/Code_smell) in addition to code style and readability.
+You should review and improve your code to avoid redundant steps (e.g., grouping, ungrouping, and grouping again by the same variable in a pipeline), using inconsistent syntax (e.g., `!` to say "not" in one place and `-` in another place), etc.
+:::
+
+# Part 1 - Life expectancy and GDP
+
+Gapminder is a “fact tank” that uses publicly available world data to produce data visualizations and teaching resources on global development.
+We will use an excerpt of their data to explore relationships among world health metrics across countries and regions between the years 2000 and 2023.
+The data set is called `gapminder` and it's in your lab repository's `data` folder.
+A table of variables can be found below.
+
+-   `country`: The country name
+
+-   `continent`: The continent name
+
+-   `year`: Year of data
+
+-   `life_exp`: life expectancy at birth, in years
+
+-   `gdp_percap`: Gross domestic product per peson adjusted for differences in purchasing power (in international dollars, fixed 2017 prices)
+
+## Question 1
+
+In this question you'll prepare the dataset you'll use in this part.
+
+a.  **Read:** Read the data and save it as an object called `gapminder_raw`.
+
+a.  **Filter:** For our analysis, we will only be working with data from 2023.
+    Filter the data set so only values from the year 2023 are included.
+    Save this data set as `gapminder_raw_23` and use it for the remainder of this exercise and the following.
+
+c.  **Glimpse:** Glimpse at `gapminder_raw_23` and list the variables and their types.
+    Comment on any unexpected features in the data.
+
+d.  **Clean:** First, figure out why `gdp_percap` is read in as a character variable and describe your findings in one sentence.
+    Then, clean the `gdp_percap` variable and convert it to numeric values.
+    Save the resulting data frame as `gapminder_23`.
+
+## Question 2
+
+We are interested in learning more about life expectancy in countries, and we’ll start with exploring the relationship between life expectancy and GDP.
+    Create two visualizations:
+
+-   Scatter plot of `life_exp` vs. `gdpPercap` vs.
+
+-   Scatter plot of `life_exp_log` vs. `gdpPercap_log`, where `life_exp_log` is a new variable you add to the data set by taking the natural log of `life_exp`.
+
+First describe the relationship between each pair of the variables.
+Then, comment on which relationship would be better modeled using a linear model, and explain your reasoning.
+
+## Question 3
+
+a.  **Model fitting:** Fit a linear model predicting log life expectancy from gross domestic product. Display the tidy summary.
+
+b.  **Model evaluation:**
+
+    -   Calculate the R-squared of the model using two methods and confirm that the values match: first method is using `glance()` and the other method is based on the value of the correlation coefficient between the two variables.
+
+    -   Interpret R-squared in the context of the data and the research question.
+
+## Question 9
+
+Next, we want to examine if the relationship between GDP and life expectancy that we observed in the previous exercise holds across all continents in our data.
+We’ll continue to work with logged life expectancy (`life_exp_log`) and data from 2007.
+
+a.  **Justification:** Create a scatter plot of `life_exp` vs. `gdpPercap_log`, where the points are colored by `continent`.
+    Do you think the trend between `life_exp_log` and `gdpPercap` is different for different continents?
+    Justify your answer with specific features of the plot.
+
+b.  **Model fitting and interpretation:**
+
+    -   Regardless of your answer in part (a), fit an [additive model]{.underline} (main effects) that predicts `life_exp_log` from GDP per capita and continent (with Africas as the baseline level).
+        Display a tidy summary of the model output.
+
+    -   Interpret the *intercept* of the model, making sure that your interpretation is in the units of the original data (not on log scale).
+
+    -   Interpret the *slope* of the model, making sure that your interpretation is in the units of the original data (not on log scale).
+
+c.  **Prediction:** Predict the life expectacy of a country in Asia where the average life expectancy is 70 years old.
+
+## Question 10
+
+Communication is a critical yet often overlooked part of data science.
+When we engage with our audience and capture their interest, we can ultimately better communicate what we are trying to share.
+
+Please watch the following video: [Hans Rosling: 200 years in 4 minutes](https://www.youtube.com/watch?v=Z8t4k0Q8e8Y).
+
+Then, write a paragraph (4-5 sentences) addressing the following:
+
+-   What did you enjoy about the presentation of data?
+    What did you find interesting
+
+-   Were there any aspects of the presentation that were hard to follow?
+    If so, what?
+
+-   What are your general take-aways from this presentation?
+
+-   What are your general take-aways from how this presentation was given?
