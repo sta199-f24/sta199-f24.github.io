@@ -10,6 +10,8 @@ name: Build Site
 jobs:
   build-website:
     runs-on: self-hosted
+    container:
+      image: ghcr.io/dukestatsci/r_gh_actions:latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
