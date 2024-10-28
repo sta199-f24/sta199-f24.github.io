@@ -99,6 +99,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script><meta name="quarto:status" content="draft">
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 <meta property="og:title" content="Lab 6 – STA 199">
 <meta property="og:description" content="Mon, Nov 11 at 8:30 am">
 <meta property="og:site_name" content="STA 199">
@@ -374,8 +400,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
   <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-2---bike-rentals" id="toc-part-2---bike-rentals" class="nav-link" data-scroll-target="#part-2---bike-rentals">Part 2 - Bike rentals</a>
+  <ul class="collapse">
+<li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-3---do-you-even-lift" id="toc-part-3---do-you-even-lift" class="nav-link" data-scroll-target="#part-3---do-you-even-lift">Part 3 - Do you even lift?</a>
+  <ul class="collapse">
+<li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
   <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
   <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
+  <li><a href="#question-11" id="toc-question-11" class="nav-link" data-scroll-target="#question-11">Question 11</a></li>
+  <li><a href="#exercise-12" id="toc-exercise-12" class="nav-link" data-scroll-target="#exercise-12">Exercise 12</a></li>
+  <li><a href="#exercise-13" id="toc-exercise-13" class="nav-link" data-scroll-target="#exercise-13">Exercise 13</a></li>
+  <li><a href="#exercise-14" id="toc-exercise-14" class="nav-link" data-scroll-target="#exercise-14">Exercise 14</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-6.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -547,12 +592,25 @@ Important
 <li><p><strong>Glimpse:</strong> Glimpse at <code>gapminder_raw_23</code> and list the variables and their types. Comment on any unexpected features in the data.</p></li>
 <li><p><strong>Clean:</strong> First, figure out why <code>gdp_percap</code> is read in as a character variable and describe your findings in one sentence. Then, clean the <code>gdp_percap</code> variable and convert it to numeric values. Save the resulting data frame as <code>gapminder_23</code>.</p></li>
 </ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<p>We are interested in learning more about life expectancy in countries, and we’ll start with exploring the relationship between life expectancy and GDP. Create two visualizations:</p>
+<p>We are interested in learning more about life expectancy in countries, and we’ll start by exploring the relationship between life expectancy and GDP. Create two visualizations:</p>
 <ul>
-<li><p>Scatter plot of <code>life_exp</code> vs.&nbsp;<code>gdpPercap</code> vs.</p></li>
-<li><p>Scatter plot of <code>life_exp_log</code> vs.&nbsp;<code>gdpPercap_log</code>, where <code>life_exp_log</code> is a new variable you add to the data set by taking the natural log of <code>life_exp</code>.</p></li>
+<li><p>Scatter plot of <code>life_exp</code> vs.&nbsp;<code>gdp_percap</code> vs.</p></li>
+<li><p>Scatter plot of <code>life_exp_log</code> vs.&nbsp;<code>gdp_percap_log</code>, where <code>life_exp_log</code> is a new variable you add to the data set by taking the natural log of <code>life_exp</code>.</p></li>
 </ul>
 <p>First describe the relationship between each pair of the variables. Then, comment on which relationship would be better modeled using a linear model, and explain your reasoning.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The question isn’t asking which of these relationships is clearly linear, but instead which would be better modeled using a linear model.</p>
+</div>
+</div>
 </section><section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <ol type="a">
 <li><p><strong>Model fitting:</strong> Fit a linear model predicting log life expectancy from gross domestic product. Display the tidy summary.</p></li>
@@ -563,10 +621,10 @@ Important
 <li><p>Interpret R-squared in the context of the data and the research question.</p></li>
 </ul>
 </li>
-</ol></section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
-<p>Next, we want to examine if the relationship between GDP and life expectancy that we observed in the previous exercise holds across all continents in our data. We’ll continue to work with logged life expectancy (<code>life_exp_log</code>) and data from 2007.</p>
+</ol></section><section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<p>Next, we want to examine if the relationship between life expectancy and GDP that we observed in the previous exercise holds across all continents in our data. We’ll continue to work with logged life expectancy (<code>life_exp_log</code>) and data from 2023.</p>
 <ol type="a">
-<li><p><strong>Justification:</strong> Create a scatter plot of <code>life_exp</code> vs.&nbsp;<code>gdpPercap_log</code>, where the points are colored by <code>continent</code>. Do you think the trend between <code>life_exp_log</code> and <code>gdpPercap</code> is different for different continents? Justify your answer with specific features of the plot.</p></li>
+<li><p><strong>Justification:</strong> Create a scatter plot of <code>life_exp_log</code> vs.&nbsp;<code>gdp_percap</code>, where the points are colored by <code>continent</code>. Do you think the trend between <code>life_exp_log</code> and <code>gdp_percap</code> is different for different continents? Justify your answer with specific features of the plot.</p></li>
 <li>
 <p><strong>Model fitting and interpretation:</strong></p>
 <ul>
@@ -576,7 +634,7 @@ Important
 </ul>
 </li>
 <li><p><strong>Prediction:</strong> Predict the life expectacy of a country in Asia where the average life expectancy is 70 years old.</p></li>
-</ol></section><section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
+</ol></section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p>Communication is a critical yet often overlooked part of data science. When we engage with our audience and capture their interest, we can ultimately better communicate what we are trying to share.</p>
 <p>Please watch the following video: <a href="https://www.youtube.com/watch?v=Z8t4k0Q8e8Y">Hans Rosling: 200 years in 4 minutes</a>.</p>
 <p>Then, write a paragraph (4-5 sentences) addressing the following:</p>
@@ -585,10 +643,239 @@ Important
 <li><p>Were there any aspects of the presentation that were hard to follow? If so, what?</p></li>
 <li><p>What are your general take-aways from this presentation?</p></li>
 <li><p>What are your general take-aways from how this presentation was given?</p></li>
+</ul></section></section><section id="part-2---bike-rentals" class="level1"><h1>Part 2 - Bike rentals</h1>
+<p>Bike sharing systems are new generation of traditional bike rentals where whole process from membership, rental and return back has become automatic. You are tasked to investigate the relationship between the temperature outside and the number of bikes rented in the Washington DC area between the years 2011 and 2022. You will be investigating data for the months June, July, September, and November.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Below is a list of variables and their definitions:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Definition</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>season</code></td>
+<td style="text-align: left;">Numerical representation of Spring (2), Summer (3), and Fall (4)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>year</code></td>
+<td style="text-align: left;">Numerical representation of 2011 (0) or 2012 (1)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>month</code></td>
+<td style="text-align: left;">Month in which data were collected</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>holiday</code></td>
+<td style="text-align: left;">Indicator variable for whether data were collected on a holiday (1) or not (0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>weekday</code></td>
+<td style="text-align: left;">Numerical representation of day of week</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>temp</code></td>
+<td style="text-align: left;">Temperature in Celsius</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>count</code></td>
+<td style="text-align: left;">Number of bike rentals for that day</td>
+</tr>
+</tbody>
+</table>
+<section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<ol type="a">
+<li><p>Read in the data. Then, create a scatter plot that investigates the relationship between the number of bikes rented and the temperature outside. Include a straight line of best fit to help discuss the discovered relationship. Summarize your findings in at most 4 sentences.</p></li>
+<li><p>Another researcher suggests to look at the relationship between bikes rented and temperature by each of the four months of interest. Recreate your plot in part a, and color the points by month. Include a straight line for each of the four months to help discuss each month’s relationship between bikes rented and temperature. Summarize your findings in at most 4 sentences.</p></li>
+</ol>
+<p>Watch the following video on Simpson’s Paradox <a href="https://www.youtube.com/watch?v=ebEkn-BiW5k">here</a>. After you do, please answer the following questions.</p>
+<ol start="3" type="a">
+<li><p>In your own words, summarize Simpson’s Paradox in at most 4 sentences.</p></li>
+<li><p>Compare and contrast your findings from part (a) and part (b). What’s different?</p></li>
+<li><p>Think critically about your answer to part d. What other context from this study could be creating this paradox? That is, identify a potential confounding variable in this study. Be sure to justify how your example could be a potential confounding variable by relating it back to both bike rentals and temperature.</p></li>
+</ol></section></section><section id="part-3---do-you-even-lift" class="level1"><h1>Part 3 - Do you even lift?</h1>
+<p>In this part, you will be working with data from <a href="https://www.openpowerlifting.org/">www.openpowerlifting.org</a>. This data was sourced from <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-10-08">Tidy Tuesday</a> and contains international powerlifting records at various meets. At each meet, each lifter gets three attempts at lifting max weight on three lifts: the bench press, squat and deadlift.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ipf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/ipf.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The data dictionary for this dataset from TidyTuesday is reproduced below:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 92%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: left;">variable</th>
+<th style="text-align: left;">description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>name</code></td>
+<td style="text-align: left;">Individual lifter name</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>sex</code></td>
+<td style="text-align: left;">Binary gender (M/F)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>event</code></td>
+<td style="text-align: left;">
+<p>The type of competition that the lifter entered. Values are as follows:</p>
+<ul>
+<li><p>SBD: Squat-Bench-Deadlift, also commonly called “Full Power”</p></li>
+<li><p>BD: Bench-Deadlift, also commonly called “Ironman” or “Push-Pull”</p></li>
+<li><p>SD: Squat-Deadlift, very uncommon</p></li>
+<li><p>SB: Squat-Bench, very uncommon</p></li>
+<li><p>S: Squat-only</p></li>
+<li><p>B: Bench-only</p></li>
+<li><p>D: Deadlift-only</p></li>
 </ul>
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>equipment</code></td>
+<td style="text-align: left;">
+<p>The equipment category under which the lifts were performed. Values are as follows:</p>
+<ul>
+<li><p>Raw: Bare knees or knee sleeves</p></li>
+<li><p>Wraps: Knee wraps were allowed</p></li>
+<li><p>Single-ply: Equipped, single-ply suits</p></li>
+<li><p>Multi-ply: Equipped, multi-ply suits (includes Double-ply)</p></li>
+<li><p>Straps: Allowed straps on the deadlift (used mostly for exhibitions, not real meets)</p></li>
+</ul>
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>age</code></td>
+<td style="text-align: left;">The age of the lifter on the start date of the meet, if known.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>age_class</code></td>
+<td style="text-align: left;">The age class in which the filter falls, for example <code>40-45</code>
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>division</code></td>
+<td style="text-align: left;">Free-form UTF-8 text describing the division of competition, like <code>Open</code> or <code>Juniors 20-23</code> or <code>Professional</code>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>bodyweight_kg</code></td>
+<td style="text-align: left;">The recorded bodyweight of the lifter at the time of competition, to two decimal places.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>weight_class_kg</code></td>
+<td style="text-align: left;">
+<p>The weight class in which the lifter competed, to two decimal places.</p>
+<p>Weight classes can be specified as a maximum or as a minimum. Maximums are specified by just the number, for example <code>90</code> means “up to (and including) 90kg.” minimums are specified by a <code>+</code> to the right of the number, for example <code>90+</code> means “above (and excluding) 90kg.”</p>
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>best3squat_kg</code></td>
+<td style="text-align: left;">
+<p>Maximum of the first three successful attempts for the lift.</p>
+<p>Rarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.</p>
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>best3bench_kg</code></td>
+<td style="text-align: left;">
+<p>Maximum of the first three successful attempts for the lift.</p>
+<p>Rarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.</p>
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>best3deadlift_kg</code></td>
+<td style="text-align: left;">
+<p>Maximum of the first three successful attempts for the lift.</p>
+<p>Rarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.</p>
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>place</code></td>
+<td style="text-align: left;">
+<p>The recorded place of the lifter in the given division at the end of the meet. Values are as follows:</p>
+<ul>
+<li><p>Positive number: the place the lifter came in.</p></li>
+<li><p>G: Guest lifter. The lifter succeeded, but wasn’t eligible for awards.</p></li>
+<li><p>DQ: Disqualified. Note that DQ could be for procedural reasons, not just failed attempts.</p></li>
+<li><p>DD: Doping Disqualification. The lifter failed a drug test.</p></li>
+<li><p>NS: No-Show. The lifter did not show up on the meet day.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>date</code></td>
+<td style="text-align: left;">ISO 8601 Date of the event</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>federation</code></td>
+<td style="text-align: left;">The federation that hosted the meet. (limited to IPF for this data subset)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>meet_name</code></td>
+<td style="text-align: left;">The name of the meet. The name is defined to never include the year or the federation. For example, the meet officially called <code>2019 USAPL Raw National Championships</code> would have the MeetName <code>Raw National Championshps</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>For all of the following exercises, you should include units on axes labels, e.g.&nbsp;“Bench press (lbs)” or “Bench press (kg)”. “Age (years)” etc. This is good practice.</p>
+<section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<p>Let’s begin by taking a look at the <strong>squat lifting</strong> records.</p>
+<ul>
+<li>First, remove any observations that are negative for squat.</li>
+<li>Next, create a new column called <code>best3_squat_lbs</code> that converts the record from kilograms to pounds.</li>
+</ul>
+<p>You may need to google the conversion formula. Save your data frame as <code>ipf_squat</code>. Report the number of rows and columns of this new data frame using inline code.</p>
+</section><section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+<p>Using the <code>ipf_squat</code> data frame you created, from the previous exercise, create a scatter plot to investigate the relationship between squat (in lbs) and age. Age should be on the x-axis. Adjust the <code>alpha</code> level of your points to get a better sense of the density of the data. Add a linear trend-line. Summarize the trend you observe in at most 4 sentences.</p>
+</section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+<p>Write down the linear population model to predict lift squat lbs from age. Next, fit the linear model, and save it as <code>age_fit</code>. Re-write your previous equation replacing the population parameters with the numeric estimates. This is called the “fitted” linear model. Interpret each estimate of <span class="math inline">\(\beta\)</span>. Are the interpretations sensible?</p>
+</section><section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
+<p>Building on your <code>ipf_squat</code> data frame, create a new column called <code>age2</code> that takes the age of each lifter and squares it. Save it to your data frame <code>ipf_squat</code>. Next, plot squat in lbs vs <code>age2</code> and add a linear best fit line. How does the fit of the model compare to the one from earlier?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To raise a value to a power, use <code>^</code> in R, e.g.: <code>2 ^ 2</code> gives you 4, <code>2 ^ 3</code> gives you 8, etc.</p>
+</div>
+</div>
+</section><section id="question-11" class="level2"><h2 class="anchored" data-anchor-id="question-11">Question 11</h2>
+<p>One metric to assess the fit of a model is the correlation squared, also known as <span class="math inline">\(R^2\)</span>. Fit the age<span class="math inline">\(^2\)</span> model and save the object as <code>age2_fit</code>. Compare <span class="math inline">\(R^2\)</span> of the new model (squat vs.&nbsp;age<span class="math inline">\(^2\)</span>) to the <span class="math inline">\(R^2\)</span> of the earlier model (squat vs.&nbsp;age). Which has a higher <span class="math inline">\(R^2\)</span>?</p>
+</section><section id="exercise-12" class="level2"><h2 class="anchored" data-anchor-id="exercise-12">Exercise 12</h2>
+<p>Next, let’s turn our attention to <strong>dead lifting</strong> records. Recreate the plot below. Make sure axes and title labels are exactly matching, including spelling, capitalization, etc. Based on the plot below, which impacts deadlift weight more, age category or sex?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will need to create a couple of new columns. One to classify age appropriately and one to convert <code>best3deadlift_kg</code> to the plotted units (lbs). Notice that there are no negative deadlift values on the x-axis.</p>
+</div>
+</div>
+</section><section id="exercise-13" class="level2"><h2 class="anchored" data-anchor-id="exercise-13">Exercise 13</h2>
+<p>Finally, let’s turn our attention to <strong>bench press</strong> records.</p>
+<p>To begin, remove any observations that are negative for bench press, create two new columns: <code>best3bench_lbs</code> and <code>bodyweight_lbs</code>. Save the result in a new data frame called <code>ipf_bench</code>.</p>
+<p>Then, create a scatter plot to investigate the relationship between best bench press (in lbs) and the lifter’s bodyweight (in lbs). Bodyweight should be on the x-axis. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.</p>
+</section><section id="exercise-14" class="level2"><h2 class="anchored" data-anchor-id="exercise-14">Exercise 14</h2>
+<p>Fit the linear model displayed in the previous exercise and write down the <strong>fitted model equation</strong> only, replacing <span class="math inline">\(\hat{\beta}\)</span>s with their fitted estimates. Interpret the <span class="math inline">\(\hat{\beta}\)</span>s (intercept and slope). Report <span class="math inline">\(R^2\)</span>. Is body weight an important predictor of bench press ability? Why or why not?</p>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<ol>
+<li id="fn1"><p>Data subset from Progress in Artificial Intelligence, 2013.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
