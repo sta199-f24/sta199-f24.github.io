@@ -4,12 +4,10 @@ on:
   pull_request:
     branches: main
   workflow_dispatch:
-
 name: Build Site
-
 jobs:
   build-website:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -43,6 +41,5 @@ jobs:
           target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
-
     permissions:
       contents: write
