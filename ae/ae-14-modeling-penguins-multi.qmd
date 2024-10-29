@@ -1,11 +1,5 @@
 ---
 title: "AE 14: Modelling penguins with multiple predictors"
-subtitle: "Suggested answers"
-categories: 
-  - Application exercise
-  - Answers
-fig-width: 7
-fig-asp: 0.618
 ---
 
 In this application exercise we will continue to study penguins.
@@ -121,13 +115,11 @@ Add response here.
 
 # Your turn
 
--   Now, explore body mass, and it's relationship to bill length and flipper length.
-    Brainstorm: How could we visualize this?
+-   Now, explore body mass, and it's relationship to bill length and flipper length. Brainstorm: How could we visualize this?
 
 Add response here.
 
--   Fit the additive model.
-    Interpret the slope for flipper in context of the data and the research question.
+-   Fit the additive model. Interpret the slope for flipper in context of the data and the research question.
 
 ```{r}
 #| label: bm-fl-bl-fit
