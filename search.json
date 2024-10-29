@@ -11,7 +11,7 @@
     "href": "slides/16-linear-model-multiple-predictors-I-slides.html#announcements",
     "title": "Linear regression with a multiple predictors I",
     "section": "Announcements",
-    "text": "Announcements\n\n…"
+    "text": "Announcements\n\nProject repos closed (you won’t see them on GitHub) until proposal grading is done. You’ll get access back to them on Monday. In the meantime, if you want to work on your project, you can make local commits on RStudio and you’ll be able to push them when you regain access.\nPeer evaluations (via TEAMMATES) are due by Friday, 5 pm."
   },
   {
     "objectID": "slides/16-linear-model-multiple-predictors-I-slides.html#goals",
@@ -19,6 +19,41 @@
     "title": "Linear regression with a multiple predictors I",
     "section": "Goals",
     "text": "Goals\n\nRecap modeling with a single predictor\nFit and interpret models with a categorical predictor\nFit and interpret models with multiple predictors\nDistinguish between additive and interaction models"
+  },
+  {
+    "objectID": "slides/16-linear-model-multiple-predictors-I-slides.html#honorable-mention-1-austin-liu",
+    "href": "slides/16-linear-model-multiple-predictors-I-slides.html#honorable-mention-1-austin-liu",
+    "title": "Linear regression with a multiple predictors I",
+    "section": "Honorable mention 1: Austin Liu",
+    "text": "Honorable mention 1: Austin Liu\n\nCodemtcars |&gt;\n  mutate(\n    am = case_when(\n      am == 0 ~ \"Automatic\",\n      am == 1 ~ \"Manual\"\n    ),\n    vs = case_when(\n      vs == 0 ~ \"V-shaped\",\n      vs == 1 ~ \"Straight\"\n    ),\n    am = fct_relevel(am, c(\"Manual\", \"Automatic\")),\n    vs = fct_relevel(vs)\n  ) |&gt;\n  ggplot(aes(x = wt, y = mpg, color = am, shape = vs)) +\n  geom_point() +\n  labs(\n    title = \"ggplot2 \n    plot \n    of \n    car \n    weight \n    in \n    thousands \n    of pounds versus \n    fuel \n    efficiency in miles per \n    gallon from thirty-two \n    automobiles in\n    the nineteen-seventy-four \n    Motor Trend United \n    States magazine \n    issue\",\n    subtitle = \"of cars\",\n    x = \"Weight (1000 lbs)\",\n    y = \"Miles / gallon\",\n    color = \"Transmission\",\n    shape = \"Engine configuration\"\n  ) +\n  theme(\n    legend.position = \"right\",\n    plot.background = element_rect(fill = \"green\"),\n    legend.background = element_rect(fill = \"yellow\"),\n    panel.background = element_rect(fill = \"red\"),\n    text = element_text(size = 1, family = \"AvantGarde\"),\n    aspect.ratio = 0.1,\n    panel.grid.major = element_blank(), \n    panel.grid.minor = element_blank()\n  ) +\n  scale_color_manual(\n    values = c(\"Manual\" = \"red1\", \"Automatic\" = \"red2\")\n  ) +\n  scale_shape_manual(\n    values = c(\"V-shaped\" = 19, \"Straight\" = 20)\n  )"
+  },
+  {
+    "objectID": "slides/16-linear-model-multiple-predictors-I-slides.html#honorable-mention-2-clarke-campbell",
+    "href": "slides/16-linear-model-multiple-predictors-I-slides.html#honorable-mention-2-clarke-campbell",
+    "title": "Linear regression with a multiple predictors I",
+    "section": "Honorable mention 2: Clarke Campbell",
+    "text": "Honorable mention 2: Clarke Campbell\n\nCodemtcars |&gt;\n  mutate(trans_type = case_when(\n    am == 0 ~ \"Automatic\",\n    am == 1 ~ \"Manual\"\n    )\n  ) |&gt;\n  mutate(engine_type = case_when(\n    am == 0 ~ \"V-shaped\",\n    am == 1 ~ \"Straight\"\n    )\n  ) |&gt;\nggplot(aes(x = wt, y = mpg, color = trans_type, shape = engine_type)) +\n  geom_point(size = 0.1) +\n  labs(\n    x = \"Weight (in 1000s of lbs)\",\n    y = \"Miles / gallon\",\n    title = \"Weight vs. miles per gallon of 32 cars\",\n    subtitle = \"from the 1974 Motor Trend US magazine\",\n    color = \"Transmission Type:\",\n    shape = \"Engine Type\"\n  ) +\n  guides(\n    color = guide_legend(position = \"top\"),\n    shape = guide_legend(position = \"right\")\n  ) +\n  scale_color_manual(\n    values = c(\n      \"Manual\" = \"grey\",\n      \"Automatic\" = \"darkgrey\"\n    ),\n    breaks = c(\n      \"Manual\", \"Automatic\"\n      )\n  ) +\n  theme(\n    text = element_text(\n      size = 20, \n      family = \"URWBookman\", \n      face = \"italic\"),\n    panel.background = element_rect(colour = 'yellow'),\n    plot.background = element_rect(fill = \"#473417\"))"
+  },
+  {
+    "objectID": "slides/16-linear-model-multiple-predictors-I-slides.html#honorable-mention-3-charlie-pausic",
+    "href": "slides/16-linear-model-multiple-predictors-I-slides.html#honorable-mention-3-charlie-pausic",
+    "title": "Linear regression with a multiple predictors I",
+    "section": "Honorable mention 3: Charlie Pausic",
+    "text": "Honorable mention 3: Charlie Pausic\n\nCodeggplot(mtcars, \n       aes(x = wt, y = mpg, \n           color = factor(am), shape = factor(vs)\n           )\n       ) +\n  geom_point(size = 15, alpha = 0.1) + \n\n  labs(\n    title = \"carssssss\",\n    x = \"variable\",\n    y = \"other variable\",\n    color = \"Transmission\",\n    shape = \"Engine Type\"\n  )+\n  theme_void() +\n  theme(legend.title = element_text(size = 1),\n        plot.background = element_rect(fill = \"black\")\n        ) +\n  scale_color_manual(\n    values = c(\"blue\", \"blue\"),\n    labels = c(\"Automatic\", \"Manual\")\n  ) +\n  scale_shape_manual(\n    values = c(\"circle\", \"triangle\"),\n    labels = c(\"Straight\", \"V-shaped\")\n  )"
+  },
+  {
+    "objectID": "slides/16-linear-model-multiple-predictors-I-slides.html#honorable-mention-4-natalie-veale",
+    "href": "slides/16-linear-model-multiple-predictors-I-slides.html#honorable-mention-4-natalie-veale",
+    "title": "Linear regression with a multiple predictors I",
+    "section": "Honorable mention 4: Natalie Veale",
+    "text": "Honorable mention 4: Natalie Veale\n\nCodemtcars |&gt;\n  mutate(am = case_when(\n           am == \"0\" ~ \"automatic\",\n           am == \"1\" ~ \"manual\"),\n         am = factor(am, levels = c(\"manual\", \"automatic\")),\n         vs = case_when(\n           vs == \"0\" ~ \"v-shaped\",\n           vs == \"1\" ~ \"straight\")\n  ) |&gt;\nggplot(aes(x = wt, y = mpg, color = am, shape = vs)) +\n  geom_point(size = 20) +\n  labs(\n    x = \"Weight (1000 lbs)\",\n    y = \"Miles / gallon\",\n    title = \"MPG for Vehicles of Different Weights\",\n    color = \"Transmission\",\n    shape = \"Engine Type\"\n  ) +\n  scale_y_continuous(breaks = seq(0, 50, by = 1)) +\n  scale_color_manual(values = c(\n    \"automatic\" = \"darkgoldenrod\",\n    \"manual\" = \"burlywood2\"\n    )\n  ) +\n  theme_minimal() +\n  theme(\n    legend.position = \"top\",\n    plot.background = element_rect(fill = \"darkgoldenrod4\"),\n    legend.text = element_text(size = 1)\n  )"
+  },
+  {
+    "objectID": "slides/16-linear-model-multiple-predictors-I-slides.html#winner-neha-shukla",
+    "href": "slides/16-linear-model-multiple-predictors-I-slides.html#winner-neha-shukla",
+    "title": "Linear regression with a multiple predictors I",
+    "section": "Winner: Neha Shukla",
+    "text": "Winner: Neha Shukla\n\nCodelibrary(ggimage)\nmtcars_new &lt;- mtcars |&gt;\n  mutate(\n    am = if_else(am == 0, \"automatic\", \"manual\"),\n    am = fct_relevel(am, \"manual\", \"automatic\")\n  )\n\nggplot(\n  mtcars_new,\n  aes(x = wt, y = mpg)\n) +\n  labs(\n    x = \"Weight (1000 lbs)\",\n    y = \"Miles / gallon\",\n    title = \"Car's Mileage per Gallon vs. Car Weight\",\n    subtitle = \"Colored by type of transmission\",\n    color = \"Transmission\",\n    shape = \"Engine\"\n  ) +\n  geom_image(\n    data = tibble(wt = 3.5, mpg = 25),\n    aes(image = \"images/16/rickroll.png\"),\n    size = 0.8\n  ) +\n  geom_image(\n    data = tibble(wt = 2, mpg = 15),\n    aes(image = \"images/16/dino.png\"),\n    size = 0.4\n  ) +\n  geom_image(\n    data = tibble(wt = 4, mpg = 25),\n    aes(image = \"images/16/sparkle.png\"),\n    size = 0.4\n  ) +\n  geom_point(\n    aes(shape = vs, alpha = wt, color = am),\n    size = 15\n  ) +\n  theme_dark() +\n  theme(\n    legend.position = \"right\",\n    legend.background = element_rect(fill = \"green\")\n  ) +\n  scale_color_manual(\n    values = c(\n      \"manual\" = \"#b9bbda\",\n      \"automatic\" = \"#6d3617\"\n    )\n  ) +\n  guides(\n    shape = guide_legend(override.aes = list(size = 0.2)),\n    color = guide_legend(override.aes = list(size = 0.2)),\n    alpha = guide_legend(override.aes = list(size = 0.2))\n  )"
   },
   {
     "objectID": "slides/16-linear-model-multiple-predictors-I-slides.html#from-last-time-with-penguins",
@@ -88,7 +123,7 @@
     "href": "slides/16-linear-model-multiple-predictors-I.html#announcements",
     "title": "Linear regression with a multiple predictors I",
     "section": "Announcements",
-    "text": "Announcements\n\n…"
+    "text": "Announcements\n\nProject repos closed (you won’t see them on GitHub) until proposal grading is done. You’ll get access back to them on Monday. In the meantime, if you want to work on your project, you can make local commits on RStudio and you’ll be able to push them when you regain access.\nPeer evaluations (via TEAMMATES) are due by Friday, 5 pm."
   },
   {
     "objectID": "slides/16-linear-model-multiple-predictors-I.html#goals",
@@ -96,6 +131,41 @@
     "title": "Linear regression with a multiple predictors I",
     "section": "Goals",
     "text": "Goals\n\nRecap modeling with a single predictor\nFit and interpret models with a categorical predictor\nFit and interpret models with multiple predictors\nDistinguish between additive and interaction models"
+  },
+  {
+    "objectID": "slides/16-linear-model-multiple-predictors-I.html#honorable-mention-1-austin-liu",
+    "href": "slides/16-linear-model-multiple-predictors-I.html#honorable-mention-1-austin-liu",
+    "title": "Linear regression with a multiple predictors I",
+    "section": "Honorable mention 1: Austin Liu",
+    "text": "Honorable mention 1: Austin Liu\n\nCodemtcars |&gt;\n  mutate(\n    am = case_when(\n      am == 0 ~ \"Automatic\",\n      am == 1 ~ \"Manual\"\n    ),\n    vs = case_when(\n      vs == 0 ~ \"V-shaped\",\n      vs == 1 ~ \"Straight\"\n    ),\n    am = fct_relevel(am, c(\"Manual\", \"Automatic\")),\n    vs = fct_relevel(vs)\n  ) |&gt;\n  ggplot(aes(x = wt, y = mpg, color = am, shape = vs)) +\n  geom_point() +\n  labs(\n    title = \"ggplot2 \n    plot \n    of \n    car \n    weight \n    in \n    thousands \n    of pounds versus \n    fuel \n    efficiency in miles per \n    gallon from thirty-two \n    automobiles in\n    the nineteen-seventy-four \n    Motor Trend United \n    States magazine \n    issue\",\n    subtitle = \"of cars\",\n    x = \"Weight (1000 lbs)\",\n    y = \"Miles / gallon\",\n    color = \"Transmission\",\n    shape = \"Engine configuration\"\n  ) +\n  theme(\n    legend.position = \"right\",\n    plot.background = element_rect(fill = \"green\"),\n    legend.background = element_rect(fill = \"yellow\"),\n    panel.background = element_rect(fill = \"red\"),\n    text = element_text(size = 1, family = \"AvantGarde\"),\n    aspect.ratio = 0.1,\n    panel.grid.major = element_blank(), \n    panel.grid.minor = element_blank()\n  ) +\n  scale_color_manual(\n    values = c(\"Manual\" = \"red1\", \"Automatic\" = \"red2\")\n  ) +\n  scale_shape_manual(\n    values = c(\"V-shaped\" = 19, \"Straight\" = 20)\n  )"
+  },
+  {
+    "objectID": "slides/16-linear-model-multiple-predictors-I.html#honorable-mention-2-clarke-campbell",
+    "href": "slides/16-linear-model-multiple-predictors-I.html#honorable-mention-2-clarke-campbell",
+    "title": "Linear regression with a multiple predictors I",
+    "section": "Honorable mention 2: Clarke Campbell",
+    "text": "Honorable mention 2: Clarke Campbell\n\nCodemtcars |&gt;\n  mutate(trans_type = case_when(\n    am == 0 ~ \"Automatic\",\n    am == 1 ~ \"Manual\"\n    )\n  ) |&gt;\n  mutate(engine_type = case_when(\n    am == 0 ~ \"V-shaped\",\n    am == 1 ~ \"Straight\"\n    )\n  ) |&gt;\nggplot(aes(x = wt, y = mpg, color = trans_type, shape = engine_type)) +\n  geom_point(size = 0.1) +\n  labs(\n    x = \"Weight (in 1000s of lbs)\",\n    y = \"Miles / gallon\",\n    title = \"Weight vs. miles per gallon of 32 cars\",\n    subtitle = \"from the 1974 Motor Trend US magazine\",\n    color = \"Transmission Type:\",\n    shape = \"Engine Type\"\n  ) +\n  guides(\n    color = guide_legend(position = \"top\"),\n    shape = guide_legend(position = \"right\")\n  ) +\n  scale_color_manual(\n    values = c(\n      \"Manual\" = \"grey\",\n      \"Automatic\" = \"darkgrey\"\n    ),\n    breaks = c(\n      \"Manual\", \"Automatic\"\n      )\n  ) +\n  theme(\n    text = element_text(\n      size = 20, \n      family = \"URWBookman\", \n      face = \"italic\"),\n    panel.background = element_rect(colour = 'yellow'),\n    plot.background = element_rect(fill = \"#473417\"))"
+  },
+  {
+    "objectID": "slides/16-linear-model-multiple-predictors-I.html#honorable-mention-3-charlie-pausic",
+    "href": "slides/16-linear-model-multiple-predictors-I.html#honorable-mention-3-charlie-pausic",
+    "title": "Linear regression with a multiple predictors I",
+    "section": "Honorable mention 3: Charlie Pausic",
+    "text": "Honorable mention 3: Charlie Pausic\n\nCodeggplot(mtcars, \n       aes(x = wt, y = mpg, \n           color = factor(am), shape = factor(vs)\n           )\n       ) +\n  geom_point(size = 15, alpha = 0.1) + \n\n  labs(\n    title = \"carssssss\",\n    x = \"variable\",\n    y = \"other variable\",\n    color = \"Transmission\",\n    shape = \"Engine Type\"\n  )+\n  theme_void() +\n  theme(legend.title = element_text(size = 1),\n        plot.background = element_rect(fill = \"black\")\n        ) +\n  scale_color_manual(\n    values = c(\"blue\", \"blue\"),\n    labels = c(\"Automatic\", \"Manual\")\n  ) +\n  scale_shape_manual(\n    values = c(\"circle\", \"triangle\"),\n    labels = c(\"Straight\", \"V-shaped\")\n  )"
+  },
+  {
+    "objectID": "slides/16-linear-model-multiple-predictors-I.html#honorable-mention-4-natalie-veale",
+    "href": "slides/16-linear-model-multiple-predictors-I.html#honorable-mention-4-natalie-veale",
+    "title": "Linear regression with a multiple predictors I",
+    "section": "Honorable mention 4: Natalie Veale",
+    "text": "Honorable mention 4: Natalie Veale\n\nCodemtcars |&gt;\n  mutate(am = case_when(\n           am == \"0\" ~ \"automatic\",\n           am == \"1\" ~ \"manual\"),\n         am = factor(am, levels = c(\"manual\", \"automatic\")),\n         vs = case_when(\n           vs == \"0\" ~ \"v-shaped\",\n           vs == \"1\" ~ \"straight\")\n  ) |&gt;\nggplot(aes(x = wt, y = mpg, color = am, shape = vs)) +\n  geom_point(size = 20) +\n  labs(\n    x = \"Weight (1000 lbs)\",\n    y = \"Miles / gallon\",\n    title = \"MPG for Vehicles of Different Weights\",\n    color = \"Transmission\",\n    shape = \"Engine Type\"\n  ) +\n  scale_y_continuous(breaks = seq(0, 50, by = 1)) +\n  scale_color_manual(values = c(\n    \"automatic\" = \"darkgoldenrod\",\n    \"manual\" = \"burlywood2\"\n    )\n  ) +\n  theme_minimal() +\n  theme(\n    legend.position = \"top\",\n    plot.background = element_rect(fill = \"darkgoldenrod4\"),\n    legend.text = element_text(size = 1)\n  )"
+  },
+  {
+    "objectID": "slides/16-linear-model-multiple-predictors-I.html#winner-neha-shukla",
+    "href": "slides/16-linear-model-multiple-predictors-I.html#winner-neha-shukla",
+    "title": "Linear regression with a multiple predictors I",
+    "section": "Winner: Neha Shukla",
+    "text": "Winner: Neha Shukla\n\nCodelibrary(ggimage)\nmtcars_new &lt;- mtcars |&gt;\n  mutate(\n    am = if_else(am == 0, \"automatic\", \"manual\"),\n    am = fct_relevel(am, \"manual\", \"automatic\")\n  )\n\nggplot(\n  mtcars_new,\n  aes(x = wt, y = mpg)\n) +\n  labs(\n    x = \"Weight (1000 lbs)\",\n    y = \"Miles / gallon\",\n    title = \"Car's Mileage per Gallon vs. Car Weight\",\n    subtitle = \"Colored by type of transmission\",\n    color = \"Transmission\",\n    shape = \"Engine\"\n  ) +\n  geom_image(\n    data = tibble(wt = 3.5, mpg = 25),\n    aes(image = \"images/16/rickroll.png\"),\n    size = 0.8\n  ) +\n  geom_image(\n    data = tibble(wt = 2, mpg = 15),\n    aes(image = \"images/16/dino.png\"),\n    size = 0.4\n  ) +\n  geom_image(\n    data = tibble(wt = 4, mpg = 25),\n    aes(image = \"images/16/sparkle.png\"),\n    size = 0.4\n  ) +\n  geom_point(\n    aes(shape = vs, alpha = wt, color = am),\n    size = 15\n  ) +\n  theme_dark() +\n  theme(\n    legend.position = \"right\",\n    legend.background = element_rect(fill = \"green\")\n  ) +\n  scale_color_manual(\n    values = c(\n      \"manual\" = \"#b9bbda\",\n      \"automatic\" = \"#6d3617\"\n    )\n  ) +\n  guides(\n    shape = guide_legend(override.aes = list(size = 0.2)),\n    color = guide_legend(override.aes = list(size = 0.2)),\n    alpha = guide_legend(override.aes = list(size = 0.2))\n  )"
   },
   {
     "objectID": "slides/16-linear-model-multiple-predictors-I.html#from-last-time-with-penguins",
