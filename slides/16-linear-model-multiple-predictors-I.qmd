@@ -61,7 +61,8 @@ todays_ae <- "ae-14-modeling-penguins-multi"
 
 ## Announcements
 
--   ...
+-   Project repos closed (you won't see them on GitHub) until proposal grading is done. You'll get access back to them on Monday. In the meantime, if you want to work on your project, you can make local commits on RStudio and you'll be able to push them when you regain access.
+-   Peer evaluations (via TEAMMATES) are due by Friday, 5 pm.
 
 ## Goals
 
@@ -72,6 +73,255 @@ todays_ae <- "ae-14-modeling-penguins-multi"
 -   Fit and interpret models with multiple predictors
 
 -   Distinguish between additive and interaction models
+
+# Ugly plot awards
+
+## Honorable mention 1: Austin Liu {.scrollable}
+
+```{r}
+#| label: ugly-plot-Austin-Liu
+#| warning: false
+#| code-fold: true
+mtcars |>
+  mutate(
+    am = case_when(
+      am == 0 ~ "Automatic",
+      am == 1 ~ "Manual"
+    ),
+    vs = case_when(
+      vs == 0 ~ "V-shaped",
+      vs == 1 ~ "Straight"
+    ),
+    am = fct_relevel(am, c("Manual", "Automatic")),
+    vs = fct_relevel(vs)
+  ) |>
+  ggplot(aes(x = wt, y = mpg, color = am, shape = vs)) +
+  geom_point() +
+  labs(
+    title = "ggplot2 
+    plot 
+    of 
+    car 
+    weight 
+    in 
+    thousands 
+    of pounds versus 
+    fuel 
+    efficiency in miles per 
+    gallon from thirty-two 
+    automobiles in
+    the nineteen-seventy-four 
+    Motor Trend United 
+    States magazine 
+    issue",
+    subtitle = "of cars",
+    x = "Weight (1000 lbs)",
+    y = "Miles / gallon",
+    color = "Transmission",
+    shape = "Engine configuration"
+  ) +
+  theme(
+    legend.position = "right",
+    plot.background = element_rect(fill = "green"),
+    legend.background = element_rect(fill = "yellow"),
+    panel.background = element_rect(fill = "red"),
+    text = element_text(size = 1, family = "AvantGarde"),
+    aspect.ratio = 0.1,
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank()
+  ) +
+  scale_color_manual(
+    values = c("Manual" = "red1", "Automatic" = "red2")
+  ) +
+  scale_shape_manual(
+    values = c("V-shaped" = 19, "Straight" = 20)
+  )
+```
+
+## Honorable mention 2: Clarke Campbell {.scrollable}
+
+```{r}
+#| label: ugly-plot-Clarke-Campbell
+#| code-fold: true
+#| warning: false
+mtcars |>
+  mutate(trans_type = case_when(
+    am == 0 ~ "Automatic",
+    am == 1 ~ "Manual"
+    )
+  ) |>
+  mutate(engine_type = case_when(
+    am == 0 ~ "V-shaped",
+    am == 1 ~ "Straight"
+    )
+  ) |>
+ggplot(aes(x = wt, y = mpg, color = trans_type, shape = engine_type)) +
+  geom_point(size = 0.1) +
+  labs(
+    x = "Weight (in 1000s of lbs)",
+    y = "Miles / gallon",
+    title = "Weight vs. miles per gallon of 32 cars",
+    subtitle = "from the 1974 Motor Trend US magazine",
+    color = "Transmission Type:",
+    shape = "Engine Type"
+  ) +
+  guides(
+    color = guide_legend(position = "top"),
+    shape = guide_legend(position = "right")
+  ) +
+  scale_color_manual(
+    values = c(
+      "Manual" = "grey",
+      "Automatic" = "darkgrey"
+    ),
+    breaks = c(
+      "Manual", "Automatic"
+      )
+  ) +
+  theme(
+    text = element_text(
+      size = 20, 
+      family = "URWBookman", 
+      face = "italic"),
+    panel.background = element_rect(colour = 'yellow'),
+    plot.background = element_rect(fill = "#473417"))
+```
+
+## Honorable mention 3: Charlie Pausic {.scrollable}
+
+```{r}
+#| label: ugly-plot-Charlie-Pausic
+#| code-fold: true
+ggplot(mtcars, 
+       aes(x = wt, y = mpg, 
+           color = factor(am), shape = factor(vs)
+           )
+       ) +
+  geom_point(size = 15, alpha = 0.1) + 
+
+  labs(
+    title = "carssssss",
+    x = "variable",
+    y = "other variable",
+    color = "Transmission",
+    shape = "Engine Type"
+  )+
+  theme_void() +
+  theme(legend.title = element_text(size = 1),
+        plot.background = element_rect(fill = "black")
+        ) +
+  scale_color_manual(
+    values = c("blue", "blue"),
+    labels = c("Automatic", "Manual")
+  ) +
+  scale_shape_manual(
+    values = c("circle", "triangle"),
+    labels = c("Straight", "V-shaped")
+  )
+```
+
+## Honorable mention 4: Natalie Veale {.scrollable}
+
+```{r}
+#| label: ugly-plot-Natalie-Veale
+#| fig-width: 7
+#| fig-asp: 0.6
+#| code-fold: true
+mtcars |>
+  mutate(am = case_when(
+           am == "0" ~ "automatic",
+           am == "1" ~ "manual"),
+         am = factor(am, levels = c("manual", "automatic")),
+         vs = case_when(
+           vs == "0" ~ "v-shaped",
+           vs == "1" ~ "straight")
+  ) |>
+ggplot(aes(x = wt, y = mpg, color = am, shape = vs)) +
+  geom_point(size = 20) +
+  labs(
+    x = "Weight (1000 lbs)",
+    y = "Miles / gallon",
+    title = "MPG for Vehicles of Different Weights",
+    color = "Transmission",
+    shape = "Engine Type"
+  ) +
+  scale_y_continuous(breaks = seq(0, 50, by = 1)) +
+  scale_color_manual(values = c(
+    "automatic" = "darkgoldenrod",
+    "manual" = "burlywood2"
+    )
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    plot.background = element_rect(fill = "darkgoldenrod4"),
+    legend.text = element_text(size = 1)
+  )
+```
+
+## Winner: Neha Shukla {.scrollable}
+
+```{r}
+#| label: ugly-plot
+#| code-fold: true
+#| eval: false
+library(ggimage)
+mtcars_new <- mtcars |>
+  mutate(
+    am = if_else(am == 0, "automatic", "manual"),
+    am = fct_relevel(am, "manual", "automatic")
+  )
+
+ggplot(
+  mtcars_new,
+  aes(x = wt, y = mpg)
+) +
+  labs(
+    x = "Weight (1000 lbs)",
+    y = "Miles / gallon",
+    title = "Car's Mileage per Gallon vs. Car Weight",
+    subtitle = "Colored by type of transmission",
+    color = "Transmission",
+    shape = "Engine"
+  ) +
+  geom_image(
+    data = tibble(wt = 3.5, mpg = 25),
+    aes(image = "images/16/rickroll.png"),
+    size = 0.8
+  ) +
+  geom_image(
+    data = tibble(wt = 2, mpg = 15),
+    aes(image = "images/16/dino.png"),
+    size = 0.4
+  ) +
+  geom_image(
+    data = tibble(wt = 4, mpg = 25),
+    aes(image = "images/16/sparkle.png"),
+    size = 0.4
+  ) +
+  geom_point(
+    aes(shape = vs, alpha = wt, color = am),
+    size = 15
+  ) +
+  theme_dark() +
+  theme(
+    legend.position = "right",
+    legend.background = element_rect(fill = "green")
+  ) +
+  scale_color_manual(
+    values = c(
+      "manual" = "#b9bbda",
+      "automatic" = "#6d3617"
+    )
+  ) +
+  guides(
+    shape = guide_legend(override.aes = list(size = 0.2)),
+    color = guide_legend(override.aes = list(size = 0.2)),
+    alpha = guide_legend(override.aes = list(size = 0.2))
+  )
+```
+
+![](images/16/ugly-plot-neha-shukla.png)
 
 # Linear regression with a categorical predictor
 
@@ -114,7 +364,7 @@ Also calculate the average body weight per island.
 :::
 
 ```{webr}
-
+# add code here
 ```
 
 ## Model - fit {.smaller}
@@ -125,7 +375,7 @@ Why is Biscoe not on the output?
 :::
 
 ```{webr}
-
+# add code here
 ```
 
 ## Model - interpret {.smaller}
@@ -149,7 +399,7 @@ Where have we seen these values before?
 :::
 
 ```{webr}
-
+# add code here
 ```
 
 ## Model - predict {.smaller}
@@ -179,7 +429,8 @@ $$
 ::: incremental
 -   When the categorical predictor has many levels, they're encoded to **dummy variables**.
 
--   The first level of the categorical variable is the baseline level. In a model with one categorical predictor, the intercept is the predicted value of the outcome for the baseline level (x = 0).
+-   The first level of the categorical variable is the baseline level.
+    In a model with one categorical predictor, the intercept is the predicted value of the outcome for the baseline level (x = 0).
 
 -   Each slope coefficient describes the difference between the predicted value of the outcome for that level of the categorical variable compared to the baseline level.
 :::
