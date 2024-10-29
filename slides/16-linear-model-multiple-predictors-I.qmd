@@ -1,0 +1,185 @@
+---
+title: "Linear regression with a multiple predictors I"
+subtitle: "Lecture 16"
+date: "2024-10-29"
+format: 
+  live-revealjs: 
+    output-file: 16-linear-model-multiple-predictors-I-slides.html
+webr:
+  cell-options:
+    autorun: false
+  packages:
+    - tidyverse
+    - tidymodels
+    - palmerpenguins
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+```{r}
+#| include: false
+library(tidyverse)
+library(tidymodels)
+library(palmerpenguins)
+```
+
+<!-- end: webr fodder -->
+
+<!-- begin: ae definition -->
+
+```{r}
+#| include: false
+todays_ae <- "ae-14-modeling-penguins-multi"
+```
+
+<!-- end: ae definition -->
+
+# Warm-up
+
+## While you wait... {.smaller}
+
+::: appex
+-   Go to your `ae` project in RStudio.
+
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   Click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Wait till the you're prompted to work on the application exercise during class before editing the file.
+:::
+
+## Announcements
+
+-   ...
+
+## Goals
+
+-   Recap modeling with a single predictor
+
+-   Fit and interpret models with a categorical predictor
+
+-   Fit and interpret models with multiple predictors
+
+-   Distinguish between additive and interaction models
+
+# Linear regression with a categorical predictor
+
+## From last time (with `penguins`)
+
+::: question
+A different researcher wants to look at body weight of penguins based on the island they were recorded on.
+How are the variables involved in this analysis different?
+:::
+
+. . .
+
+-   outcome: body weight (numerical)
+
+-   predictor: island (categorical)
+
+## Visualize body weight vs. island {.smaller}
+
+::: question
+Determine whether each of the following plot types would be an appropriate choice for visualizing the relationship between body weight and island of penguins.
+:::
+
+-   Scatterplot [❌]{.fragment}
+
+-   Box plot [✅]{.fragment}
+
+-   Violin plot [✅]{.fragment}
+
+-   Density plot [✅]{.fragment}
+
+-   Bar plot [❌]{.fragment}
+
+-   Stacked bar plot [❌]{.fragment}
+
+## Visualize {.smaller}
+
+::: task
+Visualize the relationship between body weight and island of penguins.
+Also calculate the average body weight per island.
+:::
+
+```{webr}
+
+```
+
+## Model - fit {.smaller}
+
+::: task
+Fit a linear regression model predicting body weight from island and display the results.
+Why is Biscoe not on the output?
+:::
+
+```{webr}
+
+```
+
+## Model - interpret {.smaller}
+
+$$
+\widehat{body~mass} = 4716 - 1003 \times islandDream - 1010 \times islandTorgersen
+$$
+
+-   Intercept: [Penguins from Biscoe island are expected to weigh, on average, 4,716 grams.]{.fragment}
+
+-   Slope - islandDream: [Penguins from Dream island are expected to weigh, on average, 1,003 grams less than those from Biscoe island.]{.fragment}
+
+-   Slope - islandTorgersen: [Penguins from Torgersen island are expected to weigh, on average, 1,010 grams less than those from Biscoe island.]{.fragment}
+
+## Model - predict {.smaller}
+
+::: task
+What is the predicted body weight of a penguin on Biscoe island?
+What are the estimated body weights of penguins on Dream and Torgersen islands?
+Where have we seen these values before?
+:::
+
+```{webr}
+
+```
+
+## Model - predict {.smaller}
+
+::: task
+Calculate the predicted body weights of penguins on Biscoe, Dream, and Torgersen islands *by hand*.
+:::
+
+$$
+\widehat{body~mass} = 4716 - 1003 \times islandDream - 1010 \times islandTorgersen
+$$
+
+. . .
+
+-   Biscoe: $\widehat{body~mass} = 4716 - 1003 \times 0 - 1010 \times 0 = 4716$
+
+. . .
+
+-   Dream: $\widehat{body~mass} = 4716 - 1003 \times 1 - 1010 \times 0 = 3713$
+
+. . .
+
+-   Torgersen: $\widehat{body~mass} = 4716 - 1003 \times 0 - 1010 \times 1 = 3706$
+
+## Models with categorical predictors
+
+::: incremental
+-   When the categorical predictor has many levels, they're encoded to **dummy variables**.
+
+-   The first level of the categorical variable is the baseline level. In a model with one categorical predictor, the intercept is the predicted value of the outcome for the baseline level (x = 0).
+
+-   Each slope coefficient describes the difference between the predicted value of the outcome for that level of the categorical variable compared to the baseline level.
+:::
