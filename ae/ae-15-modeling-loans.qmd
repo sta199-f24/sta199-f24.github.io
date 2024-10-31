@@ -1,7 +1,5 @@
 ---
 title: "Modelling loan interest rates"
-categories: 
-  - Application exercise
 ---
 
 In this application exercise we will be studying loan interest rates.
