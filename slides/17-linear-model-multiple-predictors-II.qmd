@@ -34,7 +34,7 @@ library(palmerpenguins)
 
 ```{r}
 #| include: false
-todays_ae <- "ae-14-modeling-penguins-multi"
+todays_ae <- "ae-15-modeling-loans"
 ```
 
 <!-- end: ae definition -->
