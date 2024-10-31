@@ -8,6 +8,11 @@ fig-width: 7
 fig-asp: 0.618
 ---
 
+::: callout-important
+These are suggested answers.
+This document should be used as reference only, it's not designed to be an exhaustive key.
+:::
+
 In this application exercise we will continue to study penguins.
 The data can be found in the **palmerpenguins** package and we will use **tidyverse** and **tidymodels** for data exploration and modeling, respectively.
 
