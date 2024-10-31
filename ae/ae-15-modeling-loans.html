@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.12">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Teaching team – STA 199</title>
+<title>Modelling loan interest rates – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,33 +17,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./index.html" rel="next">
-<link href="./course-support.html" rel="prev">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fd7301ae7f97a86ef1a97ba47a14c320.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-fd7301ae7f97a86ef1a97ba47a14c320.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-92dff2eee490a48d96494bac12dc7076.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-fd7301ae7f97a86ef1a97ba47a14c320.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-fd7301ae7f97a86ef1a97ba47a14c320.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-92dff2eee490a48d96494bac12dc7076.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -72,41 +97,7 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-ta-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-title','listing-categories','listing-description','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-categories","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-ta-listing'] = new List('listing-ta-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -132,52 +123,41 @@ window.Quarto = {
   typesetMath
 };
 </script>
-
-<meta property="og:title" content="Teaching team – STA 199">
+<meta property="og:title" content="Modelling loan interest rates – STA 199">
 <meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Fall 2024.">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Teaching team – STA 199">
+<meta name="twitter:title" content="Modelling loan interest rates – STA 199">
 <meta name="twitter:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Fall 2024.">
-<meta name="twitter:image" content="https://sta199-f24.github.io/img/twitter-card.png">
+<meta name="twitter:image" content="https://sta199-f24.github.io/ae/img/twitter-card.png">
 <meta name="twitter:creator" content="@minebocek">
-<meta name="twitter:image-height" content="418">
-<meta name="twitter:image-width" content="800">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./course-team.html">Team</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Modelling loan interest rates</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f24" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
     <div class="dropdown">
       <a href="" title="Support" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Support"><i class="bi bi-life-preserver"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
+<li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">
               <i class="bi bi-person-raised-hand pe-1"></i>
             Office hours
@@ -196,11 +176,11 @@ window.Quarto = {
             </a>
           </li>
       </ul>
-    </div>
+</div>
     <div class="dropdown">
       <a href="" title="Canvas" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Canvas"><i class="bi bi-file-check-fill"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
-          <li>
+<li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/39994/announcements">
               <i class="bi bi-megaphone-fill pe-1"></i>
             Announcements
@@ -219,7 +199,7 @@ window.Quarto = {
             </a>
           </li>
       </ul>
-    </div>
+</div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
@@ -230,59 +210,59 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-team.html" class="sidebar-item-text sidebar-link active">
+  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-links.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Useful links</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-faq.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FAQ</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -291,39 +271,39 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-code-alongs.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-code-alongs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Code alongs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cheatsheets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-principles-oh.html" class="sidebar-item-text sidebar-link">
+  <a href="../coding-principles-oh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Coding principles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Troubleshooting</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -332,92 +312,98 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project/description.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/description.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Description</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project/1-working-collaboratively.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/1-working-collaboratively.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Milestone 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project/2-proposal.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/2-proposal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Milestone 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project/3-improvement-progress.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/3-improvement-progress.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Milestone 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project/4-peer-review.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/4-peer-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Milestone 4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project/5-writeup-presentation.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/5-writeup-presentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Milestone 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project/tips-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/tips-resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tips + resources</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab.html" class="sidebar-item-text sidebar-link">
+  <a href="../lab.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Labs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ae.html" class="sidebar-item-text sidebar-link">
+  <a href="../ae.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Application exercises</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exam-review.html" class="sidebar-item-text sidebar-link">
+  <a href="../exam-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exam reviews</span></a>
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#instructor" id="toc-instructor" class="nav-link active" data-scroll-target="#instructor">Instructor</a></li>
-  <li><a href="#teaching-assistants" id="toc-teaching-assistants" class="nav-link" data-scroll-target="#teaching-assistants">Teaching assistants</a></li>
-  <li><a href="#course-coordinator" id="toc-course-coordinator" class="nav-link" data-scroll-target="#course-coordinator">Course coordinator</a></li>
+<li><a href="#get-to-know-the-data" id="toc-get-to-know-the-data" class="nav-link active" data-scroll-target="#get-to-know-the-data">Get to know the data</a></li>
+  <li><a href="#interest-rate-vs.-credit-utilization-ratio" id="toc-interest-rate-vs.-credit-utilization-ratio" class="nav-link" data-scroll-target="#interest-rate-vs.-credit-utilization-ratio">Interest rate vs.&nbsp;credit utilization ratio</a></li>
+  <li><a href="#interest-rate-vs.-homeownership" id="toc-interest-rate-vs.-homeownership" class="nav-link" data-scroll-target="#interest-rate-vs.-homeownership">Interest rate vs.&nbsp;homeownership</a></li>
+  <li>
+<a href="#interest-rate-vs.-credit-utilization-and-homeownership" id="toc-interest-rate-vs.-credit-utilization-and-homeownership" class="nav-link" data-scroll-target="#interest-rate-vs.-credit-utilization-and-homeownership">Interest rate vs.&nbsp;credit utilization and homeownership</a>
+  <ul class="collapse">
+<li><a href="#main-effects-model" id="toc-main-effects-model" class="nav-link" data-scroll-target="#main-effects-model">Main effects model</a></li>
+  <li><a href="#interaction-effects-model" id="toc-interaction-effects-model" class="nav-link" data-scroll-target="#interaction-effects-model">Interaction effects model</a></li>
+  <li><a href="#choosing-a-model" id="toc-choosing-a-model" class="nav-link" data-scroll-target="#choosing-a-model">Choosing a model</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/course-team.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</li>
+  <li><a href="#another-model-to-consider" id="toc-another-model-to-consider" class="nav-link" data-scroll-target="#another-model-to-consider">Another model to consider</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/ae/ae-15-modeling-loans.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./course-team.html">Team</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Teaching team</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Modelling loan interest rates</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Application exercise</div>
+  </div>
+  </div>
 
 
 
@@ -430,460 +416,189 @@ window.Quarto = {
   
 
 
-</header>
-
-
-<section id="instructor" class="level2">
-<h2 class="anchored" data-anchor-id="instructor">Instructor</h2>
-<p><img src="img/mine.png" class="circular-portrait-mine img-fluid" style="float:right;padding: 0 0 0 10px;" alt="Headshot of Dr. Mine Çetinkaya-Rundel"></p>
-<p><a href="http://mine-cr.com/"><strong>Dr.&nbsp;Mine Çetinkaya-Rundel</strong></a> (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education, as well as pedagogical approaches for enhancing the retention of women and underrepresented minorities in STEM.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 70%">
-<col style="width: 30%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Office hours</th>
-<th>Location</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Tuesdays and Thursdays 1-1:30 pm (after class)</td>
-<td>Bio Sci 111</td>
-</tr>
-<tr class="even">
-<td>Wednesdays 2-4 pm</td>
-<td>Old Chem 213</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="teaching-assistants" class="level2">
-<h2 class="anchored" data-anchor-id="teaching-assistants">Teaching assistants</h2>
-<p>Each TA holds <a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">office hours</a>. Some TAs are also leaders or helpers for lab sections. Some TAs help out in lecture.</p>
-<div id="listing-ta-listing" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-ta-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-ta-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title-sort" data-direction="asc">
-          Name
-        </option>
-         <option value="listing-categories" data-direction="asc">
-          Role(s)
-        </option>
-         <option value="listing-description" data-direction="asc">
-          Section(s)
-        </option>
-         <option value="listing-subtitle" data-direction="asc">
-          Office hours
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+</header><p>In this application exercise we will be studying loan interest rates. The dataset is one you’ve come across before in your reading – the dataset about loans from the peer-to-peer lender, Lending Club, from the <strong>openintro</strong> package. We will use <strong>tidyverse</strong> and <strong>tidymodels</strong> for data exploration and modeling, respectively.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://openintrostat.github.io/openintro/">openintro</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-</th>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Name</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-categories" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Role(s)</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-description" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Section(s)</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-subtitle" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Office hours</a>
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="Lab helper" data-listing-file-modified-sort="1730350244005" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Anmol Sapru" data-listing-filename-sort="anmol.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/anmol.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/anmol.html" class="title listing-title">Anmol Sapru</a>
-</td>
-<td>
-<span class="listing-categories">Lab helper</span>
-</td>
-<td>
-<span class="listing-description">M 3:05 PM - 4:20 PM (Sec 8)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="1" data-categories="Lab helper" data-listing-file-modified-sort="1730350244005" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Aurora Liu" data-listing-filename-sort="aurora.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/aurora.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/aurora.html" class="title listing-title">Aurora Liu</a>
-</td>
-<td>
-<span class="listing-categories">Lab helper</span>
-</td>
-<td>
-<span class="listing-description">M 8:30 AM - 9:45 AM (Sec 1)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="2" data-categories="Lab leader" data-listing-file-modified-sort="1730350244005" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Avery Hodges" data-listing-filename-sort="avery.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/avery.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/avery.html" class="title listing-title">Avery Hodges</a>
-</td>
-<td>
-<span class="listing-categories">Lab leader</span>
-</td>
-<td>
-<span class="listing-description">M 11:45 AM - 1:00 PM (Sec 4)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="3" data-categories="Lab leader" data-listing-file-modified-sort="1730350244005" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Dav King" data-listing-filename-sort="dav.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/dav.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/dav.html" class="title listing-title">Dav King</a>
-</td>
-<td>
-<span class="listing-categories">Lab leader</span>
-</td>
-<td>
-<span class="listing-description">M 3:05 PM - 4:20 PM (Sec 8)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="4" data-categories="Lab leader" data-listing-file-modified-sort="1730350244005" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Domenic Fenoglio" data-listing-filename-sort="dom.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/dom.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/dom.html" class="title listing-title">Domenic Fenoglio</a>
-</td>
-<td>
-<span class="listing-categories">Lab leader</span>
-</td>
-<td>
-<span class="listing-description">M 1:25 PM - 2:40 PM (Sec 7)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="5" data-categories="Lab leader" data-listing-file-modified-sort="1730350244005" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Emily Jensen" data-listing-filename-sort="emily.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/emily.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/emily.html" class="title listing-title">Emily Jensen</a>
-</td>
-<td>
-<span class="listing-categories">Lab leader</span>
-</td>
-<td>
-<span class="listing-description">M 1:25 PM - 2:40 PM (Sec 6)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="6" data-categories="Lab helper" data-listing-file-modified-sort="1730350244005" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Federico Arboleda" data-listing-filename-sort="federico.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/federico.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/federico.html" class="title listing-title">Federico Arboleda</a>
-</td>
-<td>
-<span class="listing-categories">Lab helper</span>
-</td>
-<td>
-<span class="listing-description">M 1:25 PM - 2:40 PM (Sec 7)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="7" data-categories="Lab helper" data-listing-file-modified-sort="1730350244005" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Grade Rade" data-listing-filename-sort="grace.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/grace.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/grace.html" class="title listing-title">Grade Rade</a>
-</td>
-<td>
-<span class="listing-categories">Lab helper</span>
-</td>
-<td>
-<span class="listing-description">M 11:45 AM - 1:00 PM (Sec 4)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="8" data-categories="Lab helper" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Hyunjin Lee" data-listing-filename-sort="hyunjin.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/hyunjin.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/hyunjin.html" class="title listing-title">Hyunjin Lee</a>
-</td>
-<td>
-<span class="listing-categories">Lab helper</span>
-</td>
-<td>
-<span class="listing-description">M 3:05 PM - 4:20 PM (Sec 9)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="9" data-categories="Lab helper,Lecture helper" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Janice Kim" data-listing-filename-sort="janice.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/janice.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/janice.html" class="title listing-title">Janice Kim</a>
-</td>
-<td>
-<span class="listing-categories">Lab helper, Lecture helper</span>
-</td>
-<td>
-<span class="listing-description">M 4:40 PM - 5:55 PM (Sec 10)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="10" data-categories="Lab leader" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Jasmine Wang" data-listing-filename-sort="jasmine.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/jasmine.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/jasmine.html" class="title listing-title">Jasmine Wang</a>
-</td>
-<td>
-<span class="listing-categories">Lab leader</span>
-</td>
-<td>
-<span class="listing-description">M 10:05 AM - 11:20 AM (Sec 2)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="11" data-categories="Lab leader" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="John Zito" data-listing-filename-sort="john.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/john.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/john.html" class="title listing-title">John Zito</a>
-</td>
-<td>
-<span class="listing-categories">Lab leader</span>
-</td>
-<td>
-<span class="listing-description">M 3:05 PM - 4:20 PM (Sec 9)<br>M 4:40 PM - 5:55 PM (Sec 10)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="12" data-categories="Lab helper" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Jonathan Lin" data-listing-filename-sort="jonathan.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/jonathan.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/jonathan.html" class="title listing-title">Jonathan Lin</a>
-</td>
-<td>
-<span class="listing-categories">Lab helper</span>
-</td>
-<td>
-<span class="listing-description">M 10:05 AM - 11:20 AM (Sec 3)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="13" data-categories="Lab helper" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Kareena Legare" data-listing-filename-sort="kareena.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/kareena.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/kareena.html" class="title listing-title">Kareena Legare</a>
-</td>
-<td>
-<span class="listing-categories">Lab helper</span>
-</td>
-<td>
-<span class="listing-description">M 1:25 PM - 2:40 PM (Sec 6)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="14" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Liane Ma" data-listing-filename-sort="liane.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/liane.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/liane.html" class="title listing-title">Liane Ma</a>
-</td>
-<td>
-<span class="listing-categories">&nbsp;</span>
-</td>
-<td>
-<span class="listing-description"></span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="15" data-categories="Lab helper" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Lynn Kremers" data-listing-filename-sort="lynn.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/lynn.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/lynn.html" class="title listing-title">Lynn Kremers</a>
-</td>
-<td>
-<span class="listing-categories">Lab helper</span>
-</td>
-<td>
-<span class="listing-description">M 11:45 AM - 1:00 PM (Sec 5)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="16" data-categories="Head TA,Lab leader" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Marie Neubrander" data-listing-filename-sort="marie.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/marie.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/marie.html" class="title listing-title">Marie Neubrander</a>
-</td>
-<td>
-<span class="listing-categories">Head TA, Lab leader</span>
-</td>
-<td>
-<span class="listing-description">M 8:30 AM - 9:45 AM (Sec 1)<br>M 10:05 AM - 11:20 AM (Sec 3)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="17" data-categories="Lab leader" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Netra Mittal" data-listing-filename-sort="netra.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/netra.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/netra.html" class="title listing-title">Netra Mittal</a>
-</td>
-<td>
-<span class="listing-categories">Lab leader</span>
-</td>
-<td>
-<span class="listing-description">M 11:45 AM - 1:00 PM (Sec 5)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="18" data-categories="Lab helper" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Noah Obuya" data-listing-filename-sort="noah.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/noah.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/noah.html" class="title listing-title">Noah Obuya</a>
-</td>
-<td>
-<span class="listing-categories">Lab helper</span>
-</td>
-<td>
-<span class="listing-description">M 10:05 AM - 11:20 AM (Sec 2)</span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="19" data-categories="Lecture helper" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Sarah Wu" data-listing-filename-sort="sarah.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/sarah.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/sarah.html" class="title listing-title">Sarah Wu</a>
-</td>
-<td>
-<span class="listing-categories">Lecture helper</span>
-</td>
-<td>
-<span class="listing-description"></span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-<tr data-index="20" data-listing-file-modified-sort="1730350244021" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Sonya Eason" data-listing-filename-sort="sonya.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./ta/headshots/sonya.png" style="height: 40px;" alt="Headshot of TA"></span>
-</td>
-<td>
-<a href="./ta/sonya.html" class="title listing-title">Sonya Eason</a>
-</td>
-<td>
-<span class="listing-categories">&nbsp;</span>
-</td>
-<td>
-<span class="listing-description"></span>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">🔗</a></span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+<p>Before we use the dataset, we’ll make a few transformations to it.</p>
+<ul>
+<li>
+<strong>Your turn:</strong> Review the code below with your neighbor and write a summary of the data transformation pipeline.</li>
+</ul>
+<p><em>Add response here.</em></p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">loans</span> <span class="op">&lt;-</span> <span class="va">loans_full_schema</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    credit_util <span class="op">=</span> <span class="va">total_credit_utilized</span> <span class="op">/</span> <span class="va">total_credit_limit</span>,</span>
+<span>    bankruptcy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">public_record_bankrupt</span> <span class="op">==</span> <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    verified_income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/droplevels.html">droplevels</a></span><span class="op">(</span><span class="va">verified_income</span><span class="op">)</span>,</span>
+<span>    homeownership <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/case.html">str_to_title</a></span><span class="op">(</span><span class="va">homeownership</span><span class="op">)</span>,</span>
+<span>    homeownership <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel</a></span><span class="op">(</span><span class="va">homeownership</span>, <span class="st">"Rent"</span>, <span class="st">"Mortgage"</span>, <span class="st">"Own"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>credit_checks <span class="op">=</span> <span class="va">inquiries_last_12m</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span></span>
+<span>    <span class="va">interest_rate</span>, <span class="va">loan_amount</span>, <span class="va">verified_income</span>, </span>
+<span>    <span class="va">debt_to_income</span>, <span class="va">credit_util</span>, <span class="va">bankruptcy</span>, <span class="va">term</span>, </span>
+<span>    <span class="va">credit_checks</span>, <span class="va">issue_month</span>, <span class="va">homeownership</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here is a glimpse at the data:</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">loans</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 10,000
+Columns: 10
+$ interest_rate   &lt;dbl&gt; 14.07, 12.61, 17.09, 6.72, 14.07, 6.72, 13.59, 11.99, …
+$ loan_amount     &lt;int&gt; 28000, 5000, 2000, 21600, 23000, 5000, 24000, 20000, 2…
+$ verified_income &lt;fct&gt; Verified, Not Verified, Source Verified, Not Verified,…
+$ debt_to_income  &lt;dbl&gt; 18.01, 5.04, 21.15, 10.16, 57.96, 6.46, 23.66, 16.19, …
+$ credit_util     &lt;dbl&gt; 0.54759517, 0.15003472, 0.66134832, 0.19673228, 0.7549…
+$ bankruptcy      &lt;fct&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, …
+$ term            &lt;dbl&gt; 60, 36, 36, 36, 36, 36, 60, 60, 36, 36, 60, 60, 36, 60…
+$ credit_checks   &lt;int&gt; 6, 1, 4, 0, 7, 6, 1, 1, 3, 0, 4, 4, 8, 6, 0, 0, 4, 6, …
+$ issue_month     &lt;fct&gt; Mar-2018, Feb-2018, Feb-2018, Jan-2018, Mar-2018, Jan-…
+$ homeownership   &lt;fct&gt; Mortgage, Rent, Rent, Rent, Rent, Own, Mortgage, Mortg…</code></pre>
 </div>
 </div>
-</section>
-<section id="course-coordinator" class="level2">
-<h2 class="anchored" data-anchor-id="course-coordinator">Course coordinator</h2>
-<p><img src="img/mary.png" class="circular-portrait-mary img-fluid" style="float:right;" alt="Headshot of Dr. Mary Knox"></p>
-<p>Dr.&nbsp;Mary Knox (she/her) is the course coordinator for this course. You can contact her (at <a href="mailto:mary.knox@duke.edu">mary.knox@duke.edu</a>) with any questions regarding accommodations, missed work, extensions, etc., and registration.</p>
+<section id="get-to-know-the-data" class="level1"><h1>Get to know the data</h1>
+<ul>
+<li>
+<strong>Your turn:</strong> What is a typical interest rate in this dataset? What are some attributes of a typical loan and a typical borrower. Give yourself no more than 5 minutes for this exploration and share 1-2 findings.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code to explore loans here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code to explore borrowers here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="interest-rate-vs.-credit-utilization-ratio" class="level1"><h1>Interest rate vs.&nbsp;credit utilization ratio</h1>
+<p>The regression model for interest rate vs.&nbsp;credit utilization is as follows.</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rate_util_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">interest_rate</span> <span class="op">~</span> <span class="va">credit_util</span>, data <span class="op">=</span> <span class="va">loans</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">tidy</span><span class="op">(</span><span class="va">rate_util_fit</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term        estimate std.error statistic   p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)    10.5     0.0871     121.  0        
+2 credit_util     4.73    0.180       26.3 1.18e-147</code></pre>
+</div>
+</div>
+<p>And here is the model visualized:</p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">loans</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">credit_util</span>, y <span class="op">=</span> <span class="va">interest_rate</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ae-15-modeling-loans_files/figure-html/rate-util-plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>
+<strong>Your turn:</strong> Interpret the intercept and the slope.</li>
+</ul>
+<p><em>Add response here.</em></p>
+</section><section id="interest-rate-vs.-homeownership" class="level1"><h1>Interest rate vs.&nbsp;homeownership</h1>
+<p>Next we predict interest rates from homeownership, which is a categorical predictor with three levels:</p>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">loans</span><span class="op">$</span><span class="va">homeownership</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Rent"     "Mortgage" "Own"     </code></pre>
+</div>
+</div>
+<ul>
+<li>
+<strong>Demo:</strong> Fit the linear regression model to predict interest rate from homeownership and display a tidy summary of the model. Write the estimated model output below.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>
+<strong>Your turn:</strong> Interpret each coefficient in context of the problem.</li>
+</ul>
+<p><em>Add response here.</em></p>
+</section><section id="interest-rate-vs.-credit-utilization-and-homeownership" class="level1"><h1>Interest rate vs.&nbsp;credit utilization and homeownership</h1>
+<section id="main-effects-model" class="level2"><h2 class="anchored" data-anchor-id="main-effects-model">Main effects model</h2>
+<ul>
+<li>
+<strong>Demo:</strong> Fit a model to predict interest rate from credit utilization and homeownership, <strong>without</strong> an interaction effect between the two predictors. Display the summary output and write out the estimated regression equation.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Add response here.</em></p>
+<ul>
+<li>
+<strong>Demo:</strong> Write the estimated regression equation for loan applications from each of the homeownership groups separately.
+<ul>
+<li>Rent: <em>Add response here.</em>
+</li>
+<li>Mortgage: Add response here.</li>
+<li>Own: Add response here.</li>
+</ul>
+</li>
+<li>
+<strong>Question:</strong> How does the model predict the interest rate to vary as credit utilization varies for loan applicants with different homeownership status. Are the rates the same or different?</li>
+</ul>
+<p><em>Add response here.</em></p>
+</section><section id="interaction-effects-model" class="level2"><h2 class="anchored" data-anchor-id="interaction-effects-model">Interaction effects model</h2>
+<ul>
+<li>
+<strong>Demo:</strong> Fit a model to predict interest rate from credit utilization and homeownership, <strong>with</strong> an interaction effect between the two predictors. Display the summary output and write out the estimated regression equation.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Add response here.</em></p>
+<ul>
+<li>
+<strong>Demo:</strong> Write the estimated regression equation for loan applications from each of the homeownership groups separately.
+<ul>
+<li>Rent: <em>Add response here.</em>
+</li>
+<li>Mortgage: Add response here.</li>
+<li>Own: Add response here.</li>
+</ul>
+</li>
+<li>
+<strong>Question:</strong> How does the model predict the interest rate to vary as credit utilization varies for loan applicants with different homeownership status. Are the rates the same or different?</li>
+</ul>
+<p><em>Add response here.</em></p>
+</section><section id="choosing-a-model" class="level2"><h2 class="anchored" data-anchor-id="choosing-a-model">Choosing a model</h2>
+<p>Rule of thumb: <strong>Occam’s Razor</strong> - Don’t overcomplicate the situation! We prefer the <em>simplest</em> best model.</p>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>
+<strong>Review:</strong> What is R-squared? What is adjusted R-squared?</li>
+</ul>
+<p><em>Add response here.</em></p>
+<ul>
+<li>
+<strong>Question:</strong> Based on the adjusted <span class="math inline">\(R^2\)</span>s of these two models, which one do we prefer?</li>
+</ul>
+<p><em>Add response here.</em></p>
+</section></section><section id="another-model-to-consider" class="level1"><h1>Another model to consider</h1>
+<ul>
+<li>
+<strong>Your turn:</strong> Let’s add one more model to the variable – issue month. Should we add this variable to the interaction effects model from earlier?</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Add response here.</em></p>
 
 
-
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1447,34 +1162,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./course-support.html" class="pagination-link" aria-label="Support">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Support</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./index.html" class="pagination-link" aria-label="Schedule">
-        <span class="nav-page-text">Schedule</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2024, Mine Çetinkaya-Rundel</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/course-team.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/ae/ae-15-modeling-loans.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
