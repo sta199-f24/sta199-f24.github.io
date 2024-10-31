@@ -56,7 +56,8 @@ todays_ae <- "ae-14-modeling-penguins-multi"
 ## Announcements
 
 -   Peer evaluations (via TEAMMATES) are due by Friday (tomorrow), 5 pm.
--   
+-   Lab 5 due on Monday, 8:30 am.
+-   You'll receive project proposal feedback on Monday. Milestone 3 does not have a lab session dedicated, but you're to review and address the feedback issues and close them with commits you make to your repo – opportunity to practice data science workflows and make progress on your project. **Make sure you have weekly team meetings scheduled for the remainder of the semester!**
 
 # Application exercise
 
