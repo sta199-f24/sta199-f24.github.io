@@ -228,14 +228,14 @@
     "href": "slides/17-linear-model-multiple-predictors-II-slides.html#while-you-wait",
     "title": "Linear regression with a multiple predictors II",
     "section": "While you wait…",
-    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-14-modeling-penguins-multi.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
+    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-15-modeling-loans.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors-II-slides.html#announcements",
     "href": "slides/17-linear-model-multiple-predictors-II-slides.html#announcements",
     "title": "Linear regression with a multiple predictors II",
     "section": "Announcements",
-    "text": "Announcements\n\nPeer evaluations (via TEAMMATES) are due by Friday (tomorrow), 5 pm."
+    "text": "Announcements\n\nPeer evaluations (via TEAMMATES) are due by Friday (tomorrow), 5 pm.\nLab 5 due on Monday, 8:30 am.\nYou’ll receive project proposal feedback on Monday. Milestone 3 does not have a lab session dedicated, but you’re to review and address the feedback issues and close them with commits you make to your repo – opportunity to practice data science workflows and make progress on your project. Make sure you have weekly team meetings scheduled for the remainder of the semester!"
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors-II-slides.html#finish-up-tuesdays-ae",
@@ -245,25 +245,25 @@
     "text": "Finish up Tuesday’s AE\n\nGo to your ae project in RStudio.\nGet back to working on ae-14-modeling-penguins-multi"
   },
   {
-    "objectID": "slides/17-linear-model-multiple-predictors-II-slides.html#ae-14-modeling-penguins-multi",
-    "href": "slides/17-linear-model-multiple-predictors-II-slides.html#ae-14-modeling-penguins-multi",
+    "objectID": "slides/17-linear-model-multiple-predictors-II-slides.html#ae-15-modeling-loans",
+    "href": "slides/17-linear-model-multiple-predictors-II-slides.html#ae-15-modeling-loans",
     "title": "Linear regression with a multiple predictors II",
-    "section": "ae-14-modeling-penguins-multi",
-    "text": "ae-14-modeling-penguins-multi\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-14-modeling-penguins-multi.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
+    "section": "ae-15-modeling-loans",
+    "text": "ae-15-modeling-loans\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-15-modeling-loans.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors-II.html#while-you-wait",
     "href": "slides/17-linear-model-multiple-predictors-II.html#while-you-wait",
     "title": "Linear regression with a multiple predictors II",
     "section": "While you wait…",
-    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-14-modeling-penguins-multi.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
+    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-15-modeling-loans.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors-II.html#announcements",
     "href": "slides/17-linear-model-multiple-predictors-II.html#announcements",
     "title": "Linear regression with a multiple predictors II",
     "section": "Announcements",
-    "text": "Announcements\n\nPeer evaluations (via TEAMMATES) are due by Friday (tomorrow), 5 pm."
+    "text": "Announcements\n\nPeer evaluations (via TEAMMATES) are due by Friday (tomorrow), 5 pm.\nLab 5 due on Monday, 8:30 am.\nYou’ll receive project proposal feedback on Monday. Milestone 3 does not have a lab session dedicated, but you’re to review and address the feedback issues and close them with commits you make to your repo – opportunity to practice data science workflows and make progress on your project. Make sure you have weekly team meetings scheduled for the remainder of the semester!"
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors-II.html#finish-up-tuesdays-ae",
@@ -273,11 +273,11 @@
     "text": "Finish up Tuesday’s AE\n\nGo to your ae project in RStudio.\nGet back to working on ae-14-modeling-penguins-multi"
   },
   {
-    "objectID": "slides/17-linear-model-multiple-predictors-II.html#ae-14-modeling-penguins-multi",
-    "href": "slides/17-linear-model-multiple-predictors-II.html#ae-14-modeling-penguins-multi",
+    "objectID": "slides/17-linear-model-multiple-predictors-II.html#ae-15-modeling-loans",
+    "href": "slides/17-linear-model-multiple-predictors-II.html#ae-15-modeling-loans",
     "title": "Linear regression with a multiple predictors II",
-    "section": "ae-14-modeling-penguins-multi",
-    "text": "ae-14-modeling-penguins-multi\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-14-modeling-penguins-multi.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
+    "section": "ae-15-modeling-loans",
+    "text": "ae-15-modeling-loans\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-15-modeling-loans.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
     "objectID": "slides/06-tidying-data-slides.html#while-you-wait",
