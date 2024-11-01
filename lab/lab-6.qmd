@@ -21,7 +21,8 @@ If you haven't done those yet, you should review the previous labs before starti
 
 By the end of the lab, you will...
 
--   TO DO: Add LOs.
+-   Fit, interpret, and make predictions with models with multiple predictors.
+-   Perform model selection.
 
 And, as usual, you will also...
 
@@ -31,7 +32,7 @@ And, as usual, you will also...
 
 ## Getting started
 
-Log in to RStudio, clone your `lab-5` repo from GitHub, open your `lab-5.qmd` document, and get started!
+Log in to RStudio, clone your `lab-6` repo from GitHub, open your `lab-6.qmd` document, and get started!
 
 ::: {.callout-tip collapse="true"}
 ## Click here if you prefer to see step-by-step instructions
@@ -44,7 +45,7 @@ Log in to RStudio, clone your `lab-5` repo from GitHub, open your `lab-5.qmd` do
 ### Step 2: Clone the repo & start a new RStudio project
 
 -   Go to the course organization at [github.com/sta199-f24](https://github.com/sta199-f24) organization on GitHub.
-    Click on the repo with the prefix **lab-5**.
+    Click on the repo with the prefix **lab-6**.
     It contains the starter documents you need to complete the lab.
 
 -   Click on the green **CODE** button and select **Use SSH**. This might already be selected by default; if it is, you'll see the text **Clone with SSH**.
@@ -56,12 +57,12 @@ Log in to RStudio, clone your `lab-5` repo from GitHub, open your `lab-5.qmd` do
 
 -   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
 
--   Click *lab-5.qmd* to open the template Quarto file.
+-   Click *lab-6.qmd* to open the template Quarto file.
     This is where you will write up your code and narrative for the lab.
 
 ### Step 3: Update the YAML
 
-In `lab-5.qmd`, update the `author` field to your name, render your document and examine the changes.
+In `lab-6.qmd`, update the `author` field to your name, render your document and examine the changes.
 Then, in the Git pane, click on **Diff** to view your changes, add a commit message (e.g., "Added author name"), and click **Commit**.
 Then, push the changes to your GitHub repository, and in your browser confirm that these changes have indeed propagated to your repository.
 :::
@@ -208,15 +209,23 @@ You will be investigating data for the months June, July, September, and Novembe
 
 Below is a list of variables and their definitions:
 
-| Variable | Definition |
-|:---|:---|
-| `season` | Numerical representation of Spring (2), Summer (3), and Fall (4) |
-| `year` | Numerical representation of 2011 (0) or 2012 (1) |
-| `month` | Month in which data were collected |
-| `holiday` | Indicator variable for whether data were collected on a holiday (1) or not (0) |
-| `weekday` | Numerical representation of day of week |
-| `temp` | Temperature in Celsius |
-| `count` | Number of bike rentals for that day |
++---------------------+--------------------------------------------------------------------------------+
+| Variable            | Definition                                                                     |
++:====================+:===============================================================================+
+| `season`            | Numerical representation of Spring (2), Summer (3), and Fall (4)               |
++---------------------+--------------------------------------------------------------------------------+
+| `year`              | Numerical representation of 2011 (0) or 2012 (1)                               |
++---------------------+--------------------------------------------------------------------------------+
+| `month`             | Month in which data were collected                                             |
++---------------------+--------------------------------------------------------------------------------+
+| `holiday`           | Indicator variable for whether data were collected on a holiday (1) or not (0) |
++---------------------+--------------------------------------------------------------------------------+
+| `weekday`           | Numerical representation of day of week                                        |
++---------------------+--------------------------------------------------------------------------------+
+| `temp`              | Temperature in Celsius                                                         |
++---------------------+--------------------------------------------------------------------------------+
+| `count`             | Number of bike rentals for that day                                            |
++---------------------+--------------------------------------------------------------------------------+
 
 ## Question 6
 
@@ -252,7 +261,6 @@ At each meet, each lifter gets three attempts at lifting max weight on three lif
 ```{r}
 #| label: load-data
 #| message: false
-
 ipf <- read_csv("data/ipf.csv")
 ```
 
@@ -342,8 +350,10 @@ This is good practice.
 
 ## Question 7
 
+a\.
 Let's begin by taking a look at the **squat lifting** records.
 
+-   Start with the `ipf` data frame.
 -   First, remove any observations that are negative for squat.
 -   Next, create a new column called `best3_squat_lbs` that converts the record from kilograms to pounds.
 
@@ -351,16 +361,14 @@ You may need to google the conversion formula.
 Save your data frame as `ipf_squat`.
 Report the number of rows and columns of this new data frame using inline code.
 
-## Question 8
-
-Using the `ipf_squat` data frame you created, from the previous exercise, create a scatter plot to investigate the relationship between squat (in lbs) and age.
+b\.
+Using the `ipf_squat` data frame you created in part (a), create a scatter plot to investigate the relationship between squat (in lbs) and age.
 Age should be on the x-axis.
 Adjust the `alpha` level of your points to get a better sense of the density of the data.
 Add a linear trend-line.
 Summarize the trend you observe in at most 4 sentences.
 
-## Question 9
-
+c\.
 Write down the linear population model to predict lift squat lbs from age.
 Next, fit the linear model, and save it as `age_fit`.
 Re-write your previous equation replacing the population parameters with the numeric estimates.
@@ -368,9 +376,10 @@ This is called the "fitted" linear model.
 Interpret each estimate of $\beta$.
 Are the interpretations sensible?
 
-## Question 10
+## Question 8
 
-Building on your `ipf_squat` data frame, create a new column called `age2` that takes the age of each lifter and squares it.
+a\.
+Building on your `ipf_squat` data frame from the previous question, create a new column called `age2` that takes the age of each lifter and squares it.
 Save it to your data frame `ipf_squat`.
 Next, plot squat in lbs vs `age2` and add a linear best fit line.
 How does the fit of the model compare to the one from earlier?
@@ -379,14 +388,15 @@ How does the fit of the model compare to the one from earlier?
 To raise a value to a power, use `^` in R, e.g.: `2 ^ 2` gives you 4, `2 ^ 3` gives you 8, etc.
 :::
 
-## Question 11
-
+b\.
 One metric to assess the fit of a model is the correlation squared, also known as $R^2$.
 Fit the age$^2$ model and save the object as `age2_fit`.
 Compare $R^2$ of the new model (squat vs. age$^2$) to the $R^2$ of the earlier model (squat vs. age).
 Which has a higher $R^2$?
 
-## Exercise 12
+## Question 9
+
+Start over with the `ipf` data frame.
 
 Next, let's turn our attention to **dead lifting** records.
 Recreate the plot below.
@@ -404,7 +414,6 @@ Notice that there are no negative deadlift values on the x-axis.
 #| fig-width: 6
 #| fig-asp: 0.8
 #| echo: false
-
 ipf |>
   mutate(Age = ifelse(age < 40, "Under 40", "40 or older")) |>
   filter(!is.na(Age)) |>
@@ -421,7 +430,10 @@ ipf |>
   )
 ```
 
-## Exercise 13
+## Question 10
+
+a\.
+Start over with the `ipf` data frame.
 
 Finally, let's turn our attention to **bench press** records.
 
@@ -434,9 +446,8 @@ Add a linear trend-line.
 Be sure to label all axes and give the plot a title.
 Comment on what you observe.
 
-## Exercise 14
-
-Fit the linear model displayed in the previous exercise and write down the **fitted model equation** only, replacing $\hat{\beta}$s with their fitted estimates.
+b\.
+Fit the linear model displayed in part (a) and write down the **fitted model equation** only, replacing $\hat{\beta}$s with their fitted estimates.
 Interpret the $\hat{\beta}$s (intercept and slope).
 Report $R^2$.
 Is body weight an important predictor of bench press ability?
