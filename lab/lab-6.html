@@ -417,10 +417,6 @@ window.Quarto = {
   <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
   <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
   <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
-  <li><a href="#question-11" id="toc-question-11" class="nav-link" data-scroll-target="#question-11">Question 11</a></li>
-  <li><a href="#exercise-12" id="toc-exercise-12" class="nav-link" data-scroll-target="#exercise-12">Exercise 12</a></li>
-  <li><a href="#exercise-13" id="toc-exercise-13" class="nav-link" data-scroll-target="#exercise-13">Exercise 13</a></li>
-  <li><a href="#exercise-14" id="toc-exercise-14" class="nav-link" data-scroll-target="#exercise-14">Exercise 14</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-6.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -468,7 +464,8 @@ Note
 <section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>By the end of the lab, you will…</p>
 <ul>
-<li>TO DO: Add LOs.</li>
+<li>Fit, interpret, and make predictions with models with multiple predictors.</li>
+<li>Perform model selection.</li>
 </ul>
 <p>And, as usual, you will also…</p>
 <ul>
@@ -476,7 +473,7 @@ Note
 <li>Further your reproducible authoring skills with Quarto</li>
 <li>Improve your familiarity with version control using Git and GitHub</li>
 </ul></section><section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<p>Log in to RStudio, clone your <code>lab-5</code> repo from GitHub, open your <code>lab-5.qmd</code> document, and get started!</p>
+<p>Log in to RStudio, clone your <code>lab-6</code> repo from GitHub, open your <code>lab-6.qmd</code> document, and get started!</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -495,14 +492,14 @@ Click here if you prefer to see step-by-step instructions
 <li>Click <code>STA198-199</code> under My reservations to log into your container. You should now see the RStudio environment.</li>
 </ul></section><section id="step-2-clone-the-repo-start-a-new-rstudio-project" class="level3"><h3 class="anchored" data-anchor-id="step-2-clone-the-repo-start-a-new-rstudio-project">Step 2: Clone the repo &amp; start a new RStudio project</h3>
 <ul>
-<li><p>Go to the course organization at <a href="https://github.com/sta199-f24">github.com/sta199-f24</a> organization on GitHub. Click on the repo with the prefix <strong>lab-5</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Go to the course organization at <a href="https://github.com/sta199-f24">github.com/sta199-f24</a> organization on GitHub. Click on the repo with the prefix <strong>lab-6</strong>. It contains the starter documents you need to complete the lab.</p></li>
 <li><p>Click on the green <strong>CODE</strong> button and select <strong>Use SSH</strong>. This might already be selected by default; if it is, you’ll see the text <strong>Clone with SSH</strong>. Click on the clipboard icon to copy the repo URL.</p></li>
 <li><p>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</p></li>
 <li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</p></li>
 <li><p>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
-<li><p>Click <em>lab-5.qmd</em> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</p></li>
+<li><p>Click <em>lab-6.qmd</em> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</p></li>
 </ul></section><section id="step-3-update-the-yaml" class="level3"><h3 class="anchored" data-anchor-id="step-3-update-the-yaml">Step 3: Update the YAML</h3>
-<p>In <code>lab-5.qmd</code>, update the <code>author</code> field to your name, render your document and examine the changes. Then, in the Git pane, click on <strong>Diff</strong> to view your changes, add a commit message (e.g., “Added author name”), and click <strong>Commit</strong>. Then, push the changes to your GitHub repository, and in your browser confirm that these changes have indeed propagated to your repository.</p>
+<p>In <code>lab-6.qmd</code>, update the <code>author</code> field to your name, render your document and examine the changes. Then, in the Git pane, click on <strong>Diff</strong> to view your changes, add a commit message (e.g., “Added author name”), and click <strong>Commit</strong>. Then, push the changes to your GitHub repository, and in your browser confirm that these changes have indeed propagated to your repository.</p>
 </section>
 </div>
 </div>
@@ -648,8 +645,8 @@ Note
 <p>Below is a list of variables and their definitions:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 21%">
+<col style="width: 78%">
 </colgroup>
 <thead><tr class="header">
 <th style="text-align: left;">Variable</th>
@@ -822,18 +819,17 @@ Note
 </table>
 <p>For all of the following exercises, you should include units on axes labels, e.g.&nbsp;“Bench press (lbs)” or “Bench press (kg)”. “Age (years)” etc. This is good practice.</p>
 <section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
-<p>Let’s begin by taking a look at the <strong>squat lifting</strong> records.</p>
+<p>a. Let’s begin by taking a look at the <strong>squat lifting</strong> records.</p>
 <ul>
+<li>Start with the <code>ipf</code> data frame.</li>
 <li>First, remove any observations that are negative for squat.</li>
 <li>Next, create a new column called <code>best3_squat_lbs</code> that converts the record from kilograms to pounds.</li>
 </ul>
 <p>You may need to google the conversion formula. Save your data frame as <code>ipf_squat</code>. Report the number of rows and columns of this new data frame using inline code.</p>
+<p>b. Using the <code>ipf_squat</code> data frame you created in part (a), create a scatter plot to investigate the relationship between squat (in lbs) and age. Age should be on the x-axis. Adjust the <code>alpha</code> level of your points to get a better sense of the density of the data. Add a linear trend-line. Summarize the trend you observe in at most 4 sentences.</p>
+<p>c. Write down the linear population model to predict lift squat lbs from age. Next, fit the linear model, and save it as <code>age_fit</code>. Re-write your previous equation replacing the population parameters with the numeric estimates. This is called the “fitted” linear model. Interpret each estimate of <span class="math inline">\(\beta\)</span>. Are the interpretations sensible?</p>
 </section><section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
-<p>Using the <code>ipf_squat</code> data frame you created, from the previous exercise, create a scatter plot to investigate the relationship between squat (in lbs) and age. Age should be on the x-axis. Adjust the <code>alpha</code> level of your points to get a better sense of the density of the data. Add a linear trend-line. Summarize the trend you observe in at most 4 sentences.</p>
-</section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
-<p>Write down the linear population model to predict lift squat lbs from age. Next, fit the linear model, and save it as <code>age_fit</code>. Re-write your previous equation replacing the population parameters with the numeric estimates. This is called the “fitted” linear model. Interpret each estimate of <span class="math inline">\(\beta\)</span>. Are the interpretations sensible?</p>
-</section><section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
-<p>Building on your <code>ipf_squat</code> data frame, create a new column called <code>age2</code> that takes the age of each lifter and squares it. Save it to your data frame <code>ipf_squat</code>. Next, plot squat in lbs vs <code>age2</code> and add a linear best fit line. How does the fit of the model compare to the one from earlier?</p>
+<p>a. Building on your <code>ipf_squat</code> data frame from the previous question, create a new column called <code>age2</code> that takes the age of each lifter and squares it. Save it to your data frame <code>ipf_squat</code>. Next, plot squat in lbs vs <code>age2</code> and add a linear best fit line. How does the fit of the model compare to the one from earlier?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -847,9 +843,9 @@ Tip
 <p>To raise a value to a power, use <code>^</code> in R, e.g.: <code>2 ^ 2</code> gives you 4, <code>2 ^ 3</code> gives you 8, etc.</p>
 </div>
 </div>
-</section><section id="question-11" class="level2"><h2 class="anchored" data-anchor-id="question-11">Question 11</h2>
-<p>One metric to assess the fit of a model is the correlation squared, also known as <span class="math inline">\(R^2\)</span>. Fit the age<span class="math inline">\(^2\)</span> model and save the object as <code>age2_fit</code>. Compare <span class="math inline">\(R^2\)</span> of the new model (squat vs.&nbsp;age<span class="math inline">\(^2\)</span>) to the <span class="math inline">\(R^2\)</span> of the earlier model (squat vs.&nbsp;age). Which has a higher <span class="math inline">\(R^2\)</span>?</p>
-</section><section id="exercise-12" class="level2"><h2 class="anchored" data-anchor-id="exercise-12">Exercise 12</h2>
+<p>b. One metric to assess the fit of a model is the correlation squared, also known as <span class="math inline">\(R^2\)</span>. Fit the age<span class="math inline">\(^2\)</span> model and save the object as <code>age2_fit</code>. Compare <span class="math inline">\(R^2\)</span> of the new model (squat vs.&nbsp;age<span class="math inline">\(^2\)</span>) to the <span class="math inline">\(R^2\)</span> of the earlier model (squat vs.&nbsp;age). Which has a higher <span class="math inline">\(R^2\)</span>?</p>
+</section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+<p>Start over with the <code>ipf</code> data frame.</p>
 <p>Next, let’s turn our attention to <strong>dead lifting</strong> records. Recreate the plot below. Make sure axes and title labels are exactly matching, including spelling, capitalization, etc. Based on the plot below, which impacts deadlift weight more, age category or sex?</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -864,12 +860,12 @@ Note
 <p>You will need to create a couple of new columns. One to classify age appropriately and one to convert <code>best3deadlift_kg</code> to the plotted units (lbs). Notice that there are no negative deadlift values on the x-axis.</p>
 </div>
 </div>
-</section><section id="exercise-13" class="level2"><h2 class="anchored" data-anchor-id="exercise-13">Exercise 13</h2>
+</section><section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
+<p>a. Start over with the <code>ipf</code> data frame.</p>
 <p>Finally, let’s turn our attention to <strong>bench press</strong> records.</p>
 <p>To begin, remove any observations that are negative for bench press, create two new columns: <code>best3bench_lbs</code> and <code>bodyweight_lbs</code>. Save the result in a new data frame called <code>ipf_bench</code>.</p>
 <p>Then, create a scatter plot to investigate the relationship between best bench press (in lbs) and the lifter’s bodyweight (in lbs). Bodyweight should be on the x-axis. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.</p>
-</section><section id="exercise-14" class="level2"><h2 class="anchored" data-anchor-id="exercise-14">Exercise 14</h2>
-<p>Fit the linear model displayed in the previous exercise and write down the <strong>fitted model equation</strong> only, replacing <span class="math inline">\(\hat{\beta}\)</span>s with their fitted estimates. Interpret the <span class="math inline">\(\hat{\beta}\)</span>s (intercept and slope). Report <span class="math inline">\(R^2\)</span>. Is body weight an important predictor of bench press ability? Why or why not?</p>
+<p>b. Fit the linear model displayed in part (a) and write down the <strong>fitted model equation</strong> only, replacing <span class="math inline">\(\hat{\beta}\)</span>s with their fitted estimates. Interpret the <span class="math inline">\(\hat{\beta}\)</span>s (intercept and slope). Report <span class="math inline">\(R^2\)</span>. Is body weight an important predictor of bench press ability? Why or why not?</p>
 
 
 </section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
