@@ -53,7 +53,7 @@ todays_ae <- "ae-15-modeling-loans"
 -   Wait till the you're prompted to work on the application exercise during class before editing the file.
 :::
 
-## Announcements
+## Announcements {.smaller}
 
 -   Peer evaluations (via TEAMMATES) are due by Friday (tomorrow), 5 pm.
 -   Lab 5 due on Monday, 8:30 am.
