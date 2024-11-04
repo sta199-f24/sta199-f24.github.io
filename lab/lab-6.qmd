@@ -211,23 +211,23 @@ The dataset is called `bike.csv` and it's in your lab repository's `data` folder
 
 Below is a list of variables and their definitions:
 
-+---------------+--------------------------------------------------------------------------------+
-| Variable      | Definition                                                                     |
-+:==============+:===============================================================================+
-| `season`      | Numerical representation of Spring (2), Summer (3), and Fall (4)               |
-+---------------+--------------------------------------------------------------------------------+
-| `year`        | Numerical representation of 2011 (0) or 2012 (1)                               |
-+---------------+--------------------------------------------------------------------------------+
-| `month`       | Month in which data were collected                                             |
-+---------------+--------------------------------------------------------------------------------+
-| `holiday`     | Indicator variable for whether data were collected on a holiday (1) or not (0) |
-+---------------+--------------------------------------------------------------------------------+
-| `weekday`     | Numerical representation of day of week                                        |
-+---------------+--------------------------------------------------------------------------------+
-| `temp`        | Temperature in Celsius                                                         |
-+---------------+--------------------------------------------------------------------------------+
-| `count`       | Number of bike rentals for that day                                            |
-+---------------+--------------------------------------------------------------------------------+
++-------------+--------------------------------------------------------------------------------+
+| Variable    | Definition                                                                     |
++:============+:===============================================================================+
+| `season`    | Numerical representation of Spring (2), Summer (3), and Fall (4)               |
++-------------+--------------------------------------------------------------------------------+
+| `year`      | Numerical representation of 2011 (0) or 2012 (1)                               |
++-------------+--------------------------------------------------------------------------------+
+| `month`     | Month in which data were collected                                             |
++-------------+--------------------------------------------------------------------------------+
+| `holiday`   | Indicator variable for whether data were collected on a holiday (1) or not (0) |
++-------------+--------------------------------------------------------------------------------+
+| `weekday`   | Numerical representation of day of week                                        |
++-------------+--------------------------------------------------------------------------------+
+| `temp`      | Temperature in Celsius                                                         |
++-------------+--------------------------------------------------------------------------------+
+| `count`     | Number of bike rentals for that day                                            |
++-------------+--------------------------------------------------------------------------------+
 
 ## Question 6
 
@@ -404,6 +404,8 @@ Next, let's turn our attention to **dead lifting** records.
 Recreate the plot below.
 Make sure axes and title labels are exactly matching, including spelling, capitalization, etc.
 Based on the plot below, which impacts deadlift weight more, age category or sex?
+
+![](images/lab-6/deadlift-age-sex-plot.png){fig-align="center" width="400"}
 
 ::: callout-note
 You will need to create a couple of new columns.
