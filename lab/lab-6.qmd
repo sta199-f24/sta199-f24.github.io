@@ -140,7 +140,7 @@ Create two visualizations:
 
 -   Scatter plot of `life_exp` vs. `gdp_percap` vs.
 
--   Scatter plot of `life_exp_log` vs. `gdp_percap_log`, where `life_exp_log` is a new variable you add to the data set by taking the natural log of `life_exp`.
+-   Scatter plot of `life_exp_log` vs. `gdp_percap`, where `life_exp_log` is a new variable you add to the data set by taking the natural log of `life_exp`.
 
 First describe the relationship between each pair of the variables.
 Then, comment on which relationship would be better modeled using a linear model, and explain your reasoning.
@@ -151,10 +151,12 @@ The question isn't asking which of these relationships is clearly linear, but in
 
 ## Question 3
 
-a.  **Model fitting:** Fit a linear model predicting log life expectancy from gross domestic product.
+a. ** Data Prep **  What happens when you take the natural log of 0? Remove rows of your data set where life_expectancy = 0, justifing        why this is helpful.
+
+b.  **Model fitting:** Fit a linear model predicting log life expectancy from gross domestic product.
     Display the tidy summary.
 
-b.  **Model evaluation:**
+c.  **Model evaluation:**
 
     -   Calculate the R-squared of the model using two methods and confirm that the values match: first method is using `glance()` and the other method is based on the value of the correlation coefficient between the two variables.
 
@@ -178,7 +180,7 @@ b.  **Model fitting and interpretation:**
 
     -   Interpret the *slope* of the model, making sure that your interpretation is in the units of the original data (not on log scale).
 
-c.  **Prediction:** Predict the life expectacy of a country in Asia where the average life expectancy is 70 years old.
+c.  **Prediction:** Predict the life expectacy of a country in Asia where the average GDP per capita is $70,000. Do this using R functions, not by manually plugging in numbers.
 
 ## Question 5
 
