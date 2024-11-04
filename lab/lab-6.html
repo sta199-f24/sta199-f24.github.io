@@ -592,7 +592,7 @@ Important
 <p>We are interested in learning more about life expectancy in countries, and we’ll start by exploring the relationship between life expectancy and GDP. Create two visualizations:</p>
 <ul>
 <li><p>Scatter plot of <code>life_exp</code> vs.&nbsp;<code>gdp_percap</code> vs.</p></li>
-<li><p>Scatter plot of <code>life_exp_log</code> vs.&nbsp;<code>gdp_percap_log</code>, where <code>life_exp_log</code> is a new variable you add to the data set by taking the natural log of <code>life_exp</code>.</p></li>
+<li><p>Scatter plot of <code>life_exp_log</code> vs.&nbsp;<code>gdp_percap</code>, where <code>life_exp_log</code> is a new variable you add to the data set by taking the natural log of <code>life_exp</code>.</p></li>
 </ul>
 <p>First describe the relationship between each pair of the variables. Then, comment on which relationship would be better modeled using a linear model, and explain your reasoning.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -610,6 +610,7 @@ Note
 </div>
 </section><section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <ol type="a">
+<li><p>** Data Prep ** What happens when you take the natural log of 0? Remove rows of your data set where life_expectancy = 0, justifing why this is helpful.</p></li>
 <li><p><strong>Model fitting:</strong> Fit a linear model predicting log life expectancy from gross domestic product. Display the tidy summary.</p></li>
 <li>
 <p><strong>Model evaluation:</strong></p>
@@ -630,7 +631,7 @@ Note
 <li><p>Interpret the <em>slope</em> of the model, making sure that your interpretation is in the units of the original data (not on log scale).</p></li>
 </ul>
 </li>
-<li><p><strong>Prediction:</strong> Predict the life expectacy of a country in Asia where the average life expectancy is 70 years old.</p></li>
+<li><p><strong>Prediction:</strong> Predict the life expectacy of a country in Asia where the average GDP per capita is $70,000. Do this using R functions, not by manually plugging in numbers.</p></li>
 </ol></section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p>Communication is a critical yet often overlooked part of data science. When we engage with our audience and capture their interest, we can ultimately better communicate what we are trying to share.</p>
 <p>Please watch the following video: <a href="https://www.youtube.com/watch?v=Z8t4k0Q8e8Y">Hans Rosling: 200 years in 4 minutes</a>.</p>
