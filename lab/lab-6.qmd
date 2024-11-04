@@ -151,7 +151,8 @@ The question isn't asking which of these relationships is clearly linear, but in
 
 ## Question 3
 
-a. ** Data Prep **  What happens when you take the natural log of 0? Remove rows of your data set where life_expectancy = 0, justifing        why this is helpful.
+a.  \*\* Data Prep \*\* What happens when you take the natural log of 0?
+    Remove rows of your data set where life_expectancy = 0, justifing why this is helpful.
 
 b.  **Model fitting:** Fit a linear model predicting log life expectancy from gross domestic product.
     Display the tidy summary.
@@ -180,7 +181,8 @@ b.  **Model fitting and interpretation:**
 
     -   Interpret the *slope* of the model, making sure that your interpretation is in the units of the original data (not on log scale).
 
-c.  **Prediction:** Predict the life expectacy of a country in Asia where the average GDP per capita is $70,000. Do this using R functions, not by manually plugging in numbers.
+c.  **Prediction:** Predict the life expectacy of a country in Asia where the average GDP per capita is \$70,000.
+    Do this using R functions, not by manually plugging in numbers.
 
 ## Question 5
 
@@ -213,23 +215,15 @@ The dataset is called `bike.csv` and it's in your lab repository's `data` folder
 
 Below is a list of variables and their definitions:
 
-+-------------+--------------------------------------------------------------------------------+
-| Variable    | Definition                                                                     |
-+:============+:===============================================================================+
-| `season`    | Numerical representation of Spring (2), Summer (3), and Fall (4)               |
-+-------------+--------------------------------------------------------------------------------+
-| `year`      | Numerical representation of 2011 (0) or 2012 (1)                               |
-+-------------+--------------------------------------------------------------------------------+
-| `month`     | Month in which data were collected                                             |
-+-------------+--------------------------------------------------------------------------------+
-| `holiday`   | Indicator variable for whether data were collected on a holiday (1) or not (0) |
-+-------------+--------------------------------------------------------------------------------+
-| `weekday`   | Numerical representation of day of week                                        |
-+-------------+--------------------------------------------------------------------------------+
-| `temp`      | Temperature in Celsius                                                         |
-+-------------+--------------------------------------------------------------------------------+
-| `count`     | Number of bike rentals for that day                                            |
-+-------------+--------------------------------------------------------------------------------+
+| Variable | Definition |
+|:---|:---|
+| `season` | Numerical representation of Spring (2), Summer (3), and Fall (4) |
+| `year` | Numerical representation of 2011 (0) or 2012 (1) |
+| `month` | Month in which data were collected |
+| `holiday` | Indicator variable for whether data were collected on a holiday (1) or not (0) |
+| `weekday` | Numerical representation of day of week |
+| `temp` | Temperature in Celsius |
+| `count` | Number of bike rentals for that day |
 
 ## Question 6
 
