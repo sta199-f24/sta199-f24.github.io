@@ -102,10 +102,10 @@ The grade breakdown is as follows:
 | **M1: Working collaboratively**    | 5 pts   |
 | **M2: Project proposal**           | 10 pts  |
 | **M3: Improvement + progress**     | 5 pts   |
-| **M3: Peer review**                | 5 pts   |
-| **M4: Write-up**                   | 35 pts  |
-| **M4: Slides + presentation**      | 25 pts  |
-| **Reproducibility + organization** | 5 pts   |
+| **M4: Peer review**                | 5 pts   |
+| **M5: Write-up**                   | 35 pts  |
+| **M5: Slides + presentation**      | 25 pts  |
+| **M5: Reproducibility + organization** | 5 pts   |
 | **Teamwork**                       | 10 pts  |
 
 ## Grading summary
