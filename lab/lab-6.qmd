@@ -1,6 +1,6 @@
 ---
 title: Lab 6
-subtitle: To be posted
+subtitle: Visualize, model, interpret again
 categories: Lab
 description: "Mon, Nov 11 at 8:30 am"
 draft: true
@@ -207,25 +207,27 @@ You will be investigating data for the months June, July, September, and Novembe
 
 [^1]: Data subset from Progress in Artificial Intelligence, 2013.
 
+The dataset is called `bike.csv` and it's in your lab repository's `data` folder.
+
 Below is a list of variables and their definitions:
 
-+---------------------+--------------------------------------------------------------------------------+
-| Variable            | Definition                                                                     |
-+:====================+:===============================================================================+
-| `season`            | Numerical representation of Spring (2), Summer (3), and Fall (4)               |
-+---------------------+--------------------------------------------------------------------------------+
-| `year`              | Numerical representation of 2011 (0) or 2012 (1)                               |
-+---------------------+--------------------------------------------------------------------------------+
-| `month`             | Month in which data were collected                                             |
-+---------------------+--------------------------------------------------------------------------------+
-| `holiday`           | Indicator variable for whether data were collected on a holiday (1) or not (0) |
-+---------------------+--------------------------------------------------------------------------------+
-| `weekday`           | Numerical representation of day of week                                        |
-+---------------------+--------------------------------------------------------------------------------+
-| `temp`              | Temperature in Celsius                                                         |
-+---------------------+--------------------------------------------------------------------------------+
-| `count`             | Number of bike rentals for that day                                            |
-+---------------------+--------------------------------------------------------------------------------+
++---------------+--------------------------------------------------------------------------------+
+| Variable      | Definition                                                                     |
++:==============+:===============================================================================+
+| `season`      | Numerical representation of Spring (2), Summer (3), and Fall (4)               |
++---------------+--------------------------------------------------------------------------------+
+| `year`        | Numerical representation of 2011 (0) or 2012 (1)                               |
++---------------+--------------------------------------------------------------------------------+
+| `month`       | Month in which data were collected                                             |
++---------------+--------------------------------------------------------------------------------+
+| `holiday`     | Indicator variable for whether data were collected on a holiday (1) or not (0) |
++---------------+--------------------------------------------------------------------------------+
+| `weekday`     | Numerical representation of day of week                                        |
++---------------+--------------------------------------------------------------------------------+
+| `temp`        | Temperature in Celsius                                                         |
++---------------+--------------------------------------------------------------------------------+
+| `count`       | Number of bike rentals for that day                                            |
++---------------+--------------------------------------------------------------------------------+
 
 ## Question 6
 
