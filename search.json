@@ -3623,7 +3623,7 @@
     "href": "slides/18-model-selection-overfitting-slides.html#what-is-the-difference-between-r2-and-adjusted-r2",
     "title": "Model selection and overfitting",
     "section": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?",
-    "text": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?\n\n\n\\(R^2\\):\n\nProportion of variability in the outcome explained by the model.\nUseful for quantifying the fit of a given model.\n\n\n\n\n\nAdjusted \\(R^2\\):\n\nProportion of variability in the outcome explained by the model, with a penalty added for the number of predictors in the model.\nUseful for comparing models."
+    "text": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?\n\n\n\\(R^2\\):\n\nProportion of variability in the outcome explained by the model.\nUseful for quantifying the fit of a given model.\n\n\n\nAdjusted \\(R^2\\):\n\nProportion of variability in the outcome explained by the model, with a penalty added for the number of predictors in the model.\nUseful for comparing models."
   },
   {
     "objectID": "slides/18-model-selection-overfitting-slides.html#finish-up-thursdays-ae",
@@ -3658,7 +3658,7 @@
     "href": "slides/18-model-selection-overfitting.html#what-is-the-difference-between-r2-and-adjusted-r2",
     "title": "Model selection and overfitting",
     "section": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?",
-    "text": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?\n\n\n\\(R^2\\):\n\nProportion of variability in the outcome explained by the model.\nUseful for quantifying the fit of a given model.\n\n\n\n\n\nAdjusted \\(R^2\\):\n\nProportion of variability in the outcome explained by the model, with a penalty added for the number of predictors in the model.\nUseful for comparing models."
+    "text": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?\n\n\n\\(R^2\\):\n\nProportion of variability in the outcome explained by the model.\nUseful for quantifying the fit of a given model.\n\n\n\nAdjusted \\(R^2\\):\n\nProportion of variability in the outcome explained by the model, with a penalty added for the number of predictors in the model.\nUseful for comparing models."
   },
   {
     "objectID": "slides/18-model-selection-overfitting.html#finish-up-thursdays-ae",
