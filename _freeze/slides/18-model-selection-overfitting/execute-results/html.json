@@ -1,0 +1,19 @@
+{
+  "hash": "a7d94a0579e2c65deaec999410d901f8",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Model selection and overfitting\"\nsubtitle: \"Lecture 18\"\ndate: \"2024-11-05\"\nformat: \n  live-revealjs: \n    output-file: 18-model-selection-overfitting-slides.html\nwebr:\n  cell-options:\n    autorun: false\n---\n\n\n\n\n<!-- begin: webr fodder -->\n\n\n\n\n::: {.cell}\n\n:::\n\n::: {.cell edit='false'}\n```{webr}\n#| edit: false\n#| echo: false\n#| output: false\noptions(width = 60)\n```\n:::\n\n\n\n\n\n\n<!-- end: webr fodder -->\n\n<!-- begin: ae definition -->\n\n\n\n\n\n\n\n\n\n<!-- end: ae definition -->\n\n# Warm-up\n\n## While you wait... {.smaller}\n\n::: appex\n-   Go to your `ae` project in RStudio.\n\n-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.\n\n-   If you missed class last Thursday, pull to get today's application exercise file: *ae\\-15\\-modeling\\-loans\\.qmd*.\n\n-   Make sure you've completed the \"Get to know the data\" section of your AE.\n:::\n\n## Announcements {.smaller}\n\n-   My office hours this week:\n    -   I'll hold them at a modified time: 1-2 pm on Wednesday at Old Chem 213 (in place of Dav's office hours)\n    -   Dav will fill in for me 2-4 pm on Wednesday at Old Chem 203B\n-   Make sure you're caught up with prepare materials before Thursday's class\n\n# Reminders\n\n## What is the difference between $R^2$ and adjusted $R^2$?\n\n-   $R^2$:\n\n    -   Proportion of variability in the outcome explained by the model.\n\n    -   Useful for quantifying the fit of a given model.\n\n<!-- -->\n\n-   Adjusted $R^2$:\n\n    -   Proportion of variability in the outcome explained by the model, with a penalty added for the number of predictors in the model.\n\n    -   Useful for comparing models.\n\n# Application exercise\n\n## Finish up Thursday's AE {.smaller}\n\n::: appex\n-   Go to your ae project in RStudio.\n\n-   Get back to working on `ae-15-modeling-loans`\n:::\n\n**Goals:**\n\n-   Review prediction and interpretation of model results\n\n-   Review main and interaction effects models\n\n-   Discuss model selection further\n\n## Recap\n\n-   What is the practical difference between a model with parallel and non-parallel lines?\n\n-   What is the definition of R-squared?\n\n-   Why do we choose models based on adjusted R-squared and not R-squared?\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

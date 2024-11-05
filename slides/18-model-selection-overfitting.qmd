@@ -1,0 +1,105 @@
+---
+title: "Model selection and overfitting"
+subtitle: "Lecture 18"
+date: "2024-11-05"
+format: 
+  live-revealjs: 
+    output-file: 18-model-selection-overfitting-slides.html
+webr:
+  cell-options:
+    autorun: false
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+```{r}
+#| include: false
+library(tidyverse)
+library(tidymodels)
+library(palmerpenguins)
+```
+
+<!-- end: webr fodder -->
+
+<!-- begin: ae definition -->
+
+```{r}
+#| include: false
+todays_ae <- "ae-15-modeling-loans"
+```
+
+<!-- end: ae definition -->
+
+# Warm-up
+
+## While you wait... {.smaller}
+
+::: appex
+-   Go to your `ae` project in RStudio.
+
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you missed class last Thursday, pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Make sure you've completed the "Get to know the data" section of your AE.
+:::
+
+## Announcements {.smaller}
+
+-   My office hours this week:
+    -   I'll hold them at a modified time: 1-2 pm on Wednesday at Old Chem 213 (in place of Dav's office hours)
+    -   Dav will fill in for me 2-4 pm on Wednesday at Old Chem 203B
+-   Make sure you're caught up with prepare materials before Thursday's class
+
+# Reminders
+
+## What is the difference between $R^2$ and adjusted $R^2$?
+
+-   $R^2$:
+
+    -   Proportion of variability in the outcome explained by the model.
+
+    -   Useful for quantifying the fit of a given model.
+
+<!-- -->
+
+-   Adjusted $R^2$:
+
+    -   Proportion of variability in the outcome explained by the model, with a penalty added for the number of predictors in the model.
+
+    -   Useful for comparing models.
+
+# Application exercise
+
+## Finish up Thursday's AE {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   Get back to working on `ae-15-modeling-loans`
+:::
+
+**Goals:**
+
+-   Review prediction and interpretation of model results
+
+-   Review main and interaction effects models
+
+-   Discuss model selection further
+
+## Recap
+
+-   What is the practical difference between a model with parallel and non-parallel lines?
+
+-   What is the definition of R-squared?
+
+-   Why do we choose models based on adjusted R-squared and not R-squared?
