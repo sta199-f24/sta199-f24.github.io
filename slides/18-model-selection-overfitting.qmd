@@ -62,15 +62,13 @@ todays_ae <- "ae-15-modeling-loans"
 
 # Reminders
 
-## What is the difference between $R^2$ and adjusted $R^2$?
+## What is the difference between $R^2$ and adjusted $R^2$? {.smaller}
 
 -   $R^2$:
 
     -   Proportion of variability in the outcome explained by the model.
 
     -   Useful for quantifying the fit of a given model.
-
-<!-- -->
 
 -   Adjusted $R^2$:
 
