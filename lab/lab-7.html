@@ -624,11 +624,18 @@ Note
 </li>
 <li><p><strong>Prediction:</strong> Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month. Based on this probability, would you predict this booking would be cancelled or not cancelled. Explain your reasoning for your classification.</p></li>
 </ol></section></section><section id="part-3---general-social-survey" class="level1"><h1>Part 3 - General Social Survey</h1>
-<p><strong>TO DO:</strong> Add variable descriptions.</p>
+<p>The General Social Survey (GSS) gathers data on contemporary American society in order to monitor and explain trends and constants in attitudes, behaviours, and attributes. Hundreds of trends have been tracked since 1972. In addition, since the GSS adopted questions from earlier surveys, trends can be followed for up to 70 years.</p>
+<p>The GSS contains a standard core of demographic, behavioural, and attitudinal questions, plus topics of special interest. Among the topics covered are civil liberties, crime and violence, intergroup tolerance, morality, national spending priorities, psychological well-being, social mobility, and stress and traumatic events.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>In this part you will work with three variables from the 2022 General Social Survey:</p>
+<ul>
+<li><p><code>advfront</code>: Do you strongly agree, agree, disagree, or strongly disagree? with the following statement: <em>“Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government.”</em></p></li>
+<li><p><code>educ</code>: Number of years of education.</p></li>
+<li><p><code>polviews</code>: We hear a lot of talk these days about liberals and conservatives. I’m going to show you a seven-point scale on which the political views that people might hold are arranged from extremely liberal–point 1–to extremely conservative–point 7. Where would you place yourself on this scale?</p></li>
+</ul>
 <section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
 <ol type="a">
 <li><p>Read in the <code>gss22.csv</code> file that is in your <code>data</code> folder and save it as <code>gss22</code>. Report its number of rows and columns.</p></li>
-<li><p>Create a new data frame called <code>gss22_advfront</code> that includes the variables <code>advfront</code>, <code>educ</code>, and <code>polviews</code>. Then, use the <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> function to remove rows that contain <code>NA</code>s from this new data frame. Report the number of rows and columns of <code>gss22_advfront</code>. Also report what percent of the data were discarded at this step.</p></li>
+<li><p>Create a new data frame called <code>gss22_advfront</code> that only contains the variables <code>advfront</code>, <code>educ</code>, and <code>polviews</code>. Then, use the <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> function to remove rows that contain <code>NA</code>s from this new data frame. Report the number of rows and columns of <code>gss22_advfront</code>. Additionally, report what percent of the data were discarded at this step.</p></li>
 <li><p>Re-level the <code>advfront</code> variable such that it has two levels: <code>Strongly agree</code> and “<code>Agree"</code> combined into a new level called <code>Agree</code> and the remaining levels combined into”<code>Not agree"</code>. Then, re-order the levels in the following order: <code>"Agree"</code> and <code>"Not agree"</code>. Finally, <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> how many times each new level appears in the <code>advfront</code> variable.</p></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -664,26 +671,12 @@ Tip
 <ol type="a">
 <li><p>Fit a logistic regression model that predicts <code>advfront</code> from <code>educ</code>. Report the tidy output of the model.</p></li>
 <li><p>Write out the estimated model in proper notation.</p></li>
-<li><p>Using your estimated model, predict the probability of agreeing with the following statement: Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government (<code>Agree</code> in advfront) if you have an education of 7 years.</p></li>
+<li><p>Using your estimated model, predict the probability of agreeing with the statement <em>“Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government.”</em> (<code>Agree</code> in advfront) for someone with 7 years of education.</p></li>
 </ol></section><section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
 <ol type="a">
 <li><p>Fit a new model that adds the additional explanatory variable of <code>polviews</code> to your model from Question 7. Report the tidy output of the model.</p></li>
-<li><p>Now, predict the probability of agreeing with the following statement: Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government (<code>Agree</code> in advfront) if you have an education of 7 years and are Conservative.</p></li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>After the team member working on Exercise 3 renders, commits, and pushes, another team member should pull their changes and render the document. Then, they should write the answer to Exercise 2. All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub. All others should <strong>not</strong> touch the document.</p>
-</div>
-</div>
-</section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+<li><p>Now, predict the probability of agreeing with the following statement <em>“Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government.”</em> (<code>Agree</code> in advfront) for a Conservative person with 7 years of education.</p></li>
+</ol></section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
 <p><strong>TO DO:</strong> Add model selection question.</p>
 </section></section><section id="part-4---statistics-andor-data-science-experience" class="level1"><h1>Part 4 - Statistics and/or data science experience</h1>
 <section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
@@ -725,7 +718,10 @@ Warning
 <p><strong>Option 2:</strong> Talk with someone who uses statistics and/or data science in their daily work. This could include a professor, professional in industry, graduate student, etc.</p>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<ol>
+<li id="fn1"><p>Smith, Tom W, Peter Marsden, Michael Hout, and Jibum Kim. General Social Surveys, 1972-2016 [machine-readable data file] /Principal Investigator, Tom W. Smith; Co-Principal Investigator, Peter V. Marsden; Co-Principal Investigator, Michael Hout; Sponsored by National Science Foundation. -NORC ed.- Chicago: NORC at the University of Chicago [producer and distributor]. Data come from the <strong>gssr</strong> R Package, <a href="http://kjhealy.github.io/gssr" class="uri">http://kjhealy.github.io/gssr</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
