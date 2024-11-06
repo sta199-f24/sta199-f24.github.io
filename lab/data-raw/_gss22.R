@@ -12,7 +12,7 @@ library(tidyverse)
 gss22_raw <- gss_get_yr(year = 2022)
 
 gss22 <- gss22_raw |>
-  select(advfront, polviews, educ) |>
+  #select(advfront, polviews, educ) |>
   #drop_na() |>
   mutate(
     advfront = case_when(
