@@ -6,4 +6,283 @@ description: "Mon, Nov 18 at 8:30 am"
 draft: true
 ---
 
-To be posted.
+# Introduction
+
+In this lab you'll start your practice of statistical modeling.
+You'll fit models, interpret model output, and make decisions about your data and research question based on the model results.
+And you'll wrap up the lab revisiting the topic of data science ethics.
+
+::: callout-note
+This lab assumes you've completed the labs so far and doesn't repeat setup and overview content from those labs.
+If you haven't done those yet, you should review the previous labs before starting on this one.
+:::
+
+## Learning objectives
+
+By the end of the lab, you will...
+
+-   **TO DO: Add LOs**
+
+And, as usual, you will also...
+
+-   Get more experience with data science workflow using R, RStudio, Git, and GitHub
+-   Further your reproducible authoring skills with Quarto
+-   Improve your familiarity with version control using Git and GitHub
+
+## Getting started
+
+Log in to RStudio, clone your `lab-7` repo from GitHub, open your `lab-7.qmd` document, and get started!
+
+::: {.callout-tip collapse="true"}
+## Click here if you prefer to see step-by-step instructions
+
+### Step 1: Log in to RStudio
+
+-   Go to <https://cmgr.oit.duke.edu/containers> and log in with your Duke NetID and Password.
+-   Click `STA198-199` under My reservations to log into your container. You should now see the RStudio environment.
+
+### Step 2: Clone the repo & start a new RStudio project
+
+-   Go to the course organization at [github.com/sta199-f24](https://github.com/sta199-f24) organization on GitHub.
+    Click on the repo with the prefix **lab-7**.
+    It contains the starter documents you need to complete the lab.
+
+-   Click on the green **CODE** button and select **Use SSH**. This might already be selected by default; if it is, you'll see the text **Clone with SSH**.
+    Click on the clipboard icon to copy the repo URL.
+
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
+-   Click *lab-7.qmd* to open the template Quarto file.
+    This is where you will write up your code and narrative for the lab.
+
+### Step 3: Update the YAML
+
+In `lab-7.qmd`, update the `author` field to your name, render your document and examine the changes.
+Then, in the Git pane, click on **Diff** to view your changes, add a commit message (e.g., "Added author name"), and click **Commit**.
+Then, push the changes to your GitHub repository, and in your browser confirm that these changes have indeed propagated to your repository.
+:::
+
+::: callout-important
+If you run into any issues with the first steps outlined above, flag a TA for help before proceeding.
+:::
+
+## Packages
+
+In this lab, we will work with the
+
+-   **tidyverse** package for doing data analysis in a "tidy" way,
+-   **tidymodels** package for modeling in a "tidy" way, and
+-   **openintro** package for the dataset for Part 1.
+
+```{r}
+#| eval: true
+#| message: false
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+```
+
+-   **Run** the code cell by clicking on the green triangle (play) button for the code cell labeled `load-packages`. This loads the package so that its features (the functions and datasets in it) are accessible from your *Console*.
+-   Then, **render** the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document.
+
+## Guidelines
+
+{{< include _guidelines.qmd >}}
+
+::: callout-important
+You are also expected to pay attention to [code smell](https://en.wikipedia.org/wiki/Code_smell) in addition to code style and readability.
+You should review and improve your code to avoid redundant steps (e.g., grouping, ungrouping, and grouping again by the same variable in a pipeline), using inconsistent syntax (e.g., `!` to say "not" in one place and `-` in another place), etc.
+:::
+
+# Part 1 - Building a spam filter
+
+The data come from incoming emails in David Diez's (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012.
+All personally identifiable information has been removed.
+The dataset is called `email` and it's in the **openintro** package.
+
+The outcome variable is `spam`, which takes the value `1` if the email is spam, `0` otherwise.
+
+## Question 1
+
+a\.
+Fit a logistic regression model predicting `spam` from `exclaim_mess` (the number of exclamation points in the email message).
+Then, display the tidy output of the model.
+
+b\.
+Using this model and an R function like `predict()` or `augment()`, predict the probability the email is spam if it contains 10 exclamation points.
+
+## Question 2
+
+a\.
+Fit another logistic regression model predicting `spam` from `exclaim_mess`, `winner` (indicating whether “winner” appeared in the email), and `urgent_subj` (whether the word "urgent" is in the subject of the email).
+Then, display the tidy output of the model.
+
+b\.
+Using this model, predict spam / not spam for all emails in the `email` dataset with `augment()`.
+Store the resulting data frame with an appropriate name.
+
+c\.
+Using your data frame from the previous part, determine, in a single pipeline, and using `count()`, the numbers of emails:
+
+-   that are labelled as spam that are actually spam
+-   that are not labelled as spam that are actually spam
+-   that are labelled as spam that are actually not spam
+-   that are not labelled as spam that are actually not spam
+
+Store the resulting data frame with an appropriate name.
+
+d\.
+In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
+In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
+
+## Question 3
+
+a\.
+Fit another logistic regression model predicting `spam` from `exclaim_mess` and another variable you think would be a good predictor.
+Provide a 1-sentence justification for why you chose this variable.
+Display the tidy output of the model.
+
+b\.
+Using this model, predict spam / not spam for all emails in the `email` dataset with `augment()`.
+Store the resulting data frame with an appropriate name.
+
+c\.
+Using your data frame from the previous part, determine, in a single pipeline, and using `count()`, the numbers of emails:
+
+-   that are labelled as spam that are actually spam
+-   that are not labelled as spam that are actually spam
+-   that are labelled as spam that are actually not spam
+-   that are not labelled as spam that are actually not spam
+
+Store the resulting data frame with an appropriate name.
+
+d\.
+In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
+In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
+
+e\.
+Based on the false positive and false negatives rates of this model, comment, in 1-2 sentences, on which model is preferable and why.
+
+# Part 2 - Hotel cancellations
+
+For this exercise, we will work with hotel cancellations.
+The data describe the demand of two different types of hotels.
+Each observation represents a hotel booking between July 1, 2015 and August 31, 2017.
+Some bookings were cancelled (`is_canceled = 1`) and others were kept, i.e., the guests checked into the hotel (`is_canceled = 0`).
+You can view the code book for all variables [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md).
+
+The data can be found in the `data` folder: `hotels.csv`.
+
+## Question 4
+
+Read the data and then explore attributes of bookings and summarize your findings in 5 bullet points.
+You must provide a visualization or summary supporting each finding.
+
+::: callout-note
+This is not meant to be an exhaustive exploration.
+We anticipate a wide variety of answers to this question.
+:::
+
+## Question 5
+
+Using these data, we will try to answer the following question:
+
+> *Do we expect reservations earlier in the month or later in the month to be cancelled?*
+
+(a) **Exploration:** In a single pipeline, calculate the mean arrival date (`arrival_date_day_of_month`) for both booking that were cancelled and that were not cancelled.
+
+(b) **Justification:** In your own words, explain why we can not fit a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.
+
+(c) **Model fitting and interpretation:**
+
+    -   Fit the appropriate model and display a tidy summary of the model output.
+
+    -   Interpret the slope coefficient in context of the data and the research question.
+
+(d) **Predicted:** Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month.
+    Based on this probability, would you predict this booking would be cancelled or not cancelled.
+    Explain your reasoning for your classification.
+
+# Part 4 - General Social Survey
+
+## Question 6
+
+a. Read in the `gss22.csv` file that is in your `data` folder and save it as `gss22`. Report its number of rows and columns.
+
+b. Create a new data frame called `gss22_advfront` that includes the variables `advfront`, `educ`, and `polviews`. Then, use the `drop_na()` function to remove rows that contain `NA`s from this new data frame. Report the number of rows and columns of `gss22_advfront`.
+
+c. Re-level the `advfront` variable such that it has two levels: `Strongly agree` and "`Agree"` combined into a new level called `Agree` and the remaining levels combined into"`Not agree"`. Then, re-order the levels in the following order: `"Agree"` and `"Not agree"`. Finally, `count()` how many times each new level appears in the `advfront` variable.
+
+::: callout-tip
+You can do this in various ways. One option is to use the `str_detect()` function to detect the existence of words. Note that these sometimes show up with lowercase first letters and sometimes with upper case first letters. To detect either in the `str_detect()` function, you can use \[Aa\]gree. However, solve the problem however you like, this is just one option!
+:::
+
+d. c. Combine the levels of the `polviews` variable such that levels that have the word "liberal" in them are lumped into a level called `"Liberal"` and those that have the word conservative in them are lumped into a level called `"Conservative"`. Then, re-order the levels in the following order: `"Conservative"` , `"Moderate"`, and `"Liberal"`. Finally, `count()` how many times each new level appears in the `polviews` variable.
+
+::: callout-tip
+After the team member working on Exercise 1 renders, commits, and pushes, another team member should pull their changes and render the document. Then, they should write the answer to Exercise 2. All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub. All others should **not** touch the document.
+:::
+
+## Question 7
+
+a. Fit a logistic regression model that predicts `advfront` from `educ`. Report the tidy output of the model.
+
+b. Write out the estimated model in proper notation.
+
+c. Using your estimated model, predict the probability of agreeing with the following statement: Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government (`Agree` in advfront) if you have an education of 7 years.
+
+## Question 8
+
+a. Fit a new model that adds the additional explanatory variable of `polviews` to your model from Question 7. Report the tidy output of the model.
+
+b. Now, predict the probability of agreeing with the following statement: Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government (`Agree` in advfront) if you have an education of 7 years and are Conservative.
+
+::: callout-important
+After the team member working on Exercise 3 renders, commits, and pushes, another team member should pull their changes and render the document. Then, they should write the answer to Exercise 2. All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub. All others should **not** touch the document.
+
+## Question 9
+
+Model selection question.
+
+# Part X - Statistics and/or data science experience
+
+## Question 10
+
+::: callout-warning
+Start this question early, it's not one you want to try to cram into the last night before the deadline!
+:::
+
+You have two options for this exercise.
+Clearly indicate which option you choose.
+Then, summarize your experience in no more than 10 bullet points.
+
+Include the following on your summary:
+
+-   Name and brief description of what you did.
+-   Something you found new, interesting, or unexpected
+-   How the talk/podcast/interview/etc. connects to something we’ve done in class.
+-   Citation or link to web page for what you watched or who you interviewed.
+
+**Option 1:** Listen to a podcast or watch a video about statistics and data science.
+The podcast or video must be *at least 30 minutes* to count towards the statistics experience.
+A few suggestions are below:
+
+-   [posit::conf 2024 talks](https://www.youtube.com/playlist?list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn)
+-   [useR 2024 talks](https://www.youtube.com/playlist?list=PL77T87Q0eoJjrpUmYVYLgi9fVFSKkbooc) or [user 2024 keynotes](https://www.youtube.com/playlist?list=PL77T87Q0eoJj734NXspCSNCEjrnX1y2z0)
+-   [posit::conf 2023 talks](https://youtube.com/playlist?list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp&si=95wk_4q3-mex9hhT)
+-   [rstudio::conf 2022 talks](https://www.youtube.com/watch?v=u1Gzxg8Pd08&list=PL9HYL-VRX0oTOwqzVtL_q5T8MNrzn0mdH)
+-   [Harvard Data Science Review Podcast](https://hdsr.mitpress.mit.edu/podcast)
+-   [Stats + Stories Podcast](https://statsandstories.net/)
+-   [Casual Inference Podcast](https://casualinfer.libsyn.com/)
+-   [Not So Standard Deviations](https://nssdeviations.com/)
+
+This list is not exhaustive.
+You may listen to other podcasts or watch other statistics/data science videos not included on this list.
+Ask your professor if you are unsure whether a particular podcast or video will count towards the statistics experience.
+
+**Option 2:** Talk with someone who uses statistics and/or data science in their daily work.
+This could include a professor, professional in industry, graduate student, etc.
