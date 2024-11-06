@@ -384,11 +384,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li>
-<a href="#part-4---general-social-survey" id="toc-part-4---general-social-survey" class="nav-link" data-scroll-target="#part-4---general-social-survey">Part 4 - General Social Survey</a>
+<a href="#part-3---general-social-survey" id="toc-part-3---general-social-survey" class="nav-link" data-scroll-target="#part-3---general-social-survey">Part 3 - General Social Survey</a>
   <ul class="collapse">
 <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
   <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-4---statistics-andor-data-science-experience" id="toc-part-4---statistics-andor-data-science-experience" class="nav-link" data-scroll-target="#part-4---statistics-andor-data-science-experience">Part 4 - Statistics and/or data science experience</a>
+  <ul class="collapse">
+<li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-7.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -607,12 +614,12 @@ Note
 <li><p>Interpret the slope coefficient in context of the data and the research question.</p></li>
 </ul>
 </li>
-<li><p><strong>Predicted:</strong> Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month. Based on this probability, would you predict this booking would be cancelled or not cancelled. Explain your reasoning for your classification.</p></li>
-</ol></section></section><section id="part-4---general-social-survey" class="level1"><h1>Part 4 - General Social Survey</h1>
+<li><p><strong>Prediction:</strong> Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month. Based on this probability, would you predict this booking would be cancelled or not cancelled. Explain your reasoning for your classification.</p></li>
+</ol></section></section><section id="part-3---general-social-survey" class="level1"><h1>Part 3 - General Social Survey</h1>
 <section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
 <ol type="a">
 <li><p>Read in the <code>gss22.csv</code> file that is in your <code>data</code> folder and save it as <code>gss22</code>. Report its number of rows and columns.</p></li>
-<li><p>Create a new data frame called <code>gss22_advfront</code> that includes the variables <code>advfront</code>, <code>educ</code>, and <code>polviews</code>. Then, use the <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> function to remove rows that contain <code>NA</code>s from this new data frame. Report the number of rows and columns of <code>gss22_advfront</code>.</p></li>
+<li><p>Create a new data frame called <code>gss22_advfront</code> that includes the variables <code>advfront</code>, <code>educ</code>, and <code>polviews</code>. Then, use the <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> function to remove rows that contain <code>NA</code>s from this new data frame. Report the number of rows and columns of <code>gss22_advfront</code>. Also report what percent of the data were discarded at this step.</p></li>
 <li><p>Re-level the <code>advfront</code> variable such that it has two levels: <code>Strongly agree</code> and “<code>Agree"</code> combined into a new level called <code>Agree</code> and the remaining levels combined into”<code>Not agree"</code>. Then, re-order the levels in the following order: <code>"Agree"</code> and <code>"Not agree"</code>. Finally, <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> how many times each new level appears in the <code>advfront</code> variable.</p></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -625,13 +632,11 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can do this in various ways. One option is to use the <code><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect()</a></code> function to detect the existence of words. Note that these sometimes show up with lowercase first letters and sometimes with upper case first letters. To detect either in the <code><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect()</a></code> function, you can use [Aa]gree. However, solve the problem however you like, this is just one option!</p>
+<p>You can do this in various ways. One option is to use the <code><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect()</a></code> function to detect the existence of words. Note that these sometimes show up with lowercase first letters and sometimes with upper case first letters. To detect either in the <code><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect()</a></code> function, you can use “[Aa]gree”. However, solve the problem however you like, this is just one option!</p>
 </div>
 </div>
 <ol start="4" type="a">
-<li><ol start="3" type="a">
 <li>Combine the levels of the <code>polviews</code> variable such that levels that have the word “liberal” in them are lumped into a level called <code>"Liberal"</code> and those that have the word conservative in them are lumped into a level called <code>"Conservative"</code>. Then, re-order the levels in the following order: <code>"Conservative"</code> , <code>"Moderate"</code>, and <code>"Liberal"</code>. Finally, <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> how many times each new level appears in the <code>polviews</code> variable.</li>
-</ol></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -667,9 +672,11 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <p>After the team member working on Exercise 3 renders, commits, and pushes, another team member should pull their changes and render the document. Then, they should write the answer to Exercise 2. All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub. All others should <strong>not</strong> touch the document.</p>
-<section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
-<p>Model selection question.</p>
-</section><section id="part-x---statistics-andor-data-science-experience" class="level1"><h1>Part X - Statistics and/or data science experience</h1>
+</div>
+</div>
+</section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+<p><strong>TO DO:</strong> Add model selection question.</p>
+</section></section><section id="part-4---statistics-andor-data-science-experience" class="level1"><h1>Part 4 - Statistics and/or data science experience</h1>
 <section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -706,12 +713,9 @@ Warning
 <li><a href="https://nssdeviations.com/">Not So Standard Deviations</a></li>
 </ul>
 <p>This list is not exhaustive. You may listen to other podcasts or watch other statistics/data science videos not included on this list. Ask your professor if you are unsure whether a particular podcast or video will count towards the statistics experience.</p>
-<p><strong>Option 2:</strong> Talk with someone who uses statistics and/or data science in their daily work. This could include a professor, professional in industry, graduate student, etc.</p>
+<p><strong>Option 2:</strong> Talk with someone who uses statistics and/or data science in their daily work. This could include a professor, professional in industry, graduate student, etc. ::::</p>
 
 
-</section></section>
-</div>
-</div>
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
