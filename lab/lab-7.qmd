@@ -76,7 +76,7 @@ In this lab, we will work with the
 
 -   **tidyverse** package for doing data analysis in a "tidy" way,
 -   **tidymodels** package for modeling in a "tidy" way, and
--   **openintro** package for the dataset for Part 1.
+-   **openintro** package for the dataset for Part 1. **TO DO:** Check.
 
 ```{r}
 #| eval: true
@@ -108,64 +108,56 @@ The outcome variable is `spam`, which takes the value `1` if the email is spam, 
 
 ## Question 1
 
-a\.
-Fit a logistic regression model predicting `spam` from `exclaim_mess` (the number of exclamation points in the email message).
-Then, display the tidy output of the model.
+a.  What type of variable is `spam`?
+    What percent of the emails are spam?
 
-b\.
-Using this model and an R function like `predict()` or `augment()`, predict the probability the email is spam if it contains 10 exclamation points.
+b.  Fit a logistic regression model predicting `spam` from `exclaim_mess` (the number of exclamation points in the email message).
+    Then, display the tidy output of the model.
+
+c.  Using this model and an R function like `predict()` or `augment()`, predict the probability the email is spam if it contains 10 exclamation points.
 
 ## Question 2
 
-a\.
-Fit another logistic regression model predicting `spam` from `exclaim_mess`, `winner` (indicating whether “winner” appeared in the email), and `urgent_subj` (whether the word "urgent" is in the subject of the email).
-Then, display the tidy output of the model.
+a.  Fit another logistic regression model predicting `spam` from `exclaim_mess`, `winner` (indicating whether “winner” appeared in the email), and `urgent_subj` (whether the word "urgent" is in the subject of the email).
+    Then, display the tidy output of the model.
 
-b\.
-Using this model, predict spam / not spam for all emails in the `email` dataset with `augment()`.
-Store the resulting data frame with an appropriate name.
+b.  Using this model, predict spam / not spam for all emails in the `email` dataset with `augment()`.
+    Store the resulting data frame with an appropriate name.
 
-c\.
-Using your data frame from the previous part, determine, in a single pipeline, and using `count()`, the numbers of emails:
+c.  Using your data frame from the previous part, determine, in a single pipeline, and using `count()`, the numbers of emails:
 
--   that are labelled as spam that are actually spam
--   that are not labelled as spam that are actually spam
--   that are labelled as spam that are actually not spam
--   that are not labelled as spam that are actually not spam
+    -   that are labelled as spam that are actually spam
+    -   that are not labelled as spam that are actually spam
+    -   that are labelled as spam that are actually not spam
+    -   that are not labelled as spam that are actually not spam
 
-Store the resulting data frame with an appropriate name.
+    Store the resulting data frame with an appropriate name.
 
-d\.
-In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
-In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
+d.  In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
+    In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
 
 ## Question 3
 
-a\.
-Fit another logistic regression model predicting `spam` from `exclaim_mess` and another variable you think would be a good predictor.
-Provide a 1-sentence justification for why you chose this variable.
-Display the tidy output of the model.
+a.  Fit another logistic regression model predicting `spam` from `exclaim_mess` and another variable you think would be a good predictor.
+    Provide a 1-sentence justification for why you chose this variable.
+    Display the tidy output of the model.
 
-b\.
-Using this model, predict spam / not spam for all emails in the `email` dataset with `augment()`.
-Store the resulting data frame with an appropriate name.
+b.  Using this model, predict spam / not spam for all emails in the `email` dataset with `augment()`.
+    Store the resulting data frame with an appropriate name.
 
-c\.
-Using your data frame from the previous part, determine, in a single pipeline, and using `count()`, the numbers of emails:
+c.  Using your data frame from the previous part, determine, in a single pipeline, and using `count()`, the numbers of emails:
 
--   that are labelled as spam that are actually spam
--   that are not labelled as spam that are actually spam
--   that are labelled as spam that are actually not spam
--   that are not labelled as spam that are actually not spam
+    -   that are labelled as spam that are actually spam
+    -   that are not labelled as spam that are actually spam
+    -   that are labelled as spam that are actually not spam
+    -   that are not labelled as spam that are actually not spam
 
-Store the resulting data frame with an appropriate name.
+    Store the resulting data frame with an appropriate name.
 
-d\.
-In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
-In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
+d.  In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
+    In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
 
-e\.
-Based on the false positive and false negatives rates of this model, comment, in 1-2 sentences, on which model is preferable and why.
+e.  Based on the false positive and false negatives rates of this model, comment, in 1-2 sentences, on which model is preferable and why.
 
 # Part 2 - Hotel cancellations
 
@@ -193,21 +185,23 @@ Using these data, we will try to answer the following question:
 
 > *Do we expect reservations earlier in the month or later in the month to be cancelled?*
 
-(a) **Exploration:** In a single pipeline, calculate the mean arrival date (`arrival_date_day_of_month`) for both booking that were cancelled and that were not cancelled.
+a.  **Exploration:** In a single pipeline, calculate the mean arrival date (`arrival_date_day_of_month`) for both booking that were cancelled and that were not cancelled.
 
-(b) **Justification:** In your own words, explain why we can not fit a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.
+b.  **Justification:** In your own words, explain why we can not fit a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.
 
-(c) **Model fitting and interpretation:**
+c.  **Model fitting and interpretation:**
 
     -   Fit the appropriate model and display a tidy summary of the model output.
 
     -   Interpret the slope coefficient in context of the data and the research question.
 
-(d) **Prediction:** Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month.
+d.  **Prediction:** Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month.
     Based on this probability, would you predict this booking would be cancelled or not cancelled.
     Explain your reasoning for your classification.
 
 # Part 3 - General Social Survey
+
+**TO DO:** Add variable descriptions.
 
 ## Question 6
 
@@ -256,7 +250,7 @@ a.  Fit a new model that adds the additional explanatory variable of `polviews` 
 
 b.  Now, predict the probability of agreeing with the following statement: Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government (`Agree` in advfront) if you have an education of 7 years and are Conservative.
 
-:::: callout-important
+::: callout-important
 After the team member working on Exercise 3 renders, commits, and pushes, another team member should pull their changes and render the document.
 Then, they should write the answer to Exercise 2.
 All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub.
@@ -305,4 +299,3 @@ Ask your professor if you are unsure whether a particular podcast or video will 
 
 **Option 2:** Talk with someone who uses statistics and/or data science in their daily work.
 This could include a professor, professional in industry, graduate student, etc.
-::::
