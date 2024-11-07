@@ -1,0 +1,496 @@
+---
+title: "Logistic regression"
+format: revealjs
+---
+
+```{r}
+#| label: load-packages
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+library(fivethirtyeight)
+library(palmerpenguins)
+```
+
+```{r}
+#| label: cartoon-settings
+#| echo: false
+
+set.seed(8675309)
+n <- 50
+x <- rnorm(n, mean = 0, sd = 1)
+b0 <- 0  
+b1 <- 5
+prob <- 1 / (1 + exp(-(b0 + b1 * x)))
+y <- rbinom(n, 1, prob)
+fit <- glm(y ~ x, family = binomial)
+seq_x = seq(1.2 * min(x), 1.2 * max(x), length.out = 500)
+y_vals <- 1 / (1 + exp(-(fit$coefficients[1] + fit$coefficients[2] * seq_x)))
+```
+
+## When last we left our heros...
+
+We have been studying regression:
+
+-   What combinations of data types have we seen so far?
+
+-   What did the picture look like?
+
+## Recap: simple linear regression
+
+Numerical response and one numerical predictor:
+
+```{r}
+#| label: slr-1
+#| message: false
+movie_scores <- fandango |>
+  rename(
+    critics = rottentomatoes, 
+    audience = rottentomatoes_user
+  )
+ggplot(movie_scores, aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm", se = FALSE) + 
+  labs(
+    x = "Critics Score" , 
+    y = "Audience Score",
+    title = "Rotten Tomatoes Scores from Thursday October 24 Lecture"
+  )
+```
+
+## Recap: simple linear regression
+
+Numerical response and one categorical predictor (two levels):
+
+```{r}
+lab_5_fit <- lm(weight ~ habit, data = births14)
+par(mar = c(4, 4, 2, 0.5))
+plot(births14$habit == "smoker", births14$weight, 
+     pch = 19, 
+     cex = 0.2,
+     ylab = "Birth weight (lbs)",
+     xlab = "",
+     xaxt = "n",
+     main = "Smoking during pregnancy dataset from Lab 5",
+     xlim = c(-0.25, 1.25))
+abline(lab_5_fit, col = "red", lwd = 3)
+axis(side = 1, at = c(0, 1), labels = c("Non-smoker (0)", "Smoker (1)"))
+```
+
+## Recap: multiple linear regression
+
+Numerical response; numerical and categorical predictors:
+
+```{r}
+bm_fl_island_fit <- linear_reg() |>
+  fit(body_mass_g ~ flipper_length_mm + island, data = penguins)
+bm_fl_island_aug <- augment(bm_fl_island_fit, new_data = penguins)
+ggplot(
+  bm_fl_island_aug, 
+  aes(x = flipper_length_mm, y = body_mass_g, color = island)
+  ) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(aes(y = .pred), method = "lm") +
+  labs(
+    title = "Penguins dataset from AE 14",
+    x = "Flipper length (mm)",
+    y = "Body mass (g)"
+    ) +
+  theme(legend.position = "bottom")
+```
+
+## Today: a *binary* response {.smaller}
+
+$$
+y = 
+\begin{cases}
+1 & &&\text{eg. Yes, Win, True, Heads, Success}\\
+0 & &&\text{eg. No, Lose, False, Tails, Failure}.
+\end{cases}
+$$
+
+```{r}
+threshold <- 0.85
+cutoff <- (log(threshold / (1 - threshold)) - fit$coefficients[1]) / fit$coefficients[2]
+par(mar = c(5, 5, 0.5, 0.5))
+plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
+     ylab = "y",
+     xlab = "x")
+```
+
+## Who cares?
+
+If we can model the relationship between predictors ($x$) and a binary response ($y$), we can use the model to do a special kind of prediction called *classification*.
+
+## Example: is the e-mail spam or not? {.smaller}
+
+$$
+\mathbf{x}: \text{word and character counts in an e-mail.}
+$$
+
+![](images/19/spam.png){fig-align="center"}
+
+$$
+y
+= 
+\begin{cases}
+1 & \text{it's spam}\\
+0 & \text{it's legit}
+\end{cases}
+$$
+
+Ethical concerns?
+
+## Example: is it cancer or not? {.smaller}
+
+$$
+\mathbf{x}: \text{features in a medical image.}
+$$
+
+![](images/19/head-neck.jpg){fig-align="center"}
+
+$$
+y
+= 
+\begin{cases}
+1 & \text{it's cancer}\\
+0 & \text{it's healthy}
+\end{cases}
+$$
+
+Ethical concerns?
+
+## Example: will they default? {.smaller}
+
+$$
+\mathbf{x}: \text{financial and demographic info about a loan applicant.}
+$$
+
+![](images/19/fico.jpg){fig-align="center"}
+
+$$
+y
+= 
+\begin{cases}
+1 & \text{applicant is at risk of defaulting on loan}\\
+0 & \text{applicant is safe}
+\end{cases}
+$$
+
+Ethical concerns?
+
+## Example: will they re-offend? {.smaller}
+
+$$
+\mathbf{x}: \text{info about a criminal suspect and their case.}
+$$
+
+::: columns
+::: {.column width="50%"}
+![](images/19/machine-bias-petty-theft-1.png){fig-align="center" width="300" height="250"}
+:::
+
+::: {.column width="50%"}
+![](images/19/machine-bias-drug-posession-1.png){fig-align="center" width="300" height="250"}
+:::
+:::
+
+$$
+y
+= 
+\begin{cases}
+1 & \text{suspect is at risk of re-offending pre-trial}\\
+0 & \text{suspect is safe}
+\end{cases}
+$$
+
+Ethical concerns?
+
+## How do we model this type of data?
+
+```{r}
+par(mar = c(5, 5, 0.5, 0.5))
+plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
+     ylab = "y",
+     xlab = "x")
+```
+
+## Straight line of best fit is a little silly
+
+```{r}
+par(mar = c(5, 5, 0.5, 0.5))
+plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
+     ylab = "y",
+     xlab = "x")
+abline(lm(y ~ x), col = "red", lwd = 3)
+```
+
+## Instead: S-curve of best fit {.smaller}
+
+Instead of modeling $y$ directly, we model the probability that $y=1$:
+
+```{r}
+par(mar = c(5, 5, 0.5, 0.5))
+plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
+     ylab = "Prob(y = 1)",
+     xlab = "x")
+lines(seq_x, y_vals, col = "red", lwd = 3)
+points(x, y, pch = 19, cex = 0.75)
+```
+
+-   "Given new email, what's the probability that it's spam?''
+-   "Given new image, what's the probability that it's cancer?''
+-   "Given new loan application, what's the probability that they default?''
+
+## Why don't we model y directly?
+
+-   **Recall regression with a numerical response**:
+
+    -   Our models do not output *guarantees* for $y$, they output predictions that describe behavior *on average*;
+
+-   **It's similar for regression with a binary response**:
+
+    -   Our models cannot directly guarantee that $y$ will be zero or one, only characterize the likelihood.
+
+## So, what is this S-curve, anyway?
+
+It's the *logistic function*:
+
+$$
+\text{Prob}(y = 1)
+=
+\frac{1}{1+e^{-(\beta_0+\beta_1x)}}.
+$$ If you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the *log-odds*:
+
+$$
+\log\left(\frac{p}{1-p}\right)
+=
+\beta_0+\beta_1x.
+$$ This is called the *logistic regression* model.
+
+## Logistic regression
+
+$$
+\log\left(\frac{p}{1-p}\right)
+=
+\beta_0+\beta_1x.
+$$
+
+-   This is an example of a *generalized linear model*;
+
+-   We estimate the parameters using *maximum likelihood* (don't worry about it) to get the "best fitting" S-curve;
+
+-   The fitted model is
+
+$$
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right)
+=
+b_0+b_1x.
+$$
+
+## Logistic regression -\> classification?
+
+## Step 1: pick a threshold {.smaller}
+
+Select a number $0 < p^* < 1$:
+
+```{r}
+#| label: step-1
+threshold <- 0.85
+cutoff <- (log(threshold / (1 - threshold)) - fit$coefficients[1]) / fit$coefficients[2]
+par(mar = c(5, 10, 0.5, 0.5))
+plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
+     #xlim = c(1.2 * min(x), 1.2 * max(x)),
+     ylab = "",
+     xlab = "")
+lines(seq_x, y_vals, col = "red", lwd = 3)
+points(x, y, pch = 19, cex = 0.75)
+mtext("Prob(y = 1)", side = 2, line = 8, at = 0.5, cex = 2)
+mtext("x", side = 1, line = 4, at = 0, cex = 2)
+mtext(paste("p* =", threshold), side = 2, line = 1, las = 2, at = threshold, cex = 1.5)
+segments(1.2 * min(x), threshold, cutoff, threshold, lty = 2, lwd = 2)
+#abline(v = cutoff, lty = 2, lwd = 2)
+#mtext("x*", side = 1, line = 1, at = cutoff, cex = 2)
+#polygon(c(-20, cutoff, cutoff, -20), c(-1, -1, 2, 2), col = rgb(1, .5, 0, alpha = 0.2), border = NA)
+#polygon(c(cutoff, 20, 20, cutoff), c(-1, -1, 2, 2), col = rgb(0, 0, 1, alpha = 0.2), border = NA)
+#text(-1, 0.5, expression(hat(y)~" = 0"), col = "orange", cex = 2)
+#text(1, 0.5, expression(hat(y)~" = 1"), col = "blue", cex = 2)
+```
+
+-   if $\text{Prob}(y=1)\leq p^*$, then predict $\widehat{y}=0$;
+-   if $\text{Prob}(y=1)> p^*$, then predict $\widehat{y}=1$.
+
+## Step 2: find the "decision boundary" {.smaller}
+
+Solve for the x-value that matches the threshold:
+
+```{r}
+#| label: step-2
+threshold <- 0.85
+cutoff <- (log(threshold / (1 - threshold)) - fit$coefficients[1]) / fit$coefficients[2]
+par(mar = c(5, 10, 0.5, 0.5))
+plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
+     #xlim = c(1.2 * min(x), 1.2 * max(x)),
+     ylab = "",
+     xlab = "")
+lines(seq_x, y_vals, col = "red", lwd = 3)
+points(x, y, pch = 19, cex = 0.75)
+mtext("Prob(y = 1)", side = 2, line = 8, at = 0.5, cex = 2)
+mtext("x", side = 1, line = 4, at = 0, cex = 2)
+mtext(paste("p* =", threshold), side = 2, line = 1, las = 2, at = threshold, cex = 1.5)
+segments(1.2 * min(x), threshold, cutoff, threshold, lty = 2, lwd = 2)
+abline(v = cutoff, lty = 2, lwd = 2)
+mtext("x*", side = 1, line = 1, at = cutoff, cex = 2)
+#polygon(c(-20, cutoff, cutoff, -20), c(-1, -1, 2, 2), col = rgb(1, .5, 0, alpha = 0.2), border = NA)
+#polygon(c(cutoff, 20, 20, cutoff), c(-1, -1, 2, 2), col = rgb(0, 0, 1, alpha = 0.2), border = NA)
+#text(-1, 0.5, expression(hat(y)~" = 0"), col = "orange", cex = 2)
+#text(1, 0.5, expression(hat(y)~" = 1"), col = "blue", cex = 2)
+```
+
+-   if $\text{Prob}(y=1)\leq p^*$, then predict $\widehat{y}=0$;
+-   if $\text{Prob}(y=1)> p^*$, then predict $\widehat{y}=1$.
+
+## Step 3: classify a new arrival {.smaller}
+
+A new person shows up with $x_{\text{new}}$.
+Which side of the boundary are they on?
+
+```{r}
+#| label: step-3
+threshold <- 0.85
+cutoff <- (log(threshold / (1 - threshold)) - fit$coefficients[1]) / fit$coefficients[2]
+par(mar = c(5, 10, 0.5, 0.5))
+plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
+     #xlim = c(1.2 * min(x), 1.2 * max(x)),
+     ylab = "",
+     xlab = "")
+lines(seq_x, y_vals, col = "red", lwd = 3)
+points(x, y, pch = 19, cex = 0.75)
+mtext("Prob(y = 1)", side = 2, line = 8, at = 0.5, cex = 2)
+mtext("x", side = 1, line = 4, at = 0, cex = 2)
+mtext(paste("p* =", threshold), side = 2, line = 1, las = 2, at = threshold, cex = 1.5)
+segments(1.2 * min(x), threshold, cutoff, threshold, lty = 2, lwd = 2)
+abline(v = cutoff, lty = 2, lwd = 2)
+mtext("x*", side = 1, line = 1, at = cutoff, cex = 2)
+polygon(c(-20, cutoff, cutoff, -20), c(-1, -1, 2, 2), col = rgb(1, .5, 0, alpha = 0.2), border = NA)
+polygon(c(cutoff, 20, 20, cutoff), c(-1, -1, 2, 2), col = rgb(0, 0, 1, alpha = 0.2), border = NA)
+text(-1, 0.5, expression(hat(y)~" = 0"), col = "orange", cex = 2)
+text(1, 0.5, expression(hat(y)~" = 1"), col = "blue", cex = 2)
+```
+
+-   if $x_{\text{new}} \leq x^\star$, then $\text{Prob}(y=1)\leq p^*$, so predict $\widehat{y}=0$ for the new person;
+-   if $x_{\text{new}} > x^\star$, then $\text{Prob}(y=1)> p^*$, so predict $\widehat{y}=1$ for the new person.
+
+## Let's change the threshold? {.smaller}
+
+A new person shows up with $x_{\text{new}}$.
+Which side of the boundary are they on?
+
+```{r}
+#| label: lower-threshold
+threshold <- 0.15
+cutoff <- (log(threshold / (1 - threshold)) - fit$coefficients[1]) / fit$coefficients[2]
+par(mar = c(5, 10, 0.5, 0.5))
+plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
+     #xlim = c(1.2 * min(x), 1.2 * max(x)),
+     ylab = "",
+     xlab = "")
+lines(seq_x, y_vals, col = "red", lwd = 3)
+points(x, y, pch = 19, cex = 0.75)
+mtext("Prob(y = 1)", side = 2, line = 8, at = 0.5, cex = 2)
+mtext("x", side = 1, line = 4, at = 0, cex = 2)
+mtext(paste("p* =", threshold), side = 2, line = 1, las = 2, at = threshold, cex = 1.5)
+segments(1.2 * min(x), threshold, cutoff, threshold, lty = 2, lwd = 2)
+abline(v = cutoff, lty = 2, lwd = 2)
+mtext("x*", side = 1, line = 1, at = cutoff, cex = 2)
+polygon(c(-20, cutoff, cutoff, -20), c(-1, -1, 2, 2), col = rgb(1, .5, 0, alpha = 0.2), border = NA)
+polygon(c(cutoff, 20, 20, cutoff), c(-1, -1, 2, 2), col = rgb(0, 0, 1, alpha = 0.2), border = NA)
+text(-1, 0.5, expression(hat(y)~" = 0"), col = "orange", cex = 2)
+text(1, 0.5, expression(hat(y)~" = 1"), col = "blue", cex = 2)
+```
+
+-   if $x_{\text{new}} \leq x^\star$, then $\text{Prob}(y=1)\leq p^*$, so predict $\widehat{y}=0$ for the new person;
+-   if $x_{\text{new}} > x^\star$, then $\text{Prob}(y=1)> p^*$, so predict $\widehat{y}=1$ for the new person.
+
+## Nothing special about one predictor... {.smaller}
+
+Two numerical predictors and one binary response:
+
+```{r}
+library(MASS)
+set.seed(20)
+n <- 20
+cloud1 <- mvrnorm(n, c(-0.5, -0.5), matrix(c(1, 0.5, 0.5, 1), 2, 2))
+cloud2 <- mvrnorm(n, c(0.5, 0.5), matrix(c(1, -0.5, -0.5, 1), 2, 2))
+X <- rbind(cloud1, cloud2)
+y <- c(rep(0, n), rep(1, n))
+par(mar = c(5, 5, 0.5, 0.5))
+plot(X, 
+     pch = 19, 
+     col = c(rep("orange", n), rep("blue", n)),
+     xlab = expression(x[1]),
+     ylab = expression(x[2]),
+     xlim = c(-4, 4),
+     ylim = c(-4, 4),
+     cex.lab = 2)
+legend("bottomright", c("y = 0", "y = 1"), pch = 19, col = c("orange", "blue"), bty = "n", cex = 2)
+```
+
+## "Multiple" logistic regression
+
+On the probability scale:
+
+$$
+\text{Prob}(y = 1)
+=
+\frac{1}{1+e^{-(\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m)}}.
+$$ For the log-odds, a *multiple* linear regression:
+
+$$
+\log\left(\frac{p}{1-p}\right)
+=
+\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m.
+$$
+
+## Decision boundary, again {.smaller}
+
+It's linear, again.
+Consider two numerical predictors:
+
+```{r}
+fit <- glm(y ~ X, family = binomial)
+
+b0 <- fit$coefficients[1]
+b1 <- fit$coefficients[2]
+b2 <- fit$coefficients[3]
+
+p_thresh <- 0.5
+
+# compute intercept and slope of decision boundary
+bd_incpt <- (log(p_thresh / (1 - p_thresh)) - b0) / b2
+bd_slp <- -b1 / b2
+
+x_for_poly <- seq(-5, 5, length.out = 500)
+y_for_poly <- bd_incpt + bd_slp * x_for_poly
+
+par(mar = c(4, 5, 0.5, 0.5))
+plot(X, 
+     pch = 19, 
+     col = c(rep("orange", n), rep("blue", n)),
+     xlab = expression(x[1]),
+     ylab = expression(x[2]),
+     xlim = c(-4, 4),
+     ylim = c(-4, 4),
+     cex.lab = 2)
+abline(a = bd_incpt, b = bd_slp, lty = 2, lwd = 3)
+polygon(c(x_for_poly, rev(x_for_poly)), c(y_for_poly, rep(5, 500)), col = rgb(0, 0, 1, alpha = 0.2), border = NA)
+polygon(c(x_for_poly, rev(x_for_poly)), c(y_for_poly, rep(-5, 500)), col = rgb(1, .5, 0, alpha = 0.2), border = NA)
+legend("left", expression(hat(y)~" = 0"), text.col = "orange", bty = "n", cex = 2)
+legend("right", expression(hat(y)~" = 1"), text.col = "blue", bty = "n", cex = 2)
+#legend("topleft", paste("p =", p_thresh), bty = "n", cex = 2)
+points(X, pch = 19, 
+     col = c(rep("orange", n), rep("blue", n)))
+```
+
+-   if new $(x_1,\,x_2)$ below, then $\text{Prob}(y=1)\leq p^*$, so predict $\widehat{y}=0$ for the new person;
+-   if new $(x_1,\,x_2)$ above, then $\text{Prob}(y=1)> p^*$, so predict $\widehat{y}=1$ for the new person.
