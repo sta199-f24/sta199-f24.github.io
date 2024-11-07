@@ -9,15 +9,19 @@ format:
 
 ```{r}
 #| label: load-packages
+#| message: false
+#| echo: false
 library(tidyverse)
 library(tidymodels)
 library(openintro)
 library(fivethirtyeight)
 library(palmerpenguins)
+library(MASS)
 ```
 
 ```{r}
 #| label: cartoon-settings
+#| message: false
 #| echo: false
 
 set.seed(8675309)
@@ -47,6 +51,7 @@ Numerical response and one numerical predictor:
 ```{r}
 #| label: slr-1
 #| message: false
+#| echo: false
 movie_scores <- fandango |>
   rename(
     critics = rottentomatoes, 
@@ -67,6 +72,8 @@ ggplot(movie_scores, aes(x = critics, y = audience)) +
 Numerical response and one categorical predictor (two levels):
 
 ```{r}
+#| message: false
+#| echo: false
 lab_5_fit <- lm(weight ~ habit, data = births14)
 par(mar = c(4, 4, 2, 0.5))
 plot(births14$habit == "smoker", births14$weight, 
@@ -86,6 +93,8 @@ axis(side = 1, at = c(0, 1), labels = c("Non-smoker (0)", "Smoker (1)"))
 Numerical response; numerical and categorical predictors:
 
 ```{r}
+#| message: false
+#| echo: false
 bm_fl_island_fit <- linear_reg() |>
   fit(body_mass_g ~ flipper_length_mm + island, data = penguins)
 bm_fl_island_aug <- augment(bm_fl_island_fit, new_data = penguins)
@@ -114,8 +123,8 @@ y =
 $$
 
 ```{r}
-threshold <- 0.85
-cutoff <- (log(threshold / (1 - threshold)) - fit$coefficients[1]) / fit$coefficients[2]
+#| message: false
+#| echo: false
 par(mar = c(5, 5, 0.5, 0.5))
 plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
      ylab = "y",
@@ -213,6 +222,8 @@ Ethical concerns?
 ## How do we model this type of data?
 
 ```{r}
+#| message: false
+#| echo: false
 par(mar = c(5, 5, 0.5, 0.5))
 plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
      ylab = "y",
@@ -222,6 +233,8 @@ plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
 ## Straight line of best fit is a little silly
 
 ```{r}
+#| message: false
+#| echo: false
 par(mar = c(5, 5, 0.5, 0.5))
 plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
      ylab = "y",
@@ -234,6 +247,8 @@ abline(lm(y ~ x), col = "red", lwd = 3)
 Instead of modeling $y$ directly, we model the probability that $y=1$:
 
 ```{r}
+#| message: false
+#| echo: false
 par(mar = c(5, 5, 0.5, 0.5))
 plot(x, y, pch = 19, cex = 0.5, ylim = c(-0.25, 1.25), cex.lab = 1.5,
      ylab = "Prob(y = 1)",
@@ -264,13 +279,17 @@ $$
 \text{Prob}(y = 1)
 =
 \frac{1}{1+e^{-(\beta_0+\beta_1x)}}.
-$$ If you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the *log-odds*:
+$$ 
+
+If you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the *log-odds*:
 
 $$
 \log\left(\frac{p}{1-p}\right)
 =
 \beta_0+\beta_1x.
-$$ This is called the *logistic regression* model.
+$$ 
+
+This is called the *logistic regression* model.
 
 ## Logistic regression
 
@@ -300,6 +319,8 @@ Select a number $0 < p^* < 1$:
 
 ```{r}
 #| label: step-1
+#| message: false
+#| echo: false
 threshold <- 0.85
 cutoff <- (log(threshold / (1 - threshold)) - fit$coefficients[1]) / fit$coefficients[2]
 par(mar = c(5, 10, 0.5, 0.5))
@@ -313,12 +334,6 @@ mtext("Prob(y = 1)", side = 2, line = 8, at = 0.5, cex = 2)
 mtext("x", side = 1, line = 4, at = 0, cex = 2)
 mtext(paste("p* =", threshold), side = 2, line = 1, las = 2, at = threshold, cex = 1.5)
 segments(1.2 * min(x), threshold, cutoff, threshold, lty = 2, lwd = 2)
-#abline(v = cutoff, lty = 2, lwd = 2)
-#mtext("x*", side = 1, line = 1, at = cutoff, cex = 2)
-#polygon(c(-20, cutoff, cutoff, -20), c(-1, -1, 2, 2), col = rgb(1, .5, 0, alpha = 0.2), border = NA)
-#polygon(c(cutoff, 20, 20, cutoff), c(-1, -1, 2, 2), col = rgb(0, 0, 1, alpha = 0.2), border = NA)
-#text(-1, 0.5, expression(hat(y)~" = 0"), col = "orange", cex = 2)
-#text(1, 0.5, expression(hat(y)~" = 1"), col = "blue", cex = 2)
 ```
 
 -   if $\text{Prob}(y=1)\leq p^*$, then predict $\widehat{y}=0$;
@@ -330,6 +345,8 @@ Solve for the x-value that matches the threshold:
 
 ```{r}
 #| label: step-2
+#| message: false
+#| echo: false
 threshold <- 0.85
 cutoff <- (log(threshold / (1 - threshold)) - fit$coefficients[1]) / fit$coefficients[2]
 par(mar = c(5, 10, 0.5, 0.5))
@@ -345,10 +362,6 @@ mtext(paste("p* =", threshold), side = 2, line = 1, las = 2, at = threshold, cex
 segments(1.2 * min(x), threshold, cutoff, threshold, lty = 2, lwd = 2)
 abline(v = cutoff, lty = 2, lwd = 2)
 mtext("x*", side = 1, line = 1, at = cutoff, cex = 2)
-#polygon(c(-20, cutoff, cutoff, -20), c(-1, -1, 2, 2), col = rgb(1, .5, 0, alpha = 0.2), border = NA)
-#polygon(c(cutoff, 20, 20, cutoff), c(-1, -1, 2, 2), col = rgb(0, 0, 1, alpha = 0.2), border = NA)
-#text(-1, 0.5, expression(hat(y)~" = 0"), col = "orange", cex = 2)
-#text(1, 0.5, expression(hat(y)~" = 1"), col = "blue", cex = 2)
 ```
 
 -   if $\text{Prob}(y=1)\leq p^*$, then predict $\widehat{y}=0$;
@@ -361,6 +374,8 @@ Which side of the boundary are they on?
 
 ```{r}
 #| label: step-3
+#| message: false
+#| echo: false
 threshold <- 0.85
 cutoff <- (log(threshold / (1 - threshold)) - fit$coefficients[1]) / fit$coefficients[2]
 par(mar = c(5, 10, 0.5, 0.5))
@@ -392,6 +407,8 @@ Which side of the boundary are they on?
 
 ```{r}
 #| label: lower-threshold
+#| message: false
+#| echo: false
 threshold <- 0.15
 cutoff <- (log(threshold / (1 - threshold)) - fit$coefficients[1]) / fit$coefficients[2]
 par(mar = c(5, 10, 0.5, 0.5))
@@ -421,7 +438,8 @@ text(1, 0.5, expression(hat(y)~" = 1"), col = "blue", cex = 2)
 Two numerical predictors and one binary response:
 
 ```{r}
-library(MASS)
+#| message: false
+#| echo: false
 set.seed(20)
 n <- 20
 cloud1 <- mvrnorm(n, c(-0.5, -0.5), matrix(c(1, 0.5, 0.5, 1), 2, 2))
@@ -448,7 +466,9 @@ $$
 \text{Prob}(y = 1)
 =
 \frac{1}{1+e^{-(\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m)}}.
-$$ For the log-odds, a *multiple* linear regression:
+$$ 
+
+For the log-odds, a *multiple* linear regression:
 
 $$
 \log\left(\frac{p}{1-p}\right)
@@ -462,6 +482,8 @@ It's linear, again.
 Consider two numerical predictors:
 
 ```{r}
+#| message: false
+#| echo: false
 fit <- glm(y ~ X, family = binomial)
 
 b0 <- fit$coefficients[1]
@@ -491,7 +513,6 @@ polygon(c(x_for_poly, rev(x_for_poly)), c(y_for_poly, rep(5, 500)), col = rgb(0,
 polygon(c(x_for_poly, rev(x_for_poly)), c(y_for_poly, rep(-5, 500)), col = rgb(1, .5, 0, alpha = 0.2), border = NA)
 legend("left", expression(hat(y)~" = 0"), text.col = "orange", bty = "n", cex = 2)
 legend("right", expression(hat(y)~" = 1"), text.col = "blue", bty = "n", cex = 2)
-#legend("topleft", paste("p =", p_thresh), bty = "n", cex = 2)
 points(X, pch = 19, 
      col = c(rep("orange", n), rep("blue", n)))
 ```
