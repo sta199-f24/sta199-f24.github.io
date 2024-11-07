@@ -1,6 +1,6 @@
 ---
 title: Lab 7
-subtitle: To be posted
+subtitle: Explore and classify
 categories: Lab
 description: "Mon, Nov 18 at 8:30 am"
 draft: true
@@ -111,14 +111,17 @@ The outcome variable is `spam`, which takes the value `1` if the email is spam, 
 a.  What type of variable is `spam`?
     What percent of the emails are spam?
 
-b.  Fit a logistic regression model predicting `spam` from `exclaim_mess` (the number of exclamation points in the email message).
+b.  What type of variable is `dollar` - number of times a dollar sign or the word “dollar” appeared in the email?
+    Visualize and describe its distribution, supporting your description with the appropriate summary statistics.
+
+c.  Fit a logistic regression model predicting `spam` from `dollar`.
     Then, display the tidy output of the model.
 
-c.  Using this model and an R function like `predict()` or `augment()`, predict the probability the email is spam if it contains 10 exclamation points.
+d.  Using this model and an R function like `predict()` or `augment()`, predict the probability the email is spam if it contains 5 dollar signs.
 
 ## Question 2
 
-a.  Fit another logistic regression model predicting `spam` from `exclaim_mess`, `winner` (indicating whether “winner” appeared in the email), and `urgent_subj` (whether the word "urgent" is in the subject of the email).
+a.  Fit another logistic regression model predicting `spam` from `dollar`, `winner` (indicating whether “winner” appeared in the email), and `urgent_subj` (whether the word "urgent" is in the subject of the email).
     Then, display the tidy output of the model.
 
 b.  Using this model, predict spam / not spam for all emails in the `email` dataset with `augment()`.
@@ -138,7 +141,7 @@ d.  In a single pipeline, and using `mutate()`, calculate the false positive and
 
 ## Question 3
 
-a.  Fit another logistic regression model predicting `spam` from `exclaim_mess` and another variable you think would be a good predictor.
+a.  Fit another logistic regression model predicting `spam` from `dollar` and another variable you think would be a good predictor.
     Provide a 1-sentence justification for why you chose this variable.
     Display the tidy output of the model.
 
@@ -157,7 +160,7 @@ c.  Using your data frame from the previous part, determine, in a single pipelin
 d.  In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
     In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
 
-e.  Based on the false positive and false negatives rates of this model, comment, in 1-2 sentences, on which model is preferable and why.
+e.  Based on the false positive and false negatives rates of this model, comment, in 1-2 sentences, on which model (one from Question 2 or Question 3) is preferable and why.
 
 # Part 2 - Hotel cancellations
 
@@ -167,12 +170,16 @@ Each observation represents a hotel booking between July 1, 2015 and August 31, 
 Some bookings were cancelled (`is_canceled = 1`) and others were kept, i.e., the guests checked into the hotel (`is_canceled = 0`).
 You can view the code book for all variables [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md).
 
-The data can be found in the `data` folder: `hotels.csv`.
-
 ## Question 4
 
-Read the data and then explore attributes of bookings and summarize your findings in 5 bullet points.
-You must provide a visualization or summary supporting each finding.
+The dataset, called `hotels.csv`, can be found in the `data` folder.
+
+a.  Read it in with `read_csv()`.
+
+b.  Transform the `is_canceled` variable to be a factor with "not canceled" (0) as the first level and "canceled" (1) as the second level.
+
+c.  Explore attributes of bookings and summarize your findings in 5 bullet points.
+    You must provide a visualization or summary supporting each finding.
 
 ::: callout-note
 This is not meant to be an exhaustive exploration.
@@ -181,23 +188,27 @@ We anticipate a wide variety of answers to this question.
 
 ## Question 5
 
-Using these data, we will try to answer the following question:
+Using these data, one of our goals is to explore the following question:
 
-> *Do we expect reservations earlier in the month or later in the month to be cancelled?*
+> *Are reservations earlier in the month or later in the month more likely to be cancelled?*
 
-a.  **Exploration:** In a single pipeline, calculate the mean arrival date (`arrival_date_day_of_month`) for both booking that were cancelled and that were not cancelled.
+a.  **I**n a single pipeline, calculate the mean arrival dates (`arrival_date_day_of_month`) for reservations that were cancelled and reservations that were not cancelled.
 
-b.  **Justification:** In your own words, explain why we can not fit a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.
+b.  In your own words, explain why we can not use a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.
 
-c.  **Model fitting and interpretation:**
+c.  Fit the appropriate model to predict whether a reservation was cancelled from `arrival_date_day_of_month` and display a tidy summary of the model output.
+    Then, interpret the slope coefficient in context of the data and the research question.
 
-    -   Fit the appropriate model and display a tidy summary of the model output.
-
-    -   Interpret the slope coefficient in context of the data and the research question.
-
-d.  **Prediction:** Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month.
+d.  Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month.
     Based on this probability, would you predict this booking would be cancelled or not cancelled.
     Explain your reasoning for your classification.
+
+## Question 6
+
+a.  Fit another model to predict whether a reservation was cancelled from `arrival_date_day_of_month` and `hotel` type (Resort or City Hotel), allowing the relationship between `arrival_date_day_of_month` and `is_canceled` to vary based on `hotel` type.
+    Display a tidy output of the model.
+
+b.  Interpret the intercept in context of the data.
 
 # Part 3 - General Social Survey
 
@@ -224,7 +235,7 @@ In this part you will work with three variables from the 2022 General Social Sur
     I'm going to show you a seven-point scale on which the political views that people might hold are arranged from extremely liberal--point 1--to extremely conservative--point 7.
     Where would you place yourself on this scale?
 
-## Question 6
+## Question 7
 
 a.  Read in the `gss22.csv` file that is in your `data` folder and save it as `gss22`.
     Report its number of rows and columns.
@@ -248,32 +259,21 @@ However, solve the problem however you like, this is just one option!
 
 d.  Combine the levels of the `polviews` variable such that levels that have the word "liberal" in them are lumped into a level called `"Liberal"` and those that have the word conservative in them are lumped into a level called `"Conservative"`. Then, re-order the levels in the following order: `"Conservative"` , `"Moderate"`, and `"Liberal"`. Finally, `count()` how many times each new level appears in the `polviews` variable.
 
-::: callout-tip
-After the team member working on Exercise 1 renders, commits, and pushes, another team member should pull their changes and render the document.
-Then, they should write the answer to Exercise 2.
-All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub.
-All others should **not** touch the document.
-:::
-
-## Question 7
+## Question 8
 
 a.  Fit a logistic regression model that predicts `advfront` from `educ`.
     Report the tidy output of the model.
 
 b.  Write out the estimated model in proper notation.
 
-c.  Using your estimated model, predict the probability of agreeing with the statement *"Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government."* (`Agree` in advfront) for someone with 7 years of education.
+c.  Using your estimated model, predict the probability of agreeing with the statement *"Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government."* (`Agree` in `advfront`) for someone with 7 years of education.
 
-## Question 8
+## Question 9
 
 a.  Fit a new model that adds the additional explanatory variable of `polviews` to your model from Question 7.
     Report the tidy output of the model.
 
-b.  Now, predict the probability of agreeing with the following statement *"Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government."* (`Agree` in advfront) for a Conservative person with 7 years of education.
-
-## Question 9
-
-**TO DO:** Add model selection question.
+b.  Now, predict the probability of agreeing with the following statement *"Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government."* (`Agree` in `advfront`) for a Conservative person with 7 years of education.
 
 # Part 4 - Statistics and/or data science experience
 
