@@ -8609,7 +8609,7 @@
     "href": "slides/19-logistic-regression.html#recap-multiple-linear-regression",
     "title": "Logistic regression",
     "section": "Recap: multiple linear regression",
-    "text": "Recap: multiple linear regression\nNumerical response; numerical and categorical predictors:\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale\nrange (`geom_point()`)."
+    "text": "Recap: multiple linear regression\nNumerical response; numerical and categorical predictors:"
   },
   {
     "objectID": "slides/19-logistic-regression.html#today-a-binary-response",
@@ -8777,7 +8777,7 @@
     "href": "slides/19-logistic-regression-slides.html#recap-multiple-linear-regression",
     "title": "Logistic regression",
     "section": "Recap: multiple linear regression",
-    "text": "Recap: multiple linear regression\nNumerical response; numerical and categorical predictors:\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale\nrange (`geom_point()`)."
+    "text": "Recap: multiple linear regression\nNumerical response; numerical and categorical predictors:"
   },
   {
     "objectID": "slides/19-logistic-regression-slides.html#today-a-binary-response",
