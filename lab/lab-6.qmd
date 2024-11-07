@@ -137,7 +137,7 @@ d.  **Clean:** First, figure out why `gdp_percap` is read in as a character vari
 We are interested in learning more about life expectancy in countries, and we’ll start by exploring the relationship between life expectancy and GDP.
 Create two visualizations:
 
--   Scatter plot of `life_exp` vs. `gdp_percap` vs.
+-   Scatter plot of `life_exp` vs. `gdp_percap`
 
 -   Scatter plot of `life_exp_log` vs. `gdp_percap`, where `life_exp_log` is a new variable you add to the data set by taking the natural log of `life_exp`.
 
