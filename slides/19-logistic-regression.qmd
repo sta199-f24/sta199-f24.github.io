@@ -40,11 +40,11 @@ y_vals <- 1 / (1 + exp(-(fit$coefficients[1] + fit$coefficients[2] * seq_x)))
 
 We have been studying regression:
 
--   What combinations of data types have we seen so far?
+-   What combinations of data types have we seen?
 
 -   What did the picture look like?
 
-## Recap: simple linear regression
+## Recap: simple linear regression {.smaller}
 
 Numerical response and one numerical predictor:
 
@@ -67,7 +67,7 @@ ggplot(movie_scores, aes(x = critics, y = audience)) +
   )
 ```
 
-## Recap: simple linear regression
+## Recap: simple linear regression {.smaller}
 
 Numerical response and one categorical predictor (two levels):
 
@@ -88,7 +88,7 @@ abline(lab_5_fit, col = "red", lwd = 3)
 axis(side = 1, at = c(0, 1), labels = c("Non-smoker (0)", "Smoker (1)"))
 ```
 
-## Recap: multiple linear regression
+## Recap: multiple linear regression {.smaller}
 
 Numerical response; numerical and categorical predictors:
 
@@ -494,8 +494,7 @@ $$
 
 ## Decision boundary, again {.smaller}
 
-It's linear, again.
-Consider two numerical predictors:
+It's linear! Consider two numerical predictors:
 
 ```{r}
 #| message: false
@@ -533,5 +532,5 @@ points(X, pch = 19,
      col = c(rep("orange", n), rep("blue", n)))
 ```
 
--   if new $(x_1,\,x_2)$ below, then $\text{Prob}(y=1)\leq p^*$, so predict $\widehat{y}=0$ for the new person;
--   if new $(x_1,\,x_2)$ above, then $\text{Prob}(y=1)> p^*$, so predict $\widehat{y}=1$ for the new person.
+-   if new $(x_1,\,x_2)$ below, $\text{Prob}(y=1)\leq p^*$. Predict $\widehat{y}=0$ for the new person;
+-   if new $(x_1,\,x_2)$ above, $\text{Prob}(y=1)> p^*$. Predict $\widehat{y}=1$ for the new person.
