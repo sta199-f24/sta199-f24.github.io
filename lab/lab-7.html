@@ -381,13 +381,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
 <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
   </ul>
 </li>
   <li>
 <a href="#part-3---general-social-survey" id="toc-part-3---general-social-survey" class="nav-link" data-scroll-target="#part-3---general-social-survey">Part 3 - General Social Survey</a>
   <ul class="collapse">
-<li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
-  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+<li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
   <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
   </ul>
@@ -403,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Lab 7</h1>
-<p class="subtitle lead">To be posted</p>
+<p class="subtitle lead">Explore and classify</p>
   <div class="quarto-categories">
     <div class="quarto-category">Lab</div>
   </div>
@@ -556,11 +556,12 @@ Important
 <section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <ol type="a">
 <li><p>What type of variable is <code>spam</code>? What percent of the emails are spam?</p></li>
-<li><p>Fit a logistic regression model predicting <code>spam</code> from <code>exclaim_mess</code> (the number of exclamation points in the email message). Then, display the tidy output of the model.</p></li>
-<li><p>Using this model and an R function like <code><a href="https://rdrr.io/r/stats/predict.html">predict()</a></code> or <code>augment()</code>, predict the probability the email is spam if it contains 10 exclamation points.</p></li>
+<li><p>What type of variable is <code>dollar</code> - number of times a dollar sign or the word “dollar” appeared in the email? Visualize and describe its distribution, supporting your description with the appropriate summary statistics.</p></li>
+<li><p>Fit a logistic regression model predicting <code>spam</code> from <code>dollar</code>. Then, display the tidy output of the model.</p></li>
+<li><p>Using this model and an R function like <code><a href="https://rdrr.io/r/stats/predict.html">predict()</a></code> or <code>augment()</code>, predict the probability the email is spam if it contains 5 dollar signs.</p></li>
 </ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <ol type="a">
-<li><p>Fit another logistic regression model predicting <code>spam</code> from <code>exclaim_mess</code>, <code>winner</code> (indicating whether “winner” appeared in the email), and <code>urgent_subj</code> (whether the word “urgent” is in the subject of the email). Then, display the tidy output of the model.</p></li>
+<li><p>Fit another logistic regression model predicting <code>spam</code> from <code>dollar</code>, <code>winner</code> (indicating whether “winner” appeared in the email), and <code>urgent_subj</code> (whether the word “urgent” is in the subject of the email). Then, display the tidy output of the model.</p></li>
 <li><p>Using this model, predict spam / not spam for all emails in the <code>email</code> dataset with <code>augment()</code>. Store the resulting data frame with an appropriate name.</p></li>
 <li>
 <p>Using your data frame from the previous part, determine, in a single pipeline, and using <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code>, the numbers of emails:</p>
@@ -575,7 +576,7 @@ Important
 <li><p>In a single pipeline, and using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>, calculate the false positive and false negative rates. In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.</p></li>
 </ol></section><section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <ol type="a">
-<li><p>Fit another logistic regression model predicting <code>spam</code> from <code>exclaim_mess</code> and another variable you think would be a good predictor. Provide a 1-sentence justification for why you chose this variable. Display the tidy output of the model.</p></li>
+<li><p>Fit another logistic regression model predicting <code>spam</code> from <code>dollar</code> and another variable you think would be a good predictor. Provide a 1-sentence justification for why you chose this variable. Display the tidy output of the model.</p></li>
 <li><p>Using this model, predict spam / not spam for all emails in the <code>email</code> dataset with <code>augment()</code>. Store the resulting data frame with an appropriate name.</p></li>
 <li>
 <p>Using your data frame from the previous part, determine, in a single pipeline, and using <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code>, the numbers of emails:</p>
@@ -588,12 +589,16 @@ Important
 <p>Store the resulting data frame with an appropriate name.</p>
 </li>
 <li><p>In a single pipeline, and using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>, calculate the false positive and false negative rates. In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.</p></li>
-<li><p>Based on the false positive and false negatives rates of this model, comment, in 1-2 sentences, on which model is preferable and why.</p></li>
+<li><p>Based on the false positive and false negatives rates of this model, comment, in 1-2 sentences, on which model (one from Question 2 or Question 3) is preferable and why.</p></li>
 </ol></section></section><section id="part-2---hotel-cancellations" class="level1"><h1>Part 2 - Hotel cancellations</h1>
 <p>For this exercise, we will work with hotel cancellations. The data describe the demand of two different types of hotels. Each observation represents a hotel booking between July 1, 2015 and August 31, 2017. Some bookings were cancelled (<code>is_canceled = 1</code>) and others were kept, i.e., the guests checked into the hotel (<code>is_canceled = 0</code>). You can view the code book for all variables <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md">here</a>.</p>
-<p>The data can be found in the <code>data</code> folder: <code>hotels.csv</code>.</p>
 <section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
-<p>Read the data and then explore attributes of bookings and summarize your findings in 5 bullet points. You must provide a visualization or summary supporting each finding.</p>
+<p>The dataset, called <code>hotels.csv</code>, can be found in the <code>data</code> folder.</p>
+<ol type="a">
+<li><p>Read it in with <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>.</p></li>
+<li><p>Transform the <code>is_canceled</code> variable to be a factor with “not canceled” (0) as the first level and “canceled” (1) as the second level.</p></li>
+<li><p>Explore attributes of bookings and summarize your findings in 5 bullet points. You must provide a visualization or summary supporting each finding.</p></li>
+</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -608,21 +613,19 @@ Note
 </div>
 </div>
 </section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
-<p>Using these data, we will try to answer the following question:</p>
+<p>Using these data, one of our goals is to explore the following question:</p>
 <blockquote class="blockquote">
-<p><em>Do we expect reservations earlier in the month or later in the month to be cancelled?</em></p>
+<p><em>Are reservations earlier in the month or later in the month more likely to be cancelled?</em></p>
 </blockquote>
 <ol type="a">
-<li><p><strong>Exploration:</strong> In a single pipeline, calculate the mean arrival date (<code>arrival_date_day_of_month</code>) for both booking that were cancelled and that were not cancelled.</p></li>
-<li><p><strong>Justification:</strong> In your own words, explain why we can not fit a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.</p></li>
-<li>
-<p><strong>Model fitting and interpretation:</strong></p>
-<ul>
-<li><p>Fit the appropriate model and display a tidy summary of the model output.</p></li>
-<li><p>Interpret the slope coefficient in context of the data and the research question.</p></li>
-</ul>
-</li>
-<li><p><strong>Prediction:</strong> Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month. Based on this probability, would you predict this booking would be cancelled or not cancelled. Explain your reasoning for your classification.</p></li>
+<li><p><strong>I</strong>n a single pipeline, calculate the mean arrival dates (<code>arrival_date_day_of_month</code>) for reservations that were cancelled and reservations that were not cancelled.</p></li>
+<li><p>In your own words, explain why we can not use a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.</p></li>
+<li><p>Fit the appropriate model to predict whether a reservation was cancelled from <code>arrival_date_day_of_month</code> and display a tidy summary of the model output. Then, interpret the slope coefficient in context of the data and the research question.</p></li>
+<li><p>Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month. Based on this probability, would you predict this booking would be cancelled or not cancelled. Explain your reasoning for your classification.</p></li>
+</ol></section><section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<ol type="a">
+<li><p>Fit another model to predict whether a reservation was cancelled from <code>arrival_date_day_of_month</code> and <code>hotel</code> type (Resort or City Hotel), allowing the relationship between <code>arrival_date_day_of_month</code> and <code>is_canceled</code> to vary based on <code>hotel</code> type. Display a tidy output of the model.</p></li>
+<li><p>Interpret the intercept in context of the data.</p></li>
 </ol></section></section><section id="part-3---general-social-survey" class="level1"><h1>Part 3 - General Social Survey</h1>
 <p>The General Social Survey (GSS) gathers data on contemporary American society in order to monitor and explain trends and constants in attitudes, behaviours, and attributes. Hundreds of trends have been tracked since 1972. In addition, since the GSS adopted questions from earlier surveys, trends can be followed for up to 70 years.</p>
 <p>The GSS contains a standard core of demographic, behavioural, and attitudinal questions, plus topics of special interest. Among the topics covered are civil liberties, crime and violence, intergroup tolerance, morality, national spending priorities, psychological well-being, social mobility, and stress and traumatic events.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
@@ -632,7 +635,7 @@ Note
 <li><p><code>educ</code>: Number of years of education.</p></li>
 <li><p><code>polviews</code>: We hear a lot of talk these days about liberals and conservatives. I’m going to show you a seven-point scale on which the political views that people might hold are arranged from extremely liberal–point 1–to extremely conservative–point 7. Where would you place yourself on this scale?</p></li>
 </ul>
-<section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
 <ol type="a">
 <li><p>Read in the <code>gss22.csv</code> file that is in your <code>data</code> folder and save it as <code>gss22</code>. Report its number of rows and columns.</p></li>
 <li><p>Create a new data frame called <code>gss22_advfront</code> that only contains the variables <code>advfront</code>, <code>educ</code>, and <code>polviews</code>. Then, use the <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> function to remove rows that contain <code>NA</code>s from this new data frame. Report the number of rows and columns of <code>gss22_advfront</code>. Additionally, report what percent of the data were discarded at this step.</p></li>
@@ -653,32 +656,16 @@ Tip
 </div>
 <ol start="4" type="a">
 <li>Combine the levels of the <code>polviews</code> variable such that levels that have the word “liberal” in them are lumped into a level called <code>"Liberal"</code> and those that have the word conservative in them are lumped into a level called <code>"Conservative"</code>. Then, re-order the levels in the following order: <code>"Conservative"</code> , <code>"Moderate"</code>, and <code>"Liberal"</code>. Finally, <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> how many times each new level appears in the <code>polviews</code> variable.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>After the team member working on Exercise 1 renders, commits, and pushes, another team member should pull their changes and render the document. Then, they should write the answer to Exercise 2. All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub. All others should <strong>not</strong> touch the document.</p>
-</div>
-</div>
-</section><section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+</ol></section><section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
 <ol type="a">
 <li><p>Fit a logistic regression model that predicts <code>advfront</code> from <code>educ</code>. Report the tidy output of the model.</p></li>
 <li><p>Write out the estimated model in proper notation.</p></li>
-<li><p>Using your estimated model, predict the probability of agreeing with the statement <em>“Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government.”</em> (<code>Agree</code> in advfront) for someone with 7 years of education.</p></li>
-</ol></section><section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+<li><p>Using your estimated model, predict the probability of agreeing with the statement <em>“Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government.”</em> (<code>Agree</code> in <code>advfront</code>) for someone with 7 years of education.</p></li>
+</ol></section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
 <ol type="a">
 <li><p>Fit a new model that adds the additional explanatory variable of <code>polviews</code> to your model from Question 7. Report the tidy output of the model.</p></li>
-<li><p>Now, predict the probability of agreeing with the following statement <em>“Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government.”</em> (<code>Agree</code> in advfront) for a Conservative person with 7 years of education.</p></li>
-</ol></section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
-<p><strong>TO DO:</strong> Add model selection question.</p>
-</section></section><section id="part-4---statistics-andor-data-science-experience" class="level1"><h1>Part 4 - Statistics and/or data science experience</h1>
+<li><p>Now, predict the probability of agreeing with the following statement <em>“Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government.”</em> (<code>Agree</code> in <code>advfront</code>) for a Conservative person with 7 years of education.</p></li>
+</ol></section></section><section id="part-4---statistics-andor-data-science-experience" class="level1"><h1>Part 4 - Statistics and/or data science experience</h1>
 <section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
