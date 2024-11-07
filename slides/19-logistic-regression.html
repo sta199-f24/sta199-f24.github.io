@@ -369,7 +369,9 @@ window.Quarto = {
   <li><a href="#instead-s-curve-of-best-fit" id="toc-instead-s-curve-of-best-fit" class="nav-link" data-scroll-target="#instead-s-curve-of-best-fit">Instead: S-curve of best fit</a></li>
   <li><a href="#why-dont-we-model-y-directly" id="toc-why-dont-we-model-y-directly" class="nav-link" data-scroll-target="#why-dont-we-model-y-directly">Why don’t we model y directly?</a></li>
   <li><a href="#so-what-is-this-s-curve-anyway" id="toc-so-what-is-this-s-curve-anyway" class="nav-link" data-scroll-target="#so-what-is-this-s-curve-anyway">So, what is this S-curve, anyway?</a></li>
+  <li><a href="#log-odds" id="toc-log-odds" class="nav-link" data-scroll-target="#log-odds">Log-odds?</a></li>
   <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression">Logistic regression</a></li>
+  <li><a href="#estimation" id="toc-estimation" class="nav-link" data-scroll-target="#estimation">Estimation</a></li>
   <li><a href="#logistic-regression---classification" id="toc-logistic-regression---classification" class="nav-link" data-scroll-target="#logistic-regression---classification">Logistic regression -&gt; classification?</a></li>
   <li><a href="#step-1-pick-a-threshold" id="toc-step-1-pick-a-threshold" class="nav-link" data-scroll-target="#step-1-pick-a-threshold">Step 1: pick a threshold</a></li>
   <li><a href="#step-2-find-the-decision-boundary" id="toc-step-2-find-the-decision-boundary" class="nav-link" data-scroll-target="#step-2-find-the-decision-boundary">Step 2: find the “decision boundary”</a></li>
@@ -606,15 +608,26 @@ y
 \beta_0+\beta_1x.
 \]</span></p>
 <p>This is called the <em>logistic regression</em> model.</p>
-</section><section id="logistic-regression" class="level2"><h2 class="anchored" data-anchor-id="logistic-regression">Logistic regression</h2>
+</section><section id="log-odds" class="level2"><h2 class="anchored" data-anchor-id="log-odds">Log-odds?</h2>
+<ul>
+<li><p>p = Prob(y = 1) is a probability. A number between 0 and 1;</p></li>
+<li><p>p / (1 - p) is the odds. A number between 0 and <span class="math inline">\(\infty\)</span>;</p></li>
+</ul>
+<p>“The odds of this lecture going well are 10 to 1.”</p>
+<ul>
+<li>The log odds log(p / (1 - p)) is a number between <span class="math inline">\(-\infty\)</span> and <span class="math inline">\(\infty\)</span>, which is suitable for the linear model.</li>
+</ul></section><section id="logistic-regression" class="level2"><h2 class="anchored" data-anchor-id="logistic-regression">Logistic regression</h2>
 <p><span class="math display">\[
 \log\left(\frac{p}{1-p}\right)
 =
 \beta_0+\beta_1x.
 \]</span></p>
 <ul>
+<li><p>The <em>logit</em> function log(p / (1-p)) is an example of a <em>link function</em> that transforms the linear model to have an appropriate range;</p></li>
 <li><p>This is an example of a <em>generalized linear model</em>;</p></li>
-<li><p>We estimate the parameters using <em>maximum likelihood</em> (don’t worry about it) to get the “best fitting” S-curve;</p></li>
+</ul></section><section id="estimation" class="level2"><h2 class="anchored" data-anchor-id="estimation">Estimation</h2>
+<ul>
+<li><p>We estimate the parameters <span class="math inline">\(\beta_0,\,\beta_1\)</span> using <em>maximum likelihood</em> (don’t worry about it) to get the “best fitting” S-curve;</p></li>
 <li><p>The fitted model is</p></li>
 </ul>
 <p><span class="math display">\[

@@ -482,15 +482,26 @@ y
 \beta_0+\beta_1x.
 \]</span></p>
 <p>This is called the <em>logistic regression</em> model.</p>
-</section><section id="logistic-regression" class="slide level2"><h2>Logistic regression</h2>
+</section><section id="log-odds" class="slide level2"><h2>Log-odds?</h2>
+<ul>
+<li><p>p = Prob(y = 1) is a probability. A number between 0 and 1;</p></li>
+<li><p>p / (1 - p) is the odds. A number between 0 and <span class="math inline">\(\infty\)</span>;</p></li>
+</ul>
+<p>“The odds of this lecture going well are 10 to 1.”</p>
+<ul>
+<li>The log odds log(p / (1 - p)) is a number between <span class="math inline">\(-\infty\)</span> and <span class="math inline">\(\infty\)</span>, which is suitable for the linear model.</li>
+</ul></section><section id="logistic-regression" class="slide level2"><h2>Logistic regression</h2>
 <p><span class="math display">\[
 \log\left(\frac{p}{1-p}\right)
 =
 \beta_0+\beta_1x.
 \]</span></p>
 <ul>
+<li><p>The <em>logit</em> function log(p / (1-p)) is an example of a <em>link function</em> that transforms the linear model to have an appropriate range;</p></li>
 <li><p>This is an example of a <em>generalized linear model</em>;</p></li>
-<li><p>We estimate the parameters using <em>maximum likelihood</em> (don’t worry about it) to get the “best fitting” S-curve;</p></li>
+</ul></section><section id="estimation" class="slide level2"><h2>Estimation</h2>
+<ul>
+<li><p>We estimate the parameters <span class="math inline">\(\beta_0,\,\beta_1\)</span> using <em>maximum likelihood</em> (don’t worry about it) to get the “best fitting” S-curve;</p></li>
 <li><p>The fitted model is</p></li>
 </ul>
 <p><span class="math display">\[

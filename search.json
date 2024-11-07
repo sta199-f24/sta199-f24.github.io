@@ -8689,11 +8689,25 @@
     "text": "So, what is this S-curve, anyway?\nIt’s the logistic function:\n\\[\n\\text{Prob}(y = 1)\n=\n\\frac{1}{1+e^{-(\\beta_0+\\beta_1x)}}.\n\\]\nIf you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the log-odds:\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\nThis is called the logistic regression model."
   },
   {
+    "objectID": "slides/19-logistic-regression.html#log-odds",
+    "href": "slides/19-logistic-regression.html#log-odds",
+    "title": "Logistic regression",
+    "section": "Log-odds?",
+    "text": "Log-odds?\n\np = Prob(y = 1) is a probability. A number between 0 and 1;\np / (1 - p) is the odds. A number between 0 and \\(\\infty\\);\n\n“The odds of this lecture going well are 10 to 1.”\n\nThe log odds log(p / (1 - p)) is a number between \\(-\\infty\\) and \\(\\infty\\), which is suitable for the linear model."
+  },
+  {
     "objectID": "slides/19-logistic-regression.html#logistic-regression",
     "href": "slides/19-logistic-regression.html#logistic-regression",
     "title": "Logistic regression",
     "section": "Logistic regression",
-    "text": "Logistic regression\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\n\nThis is an example of a generalized linear model;\nWe estimate the parameters using maximum likelihood (don’t worry about it) to get the “best fitting” S-curve;\nThe fitted model is\n\n\\[\n\\log\\left(\\frac{\\widehat{p}}{1-\\widehat{p}}\\right)\n=\nb_0+b_1x.\n\\]"
+    "text": "Logistic regression\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\n\nThe logit function log(p / (1-p)) is an example of a link function that transforms the linear model to have an appropriate range;\nThis is an example of a generalized linear model;"
+  },
+  {
+    "objectID": "slides/19-logistic-regression.html#estimation",
+    "href": "slides/19-logistic-regression.html#estimation",
+    "title": "Logistic regression",
+    "section": "Estimation",
+    "text": "Estimation\n\nWe estimate the parameters \\(\\beta_0,\\,\\beta_1\\) using maximum likelihood (don’t worry about it) to get the “best fitting” S-curve;\nThe fitted model is\n\n\\[\n\\log\\left(\\frac{\\widehat{p}}{1-\\widehat{p}}\\right)\n=\nb_0+b_1x.\n\\]"
   },
   {
     "objectID": "slides/19-logistic-regression.html#logistic-regression---classification",
@@ -8857,11 +8871,25 @@
     "text": "So, what is this S-curve, anyway?\nIt’s the logistic function:\n\\[\n\\text{Prob}(y = 1)\n=\n\\frac{1}{1+e^{-(\\beta_0+\\beta_1x)}}.\n\\]\nIf you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the log-odds:\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\nThis is called the logistic regression model."
   },
   {
+    "objectID": "slides/19-logistic-regression-slides.html#log-odds",
+    "href": "slides/19-logistic-regression-slides.html#log-odds",
+    "title": "Logistic regression",
+    "section": "Log-odds?",
+    "text": "Log-odds?\n\np = Prob(y = 1) is a probability. A number between 0 and 1;\np / (1 - p) is the odds. A number between 0 and \\(\\infty\\);\n\n“The odds of this lecture going well are 10 to 1.”\n\nThe log odds log(p / (1 - p)) is a number between \\(-\\infty\\) and \\(\\infty\\), which is suitable for the linear model."
+  },
+  {
     "objectID": "slides/19-logistic-regression-slides.html#logistic-regression",
     "href": "slides/19-logistic-regression-slides.html#logistic-regression",
     "title": "Logistic regression",
     "section": "Logistic regression",
-    "text": "Logistic regression\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\n\nThis is an example of a generalized linear model;\nWe estimate the parameters using maximum likelihood (don’t worry about it) to get the “best fitting” S-curve;\nThe fitted model is\n\n\\[\n\\log\\left(\\frac{\\widehat{p}}{1-\\widehat{p}}\\right)\n=\nb_0+b_1x.\n\\]"
+    "text": "Logistic regression\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\n\nThe logit function log(p / (1-p)) is an example of a link function that transforms the linear model to have an appropriate range;\nThis is an example of a generalized linear model;"
+  },
+  {
+    "objectID": "slides/19-logistic-regression-slides.html#estimation",
+    "href": "slides/19-logistic-regression-slides.html#estimation",
+    "title": "Logistic regression",
+    "section": "Estimation",
+    "text": "Estimation\n\nWe estimate the parameters \\(\\beta_0,\\,\\beta_1\\) using maximum likelihood (don’t worry about it) to get the “best fitting” S-curve;\nThe fitted model is\n\n\\[\n\\log\\left(\\frac{\\widehat{p}}{1-\\widehat{p}}\\right)\n=\nb_0+b_1x.\n\\]"
   },
   {
     "objectID": "slides/19-logistic-regression-slides.html#logistic-regression---classification",
