@@ -3873,7 +3873,7 @@
     "href": "lab/lab-6.html#question-3",
     "title": "Lab 6",
     "section": "Question 3",
-    "text": "Question 3\n\n** Data Prep ** What happens when you take the natural log of 0? Remove rows of your data set where life_expectancy = 0, justifying why this is helpful.\nModel fitting: Fit a linear model predicting log life expectancy from gross domestic product. Display the tidy summary.\n\nModel evaluation:\n\nCalculate the R-squared of the model using two methods and confirm that the values match: first method is using glance() and the other method is based on the value of the correlation coefficient between the two variables.\nInterpret R-squared in the context of the data and the research question."
+    "text": "Question 3\n\nData Prep: What happens when you take the natural log of 0? Remove rows of your data set where life_expectancy = 0, justifying why this is helpful.\nModel fitting: Fit a linear model predicting log life expectancy from gross domestic product. Display the tidy summary.\n\nModel evaluation:\n\nCalculate the R-squared of the model using two methods and confirm that the values match: first method is using glance() and the other method is based on the value of the correlation coefficient between the two variables.\nInterpret R-squared in the context of the data and the research question."
   },
   {
     "objectID": "lab/lab-6.html#question-4",
