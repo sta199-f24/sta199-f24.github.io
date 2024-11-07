@@ -1,6 +1,10 @@
 ---
 title: "Logistic regression"
-format: revealjs
+subtitle: "Lecture 19"
+date: "2024-11-07"
+format: 
+  live-revealjs: 
+    output-file: 19-logistic-regression-slides.html
 ---
 
 ```{r}
