@@ -8581,14 +8581,14 @@
     "href": "slides/19-logistic-regression.html",
     "title": "Logistic regression",
     "section": "",
-    "text": "We have been studying regression:\n\nWhat combinations of data types have we seen so far?\nWhat did the picture look like?"
+    "text": "We have been studying regression:\n\nWhat combinations of data types have we seen?\nWhat did the picture look like?"
   },
   {
     "objectID": "slides/19-logistic-regression.html#when-last-we-left-our-heros",
     "href": "slides/19-logistic-regression.html#when-last-we-left-our-heros",
     "title": "Logistic regression",
     "section": "",
-    "text": "We have been studying regression:\n\nWhat combinations of data types have we seen so far?\nWhat did the picture look like?"
+    "text": "We have been studying regression:\n\nWhat combinations of data types have we seen?\nWhat did the picture look like?"
   },
   {
     "objectID": "slides/19-logistic-regression.html#recap-simple-linear-regression",
@@ -8763,14 +8763,14 @@
     "href": "slides/19-logistic-regression.html#decision-boundary-again",
     "title": "Logistic regression",
     "section": "Decision boundary, again",
-    "text": "Decision boundary, again\nIt’s linear, again. Consider two numerical predictors:\n\n\n\n\n\n\n\n\n\nif new \\((x_1,\\,x_2)\\) below, then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif new \\((x_1,\\,x_2)\\) above, then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
+    "text": "Decision boundary, again\nIt’s linear! Consider two numerical predictors:\n\n\n\n\n\n\n\n\n\nif new \\((x_1,\\,x_2)\\) below, \\(\\text{Prob}(y=1)\\leq p^*\\). Predict \\(\\widehat{y}=0\\) for the new person;\nif new \\((x_1,\\,x_2)\\) above, \\(\\text{Prob}(y=1)&gt; p^*\\). Predict \\(\\widehat{y}=1\\) for the new person."
   },
   {
     "objectID": "slides/19-logistic-regression-slides.html#when-last-we-left-our-heros",
     "href": "slides/19-logistic-regression-slides.html#when-last-we-left-our-heros",
     "title": "Logistic regression",
     "section": "When last we left our heros…",
-    "text": "When last we left our heros…\nWe have been studying regression:\n\nWhat combinations of data types have we seen so far?\nWhat did the picture look like?"
+    "text": "When last we left our heros…\nWe have been studying regression:\n\nWhat combinations of data types have we seen?\nWhat did the picture look like?"
   },
   {
     "objectID": "slides/19-logistic-regression-slides.html#recap-simple-linear-regression",
@@ -8945,7 +8945,7 @@
     "href": "slides/19-logistic-regression-slides.html#decision-boundary-again",
     "title": "Logistic regression",
     "section": "Decision boundary, again",
-    "text": "Decision boundary, again\nIt’s linear, again. Consider two numerical predictors:\n\n\nif new \\((x_1,\\,x_2)\\) below, then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif new \\((x_1,\\,x_2)\\) above, then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
+    "text": "Decision boundary, again\nIt’s linear! Consider two numerical predictors:\n\n\nif new \\((x_1,\\,x_2)\\) below, \\(\\text{Prob}(y=1)\\leq p^*\\). Predict \\(\\widehat{y}=0\\) for the new person;\nif new \\((x_1,\\,x_2)\\) above, \\(\\text{Prob}(y=1)&gt; p^*\\). Predict \\(\\widehat{y}=1\\) for the new person."
   },
   {
     "objectID": "slides/14-language-of-models.html#while-you-wait",
