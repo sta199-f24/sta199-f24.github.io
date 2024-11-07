@@ -95,6 +95,7 @@ Numerical response; numerical and categorical predictors:
 ```{r}
 #| message: false
 #| echo: false
+#| warning: false
 bm_fl_island_fit <- linear_reg() |>
   fit(body_mass_g ~ flipper_length_mm + island, data = penguins)
 bm_fl_island_aug <- augment(bm_fl_island_fit, new_data = penguins)
