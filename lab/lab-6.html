@@ -578,7 +578,7 @@ Important
 <li><p><code>continent</code>: The continent name</p></li>
 <li><p><code>year</code>: Year of data</p></li>
 <li><p><code>life_exp</code>: life expectancy at birth, in years</p></li>
-<li><p><code>gdp_percap</code>: Gross domestic product per peson adjusted for differences in purchasing power (in international dollars, fixed 2017 prices)</p></li>
+<li><p><code>gdp_percap</code>: Gross domestic product per person adjusted for differences in purchasing power (in international dollars, fixed 2017 prices)</p></li>
 </ul>
 <section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <p>In this question you’ll prepare the dataset you’ll use in this part.</p>
@@ -590,7 +590,7 @@ Important
 </ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>We are interested in learning more about life expectancy in countries, and we’ll start by exploring the relationship between life expectancy and GDP. Create two visualizations:</p>
 <ul>
-<li><p>Scatter plot of <code>life_exp</code> vs.&nbsp;<code>gdp_percap</code> vs.</p></li>
+<li><p>Scatter plot of <code>life_exp</code> vs.&nbsp;<code>gdp_percap</code></p></li>
 <li><p>Scatter plot of <code>life_exp_log</code> vs.&nbsp;<code>gdp_percap</code>, where <code>life_exp_log</code> is a new variable you add to the data set by taking the natural log of <code>life_exp</code>.</p></li>
 </ul>
 <p>First describe the relationship between each pair of the variables. Then, comment on which relationship would be better modeled using a linear model, and explain your reasoning.</p>
@@ -609,7 +609,7 @@ Note
 </div>
 </section><section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <ol type="a">
-<li><p>** Data Prep ** What happens when you take the natural log of 0? Remove rows of your data set where life_expectancy = 0, justifing why this is helpful.</p></li>
+<li><p>** Data Prep ** What happens when you take the natural log of 0? Remove rows of your data set where life_expectancy = 0, justifying why this is helpful.</p></li>
 <li><p><strong>Model fitting:</strong> Fit a linear model predicting log life expectancy from gross domestic product. Display the tidy summary.</p></li>
 <li>
 <p><strong>Model evaluation:</strong></p>

@@ -3866,14 +3866,14 @@
     "href": "lab/lab-6.html#question-2",
     "title": "Lab 6",
     "section": "Question 2",
-    "text": "Question 2\nWe are interested in learning more about life expectancy in countries, and we’ll start by exploring the relationship between life expectancy and GDP. Create two visualizations:\n\nScatter plot of life_exp vs. gdp_percap vs.\nScatter plot of life_exp_log vs. gdp_percap, where life_exp_log is a new variable you add to the data set by taking the natural log of life_exp.\n\nFirst describe the relationship between each pair of the variables. Then, comment on which relationship would be better modeled using a linear model, and explain your reasoning.\n\n\n\n\n\n\nNote\n\n\n\nThe question isn’t asking which of these relationships is clearly linear, but instead which would be better modeled using a linear model."
+    "text": "Question 2\nWe are interested in learning more about life expectancy in countries, and we’ll start by exploring the relationship between life expectancy and GDP. Create two visualizations:\n\nScatter plot of life_exp vs. gdp_percap\nScatter plot of life_exp_log vs. gdp_percap, where life_exp_log is a new variable you add to the data set by taking the natural log of life_exp.\n\nFirst describe the relationship between each pair of the variables. Then, comment on which relationship would be better modeled using a linear model, and explain your reasoning.\n\n\n\n\n\n\nNote\n\n\n\nThe question isn’t asking which of these relationships is clearly linear, but instead which would be better modeled using a linear model."
   },
   {
     "objectID": "lab/lab-6.html#question-3",
     "href": "lab/lab-6.html#question-3",
     "title": "Lab 6",
     "section": "Question 3",
-    "text": "Question 3\n\n** Data Prep ** What happens when you take the natural log of 0? Remove rows of your data set where life_expectancy = 0, justifing why this is helpful.\nModel fitting: Fit a linear model predicting log life expectancy from gross domestic product. Display the tidy summary.\n\nModel evaluation:\n\nCalculate the R-squared of the model using two methods and confirm that the values match: first method is using glance() and the other method is based on the value of the correlation coefficient between the two variables.\nInterpret R-squared in the context of the data and the research question."
+    "text": "Question 3\n\n** Data Prep ** What happens when you take the natural log of 0? Remove rows of your data set where life_expectancy = 0, justifying why this is helpful.\nModel fitting: Fit a linear model predicting log life expectancy from gross domestic product. Display the tidy summary.\n\nModel evaluation:\n\nCalculate the R-squared of the model using two methods and confirm that the values match: first method is using glance() and the other method is based on the value of the correlation coefficient between the two variables.\nInterpret R-squared in the context of the data and the research question."
   },
   {
     "objectID": "lab/lab-6.html#question-4",
