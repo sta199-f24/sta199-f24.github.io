@@ -599,7 +599,7 @@ y
 <p><span class="math display">\[
 \text{Prob}(y = 1)
 =
-\frac{1}{1+e^{-(\beta_0+\beta_1x)}}.
+\frac{e^{\beta_0+\beta_1x}}{1+e^{\beta_0+\beta_1x}}.
 \]</span></p>
 <p>If you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the <em>log-odds</em>:</p>
 <p><span class="math display">\[
@@ -703,7 +703,7 @@ b_0+b_1x.
 <p><span class="math display">\[
 \text{Prob}(y = 1)
 =
-\frac{1}{1+e^{-(\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m)}}.
+\frac{e^{\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m}}{1+e^{\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m}}.
 \]</span></p>
 <p>For the log-odds, a <em>multiple</em> linear regression:</p>
 <p><span class="math display">\[

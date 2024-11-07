@@ -1,40 +1,11 @@
 [
   {
-    "listing": "/course-team.html",
+    "listing": "/exam-review.html",
     "items": [
-      "/ta/anmol.html",
-      "/ta/aurora.html",
-      "/ta/avery.html",
-      "/ta/dav.html",
-      "/ta/dom.html",
-      "/ta/emily.html",
-      "/ta/federico.html",
-      "/ta/grace.html",
-      "/ta/hyunjin.html",
-      "/ta/janice.html",
-      "/ta/jasmine.html",
-      "/ta/john.html",
-      "/ta/jonathan.html",
-      "/ta/kareena.html",
-      "/ta/liane.html",
-      "/ta/lynn.html",
-      "/ta/marie.html",
-      "/ta/netra.html",
-      "/ta/noah.html",
-      "/ta/sarah.html",
-      "/ta/sonya.html"
-    ]
-  },
-  {
-    "listing": "/lab.html",
-    "items": [
-      "/lab/lab-0.html",
-      "/lab/lab-1.html",
-      "/lab/lab-2.html",
-      "/lab/lab-3.html",
-      "/lab/lab-4.html",
-      "/lab/lab-5.html",
-      "/lab/lab-6.html"
+      "/exam-review/final-review.html",
+      "/exam-review/final-review-A.html",
+      "/exam-review/midterm-review.html",
+      "/exam-review/midterm-review-A.html"
     ]
   },
   {
@@ -67,17 +38,47 @@
       "/ae/ae-13-modeling-penguins.html",
       "/ae/ae-14-modeling-penguins-multi-A.html",
       "/ae/ae-14-modeling-penguins-multi.html",
+      "/ae/ae-16-spam-filter.html",
       "/ae/ae-15-modeling-loans-A.html",
       "/ae/ae-15-modeling-loans.html"
     ]
   },
   {
-    "listing": "/exam-review.html",
+    "listing": "/lab.html",
     "items": [
-      "/exam-review/final-review.html",
-      "/exam-review/final-review-A.html",
-      "/exam-review/midterm-review.html",
-      "/exam-review/midterm-review-A.html"
+      "/lab/lab-0.html",
+      "/lab/lab-1.html",
+      "/lab/lab-2.html",
+      "/lab/lab-3.html",
+      "/lab/lab-4.html",
+      "/lab/lab-5.html",
+      "/lab/lab-6.html"
+    ]
+  },
+  {
+    "listing": "/course-team.html",
+    "items": [
+      "/ta/anmol.html",
+      "/ta/aurora.html",
+      "/ta/avery.html",
+      "/ta/dav.html",
+      "/ta/dom.html",
+      "/ta/emily.html",
+      "/ta/federico.html",
+      "/ta/grace.html",
+      "/ta/hyunjin.html",
+      "/ta/janice.html",
+      "/ta/jasmine.html",
+      "/ta/john.html",
+      "/ta/jonathan.html",
+      "/ta/kareena.html",
+      "/ta/liane.html",
+      "/ta/lynn.html",
+      "/ta/marie.html",
+      "/ta/netra.html",
+      "/ta/noah.html",
+      "/ta/sarah.html",
+      "/ta/sonya.html"
     ]
   }
 ]
