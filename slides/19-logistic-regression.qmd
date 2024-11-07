@@ -292,6 +292,16 @@ $$
 
 This is called the *logistic regression* model.
 
+## Log-odds?
+
+- p = Prob(y = 1) is a probability. A number between 0 and 1;
+
+- p / (1 - p) is the odds. A number between 0 and $\infty$;
+
+"The odds of this lecture going well are 10 to 1."
+
+- The log odds log(p / (1 - p)) is a number between $-\infty$ and $\infty$, which is suitable for the linear model.
+
 ## Logistic regression
 
 $$
@@ -300,9 +310,14 @@ $$
 \beta_0+\beta_1x.
 $$
 
--   This is an example of a *generalized linear model*;
+- The *logit* function log(p / (1-p)) is an example of a *link function* that transforms the linear model to have an appropriate range;
 
--   We estimate the parameters using *maximum likelihood* (don't worry about it) to get the "best fitting" S-curve;
+- This is an example of a *generalized linear model*;
+
+
+## Estimation
+
+-   We estimate the parameters $\beta_0,\,\beta_1$ using *maximum likelihood* (don't worry about it) to get the "best fitting" S-curve;
 
 -   The fitted model is
 
