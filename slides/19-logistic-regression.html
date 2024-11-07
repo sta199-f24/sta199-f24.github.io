@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -450,80 +416,7 @@ window.Quarto = {
   
 
 
-</header><div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ──────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching packages ──────────────────────────── tidymodels 1.2.0 ──
-✔ broom        1.0.6     ✔ rsample      1.2.1
-✔ dials        1.3.0     ✔ tune         1.2.1
-✔ infer        1.0.7     ✔ workflows    1.1.4
-✔ modeldata    1.4.0     ✔ workflowsets 1.1.0
-✔ parsnip      1.2.1     ✔ yardstick    1.3.1
-✔ recipes      1.1.0     
-── Conflicts ─────────────────────────────── tidymodels_conflicts() ──
-✖ scales::discard() masks purrr::discard()
-✖ dplyr::filter()   masks stats::filter()
-✖ recipes::fixed()  masks stringr::fixed()
-✖ dplyr::lag()      masks stats::lag()
-✖ yardstick::spec() masks readr::spec()
-✖ recipes::step()   masks stats::step()
-• Dig deeper into tidy modeling with R at https://www.tmwr.org</code></pre>
-</div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://openintrostat.github.io/openintro/">openintro</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: airports
-Loading required package: cherryblossom
-Loading required package: usdata
-
-Attaching package: 'openintro'
-
-The following object is masked from 'package:modeldata':
-
-    ames</code></pre>
-</div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rudeboybert/fivethirtyeight">fivethirtyeight</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Some larger datasets need to be installed separately, like
-senators and house_district_forecast. To install these, we
-recommend you install the fivethirtyeightdata package by
-running: install.packages('fivethirtyeightdata', repos =
-'https://fivethirtyeightdata.github.io/drat/', type =
-'source')
-
-Attaching package: 'fivethirtyeight'
-
-The following object is masked from 'package:openintro':
-
-    drug_use
-
-The following object is masked from 'package:modeldata':
-
-    drinks</code></pre>
-</div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'palmerpenguins'
-
-The following object is masked from 'package:modeldata':
-
-    penguins</code></pre>
-</div>
-</div>
-<section id="when-last-we-left-our-heros" class="level2"><h2 class="anchored" data-anchor-id="when-last-we-left-our-heros">When last we left our heros…</h2>
+</header><section id="when-last-we-left-our-heros" class="level2"><h2 class="anchored" data-anchor-id="when-last-we-left-our-heros">When last we left our heros…</h2>
 <p>We have been studying regression:</p>
 <ul>
 <li><p>What combinations of data types have we seen so far?</p></li>
@@ -531,19 +424,6 @@ The following object is masked from 'package:modeldata':
 </ul></section><section id="recap-simple-linear-regression" class="level2"><h2 class="anchored" data-anchor-id="recap-simple-linear-regression">Recap: simple linear regression</h2>
 <p>Numerical response and one numerical predictor:</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">movie_scores</span> <span class="op">&lt;-</span> <span class="va">fandango</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span></span>
-<span>    critics <span class="op">=</span> <span class="va">rottentomatoes</span>, </span>
-<span>    audience <span class="op">=</span> <span class="va">rottentomatoes_user</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">movie_scores</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">critics</span>, y <span class="op">=</span> <span class="va">audience</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
-<span>    x <span class="op">=</span> <span class="st">"Critics Score"</span> , </span>
-<span>    y <span class="op">=</span> <span class="st">"Audience Score"</span>,</span>
-<span>    title <span class="op">=</span> <span class="st">"Rotten Tomatoes Scores from Thursday October 24 Lecture"</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/slr-1-1.png" class="img-fluid figure-img" width="960"></p>
@@ -554,18 +434,6 @@ The following object is masked from 'package:modeldata':
 </section><section id="recap-simple-linear-regression-1" class="level2"><h2 class="anchored" data-anchor-id="recap-simple-linear-regression-1">Recap: simple linear regression</h2>
 <p>Numerical response and one categorical predictor (two levels):</p>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lab_5_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">habit</span>, data <span class="op">=</span> <span class="va">births14</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">4</span>, <span class="fl">2</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">births14</span><span class="op">$</span><span class="va">habit</span> <span class="op">==</span> <span class="st">"smoker"</span>, <span class="va">births14</span><span class="op">$</span><span class="va">weight</span>, </span>
-<span>     pch <span class="op">=</span> <span class="fl">19</span>, </span>
-<span>     cex <span class="op">=</span> <span class="fl">0.2</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="st">"Birth weight (lbs)"</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">""</span>,</span>
-<span>     xaxt <span class="op">=</span> <span class="st">"n"</span>,</span>
-<span>     main <span class="op">=</span> <span class="st">"Smoking during pregnancy dataset from Lab 5"</span>,</span>
-<span>     xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1.25</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="va">lab_5_fit</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/axis.html">axis</a></span><span class="op">(</span>side <span class="op">=</span> <span class="fl">1</span>, at <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Non-smoker (0)"</span>, <span class="st">"Smoker (1)"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="960"></p>
@@ -576,24 +444,6 @@ The following object is masked from 'package:modeldata':
 </section><section id="recap-multiple-linear-regression" class="level2"><h2 class="anchored" data-anchor-id="recap-multiple-linear-regression">Recap: multiple linear regression</h2>
 <p>Numerical response; numerical and categorical predictors:</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bm_fl_island_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">flipper_length_mm</span> <span class="op">+</span> <span class="va">island</span>, data <span class="op">=</span> <span class="va">penguins</span><span class="op">)</span></span>
-<span><span class="va">bm_fl_island_aug</span> <span class="op">&lt;-</span> <span class="fu">augment</span><span class="op">(</span><span class="va">bm_fl_island_fit</span>, new_data <span class="op">=</span> <span class="va">penguins</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
-<span>  <span class="va">bm_fl_island_aug</span>, </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>, color <span class="op">=</span> <span class="va">island</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">.pred</span><span class="op">)</span>, method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
-<span>    title <span class="op">=</span> <span class="st">"Penguins dataset from AE 14"</span>,</span>
-<span>    x <span class="op">=</span> <span class="st">"Flipper length (mm)"</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">"Body mass (g)"</span></span>
-<span>    <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
 (`stat_smooth()`).</code></pre>
@@ -618,12 +468,6 @@ y =
 \end{cases}
 \]</span></p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">threshold</span> <span class="op">&lt;-</span> <span class="fl">0.85</span></span>
-<span><span class="va">cutoff</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">threshold</span> <span class="op">/</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">threshold</span><span class="op">)</span><span class="op">)</span> <span class="op">-</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op">/</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.5</span>, ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1.25</span><span class="op">)</span>, cex.lab <span class="op">=</span> <span class="fl">1.5</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="st">"y"</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">"x"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="960"></p>
@@ -712,10 +556,6 @@ y
 <p>Ethical concerns?</p>
 </section><section id="how-do-we-model-this-type-of-data" class="level2"><h2 class="anchored" data-anchor-id="how-do-we-model-this-type-of-data">How do we model this type of data?</h2>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.5</span>, ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1.25</span><span class="op">)</span>, cex.lab <span class="op">=</span> <span class="fl">1.5</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="st">"y"</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">"x"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="960"></p>
@@ -725,11 +565,6 @@ y
 </div>
 </section><section id="straight-line-of-best-fit-is-a-little-silly" class="level2"><h2 class="anchored" data-anchor-id="straight-line-of-best-fit-is-a-little-silly">Straight line of best fit is a little silly</h2>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.5</span>, ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1.25</span><span class="op">)</span>, cex.lab <span class="op">=</span> <span class="fl">1.5</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="st">"y"</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">"x"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
@@ -740,12 +575,6 @@ y
 </section><section id="instead-s-curve-of-best-fit" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="instead-s-curve-of-best-fit">Instead: S-curve of best fit</h2>
 <p>Instead of modeling <span class="math inline">\(y\)</span> directly, we model the probability that <span class="math inline">\(y=1\)</span>:</p>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.5</span>, ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1.25</span><span class="op">)</span>, cex.lab <span class="op">=</span> <span class="fl">1.5</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="st">"Prob(y = 1)"</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">"x"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">seq_x</span>, <span class="va">y_vals</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="960"></p>
@@ -777,12 +606,14 @@ y
 \text{Prob}(y = 1)
 =
 \frac{1}{1+e^{-(\beta_0+\beta_1x)}}.
-\]</span> If you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the <em>log-odds</em>:</p>
+\]</span></p>
+<p>If you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the <em>log-odds</em>:</p>
 <p><span class="math display">\[
 \log\left(\frac{p}{1-p}\right)
 =
 \beta_0+\beta_1x.
-\]</span> This is called the <em>logistic regression</em> model.</p>
+\]</span></p>
+<p>This is called the <em>logistic regression</em> model.</p>
 </section><section id="logistic-regression" class="level2"><h2 class="anchored" data-anchor-id="logistic-regression">Logistic regression</h2>
 <p><span class="math display">\[
 \log\left(\frac{p}{1-p}\right)
@@ -803,31 +634,12 @@ b_0+b_1x.
 </section><section id="step-1-pick-a-threshold" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="step-1-pick-a-threshold">Step 1: pick a threshold</h2>
 <p>Select a number <span class="math inline">\(0 &lt; p^* &lt; 1\)</span>:</p>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">threshold</span> <span class="op">&lt;-</span> <span class="fl">0.85</span></span>
-<span><span class="va">cutoff</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">threshold</span> <span class="op">/</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">threshold</span><span class="op">)</span><span class="op">)</span> <span class="op">-</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op">/</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">10</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.5</span>, ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1.25</span><span class="op">)</span>, cex.lab <span class="op">=</span> <span class="fl">1.5</span>,</span>
-<span>     <span class="co">#xlim = c(1.2 * min(x), 1.2 * max(x)),</span></span>
-<span>     ylab <span class="op">=</span> <span class="st">""</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">seq_x</span>, <span class="va">y_vals</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="st">"Prob(y = 1)"</span>, side <span class="op">=</span> <span class="fl">2</span>, line <span class="op">=</span> <span class="fl">8</span>, at <span class="op">=</span> <span class="fl">0.5</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="st">"x"</span>, side <span class="op">=</span> <span class="fl">1</span>, line <span class="op">=</span> <span class="fl">4</span>, at <span class="op">=</span> <span class="fl">0</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"p* ="</span>, <span class="va">threshold</span><span class="op">)</span>, side <span class="op">=</span> <span class="fl">2</span>, line <span class="op">=</span> <span class="fl">1</span>, las <span class="op">=</span> <span class="fl">2</span>, at <span class="op">=</span> <span class="va">threshold</span>, cex <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/segments.html">segments</a></span><span class="op">(</span><span class="fl">1.2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="va">threshold</span>, <span class="va">cutoff</span>, <span class="va">threshold</span>, lty <span class="op">=</span> <span class="fl">2</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/step-1-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#abline(v = cutoff, lty = 2, lwd = 2)</span></span>
-<span><span class="co">#mtext("x*", side = 1, line = 1, at = cutoff, cex = 2)</span></span>
-<span><span class="co">#polygon(c(-20, cutoff, cutoff, -20), c(-1, -1, 2, 2), col = rgb(1, .5, 0, alpha = 0.2), border = NA)</span></span>
-<span><span class="co">#polygon(c(cutoff, 20, 20, cutoff), c(-1, -1, 2, 2), col = rgb(0, 0, 1, alpha = 0.2), border = NA)</span></span>
-<span><span class="co">#text(-1, 0.5, expression(hat(y)~" = 0"), col = "orange", cex = 2)</span></span>
-<span><span class="co">#text(1, 0.5, expression(hat(y)~" = 1"), col = "blue", cex = 2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>if <span class="math inline">\(\text{Prob}(y=1)\leq p^*\)</span>, then predict <span class="math inline">\(\widehat{y}=0\)</span>;</li>
@@ -835,31 +647,12 @@ b_0+b_1x.
 </ul></section><section id="step-2-find-the-decision-boundary" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="step-2-find-the-decision-boundary">Step 2: find the “decision boundary”</h2>
 <p>Solve for the x-value that matches the threshold:</p>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">threshold</span> <span class="op">&lt;-</span> <span class="fl">0.85</span></span>
-<span><span class="va">cutoff</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">threshold</span> <span class="op">/</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">threshold</span><span class="op">)</span><span class="op">)</span> <span class="op">-</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op">/</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">10</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.5</span>, ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1.25</span><span class="op">)</span>, cex.lab <span class="op">=</span> <span class="fl">1.5</span>,</span>
-<span>     <span class="co">#xlim = c(1.2 * min(x), 1.2 * max(x)),</span></span>
-<span>     ylab <span class="op">=</span> <span class="st">""</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">seq_x</span>, <span class="va">y_vals</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="st">"Prob(y = 1)"</span>, side <span class="op">=</span> <span class="fl">2</span>, line <span class="op">=</span> <span class="fl">8</span>, at <span class="op">=</span> <span class="fl">0.5</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="st">"x"</span>, side <span class="op">=</span> <span class="fl">1</span>, line <span class="op">=</span> <span class="fl">4</span>, at <span class="op">=</span> <span class="fl">0</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"p* ="</span>, <span class="va">threshold</span><span class="op">)</span>, side <span class="op">=</span> <span class="fl">2</span>, line <span class="op">=</span> <span class="fl">1</span>, las <span class="op">=</span> <span class="fl">2</span>, at <span class="op">=</span> <span class="va">threshold</span>, cex <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/segments.html">segments</a></span><span class="op">(</span><span class="fl">1.2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="va">threshold</span>, <span class="va">cutoff</span>, <span class="va">threshold</span>, lty <span class="op">=</span> <span class="fl">2</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>v <span class="op">=</span> <span class="va">cutoff</span>, lty <span class="op">=</span> <span class="fl">2</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="st">"x*"</span>, side <span class="op">=</span> <span class="fl">1</span>, line <span class="op">=</span> <span class="fl">1</span>, at <span class="op">=</span> <span class="va">cutoff</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/step-2-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#polygon(c(-20, cutoff, cutoff, -20), c(-1, -1, 2, 2), col = rgb(1, .5, 0, alpha = 0.2), border = NA)</span></span>
-<span><span class="co">#polygon(c(cutoff, 20, 20, cutoff), c(-1, -1, 2, 2), col = rgb(0, 0, 1, alpha = 0.2), border = NA)</span></span>
-<span><span class="co">#text(-1, 0.5, expression(hat(y)~" = 0"), col = "orange", cex = 2)</span></span>
-<span><span class="co">#text(1, 0.5, expression(hat(y)~" = 1"), col = "blue", cex = 2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>if <span class="math inline">\(\text{Prob}(y=1)\leq p^*\)</span>, then predict <span class="math inline">\(\widehat{y}=0\)</span>;</li>
@@ -867,25 +660,6 @@ b_0+b_1x.
 </ul></section><section id="step-3-classify-a-new-arrival" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="step-3-classify-a-new-arrival">Step 3: classify a new arrival</h2>
 <p>A new person shows up with <span class="math inline">\(x_{\text{new}}\)</span>. Which side of the boundary are they on?</p>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">threshold</span> <span class="op">&lt;-</span> <span class="fl">0.85</span></span>
-<span><span class="va">cutoff</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">threshold</span> <span class="op">/</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">threshold</span><span class="op">)</span><span class="op">)</span> <span class="op">-</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op">/</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">10</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.5</span>, ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1.25</span><span class="op">)</span>, cex.lab <span class="op">=</span> <span class="fl">1.5</span>,</span>
-<span>     <span class="co">#xlim = c(1.2 * min(x), 1.2 * max(x)),</span></span>
-<span>     ylab <span class="op">=</span> <span class="st">""</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">seq_x</span>, <span class="va">y_vals</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="st">"Prob(y = 1)"</span>, side <span class="op">=</span> <span class="fl">2</span>, line <span class="op">=</span> <span class="fl">8</span>, at <span class="op">=</span> <span class="fl">0.5</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="st">"x"</span>, side <span class="op">=</span> <span class="fl">1</span>, line <span class="op">=</span> <span class="fl">4</span>, at <span class="op">=</span> <span class="fl">0</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"p* ="</span>, <span class="va">threshold</span><span class="op">)</span>, side <span class="op">=</span> <span class="fl">2</span>, line <span class="op">=</span> <span class="fl">1</span>, las <span class="op">=</span> <span class="fl">2</span>, at <span class="op">=</span> <span class="va">threshold</span>, cex <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/segments.html">segments</a></span><span class="op">(</span><span class="fl">1.2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="va">threshold</span>, <span class="va">cutoff</span>, <span class="va">threshold</span>, lty <span class="op">=</span> <span class="fl">2</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>v <span class="op">=</span> <span class="va">cutoff</span>, lty <span class="op">=</span> <span class="fl">2</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="st">"x*"</span>, side <span class="op">=</span> <span class="fl">1</span>, line <span class="op">=</span> <span class="fl">1</span>, at <span class="op">=</span> <span class="va">cutoff</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/polygon.html">polygon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">20</span>, <span class="va">cutoff</span>, <span class="va">cutoff</span>, <span class="op">-</span><span class="fl">20</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>, <span class="op">-</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/rgb.html">rgb</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">.5</span>, <span class="fl">0</span>, alpha <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>, border <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/polygon.html">polygon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">cutoff</span>, <span class="fl">20</span>, <span class="fl">20</span>, <span class="va">cutoff</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>, <span class="op">-</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/rgb.html">rgb</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, alpha <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>, border <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>, <span class="fl">0.5</span>, <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">hat</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">~</span><span class="st">" = 0"</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"orange"</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0.5</span>, <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">hat</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">~</span><span class="st">" = 1"</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"blue"</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/step-3-1.png" class="img-fluid figure-img" width="960"></p>
@@ -899,25 +673,6 @@ b_0+b_1x.
 </ul></section><section id="lets-change-the-threshold" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="lets-change-the-threshold">Let’s change the threshold?</h2>
 <p>A new person shows up with <span class="math inline">\(x_{\text{new}}\)</span>. Which side of the boundary are they on?</p>
 <div class="cell">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">threshold</span> <span class="op">&lt;-</span> <span class="fl">0.15</span></span>
-<span><span class="va">cutoff</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">threshold</span> <span class="op">/</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">threshold</span><span class="op">)</span><span class="op">)</span> <span class="op">-</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op">/</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">10</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.5</span>, ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1.25</span><span class="op">)</span>, cex.lab <span class="op">=</span> <span class="fl">1.5</span>,</span>
-<span>     <span class="co">#xlim = c(1.2 * min(x), 1.2 * max(x)),</span></span>
-<span>     ylab <span class="op">=</span> <span class="st">""</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">seq_x</span>, <span class="va">y_vals</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, pch <span class="op">=</span> <span class="fl">19</span>, cex <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="st">"Prob(y = 1)"</span>, side <span class="op">=</span> <span class="fl">2</span>, line <span class="op">=</span> <span class="fl">8</span>, at <span class="op">=</span> <span class="fl">0.5</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="st">"x"</span>, side <span class="op">=</span> <span class="fl">1</span>, line <span class="op">=</span> <span class="fl">4</span>, at <span class="op">=</span> <span class="fl">0</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"p* ="</span>, <span class="va">threshold</span><span class="op">)</span>, side <span class="op">=</span> <span class="fl">2</span>, line <span class="op">=</span> <span class="fl">1</span>, las <span class="op">=</span> <span class="fl">2</span>, at <span class="op">=</span> <span class="va">threshold</span>, cex <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/segments.html">segments</a></span><span class="op">(</span><span class="fl">1.2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="va">threshold</span>, <span class="va">cutoff</span>, <span class="va">threshold</span>, lty <span class="op">=</span> <span class="fl">2</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>v <span class="op">=</span> <span class="va">cutoff</span>, lty <span class="op">=</span> <span class="fl">2</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="st">"x*"</span>, side <span class="op">=</span> <span class="fl">1</span>, line <span class="op">=</span> <span class="fl">1</span>, at <span class="op">=</span> <span class="va">cutoff</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/polygon.html">polygon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">20</span>, <span class="va">cutoff</span>, <span class="va">cutoff</span>, <span class="op">-</span><span class="fl">20</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>, <span class="op">-</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/rgb.html">rgb</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">.5</span>, <span class="fl">0</span>, alpha <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>, border <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/polygon.html">polygon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">cutoff</span>, <span class="fl">20</span>, <span class="fl">20</span>, <span class="va">cutoff</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>, <span class="op">-</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/rgb.html">rgb</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, alpha <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>, border <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>, <span class="fl">0.5</span>, <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">hat</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">~</span><span class="st">" = 0"</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"orange"</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0.5</span>, <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">hat</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">~</span><span class="st">" = 1"</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"blue"</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/lower-threshold-1.png" class="img-fluid figure-img" width="960"></p>
@@ -931,37 +686,6 @@ b_0+b_1x.
 </ul></section><section id="nothing-special-about-one-predictor" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="nothing-special-about-one-predictor">Nothing special about one predictor…</h2>
 <p>Two numerical predictors and one binary response:</p>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.stats.ox.ac.uk/pub/MASS4/">MASS</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'MASS'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:openintro':
-
-    housing, mammals</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:dplyr':
-
-    select</code></pre>
-</div>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">20</span><span class="op">)</span></span>
-<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">20</span></span>
-<span><span class="va">cloud1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/MASS/man/mvrnorm.html">mvrnorm</a></span><span class="op">(</span><span class="va">n</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.5</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">1</span><span class="op">)</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">cloud2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/MASS/man/mvrnorm.html">mvrnorm</a></span><span class="op">(</span><span class="va">n</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="fl">1</span><span class="op">)</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">cloud1</span>, <span class="va">cloud2</span><span class="op">)</span></span>
-<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">0</span>, <span class="va">n</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">X</span>, </span>
-<span>     pch <span class="op">=</span> <span class="fl">19</span>, </span>
-<span>     col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"orange"</span>, <span class="va">n</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="va">n</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span>,</span>
-<span>     xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4</span>, <span class="fl">4</span><span class="op">)</span>,</span>
-<span>     ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4</span>, <span class="fl">4</span><span class="op">)</span>,</span>
-<span>     cex.lab <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"bottomright"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"y = 0"</span>, <span class="st">"y = 1"</span><span class="op">)</span>, pch <span class="op">=</span> <span class="fl">19</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"orange"</span>, <span class="st">"blue"</span><span class="op">)</span>, bty <span class="op">=</span> <span class="st">"n"</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="960"></p>
@@ -975,7 +699,8 @@ Attaching package: 'MASS'</code></pre>
 \text{Prob}(y = 1)
 =
 \frac{1}{1+e^{-(\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m)}}.
-\]</span> For the log-odds, a <em>multiple</em> linear regression:</p>
+\]</span></p>
+<p>For the log-odds, a <em>multiple</em> linear regression:</p>
 <p><span class="math display">\[
 \log\left(\frac{p}{1-p}\right)
 =
@@ -984,38 +709,6 @@ Attaching package: 'MASS'</code></pre>
 </section><section id="decision-boundary-again" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="decision-boundary-again">Decision boundary, again</h2>
 <p>It’s linear, again. Consider two numerical predictors:</p>
 <div class="cell">
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">X</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">b0</span> <span class="op">&lt;-</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
-<span><span class="va">b1</span> <span class="op">&lt;-</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
-<span><span class="va">b2</span> <span class="op">&lt;-</span> <span class="va">fit</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span></span>
-<span></span>
-<span><span class="va">p_thresh</span> <span class="op">&lt;-</span> <span class="fl">0.5</span></span>
-<span></span>
-<span><span class="co"># compute intercept and slope of decision boundary</span></span>
-<span><span class="va">bd_incpt</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">p_thresh</span> <span class="op">/</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">p_thresh</span><span class="op">)</span><span class="op">)</span> <span class="op">-</span> <span class="va">b0</span><span class="op">)</span> <span class="op">/</span> <span class="va">b2</span></span>
-<span><span class="va">bd_slp</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="va">b1</span> <span class="op">/</span> <span class="va">b2</span></span>
-<span></span>
-<span><span class="va">x_for_poly</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">5</span>, <span class="fl">5</span>, length.out <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></span>
-<span><span class="va">y_for_poly</span> <span class="op">&lt;-</span> <span class="va">bd_incpt</span> <span class="op">+</span> <span class="va">bd_slp</span> <span class="op">*</span> <span class="va">x_for_poly</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">X</span>, </span>
-<span>     pch <span class="op">=</span> <span class="fl">19</span>, </span>
-<span>     col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"orange"</span>, <span class="va">n</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="va">n</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span>,</span>
-<span>     xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4</span>, <span class="fl">4</span><span class="op">)</span>,</span>
-<span>     ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4</span>, <span class="fl">4</span><span class="op">)</span>,</span>
-<span>     cex.lab <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>a <span class="op">=</span> <span class="va">bd_incpt</span>, b <span class="op">=</span> <span class="va">bd_slp</span>, lty <span class="op">=</span> <span class="fl">2</span>, lwd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/polygon.html">polygon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">x_for_poly</span>, <span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="va">x_for_poly</span><span class="op">)</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">y_for_poly</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/rgb.html">rgb</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, alpha <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>, border <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/polygon.html">polygon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">x_for_poly</span>, <span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="va">x_for_poly</span><span class="op">)</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">y_for_poly</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="op">-</span><span class="fl">5</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/rgb.html">rgb</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">.5</span>, <span class="fl">0</span>, alpha <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>, border <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"left"</span>, <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">hat</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">~</span><span class="st">" = 0"</span><span class="op">)</span>, text.col <span class="op">=</span> <span class="st">"orange"</span>, bty <span class="op">=</span> <span class="st">"n"</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"right"</span>, <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">hat</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">~</span><span class="st">" = 1"</span><span class="op">)</span>, text.col <span class="op">=</span> <span class="st">"blue"</span>, bty <span class="op">=</span> <span class="st">"n"</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="co">#legend("topleft", paste("p =", p_thresh), bty = "n", cex = 2)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="va">X</span>, pch <span class="op">=</span> <span class="fl">19</span>, </span>
-<span>     col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"orange"</span>, <span class="va">n</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="960"></p>
