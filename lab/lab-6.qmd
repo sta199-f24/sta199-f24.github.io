@@ -113,7 +113,7 @@ A table of variables can be found below.
 
 -   `life_exp`: life expectancy at birth, in years
 
--   `gdp_percap`: Gross domestic product per peson adjusted for differences in purchasing power (in international dollars, fixed 2017 prices)
+-   `gdp_percap`: Gross domestic product per person adjusted for differences in purchasing power (in international dollars, fixed 2017 prices)
 
 ## Question 1
 
@@ -151,7 +151,7 @@ The question isn't asking which of these relationships is clearly linear, but in
 ## Question 3
 
 a.  \*\* Data Prep \*\* What happens when you take the natural log of 0?
-    Remove rows of your data set where life_expectancy = 0, justifing why this is helpful.
+    Remove rows of your data set where life_expectancy = 0, justifying why this is helpful.
 
 b.  **Model fitting:** Fit a linear model predicting log life expectancy from gross domestic product.
     Display the tidy summary.
