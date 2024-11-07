@@ -150,7 +150,7 @@ The question isn't asking which of these relationships is clearly linear, but in
 
 ## Question 3
 
-a.  \*\* Data Prep \*\* What happens when you take the natural log of 0?
+a.  **Data Prep:** What happens when you take the natural log of 0?
     Remove rows of your data set where life_expectancy = 0, justifying why this is helpful.
 
 b.  **Model fitting:** Fit a linear model predicting log life expectancy from gross domestic product.
