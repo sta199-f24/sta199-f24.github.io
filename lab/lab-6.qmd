@@ -113,7 +113,7 @@ A table of variables can be found below.
 
 -   `life_exp`: life expectancy at birth, in years
 
--   `gdp_percap`: Gross domestic product per peson adjusted for differences in purchasing power (in international dollars, fixed 2017 prices)
+-   `gdp_percap`: Gross domestic product per person adjusted for differences in purchasing power (in international dollars, fixed 2017 prices)
 
 ## Question 1
 
@@ -137,7 +137,7 @@ d.  **Clean:** First, figure out why `gdp_percap` is read in as a character vari
 We are interested in learning more about life expectancy in countries, and we’ll start by exploring the relationship between life expectancy and GDP.
 Create two visualizations:
 
--   Scatter plot of `life_exp` vs. `gdp_percap` vs.
+-   Scatter plot of `life_exp` vs. `gdp_percap`
 
 -   Scatter plot of `life_exp_log` vs. `gdp_percap`, where `life_exp_log` is a new variable you add to the data set by taking the natural log of `life_exp`.
 
@@ -150,8 +150,8 @@ The question isn't asking which of these relationships is clearly linear, but in
 
 ## Question 3
 
-a.  \*\* Data Prep \*\* What happens when you take the natural log of 0?
-    Remove rows of your data set where life_expectancy = 0, justifing why this is helpful.
+a.  **Data Prep:** What happens when you take the natural log of 0?
+    Remove rows of your data set where life_expectancy = 0, justifying why this is helpful.
 
 b.  **Model fitting:** Fit a linear model predicting log life expectancy from gross domestic product.
     Display the tidy summary.

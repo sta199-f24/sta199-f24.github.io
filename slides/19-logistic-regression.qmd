@@ -40,11 +40,11 @@ y_vals <- 1 / (1 + exp(-(fit$coefficients[1] + fit$coefficients[2] * seq_x)))
 
 We have been studying regression:
 
--   What combinations of data types have we seen so far?
+-   What combinations of data types have we seen?
 
 -   What did the picture look like?
 
-## Recap: simple linear regression
+## Recap: simple linear regression {.smaller}
 
 Numerical response and one numerical predictor:
 
@@ -67,7 +67,7 @@ ggplot(movie_scores, aes(x = critics, y = audience)) +
   )
 ```
 
-## Recap: simple linear regression
+## Recap: simple linear regression {.smaller}
 
 Numerical response and one categorical predictor (two levels):
 
@@ -88,13 +88,14 @@ abline(lab_5_fit, col = "red", lwd = 3)
 axis(side = 1, at = c(0, 1), labels = c("Non-smoker (0)", "Smoker (1)"))
 ```
 
-## Recap: multiple linear regression
+## Recap: multiple linear regression {.smaller}
 
 Numerical response; numerical and categorical predictors:
 
 ```{r}
 #| message: false
 #| echo: false
+#| warning: false
 bm_fl_island_fit <- linear_reg() |>
   fit(body_mass_g ~ flipper_length_mm + island, data = penguins)
 bm_fl_island_aug <- augment(bm_fl_island_fit, new_data = penguins)
@@ -267,9 +268,9 @@ points(x, y, pch = 19, cex = 0.75)
 
     -   Our models do not output *guarantees* for $y$, they output predictions that describe behavior *on average*;
 
--   **It's similar for regression with a binary response**:
+-   **Similar when modeling a binary response**:
 
-    -   Our models cannot directly guarantee that $y$ will be zero or one, only characterize the likelihood.
+    -   Our models cannot directly guarantee that $y$ will be zero or one. The correct analog to "on average" for a 0/1 response is "what's the probability?"
 
 ## So, what is this S-curve, anyway?
 
@@ -278,8 +279,8 @@ It's the *logistic function*:
 $$
 \text{Prob}(y = 1)
 =
-\frac{1}{1+e^{-(\beta_0+\beta_1x)}}.
-$$ 
+\frac{e^{\beta_0+\beta_1x}}{1+e^{\beta_0+\beta_1x}}.
+$$
 
 If you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the *log-odds*:
 
@@ -287,9 +288,21 @@ $$
 \log\left(\frac{p}{1-p}\right)
 =
 \beta_0+\beta_1x.
-$$ 
+$$
 
 This is called the *logistic regression* model.
+
+## Log-odds?
+
+-   p = Prob(y = 1) is a probability.
+    A number between 0 and 1;
+
+-   p / (1 - p) is the odds.
+    A number between 0 and $\infty$;
+
+"The odds of this lecture going well are 10 to 1."
+
+-   The log odds log(p / (1 - p)) is a number between $-\infty$ and $\infty$, which is suitable for the linear model.
 
 ## Logistic regression
 
@@ -299,9 +312,13 @@ $$
 \beta_0+\beta_1x.
 $$
 
+-   The *logit* function log(p / (1-p)) is an example of a *link function* that transforms the linear model to have an appropriate range;
+
 -   This is an example of a *generalized linear model*;
 
--   We estimate the parameters using *maximum likelihood* (don't worry about it) to get the "best fitting" S-curve;
+## Estimation
+
+-   We estimate the parameters $\beta_0,\,\beta_1$ using *maximum likelihood* (don't worry about it) to get the "best fitting" S-curve;
 
 -   The fitted model is
 
@@ -400,7 +417,7 @@ text(1, 0.5, expression(hat(y)~" = 1"), col = "blue", cex = 2)
 -   if $x_{\text{new}} \leq x^\star$, then $\text{Prob}(y=1)\leq p^*$, so predict $\widehat{y}=0$ for the new person;
 -   if $x_{\text{new}} > x^\star$, then $\text{Prob}(y=1)> p^*$, so predict $\widehat{y}=1$ for the new person.
 
-## Let's change the threshold? {.smaller}
+## Let's change the threshold {.smaller}
 
 A new person shows up with $x_{\text{new}}$.
 Which side of the boundary are they on?
@@ -465,8 +482,8 @@ On the probability scale:
 $$
 \text{Prob}(y = 1)
 =
-\frac{1}{1+e^{-(\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m)}}.
-$$ 
+\frac{e^{\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m}}{1+e^{\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m}}.
+$$
 
 For the log-odds, a *multiple* linear regression:
 
@@ -478,7 +495,7 @@ $$
 
 ## Decision boundary, again {.smaller}
 
-It's linear, again.
+It's linear!
 Consider two numerical predictors:
 
 ```{r}
@@ -517,5 +534,5 @@ points(X, pch = 19,
      col = c(rep("orange", n), rep("blue", n)))
 ```
 
--   if new $(x_1,\,x_2)$ below, then $\text{Prob}(y=1)\leq p^*$, so predict $\widehat{y}=0$ for the new person;
--   if new $(x_1,\,x_2)$ above, then $\text{Prob}(y=1)> p^*$, so predict $\widehat{y}=1$ for the new person.
+-   if new $(x_1,\,x_2)$ below, $\text{Prob}(y=1)\leq p^*$. Predict $\widehat{y}=0$ for the new person;
+-   if new $(x_1,\,x_2)$ above, $\text{Prob}(y=1)> p^*$. Predict $\widehat{y}=1$ for the new person.
