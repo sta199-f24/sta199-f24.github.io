@@ -8714,7 +8714,7 @@
     "href": "slides/19-logistic-regression.html#why-dont-we-model-y-directly",
     "title": "Logistic regression",
     "section": "Why don’t we model y directly?",
-    "text": "Why don’t we model y directly?\n\n\nRecall regression with a numerical response:\n\nOur models do not output guarantees for \\(y\\), they output predictions that describe behavior on average;\n\n\n\nIt’s similar for regression with a binary response:\n\nOur models cannot directly guarantee that \\(y\\) will be zero or one, only characterize the likelihood."
+    "text": "Why don’t we model y directly?\n\n\nRecall regression with a numerical response:\n\nOur models do not output guarantees for \\(y\\), they output predictions that describe behavior on average;\n\n\n\nSimilar when modeling a binary response:\n\nOur models cannot directly guarantee that \\(y\\) will be zero or one. The correct analog to “on average” for a 0/1 response is “what’s the probability?”"
   },
   {
     "objectID": "slides/19-logistic-regression.html#so-what-is-this-s-curve-anyway",
@@ -8776,8 +8776,8 @@
     "objectID": "slides/19-logistic-regression.html#lets-change-the-threshold",
     "href": "slides/19-logistic-regression.html#lets-change-the-threshold",
     "title": "Logistic regression",
-    "section": "Let’s change the threshold?",
-    "text": "Let’s change the threshold?\nA new person shows up with \\(x_{\\text{new}}\\). Which side of the boundary are they on?\n\n\n\n\n\n\n\n\n\nif \\(x_{\\text{new}} \\leq x^\\star\\), then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif \\(x_{\\text{new}} &gt; x^\\star\\), then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
+    "section": "Let’s change the threshold",
+    "text": "Let’s change the threshold\nA new person shows up with \\(x_{\\text{new}}\\). Which side of the boundary are they on?\n\n\n\n\n\n\n\n\n\nif \\(x_{\\text{new}} \\leq x^\\star\\), then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif \\(x_{\\text{new}} &gt; x^\\star\\), then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
   },
   {
     "objectID": "slides/19-logistic-regression.html#nothing-special-about-one-predictor",
@@ -8896,7 +8896,7 @@
     "href": "slides/19-logistic-regression-slides.html#why-dont-we-model-y-directly",
     "title": "Logistic regression",
     "section": "Why don’t we model y directly?",
-    "text": "Why don’t we model y directly?\n\n\nRecall regression with a numerical response:\n\nOur models do not output guarantees for \\(y\\), they output predictions that describe behavior on average;\n\n\n\nIt’s similar for regression with a binary response:\n\nOur models cannot directly guarantee that \\(y\\) will be zero or one, only characterize the likelihood."
+    "text": "Why don’t we model y directly?\n\n\nRecall regression with a numerical response:\n\nOur models do not output guarantees for \\(y\\), they output predictions that describe behavior on average;\n\n\n\nSimilar when modeling a binary response:\n\nOur models cannot directly guarantee that \\(y\\) will be zero or one. The correct analog to “on average” for a 0/1 response is “what’s the probability?”"
   },
   {
     "objectID": "slides/19-logistic-regression-slides.html#so-what-is-this-s-curve-anyway",
@@ -8958,8 +8958,8 @@
     "objectID": "slides/19-logistic-regression-slides.html#lets-change-the-threshold",
     "href": "slides/19-logistic-regression-slides.html#lets-change-the-threshold",
     "title": "Logistic regression",
-    "section": "Let’s change the threshold?",
-    "text": "Let’s change the threshold?\nA new person shows up with \\(x_{\\text{new}}\\). Which side of the boundary are they on?\n\n\nif \\(x_{\\text{new}} \\leq x^\\star\\), then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif \\(x_{\\text{new}} &gt; x^\\star\\), then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
+    "section": "Let’s change the threshold",
+    "text": "Let’s change the threshold\nA new person shows up with \\(x_{\\text{new}}\\). Which side of the boundary are they on?\n\n\nif \\(x_{\\text{new}} \\leq x^\\star\\), then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif \\(x_{\\text{new}} &gt; x^\\star\\), then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
   },
   {
     "objectID": "slides/19-logistic-regression-slides.html#nothing-special-about-one-predictor",

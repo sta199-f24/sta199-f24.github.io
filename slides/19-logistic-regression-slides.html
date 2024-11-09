@@ -463,9 +463,9 @@ y
 </ul>
 </li>
 <li>
-<p><strong>It’s similar for regression with a binary response</strong>:</p>
+<p><strong>Similar when modeling a binary response</strong>:</p>
 <ul>
-<li>Our models cannot directly guarantee that <span class="math inline">\(y\)</span> will be zero or one, only characterize the likelihood.</li>
+<li>Our models cannot directly guarantee that <span class="math inline">\(y\)</span> will be zero or one. The correct analog to “on average” for a 0/1 response is “what’s the probability?”</li>
 </ul>
 </li>
 </ul></section><section id="so-what-is-this-s-curve-anyway" class="slide level2"><h2>So, what is this S-curve, anyway?</h2>
@@ -528,7 +528,7 @@ b_0+b_1x.
 <img data-src="19-logistic-regression_files/figure-revealjs/step-3-1.png" width="960" class="r-stretch"><ul>
 <li>if <span class="math inline">\(x_{\text{new}} \leq x^\star\)</span>, then <span class="math inline">\(\text{Prob}(y=1)\leq p^*\)</span>, so predict <span class="math inline">\(\widehat{y}=0\)</span> for the new person;</li>
 <li>if <span class="math inline">\(x_{\text{new}} &gt; x^\star\)</span>, then <span class="math inline">\(\text{Prob}(y=1)&gt; p^*\)</span>, so predict <span class="math inline">\(\widehat{y}=1\)</span> for the new person.</li>
-</ul></section><section id="lets-change-the-threshold" class="slide level2 smaller"><h2>Let’s change the threshold?</h2>
+</ul></section><section id="lets-change-the-threshold" class="slide level2 smaller"><h2>Let’s change the threshold</h2>
 <p>A new person shows up with <span class="math inline">\(x_{\text{new}}\)</span>. Which side of the boundary are they on?</p>
 
 <img data-src="19-logistic-regression_files/figure-revealjs/lower-threshold-1.png" width="960" class="r-stretch"><ul>
