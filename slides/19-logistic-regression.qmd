@@ -268,9 +268,9 @@ points(x, y, pch = 19, cex = 0.75)
 
     -   Our models do not output *guarantees* for $y$, they output predictions that describe behavior *on average*;
 
--   **It's similar for regression with a binary response**:
+-   **Similar when modeling a binary response**:
 
-    -   Our models cannot directly guarantee that $y$ will be zero or one, only characterize the likelihood.
+    -   Our models cannot directly guarantee that $y$ will be zero or one. The correct analog to "on average" for a 0/1 response is "what's the probability?"
 
 ## So, what is this S-curve, anyway?
 
@@ -280,7 +280,7 @@ $$
 \text{Prob}(y = 1)
 =
 \frac{e^{\beta_0+\beta_1x}}{1+e^{\beta_0+\beta_1x}}.
-$$ 
+$$
 
 If you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the *log-odds*:
 
@@ -288,19 +288,21 @@ $$
 \log\left(\frac{p}{1-p}\right)
 =
 \beta_0+\beta_1x.
-$$ 
+$$
 
 This is called the *logistic regression* model.
 
 ## Log-odds?
 
-- p = Prob(y = 1) is a probability. A number between 0 and 1;
+-   p = Prob(y = 1) is a probability.
+    A number between 0 and 1;
 
-- p / (1 - p) is the odds. A number between 0 and $\infty$;
+-   p / (1 - p) is the odds.
+    A number between 0 and $\infty$;
 
 "The odds of this lecture going well are 10 to 1."
 
-- The log odds log(p / (1 - p)) is a number between $-\infty$ and $\infty$, which is suitable for the linear model.
+-   The log odds log(p / (1 - p)) is a number between $-\infty$ and $\infty$, which is suitable for the linear model.
 
 ## Logistic regression
 
@@ -310,10 +312,9 @@ $$
 \beta_0+\beta_1x.
 $$
 
-- The *logit* function log(p / (1-p)) is an example of a *link function* that transforms the linear model to have an appropriate range;
+-   The *logit* function log(p / (1-p)) is an example of a *link function* that transforms the linear model to have an appropriate range;
 
-- This is an example of a *generalized linear model*;
-
+-   This is an example of a *generalized linear model*;
 
 ## Estimation
 
@@ -416,7 +417,7 @@ text(1, 0.5, expression(hat(y)~" = 1"), col = "blue", cex = 2)
 -   if $x_{\text{new}} \leq x^\star$, then $\text{Prob}(y=1)\leq p^*$, so predict $\widehat{y}=0$ for the new person;
 -   if $x_{\text{new}} > x^\star$, then $\text{Prob}(y=1)> p^*$, so predict $\widehat{y}=1$ for the new person.
 
-## Let's change the threshold? {.smaller}
+## Let's change the threshold {.smaller}
 
 A new person shows up with $x_{\text{new}}$.
 Which side of the boundary are they on?
@@ -482,7 +483,7 @@ $$
 \text{Prob}(y = 1)
 =
 \frac{e^{\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m}}{1+e^{\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m}}.
-$$ 
+$$
 
 For the log-odds, a *multiple* linear regression:
 
@@ -494,7 +495,8 @@ $$
 
 ## Decision boundary, again {.smaller}
 
-It's linear! Consider two numerical predictors:
+It's linear!
+Consider two numerical predictors:
 
 ```{r}
 #| message: false
