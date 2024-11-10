@@ -117,7 +117,12 @@ b.  What type of variable is `dollar` - number of times a dollar sign or the wor
 c.  Fit a logistic regression model predicting `spam` from `dollar`.
     Then, display the tidy output of the model.
 
-d.  Using this model and an R function like `predict()` or `augment()`, predict the probability the email is spam if it contains 5 dollar signs.
+d.  Using this model and the `predict()` function, predict the probability the email is spam if it contains 5 dollar signs.
+    Based on this probability, how does the model classify this email?
+
+    ::: callout-note
+    To obtain the predicted probability, you can set the `type` argument in `predict()` to `"prob"`.
+    :::
 
 ## Question 2
 
@@ -125,7 +130,7 @@ a.  Fit another logistic regression model predicting `spam` from `dollar`, `winn
     Then, display the tidy output of the model.
 
 b.  Using this model, predict spam / not spam for all emails in the `email` dataset with `augment()`.
-    Store the resulting data frame with an appropriate name.
+    Store the resulting data frame with an appropriate name and display the data frame as well.
 
 c.  Using your data frame from the previous part, determine, in a single pipeline, and using `count()`, the numbers of emails:
 
