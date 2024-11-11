@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><meta name="quarto:status" content="draft">
+}</script>
 <meta property="og:title" content="Lab 7 – STA 199">
 <meta property="og:description" content="Mon, Nov 18 at 8:30 am">
 <meta property="og:site_name" content="STA 199">
@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -443,7 +443,10 @@ Note
 <section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>By the end of the lab, you will…</p>
 <ul>
-<li><strong>TO DO: Add LOs</strong></li>
+<li><p>Fit and interpret logistic regression models</p></li>
+<li><p>Understand the difference between odds, log odds, and probability of an event</p></li>
+<li><p>Make classification based on predicted probability of an event</p></li>
+<li><p>See statistics and/or data science in action in the real world</p></li>
 </ul>
 <p>And, as usual, you will also…</p>
 <ul>
@@ -577,7 +580,7 @@ Note
 </ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <ol type="a">
 <li><p>Fit another logistic regression model predicting <code>spam</code> from <code>dollar</code>, <code>winner</code> (indicating whether “winner” appeared in the email), and <code>urgent_subj</code> (whether the word “urgent” is in the subject of the email). Then, display the tidy output of the model.</p></li>
-<li><p>Using this model, predict spam / not spam for all emails in the <code>email</code> dataset with <code>augment()</code>. Store the resulting data frame with an appropriate name and display the data frame as well.</p></li>
+<li><p>Using this model and the <code>augment()</code> function, classify each email in the <code>email</code> dataset as spam or not spam. Store the resulting data frame with an appropriate name and display the data frame as well.</p></li>
 <li>
 <p>Using your data frame from the previous part, determine, in a single pipeline, and using <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code>, the numbers of emails:</p>
 <ul>
@@ -586,13 +589,13 @@ Note
 <li>that are labelled as spam that are actually not spam</li>
 <li>that are not labelled as spam that are actually not spam</li>
 </ul>
-<p>Store the resulting data frame with an appropriate name.</p>
+<p>Store the resulting data frame with an appropriate name and display the data frame as well.</p>
 </li>
 <li><p>In a single pipeline, and using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>, calculate the false positive and false negative rates. In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.</p></li>
 </ol></section><section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <ol type="a">
 <li><p>Fit another logistic regression model predicting <code>spam</code> from <code>dollar</code> and another variable you think would be a good predictor. Provide a 1-sentence justification for why you chose this variable. Display the tidy output of the model.</p></li>
-<li><p>Using this model, predict spam / not spam for all emails in the <code>email</code> dataset with <code>augment()</code>. Store the resulting data frame with an appropriate name.</p></li>
+<li><p>Using this model and the <code>augment()</code> function, classify each email in the <code>email</code> dataset as spam or not spam. Store the resulting data frame with an appropriate name and display the data frame as well.</p></li>
 <li>
 <p>Using your data frame from the previous part, determine, in a single pipeline, and using <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code>, the numbers of emails:</p>
 <ul>
@@ -601,7 +604,7 @@ Note
 <li>that are labelled as spam that are actually not spam</li>
 <li>that are not labelled as spam that are actually not spam</li>
 </ul>
-<p>Store the resulting data frame with an appropriate name.</p>
+<p>Store the resulting data frame with an appropriate name and display the data frame as well.</p>
 </li>
 <li><p>In a single pipeline, and using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>, calculate the false positive and false negative rates. In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.</p></li>
 <li><p>Based on the false positive and false negatives rates of this model, comment, in 1-2 sentences, on which model (one from Question 2 or Question 3) is preferable and why.</p></li>
