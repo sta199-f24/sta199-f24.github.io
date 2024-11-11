@@ -134,7 +134,7 @@ d.  Using this model and the `predict()` function, predict the probability the e
 a.  Fit another logistic regression model predicting `spam` from `dollar`, `winner` (indicating whether “winner” appeared in the email), and `urgent_subj` (whether the word "urgent" is in the subject of the email).
     Then, display the tidy output of the model.
 
-b.  Using this model, predict spam / not spam for all emails in the `email` dataset with `augment()`.
+b.  Using this model and the `augment()` function, classify each email in the `email` dataset as spam or not spam.
     Store the resulting data frame with an appropriate name and display the data frame as well.
 
 c.  Using your data frame from the previous part, determine, in a single pipeline, and using `count()`, the numbers of emails:
@@ -155,7 +155,7 @@ a.  Fit another logistic regression model predicting `spam` from `dollar` and an
     Provide a 1-sentence justification for why you chose this variable.
     Display the tidy output of the model.
 
-b.  Using this model, predict spam / not spam for all emails in the `email` dataset with `augment()`.
+b.  Using this model and the `augment()` function, classify each email in the `email` dataset as spam or not spam.
     Store the resulting data frame with an appropriate name and display the data frame as well.
 
 c.  Using your data frame from the previous part, determine, in a single pipeline, and using `count()`, the numbers of emails:
