@@ -403,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Lab 7</h1>
-<p class="subtitle lead">To be posted</p>
+<p class="subtitle lead">Explore and classify</p>
   <div class="quarto-categories">
     <div class="quarto-category">Lab</div>
   </div>
@@ -558,11 +558,26 @@ Important
 <li><p>What type of variable is <code>spam</code>? What percent of the emails are spam?</p></li>
 <li><p>What type of variable is <code>dollar</code> - number of times a dollar sign or the word “dollar” appeared in the email? Visualize and describe its distribution, supporting your description with the appropriate summary statistics.</p></li>
 <li><p>Fit a logistic regression model predicting <code>spam</code> from <code>dollar</code>. Then, display the tidy output of the model.</p></li>
-<li><p>Using this model and an R function like <code><a href="https://rdrr.io/r/stats/predict.html">predict()</a></code> or <code>augment()</code>, predict the probability the email is spam if it contains 5 dollar signs.</p></li>
+<li>
+<p>Using this model and the <code><a href="https://rdrr.io/r/stats/predict.html">predict()</a></code> function, predict the probability the email is spam if it contains 5 dollar signs. Based on this probability, how does the model classify this email?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To obtain the predicted probability, you can set the <code>type</code> argument in <code><a href="https://rdrr.io/r/stats/predict.html">predict()</a></code> to <code>"prob"</code>.</p>
+</div>
+</div>
+</li>
 </ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <ol type="a">
 <li><p>Fit another logistic regression model predicting <code>spam</code> from <code>dollar</code>, <code>winner</code> (indicating whether “winner” appeared in the email), and <code>urgent_subj</code> (whether the word “urgent” is in the subject of the email). Then, display the tidy output of the model.</p></li>
-<li><p>Using this model, predict spam / not spam for all emails in the <code>email</code> dataset with <code>augment()</code>. Store the resulting data frame with an appropriate name.</p></li>
+<li><p>Using this model, predict spam / not spam for all emails in the <code>email</code> dataset with <code>augment()</code>. Store the resulting data frame with an appropriate name and display the data frame as well.</p></li>
 <li>
 <p>Using your data frame from the previous part, determine, in a single pipeline, and using <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code>, the numbers of emails:</p>
 <ul>
