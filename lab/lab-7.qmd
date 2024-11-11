@@ -3,7 +3,6 @@ title: Lab 7
 subtitle: Explore and classify
 categories: Lab
 description: "Mon, Nov 18 at 8:30 am"
-draft: true
 ---
 
 # Introduction
@@ -21,7 +20,13 @@ If you haven't done those yet, you should review the previous labs before starti
 
 By the end of the lab, you will...
 
--   **TO DO: Add LOs**
+-   Fit and interpret logistic regression models
+
+-   Understand the difference between odds, log odds, and probability of an event
+
+-   Make classification based on predicted probability of an event
+
+-   See statistics and/or data science in action in the real world
 
 And, as usual, you will also...
 
