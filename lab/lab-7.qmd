@@ -144,7 +144,7 @@ c.  Using your data frame from the previous part, determine, in a single pipelin
     -   that are labelled as spam that are actually not spam
     -   that are not labelled as spam that are actually not spam
 
-    Store the resulting data frame with an appropriate name.
+    Store the resulting data frame with an appropriate name and display the data frame as well.
 
 d.  In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
     In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
@@ -156,7 +156,7 @@ a.  Fit another logistic regression model predicting `spam` from `dollar` and an
     Display the tidy output of the model.
 
 b.  Using this model, predict spam / not spam for all emails in the `email` dataset with `augment()`.
-    Store the resulting data frame with an appropriate name.
+    Store the resulting data frame with an appropriate name and display the data frame as well.
 
 c.  Using your data frame from the previous part, determine, in a single pipeline, and using `count()`, the numbers of emails:
 
@@ -165,7 +165,7 @@ c.  Using your data frame from the previous part, determine, in a single pipelin
     -   that are labelled as spam that are actually not spam
     -   that are not labelled as spam that are actually not spam
 
-    Store the resulting data frame with an appropriate name.
+    Store the resulting data frame with an appropriate name and display the data frame as well.
 
 d.  In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
     In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
