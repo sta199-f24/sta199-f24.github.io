@@ -248,7 +248,7 @@ a.  Read in the `gss22.csv` file that is in your `data` folder and save it as `g
 b.  Create a new data frame called `gss22_advfront` that only contains the variables `advfront`, `educ`, and `polviews`.
     Then, use the `drop_na()` function to remove rows that contain `NA`s from this new data frame.
     Report the number of rows and columns of `gss22_advfront`.
-    Additionally, report what percent of the data were discarded at this step.
+    Additionally, report what percent of the observations were discarded at this step.
 
 c.  Re-level the `advfront` variable such that it has two levels: `Strongly agree` and "`Agree"` combined into a new level called `Agree` and the remaining levels combined into"`Not agree"`.
     Then, re-order the levels in the following order: `"Agree"` and `"Not agree"`.
