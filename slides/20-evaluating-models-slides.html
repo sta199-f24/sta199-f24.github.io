@@ -12,8 +12,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.12">
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
-<meta name="dcterms.date" content="2024-09-12">
-<title>STA 199 – Exploring data II</title>
+<meta name="dcterms.date" content="2024-11-12">
+<title>STA 199 – Evaluating models</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -388,11 +388,11 @@
     }
   </style>
 <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script><link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<meta property="og:title" content="Exploring data II – STA 199">
-<meta property="og:description" content="Lecture 5">
+<meta property="og:title" content="Evaluating models – STA 199">
+<meta property="og:description" content="Lecture 20">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Exploring data II – STA 199">
-<meta name="twitter:description" content="Lecture 5">
+<meta name="twitter:title" content="Evaluating models – STA 199">
+<meta name="twitter:description" content="Lecture 20">
 <meta name="twitter:image" content="https://sta199-f24.github.io/slides/img/twitter-card.png">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
@@ -401,8 +401,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Exploring data II</h1>
-  <p class="subtitle">Lecture 5</p>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Evaluating models</h1>
+  <p class="subtitle">Lecture 20</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -415,14 +415,14 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
     </div>
 </div>
 
-  <p class="date">September 12, 2024</p>
+  <p class="date">November 12, 2024</p>
 </section><section class="slide level2"><!-- begin: webr fodder --><div class="cell" data-edit="false">
 <div>
 <div id="webr-1" class="exercise-cell">
 
 </div>
 <script type="webr-1-contents">
-eyJhdHRyIjp7Im91dHB1dCI6ZmFsc2UsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiYXV0b3J1biI6ZmFsc2UsImV2YWwiOnRydWV9LCJjb2RlIjoib3B0aW9ucyh3aWR0aCA9IDYwKSJ9
+eyJhdHRyIjp7ImVkaXQiOmZhbHNlLCJhdXRvcnVuIjpmYWxzZSwib3V0cHV0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRydWV9LCJjb2RlIjoib3B0aW9ucyh3aWR0aCA9IDYwKVxuc2V0LnNlZWQoMjAyNDExMTIpXG5mb3Jlc3RlZF9zcGxpdCA8LSBpbml0aWFsX3NwbGl0KGZvcmVzdGVkKVxuZm9yZXN0ZWRfdHJhaW4gPC0gdHJhaW5pbmcoZm9yZXN0ZWRfc3BsaXQpXG5mb3Jlc3RlZF90ZXN0IDwtIHRlc3RpbmcoZm9yZXN0ZWRfc3BsaXQpIn0=
 </script>
 </div>
 </div>
@@ -432,414 +432,339 @@ eyJhdHRyIjp7Im91dHB1dCI6ZmFsc2UsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiYXV0b3J1biI6
 </section><section><section id="warm-up" class="title-slide slide level1 center"><h1>Warm-up</h1>
 
 </section><section id="while-you-wait" class="slide level2 smaller"><h2>While you wait…</h2>
-<p>Prepare for today’s application exercise: <strong>ae-05-gerrymander-explore-II</strong></p>
 <div class="appex">
 <ul>
 <li><p>Go to your <code>ae</code> project in RStudio.</p></li>
 <li><p>Make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>Click Pull to get today’s application exercise file: <em>ae-05-gerrymander-explore-II.qmd</em>.</p></li>
+<li><p>Click Pull to get today’s application exercise file: <em>ae-17-forest-classification.qmd</em>.</p></li>
 <li><p>Wait till the you’re prompted to work on the application exercise during class before editing the file.</p></li>
 </ul>
 </div>
-</section><section id="reminder-lab-guidelines" class="slide level2"><h2>Reminder: Lab guidelines</h2>
-<div class="xsmall">
+</section><section id="announcements" class="slide level2 smaller"><h2>Announcements</h2>
 <ul>
-<li class="fragment"><p>Plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.</p></li>
-<li class="fragment">
-<p>Code should follow the <a href="https://style.tidyverse.org/">tidyverse style</a> (<a href="https://style.tidyverse.org/">style.tidyverse.org</a>) Particularly,</p>
+<li>Add announcements…</li>
+</ul></section></section><section><section id="washington-forests" class="title-slide slide level1 center"><h1>Washington forests</h1>
+
+</section><section id="packages" class="slide level2"><h2>Packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(forested)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="data" class="slide level2"><h2>Data</h2>
 <ul>
-<li class="fragment">space before and line breaks after each <code>+</code> when building a <code>ggplot</code>
+<li><p>The U.S. Forest Service maintains machine learning models to predict whether a plot of land is “forested.”</p></li>
+<li><p>This classification is important for research, legislation, land management, etc. purposes.</p></li>
+<li><p>Plots are typically remeasured every 10 years.</p></li>
+<li><p>The <code>forested</code> dataset contains the most recent measurement per plot.</p></li>
+</ul></section><section id="data-forested" class="slide level2"><h2>Data: <code>forested</code>
+</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>forested</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7,107 × 19
+   forested  year elevation eastness northness roughness tree_no_tree
+   &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt;       
+ 1 Yes       2005       881       90        43        63 Tree        
+ 2 Yes       2005       113      -25        96        30 Tree        
+ 3 No        2005       164      -84        53        13 Tree        
+ 4 Yes       2005       299       93        34         6 No tree     
+ 5 Yes       2005       806       47       -88        35 Tree        
+ 6 Yes       2005       736      -27       -96        53 Tree        
+ 7 Yes       2005       636      -48        87         3 No tree     
+ 8 Yes       2005       224      -65       -75         9 Tree        
+ 9 Yes       2005        52      -62        78        42 Tree        
+10 Yes       2005      2240      -67       -74        99 No tree     
+# ℹ 7,097 more rows
+# ℹ 12 more variables: dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,
+#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,
+#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,
+#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,
+#   land_type &lt;fct&gt;</code></pre>
+</div>
+</div>
+</section><section id="data-forested-1" class="slide level2"><h2>Data: <code>forested</code>
+</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">glimpse</span>(forested)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 7,107
+Columns: 19
+$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes,…
+$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2…
+$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52,…
+$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -…
+$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74,…
+$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 19…
+$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No t…
+$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6…
+$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195,…
+$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61,…
+$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.…
+$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 1…
+$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, …
+$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 17…
+$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944…
+$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74,…
+$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144,…
+$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.…
+$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tre…</code></pre>
+</div>
+</div>
+</section><section id="outcome-and-predictors" class="slide level2 smaller"><h2>Outcome and predictors</h2>
+<ul>
+<li>Outcome: <code>forested</code> - Factor, <code>Yes</code> or <code>No</code>
 </li>
-<li class="fragment">space before and line breaks after each <code>|&gt;</code> in a data transformation pipeline</li>
-<li class="fragment">code should be properly indented</li>
-<li class="fragment">spaces around <code>=</code> signs and spaces after commas</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">levels</span>(forested<span class="sc">$</span>forested)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Yes" "No" </code></pre>
+</div>
+</div>
+<ul>
+<li>
+<p>Predictors: 18 remotely-sensed and easily-accessible predictors:</p>
+<ul>
+<li><p>numeric variables based on weather and topography</p></li>
+<li><p>categorical variables based on classifications from other governmental organizations</p></li>
 </ul>
 </li>
-<li class="fragment"><p>All code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks. <strong>Tip:</strong> Haikus not novellas when writing code!</p></li>
-<li class="fragment"><p>At least three commits with meaningful commit messages.</p></li>
+</ul></section><section id="forested" class="slide level2"><h2><code>?forested</code></h2>
+<iframe width="900" height="500" src="https://simonpcouch.github.io/forested/reference/forested.html" title="forested" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section><section id="should-we-include-a-predictor" class="slide level2"><h2>Should we include a predictor?</h2>
+<p>To determine whether we should include a predictor in a model, we should start by asking:</p>
+<div>
+<ul>
+<li class="fragment"><p>Is it ethical to use this variable? (Or even legal?)</p></li>
+<li class="fragment"><p>Will this variable be available at prediction time?</p></li>
+<li class="fragment"><p>Does this variable contribute to explainability?</p></li>
 </ul>
 </div>
-</section><section id="code-style-and-readability" class="slide level2"><h2>Code style and readability</h2>
+</section></section><section><section id="data-splitting-and-spending" class="title-slide slide level1 center"><h1>Data splitting and spending</h1>
+
+</section><section id="weve-been-cheating" class="slide level2"><h2>We’ve been cheating!</h2>
+<div>
 <ul>
-<li>Whydowecareaboutthestyleandreadabilityofyourcode? <span class="fragment"><span class="math inline">\(\rightarrow\)</span> Why do we care about the style and readability of your code?</span>
-</li>
+<li class="fragment"><p>So far, we’ve been using all the data we have for building models. In predictive contexts, this would be considered <em>cheating</em>.</p></li>
+<li class="fragment"><p>Evaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you’ve already seen.</p></li>
+</ul>
+</div>
+</section><section id="spending-your-data" class="slide level2 smaller"><h2>Spending your data</h2>
+<p>For predictive models (used primarily in machine learning), we typically split data into training and test sets:</p>
+
+<img data-src="images/20/test-train-split-1.svg" class="r-stretch"><ul>
+<li><p>The <strong>training set</strong> is used to estimate model parameters.</p></li>
+<li><p>The <strong>test set</strong> is used to find an independent assessment of model performance.</p></li>
 </ul>
 <div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Do not use, or even peek at, the test set during training.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section id="how-much-to-spend" class="slide level2"><h2>How much to spend?</h2>
+<div>
 <ul>
-<li>Je voudrais un cafe <span class="fragment"><span class="math inline">\(\rightarrow\)</span> Je voudrais un café</span>
-</li>
+<li class="fragment"><p>The more data we spend (use in training), the better estimates we’ll get.</p></li>
+<li class="fragment"><p>Spending too much data in training prevents us from computing a good assessment of predictive performance.</p></li>
+<li class="fragment"><p>Spending too much data in testing prevents us from computing a good estimate of model parameters.</p></li>
 </ul>
 </div>
-</section></section><section><section id="gerrymander" class="title-slide slide level1 center"><h1><code>gerrymander</code></h1>
+</section><section id="the-initial-split" class="slide level2"><h2>The initial split</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">set.seed</span>(<span class="dv">20241112</span>)</span>
+<span id="cb8-2"><a></a>forested_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(forested)</span>
+<span id="cb8-3"><a></a>forested_split</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;Training/Testing/Total&gt;
+&lt;5330/1777/7107&gt;</code></pre>
+</div>
+</div>
+</section><section id="setting-a-seed" class="slide level2 smaller"><h2>Setting a seed</h2>
+<div class="task">
+<p>What does <code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> do?</p>
+</div>
+<div>
+<ul>
+<li class="fragment"><p>To create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.</p></li>
+<li class="fragment"><p>This allows us to reproduce results by setting that seed.</p></li>
+<li class="fragment"><p>Which seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance.</p></li>
+</ul>
+</div>
+</section><section id="accessing-the-data" class="slide level2"><h2>Accessing the data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>forested_train <span class="ot">&lt;-</span> <span class="fu">training</span>(forested_split)</span>
+<span id="cb10-2"><a></a>forested_test <span class="ot">&lt;-</span> <span class="fu">testing</span>(forested_split)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="the-training-set" class="slide level2"><h2>The training set</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>forested_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5,330 × 19
+   forested  year elevation eastness northness roughness tree_no_tree
+   &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt;       
+ 1 Yes       2013       315      -17        98        92 Tree        
+ 2 No        2018       374       93       -34        23 No tree     
+ 3 No        2017       377       44       -89         1 Tree        
+ 4 Yes       2013       541       31       -94       139 Tree        
+ 5 Yes       2017       680       14       -98        20 Tree        
+ 6 Yes       2017      1482       76       -64        43 Tree        
+ 7 No        2020        84       42       -90        12 No tree     
+ 8 Yes       2011       210       34        93        16 Tree        
+ 9 No        2020       766       14        98        20 No tree     
+10 Yes       2013      1559       98        16        79 Tree        
+# ℹ 5,320 more rows
+# ℹ 12 more variables: dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,
+#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,
+#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,
+#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,
+#   land_type &lt;fct&gt;</code></pre>
+</div>
+</div>
+</section><section id="the-testing-data" class="slide level2"><h2>The testing data</h2>
+<div class="fragment">
+<p>🙈</p>
+</div>
+</section></section><section><section id="exploratory-data-analysis" class="title-slide slide level1 center"><h1>Exploratory data analysis</h1>
 
-</section><section id="packages" class="slide level2 smaller"><h2>Packages</h2>
+</section><section id="initial-questions" class="slide level2 smaller"><h2>Initial questions</h2>
 <ul>
-<li>For the data: <a href="https://openintrostat.github.io/usdata/"><strong>usdata</strong></a>
-</li>
+<li><p>What’s the distribution of the outcome, <code>forested</code>?</p></li>
+<li><p>What’s the distribution of numeric variables like <code>precip_annual</code>?</p></li>
+<li><p>How does the distribution of forested differ across the categorical and numerical variables?</p></li>
 </ul>
+<div class="fragment">
+<div class="task">
+<p>Which dataset should we use for the exploration? The entire data <code>forested</code>, the training data <code>forested_train</code>, or the testing data <code>forested_test</code>?</p>
+</div>
+</div>
+</section><section id="forested-1" class="slide level2"><h2><code>forested</code></h2>
+<p>What’s the distribution of the outcome, <code>forested</code>?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(usdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>For the analysis: <a href="https://www.tidyverse.org/packages/"><strong>tidyverse</strong></a> and <a href="https://jrnold.github.io/ggthemes/"><strong>ggthemes</strong></a>
-</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ──────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(ggthemes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="from-last-time" class="slide level2 scrollable smaller"><h2>From last time</h2>
-<div class="question">
-<p>Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election? Support your answer with a visualization as well as summary statistics.</p>
-</div>
-<div class="cell" data-autorun="true">
 <div>
 <div id="webr-2" class="exercise-cell">
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZ2dwbG90KGdlcnJ5bWFuZGVyLCBhZXMoeCA9IGZsaXAxOCwgZmlsbCA9IGdlcnJ5KSkgK1xuICBnZW9tX2Jhcihwb3NpdGlvbiA9IFwiZmlsbFwiKSJ9
+eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6IiMgYWRkIGNvZGUgaGVyZSJ9
 </script>
 </div>
 </div>
-<div class="cell" data-autorun="true">
+</section><section id="precip_annual" class="slide level2"><h2><code>precip_annual</code></h2>
+<p>What’s the distribution of <code>precip_annual</code>?</p>
+<div class="cell">
 <div>
 <div id="webr-3" class="exercise-cell">
 
 </div>
 <script type="webr-3-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZ2VycnltYW5kZXIgfD5cbiAgY291bnQoZmxpcDE4LCBnZXJyeSkgfD5cbiAgZ3JvdXBfYnkoZmxpcDE4KSB8PlxuICBtdXRhdGUocHJvcCA9IG4gLyBzdW0obikpIn0=
+eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6IiMgYWRkIGNvZGUgaGVyZSJ9
 </script>
 </div>
 </div>
-</section></section><section><section id="group_by-summarize-count" class="title-slide slide level1 center"><h1>
-<code>group_by()</code>, <code>summarize()</code>, <code>count()</code>
-</h1>
-
-</section><section id="what-does-group_by-do" class="slide level2 scrollable"><h2>What does <code>group_by()</code> do?</h2>
-<div class="question">
-<p>What does <code>group_by()</code> do in the following pipeline?</p>
-</div>
+</section><section id="forested-and-precip_annual" class="slide level2 smaller"><h2>
+<code>forested</code> and <code>precip_annual</code>
+</h2>
 <div class="cell">
-<div>
-<div id="webr-4" class="exercise-cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb13-2"><a></a>  forested_train,</span>
+<span id="cb13-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> precip_annual, <span class="at">fill =</span> forested, <span class="at">group =</span> forested)</span>
+<span id="cb13-4"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb13-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">200</span>, <span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb13-6"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Yes"</span> <span class="ot">=</span> <span class="st">"forestgreen"</span>, <span class="st">"No"</span> <span class="ot">=</span> <span class="st">"gold2"</span>)) <span class="sc">+</span></span>
+<span id="cb13-7"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<script type="webr-4-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImdlcnJ5bWFuZGVyIHw+XG4gIGNvdW50KGZsaXAxOCwgZ2VycnkpIHw+XG4gIGdyb3VwX2J5KGZsaXAxOCkgfD5cbiAgbXV0YXRlKHByb3AgPSBuIC8gc3VtKG4pKSJ9
-</script>
-</div>
-</div>
-</section><section id="lets-simplify" class="slide level2 scrollable"><h2>Let’s simplify!</h2>
-<div class="question">
-<p>What does <code>group_by()</code> do in the following pipeline?</p>
-</div>
+<img data-src="20-model-validation_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section><section id="forested-and-precip_annual-1" class="slide level2 smaller"><h2>
+<code>forested</code> and <code>precip_annual</code>
+</h2>
 <div class="cell">
-<div>
-<div id="webr-5" class="exercise-cell">
+<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="|5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb14-2"><a></a>  forested_train,</span>
+<span id="cb14-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> precip_annual, <span class="at">fill =</span> forested, <span class="at">group =</span> forested)</span>
+<span id="cb14-4"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb14-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">200</span>, <span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Yes"</span> <span class="ot">=</span> <span class="st">"forestgreen"</span>, <span class="st">"No"</span> <span class="ot">=</span> <span class="st">"gold2"</span>)) <span class="sc">+</span></span>
+<span id="cb14-7"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<script type="webr-5-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImdlcnJ5bWFuZGVyIHw+XG4gIGdyb3VwX2J5KHN0YXRlKSB8PlxuICBzdW1tYXJpemUobWVhbl90cnVtcDE2ID0gbWVhbih0cnVtcDE2KSkifQ==
-</script>
+<img data-src="20-model-validation_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section><section id="forested-and-tree_no_tree" class="slide level2 smaller"><h2>
+<code>forested</code> and <code>tree_no_tree</code>
+</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(forested_train, <span class="fu">aes</span>(<span class="at">x =</span> tree_no_tree, <span class="at">fill =</span> forested)) <span class="sc">+</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb15-3"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Yes"</span> <span class="ot">=</span> <span class="st">"forestgreen"</span>, <span class="st">"No"</span> <span class="ot">=</span> <span class="st">"gold2"</span>)) <span class="sc">+</span></span>
+<span id="cb15-4"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
+<img data-src="20-model-validation_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section><section id="forested-and-lat-lon" class="slide level2 smaller"><h2>
+<code>forested</code> and <code>lat</code> / <code>lon</code>
+</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(forested_train, <span class="fu">aes</span>(<span class="at">x =</span> lon, <span class="at">y =</span> lat, <span class="at">color =</span> forested)) <span class="sc">+</span></span>
+<span id="cb16-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb16-3"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Yes"</span> <span class="ot">=</span> <span class="st">"forestgreen"</span>, <span class="st">"No"</span> <span class="ot">=</span> <span class="st">"gold2"</span>)) <span class="sc">+</span></span>
+<span id="cb16-4"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</section><section id="group_by" class="slide level2 scrollable"><h2><code>group_by()</code></h2>
+<img data-src="20-model-validation_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section></section><section><section id="next-steps" class="title-slide slide level1 center"><h1>Next steps</h1>
+
+</section><section id="next-steps-1" class="slide level2 smaller"><h2>Next steps</h2>
+<div>
 <ul>
-<li><p>Group by converts a data frame to a grouped data frame, where subsequent operations are performed once per group</p></li>
-<li><p><code>ungroup()</code> removes grouping</p></li>
+<li class="fragment"><p>Fit models on training data</p></li>
+<li class="fragment"><p>Make predictions on testing data</p></li>
+<li class="fragment">
+<p>Evaluate predictions on testing data:</p>
+<ul>
+<li class="fragment">Linear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.</li>
+<li class="fragment">Logistic models: False negative and positive rates, AUC (area under the curve), etc.</li>
 </ul>
-<div class="cell">
-<div>
-<div id="webr-6" class="exercise-cell">
-
+</li>
+<li class="fragment"><p>Make decisions based on model predictive performance, validity across various testing/training splits (aka “cross validation”), explainability</p></li>
+</ul>
 </div>
-<script type="webr-6-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImdlcnJ5bWFuZGVyIHw+XG4gIGdyb3VwX2J5KHN0YXRlKSB8PlxuICB1bmdyb3VwKCkifQ==
-</script>
-</div>
-</div>
-</section><section id="group_by-summarize" class="slide level2 smaller"><h2><code>group_by() |&gt; summarize()</code></h2>
-<p>A common pipeline is <code>group_by()</code> and then <code>summarize()</code> to <strong>calculate</strong> summary statistics for each group:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">group_by</span>(state) <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb5-4"><a></a>    <span class="at">mean_trump16 =</span> <span class="fu">mean</span>(trump16),</span>
-<span id="cb5-5"><a></a>    <span class="at">median_trump16 =</span> <span class="fu">median</span>(trump16)</span>
-<span id="cb5-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 50 × 3
-   state mean_trump16 median_trump16
-   &lt;chr&gt;        &lt;dbl&gt;          &lt;dbl&gt;
- 1 AK            52.8           52.8
- 2 AL            62.6           64.9
- 3 AR            60.9           63.0
- 4 AZ            46.9           47.7
- 5 CA            31.7           28.4
- 6 CO            43.6           41.3
- 7 CT            41.0           40.4
- 8 DE            41.9           41.9
- 9 FL            47.9           49.6
-10 GA            51.3           56.6
-# ℹ 40 more rows</code></pre>
-</div>
-</div>
-</section><section id="group_by-summarize-1" class="slide level2 smaller"><h2><code>group_by() |&gt; summarize()</code></h2>
-<p>This pipeline can also be used to <strong>count</strong> number of observations for each group:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">group_by</span>(state) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 50 × 2
-   state     n
-   &lt;chr&gt; &lt;int&gt;
- 1 AK        1
- 2 AL        7
- 3 AR        4
- 4 AZ        9
- 5 CA       53
- 6 CO        7
- 7 CT        5
- 8 DE        1
- 9 FL       27
-10 GA       14
-# ℹ 40 more rows</code></pre>
-</div>
-</div>
-</section><section id="summarize" class="slide level2 smaller"><h2><code>summarize()</code></h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>... <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb9-3"><a></a>    <span class="at">name_of_summary_statistic =</span> <span class="fu">summary_function</span>(variable)</span>
-<span id="cb9-4"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<ul>
-<li>
-<code>name_of_summary_statistic</code>: Anything you want to call it!
-<ul>
-<li>Recommendation: Keep it short and evocative</li>
-</ul>
-</li>
-<li>
-<code>summary_function()</code>:
-<ul>
-<li>
-<code>n()</code>: number of observations</li>
-<li>
-<code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>: mean</li>
-<li>
-<code><a href="https://rdrr.io/r/stats/median.html">median()</a></code>: median</li>
-<li>…</li>
-</ul>
-</li>
-</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section><section id="spot-the-difference" class="slide level2 smaller"><h2>Spot the difference</h2>
-<div class="question">
-<p>What’s the difference between the following two pipelines?</p>
+<p><strong>Note</strong></p>
 </div>
-<div class="columns">
-<div class="column">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">group_by</span>(state) <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 50 × 2
-   state     n
-   &lt;chr&gt; &lt;int&gt;
- 1 AK        1
- 2 AL        7
- 3 AR        4
- 4 AZ        9
- 5 CA       53
- 6 CO        7
- 7 CT        5
- 8 DE        1
- 9 FL       27
-10 GA       14
-# ℹ 40 more rows</code></pre>
-</div>
-</div>
-</div><div class="column">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a></a>  <span class="fu">count</span>(state)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 50 × 2
-   state     n
-   &lt;chr&gt; &lt;int&gt;
- 1 AK        1
- 2 AL        7
- 3 AR        4
- 4 AZ        9
- 5 CA       53
- 6 CO        7
- 7 CT        5
- 8 DE        1
- 9 FL       27
-10 GA       14
-# ℹ 40 more rows</code></pre>
-</div>
-</div>
-</div></div>
-</section><section id="count" class="slide level2"><h2><code>count()</code></h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>... <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a></a>  <span class="fu">count</span>(variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:60%;">
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>... <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">count</span>(variable1, variable2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
-<ul>
-<li><p>Count the number of observations in each level of variable(s)</p></li>
-<li><p>Place the counts in a variable called <code>n</code></p></li>
-</ul></section><section id="count-and-sort" class="slide level2 scrollable"><h2>
-<code>count()</code> and <code>sort</code>
-</h2>
-<div class="question">
-<p>What does the following pipeline do? Rewrite it with <code>count()</code> instead.</p>
-</div>
-<div class="cell">
-<div>
-<div id="webr-7" class="exercise-cell">
-
-</div>
-<script type="webr-7-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImdlcnJ5bWFuZGVyIHw+XG4gIGdyb3VwX2J5KHN0YXRlKSB8PlxuICBzdW1tYXJpemUobiA9IG4oKSkgfD5cbiAgYXJyYW5nZShkZXNjKG4pKSJ9
-</script>
-</div>
-</div>
-</section></section><section><section id="mutate" class="title-slide slide level1 center"><h1><code>mutate()</code></h1>
-
-</section><section id="flip-the-question" class="slide level2"><h2>Flip the question</h2>
-<div class="question">
-<p>Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?</p>
-</div>
-<p>vs.</p>
-<div class="question">
-<p>Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?</p>
-</div>
-</section><section id="flipping-vs.-gerrymandering-prevalence" class="slide level2 smaller"><h2>Flipping vs.&nbsp;gerrymandering prevalence</h2>
-<div class="question xsmall">
-<p>The following code should produce a visualization that answers the question “Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?” However, it produces a <code>warning</code> and an unexpected plot. What’s going on?</p>
-</div>
-<div class="columns">
-<div class="column">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(</span>
-<span id="cb16-2"><a></a>  gerrymander, </span>
-<span id="cb16-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18)</span>
-<span id="cb16-4"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb16-5"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The following aesthetics were dropped during statistical
-transformation: fill.
-ℹ This can happen when ggplot fails to infer the correct grouping
-  structure in the data.
-ℹ Did you forget to specify a `group` aesthetic or to convert a
-  numerical variable into a factor?</code></pre>
-</div>
-</div>
-</div><div class="column">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure><p><img data-src="05-exploring-data-II_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
-</figure>
+<div class="callout-content">
+<p>We will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses.</p>
 </div>
 </div>
 </div>
-</div></div>
-</section><section id="another-glimpse-at-gerrymander" class="slide level2 smaller"><h2>Another glimpse at <code>gerrymander</code>
-</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">glimpse</span>(gerrymander)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 435
-Columns: 12
-$ district   &lt;chr&gt; "AK-AL", "AL-01", "AL-02", "AL-03", "AL-04", "AL-…
-$ last_name  &lt;chr&gt; "Young", "Byrne", "Roby", "Rogers", "Aderholt", "…
-$ first_name &lt;chr&gt; "Don", "Bradley", "Martha", "Mike D.", "Rob", "Mo…
-$ party16    &lt;chr&gt; "R", "R", "R", "R", "R", "R", "R", "D", "R", "R",…
-$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 3…
-$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 6…
-$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0…
-$ state      &lt;chr&gt; "AK", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "…
-$ party18    &lt;chr&gt; "R", "R", "R", "R", "R", "R", "R", "D", "R", "R",…
-$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0…
-$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0…
-$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</code></pre>
 </div>
-</div>
-</section><section id="mutate-1" class="slide level2"><h2><code>mutate()</code></h2>
-<ul>
-<li><p>We want to use <code>flip18</code> as a categorical variable</p></li>
-<li><p>But it’s stored as a numeric</p></li>
-<li><p>So we need to change its type first, before we can use it as a categorical variable</p></li>
-<li><p>The <code>mutate()</code> function transforms (<em>mutates</em>) a data frame by creating a new column or updating an existing one</p></li>
-</ul></section><section id="mutate-in-action" class="slide level2 scrollable"><h2>
-<code>mutate()</code> in action</h2>
-<div class="cell">
-<div>
-<div id="webr-8" class="exercise-cell">
-
-</div>
-<script type="webr-8-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImdlcnJ5bWFuZGVyIHw+XG4gIG11dGF0ZShmbGlwMTggPSBhcy5mYWN0b3IoZmxpcDE4KSkifQ==
-</script>
-</div>
-</div>
-</section><section id="revisit-the-plot" class="slide level2 scrollable"><h2>Revisit the plot</h2>
-<div class="question">
-<p>“Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?”</p>
-</div>
-<div class="cell">
-<div>
-<div id="webr-9" class="exercise-cell">
-
-</div>
-<script type="webr-9-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImdlcnJ5bWFuZGVyIHw+XG4gIG11dGF0ZShmbGlwMTggPSBhcy5mYWN0b3IoZmxpcDE4KSkgfD5cbiAgZ2dwbG90KGFlcyh4ID0gZ2VycnksIGZpbGwgPSBmbGlwMTgpKSArXG4gIGdlb21fYmFyKHBvc2l0aW9uID0gXCJmaWxsXCIpIn0=
-</script>
-</div>
-</div>
-</section></section><section><section id="application-exercise" class="title-slide slide level1 center"><h1>Application exercise</h1>
-
-</section><section id="ae-05-gerrymander-explore-ii" class="slide level2 smaller"><h2>ae-05-gerrymander-explore-II</h2>
+</section><section id="application-exercise-ae-17-forest-classification" class="slide level2 smaller"><h2>Application exercise: ae-17-forest-classification</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
 <li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-05-gerrymander-explore-II.qmd</em>.</p></li>
-<li><p>Work through the application exercise in class, and render, commit, and push your edits by the end of class.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-17-forest-classification.qmd</em>.</p></li>
+<li><p>Work through the application exercise in class, and render, commit, and push your edits.</p></li>
 </ul>
 </div>
-</section><section id="recap-aesthetic-mappings" class="slide level2"><h2>Recap: aesthetic mappings</h2>
-<ul>
-<li><p><strong>Local</strong> aesthetic mappings for a given <code>geom</code></p></li>
-<li><p><strong>Global</strong> aesthetic mappings for all <code>geom</code>s</p></li>
-</ul>
 
 
 <script type="webr-data">
-eyJwYWNrYWdlcyI6eyJyZXBvcyI6W10sInBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsInRpZHl2ZXJzZSIsImdndGhlbWVzIiwidXNkYXRhIl19LCJyZW5kZXJfZGYiOiJkZWZhdWx0Iiwib3B0aW9ucyI6eyJiYXNlVXJsIjoiaHR0cHM6Ly93ZWJyLnItd2FzbS5vcmcvdjAuNC4xLyJ9fQ==
+eyJwYWNrYWdlcyI6eyJyZXBvcyI6W10sInBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsInRpZHl2ZXJzZSIsInRpZHltb2RlbHMiLCJmb3Jlc3RlZCJdfSwicmVuZGVyX2RmIjoiZGVmYXVsdCIsIm9wdGlvbnMiOnsiYmFzZVVybCI6Imh0dHBzOi8vd2Vici5yLXdhc20ub3JnL3YwLjQuMS8ifX0=
 </script><script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC05Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV85O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIiwiaW5saW5lIjpmYWxzZX0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJ3ZWJyLTkiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzkgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici05LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItOS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV85ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl85LCB7fSk7XG4iLCJpbmxpbmUiOmZhbHNlfSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsImNlbGxOYW1lIjoid2Vici13aWRnZXQtOCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfODtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiIsImlubGluZSI6ZmFsc2V9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoid2Vici04Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl84ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItOC1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTgtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfOCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfOCwge30pO1xuIiwiaW5saW5lIjpmYWxzZX0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTciLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzc7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlfSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6IndlYnItNyIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfNyA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTctY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici03LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzcgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzcsIHt9KTtcbiIsImlubGluZSI6ZmFsc2V9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC02Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV82O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIiwiaW5saW5lIjpmYWxzZX0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJ3ZWJyLTYiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzYgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici02LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV82ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl82LCB7fSk7XG4iLCJpbmxpbmUiOmZhbHNlfSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsImNlbGxOYW1lIjoid2Vici13aWRnZXQtNSIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfNTtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiIsImlubGluZSI6ZmFsc2V9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoid2Vici01Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl81ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItNS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTUtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfNSA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfNSwge30pO1xuIiwiaW5saW5lIjpmYWxzZX0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlfSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6IndlYnItNCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfNCA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici00LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzQgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzQsIHt9KTtcbiIsImlubGluZSI6ZmFsc2V9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIiwiaW5saW5lIjpmYWxzZX0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJ3ZWJyLTMiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8zID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8zLCB7fSk7XG4iLCJpbmxpbmUiOmZhbHNlfSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsImNlbGxOYW1lIjoid2Vici13aWRnZXQtMiIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiIsImlubGluZSI6ZmFsc2V9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoid2Vici0yIiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTItY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMiwge30pO1xuIiwiaW5saW5lIjpmYWxzZX0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTEiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzE7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlfSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6IndlYnItMSIsInNvdXJjZSI6Il93ZWJyX3ZhbHVlXzEgPSB7XG4gIGNvbnN0IHsgaGlnaGxpZ2h0UiwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIC8vIERlZmF1bHQgZXZhbHVhdGlvbiBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHtcbiAgICBpZDogXCJ3ZWJyLTEtY29udGVudHNcIixcbiAgICBlY2hvOiB0cnVlLFxuICAgIG91dHB1dDogdHJ1ZVxuICB9LCBibG9jay5hdHRyKTtcblxuICAvLyBFdmFsdWF0ZSB0aGUgcHJvdmlkZWQgUiBjb2RlXG4gIGNvbnN0IHJlc3VsdCA9IHdlYlJPanMucHJvY2Vzcyh7Y29kZTogYmxvY2suY29kZSwgb3B0aW9uc30sIHt9KTtcblxuICAvLyBFYXJseSB5aWVsZCB3aGlsZSB3ZSB3YWl0IGZvciB0aGUgZmlyc3QgZXZhbHVhdGlvbiBhbmQgcmVuZGVyXG4gIGlmIChvcHRpb25zLm91dHB1dCAmJiAhKFwiMVwiIGluIHdlYlJPanMucmVuZGVyZWRPanMpKSB7XG4gICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbiAgICBjb25zdCBzcGlubmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcblxuICAgIGlmIChvcHRpb25zLmVjaG8pIHtcbiAgICAgIC8vIFNob3cgb3V0cHV0IGFzIGhpZ2hsaWdodGVkIHNvdXJjZVxuICAgICAgY29uc3QgcHJlRWxlbSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJwcmVcIik7XG4gICAgICBjb250YWluZXIuY2xhc3NOYW1lID0gXCJzb3VyY2VDb2RlXCI7XG4gICAgICBwcmVFbGVtLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZSByXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKGhpZ2hsaWdodFIoYmxvY2suY29kZSkpO1xuICAgICAgc3Bpbm5lci5jbGFzc05hbWUgPSBcInNwaW5uZXItZ3JvdyBzcGlubmVyLWdyb3ctc20gbS0yIHBvc2l0aW9uLWFic29sdXRlIHRvcC0wIGVuZC0wXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHByZUVsZW0pO1xuICAgIH0gZWxzZSB7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ib3JkZXIgc3Bpbm5lci1ib3JkZXItc21cIjtcbiAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChzcGlubmVyKTtcbiAgICB9XG5cbiAgICB5aWVsZCBjb250YWluZXI7XG4gIH1cblxuICB3ZWJST2pzLnJlbmRlcmVkT2pzW1wiMVwiXSA9IHRydWU7XG4gIHlpZWxkIGF3YWl0IHJlc3VsdDtcbn1cbiIsImlubGluZSI6ZmFsc2V9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiY2VsbE5hbWUiOiJ3ZWJyLXByZWx1ZGUiLCJzb3VyY2UiOiJ3ZWJST2pzID0ge1xuICBjb25zdCB7IFdlYlIgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWUuV2ViUjtcbiAgY29uc3Qge1xuICAgIFdlYlJFdmFsdWF0b3IsXG4gICAgV2ViUkVudmlyb25tZW50TWFuYWdlcixcbiAgICBzZXR1cFIsXG4gICAgYjY0RGVjb2RlLFxuICAgIGNvbGxhcHNlUGF0aFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gd2ViUiBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICAvLyBJbml0aWFsaXNlIHdlYlIgYW5kIHNldHVwIGZvciBSIGNvZGUgZXZhbHVhdGlvblxuICBsZXQgd2ViUlByb21pc2UgPSAoYXN5bmMgKHdlYlIpID0+IHtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHdlYlJgO1xuICAgIGF3YWl0IHdlYlIuaW5pdCgpO1xuXG4gICAgLy8gSW5zdGFsbCBwcm92aWRlZCBsaXN0IG9mIHBhY2thZ2VzXG4gICAgLy8gRW5zdXJlIHdlYlIgZGVmYXVsdCByZXBvIGlzIGluY2x1ZGVkXG4gICAgZGF0YS5wYWNrYWdlcy5yZXBvcy5wdXNoKFwiaHR0cHM6Ly9yZXBvLnItd2FzbS5vcmdcIilcbiAgICBhd2FpdCBkYXRhLnBhY2thZ2VzLnBrZ3MubWFwKChwa2cpID0+ICgpID0+IHtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcGFja2FnZTogJHtwa2d9YDtcbiAgICAgIHJldHVybiB3ZWJSLmV2YWxSVm9pZChgXG4gICAgICAgIHdlYnI6Omluc3RhbGwocGtnLCByZXBvcyA9IHJlcG9zKVxuICAgICAgICBsaWJyYXJ5KHBrZywgY2hhcmFjdGVyLm9ubHkgPSBUUlVFKVxuICAgICAgYCwgeyBlbnY6IHtcbiAgICAgICAgcGtnOiBwa2csXG4gICAgICAgIHJlcG9zOiBkYXRhLnBhY2thZ2VzLnJlcG9zLFxuICAgICAgfX0pO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgLy8gRG93bmxvYWQgYW5kIGluc3RhbGwgcmVzb3VyY2VzXG4gICAgYXdhaXQgZmlsZXMubWFwKChmaWxlKSA9PiBhc3luYyAoKSA9PiB7XG4gICAgICBjb25zdCBuYW1lID0gZmlsZS5zdWJzdHJpbmcoZmlsZS5sYXN0SW5kZXhPZignLycpICsgMSk7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHJlc291cmNlOiAke25hbWV9YDtcbiAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goZmlsZSk7XG4gICAgICBpZiAoIXJlc3BvbnNlLm9rKSB7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgQ2FuJ3QgZG93bmxvYWQgXFxgJHtmaWxlfVxcYC4gRXJyb3IgJHtyZXNwb25zZS5zdGF0dXN9OiBcIiR7cmVzcG9uc2Uuc3RhdHVzVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXNwb25zZS5hcnJheUJ1ZmZlcigpO1xuXG4gICAgICAvLyBTdG9yZSBVUkxzIGluIHRoZSBjd2Qgd2l0aG91dCBhbnkgc3ViZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgaWYgKGZpbGUuaW5jbHVkZXMoXCI6Ly9cIikpIHtcbiAgICAgICAgZmlsZSA9IG5hbWU7XG4gICAgICB9XG5cbiAgICAgIC8vIENvbGxhcHNlIGhpZ2hlciBkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBmaWxlID0gY29sbGFwc2VQYXRoKGZpbGUpO1xuXG4gICAgICAvLyBDcmVhdGUgZGlyZWN0b3J5IHRyZWUsIGlnbm9yaW5nIFwiZGlyZWN0b3J5IGV4aXN0c1wiIFZGUyBlcnJvcnNcbiAgICAgIGNvbnN0IHBhcnRzID0gZmlsZS5zcGxpdCgnLycpLnNsaWNlKDAsIC0xKTtcbiAgICAgIGxldCBwYXRoID0gJyc7XG4gICAgICB3aGlsZSAocGFydHMubGVuZ3RoID4gMCkge1xuICAgICAgICBwYXRoICs9IHBhcnRzLnNoaWZ0KCkgKyAnLyc7XG4gICAgICAgIHRyeSB7XG4gICAgICAgICAgYXdhaXQgd2ViUi5GUy5ta2RpcihwYXRoKTtcbiAgICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICAgIGlmICghZS5tZXNzYWdlLmluY2x1ZGVzKFwiRlMgZXJyb3JcIikpIHtcbiAgICAgICAgICAgIHRocm93IGU7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG5cbiAgICAgIC8vIFdyaXRlIHRoaXMgZmlsZSB0byB0aGUgVkZTXG4gICAgICByZXR1cm4gYXdhaXQgd2ViUi5GUy53cml0ZUZpbGUoZmlsZSwgbmV3IFVpbnQ4QXJyYXkoZGF0YSkpO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbnN0YWxsaW5nIHdlYlIgc2hpbXNgO1xuICAgIGF3YWl0IHdlYlIuZXZhbFJWb2lkKGB3ZWJyOjpzaGltX2luc3RhbGwoKWApO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBXZWJSIGVudmlyb25tZW50IHNldHVwYDtcbiAgICBhd2FpdCBzZXR1cFIod2ViUiwgZGF0YSk7XG5cbiAgICBzdGF0dXNUZXh0LnJlbW92ZSgpO1xuICAgIGlmIChzdGF0dXNDb250YWluZXIuY2hpbGRyZW4ubGVuZ3RoID09IDApIHtcbiAgICAgIHN0YXR1c0NvbnRhaW5lci5wYXJlbnROb2RlLnJlbW92ZSgpO1xuICAgIH1cbiAgICByZXR1cm4gd2ViUjtcbiAgfSkobmV3IFdlYlIoZGF0YS5vcHRpb25zKSk7XG5cbiAgLy8gS2VlcCB0cmFjayBvZiBpbml0aWFsIE9KUyBibG9jayByZW5kZXJcbiAgY29uc3QgcmVuZGVyZWRPanMgPSB7fTtcblxuICBjb25zdCBwcm9jZXNzID0gYXN5bmMgKGNvbnRleHQsIGlucHV0cykgPT4ge1xuICAgIGNvbnN0IHdlYlIgPSBhd2FpdCB3ZWJSUHJvbWlzZTtcbiAgICBjb25zdCBldmFsdWF0b3IgPSBuZXcgV2ViUkV2YWx1YXRvcih3ZWJSLCBjb250ZXh0KVxuICAgIGF3YWl0IGV2YWx1YXRvci5wcm9jZXNzKGlucHV0cyk7XG4gICAgcmV0dXJuIGV2YWx1YXRvci5jb250YWluZXI7XG4gIH1cblxuICByZXR1cm4ge1xuICAgIHByb2Nlc3MsXG4gICAgd2ViUlByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gIH07XG59XG4iLCJpbmxpbmUiOmZhbHNlfV19
+eyJjb250ZW50cyI6W3siaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMyIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8zID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8zLCB7fSk7XG4ifSx7ImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici13aWRnZXQtMiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLTIiLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTItY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMiwge30pO1xuIn0seyJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTEiLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzE7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici0xIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6Il93ZWJyX3ZhbHVlXzEgPSB7XG4gIGNvbnN0IHsgaGlnaGxpZ2h0UiwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIC8vIERlZmF1bHQgZXZhbHVhdGlvbiBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHtcbiAgICBpZDogXCJ3ZWJyLTEtY29udGVudHNcIixcbiAgICBlY2hvOiB0cnVlLFxuICAgIG91dHB1dDogdHJ1ZVxuICB9LCBibG9jay5hdHRyKTtcblxuICAvLyBFdmFsdWF0ZSB0aGUgcHJvdmlkZWQgUiBjb2RlXG4gIGNvbnN0IHJlc3VsdCA9IHdlYlJPanMucHJvY2Vzcyh7Y29kZTogYmxvY2suY29kZSwgb3B0aW9uc30sIHt9KTtcblxuICAvLyBFYXJseSB5aWVsZCB3aGlsZSB3ZSB3YWl0IGZvciB0aGUgZmlyc3QgZXZhbHVhdGlvbiBhbmQgcmVuZGVyXG4gIGlmIChvcHRpb25zLm91dHB1dCAmJiAhKFwiMVwiIGluIHdlYlJPanMucmVuZGVyZWRPanMpKSB7XG4gICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbiAgICBjb25zdCBzcGlubmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcblxuICAgIGlmIChvcHRpb25zLmVjaG8pIHtcbiAgICAgIC8vIFNob3cgb3V0cHV0IGFzIGhpZ2hsaWdodGVkIHNvdXJjZVxuICAgICAgY29uc3QgcHJlRWxlbSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJwcmVcIik7XG4gICAgICBjb250YWluZXIuY2xhc3NOYW1lID0gXCJzb3VyY2VDb2RlXCI7XG4gICAgICBwcmVFbGVtLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZSByXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKGhpZ2hsaWdodFIoYmxvY2suY29kZSkpO1xuICAgICAgc3Bpbm5lci5jbGFzc05hbWUgPSBcInNwaW5uZXItZ3JvdyBzcGlubmVyLWdyb3ctc20gbS0yIHBvc2l0aW9uLWFic29sdXRlIHRvcC0wIGVuZC0wXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHByZUVsZW0pO1xuICAgIH0gZWxzZSB7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ib3JkZXIgc3Bpbm5lci1ib3JkZXItc21cIjtcbiAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChzcGlubmVyKTtcbiAgICB9XG5cbiAgICB5aWVsZCBjb250YWluZXI7XG4gIH1cblxuICB3ZWJST2pzLnJlbmRlcmVkT2pzW1wiMVwiXSA9IHRydWU7XG4gIHlpZWxkIGF3YWl0IHJlc3VsdDtcbn1cbiJ9LHsiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXByZWx1ZGUiLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ3ZWJST2pzID0ge1xuICBjb25zdCB7IFdlYlIgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWUuV2ViUjtcbiAgY29uc3Qge1xuICAgIFdlYlJFdmFsdWF0b3IsXG4gICAgV2ViUkVudmlyb25tZW50TWFuYWdlcixcbiAgICBzZXR1cFIsXG4gICAgYjY0RGVjb2RlLFxuICAgIGNvbGxhcHNlUGF0aFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gd2ViUiBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICAvLyBJbml0aWFsaXNlIHdlYlIgYW5kIHNldHVwIGZvciBSIGNvZGUgZXZhbHVhdGlvblxuICBsZXQgd2ViUlByb21pc2UgPSAoYXN5bmMgKHdlYlIpID0+IHtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHdlYlJgO1xuICAgIGF3YWl0IHdlYlIuaW5pdCgpO1xuXG4gICAgLy8gSW5zdGFsbCBwcm92aWRlZCBsaXN0IG9mIHBhY2thZ2VzXG4gICAgLy8gRW5zdXJlIHdlYlIgZGVmYXVsdCByZXBvIGlzIGluY2x1ZGVkXG4gICAgZGF0YS5wYWNrYWdlcy5yZXBvcy5wdXNoKFwiaHR0cHM6Ly9yZXBvLnItd2FzbS5vcmdcIilcbiAgICBhd2FpdCBkYXRhLnBhY2thZ2VzLnBrZ3MubWFwKChwa2cpID0+ICgpID0+IHtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcGFja2FnZTogJHtwa2d9YDtcbiAgICAgIHJldHVybiB3ZWJSLmV2YWxSVm9pZChgXG4gICAgICAgIHdlYnI6Omluc3RhbGwocGtnLCByZXBvcyA9IHJlcG9zKVxuICAgICAgICBsaWJyYXJ5KHBrZywgY2hhcmFjdGVyLm9ubHkgPSBUUlVFKVxuICAgICAgYCwgeyBlbnY6IHtcbiAgICAgICAgcGtnOiBwa2csXG4gICAgICAgIHJlcG9zOiBkYXRhLnBhY2thZ2VzLnJlcG9zLFxuICAgICAgfX0pO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgLy8gRG93bmxvYWQgYW5kIGluc3RhbGwgcmVzb3VyY2VzXG4gICAgYXdhaXQgZmlsZXMubWFwKChmaWxlKSA9PiBhc3luYyAoKSA9PiB7XG4gICAgICBjb25zdCBuYW1lID0gZmlsZS5zdWJzdHJpbmcoZmlsZS5sYXN0SW5kZXhPZignLycpICsgMSk7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHJlc291cmNlOiAke25hbWV9YDtcbiAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goZmlsZSk7XG4gICAgICBpZiAoIXJlc3BvbnNlLm9rKSB7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgQ2FuJ3QgZG93bmxvYWQgXFxgJHtmaWxlfVxcYC4gRXJyb3IgJHtyZXNwb25zZS5zdGF0dXN9OiBcIiR7cmVzcG9uc2Uuc3RhdHVzVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXNwb25zZS5hcnJheUJ1ZmZlcigpO1xuXG4gICAgICAvLyBTdG9yZSBVUkxzIGluIHRoZSBjd2Qgd2l0aG91dCBhbnkgc3ViZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgaWYgKGZpbGUuaW5jbHVkZXMoXCI6Ly9cIikpIHtcbiAgICAgICAgZmlsZSA9IG5hbWU7XG4gICAgICB9XG5cbiAgICAgIC8vIENvbGxhcHNlIGhpZ2hlciBkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBmaWxlID0gY29sbGFwc2VQYXRoKGZpbGUpO1xuXG4gICAgICAvLyBDcmVhdGUgZGlyZWN0b3J5IHRyZWUsIGlnbm9yaW5nIFwiZGlyZWN0b3J5IGV4aXN0c1wiIFZGUyBlcnJvcnNcbiAgICAgIGNvbnN0IHBhcnRzID0gZmlsZS5zcGxpdCgnLycpLnNsaWNlKDAsIC0xKTtcbiAgICAgIGxldCBwYXRoID0gJyc7XG4gICAgICB3aGlsZSAocGFydHMubGVuZ3RoID4gMCkge1xuICAgICAgICBwYXRoICs9IHBhcnRzLnNoaWZ0KCkgKyAnLyc7XG4gICAgICAgIHRyeSB7XG4gICAgICAgICAgYXdhaXQgd2ViUi5GUy5ta2RpcihwYXRoKTtcbiAgICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICAgIGlmICghZS5tZXNzYWdlLmluY2x1ZGVzKFwiRlMgZXJyb3JcIikpIHtcbiAgICAgICAgICAgIHRocm93IGU7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG5cbiAgICAgIC8vIFdyaXRlIHRoaXMgZmlsZSB0byB0aGUgVkZTXG4gICAgICByZXR1cm4gYXdhaXQgd2ViUi5GUy53cml0ZUZpbGUoZmlsZSwgbmV3IFVpbnQ4QXJyYXkoZGF0YSkpO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbnN0YWxsaW5nIHdlYlIgc2hpbXNgO1xuICAgIGF3YWl0IHdlYlIuZXZhbFJWb2lkKGB3ZWJyOjpzaGltX2luc3RhbGwoKWApO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBXZWJSIGVudmlyb25tZW50IHNldHVwYDtcbiAgICBhd2FpdCBzZXR1cFIod2ViUiwgZGF0YSk7XG5cbiAgICBzdGF0dXNUZXh0LnJlbW92ZSgpO1xuICAgIGlmIChzdGF0dXNDb250YWluZXIuY2hpbGRyZW4ubGVuZ3RoID09IDApIHtcbiAgICAgIHN0YXR1c0NvbnRhaW5lci5wYXJlbnROb2RlLnJlbW92ZSgpO1xuICAgIH1cbiAgICByZXR1cm4gd2ViUjtcbiAgfSkobmV3IFdlYlIoZGF0YS5vcHRpb25zKSk7XG5cbiAgLy8gS2VlcCB0cmFjayBvZiBpbml0aWFsIE9KUyBibG9jayByZW5kZXJcbiAgY29uc3QgcmVuZGVyZWRPanMgPSB7fTtcblxuICBjb25zdCBwcm9jZXNzID0gYXN5bmMgKGNvbnRleHQsIGlucHV0cykgPT4ge1xuICAgIGNvbnN0IHdlYlIgPSBhd2FpdCB3ZWJSUHJvbWlzZTtcbiAgICBjb25zdCBldmFsdWF0b3IgPSBuZXcgV2ViUkV2YWx1YXRvcih3ZWJSLCBjb250ZXh0KVxuICAgIGF3YWl0IGV2YWx1YXRvci5wcm9jZXNzKGlucHV0cyk7XG4gICAgcmV0dXJuIGV2YWx1YXRvci5jb250YWluZXI7XG4gIH1cblxuICByZXR1cm4ge1xuICAgIHByb2Nlc3MsXG4gICAgd2ViUlByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gIH07XG59XG4ifV19
 </script><div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
 
