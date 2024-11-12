@@ -1225,7 +1225,7 @@
     },
     "gssr": {
       "Package": "gssr",
-      "Version": "0.5",
+      "Version": "0.6",
       "Source": "Repository",
       "Repository": "https://kjhealy.r-universe.dev",
       "Requirements": [
@@ -1238,7 +1238,7 @@
         "magrittr",
         "tibble"
       ],
-      "Hash": "cfbd9c0b5a9729683064a9710a94943c"
+      "Hash": "27ce4513a9a7a27553497f6bd23c997a"
     },
     "gt": {
       "Package": "gt",
