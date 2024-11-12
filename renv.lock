@@ -940,6 +940,16 @@
       ],
       "Hash": "618609b42c9406731ead03adf5379850"
     },
+    "forested": {
+      "Package": "forested",
+      "Version": "0.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "6a25c300192ee1f0561b4822d6795f08"
+    },
     "fs": {
       "Package": "fs",
       "Version": "1.6.4",
@@ -1212,6 +1222,23 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "7a0051eef852c301b5efe2f7913dd45f"
+    },
+    "gssr": {
+      "Package": "gssr",
+      "Version": "0.5",
+      "Source": "Repository",
+      "Repository": "https://kjhealy.r-universe.dev",
+      "Requirements": [
+        "R",
+        "curl",
+        "dplyr",
+        "fs",
+        "haven",
+        "here",
+        "magrittr",
+        "tibble"
+      ],
+      "Hash": "cfbd9c0b5a9729683064a9710a94943c"
     },
     "gt": {
       "Package": "gt",
