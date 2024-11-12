@@ -3080,368 +3080,74 @@
     "text": "ae-07-taxes-join\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-07-taxes-join.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
-    "objectID": "slides/20-evaluating-models-slides.html#while-you-wait",
-    "href": "slides/20-evaluating-models-slides.html#while-you-wait",
-    "title": "Evaluating models",
+    "objectID": "slides/18-model-selection-overfitting-slides.html#while-you-wait",
+    "href": "slides/18-model-selection-overfitting-slides.html#while-you-wait",
+    "title": "Model selection and overfitting",
     "section": "While you wait…",
-    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-17-forest-classification.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
+    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you missed class last Thursday, pull to get today’s application exercise file: ae-15-modeling-loans.qmd.\nMake sure you’ve completed the “Get to know the data” section of your AE."
   },
   {
-    "objectID": "slides/20-evaluating-models-slides.html#announcements",
-    "href": "slides/20-evaluating-models-slides.html#announcements",
-    "title": "Evaluating models",
+    "objectID": "slides/18-model-selection-overfitting-slides.html#announcements",
+    "href": "slides/18-model-selection-overfitting-slides.html#announcements",
+    "title": "Model selection and overfitting",
     "section": "Announcements",
-    "text": "Announcements\n\nAdd announcements…"
+    "text": "Announcements\n\nMy office hours this week:\n\nI’ll hold them at a modified time: 1-2 pm on Wednesday at Old Chem 213 (in place of Dav’s office hours)\nDav will fill in for me 2-4 pm on Wednesday at Old Chem 203B\n\n\nMake sure you’re caught up with prepare materials before Thursday’s class"
   },
   {
-    "objectID": "slides/20-evaluating-models-slides.html#packages",
-    "href": "slides/20-evaluating-models-slides.html#packages",
-    "title": "Evaluating models",
-    "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(forested)"
+    "objectID": "slides/18-model-selection-overfitting-slides.html#what-is-the-difference-between-r2-and-adjusted-r2",
+    "href": "slides/18-model-selection-overfitting-slides.html#what-is-the-difference-between-r2-and-adjusted-r2",
+    "title": "Model selection and overfitting",
+    "section": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?",
+    "text": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?\n\n\n\\(R^2\\):\n\nProportion of variability in the outcome explained by the model.\nUseful for quantifying the fit of a given model.\n\n\n\nAdjusted \\(R^2\\):\n\nProportion of variability in the outcome explained by the model, with a penalty added for the number of predictors in the model.\nUseful for comparing models."
   },
   {
-    "objectID": "slides/20-evaluating-models-slides.html#data",
-    "href": "slides/20-evaluating-models-slides.html#data",
-    "title": "Evaluating models",
-    "section": "Data",
-    "text": "Data\n\nThe U.S. Forest Service maintains machine learning models to predict whether a plot of land is “forested.”\nThis classification is important for research, legislation, land management, etc. purposes.\nPlots are typically remeasured every 10 years.\nThe forested dataset contains the most recent measurement per plot."
+    "objectID": "slides/18-model-selection-overfitting-slides.html#finish-up-thursdays-ae",
+    "href": "slides/18-model-selection-overfitting-slides.html#finish-up-thursdays-ae",
+    "title": "Model selection and overfitting",
+    "section": "Finish up Thursday’s AE",
+    "text": "Finish up Thursday’s AE\n\n\nGo to your ae project in RStudio.\nGet back to working on ae-15-modeling-loans\n\n\nGoals:\n\nReview prediction and interpretation of model results\nReview main and interaction effects models\nDiscuss model selection further"
   },
   {
-    "objectID": "slides/20-evaluating-models-slides.html#data-forested",
-    "href": "slides/20-evaluating-models-slides.html#data-forested",
-    "title": "Evaluating models",
-    "section": "Data: forested\n",
-    "text": "Data: forested\n\n\nforested\n\n# A tibble: 7,107 × 19\n   forested  year elevation eastness northness roughness tree_no_tree\n   &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt;       \n 1 Yes       2005       881       90        43        63 Tree        \n 2 Yes       2005       113      -25        96        30 Tree        \n 3 No        2005       164      -84        53        13 Tree        \n 4 Yes       2005       299       93        34         6 No tree     \n 5 Yes       2005       806       47       -88        35 Tree        \n 6 Yes       2005       736      -27       -96        53 Tree        \n 7 Yes       2005       636      -48        87         3 No tree     \n 8 Yes       2005       224      -65       -75         9 Tree        \n 9 Yes       2005        52      -62        78        42 Tree        \n10 Yes       2005      2240      -67       -74        99 No tree     \n# ℹ 7,097 more rows\n# ℹ 12 more variables: dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,\n#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,\n#   land_type &lt;fct&gt;"
+    "objectID": "slides/18-model-selection-overfitting-slides.html#recap",
+    "href": "slides/18-model-selection-overfitting-slides.html#recap",
+    "title": "Model selection and overfitting",
+    "section": "Recap",
+    "text": "Recap\n\nWhat is the practical difference between a model with parallel and non-parallel lines?\nWhat is the definition of R-squared?\nWhy do we choose models based on adjusted R-squared and not R-squared?"
   },
   {
-    "objectID": "slides/20-evaluating-models-slides.html#data-forested-1",
-    "href": "slides/20-evaluating-models-slides.html#data-forested-1",
-    "title": "Evaluating models",
-    "section": "Data: forested\n",
-    "text": "Data: forested\n\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52,…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74,…\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 19…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No t…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195,…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61,…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.…\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 1…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, …\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 17…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74,…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144,…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tre…"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#outcome-and-predictors",
-    "href": "slides/20-evaluating-models-slides.html#outcome-and-predictors",
-    "title": "Evaluating models",
-    "section": "Outcome and predictors",
-    "text": "Outcome and predictors\n\nOutcome: forested - Factor, Yes or No\n\n\n\nlevels(forested$forested)\n\n[1] \"Yes\" \"No\" \n\n\n\n\nPredictors: 18 remotely-sensed and easily-accessible predictors:\n\nnumeric variables based on weather and topography\ncategorical variables based on classifications from other governmental organizations"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#forested",
-    "href": "slides/20-evaluating-models-slides.html#forested",
-    "title": "Evaluating models",
-    "section": "?forested",
-    "text": "?forested"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#should-we-include-a-predictor",
-    "href": "slides/20-evaluating-models-slides.html#should-we-include-a-predictor",
-    "title": "Evaluating models",
-    "section": "Should we include a predictor?",
-    "text": "Should we include a predictor?\nTo determine whether we should include a predictor in a model, we should start by asking:\n\n\nIs it ethical to use this variable? (Or even legal?)\nWill this variable be available at prediction time?\nDoes this variable contribute to explainability?"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#weve-been-cheating",
-    "href": "slides/20-evaluating-models-slides.html#weve-been-cheating",
-    "title": "Evaluating models",
-    "section": "We’ve been cheating!",
-    "text": "We’ve been cheating!\n\n\nSo far, we’ve been using all the data we have for building models. In predictive contexts, this would be considered cheating.\nEvaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you’ve already seen."
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#spending-your-data",
-    "href": "slides/20-evaluating-models-slides.html#spending-your-data",
-    "title": "Evaluating models",
-    "section": "Spending your data",
-    "text": "Spending your data\nFor predictive models (used primarily in machine learning), we typically split data into training and test sets:\n\n\nThe training set is used to estimate model parameters.\nThe test set is used to find an independent assessment of model performance.\n\n\n\n\n\n\n\n\nWarning\n\n\nDo not use, or even peek at, the test set during training."
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#how-much-to-spend",
-    "href": "slides/20-evaluating-models-slides.html#how-much-to-spend",
-    "title": "Evaluating models",
-    "section": "How much to spend?",
-    "text": "How much to spend?\n\n\nThe more data we spend (use in training), the better estimates we’ll get.\nSpending too much data in training prevents us from computing a good assessment of predictive performance.\nSpending too much data in testing prevents us from computing a good estimate of model parameters."
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#the-initial-split",
-    "href": "slides/20-evaluating-models-slides.html#the-initial-split",
-    "title": "Evaluating models",
-    "section": "The initial split",
-    "text": "The initial split\n\nset.seed(20241112)\nforested_split &lt;- initial_split(forested)\nforested_split\n\n&lt;Training/Testing/Total&gt;\n&lt;5330/1777/7107&gt;"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#setting-a-seed",
-    "href": "slides/20-evaluating-models-slides.html#setting-a-seed",
-    "title": "Evaluating models",
-    "section": "Setting a seed",
-    "text": "Setting a seed\n\nWhat does set.seed() do?\n\n\n\nTo create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.\nThis allows us to reproduce results by setting that seed.\nWhich seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance."
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#accessing-the-data",
-    "href": "slides/20-evaluating-models-slides.html#accessing-the-data",
-    "title": "Evaluating models",
-    "section": "Accessing the data",
-    "text": "Accessing the data\n\nforested_train &lt;- training(forested_split)\nforested_test &lt;- testing(forested_split)"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#the-training-set",
-    "href": "slides/20-evaluating-models-slides.html#the-training-set",
-    "title": "Evaluating models",
-    "section": "The training set",
-    "text": "The training set\n\nforested_train\n\n# A tibble: 5,330 × 19\n   forested  year elevation eastness northness roughness tree_no_tree\n   &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt;       \n 1 Yes       2013       315      -17        98        92 Tree        \n 2 No        2018       374       93       -34        23 No tree     \n 3 No        2017       377       44       -89         1 Tree        \n 4 Yes       2013       541       31       -94       139 Tree        \n 5 Yes       2017       680       14       -98        20 Tree        \n 6 Yes       2017      1482       76       -64        43 Tree        \n 7 No        2020        84       42       -90        12 No tree     \n 8 Yes       2011       210       34        93        16 Tree        \n 9 No        2020       766       14        98        20 No tree     \n10 Yes       2013      1559       98        16        79 Tree        \n# ℹ 5,320 more rows\n# ℹ 12 more variables: dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,\n#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,\n#   land_type &lt;fct&gt;"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#the-testing-data",
-    "href": "slides/20-evaluating-models-slides.html#the-testing-data",
-    "title": "Evaluating models",
-    "section": "The testing data",
-    "text": "The testing data\n\n🙈"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#initial-questions",
-    "href": "slides/20-evaluating-models-slides.html#initial-questions",
-    "title": "Evaluating models",
-    "section": "Initial questions",
-    "text": "Initial questions\n\nWhat’s the distribution of the outcome, forested?\nWhat’s the distribution of numeric variables like precip_annual?\nHow does the distribution of forested differ across the categorical and numerical variables?\n\n\n\nWhich dataset should we use for the exploration? The entire data forested, the training data forested_train, or the testing data forested_test?"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#forested-1",
-    "href": "slides/20-evaluating-models-slides.html#forested-1",
-    "title": "Evaluating models",
-    "section": "forested",
-    "text": "forested\nWhat’s the distribution of the outcome, forested?"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#precip_annual",
-    "href": "slides/20-evaluating-models-slides.html#precip_annual",
-    "title": "Evaluating models",
-    "section": "precip_annual",
-    "text": "precip_annual\nWhat’s the distribution of precip_annual?"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#forested-and-precip_annual",
-    "href": "slides/20-evaluating-models-slides.html#forested-and-precip_annual",
-    "title": "Evaluating models",
-    "section": "\nforested and precip_annual\n",
-    "text": "forested and precip_annual\n\n\nggplot(\n  forested_train,\n  aes(x = precip_annual, fill = forested, group = forested)\n  ) +\n  geom_histogram(binwidth = 200, position = \"identity\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#forested-and-precip_annual-1",
-    "href": "slides/20-evaluating-models-slides.html#forested-and-precip_annual-1",
-    "title": "Evaluating models",
-    "section": "\nforested and precip_annual\n",
-    "text": "forested and precip_annual\n\n\nggplot(\n  forested_train,\n  aes(x = precip_annual, fill = forested, group = forested)\n  ) +\n  geom_histogram(binwidth = 200, position = \"fill\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#forested-and-tree_no_tree",
-    "href": "slides/20-evaluating-models-slides.html#forested-and-tree_no_tree",
-    "title": "Evaluating models",
-    "section": "\nforested and tree_no_tree\n",
-    "text": "forested and tree_no_tree\n\n\nggplot(forested_train, aes(x = tree_no_tree, fill = forested)) +\n  geom_bar(position = \"fill\") +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#forested-and-lat-lon",
-    "href": "slides/20-evaluating-models-slides.html#forested-and-lat-lon",
-    "title": "Evaluating models",
-    "section": "\nforested and lat / lon\n",
-    "text": "forested and lat / lon\n\n\nggplot(forested_train, aes(x = lon, y = lat, color = forested)) +\n  geom_point(alpha = 0.7) +\n  scale_color_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#next-steps-1",
-    "href": "slides/20-evaluating-models-slides.html#next-steps-1",
-    "title": "Evaluating models",
-    "section": "Next steps",
-    "text": "Next steps\n\n\nFit models on training data\nMake predictions on testing data\n\nEvaluate predictions on testing data:\n\nLinear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nMake decisions based on model predictive performance, validity across various testing/training splits (aka “cross validation”), explainability\n\n\n\n\n\n\n\n\n\nNote\n\n\nWe will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses."
-  },
-  {
-    "objectID": "slides/20-evaluating-models-slides.html#application-exercise-ae-17-forest-classification",
-    "href": "slides/20-evaluating-models-slides.html#application-exercise-ae-17-forest-classification",
-    "title": "Evaluating models",
-    "section": "Application exercise: ae-17-forest-classification",
-    "text": "Application exercise: ae-17-forest-classification\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-17-forest-classification.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
-  },
-  {
-    "objectID": "slides/20-model-validation.html#while-you-wait",
-    "href": "slides/20-model-validation.html#while-you-wait",
-    "title": "Evaluating models",
+    "objectID": "slides/18-model-selection-overfitting.html#while-you-wait",
+    "href": "slides/18-model-selection-overfitting.html#while-you-wait",
+    "title": "Model selection and overfitting",
     "section": "While you wait…",
-    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-17-forest-classification.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
+    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you missed class last Thursday, pull to get today’s application exercise file: ae-15-modeling-loans.qmd.\nMake sure you’ve completed the “Get to know the data” section of your AE."
   },
   {
-    "objectID": "slides/20-model-validation.html#announcements",
-    "href": "slides/20-model-validation.html#announcements",
-    "title": "Evaluating models",
+    "objectID": "slides/18-model-selection-overfitting.html#announcements",
+    "href": "slides/18-model-selection-overfitting.html#announcements",
+    "title": "Model selection and overfitting",
     "section": "Announcements",
-    "text": "Announcements\n\nAdd announcements…"
+    "text": "Announcements\n\nMy office hours this week:\n\nI’ll hold them at a modified time: 1-2 pm on Wednesday at Old Chem 213 (in place of Dav’s office hours)\nDav will fill in for me 2-4 pm on Wednesday at Old Chem 203B\n\n\nMake sure you’re caught up with prepare materials before Thursday’s class"
   },
   {
-    "objectID": "slides/20-model-validation.html#packages",
-    "href": "slides/20-model-validation.html#packages",
-    "title": "Evaluating models",
-    "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(forested)"
+    "objectID": "slides/18-model-selection-overfitting.html#what-is-the-difference-between-r2-and-adjusted-r2",
+    "href": "slides/18-model-selection-overfitting.html#what-is-the-difference-between-r2-and-adjusted-r2",
+    "title": "Model selection and overfitting",
+    "section": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?",
+    "text": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?\n\n\n\\(R^2\\):\n\nProportion of variability in the outcome explained by the model.\nUseful for quantifying the fit of a given model.\n\n\n\nAdjusted \\(R^2\\):\n\nProportion of variability in the outcome explained by the model, with a penalty added for the number of predictors in the model.\nUseful for comparing models."
   },
   {
-    "objectID": "slides/20-model-validation.html#data",
-    "href": "slides/20-model-validation.html#data",
-    "title": "Evaluating models",
-    "section": "Data",
-    "text": "Data\n\nThe U.S. Forest Service maintains machine learning models to predict whether a plot of land is “forested.”\nThis classification is important for research, legislation, land management, etc. purposes.\nPlots are typically remeasured every 10 years.\nThe forested dataset contains the most recent measurement per plot."
+    "objectID": "slides/18-model-selection-overfitting.html#finish-up-thursdays-ae",
+    "href": "slides/18-model-selection-overfitting.html#finish-up-thursdays-ae",
+    "title": "Model selection and overfitting",
+    "section": "Finish up Thursday’s AE",
+    "text": "Finish up Thursday’s AE\n\n\nGo to your ae project in RStudio.\nGet back to working on ae-15-modeling-loans\n\n\nGoals:\n\nReview prediction and interpretation of model results\nReview main and interaction effects models\nDiscuss model selection further"
   },
   {
-    "objectID": "slides/20-model-validation.html#data-forested",
-    "href": "slides/20-model-validation.html#data-forested",
-    "title": "Evaluating models",
-    "section": "Data: forested\n",
-    "text": "Data: forested\n\n\nforested\n\n# A tibble: 7,107 × 19\n   forested  year elevation eastness northness roughness tree_no_tree\n   &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt;       \n 1 Yes       2005       881       90        43        63 Tree        \n 2 Yes       2005       113      -25        96        30 Tree        \n 3 No        2005       164      -84        53        13 Tree        \n 4 Yes       2005       299       93        34         6 No tree     \n 5 Yes       2005       806       47       -88        35 Tree        \n 6 Yes       2005       736      -27       -96        53 Tree        \n 7 Yes       2005       636      -48        87         3 No tree     \n 8 Yes       2005       224      -65       -75         9 Tree        \n 9 Yes       2005        52      -62        78        42 Tree        \n10 Yes       2005      2240      -67       -74        99 No tree     \n# ℹ 7,097 more rows\n# ℹ 12 more variables: dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,\n#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,\n#   land_type &lt;fct&gt;"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#data-forested-1",
-    "href": "slides/20-model-validation.html#data-forested-1",
-    "title": "Evaluating models",
-    "section": "Data: forested\n",
-    "text": "Data: forested\n\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52,…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74,…\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 19…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No t…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195,…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61,…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.…\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 1…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, …\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 17…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74,…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144,…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tre…"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#outcome-and-predictors",
-    "href": "slides/20-model-validation.html#outcome-and-predictors",
-    "title": "Evaluating models",
-    "section": "Outcome and predictors",
-    "text": "Outcome and predictors\n\nOutcome: forested - Factor, Yes or No\n\n\n\nlevels(forested$forested)\n\n[1] \"Yes\" \"No\" \n\n\n\n\nPredictors: 18 remotely-sensed and easily-accessible predictors:\n\nnumeric variables based on weather and topography\ncategorical variables based on classifications from other governmental organizations"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#forested",
-    "href": "slides/20-model-validation.html#forested",
-    "title": "Evaluating models",
-    "section": "?forested",
-    "text": "?forested"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#should-we-include-a-predictor",
-    "href": "slides/20-model-validation.html#should-we-include-a-predictor",
-    "title": "Evaluating models",
-    "section": "Should we include a predictor?",
-    "text": "Should we include a predictor?\nTo determine whether we should include a predictor in a model, we should start by asking:\n\n\nIs it ethical to use this variable? (Or even legal?)\nWill this variable be available at prediction time?\nDoes this variable contribute to explainability?"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#weve-been-cheating",
-    "href": "slides/20-model-validation.html#weve-been-cheating",
-    "title": "Evaluating models",
-    "section": "We’ve been cheating!",
-    "text": "We’ve been cheating!\n\n\nSo far, we’ve been using all the data we have for building models. In predictive contexts, this would be considered cheating.\nEvaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you’ve already seen."
-  },
-  {
-    "objectID": "slides/20-model-validation.html#spending-your-data",
-    "href": "slides/20-model-validation.html#spending-your-data",
-    "title": "Evaluating models",
-    "section": "Spending your data",
-    "text": "Spending your data\nFor predictive models (used primarily in machine learning), we typically split data into training and test sets:\n\n\nThe training set is used to estimate model parameters.\nThe test set is used to find an independent assessment of model performance.\n\n. . .\n\n\n\n\n\n\nWarning\n\n\n\nDo not use, or even peek at, the test set during training."
-  },
-  {
-    "objectID": "slides/20-model-validation.html#how-much-to-spend",
-    "href": "slides/20-model-validation.html#how-much-to-spend",
-    "title": "Evaluating models",
-    "section": "How much to spend?",
-    "text": "How much to spend?\n\n\nThe more data we spend (use in training), the better estimates we’ll get.\nSpending too much data in training prevents us from computing a good assessment of predictive performance.\nSpending too much data in testing prevents us from computing a good estimate of model parameters."
-  },
-  {
-    "objectID": "slides/20-model-validation.html#the-initial-split",
-    "href": "slides/20-model-validation.html#the-initial-split",
-    "title": "Evaluating models",
-    "section": "The initial split",
-    "text": "The initial split\n\nset.seed(20241112)\nforested_split &lt;- initial_split(forested)\nforested_split\n\n&lt;Training/Testing/Total&gt;\n&lt;5330/1777/7107&gt;"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#setting-a-seed",
-    "href": "slides/20-model-validation.html#setting-a-seed",
-    "title": "Evaluating models",
-    "section": "Setting a seed",
-    "text": "Setting a seed\n\nWhat does set.seed() do?\n\n\n\nTo create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.\nThis allows us to reproduce results by setting that seed.\nWhich seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance."
-  },
-  {
-    "objectID": "slides/20-model-validation.html#accessing-the-data",
-    "href": "slides/20-model-validation.html#accessing-the-data",
-    "title": "Evaluating models",
-    "section": "Accessing the data",
-    "text": "Accessing the data\n\nforested_train &lt;- training(forested_split)\nforested_test &lt;- testing(forested_split)"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#the-training-set",
-    "href": "slides/20-model-validation.html#the-training-set",
-    "title": "Evaluating models",
-    "section": "The training set",
-    "text": "The training set\n\nforested_train\n\n# A tibble: 5,330 × 19\n   forested  year elevation eastness northness roughness tree_no_tree\n   &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt;       \n 1 Yes       2013       315      -17        98        92 Tree        \n 2 No        2018       374       93       -34        23 No tree     \n 3 No        2017       377       44       -89         1 Tree        \n 4 Yes       2013       541       31       -94       139 Tree        \n 5 Yes       2017       680       14       -98        20 Tree        \n 6 Yes       2017      1482       76       -64        43 Tree        \n 7 No        2020        84       42       -90        12 No tree     \n 8 Yes       2011       210       34        93        16 Tree        \n 9 No        2020       766       14        98        20 No tree     \n10 Yes       2013      1559       98        16        79 Tree        \n# ℹ 5,320 more rows\n# ℹ 12 more variables: dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,\n#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,\n#   land_type &lt;fct&gt;"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#the-testing-data",
-    "href": "slides/20-model-validation.html#the-testing-data",
-    "title": "Evaluating models",
-    "section": "The testing data",
-    "text": "The testing data\n. . .\n🙈"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#initial-questions",
-    "href": "slides/20-model-validation.html#initial-questions",
-    "title": "Evaluating models",
-    "section": "Initial questions",
-    "text": "Initial questions\n\nWhat’s the distribution of the outcome, forested?\nWhat’s the distribution of numeric variables like precip_annual?\nHow does the distribution of forested differ across the categorical and numerical variables?\n\n. . .\n\nWhich dataset should we use for the exploration? The entire data forested, the training data forested_train, or the testing data forested_test?"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#forested-1",
-    "href": "slides/20-model-validation.html#forested-1",
-    "title": "Evaluating models",
-    "section": "forested",
-    "text": "forested\nWhat’s the distribution of the outcome, forested?"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#precip_annual",
-    "href": "slides/20-model-validation.html#precip_annual",
-    "title": "Evaluating models",
-    "section": "precip_annual",
-    "text": "precip_annual\nWhat’s the distribution of precip_annual?"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#forested-and-precip_annual",
-    "href": "slides/20-model-validation.html#forested-and-precip_annual",
-    "title": "Evaluating models",
-    "section": "\nforested and precip_annual\n",
-    "text": "forested and precip_annual\n\n\nggplot(\n  forested_train,\n  aes(x = precip_annual, fill = forested, group = forested)\n  ) +\n  geom_histogram(binwidth = 200, position = \"identity\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#forested-and-precip_annual-1",
-    "href": "slides/20-model-validation.html#forested-and-precip_annual-1",
-    "title": "Evaluating models",
-    "section": "\nforested and precip_annual\n",
-    "text": "forested and precip_annual\n\n\nggplot(\n  forested_train,\n  aes(x = precip_annual, fill = forested, group = forested)\n  ) +\n  geom_histogram(binwidth = 200, position = \"fill\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#forested-and-tree_no_tree",
-    "href": "slides/20-model-validation.html#forested-and-tree_no_tree",
-    "title": "Evaluating models",
-    "section": "\nforested and tree_no_tree\n",
-    "text": "forested and tree_no_tree\n\n\nggplot(forested_train, aes(x = tree_no_tree, fill = forested)) +\n  geom_bar(position = \"fill\") +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#forested-and-lat-lon",
-    "href": "slides/20-model-validation.html#forested-and-lat-lon",
-    "title": "Evaluating models",
-    "section": "\nforested and lat / lon\n",
-    "text": "forested and lat / lon\n\n\nggplot(forested_train, aes(x = lon, y = lat, color = forested)) +\n  geom_point(alpha = 0.7) +\n  scale_color_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "slides/20-model-validation.html#next-steps-1",
-    "href": "slides/20-model-validation.html#next-steps-1",
-    "title": "Evaluating models",
-    "section": "Next steps",
-    "text": "Next steps\n\n\nFit models on training data\nMake predictions on testing data\n\nEvaluate predictions on testing data:\n\nLinear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nMake decisions based on model predictive performance, validity across various testing/training splits (aka “cross validation”), explainability\n\n\n. . .\n\n\n\n\n\n\nNote\n\n\n\nWe will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses."
-  },
-  {
-    "objectID": "slides/20-model-validation.html#application-exercise-ae-17-forest-classification",
-    "href": "slides/20-model-validation.html#application-exercise-ae-17-forest-classification",
-    "title": "Evaluating models",
-    "section": "Application exercise: ae-17-forest-classification",
-    "text": "Application exercise: ae-17-forest-classification\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-17-forest-classification.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
+    "objectID": "slides/18-model-selection-overfitting.html#recap",
+    "href": "slides/18-model-selection-overfitting.html#recap",
+    "title": "Model selection and overfitting",
+    "section": "Recap",
+    "text": "Recap\n\nWhat is the practical difference between a model with parallel and non-parallel lines?\nWhat is the definition of R-squared?\nWhy do we choose models based on adjusted R-squared and not R-squared?"
   },
   {
     "objectID": "computing-cheatsheets.html",
@@ -3666,109 +3372,193 @@
     "text": "Submit\nRender, commit, and push:\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
   },
   {
-    "objectID": "ae/ae-14-modeling-penguins-multi.html",
-    "href": "ae/ae-14-modeling-penguins-multi.html",
-    "title": "AE 14: Modelling penguins with multiple predictors",
+    "objectID": "ae/ae-17-forest-classification-A.html",
+    "href": "ae/ae-17-forest-classification-A.html",
+    "title": "AE 17: Forest classification",
     "section": "",
-    "text": "In this application exercise we will continue to study penguins. The data can be found in the palmerpenguins package and we will use tidyverse and tidymodels for data exploration and modeling, respectively.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(palmerpenguins)"
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as reference only, it’s not designed to be an exhaustive key.\nIn this application exercise, we will\nWe will use tidyverse and tidymodels for data exploration and modeling, respectively, and the forested package for the data.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(forested)\nRemember from the lecture that the forested dataset contains information on whether a plot is forested (Yes) or not (No) as well as numerical and categorical features of that plot.\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005,…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52, 2240, 104…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -67, 96, -4…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74, -26, 86, …\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 190, 95, 212…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No tree, Tree,…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6.39, 6.50,…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195, 1312, 103…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61, 10.45, 10…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.76, 1.11, …\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 14.23, 15.3…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, 5.54, 6.20…\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 172, 162, 70…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944, 892, 549…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74, 66, 83, 6…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144, -117.8841…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.07396, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tree vegetati…"
   },
   {
-    "objectID": "ae/ae-14-modeling-penguins-multi.html#additive-vs.-interaction-models",
-    "href": "ae/ae-14-modeling-penguins-multi.html#additive-vs.-interaction-models",
-    "title": "AE 14: Modelling penguins with multiple predictors",
-    "section": "Additive vs. interaction models",
-    "text": "Additive vs. interaction models\n\n\nYour turn: Run the two chunks of code below and create two separate plots. How are the two plots different than each other? Which plot does the model we fit above represent?\n\n# Plot A\nggplot(\n  penguins, \n  aes(x = flipper_length_mm, y = body_mass_g, color = island)\n  ) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\") +\n  labs(title = \"Plot A - Interaction model\") +\n  theme(legend.position = \"bottom\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n# Plot B\nbm_fl_island_aug &lt;- augment(bm_fl_island_fit, new_data = penguins)\nggplot(\n  bm_fl_island_aug, \n  aes(x = flipper_length_mm, y = body_mass_g, color = island)\n  ) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(aes(y = .pred), method = \"lm\") +\n  labs(title = \"Plot B - Additive model\") +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\nError in eval(expr, envir, enclos): object 'bm_fl_island_fit' not found\n\n\n\n\nError in eval(expr, envir, enclos): object 'bm_fl_island_aug' not found\n\n\n\nAdd response here.\n\n\nYour turn: Interpret the slope coefficient for flipper length in the context of the data and the research question.\n\nAdd response here.\n\n\nDemo: Predict the body mass of a Dream island penguin with a flipper length of 200 mm based on the additive model.\n\n\n# add code here\n\n\n\nReview: Look back at Plot B. What assumption does the additive model make about the slopes between flipper length and body mass for each of the three islands?\n\nAdd response here.\n\n\nDemo: Now fit the interaction model represented in Plot A and write the estimated regression model.\n\n\n# add code here\n\n\\[\nadd~math~text~here\n\\]\n\n\nReview: What does modeling body mass with an interaction effect get us that without doing so does not?\n\nAdd response here.\n\n\nYour turn: Predict the body mass of a Dream island penguin with a flipper length of 200 mm based on the interaction model.\n\n\n# add code here"
+    "objectID": "ae/ae-17-forest-classification-A.html#fit",
+    "href": "ae/ae-17-forest-classification-A.html#fit",
+    "title": "AE 17: Forest classification",
+    "section": "Fit",
+    "text": "Fit\nFit a model for classifying plots as forested or not based on a subset of predictors of your choice. Name the model forested_custom_fit and display a tidy output of the model.\n\nforested_custom_fit &lt;- logistic_reg() |&gt;\n  fit(forested ~ elevation + tree_no_tree + lat + lon + temp_annual_mean, data = forested_train)\ntidy(forested_custom_fit)\n\n# A tibble: 6 × 5\n  term                 estimate std.error statistic   p.value\n  &lt;chr&gt;                   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)         48.2       6.06         7.96  1.71e- 15\n2 elevation           -0.000311  0.000384    -0.811 4.17e-  1\n3 tree_no_treeNo tree  3.35      0.0925      36.3   4.02e-288\n4 lat                 -0.313     0.0642      -4.87  1.09e-  6\n5 lon                  0.311     0.0288      10.8   3.81e- 27\n6 temp_annual_mean     0.270     0.0819       3.30  9.78e-  4"
   },
   {
-    "objectID": "ae/ae-14-modeling-penguins-multi.html#choosing-a-model",
-    "href": "ae/ae-14-modeling-penguins-multi.html#choosing-a-model",
-    "title": "AE 14: Modelling penguins with multiple predictors",
-    "section": "Choosing a model",
-    "text": "Choosing a model\nRule of thumb: Occam’s Razor - Don’t overcomplicate the situation! We prefer the simplest best model.\n\n# add code here\n\n\n\nReview: What is R-squared? What is adjusted R-squared?\n\nAdd response here."
+    "objectID": "ae/ae-17-forest-classification-A.html#predict",
+    "href": "ae/ae-17-forest-classification-A.html#predict",
+    "title": "AE 17: Forest classification",
+    "section": "Predict",
+    "text": "Predict\nPredict for the testing data using this model.\n\nforested_custom_aug &lt;- augment(forested_custom_fit, new_data = forested_test)\nforested_custom_aug\n\n# A tibble: 1,777 × 22\n   .pred_class .pred_Yes .pred_No forested  year elevation eastness northness\n   &lt;fct&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n 1 Yes            0.877    0.123  Yes       2005       113      -25        96\n 2 Yes            0.829    0.171  Yes       2005       736      -27       -96\n 3 Yes            0.855    0.145  Yes       2005       224      -65       -75\n 4 Yes            0.957    0.0431 Yes       2003      1031      -49        86\n 5 Yes            0.728    0.272  No        2005      1713      -66        75\n 6 Yes            0.982    0.0175 Yes       2014      1612       30       -95\n 7 No             0.0765   0.924  No        2014       507       44       -89\n 8 Yes            0.889    0.111  Yes       2014       940      -93        35\n 9 Yes            0.659    0.341  No        2014       246       22       -97\n10 No             0.0877   0.912  No        2014       419       86       -49\n# ℹ 1,767 more rows\n# ℹ 14 more variables: roughness &lt;dbl&gt;, tree_no_tree &lt;fct&gt;, dew_temp &lt;dbl&gt;,\n#   precip_annual &lt;dbl&gt;, temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;, land_type &lt;fct&gt;"
   },
   {
-    "objectID": "ae/ae-13-modeling-penguins.html",
-    "href": "ae/ae-13-modeling-penguins.html",
-    "title": "AE 11: Modelling penguins",
+    "objectID": "ae/ae-17-forest-classification-A.html#evaluate",
+    "href": "ae/ae-17-forest-classification-A.html#evaluate",
+    "title": "AE 17: Forest classification",
+    "section": "Evaluate",
+    "text": "Evaluate\nCalculate the false positive and false negative rates for the testing data using this model.\n\nforested_custom_aug |&gt;\n  count(.pred_class, forested) |&gt;\n  arrange(forested) |&gt;\n  group_by(forested) |&gt;\n  mutate(\n    p = round(n / sum(n), 2),\n    decision = case_when(\n      .pred_class == \"Yes\" & forested == \"Yes\" ~ \"True positive\",\n      .pred_class == \"Yes\" & forested == \"No\" ~ \"False positive\",\n      .pred_class == \"No\" & forested == \"Yes\" ~ \"False negative\",\n      .pred_class == \"No\" & forested == \"No\" ~ \"True negative\"\n    )\n  )\n\n# A tibble: 4 × 5\n# Groups:   forested [2]\n  .pred_class forested     n     p decision      \n  &lt;fct&gt;       &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         \n1 Yes         Yes        864  0.9  True positive \n2 No          Yes         98  0.1  False negative\n3 Yes         No         124  0.15 False positive\n4 No          No         691  0.85 True negative \n\n\nAnother commonly used display of this information is a confusion matrix. Create this using the conf_mat() function. You will need to review the documentation for the function to determine how to use it.\n\nconf_mat(\n  forested_custom_aug, \n  truth = forested, \n  estimate = .pred_class\n)\n\n          Truth\nPrediction Yes  No\n       Yes 864 124\n       No   98 691"
+  },
+  {
+    "objectID": "ae/ae-17-forest-classification-A.html#sensitivity-specificity-roc-curve",
+    "href": "ae/ae-17-forest-classification-A.html#sensitivity-specificity-roc-curve",
+    "title": "AE 17: Forest classification",
+    "section": "Sensitivity, specificity, ROC curve",
+    "text": "Sensitivity, specificity, ROC curve\nCalculate sensitivity and specificity and draw the ROC curve.\n\nforested_custom_roc &lt;- roc_curve(forested_custom_aug, truth = forested, .pred_Yes)\nforested_custom_roc\n\n# A tibble: 1,779 × 3\n   .threshold specificity sensitivity\n        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;\n 1  -Inf          0                 1\n 2     0.0186     0                 1\n 3     0.0202     0.00123           1\n 4     0.0204     0.00245           1\n 5     0.0207     0.00368           1\n 6     0.0227     0.00491           1\n 7     0.0286     0.00613           1\n 8     0.0298     0.00736           1\n 9     0.0299     0.00859           1\n10     0.0300     0.00982           1\n# ℹ 1,769 more rows\n\nggplot(forested_custom_roc, aes(x = 1 - specificity, y = sensitivity)) +\n  geom_path() +\n  geom_abline(lty = 3) +\n  coord_equal()"
+  },
+  {
+    "objectID": "ae/ae-17-forest-classification-A.html#fit-1",
+    "href": "ae/ae-17-forest-classification-A.html#fit-1",
+    "title": "AE 17: Forest classification",
+    "section": "Fit",
+    "text": "Fit\nFit a model for classifying plots as forested or not based on all predictors available. Name the model forested_full_fit and display a tidy output of the model.\n\nforested_full_fit &lt;- logistic_reg() |&gt;\n  fit(forested ~ ., data = forested_train)\ntidy(forested_full_fit)\n\n# A tibble: 20 × 5\n   term                             estimate std.error statistic  p.value\n   &lt;chr&gt;                               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 (Intercept)                  -12.1        32.6       -0.371   7.11e- 1\n 2 year                           0.00456     0.0152     0.299   7.65e- 1\n 3 elevation                     -0.00277     0.000639  -4.33    1.47e- 5\n 4 eastness                      -0.000910    0.000734  -1.24    2.15e- 1\n 5 northness                      0.00208     0.000745   2.79    5.26e- 3\n 6 roughness                     -0.00399     0.00146   -2.73    6.29e- 3\n 7 tree_no_treeNo tree            1.25        0.136      9.23    2.61e-20\n 8 dew_temp                      -0.125       0.176     -0.712   4.76e- 1\n 9 precip_annual                 -0.0000895   0.000100  -0.895   3.71e- 1\n10 temp_annual_mean              -7.30       12.4       -0.587   5.57e- 1\n11 temp_annual_min                0.819       0.103      7.93    2.20e-15\n12 temp_annual_max                2.59        6.22       0.417   6.77e- 1\n13 temp_january_min               3.34        6.21       0.538   5.91e- 1\n14 vapor_min                      0.00000990  0.00353    0.00280 9.98e- 1\n15 vapor_max                      0.00925     0.00132    7.00    2.62e-12\n16 canopy_cover                  -0.0446      0.00366  -12.2     4.18e-34\n17 lon                           -0.0953      0.0559    -1.71    8.80e- 2\n18 lat                            0.0748      0.109      0.683   4.94e- 1\n19 land_typeNon-tree vegetation  -0.735       0.282     -2.61    9.05e- 3\n20 land_typeTree                 -1.58        0.297     -5.33    9.93e- 8"
+  },
+  {
+    "objectID": "ae/ae-17-forest-classification-A.html#predict-1",
+    "href": "ae/ae-17-forest-classification-A.html#predict-1",
+    "title": "AE 17: Forest classification",
+    "section": "Predict",
+    "text": "Predict\nPredict for the testing data using this model.\n\nforested_full_aug &lt;- augment(forested_full_fit, new_data = forested_test)\nforested_full_aug\n\n# A tibble: 1,777 × 22\n   .pred_class .pred_Yes .pred_No forested  year elevation eastness northness\n   &lt;fct&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n 1 Yes            0.930    0.0700 Yes       2005       113      -25        96\n 2 Yes            0.918    0.0822 Yes       2005       736      -27       -96\n 3 No             0.428    0.572  Yes       2005       224      -65       -75\n 4 Yes            0.972    0.0280 Yes       2003      1031      -49        86\n 5 Yes            0.633    0.367  No        2005      1713      -66        75\n 6 Yes            0.980    0.0201 Yes       2014      1612       30       -95\n 7 No             0.0436   0.956  No        2014       507       44       -89\n 8 Yes            0.845    0.155  Yes       2014       940      -93        35\n 9 No             0.0141   0.986  No        2014       246       22       -97\n10 No             0.0386   0.961  No        2014       419       86       -49\n# ℹ 1,767 more rows\n# ℹ 14 more variables: roughness &lt;dbl&gt;, tree_no_tree &lt;fct&gt;, dew_temp &lt;dbl&gt;,\n#   precip_annual &lt;dbl&gt;, temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;, land_type &lt;fct&gt;"
+  },
+  {
+    "objectID": "ae/ae-17-forest-classification-A.html#evaluate-1",
+    "href": "ae/ae-17-forest-classification-A.html#evaluate-1",
+    "title": "AE 17: Forest classification",
+    "section": "Evaluate",
+    "text": "Evaluate\nCalculate the false positive and false negative rates for the testing data using this model.\n\nforested_full_aug |&gt;\n  count(.pred_class, forested) |&gt;\n  arrange(forested) |&gt;\n  group_by(forested) |&gt;\n  mutate(\n    p = round(n / sum(n), 2),\n    decision = case_when(\n      .pred_class == \"Yes\" & forested == \"Yes\" ~ \"True positive\",\n      .pred_class == \"Yes\" & forested == \"No\" ~ \"False positive\",\n      .pred_class == \"No\" & forested == \"Yes\" ~ \"False negative\",\n      .pred_class == \"No\" & forested == \"No\" ~ \"True negative\"\n    )\n  )\n\n# A tibble: 4 × 5\n# Groups:   forested [2]\n  .pred_class forested     n     p decision      \n  &lt;fct&gt;       &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         \n1 Yes         Yes        876  0.91 True positive \n2 No          Yes         86  0.09 False negative\n3 Yes         No          85  0.1  False positive\n4 No          No         730  0.9  True negative"
+  },
+  {
+    "objectID": "ae/ae-17-forest-classification-A.html#sensitivity-specificity-roc-curve-1",
+    "href": "ae/ae-17-forest-classification-A.html#sensitivity-specificity-roc-curve-1",
+    "title": "AE 17: Forest classification",
+    "section": "Sensitivity, specificity, ROC curve",
+    "text": "Sensitivity, specificity, ROC curve\nCalculate sensitivity and specificity and draw the ROC curve.\n\nforested_full_roc &lt;- roc_curve(forested_full_aug, truth = forested, .pred_Yes)\nforested_full_roc\n\n# A tibble: 1,779 × 3\n   .threshold specificity sensitivity\n        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;\n 1 -Inf           0                 1\n 2    0.00106     0                 1\n 3    0.00107     0.00123           1\n 4    0.00217     0.00245           1\n 5    0.00287     0.00368           1\n 6    0.00290     0.00491           1\n 7    0.00290     0.00613           1\n 8    0.00309     0.00736           1\n 9    0.00321     0.00859           1\n10    0.00323     0.00982           1\n# ℹ 1,769 more rows\n\nggplot(forested_full_roc, aes(x = 1 - specificity, y = sensitivity)) +\n  geom_path() +\n  geom_abline(lty = 3) +\n  coord_equal()"
+  },
+  {
+    "objectID": "ae/ae-00-unvotes.html",
+    "href": "ae/ae-00-unvotes.html",
+    "title": "AE 00: UN Votes",
     "section": "",
-    "text": "In this application exercise we will be studying penguins. The data can be found in the palmerpenguins package and we will use tidyverse and tidymodels for data exploration and modeling, respectively.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(palmerpenguins)\n\nPlease read the following context and take a glimpse at the data set before we get started.\n\nThis data set comprising various measurements of three different penguin species, namely Adelie, Gentoo, and Chinstrap. The rigorous study was conducted in the islands of the Palmer Archipelago, Antarctica. These data were collected from 2007 to 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. The data set is called penguins.\n\n\n# add code here\n\nOur goal is to understand better how various body measurements and attributes of penguins relate to their body mass. First, we are going to investigate the relationship between a penguins’ flipper lengths and their body masses.\n\n\nQuestion: Based on our research focus, which variable is the response variable?\n\nAdd response here\n\n\nDemo: Visualize the relationship between flipper length and body mass of penguins.\n\n\n# add code here \n\nCorrelation\n\n\nYour turn (5 minutes):\n\n\nWhat is correlation? What values can correlation take?\nStrength and direction of a linear relationship. It’s bounded by -1 and 1.\n\nAre you good at guessing correlation? Give it a try! https://www.rossmanchance.com/applets/2021/guesscorrelation/GuessCorrelation.html\n\n\n\nDemo: What is the correlation between flipper length and body mass of penguins?\n\n\n# add code here\n\nDefining, fitting, and summarizing a model\n\n\nDemo: Write the population model below that explains the relationship between body mass and flipper length.\n\n\\[\nadd~math~text~here\n\\]\n\n\nDemo: Fit the linear regression model and display the results. Write the estimated model output below.\n\n\n# add code here\n\n\\[\nadd~math~text~here\n\\]\n\n\nYour turn: Interpret the slope and the intercept in the context of the data.\n\nIntercept: Add your response here\nSlopes: Add your response here\n\n\nYour turn: Recreate the visualization from above, this time adding a regression line to the visualization geom_smooth(method = \"lm\").\n\n\n# add code here\n\n\n\nDemo: What is the estimated body mass for a penguin with a flipper length of 210?\n\n\n# add code here\n\n\n\nYour turn: What is the estimated body mass for a penguin with a flipper length of 100?\n\n\n# add code here\n\nAnother model\n\n\nDemo: A different researcher wants to look at body weight of penguins based on the island they were recorded on. How are the variables involved in this analysis different?\n\nAdd response here\n\n\nDemo: Make an appropriate visualization to investigate this relationship below. Additionally, calculate the mean body mass by island.\n\n\n# add code here\n\n\n# add code here\n\n\n\nDemo: Change the geom of your previous plot to geom_point(). Use this plot to think about how R models these data.\n\n\n# add code here\n\n\n\nYour turn: Fit the linear regression model and display the results. Write the estimated model output below.\n\n\n# add code here\n\n\\[\nadd~math~text~here\n\\]\n\n\nDemo: Interpret each coefficient in context of the problem.\n\nIntercept: Add your response here\nSlopes: Add your response here\n\n\nDemo: What is the estimated body weight of a penguin on Biscoe island? What are the estimated body weights of penguins on Dream and Torgersen islands?\n\n\n# add code here"
+    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
   },
   {
-    "objectID": "ae/ae-05-gerrymander-explore-II.html",
-    "href": "ae/ae-05-gerrymander-explore-II.html",
-    "title": "AE 05: Gerrymandering + data exploration II",
+    "objectID": "ae/ae-00-unvotes.html#introduction",
+    "href": "ae/ae-00-unvotes.html#introduction",
+    "title": "AE 00: UN Votes",
     "section": "",
-    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\nlibrary(ggbeeswarm)\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
+    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
   },
   {
-    "objectID": "ae/ae-05-gerrymander-explore-II.html#getting-started",
-    "href": "ae/ae-05-gerrymander-explore-II.html#getting-started",
-    "title": "AE 05: Gerrymandering + data exploration II",
+    "objectID": "ae/ae-00-unvotes.html#un-voting-patterns",
+    "href": "ae/ae-00-unvotes.html#un-voting-patterns",
+    "title": "AE 00: UN Votes",
+    "section": "UN voting patterns",
+    "text": "UN voting patterns\nLet’s create a data visualisation that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.\n\n\n\n\n\n\n\n\n\nTask: Write your first piece of (R) code!\n\nModify the code cell above to change the plot to include a different country in place of Turkey. Note that the country name should be spelled and capitalized exactly the same way as it appears in the data. See the Appendix for a list of the countries in the data."
+  },
+  {
+    "objectID": "ae/ae-00-unvotes.html#references",
+    "href": "ae/ae-00-unvotes.html#references",
+    "title": "AE 00: UN Votes",
+    "section": "References",
+    "text": "References\n\nRobinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+  },
+  {
+    "objectID": "ae/ae-00-unvotes.html#appendix",
+    "href": "ae/ae-00-unvotes.html#appendix",
+    "title": "AE 00: UN Votes",
+    "section": "Appendix",
+    "text": "Appendix\nBelow is a list of countries in the dataset:"
+  },
+  {
+    "objectID": "ae/ae-16-spam-filter.html",
+    "href": "ae/ae-16-spam-filter.html",
+    "title": "AE 16: Building a spam filter",
     "section": "",
-    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\nlibrary(ggbeeswarm)\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
+    "text": "In this application exercise, we will\nTo illustrate logistic regression, we will build a spam filter from email data.\nThe data come from incoming emails in David Diez’s (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012. All personally identifiable information has been removed.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nglimpse(email)\n\nRows: 3,921\nColumns: 21\n$ spam         &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ to_multiple  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ from         &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ cc           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0, 2, 0, …\n$ sent_email   &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, …\n$ time         &lt;dttm&gt; 2012-01-01 01:16:41, 2012-01-01 02:03:59, 2012-01-01 11:…\n$ image        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ attach       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ dollar       &lt;dbl&gt; 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 0, …\n$ winner       &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no, n…\n$ inherit      &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ viagra       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ password     &lt;dbl&gt; 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ num_char     &lt;dbl&gt; 11.370, 10.504, 7.773, 13.256, 1.231, 1.091, 4.837, 7.421…\n$ line_breaks  &lt;int&gt; 202, 202, 192, 255, 29, 25, 193, 237, 69, 68, 25, 79, 191…\n$ format       &lt;fct&gt; 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, …\n$ re_subj      &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, …\n$ exclaim_subj &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ urgent_subj  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ exclaim_mess &lt;dbl&gt; 0, 1, 6, 48, 1, 1, 1, 18, 1, 0, 2, 1, 0, 10, 4, 10, 20, 0…\n$ number       &lt;fct&gt; big, small, small, small, none, none, big, small, small, …\nThe variables we’ll use in this analysis are\nGoal: Use the number of exclamation points in an email to predict whether or not it is spam."
   },
   {
-    "objectID": "ae/ae-05-gerrymander-explore-II.html#congressional-districts-per-state",
-    "href": "ae/ae-05-gerrymander-explore-II.html#congressional-districts-per-state",
-    "title": "AE 05: Gerrymandering + data exploration II",
-    "section": "Congressional districts per state",
-    "text": "Congressional districts per state\nWhich state has the most congressional districts? How many congressional districts are there in this state?\nAdd your response here.\n\n# add code here"
+    "objectID": "ae/ae-16-spam-filter.html#exercise-1",
+    "href": "ae/ae-16-spam-filter.html#exercise-1",
+    "title": "AE 16: Building a spam filter",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\n\nDemo: Fit the logistic regression model using the number of exclamation points to predict the probability an email is spam.\n\n\nlog_fit &lt;- logistic_reg() |&gt;\n  fit(spam ~ exclaim_mess, data = email)\n\ntidy(log_fit)\n\n# A tibble: 2 × 5\n  term          estimate std.error statistic p.value\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 (Intercept)  -2.27      0.0553     -41.1     0    \n2 exclaim_mess  0.000272  0.000949     0.287   0.774\n\n\n\n\nYour turn: How does the code above differ from previous code we’ve used to fit regression models? Compare your summary output to the estimated model below.\n\n\\[\\log\\Big(\\frac{p}{1-p}\\Big) = -2.27 - 0.000272 \\times exclaim\\_mess\\]\nAdd response here."
   },
   {
-    "objectID": "ae/ae-05-gerrymander-explore-II.html#gerrymandering-and-flipping",
-    "href": "ae/ae-05-gerrymander-explore-II.html#gerrymandering-and-flipping",
-    "title": "AE 05: Gerrymandering + data exploration II",
-    "section": "Gerrymandering and flipping",
-    "text": "Gerrymandering and flipping\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering? Support your answer with a visualization and summary statistics.\nAdd your response here.\n\n# add code here"
+    "objectID": "ae/ae-16-spam-filter.html#exercise-2",
+    "href": "ae/ae-16-spam-filter.html#exercise-2",
+    "title": "AE 16: Building a spam filter",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nWhat is the probability the email is spam if it contains 10 exclamation points? Answer the question using the predict() function.\nWe can use the predict function in R to produce the probability as well.\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-05-gerrymander-explore-II.html#aesthetic-mappings",
-    "href": "ae/ae-05-gerrymander-explore-II.html#aesthetic-mappings",
-    "title": "AE 05: Gerrymandering + data exploration II",
-    "section": "Aesthetic mappings",
-    "text": "Aesthetic mappings\nRecreate the following visualization, and then improve it.\n\n\n# add code here"
+    "objectID": "ae/ae-16-spam-filter.html#exercise-3",
+    "href": "ae/ae-16-spam-filter.html#exercise-3",
+    "title": "AE 16: Building a spam filter",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nWe have the probability an email is spam, but ultimately we want to use the probability to classify an email as spam or not spam. Therefore, we need to set a decision-making threshold, such that an email is classified as spam if the predicted probability is greater than the threshold and not spam otherwise.\nSuppose you are a data scientist working on a spam filter. You must determine how high the predicted probability must be before you think it would be reasonable to call it spam and put it in the junk folder (which the user is unlikely to check).\nYour turn: What are some trade offs you would consider as you set the decision-making threshold? Discuss with your neighbor.\nAdd response here.\n\nlog_aug &lt;- augment(log_fit, email)\n\nggplot(log_aug, aes(x = exclaim_mess, y = spam, color = .pred_class)) +\n  geom_jitter(alpha = 0.5)"
   },
   {
-    "objectID": "ae/ae-05-gerrymander-explore-II.html#render-commit-and-push",
-    "href": "ae/ae-05-gerrymander-explore-II.html#render-commit-and-push",
-    "title": "AE 05: Gerrymandering + data exploration II",
-    "section": "Render, commit, and push",
-    "text": "Render, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+    "objectID": "ae/ae-16-spam-filter.html#exercise-4",
+    "href": "ae/ae-16-spam-filter.html#exercise-4",
+    "title": "AE 16: Building a spam filter",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nFit a model with all variables in the dataset as predictors and receate the visualization above for this model.\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-08-durham-climate-factors-A.html",
-    "href": "ae/ae-08-durham-climate-factors-A.html",
-    "title": "AE 08: Durham climate + factors",
+    "objectID": "ae/ae-07-taxes-join-A.html",
+    "href": "ae/ae-07-taxes-join-A.html",
+    "title": "AE 07: Sales taxes + data joining",
     "section": "",
     "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key."
   },
   {
-    "objectID": "ae/ae-08-durham-climate-factors-A.html#getting-started",
-    "href": "ae/ae-08-durham-climate-factors-A.html#getting-started",
-    "title": "AE 08: Durham climate + factors",
+    "objectID": "ae/ae-07-taxes-join-A.html#getting-started",
+    "href": "ae/ae-07-taxes-join-A.html#getting-started",
+    "title": "AE 07: Sales taxes + data joining",
     "section": "Getting started",
-    "text": "Getting started\nPackages\nWe will use the tidyverse package in this application exercise.\n\nlibrary(tidyverse)\n\nData\nThe data come from https://www.usclimatedata.com/climate/durham/north-carolina/united-states/usnc0192 and are stored as durham-climate.csv in the data folder.\n\ndurham_climate &lt;- read_csv(\"data/durham-climate.csv\")\n\nAnd let’s take a look at the data.\n\ndurham_climate\n\n# A tibble: 12 × 4\n   month     avg_high_f avg_low_f precipitation_in\n   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt;\n 1 January           49        28             4.45\n 2 February          53        29             3.7 \n 3 March             62        37             4.69\n 4 April             71        46             3.43\n 5 May               79        56             4.61\n 6 June              85        65             4.02\n 7 July              89        70             3.94\n 8 August            87        68             4.37\n 9 September         81        60             4.37\n10 October           71        47             3.7 \n11 November          62        37             3.39\n12 December          53        30             3.43"
+    "text": "Getting started\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\nData\nThe data are available in the data folder.\n\nsales_taxes &lt;- read_csv(\"data/sales-taxes.csv\")\n\nRows: 51 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): state\ndbl (4): state_tax_rate, avg_local_tax_rate, combined_rate, max_local_tax_rate\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nus_regions &lt;- read_csv(\"data/us-regions.csv\")\n\nRows: 50 Columns: 2\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): state_name, region\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nAnd let’s take a look at the data.\n\nglimpse(sales_taxes)\n\nRows: 51\nColumns: 5\n$ state              &lt;chr&gt; \"Alabama\", \"Alaska\", \"Arizona\", \"Arkansas\", \"Califo…\n$ state_tax_rate     &lt;dbl&gt; 0.0400, 0.0000, 0.0560, 0.0650, 0.0725, 0.0290, 0.0…\n$ avg_local_tax_rate &lt;dbl&gt; 0.0529, 0.0182, 0.0278, 0.0295, 0.0160, 0.0491, 0.0…\n$ combined_rate      &lt;dbl&gt; 0.0929, 0.0182, 0.0838, 0.0945, 0.0885, 0.0781, 0.0…\n$ max_local_tax_rate &lt;dbl&gt; 0.0750, 0.0785, 0.0530, 0.0613, 0.0475, 0.0830, 0.0…\n\nglimpse(us_regions)\n\nRows: 50\nColumns: 2\n$ state_name &lt;chr&gt; \"Maine\", \"New Hampshire\", \"Vermont\", \"Massachusetts\", \"Rhod…\n$ region     &lt;chr&gt; \"Northeast\", \"Northeast\", \"Northeast\", \"Northeast\", \"Northe…"
   },
   {
-    "objectID": "ae/ae-08-durham-climate-factors-A.html#reorder",
-    "href": "ae/ae-08-durham-climate-factors-A.html#reorder",
-    "title": "AE 08: Durham climate + factors",
-    "section": "Reorder",
-    "text": "Reorder\nWhat’s wrong with the following plot?\nMonths are out of order.\n\nggplot(\n  durham_climate, \n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 2,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  )\n\n\n\n\n\n\n\nFix the plot.\n\ndurham_climate &lt;- durham_climate |&gt;\n  mutate(month = fct_relevel(month, month.name))\n\nggplot(\n  durham_climate,\n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 2,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  )"
+    "objectID": "ae/ae-07-taxes-join-A.html#joining",
+    "href": "ae/ae-07-taxes-join-A.html#joining",
+    "title": "AE 07: Sales taxes + data joining",
+    "section": "Joining",
+    "text": "Joining\nJoin the sales tax data with region data and save the joined data frame as a new data frame, not overwriting either data frame that goes into the join.\n\nsales_taxes_regions &lt;- left_join(\n  sales_taxes, \n  us_regions, \n  by = join_by(state == state_name)\n)\n\nCalculate the average sales tax of states in each region. What is surprising in the output?\n\nsales_taxes_regions |&gt;\n  group_by(region) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n# A tibble: 5 × 2\n  region    mean_state_tax\n  &lt;chr&gt;              &lt;dbl&gt;\n1 Midwest           0.0569\n2 Northeast         0.0530\n3 South             0.0523\n4 West              0.0416\n5 &lt;NA&gt;              0.06  \n\n\nIdentify the state with NA for region.\n\nsales_taxes_regions |&gt;\n  filter(is.na(region)) |&gt;\n  select(state, region)\n\n# A tibble: 1 × 2\n  state                region\n  &lt;chr&gt;                &lt;chr&gt; \n1 District of Columbia &lt;NA&gt;  \n\n\nApply a fix for the NA in region, and calculate the mean sales taxes for regions again. Display the results in ascending order of mean sales tax.\n\nsales_taxes_regions &lt;- sales_taxes_regions |&gt;\n  mutate(\n    region = if_else(state == \"District of Columbia\", \"Northeast\", region)\n  )\n\nsales_taxes_regions |&gt;\n  group_by(region) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate)) |&gt;\n  arrange(mean_state_tax)\n\n# A tibble: 4 × 2\n  region    mean_state_tax\n  &lt;chr&gt;              &lt;dbl&gt;\n1 West              0.0416\n2 South             0.0523\n3 Northeast         0.0537\n4 Midwest           0.0569"
   },
   {
-    "objectID": "ae/ae-08-durham-climate-factors-A.html#recode-and-reorder",
-    "href": "ae/ae-08-durham-climate-factors-A.html#recode-and-reorder",
-    "title": "AE 08: Durham climate + factors",
-    "section": "Recode and reorder",
-    "text": "Recode and reorder\nUpdate the plot above, coloring points based on season. Additionally:\n\nMake sure the legend is on top of the plot and the seasons appear in the legend in the order they appear in the plot (Winter, Spring, Summer, Fall).\n\nUse \"circle filled\" as the shape for points, set their size to 3 points, outline (stroke) to 1 point, and fill them in with the following colors:\n\nWinter: lightskyblue1\n\nSpring: chartreuse3\n\nSummer: gold2\n\nFall: lightsalmon4\n\n\n\n\n\ndurham_climate &lt;- durham_climate |&gt;\n  mutate(\n    season = case_when(\n      month %in% c(\"December\", \"January\", \"February\") ~ \"Winter\",\n      month %in% c(\"March\", \"April\", \"May\") ~ \"Spring\",\n      month %in% c(\"June\", \"July\", \"August\") ~ \"Summer\",\n      month %in% c(\"September\", \"October\", \"November\") ~ \"Fall\",\n    ),\n    season = fct_relevel(season, \"Winter\", \"Spring\", \"Summer\", \"Fall\")\n  )\n\nggplot(\n  durham_climate,\n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 3, stroke = 1\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Winter\" = \"lightskyblue1\",\n      \"Spring\" = \"chartreuse3\",\n      \"Summer\" = \"gold2\",\n      \"Fall\" = \"lightsalmon4\"\n    )\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\",\n    fill = \"Season\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"top\")"
+    "objectID": "ae/ae-07-taxes-join-A.html#render-commit-and-push",
+    "href": "ae/ae-07-taxes-join-A.html#render-commit-and-push",
+    "title": "AE 07: Sales taxes + data joining",
+    "section": "Render, commit, and push",
+    "text": "Render, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
   },
   {
-    "objectID": "ae/ae-08-durham-climate-factors-A.html#pivot",
-    "href": "ae/ae-08-durham-climate-factors-A.html#pivot",
-    "title": "AE 08: Durham climate + factors",
-    "section": "Pivot",
-    "text": "Pivot\nOverlay lines for both high and low temperatures on the same plot. Additionally, use different colors for the two lines – a darker color for high and a lighter color for low temperatures.\n\ndurham_climate |&gt;\n  pivot_longer(\n    cols = c(avg_high_f, avg_low_f),\n    names_to = \"temp_type\",\n    names_prefix = \"avg_\",\n    values_to = \"avg_temp_f\"\n  ) |&gt;\n  mutate(temp_type = str_remove(temp_type, \"_f\")) |&gt;\n  ggplot(aes(x = month, y = avg_temp_f, group = temp_type, color = temp_type)) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 3, stroke = 1\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Winter\" = \"lightskyblue1\",\n      \"Spring\" = \"chartreuse3\",\n      \"Summer\" = \"gold2\",\n      \"Fall\" = \"lightsalmon4\"\n    )\n  ) +\n  scale_color_manual(\n    values = c(\n      \"high\" = \"gray20\",\n      \"low\" = \"gray70\"\n    )\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average temperature (F)\",\n    title = \"Durham climate\",\n    fill = \"Season\",\n    color = \"Type\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"top\")"
+    "objectID": "ae/ae-11-unvotes-revisit-chatgpt.html",
+    "href": "ae/ae-11-unvotes-revisit-chatgpt.html",
+    "title": "AE 11: UN Votes - Revisit + Chat GPT adventures",
+    "section": "",
+    "text": "You’ve seen this analysis before. It’s time to revisit it and clean it up for code smell, style, and readability. Make the necessary updates to the code to improve the code. Then, review the diff before you render, commit (with an appropriate message), and push.\n\n\nHow do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(scales)\n\n\nAttaching package: 'scales'\n\nThe following object is masked from 'package:purrr':\n\n    discard\n\nThe following object is masked from 'package:readr':\n\n    col_factor\n\nlibrary(unvotes)\n\nIf you use data from the unvotes package, please cite the following:\n\nErik Voeten \"Data and Analyses of Voting in the UN General Assembly\" Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013)\n\nlibrary(ggthemes)\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis.\n\nunvotes &lt;- un_votes |&gt;inner_join(un_roll_calls, by = join_by(rcid)) |&gt;\n  inner_join(un_roll_call_issues, \nby = join_by(rcid == rcid),relationship = \"many-to-many\")\n\nprint(unvotes)\n\n# A tibble: 857,878 × 14\n    rcid country country_code vote  session importantvote date       unres amend\n   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;        &lt;fct&gt;   &lt;dbl&gt;         &lt;int&gt; &lt;date&gt;     &lt;chr&gt; &lt;int&gt;\n 1     6 United… US           no          1             0 1946-01-04 R/1/…     0\n 2     6 Canada  CA           no          1             0 1946-01-04 R/1/…     0\n 3     6 Cuba    CU           yes         1             0 1946-01-04 R/1/…     0\n 4     6 Domini… DO           abst…       1             0 1946-01-04 R/1/…     0\n 5     6 Mexico  MX           yes         1             0 1946-01-04 R/1/…     0\n 6     6 Guatem… GT           no          1             0 1946-01-04 R/1/…     0\n 7     6 Hondur… HN           yes         1             0 1946-01-04 R/1/…     0\n 8     6 El Sal… SV           abst…       1             0 1946-01-04 R/1/…     0\n 9     6 Nicara… NI           yes         1             0 1946-01-04 R/1/…     0\n10     6 Panama  PA           abst…       1             0 1946-01-04 R/1/…     0\n# ℹ 857,868 more rows\n# ℹ 5 more variables: para &lt;int&gt;, short &lt;chr&gt;, descr &lt;chr&gt;, short_name &lt;chr&gt;,\n#   issue &lt;fct&gt;\n\n\n\nLet’s create a data visualization that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.\n\nlibrary(ggplot2)\nunvotes |&gt;\n  filter(country%in%c(\"United Kingdom\", \"United States\", \"Turkey\")) |&gt;\n    mutate(year = year(date))|&gt;\n      group_by(country, year, issue) |&gt;\n    summarize(percent_yes = mean(vote==\"yes\"),.groups = \"drop\") |&gt;\n\n  \nggplot(aes(x = year, \n           y = percent_yes, \n           color = country)) +\n  geom_smooth(method = \"loess\", se = FALSE) + facet_wrap(~issue) +\n              scale_color_colorblind() +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\nsubtitle = \"1946 to 2019\",y = \"% Yes\",x = \"Year\",color = \"Country\"\n  )+\n   geom_point(alpha = 0.4)+scale_y_continuous(labels = percent)\n\n\n\n\n\n\n\n\n\nRobinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+  },
+  {
+    "objectID": "ae/ae-11-unvotes-revisit-chatgpt.html#introduction",
+    "href": "ae/ae-11-unvotes-revisit-chatgpt.html#introduction",
+    "title": "AE 11: UN Votes - Revisit + Chat GPT adventures",
+    "section": "",
+    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(scales)\n\n\nAttaching package: 'scales'\n\nThe following object is masked from 'package:purrr':\n\n    discard\n\nThe following object is masked from 'package:readr':\n\n    col_factor\n\nlibrary(unvotes)\n\nIf you use data from the unvotes package, please cite the following:\n\nErik Voeten \"Data and Analyses of Voting in the UN General Assembly\" Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013)\n\nlibrary(ggthemes)\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis.\n\nunvotes &lt;- un_votes |&gt;inner_join(un_roll_calls, by = join_by(rcid)) |&gt;\n  inner_join(un_roll_call_issues, \nby = join_by(rcid == rcid),relationship = \"many-to-many\")\n\nprint(unvotes)\n\n# A tibble: 857,878 × 14\n    rcid country country_code vote  session importantvote date       unres amend\n   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;        &lt;fct&gt;   &lt;dbl&gt;         &lt;int&gt; &lt;date&gt;     &lt;chr&gt; &lt;int&gt;\n 1     6 United… US           no          1             0 1946-01-04 R/1/…     0\n 2     6 Canada  CA           no          1             0 1946-01-04 R/1/…     0\n 3     6 Cuba    CU           yes         1             0 1946-01-04 R/1/…     0\n 4     6 Domini… DO           abst…       1             0 1946-01-04 R/1/…     0\n 5     6 Mexico  MX           yes         1             0 1946-01-04 R/1/…     0\n 6     6 Guatem… GT           no          1             0 1946-01-04 R/1/…     0\n 7     6 Hondur… HN           yes         1             0 1946-01-04 R/1/…     0\n 8     6 El Sal… SV           abst…       1             0 1946-01-04 R/1/…     0\n 9     6 Nicara… NI           yes         1             0 1946-01-04 R/1/…     0\n10     6 Panama  PA           abst…       1             0 1946-01-04 R/1/…     0\n# ℹ 857,868 more rows\n# ℹ 5 more variables: para &lt;int&gt;, short &lt;chr&gt;, descr &lt;chr&gt;, short_name &lt;chr&gt;,\n#   issue &lt;fct&gt;"
+  },
+  {
+    "objectID": "ae/ae-11-unvotes-revisit-chatgpt.html#un-voting-patterns",
+    "href": "ae/ae-11-unvotes-revisit-chatgpt.html#un-voting-patterns",
+    "title": "AE 11: UN Votes - Revisit + Chat GPT adventures",
+    "section": "",
+    "text": "Let’s create a data visualization that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.\n\nlibrary(ggplot2)\nunvotes |&gt;\n  filter(country%in%c(\"United Kingdom\", \"United States\", \"Turkey\")) |&gt;\n    mutate(year = year(date))|&gt;\n      group_by(country, year, issue) |&gt;\n    summarize(percent_yes = mean(vote==\"yes\"),.groups = \"drop\") |&gt;\n\n  \nggplot(aes(x = year, \n           y = percent_yes, \n           color = country)) +\n  geom_smooth(method = \"loess\", se = FALSE) + facet_wrap(~issue) +\n              scale_color_colorblind() +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\nsubtitle = \"1946 to 2019\",y = \"% Yes\",x = \"Year\",color = \"Country\"\n  )+\n   geom_point(alpha = 0.4)+scale_y_continuous(labels = percent)"
+  },
+  {
+    "objectID": "ae/ae-11-unvotes-revisit-chatgpt.html#references",
+    "href": "ae/ae-11-unvotes-revisit-chatgpt.html#references",
+    "title": "AE 11: UN Votes - Revisit + Chat GPT adventures",
+    "section": "",
+    "text": "Robinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
   },
   {
     "objectID": "ae/ae-05-gerrymander-explore-II-A.html",
@@ -3845,7 +3635,7 @@
     "href": "ae/ae-16-spam-filter-A.html",
     "title": "AE 16: Building a spam filter",
     "section": "",
-    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as reference only, it’s not designed to be an exhaustive key.\nIn this application exercise, we will\nTo illustrate logistic regression, we will build a spam filter from email data.\nThe data come from incoming emails in David Diez’s (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012. All personally identifiable information has been removed.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nglimpse(email)\n\nRows: 3,921\nColumns: 21\n$ spam         &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ to_multiple  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ from         &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ cc           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0, 2, 0, …\n$ sent_email   &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, …\n$ time         &lt;dttm&gt; 2012-01-01 06:16:41, 2012-01-01 07:03:59, 2012-01-01 16:…\n$ image        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ attach       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ dollar       &lt;dbl&gt; 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 0, …\n$ winner       &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no, n…\n$ inherit      &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ viagra       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ password     &lt;dbl&gt; 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ num_char     &lt;dbl&gt; 11.370, 10.504, 7.773, 13.256, 1.231, 1.091, 4.837, 7.421…\n$ line_breaks  &lt;int&gt; 202, 202, 192, 255, 29, 25, 193, 237, 69, 68, 25, 79, 191…\n$ format       &lt;fct&gt; 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, …\n$ re_subj      &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, …\n$ exclaim_subj &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ urgent_subj  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ exclaim_mess &lt;dbl&gt; 0, 1, 6, 48, 1, 1, 1, 18, 1, 0, 2, 1, 0, 10, 4, 10, 20, 0…\n$ number       &lt;fct&gt; big, small, small, small, none, none, big, small, small, …\nThe variables we’ll use in this analysis are\nGoal: Use the number of exclamation points in an email to predict whether or not it is spam."
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as reference only, it’s not designed to be an exhaustive key.\nIn this application exercise, we will\nTo illustrate logistic regression, we will build a spam filter from email data.\nThe data come from incoming emails in David Diez’s (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012. All personally identifiable information has been removed.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nglimpse(email)\n\nRows: 3,921\nColumns: 21\n$ spam         &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ to_multiple  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ from         &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ cc           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0, 2, 0, …\n$ sent_email   &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, …\n$ time         &lt;dttm&gt; 2012-01-01 01:16:41, 2012-01-01 02:03:59, 2012-01-01 11:…\n$ image        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ attach       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ dollar       &lt;dbl&gt; 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 0, …\n$ winner       &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no, n…\n$ inherit      &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ viagra       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ password     &lt;dbl&gt; 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ num_char     &lt;dbl&gt; 11.370, 10.504, 7.773, 13.256, 1.231, 1.091, 4.837, 7.421…\n$ line_breaks  &lt;int&gt; 202, 202, 192, 255, 29, 25, 193, 237, 69, 68, 25, 79, 191…\n$ format       &lt;fct&gt; 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, …\n$ re_subj      &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, …\n$ exclaim_subj &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ urgent_subj  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ exclaim_mess &lt;dbl&gt; 0, 1, 6, 48, 1, 1, 1, 18, 1, 0, 2, 1, 0, 10, 4, 10, 20, 0…\n$ number       &lt;fct&gt; big, small, small, small, none, none, big, small, small, …\nThe variables we’ll use in this analysis are\nGoal: Use the number of exclamation points in an email to predict whether or not it is spam."
   },
   {
     "objectID": "ae/ae-16-spam-filter-A.html#exercise-1",
@@ -4542,7 +4332,7 @@
     "href": "ae.html",
     "title": "Application exercises",
     "section": "",
-    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 2 pm) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: UN Votes\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\nSuggested answers\n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\n \n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\n \n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\n \n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\nSuggested answers\n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\n \n\n\n\n\nAE 07: Sales taxes + data joining\n\n\nSuggested answers\n\n\n\n\nAE 07: Sales taxes + data joining\n\n\n \n\n\n\n\nAE 08: Durham climate + factors\n\n\nSuggested answers\n\n\n\n\nAE 08: Durham climate + factors\n\n\n \n\n\n\n\nAE 09: Age gaps + sales + import\n\n\nSuggested answers\n\n\n\n\nAE 09: Age gaps + sales + import\n\n\n \n\n\n\n\nAE 10: Opinion articles in The Chronicle\n\n\nSuggested answers\n\n\n\n\nAE 10: Opinion articles in The Chronicle\n\n\n \n\n\n\n\nAE 11: UN Votes - Revisit + Chat GPT adventures\n\n\n \n\n\n\n\nAE 12: Modelling fish\n\n\nSuggested answers\n\n\n\n\nAE 12: Modelling fish\n\n\n \n\n\n\n\nAE 13: Modelling penguins\n\n\nSuggested answers\n\n\n\n\nAE 13: Modelling penguins\n\n\n \n\n\n\n\nAE 14: Modelling penguins with multiple predictors\n\n\nSuggested answers\n\n\n\n\nAE 14: Modelling penguins with multiple predictors\n\n\n \n\n\n\n\nAE 15: Modelling loan interest rates\n\n\nSuggested answers\n\n\n\n\nAE 15: Modelling loan interest rates\n\n\n \n\n\n\n\nAE 16: Building a spam filter\n\n\nSuggested answers\n\n\n\n\nAE 16: Building a spam filter\n\n\n \n\n\n\n\n\nNo matching items\n\n\n  \n\n\n\nMore AEs to be added as the semester progresses.",
+    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 2 pm) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: UN Votes\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\nSuggested answers\n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\n \n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\n \n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\n \n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\nSuggested answers\n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\n \n\n\n\n\nAE 07: Sales taxes + data joining\n\n\nSuggested answers\n\n\n\n\nAE 07: Sales taxes + data joining\n\n\n \n\n\n\n\nAE 08: Durham climate + factors\n\n\nSuggested answers\n\n\n\n\nAE 08: Durham climate + factors\n\n\n \n\n\n\n\nAE 09: Age gaps + sales + import\n\n\nSuggested answers\n\n\n\n\nAE 09: Age gaps + sales + import\n\n\n \n\n\n\n\nAE 10: Opinion articles in The Chronicle\n\n\nSuggested answers\n\n\n\n\nAE 10: Opinion articles in The Chronicle\n\n\n \n\n\n\n\nAE 11: UN Votes - Revisit + Chat GPT adventures\n\n\n \n\n\n\n\nAE 12: Modelling fish\n\n\nSuggested answers\n\n\n\n\nAE 12: Modelling fish\n\n\n \n\n\n\n\nAE 13: Modelling penguins\n\n\nSuggested answers\n\n\n\n\nAE 13: Modelling penguins\n\n\n \n\n\n\n\nAE 14: Modelling penguins with multiple predictors\n\n\nSuggested answers\n\n\n\n\nAE 14: Modelling penguins with multiple predictors\n\n\n \n\n\n\n\nAE 15: Modelling loan interest rates\n\n\nSuggested answers\n\n\n\n\nAE 15: Modelling loan interest rates\n\n\n \n\n\n\n\nAE 16: Building a spam filter\n\n\nSuggested answers\n\n\n\n\nAE 16: Building a spam filter\n\n\n \n\n\n\n\nAE 17: Forest classification\n\n\nSuggested answers\n\n\n\n\nAE 17: Forest classification\n\n\n \n\n\n\n\n\nNo matching items\n\n\n  \n\n\n\nMore AEs to be added as the semester progresses.",
     "crumbs": [
       "Application exercises"
     ]
@@ -5583,130 +5373,172 @@
     "text": "Choosing a model\nRule of thumb: Occam’s Razor - Don’t overcomplicate the situation! We prefer the simplest best model.\n\nglance(rate_util_home_fit)\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic   p.value    df  logLik    AIC    BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1    0.0682        0.0679  4.83      244. 1.25e-152     3 -29926. 59861. 59897.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;\n\nglance(rate_util_home_int_fit)\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic   p.value    df  logLik    AIC    BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1    0.0694        0.0689  4.83      149. 4.79e-153     5 -29919. 59852. 59903.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;\n\n\n\n\nReview: What is R-squared? What is adjusted R-squared?\n\nR-squared is the percent variability in the response that is explained by our model. (Can use when models have same number of variables for model selection)\nAdjusted R-squared is similar, but has a penalty for the number of variables in the model. (Should use for model selection when models have different numbers of variables).\n\n\nQuestion: Based on the adjusted \\(R^2\\)s of these two models, which one do we prefer?\n\nThe interaction effects model, though just barely."
   },
   {
-    "objectID": "ae/ae-11-unvotes-revisit-chatgpt.html",
-    "href": "ae/ae-11-unvotes-revisit-chatgpt.html",
-    "title": "AE 11: UN Votes - Revisit + Chat GPT adventures",
+    "objectID": "ae/ae-17-forest-classification.html",
+    "href": "ae/ae-17-forest-classification.html",
+    "title": "AE 17: Forest classification",
     "section": "",
-    "text": "You’ve seen this analysis before. It’s time to revisit it and clean it up for code smell, style, and readability. Make the necessary updates to the code to improve the code. Then, review the diff before you render, commit (with an appropriate message), and push.\n\n\nHow do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(scales)\n\n\nAttaching package: 'scales'\n\nThe following object is masked from 'package:purrr':\n\n    discard\n\nThe following object is masked from 'package:readr':\n\n    col_factor\n\nlibrary(unvotes)\n\nIf you use data from the unvotes package, please cite the following:\n\nErik Voeten \"Data and Analyses of Voting in the UN General Assembly\" Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013)\n\nlibrary(ggthemes)\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis.\n\nunvotes &lt;- un_votes |&gt;inner_join(un_roll_calls, by = join_by(rcid)) |&gt;\n  inner_join(un_roll_call_issues, \nby = join_by(rcid == rcid),relationship = \"many-to-many\")\n\nprint(unvotes)\n\n# A tibble: 857,878 × 14\n    rcid country country_code vote  session importantvote date       unres amend\n   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;        &lt;fct&gt;   &lt;dbl&gt;         &lt;int&gt; &lt;date&gt;     &lt;chr&gt; &lt;int&gt;\n 1     6 United… US           no          1             0 1946-01-04 R/1/…     0\n 2     6 Canada  CA           no          1             0 1946-01-04 R/1/…     0\n 3     6 Cuba    CU           yes         1             0 1946-01-04 R/1/…     0\n 4     6 Domini… DO           abst…       1             0 1946-01-04 R/1/…     0\n 5     6 Mexico  MX           yes         1             0 1946-01-04 R/1/…     0\n 6     6 Guatem… GT           no          1             0 1946-01-04 R/1/…     0\n 7     6 Hondur… HN           yes         1             0 1946-01-04 R/1/…     0\n 8     6 El Sal… SV           abst…       1             0 1946-01-04 R/1/…     0\n 9     6 Nicara… NI           yes         1             0 1946-01-04 R/1/…     0\n10     6 Panama  PA           abst…       1             0 1946-01-04 R/1/…     0\n# ℹ 857,868 more rows\n# ℹ 5 more variables: para &lt;int&gt;, short &lt;chr&gt;, descr &lt;chr&gt;, short_name &lt;chr&gt;,\n#   issue &lt;fct&gt;\n\n\n\nLet’s create a data visualization that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.\n\nlibrary(ggplot2)\nunvotes |&gt;\n  filter(country%in%c(\"United Kingdom\", \"United States\", \"Turkey\")) |&gt;\n    mutate(year = year(date))|&gt;\n      group_by(country, year, issue) |&gt;\n    summarize(percent_yes = mean(vote==\"yes\"),.groups = \"drop\") |&gt;\n\n  \nggplot(aes(x = year, \n           y = percent_yes, \n           color = country)) +\n  geom_smooth(method = \"loess\", se = FALSE) + facet_wrap(~issue) +\n              scale_color_colorblind() +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\nsubtitle = \"1946 to 2019\",y = \"% Yes\",x = \"Year\",color = \"Country\"\n  )+\n   geom_point(alpha = 0.4)+scale_y_continuous(labels = percent)\n\n\n\n\n\n\n\n\n\nRobinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+    "text": "In this application exercise, we will\nWe will use tidyverse and tidymodels for data exploration and modeling, respectively, and the forested package for the data.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(forested)\nRemember from the lecture that the forested dataset contains information on whether a plot is forested (Yes) or not (No) as well as numerical and categorical features of that plot.\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005,…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52, 2240, 104…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -67, 96, -4…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74, -26, 86, …\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 190, 95, 212…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No tree, Tree,…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6.39, 6.50,…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195, 1312, 103…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61, 10.45, 10…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.76, 1.11, …\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 14.23, 15.3…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, 5.54, 6.20…\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 172, 162, 70…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944, 892, 549…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74, 66, 83, 6…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144, -117.8841…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.07396, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tree vegetati…"
   },
   {
-    "objectID": "ae/ae-11-unvotes-revisit-chatgpt.html#introduction",
-    "href": "ae/ae-11-unvotes-revisit-chatgpt.html#introduction",
-    "title": "AE 11: UN Votes - Revisit + Chat GPT adventures",
-    "section": "",
-    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(scales)\n\n\nAttaching package: 'scales'\n\nThe following object is masked from 'package:purrr':\n\n    discard\n\nThe following object is masked from 'package:readr':\n\n    col_factor\n\nlibrary(unvotes)\n\nIf you use data from the unvotes package, please cite the following:\n\nErik Voeten \"Data and Analyses of Voting in the UN General Assembly\" Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013)\n\nlibrary(ggthemes)\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis.\n\nunvotes &lt;- un_votes |&gt;inner_join(un_roll_calls, by = join_by(rcid)) |&gt;\n  inner_join(un_roll_call_issues, \nby = join_by(rcid == rcid),relationship = \"many-to-many\")\n\nprint(unvotes)\n\n# A tibble: 857,878 × 14\n    rcid country country_code vote  session importantvote date       unres amend\n   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;        &lt;fct&gt;   &lt;dbl&gt;         &lt;int&gt; &lt;date&gt;     &lt;chr&gt; &lt;int&gt;\n 1     6 United… US           no          1             0 1946-01-04 R/1/…     0\n 2     6 Canada  CA           no          1             0 1946-01-04 R/1/…     0\n 3     6 Cuba    CU           yes         1             0 1946-01-04 R/1/…     0\n 4     6 Domini… DO           abst…       1             0 1946-01-04 R/1/…     0\n 5     6 Mexico  MX           yes         1             0 1946-01-04 R/1/…     0\n 6     6 Guatem… GT           no          1             0 1946-01-04 R/1/…     0\n 7     6 Hondur… HN           yes         1             0 1946-01-04 R/1/…     0\n 8     6 El Sal… SV           abst…       1             0 1946-01-04 R/1/…     0\n 9     6 Nicara… NI           yes         1             0 1946-01-04 R/1/…     0\n10     6 Panama  PA           abst…       1             0 1946-01-04 R/1/…     0\n# ℹ 857,868 more rows\n# ℹ 5 more variables: para &lt;int&gt;, short &lt;chr&gt;, descr &lt;chr&gt;, short_name &lt;chr&gt;,\n#   issue &lt;fct&gt;"
+    "objectID": "ae/ae-17-forest-classification.html#fit",
+    "href": "ae/ae-17-forest-classification.html#fit",
+    "title": "AE 17: Forest classification",
+    "section": "Fit",
+    "text": "Fit\nFit a model for classifying plots as forested or not based on a subset of predictors of your choice. Name the model forested_custom_fit and display a tidy output of the model.\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-11-unvotes-revisit-chatgpt.html#un-voting-patterns",
-    "href": "ae/ae-11-unvotes-revisit-chatgpt.html#un-voting-patterns",
-    "title": "AE 11: UN Votes - Revisit + Chat GPT adventures",
-    "section": "",
-    "text": "Let’s create a data visualization that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.\n\nlibrary(ggplot2)\nunvotes |&gt;\n  filter(country%in%c(\"United Kingdom\", \"United States\", \"Turkey\")) |&gt;\n    mutate(year = year(date))|&gt;\n      group_by(country, year, issue) |&gt;\n    summarize(percent_yes = mean(vote==\"yes\"),.groups = \"drop\") |&gt;\n\n  \nggplot(aes(x = year, \n           y = percent_yes, \n           color = country)) +\n  geom_smooth(method = \"loess\", se = FALSE) + facet_wrap(~issue) +\n              scale_color_colorblind() +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\nsubtitle = \"1946 to 2019\",y = \"% Yes\",x = \"Year\",color = \"Country\"\n  )+\n   geom_point(alpha = 0.4)+scale_y_continuous(labels = percent)"
+    "objectID": "ae/ae-17-forest-classification.html#predict",
+    "href": "ae/ae-17-forest-classification.html#predict",
+    "title": "AE 17: Forest classification",
+    "section": "Predict",
+    "text": "Predict\nPredict for the testing data using this model.\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-11-unvotes-revisit-chatgpt.html#references",
-    "href": "ae/ae-11-unvotes-revisit-chatgpt.html#references",
-    "title": "AE 11: UN Votes - Revisit + Chat GPT adventures",
-    "section": "",
-    "text": "Robinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+    "objectID": "ae/ae-17-forest-classification.html#evaluate",
+    "href": "ae/ae-17-forest-classification.html#evaluate",
+    "title": "AE 17: Forest classification",
+    "section": "Evaluate",
+    "text": "Evaluate\nCalculate the false positive and false negative rates for the testing data using this model.\n\n# add code here\n\nAnother commonly used display of this information is a confusion matrix. Create this using the conf_mat() function. You will need to review the documentation for the function to determine how to use it.\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-07-taxes-join-A.html",
-    "href": "ae/ae-07-taxes-join-A.html",
-    "title": "AE 07: Sales taxes + data joining",
+    "objectID": "ae/ae-17-forest-classification.html#sensitivity-specificity-roc-curve",
+    "href": "ae/ae-17-forest-classification.html#sensitivity-specificity-roc-curve",
+    "title": "AE 17: Forest classification",
+    "section": "Sensitivity, specificity, ROC curve",
+    "text": "Sensitivity, specificity, ROC curve\nCalculate sensitivity and specificity and draw the ROC curve.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-17-forest-classification.html#fit-1",
+    "href": "ae/ae-17-forest-classification.html#fit-1",
+    "title": "AE 17: Forest classification",
+    "section": "Fit",
+    "text": "Fit\nFit a model for classifying plots as forested or not based on all predictors available. Name the model forested_full_fit and display a tidy output of the model.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-17-forest-classification.html#predict-1",
+    "href": "ae/ae-17-forest-classification.html#predict-1",
+    "title": "AE 17: Forest classification",
+    "section": "Predict",
+    "text": "Predict\nPredict for the testing data using this model.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-17-forest-classification.html#evaluate-1",
+    "href": "ae/ae-17-forest-classification.html#evaluate-1",
+    "title": "AE 17: Forest classification",
+    "section": "Evaluate",
+    "text": "Evaluate\nCalculate the false positive and false negative rates for the testing data using this model.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-17-forest-classification.html#sensitivity-specificity-roc-curve-1",
+    "href": "ae/ae-17-forest-classification.html#sensitivity-specificity-roc-curve-1",
+    "title": "AE 17: Forest classification",
+    "section": "Sensitivity, specificity, ROC curve",
+    "text": "Sensitivity, specificity, ROC curve\nCalculate sensitivity and specificity and draw the ROC curve.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-08-durham-climate-factors-A.html",
+    "href": "ae/ae-08-durham-climate-factors-A.html",
+    "title": "AE 08: Durham climate + factors",
     "section": "",
     "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key."
   },
   {
-    "objectID": "ae/ae-07-taxes-join-A.html#getting-started",
-    "href": "ae/ae-07-taxes-join-A.html#getting-started",
-    "title": "AE 07: Sales taxes + data joining",
+    "objectID": "ae/ae-08-durham-climate-factors-A.html#getting-started",
+    "href": "ae/ae-08-durham-climate-factors-A.html#getting-started",
+    "title": "AE 08: Durham climate + factors",
     "section": "Getting started",
-    "text": "Getting started\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\nData\nThe data are available in the data folder.\n\nsales_taxes &lt;- read_csv(\"data/sales-taxes.csv\")\n\nRows: 51 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): state\ndbl (4): state_tax_rate, avg_local_tax_rate, combined_rate, max_local_tax_rate\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nus_regions &lt;- read_csv(\"data/us-regions.csv\")\n\nRows: 50 Columns: 2\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): state_name, region\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nAnd let’s take a look at the data.\n\nglimpse(sales_taxes)\n\nRows: 51\nColumns: 5\n$ state              &lt;chr&gt; \"Alabama\", \"Alaska\", \"Arizona\", \"Arkansas\", \"Califo…\n$ state_tax_rate     &lt;dbl&gt; 0.0400, 0.0000, 0.0560, 0.0650, 0.0725, 0.0290, 0.0…\n$ avg_local_tax_rate &lt;dbl&gt; 0.0529, 0.0182, 0.0278, 0.0295, 0.0160, 0.0491, 0.0…\n$ combined_rate      &lt;dbl&gt; 0.0929, 0.0182, 0.0838, 0.0945, 0.0885, 0.0781, 0.0…\n$ max_local_tax_rate &lt;dbl&gt; 0.0750, 0.0785, 0.0530, 0.0613, 0.0475, 0.0830, 0.0…\n\nglimpse(us_regions)\n\nRows: 50\nColumns: 2\n$ state_name &lt;chr&gt; \"Maine\", \"New Hampshire\", \"Vermont\", \"Massachusetts\", \"Rhod…\n$ region     &lt;chr&gt; \"Northeast\", \"Northeast\", \"Northeast\", \"Northeast\", \"Northe…"
+    "text": "Getting started\nPackages\nWe will use the tidyverse package in this application exercise.\n\nlibrary(tidyverse)\n\nData\nThe data come from https://www.usclimatedata.com/climate/durham/north-carolina/united-states/usnc0192 and are stored as durham-climate.csv in the data folder.\n\ndurham_climate &lt;- read_csv(\"data/durham-climate.csv\")\n\nAnd let’s take a look at the data.\n\ndurham_climate\n\n# A tibble: 12 × 4\n   month     avg_high_f avg_low_f precipitation_in\n   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt;\n 1 January           49        28             4.45\n 2 February          53        29             3.7 \n 3 March             62        37             4.69\n 4 April             71        46             3.43\n 5 May               79        56             4.61\n 6 June              85        65             4.02\n 7 July              89        70             3.94\n 8 August            87        68             4.37\n 9 September         81        60             4.37\n10 October           71        47             3.7 \n11 November          62        37             3.39\n12 December          53        30             3.43"
   },
   {
-    "objectID": "ae/ae-07-taxes-join-A.html#joining",
-    "href": "ae/ae-07-taxes-join-A.html#joining",
-    "title": "AE 07: Sales taxes + data joining",
-    "section": "Joining",
-    "text": "Joining\nJoin the sales tax data with region data and save the joined data frame as a new data frame, not overwriting either data frame that goes into the join.\n\nsales_taxes_regions &lt;- left_join(\n  sales_taxes, \n  us_regions, \n  by = join_by(state == state_name)\n)\n\nCalculate the average sales tax of states in each region. What is surprising in the output?\n\nsales_taxes_regions |&gt;\n  group_by(region) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n# A tibble: 5 × 2\n  region    mean_state_tax\n  &lt;chr&gt;              &lt;dbl&gt;\n1 Midwest           0.0569\n2 Northeast         0.0530\n3 South             0.0523\n4 West              0.0416\n5 &lt;NA&gt;              0.06  \n\n\nIdentify the state with NA for region.\n\nsales_taxes_regions |&gt;\n  filter(is.na(region)) |&gt;\n  select(state, region)\n\n# A tibble: 1 × 2\n  state                region\n  &lt;chr&gt;                &lt;chr&gt; \n1 District of Columbia &lt;NA&gt;  \n\n\nApply a fix for the NA in region, and calculate the mean sales taxes for regions again. Display the results in ascending order of mean sales tax.\n\nsales_taxes_regions &lt;- sales_taxes_regions |&gt;\n  mutate(\n    region = if_else(state == \"District of Columbia\", \"Northeast\", region)\n  )\n\nsales_taxes_regions |&gt;\n  group_by(region) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate)) |&gt;\n  arrange(mean_state_tax)\n\n# A tibble: 4 × 2\n  region    mean_state_tax\n  &lt;chr&gt;              &lt;dbl&gt;\n1 West              0.0416\n2 South             0.0523\n3 Northeast         0.0537\n4 Midwest           0.0569"
+    "objectID": "ae/ae-08-durham-climate-factors-A.html#reorder",
+    "href": "ae/ae-08-durham-climate-factors-A.html#reorder",
+    "title": "AE 08: Durham climate + factors",
+    "section": "Reorder",
+    "text": "Reorder\nWhat’s wrong with the following plot?\nMonths are out of order.\n\nggplot(\n  durham_climate, \n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 2,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  )\n\n\n\n\n\n\n\nFix the plot.\n\ndurham_climate &lt;- durham_climate |&gt;\n  mutate(month = fct_relevel(month, month.name))\n\nggplot(\n  durham_climate,\n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 2,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  )"
   },
   {
-    "objectID": "ae/ae-07-taxes-join-A.html#render-commit-and-push",
-    "href": "ae/ae-07-taxes-join-A.html#render-commit-and-push",
-    "title": "AE 07: Sales taxes + data joining",
+    "objectID": "ae/ae-08-durham-climate-factors-A.html#recode-and-reorder",
+    "href": "ae/ae-08-durham-climate-factors-A.html#recode-and-reorder",
+    "title": "AE 08: Durham climate + factors",
+    "section": "Recode and reorder",
+    "text": "Recode and reorder\nUpdate the plot above, coloring points based on season. Additionally:\n\nMake sure the legend is on top of the plot and the seasons appear in the legend in the order they appear in the plot (Winter, Spring, Summer, Fall).\n\nUse \"circle filled\" as the shape for points, set their size to 3 points, outline (stroke) to 1 point, and fill them in with the following colors:\n\nWinter: lightskyblue1\n\nSpring: chartreuse3\n\nSummer: gold2\n\nFall: lightsalmon4\n\n\n\n\n\ndurham_climate &lt;- durham_climate |&gt;\n  mutate(\n    season = case_when(\n      month %in% c(\"December\", \"January\", \"February\") ~ \"Winter\",\n      month %in% c(\"March\", \"April\", \"May\") ~ \"Spring\",\n      month %in% c(\"June\", \"July\", \"August\") ~ \"Summer\",\n      month %in% c(\"September\", \"October\", \"November\") ~ \"Fall\",\n    ),\n    season = fct_relevel(season, \"Winter\", \"Spring\", \"Summer\", \"Fall\")\n  )\n\nggplot(\n  durham_climate,\n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 3, stroke = 1\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Winter\" = \"lightskyblue1\",\n      \"Spring\" = \"chartreuse3\",\n      \"Summer\" = \"gold2\",\n      \"Fall\" = \"lightsalmon4\"\n    )\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\",\n    fill = \"Season\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"top\")"
+  },
+  {
+    "objectID": "ae/ae-08-durham-climate-factors-A.html#pivot",
+    "href": "ae/ae-08-durham-climate-factors-A.html#pivot",
+    "title": "AE 08: Durham climate + factors",
+    "section": "Pivot",
+    "text": "Pivot\nOverlay lines for both high and low temperatures on the same plot. Additionally, use different colors for the two lines – a darker color for high and a lighter color for low temperatures.\n\ndurham_climate |&gt;\n  pivot_longer(\n    cols = c(avg_high_f, avg_low_f),\n    names_to = \"temp_type\",\n    names_prefix = \"avg_\",\n    values_to = \"avg_temp_f\"\n  ) |&gt;\n  mutate(temp_type = str_remove(temp_type, \"_f\")) |&gt;\n  ggplot(aes(x = month, y = avg_temp_f, group = temp_type, color = temp_type)) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 3, stroke = 1\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Winter\" = \"lightskyblue1\",\n      \"Spring\" = \"chartreuse3\",\n      \"Summer\" = \"gold2\",\n      \"Fall\" = \"lightsalmon4\"\n    )\n  ) +\n  scale_color_manual(\n    values = c(\n      \"high\" = \"gray20\",\n      \"low\" = \"gray70\"\n    )\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average temperature (F)\",\n    title = \"Durham climate\",\n    fill = \"Season\",\n    color = \"Type\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"top\")"
+  },
+  {
+    "objectID": "ae/ae-05-gerrymander-explore-II.html",
+    "href": "ae/ae-05-gerrymander-explore-II.html",
+    "title": "AE 05: Gerrymandering + data exploration II",
+    "section": "",
+    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\nlibrary(ggbeeswarm)\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
+  },
+  {
+    "objectID": "ae/ae-05-gerrymander-explore-II.html#getting-started",
+    "href": "ae/ae-05-gerrymander-explore-II.html#getting-started",
+    "title": "AE 05: Gerrymandering + data exploration II",
+    "section": "",
+    "text": "We’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\nlibrary(usdata)\nlibrary(ggbeeswarm)\n\n\nThe data are availale in the usdata package.\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-05\", \"AL-0…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"Brooks\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo\", \"Gary\",…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 30.2, 41.7,…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 65.0, 52.4,…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AR\", \"AR\",…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0,…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mid, mid, mi…"
+  },
+  {
+    "objectID": "ae/ae-05-gerrymander-explore-II.html#congressional-districts-per-state",
+    "href": "ae/ae-05-gerrymander-explore-II.html#congressional-districts-per-state",
+    "title": "AE 05: Gerrymandering + data exploration II",
+    "section": "Congressional districts per state",
+    "text": "Congressional districts per state\nWhich state has the most congressional districts? How many congressional districts are there in this state?\nAdd your response here.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-05-gerrymander-explore-II.html#gerrymandering-and-flipping",
+    "href": "ae/ae-05-gerrymander-explore-II.html#gerrymandering-and-flipping",
+    "title": "AE 05: Gerrymandering + data exploration II",
+    "section": "Gerrymandering and flipping",
+    "text": "Gerrymandering and flipping\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering? Support your answer with a visualization and summary statistics.\nAdd your response here.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-05-gerrymander-explore-II.html#aesthetic-mappings",
+    "href": "ae/ae-05-gerrymander-explore-II.html#aesthetic-mappings",
+    "title": "AE 05: Gerrymandering + data exploration II",
+    "section": "Aesthetic mappings",
+    "text": "Aesthetic mappings\nRecreate the following visualization, and then improve it.\n\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-05-gerrymander-explore-II.html#render-commit-and-push",
+    "href": "ae/ae-05-gerrymander-explore-II.html#render-commit-and-push",
+    "title": "AE 05: Gerrymandering + data exploration II",
     "section": "Render, commit, and push",
     "text": "Render, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
   },
   {
-    "objectID": "ae/ae-16-spam-filter.html",
-    "href": "ae/ae-16-spam-filter.html",
-    "title": "AE 16: Building a spam filter",
+    "objectID": "ae/ae-13-modeling-penguins.html",
+    "href": "ae/ae-13-modeling-penguins.html",
+    "title": "AE 11: Modelling penguins",
     "section": "",
-    "text": "In this application exercise, we will\nTo illustrate logistic regression, we will build a spam filter from email data.\nThe data come from incoming emails in David Diez’s (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012. All personally identifiable information has been removed.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nglimpse(email)\n\nRows: 3,921\nColumns: 21\n$ spam         &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ to_multiple  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ from         &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ cc           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0, 2, 0, …\n$ sent_email   &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, …\n$ time         &lt;dttm&gt; 2012-01-01 06:16:41, 2012-01-01 07:03:59, 2012-01-01 16:…\n$ image        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ attach       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ dollar       &lt;dbl&gt; 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 0, …\n$ winner       &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no, n…\n$ inherit      &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ viagra       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ password     &lt;dbl&gt; 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ num_char     &lt;dbl&gt; 11.370, 10.504, 7.773, 13.256, 1.231, 1.091, 4.837, 7.421…\n$ line_breaks  &lt;int&gt; 202, 202, 192, 255, 29, 25, 193, 237, 69, 68, 25, 79, 191…\n$ format       &lt;fct&gt; 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, …\n$ re_subj      &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, …\n$ exclaim_subj &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ urgent_subj  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ exclaim_mess &lt;dbl&gt; 0, 1, 6, 48, 1, 1, 1, 18, 1, 0, 2, 1, 0, 10, 4, 10, 20, 0…\n$ number       &lt;fct&gt; big, small, small, small, none, none, big, small, small, …\nThe variables we’ll use in this analysis are\nGoal: Use the number of exclamation points in an email to predict whether or not it is spam."
+    "text": "In this application exercise we will be studying penguins. The data can be found in the palmerpenguins package and we will use tidyverse and tidymodels for data exploration and modeling, respectively.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(palmerpenguins)\n\nPlease read the following context and take a glimpse at the data set before we get started.\n\nThis data set comprising various measurements of three different penguin species, namely Adelie, Gentoo, and Chinstrap. The rigorous study was conducted in the islands of the Palmer Archipelago, Antarctica. These data were collected from 2007 to 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. The data set is called penguins.\n\n\n# add code here\n\nOur goal is to understand better how various body measurements and attributes of penguins relate to their body mass. First, we are going to investigate the relationship between a penguins’ flipper lengths and their body masses.\n\n\nQuestion: Based on our research focus, which variable is the response variable?\n\nAdd response here\n\n\nDemo: Visualize the relationship between flipper length and body mass of penguins.\n\n\n# add code here \n\nCorrelation\n\n\nYour turn (5 minutes):\n\n\nWhat is correlation? What values can correlation take?\nStrength and direction of a linear relationship. It’s bounded by -1 and 1.\n\nAre you good at guessing correlation? Give it a try! https://www.rossmanchance.com/applets/2021/guesscorrelation/GuessCorrelation.html\n\n\n\nDemo: What is the correlation between flipper length and body mass of penguins?\n\n\n# add code here\n\nDefining, fitting, and summarizing a model\n\n\nDemo: Write the population model below that explains the relationship between body mass and flipper length.\n\n\\[\nadd~math~text~here\n\\]\n\n\nDemo: Fit the linear regression model and display the results. Write the estimated model output below.\n\n\n# add code here\n\n\\[\nadd~math~text~here\n\\]\n\n\nYour turn: Interpret the slope and the intercept in the context of the data.\n\nIntercept: Add your response here\nSlopes: Add your response here\n\n\nYour turn: Recreate the visualization from above, this time adding a regression line to the visualization geom_smooth(method = \"lm\").\n\n\n# add code here\n\n\n\nDemo: What is the estimated body mass for a penguin with a flipper length of 210?\n\n\n# add code here\n\n\n\nYour turn: What is the estimated body mass for a penguin with a flipper length of 100?\n\n\n# add code here\n\nAnother model\n\n\nDemo: A different researcher wants to look at body weight of penguins based on the island they were recorded on. How are the variables involved in this analysis different?\n\nAdd response here\n\n\nDemo: Make an appropriate visualization to investigate this relationship below. Additionally, calculate the mean body mass by island.\n\n\n# add code here\n\n\n# add code here\n\n\n\nDemo: Change the geom of your previous plot to geom_point(). Use this plot to think about how R models these data.\n\n\n# add code here\n\n\n\nYour turn: Fit the linear regression model and display the results. Write the estimated model output below.\n\n\n# add code here\n\n\\[\nadd~math~text~here\n\\]\n\n\nDemo: Interpret each coefficient in context of the problem.\n\nIntercept: Add your response here\nSlopes: Add your response here\n\n\nDemo: What is the estimated body weight of a penguin on Biscoe island? What are the estimated body weights of penguins on Dream and Torgersen islands?\n\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-16-spam-filter.html#exercise-1",
-    "href": "ae/ae-16-spam-filter.html#exercise-1",
-    "title": "AE 16: Building a spam filter",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\n\nDemo: Fit the logistic regression model using the number of exclamation points to predict the probability an email is spam.\n\n\nlog_fit &lt;- logistic_reg() |&gt;\n  fit(spam ~ exclaim_mess, data = email)\n\ntidy(log_fit)\n\n# A tibble: 2 × 5\n  term          estimate std.error statistic p.value\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 (Intercept)  -2.27      0.0553     -41.1     0    \n2 exclaim_mess  0.000272  0.000949     0.287   0.774\n\n\n\n\nYour turn: How does the code above differ from previous code we’ve used to fit regression models? Compare your summary output to the estimated model below.\n\n\\[\\log\\Big(\\frac{p}{1-p}\\Big) = -2.27 - 0.000272 \\times exclaim\\_mess\\]\nAdd response here."
-  },
-  {
-    "objectID": "ae/ae-16-spam-filter.html#exercise-2",
-    "href": "ae/ae-16-spam-filter.html#exercise-2",
-    "title": "AE 16: Building a spam filter",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nWhat is the probability the email is spam if it contains 10 exclamation points? Answer the question using the predict() function.\nWe can use the predict function in R to produce the probability as well.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-16-spam-filter.html#exercise-3",
-    "href": "ae/ae-16-spam-filter.html#exercise-3",
-    "title": "AE 16: Building a spam filter",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nWe have the probability an email is spam, but ultimately we want to use the probability to classify an email as spam or not spam. Therefore, we need to set a decision-making threshold, such that an email is classified as spam if the predicted probability is greater than the threshold and not spam otherwise.\nSuppose you are a data scientist working on a spam filter. You must determine how high the predicted probability must be before you think it would be reasonable to call it spam and put it in the junk folder (which the user is unlikely to check).\nYour turn: What are some trade offs you would consider as you set the decision-making threshold? Discuss with your neighbor.\nAdd response here.\n\nlog_aug &lt;- augment(log_fit, email)\n\nggplot(log_aug, aes(x = exclaim_mess, y = spam, color = .pred_class)) +\n  geom_jitter(alpha = 0.5)"
-  },
-  {
-    "objectID": "ae/ae-16-spam-filter.html#exercise-4",
-    "href": "ae/ae-16-spam-filter.html#exercise-4",
-    "title": "AE 16: Building a spam filter",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nFit a model with all variables in the dataset as predictors and receate the visualization above for this model.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-00-unvotes.html",
-    "href": "ae/ae-00-unvotes.html",
-    "title": "AE 00: UN Votes",
+    "objectID": "ae/ae-14-modeling-penguins-multi.html",
+    "href": "ae/ae-14-modeling-penguins-multi.html",
+    "title": "AE 14: Modelling penguins with multiple predictors",
     "section": "",
-    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
+    "text": "In this application exercise we will continue to study penguins. The data can be found in the palmerpenguins package and we will use tidyverse and tidymodels for data exploration and modeling, respectively.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(palmerpenguins)"
   },
   {
-    "objectID": "ae/ae-00-unvotes.html#introduction",
-    "href": "ae/ae-00-unvotes.html#introduction",
-    "title": "AE 00: UN Votes",
-    "section": "",
-    "text": "How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\n\n\n\n\n\n\n\n\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis."
+    "objectID": "ae/ae-14-modeling-penguins-multi.html#additive-vs.-interaction-models",
+    "href": "ae/ae-14-modeling-penguins-multi.html#additive-vs.-interaction-models",
+    "title": "AE 14: Modelling penguins with multiple predictors",
+    "section": "Additive vs. interaction models",
+    "text": "Additive vs. interaction models\n\n\nYour turn: Run the two chunks of code below and create two separate plots. How are the two plots different than each other? Which plot does the model we fit above represent?\n\n# Plot A\nggplot(\n  penguins, \n  aes(x = flipper_length_mm, y = body_mass_g, color = island)\n  ) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\") +\n  labs(title = \"Plot A - Interaction model\") +\n  theme(legend.position = \"bottom\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n# Plot B\nbm_fl_island_aug &lt;- augment(bm_fl_island_fit, new_data = penguins)\nggplot(\n  bm_fl_island_aug, \n  aes(x = flipper_length_mm, y = body_mass_g, color = island)\n  ) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(aes(y = .pred), method = \"lm\") +\n  labs(title = \"Plot B - Additive model\") +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\nError in eval(expr, envir, enclos): object 'bm_fl_island_fit' not found\n\n\n\n\nError in eval(expr, envir, enclos): object 'bm_fl_island_aug' not found\n\n\n\nAdd response here.\n\n\nYour turn: Interpret the slope coefficient for flipper length in the context of the data and the research question.\n\nAdd response here.\n\n\nDemo: Predict the body mass of a Dream island penguin with a flipper length of 200 mm based on the additive model.\n\n\n# add code here\n\n\n\nReview: Look back at Plot B. What assumption does the additive model make about the slopes between flipper length and body mass for each of the three islands?\n\nAdd response here.\n\n\nDemo: Now fit the interaction model represented in Plot A and write the estimated regression model.\n\n\n# add code here\n\n\\[\nadd~math~text~here\n\\]\n\n\nReview: What does modeling body mass with an interaction effect get us that without doing so does not?\n\nAdd response here.\n\n\nYour turn: Predict the body mass of a Dream island penguin with a flipper length of 200 mm based on the interaction model.\n\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-00-unvotes.html#un-voting-patterns",
-    "href": "ae/ae-00-unvotes.html#un-voting-patterns",
-    "title": "AE 00: UN Votes",
-    "section": "UN voting patterns",
-    "text": "UN voting patterns\nLet’s create a data visualisation that displays how the voting record of the United States, United Kingdom, and Turkey changed over time.\n\n\n\n\n\n\n\n\n\nTask: Write your first piece of (R) code!\n\nModify the code cell above to change the plot to include a different country in place of Turkey. Note that the country name should be spelled and capitalized exactly the same way as it appears in the data. See the Appendix for a list of the countries in the data."
-  },
-  {
-    "objectID": "ae/ae-00-unvotes.html#references",
-    "href": "ae/ae-00-unvotes.html#references",
-    "title": "AE 00: UN Votes",
-    "section": "References",
-    "text": "References\n\nRobinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
-  },
-  {
-    "objectID": "ae/ae-00-unvotes.html#appendix",
-    "href": "ae/ae-00-unvotes.html#appendix",
-    "title": "AE 00: UN Votes",
-    "section": "Appendix",
-    "text": "Appendix\nBelow is a list of countries in the dataset:"
+    "objectID": "ae/ae-14-modeling-penguins-multi.html#choosing-a-model",
+    "href": "ae/ae-14-modeling-penguins-multi.html#choosing-a-model",
+    "title": "AE 14: Modelling penguins with multiple predictors",
+    "section": "Choosing a model",
+    "text": "Choosing a model\nRule of thumb: Occam’s Razor - Don’t overcomplicate the situation! We prefer the simplest best model.\n\n# add code here\n\n\n\nReview: What is R-squared? What is adjusted R-squared?\n\nAdd response here."
   },
   {
     "objectID": "ae/ae-12-modeling-fish-A.html",
@@ -6064,74 +5896,438 @@
     ]
   },
   {
-    "objectID": "slides/18-model-selection-overfitting.html#while-you-wait",
-    "href": "slides/18-model-selection-overfitting.html#while-you-wait",
-    "title": "Model selection and overfitting",
+    "objectID": "slides/20-evaluating-models.html#while-you-wait",
+    "href": "slides/20-evaluating-models.html#while-you-wait",
+    "title": "Evaluating models",
     "section": "While you wait…",
-    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you missed class last Thursday, pull to get today’s application exercise file: ae-15-modeling-loans.qmd.\nMake sure you’ve completed the “Get to know the data” section of your AE."
+    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-17-forest-classification.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
-    "objectID": "slides/18-model-selection-overfitting.html#announcements",
-    "href": "slides/18-model-selection-overfitting.html#announcements",
-    "title": "Model selection and overfitting",
+    "objectID": "slides/20-evaluating-models.html#announcements",
+    "href": "slides/20-evaluating-models.html#announcements",
+    "title": "Evaluating models",
     "section": "Announcements",
-    "text": "Announcements\n\nMy office hours this week:\n\nI’ll hold them at a modified time: 1-2 pm on Wednesday at Old Chem 213 (in place of Dav’s office hours)\nDav will fill in for me 2-4 pm on Wednesday at Old Chem 203B\n\n\nMake sure you’re caught up with prepare materials before Thursday’s class"
+    "text": "Announcements\n\nAdd announcements…"
   },
   {
-    "objectID": "slides/18-model-selection-overfitting.html#what-is-the-difference-between-r2-and-adjusted-r2",
-    "href": "slides/18-model-selection-overfitting.html#what-is-the-difference-between-r2-and-adjusted-r2",
-    "title": "Model selection and overfitting",
-    "section": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?",
-    "text": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?\n\n\n\\(R^2\\):\n\nProportion of variability in the outcome explained by the model.\nUseful for quantifying the fit of a given model.\n\n\n\nAdjusted \\(R^2\\):\n\nProportion of variability in the outcome explained by the model, with a penalty added for the number of predictors in the model.\nUseful for comparing models."
+    "objectID": "slides/20-evaluating-models.html#packages",
+    "href": "slides/20-evaluating-models.html#packages",
+    "title": "Evaluating models",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(forested)"
   },
   {
-    "objectID": "slides/18-model-selection-overfitting.html#finish-up-thursdays-ae",
-    "href": "slides/18-model-selection-overfitting.html#finish-up-thursdays-ae",
-    "title": "Model selection and overfitting",
-    "section": "Finish up Thursday’s AE",
-    "text": "Finish up Thursday’s AE\n\n\nGo to your ae project in RStudio.\nGet back to working on ae-15-modeling-loans\n\n\nGoals:\n\nReview prediction and interpretation of model results\nReview main and interaction effects models\nDiscuss model selection further"
+    "objectID": "slides/20-evaluating-models.html#data",
+    "href": "slides/20-evaluating-models.html#data",
+    "title": "Evaluating models",
+    "section": "Data",
+    "text": "Data\n\nThe U.S. Forest Service maintains machine learning models to predict whether a plot of land is “forested.”\nThis classification is important for research, legislation, land management, etc. purposes.\nPlots are typically remeasured every 10 years.\nThe forested dataset contains the most recent measurement per plot."
   },
   {
-    "objectID": "slides/18-model-selection-overfitting.html#recap",
-    "href": "slides/18-model-selection-overfitting.html#recap",
-    "title": "Model selection and overfitting",
-    "section": "Recap",
-    "text": "Recap\n\nWhat is the practical difference between a model with parallel and non-parallel lines?\nWhat is the definition of R-squared?\nWhy do we choose models based on adjusted R-squared and not R-squared?"
+    "objectID": "slides/20-evaluating-models.html#data-forested",
+    "href": "slides/20-evaluating-models.html#data-forested",
+    "title": "Evaluating models",
+    "section": "Data: forested\n",
+    "text": "Data: forested\n\n\nforested\n\n# A tibble: 7,107 × 19\n   forested  year elevation eastness northness roughness tree_no_tree\n   &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt;       \n 1 Yes       2005       881       90        43        63 Tree        \n 2 Yes       2005       113      -25        96        30 Tree        \n 3 No        2005       164      -84        53        13 Tree        \n 4 Yes       2005       299       93        34         6 No tree     \n 5 Yes       2005       806       47       -88        35 Tree        \n 6 Yes       2005       736      -27       -96        53 Tree        \n 7 Yes       2005       636      -48        87         3 No tree     \n 8 Yes       2005       224      -65       -75         9 Tree        \n 9 Yes       2005        52      -62        78        42 Tree        \n10 Yes       2005      2240      -67       -74        99 No tree     \n# ℹ 7,097 more rows\n# ℹ 12 more variables: dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,\n#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,\n#   land_type &lt;fct&gt;"
   },
   {
-    "objectID": "slides/18-model-selection-overfitting-slides.html#while-you-wait",
-    "href": "slides/18-model-selection-overfitting-slides.html#while-you-wait",
-    "title": "Model selection and overfitting",
+    "objectID": "slides/20-evaluating-models.html#data-forested-1",
+    "href": "slides/20-evaluating-models.html#data-forested-1",
+    "title": "Evaluating models",
+    "section": "Data: forested\n",
+    "text": "Data: forested\n\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52,…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74,…\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 19…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No t…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195,…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61,…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.…\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 1…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, …\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 17…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74,…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144,…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tre…"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#outcome-and-predictors",
+    "href": "slides/20-evaluating-models.html#outcome-and-predictors",
+    "title": "Evaluating models",
+    "section": "Outcome and predictors",
+    "text": "Outcome and predictors\n\nOutcome: forested - Factor, Yes or No\n\n\n\nlevels(forested$forested)\n\n[1] \"Yes\" \"No\" \n\n\n\n\nPredictors: 18 remotely-sensed and easily-accessible predictors:\n\nnumeric variables based on weather and topography\ncategorical variables based on classifications from other governmental organizations"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#forested",
+    "href": "slides/20-evaluating-models.html#forested",
+    "title": "Evaluating models",
+    "section": "?forested",
+    "text": "?forested"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#should-we-include-a-predictor",
+    "href": "slides/20-evaluating-models.html#should-we-include-a-predictor",
+    "title": "Evaluating models",
+    "section": "Should we include a predictor?",
+    "text": "Should we include a predictor?\nTo determine whether we should include a predictor in a model, we should start by asking:\n\n\nIs it ethical to use this variable? (Or even legal?)\nWill this variable be available at prediction time?\nDoes this variable contribute to explainability?"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#weve-been-cheating",
+    "href": "slides/20-evaluating-models.html#weve-been-cheating",
+    "title": "Evaluating models",
+    "section": "We’ve been cheating!",
+    "text": "We’ve been cheating!\n\n\nSo far, we’ve been using all the data we have for building models. In predictive contexts, this would be considered cheating.\nEvaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you’ve already seen."
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#spending-your-data",
+    "href": "slides/20-evaluating-models.html#spending-your-data",
+    "title": "Evaluating models",
+    "section": "Spending your data",
+    "text": "Spending your data\nFor predictive models (used primarily in machine learning), we typically split data into training and test sets:\n\n\n\n\n\nThe training set is used to estimate model parameters.\nThe test set is used to find an independent assessment of model performance.\n\n. . .\n\n\n\n\n\n\nWarning\n\n\n\nDo not use, or even peek at, the test set during training."
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#how-much-to-spend",
+    "href": "slides/20-evaluating-models.html#how-much-to-spend",
+    "title": "Evaluating models",
+    "section": "How much to spend?",
+    "text": "How much to spend?\n\n\nThe more data we spend (use in training), the better estimates we’ll get.\nSpending too much data in training prevents us from computing a good assessment of predictive performance.\nSpending too much data in testing prevents us from computing a good estimate of model parameters."
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#the-initial-split",
+    "href": "slides/20-evaluating-models.html#the-initial-split",
+    "title": "Evaluating models",
+    "section": "The initial split",
+    "text": "The initial split\n\nset.seed(20241112)\nforested_split &lt;- initial_split(forested)\nforested_split\n\n&lt;Training/Testing/Total&gt;\n&lt;5330/1777/7107&gt;"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#setting-a-seed",
+    "href": "slides/20-evaluating-models.html#setting-a-seed",
+    "title": "Evaluating models",
+    "section": "Setting a seed",
+    "text": "Setting a seed\n\nWhat does set.seed() do?\n\n\n\nTo create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.\nThis allows us to reproduce results by setting that seed.\nWhich seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance."
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#accessing-the-data",
+    "href": "slides/20-evaluating-models.html#accessing-the-data",
+    "title": "Evaluating models",
+    "section": "Accessing the data",
+    "text": "Accessing the data\n\nforested_train &lt;- training(forested_split)\nforested_test &lt;- testing(forested_split)"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#the-training-set",
+    "href": "slides/20-evaluating-models.html#the-training-set",
+    "title": "Evaluating models",
+    "section": "The training set",
+    "text": "The training set\n\nforested_train\n\n# A tibble: 5,330 × 19\n   forested  year elevation eastness northness roughness tree_no_tree\n   &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt;       \n 1 Yes       2013       315      -17        98        92 Tree        \n 2 No        2018       374       93       -34        23 No tree     \n 3 No        2017       377       44       -89         1 Tree        \n 4 Yes       2013       541       31       -94       139 Tree        \n 5 Yes       2017       680       14       -98        20 Tree        \n 6 Yes       2017      1482       76       -64        43 Tree        \n 7 No        2020        84       42       -90        12 No tree     \n 8 Yes       2011       210       34        93        16 Tree        \n 9 No        2020       766       14        98        20 No tree     \n10 Yes       2013      1559       98        16        79 Tree        \n# ℹ 5,320 more rows\n# ℹ 12 more variables: dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,\n#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,\n#   land_type &lt;fct&gt;"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#the-testing-data",
+    "href": "slides/20-evaluating-models.html#the-testing-data",
+    "title": "Evaluating models",
+    "section": "The testing data",
+    "text": "The testing data\n. . .\n🙈"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#initial-questions",
+    "href": "slides/20-evaluating-models.html#initial-questions",
+    "title": "Evaluating models",
+    "section": "Initial questions",
+    "text": "Initial questions\n\nWhat’s the distribution of the outcome, forested?\nWhat’s the distribution of numeric variables like precip_annual?\nHow does the distribution of forested differ across the categorical and numerical variables?\n\n. . .\n\nWhich dataset should we use for the exploration? The entire data forested, the training data forested_train, or the testing data forested_test?"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#forested-1",
+    "href": "slides/20-evaluating-models.html#forested-1",
+    "title": "Evaluating models",
+    "section": "forested",
+    "text": "forested\nWhat’s the distribution of the outcome, forested?"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#precip_annual",
+    "href": "slides/20-evaluating-models.html#precip_annual",
+    "title": "Evaluating models",
+    "section": "precip_annual",
+    "text": "precip_annual\nWhat’s the distribution of precip_annual?"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#forested-and-precip_annual",
+    "href": "slides/20-evaluating-models.html#forested-and-precip_annual",
+    "title": "Evaluating models",
+    "section": "\nforested and precip_annual\n",
+    "text": "forested and precip_annual\n\n\nggplot(\n  forested_train,\n  aes(x = precip_annual, fill = forested, group = forested)\n  ) +\n  geom_histogram(binwidth = 200, position = \"identity\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#forested-and-precip_annual-1",
+    "href": "slides/20-evaluating-models.html#forested-and-precip_annual-1",
+    "title": "Evaluating models",
+    "section": "\nforested and precip_annual\n",
+    "text": "forested and precip_annual\n\n\nggplot(\n  forested_train,\n  aes(x = precip_annual, fill = forested, group = forested)\n  ) +\n  geom_histogram(binwidth = 200, position = \"fill\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#forested-and-tree_no_tree",
+    "href": "slides/20-evaluating-models.html#forested-and-tree_no_tree",
+    "title": "Evaluating models",
+    "section": "\nforested and tree_no_tree\n",
+    "text": "forested and tree_no_tree\n\n\nggplot(forested_train, aes(x = tree_no_tree, fill = forested)) +\n  geom_bar(position = \"fill\") +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#forested-and-lat-lon",
+    "href": "slides/20-evaluating-models.html#forested-and-lat-lon",
+    "title": "Evaluating models",
+    "section": "\nforested and lat / lon\n",
+    "text": "forested and lat / lon\n\n\nggplot(forested_train, aes(x = lon, y = lat, color = forested)) +\n  geom_point(alpha = 0.7) +\n  scale_color_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#false-negative-and-positive",
+    "href": "slides/20-evaluating-models.html#false-negative-and-positive",
+    "title": "Evaluating models",
+    "section": "False negative and positive",
+    "text": "False negative and positive\n\nFalse negative rate is the proportion of actual positives that were classified as negatives.\nFalse positive rate is the proportion of actual negatives that were classified as positives."
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#sensitivity",
+    "href": "slides/20-evaluating-models.html#sensitivity",
+    "title": "Evaluating models",
+    "section": "Sensitivity",
+    "text": "Sensitivity\nSensitivity is the proportion of actual positives that were correctly classified as positive.\n\nAlso known as true positive rate and recall\nSensitivity = 1 − False negative rate\nUseful when false negatives are more “expensive” than false positives"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#specificity",
+    "href": "slides/20-evaluating-models.html#specificity",
+    "title": "Evaluating models",
+    "section": "Specificity",
+    "text": "Specificity\nSpecificity is the proportion of actual negatives that were correctly classified as negative\n\nAlso known as true negative rate\nSpecificity = 1 − False positive rate"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#roc-curve",
+    "href": "slides/20-evaluating-models.html#roc-curve",
+    "title": "Evaluating models",
+    "section": "ROC curve",
+    "text": "ROC curve\nThe receiver operating characteristic (ROC) curve allows to assess the model performance across a range of thresholds."
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#roc-curve-1",
+    "href": "slides/20-evaluating-models.html#roc-curve-1",
+    "title": "Evaluating models",
+    "section": "ROC curve",
+    "text": "ROC curve\n\nWhich corner of the plot indicates the best model performance?"
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#next-steps-1",
+    "href": "slides/20-evaluating-models.html#next-steps-1",
+    "title": "Evaluating models",
+    "section": "Next steps",
+    "text": "Next steps\n\n\nFit models on training data\nMake predictions on testing data\n\nEvaluate predictions on testing data:\n\nLinear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nMake decisions based on model predictive performance, validity across various testing/training splits (aka “cross validation”), explainability\n\n\n. . .\n\n\n\n\n\n\nNote\n\n\n\nWe will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses."
+  },
+  {
+    "objectID": "slides/20-evaluating-models.html#ae-17-forest-classification",
+    "href": "slides/20-evaluating-models.html#ae-17-forest-classification",
+    "title": "Evaluating models",
+    "section": "ae-17-forest-classification",
+    "text": "ae-17-forest-classification\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-17-forest-classification.qmd. You might be prompted to install forested, say yes.\nWork through the application exercise in class, and render, commit, and push your edits."
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#while-you-wait",
+    "href": "slides/20-evaluating-models-slides.html#while-you-wait",
+    "title": "Evaluating models",
     "section": "While you wait…",
-    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you missed class last Thursday, pull to get today’s application exercise file: ae-15-modeling-loans.qmd.\nMake sure you’ve completed the “Get to know the data” section of your AE."
+    "text": "While you wait…\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nClick Pull to get today’s application exercise file: ae-17-forest-classification.qmd.\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
-    "objectID": "slides/18-model-selection-overfitting-slides.html#announcements",
-    "href": "slides/18-model-selection-overfitting-slides.html#announcements",
-    "title": "Model selection and overfitting",
+    "objectID": "slides/20-evaluating-models-slides.html#announcements",
+    "href": "slides/20-evaluating-models-slides.html#announcements",
+    "title": "Evaluating models",
     "section": "Announcements",
-    "text": "Announcements\n\nMy office hours this week:\n\nI’ll hold them at a modified time: 1-2 pm on Wednesday at Old Chem 213 (in place of Dav’s office hours)\nDav will fill in for me 2-4 pm on Wednesday at Old Chem 203B\n\n\nMake sure you’re caught up with prepare materials before Thursday’s class"
+    "text": "Announcements\n\nAdd announcements…"
   },
   {
-    "objectID": "slides/18-model-selection-overfitting-slides.html#what-is-the-difference-between-r2-and-adjusted-r2",
-    "href": "slides/18-model-selection-overfitting-slides.html#what-is-the-difference-between-r2-and-adjusted-r2",
-    "title": "Model selection and overfitting",
-    "section": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?",
-    "text": "What is the difference between \\(R^2\\) and adjusted \\(R^2\\)?\n\n\n\\(R^2\\):\n\nProportion of variability in the outcome explained by the model.\nUseful for quantifying the fit of a given model.\n\n\n\nAdjusted \\(R^2\\):\n\nProportion of variability in the outcome explained by the model, with a penalty added for the number of predictors in the model.\nUseful for comparing models."
+    "objectID": "slides/20-evaluating-models-slides.html#packages",
+    "href": "slides/20-evaluating-models-slides.html#packages",
+    "title": "Evaluating models",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(forested)"
   },
   {
-    "objectID": "slides/18-model-selection-overfitting-slides.html#finish-up-thursdays-ae",
-    "href": "slides/18-model-selection-overfitting-slides.html#finish-up-thursdays-ae",
-    "title": "Model selection and overfitting",
-    "section": "Finish up Thursday’s AE",
-    "text": "Finish up Thursday’s AE\n\n\nGo to your ae project in RStudio.\nGet back to working on ae-15-modeling-loans\n\n\nGoals:\n\nReview prediction and interpretation of model results\nReview main and interaction effects models\nDiscuss model selection further"
+    "objectID": "slides/20-evaluating-models-slides.html#data",
+    "href": "slides/20-evaluating-models-slides.html#data",
+    "title": "Evaluating models",
+    "section": "Data",
+    "text": "Data\n\nThe U.S. Forest Service maintains machine learning models to predict whether a plot of land is “forested.”\nThis classification is important for research, legislation, land management, etc. purposes.\nPlots are typically remeasured every 10 years.\nThe forested dataset contains the most recent measurement per plot."
   },
   {
-    "objectID": "slides/18-model-selection-overfitting-slides.html#recap",
-    "href": "slides/18-model-selection-overfitting-slides.html#recap",
-    "title": "Model selection and overfitting",
-    "section": "Recap",
-    "text": "Recap\n\nWhat is the practical difference between a model with parallel and non-parallel lines?\nWhat is the definition of R-squared?\nWhy do we choose models based on adjusted R-squared and not R-squared?"
+    "objectID": "slides/20-evaluating-models-slides.html#data-forested",
+    "href": "slides/20-evaluating-models-slides.html#data-forested",
+    "title": "Evaluating models",
+    "section": "Data: forested\n",
+    "text": "Data: forested\n\n\nforested\n\n# A tibble: 7,107 × 19\n   forested  year elevation eastness northness roughness tree_no_tree\n   &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt;       \n 1 Yes       2005       881       90        43        63 Tree        \n 2 Yes       2005       113      -25        96        30 Tree        \n 3 No        2005       164      -84        53        13 Tree        \n 4 Yes       2005       299       93        34         6 No tree     \n 5 Yes       2005       806       47       -88        35 Tree        \n 6 Yes       2005       736      -27       -96        53 Tree        \n 7 Yes       2005       636      -48        87         3 No tree     \n 8 Yes       2005       224      -65       -75         9 Tree        \n 9 Yes       2005        52      -62        78        42 Tree        \n10 Yes       2005      2240      -67       -74        99 No tree     \n# ℹ 7,097 more rows\n# ℹ 12 more variables: dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,\n#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,\n#   land_type &lt;fct&gt;"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#data-forested-1",
+    "href": "slides/20-evaluating-models-slides.html#data-forested-1",
+    "title": "Evaluating models",
+    "section": "Data: forested\n",
+    "text": "Data: forested\n\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52,…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74,…\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 19…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No t…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195,…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61,…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.…\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 1…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, …\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 17…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74,…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144,…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tre…"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#outcome-and-predictors",
+    "href": "slides/20-evaluating-models-slides.html#outcome-and-predictors",
+    "title": "Evaluating models",
+    "section": "Outcome and predictors",
+    "text": "Outcome and predictors\n\nOutcome: forested - Factor, Yes or No\n\n\n\nlevels(forested$forested)\n\n[1] \"Yes\" \"No\" \n\n\n\n\nPredictors: 18 remotely-sensed and easily-accessible predictors:\n\nnumeric variables based on weather and topography\ncategorical variables based on classifications from other governmental organizations"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#forested",
+    "href": "slides/20-evaluating-models-slides.html#forested",
+    "title": "Evaluating models",
+    "section": "?forested",
+    "text": "?forested"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#should-we-include-a-predictor",
+    "href": "slides/20-evaluating-models-slides.html#should-we-include-a-predictor",
+    "title": "Evaluating models",
+    "section": "Should we include a predictor?",
+    "text": "Should we include a predictor?\nTo determine whether we should include a predictor in a model, we should start by asking:\n\n\nIs it ethical to use this variable? (Or even legal?)\nWill this variable be available at prediction time?\nDoes this variable contribute to explainability?"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#weve-been-cheating",
+    "href": "slides/20-evaluating-models-slides.html#weve-been-cheating",
+    "title": "Evaluating models",
+    "section": "We’ve been cheating!",
+    "text": "We’ve been cheating!\n\n\nSo far, we’ve been using all the data we have for building models. In predictive contexts, this would be considered cheating.\nEvaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you’ve already seen."
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#spending-your-data",
+    "href": "slides/20-evaluating-models-slides.html#spending-your-data",
+    "title": "Evaluating models",
+    "section": "Spending your data",
+    "text": "Spending your data\nFor predictive models (used primarily in machine learning), we typically split data into training and test sets:\n\n\nThe training set is used to estimate model parameters.\nThe test set is used to find an independent assessment of model performance.\n\n\n\n\n\n\n\n\nWarning\n\n\nDo not use, or even peek at, the test set during training."
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#how-much-to-spend",
+    "href": "slides/20-evaluating-models-slides.html#how-much-to-spend",
+    "title": "Evaluating models",
+    "section": "How much to spend?",
+    "text": "How much to spend?\n\n\nThe more data we spend (use in training), the better estimates we’ll get.\nSpending too much data in training prevents us from computing a good assessment of predictive performance.\nSpending too much data in testing prevents us from computing a good estimate of model parameters."
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#the-initial-split",
+    "href": "slides/20-evaluating-models-slides.html#the-initial-split",
+    "title": "Evaluating models",
+    "section": "The initial split",
+    "text": "The initial split\n\nset.seed(20241112)\nforested_split &lt;- initial_split(forested)\nforested_split\n\n&lt;Training/Testing/Total&gt;\n&lt;5330/1777/7107&gt;"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#setting-a-seed",
+    "href": "slides/20-evaluating-models-slides.html#setting-a-seed",
+    "title": "Evaluating models",
+    "section": "Setting a seed",
+    "text": "Setting a seed\n\nWhat does set.seed() do?\n\n\n\nTo create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.\nThis allows us to reproduce results by setting that seed.\nWhich seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance."
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#accessing-the-data",
+    "href": "slides/20-evaluating-models-slides.html#accessing-the-data",
+    "title": "Evaluating models",
+    "section": "Accessing the data",
+    "text": "Accessing the data\n\nforested_train &lt;- training(forested_split)\nforested_test &lt;- testing(forested_split)"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#the-training-set",
+    "href": "slides/20-evaluating-models-slides.html#the-training-set",
+    "title": "Evaluating models",
+    "section": "The training set",
+    "text": "The training set\n\nforested_train\n\n# A tibble: 5,330 × 19\n   forested  year elevation eastness northness roughness tree_no_tree\n   &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt;       \n 1 Yes       2013       315      -17        98        92 Tree        \n 2 No        2018       374       93       -34        23 No tree     \n 3 No        2017       377       44       -89         1 Tree        \n 4 Yes       2013       541       31       -94       139 Tree        \n 5 Yes       2017       680       14       -98        20 Tree        \n 6 Yes       2017      1482       76       -64        43 Tree        \n 7 No        2020        84       42       -90        12 No tree     \n 8 Yes       2011       210       34        93        16 Tree        \n 9 No        2020       766       14        98        20 No tree     \n10 Yes       2013      1559       98        16        79 Tree        \n# ℹ 5,320 more rows\n# ℹ 12 more variables: dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,\n#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,\n#   land_type &lt;fct&gt;"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#the-testing-data",
+    "href": "slides/20-evaluating-models-slides.html#the-testing-data",
+    "title": "Evaluating models",
+    "section": "The testing data",
+    "text": "The testing data\n\n🙈"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#initial-questions",
+    "href": "slides/20-evaluating-models-slides.html#initial-questions",
+    "title": "Evaluating models",
+    "section": "Initial questions",
+    "text": "Initial questions\n\nWhat’s the distribution of the outcome, forested?\nWhat’s the distribution of numeric variables like precip_annual?\nHow does the distribution of forested differ across the categorical and numerical variables?\n\n\n\nWhich dataset should we use for the exploration? The entire data forested, the training data forested_train, or the testing data forested_test?"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#forested-1",
+    "href": "slides/20-evaluating-models-slides.html#forested-1",
+    "title": "Evaluating models",
+    "section": "forested",
+    "text": "forested\nWhat’s the distribution of the outcome, forested?"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#precip_annual",
+    "href": "slides/20-evaluating-models-slides.html#precip_annual",
+    "title": "Evaluating models",
+    "section": "precip_annual",
+    "text": "precip_annual\nWhat’s the distribution of precip_annual?"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#forested-and-precip_annual",
+    "href": "slides/20-evaluating-models-slides.html#forested-and-precip_annual",
+    "title": "Evaluating models",
+    "section": "\nforested and precip_annual\n",
+    "text": "forested and precip_annual\n\n\nggplot(\n  forested_train,\n  aes(x = precip_annual, fill = forested, group = forested)\n  ) +\n  geom_histogram(binwidth = 200, position = \"identity\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#forested-and-precip_annual-1",
+    "href": "slides/20-evaluating-models-slides.html#forested-and-precip_annual-1",
+    "title": "Evaluating models",
+    "section": "\nforested and precip_annual\n",
+    "text": "forested and precip_annual\n\n\nggplot(\n  forested_train,\n  aes(x = precip_annual, fill = forested, group = forested)\n  ) +\n  geom_histogram(binwidth = 200, position = \"fill\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#forested-and-tree_no_tree",
+    "href": "slides/20-evaluating-models-slides.html#forested-and-tree_no_tree",
+    "title": "Evaluating models",
+    "section": "\nforested and tree_no_tree\n",
+    "text": "forested and tree_no_tree\n\n\nggplot(forested_train, aes(x = tree_no_tree, fill = forested)) +\n  geom_bar(position = \"fill\") +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#forested-and-lat-lon",
+    "href": "slides/20-evaluating-models-slides.html#forested-and-lat-lon",
+    "title": "Evaluating models",
+    "section": "\nforested and lat / lon\n",
+    "text": "forested and lat / lon\n\n\nggplot(forested_train, aes(x = lon, y = lat, color = forested)) +\n  geom_point(alpha = 0.7) +\n  scale_color_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#false-negative-and-positive",
+    "href": "slides/20-evaluating-models-slides.html#false-negative-and-positive",
+    "title": "Evaluating models",
+    "section": "False negative and positive",
+    "text": "False negative and positive\n\nFalse negative rate is the proportion of actual positives that were classified as negatives.\nFalse positive rate is the proportion of actual negatives that were classified as positives."
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#sensitivity",
+    "href": "slides/20-evaluating-models-slides.html#sensitivity",
+    "title": "Evaluating models",
+    "section": "Sensitivity",
+    "text": "Sensitivity\nSensitivity is the proportion of actual positives that were correctly classified as positive.\n\nAlso known as true positive rate and recall\nSensitivity = 1 − False negative rate\nUseful when false negatives are more “expensive” than false positives"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#specificity",
+    "href": "slides/20-evaluating-models-slides.html#specificity",
+    "title": "Evaluating models",
+    "section": "Specificity",
+    "text": "Specificity\nSpecificity is the proportion of actual negatives that were correctly classified as negative\n\nAlso known as true negative rate\nSpecificity = 1 − False positive rate"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#roc-curve",
+    "href": "slides/20-evaluating-models-slides.html#roc-curve",
+    "title": "Evaluating models",
+    "section": "ROC curve",
+    "text": "ROC curve\nThe receiver operating characteristic (ROC) curve allows to assess the model performance across a range of thresholds."
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#roc-curve-1",
+    "href": "slides/20-evaluating-models-slides.html#roc-curve-1",
+    "title": "Evaluating models",
+    "section": "ROC curve",
+    "text": "ROC curve\n\nWhich corner of the plot indicates the best model performance?"
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#next-steps-1",
+    "href": "slides/20-evaluating-models-slides.html#next-steps-1",
+    "title": "Evaluating models",
+    "section": "Next steps",
+    "text": "Next steps\n\n\nFit models on training data\nMake predictions on testing data\n\nEvaluate predictions on testing data:\n\nLinear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nMake decisions based on model predictive performance, validity across various testing/training splits (aka “cross validation”), explainability\n\n\n\n\n\n\n\n\n\nNote\n\n\nWe will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses."
+  },
+  {
+    "objectID": "slides/20-evaluating-models-slides.html#ae-17-forest-classification",
+    "href": "slides/20-evaluating-models-slides.html#ae-17-forest-classification",
+    "title": "Evaluating models",
+    "section": "ae-17-forest-classification",
+    "text": "ae-17-forest-classification\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-17-forest-classification.qmd. You might be prompted to install forested, say yes.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
     "objectID": "slides/01-meet-the-toolkit.html#announcements",
