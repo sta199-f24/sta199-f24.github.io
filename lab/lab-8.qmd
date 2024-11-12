@@ -4,6 +4,257 @@ subtitle: To be posted
 categories: Lab
 description: "Mon, Nov 25 at 8:30 am"
 draft: true
+editor_options: 
+  chunk_output_type: console
 ---
 
-To be posted.
+# Introduction
+
+In this lab you'll **TO DO: Add intro.**
+And you'll wrap up the lab revisiting the topic of data science ethics.
+
+## Learning objectives
+
+By the end of the lab, you will...
+
+-   **TO DO: Add LOs.**
+
+And, as usual, you will also...
+
+-   Get more experience with data science workflow using R, RStudio, Git, and GitHub
+-   Further your reproducible authoring skills with Quarto
+-   Improve your familiarity with version control using Git and GitHub
+
+## Getting started
+
+Log in to RStudio, clone your `lab-8` repo from GitHub, open your `lab-8.qmd` document, and get started!
+
+## Packages
+
+In this lab, we will work with the
+
+-   **tidyverse** package for doing data analysis in a "tidy" way,
+-   **tidymodels** package for modeling in a "tidy" way, and
+-   **openintro** package for the dataset for Part 1. **TO DO:** Check.
+
+```{r}
+#| eval: true
+#| message: false
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+```
+
+-   **Run** the code cell by clicking on the green triangle (play) button for the code cell labeled `load-packages`. This loads the package so that its features (the functions and datasets in it) are accessible from your *Console*.
+-   Then, **render** the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document.
+
+## Guidelines
+
+{{< include _guidelines.qmd >}}
+
+::: callout-important
+You are also expected to pay attention to [code smell](https://en.wikipedia.org/wiki/Code_smell) in addition to code style and readability.
+You should review and improve your code to avoid redundant steps (e.g., grouping, ungrouping, and grouping again by the same variable in a pipeline), using inconsistent syntax (e.g., `!` to say "not" in one place and `-` in another place), etc.
+:::
+
+# Part 1: Lemurs
+
+This week we'll be working with data from the [Duke Lemur Center](https://lemur.duke.edu/), which houses over 200 lemurs across 14 species -- the most diverse population of lemurs on Earth, outside their native Madagascar.
+
+> Lemurs are the most threatened group of mammals on the planet, and 95% of lemur species are at risk of extinction.
+> Our mission is to learn everything we can about lemurs -- because the more we learn, the better we can work to save them from extinction.
+> They are endemic only to Madagascar, so it's essentially a one-shot deal: once lemurs are gone from Madagascar, they are gone from the wild.
+
+> By studying the variables that most affect their health, reproduction, and social dynamics, the Duke Lemur Center learns how to most effectively focus [their conservation efforts](https://lemur.duke.edu/protect/overview-madagascar-conservation-programs/).
+> And the more we learn about lemurs, the better we can educate the public around the world about just how amazing these animals are, why they need to be protected, and how each and every one of us can make a difference in their survival.
+
+> Source: [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md)
+
+The codebook for the deataset can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md#lemur_datacsv).
+While the TidyTuesday project used the full dataset, we'll be working with a subset, which can be found in the data folder.
+
+First let's load the packages.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(tidymodels)
+```
+
+## Question 1
+
+Load the `lemurs` data from your `data` folder and save it as `lemurs`.
+Then, report which "types" of lemurs are represented in the sample and how many of each.
+Note that this information is in the `taxon` variable.
+You should refer back to the linked data dictionary to understand what the different values of `taxon` mean.
+Your response should be a tibble with at least three columns, `taxon`, `taxon_name` (a new variable you create that contains the description of the `taxon`, e.g., `EMON` is `Mongoose lemur`), and `n` (number of lemurs with that taxon).
+
+```{r}
+#| label: load-glimpse-data
+#| include: false
+lemurs <- read_csv("data/lemurs.csv")
+lemurs |>
+  count(taxon) |>
+  mutate(
+    taxon_name = case_when(
+      taxon == "EMON" ~ "Mongoose lemur",
+      taxon == "ERUB" ~ "Red-bellied lemur",
+      taxon == "LCAT" ~ "Ring-tailed lemur"
+    ),
+    .after = taxon
+  )
+```
+
+## Question 2
+
+What is the **mean** weight of **ring-tailed lemurs**?
+Calculate, visualize, and interpret a 95% bootstrap confidence interval together with your point estimate.
+Use `set.seed(123)` and `reps = 1000` to create your bootstrap confidence interval.
+
+::: callout-tip
+Below is a step-by-step recipe for constructing and visualizing a confidence interval.
+The code snippets shown are not "complete", they're intended to guide you in the right direction.
+
+-   Step 1: Create a dataset of ring-tailed lemurs, and call it `lemurs_rt`. Note, these are `taxon == "LCAT"`.
+
+```{r}
+#| include: false
+
+lemurs_rt <- lemurs |>
+  filter(taxon == "LCAT")
+```
+
+-   Step 2: Calculate the mean weight of ring-tailed lemurs.
+
+```{r}
+obs_stat_mean_rt <- lemurs_rt |>
+  specify(response = weight_g) |>
+  calculate(stat = "mean")
+```
+
+-   Step 3: Construct a bootstrap distribution. Note: There is a `generate()` step, so you also need to set a seed before running the following.
+
+```{r}
+boot_dist_mean_rt <- lemurs_rt |>
+  specify(response = weight_g) |>
+  generate(reps = 1000, type = "bootstrap") |>
+  calculate(stat = "mean")
+```
+
+-   Step 4: Calculate the bounds of the confidence interval. Don't forget to interpret it as well!
+
+```{r}
+ci_95_mean_rt <- boot_dist_mean_rt |>
+  get_confidence_interval(
+    point_estimate = obs_stat_mean_rt, 
+    level = 0.95
+  )
+```
+
+-   Step 5: Visualize the confidence interval, overlaying it on the bootstrap distribution.
+
+```{r}
+#| fig-show: hide
+
+visualize(boot_dist_mean_rt) +
+  shade_confidence_interval(endpoints = ci_95_mean_rt)
+```
+:::
+
+## Question 3
+
+What is the **median** weight of ring-tailed lemurs?
+What is the **median** weight of mongoose lemurs?
+Report a 95% bootstrap confidence interval together with your point estimates.
+Use `set.seed(123)` and `reps = 10000` to create your bootstrap confidence intervals.
+
+## Question 4
+
+Your friend has never taken a statistics course.
+Describe to your friend the process of "bootstrap sampling" in the previous exercise to create a bootstrap confidence interval in your own words.
+Walk your friend through the process of collecting a bootstrap sample, computing a statistic and then repeating).
+You may find it helpful to describe it as drawing pieces of paper from a bag like we did in class.
+
+::: callout-tip
+What would you write on the slips of paper?
+How many pieces of paper would be in the bag(s)?
+How many bag(s) would you need for the above exercise?
+:::
+
+## Question 5
+
+Do female lemurs differ in weight from male lemurs?
+Report the difference in mean weights between groups.
+Next, construct a 99% bootstrap distribution for the difference in means between groups and interpret it.
+If the interval covers 0, you might think there is no difference between groups.
+Does the interval cover 0?
+Use `set.seed(123)` and `reps = 10000.`
+
+## Question 6
+
+Create a new column that tells you whether or not a lemur was born in the first or second half of the year (January through June vs July through December).
+Create a meaningful plot to illustrate the weights of each group of lemurs.
+Use `theme_bw()` to replace the default gray plot background.
+Based on your figure, which group of lemurs weighs more?
+Is the distribution of one or both groups skewed or symmetric?
+See [here](https://openintro-ims2.netlify.app/05-explore-numerical#sec-histograms) for more information about skew vs symmetric distributions.
+
+## Question 7
+
+Is there more variability in weight for lemurs born in the first half or second half of the year?
+Report the estimated standard deviation of each group.
+Report a 90% bootstrap confidence interval of s.d.
+for each group.
+Interpret the confidence intervals in context.
+Use `set.seed(123)` and remember to set `reps = 10000`.
+
+# Part 2: Harassment at work
+
+The General Social Survey (GSS) gathers data on contemporary American society in order to monitor and explain trends and constants in attitudes, behaviors, and attributes.
+Hundreds of trends have been tracked since 1972.
+In addition, since the GSS adopted questions from earlier surveys, trends can be followed for up to 70 years.
+The GSS contains a standard core of demographic, behavioral, and attitudinal questions, plus topics of special interest.
+Among the topics covered are civil liberties, crime and violence, inter-group tolerance, morality, national spending priorities, psychological well-being, social mobility, and stress and traumatic events.
+
+The data for this part comes from the `gss16` data frame (containing data from the 2016 GSS) from the **dsbox** package.
+
+## Question 8
+
+In 2016, the GSS added a new question on harassment at work.
+The question is phrased as the following.
+
+Over the past five years, have you been harassed by your superiors or co-workers at your job, for example, have you experienced any bullying, physical or psychological abuse?
+
+Answers to this question are stored in the `harass5` variable in our data set.
+
+a.  Create a subset of the data that only contains `Yes` and `No` answers for the harassment question.
+    How many respondents chose each of these answers?
+
+b.  Describe how bootstrapping can be used to estimate the proportion of all Americans who have been harassed by their superiors or co-workers at their job.
+
+c.  Calculate a 95% bootstrap confidence interval for the proportion of Americans who have been harassed by their superiors or co-workers at their job.
+    Use 1000 iterations when creating your bootstrap distribution.
+    Interpret this interval in context of the data.
+
+# Part 3: Second chances
+
+## Question 9
+
+A second chance for an exercise: Take one of the exercises from a previous homework assignment, ideally one you received more feedback on / lost more points on and improve it.
+First, write one sentence reminding us of the specific exercise and a a few sentences on why you chose this specific exercise to improve and how you plan to improve it.
+Some of these improvements might be "fixes" for things that were pointed out as missing or incorrect.
+Some of them might be things you hoped to do before the homework deadline, but didn't get a chance to.
+Some notes for completing this exercise:
+
+-   You will need to add your data from your the homework assignment to the data/ folder in this assignment.
+    You do not need to also add a data dictionary.
+
+-   You will need to copy over any code needed for cleaning / preparing your data for this specific exercise.
+    You can reuse code from your previous assignment but note that we will re-evaluate your code as part of the grading for this exercise.
+    This means we might catch something wrong with it that we didn't catch before, so if you spot any errors make sure to fix them.
+
+-   Don't worry about being critical of your own work.
+    Even if you lost no points on the plot, if you think it can be improved, articulate how / why.
+    We will not go back and penalize for any mistakes you might point out that we didn't catch at the time of grading your homework assignment.
+    There's no risk to being critical!
