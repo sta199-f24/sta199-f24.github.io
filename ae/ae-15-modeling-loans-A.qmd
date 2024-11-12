@@ -1,10 +1,9 @@
 ---
-title: "Modelling loan interest rates"
+title: "AE 15: Modelling loan interest rates"
 subtitle: "Suggested answers"
 categories: 
   - Application exercise
   - Answers
-editor: visual
 ---
 
 ::: callout-important

@@ -1,5 +1,5 @@
 ---
-title: "Modelling loan interest rates"
+title: "AE 15: Modelling loan interest rates"
 ---
 
 In this application exercise we will be studying loan interest rates.
