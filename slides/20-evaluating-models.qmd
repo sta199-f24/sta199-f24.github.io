@@ -58,7 +58,7 @@ todays_ae <- "ae-17-forest-classification"
 
 ## Announcements {.smaller}
 
--   Add announcements...
+-   Project milestone 3 - Improvement and progress due at 5 pm on Friday
 
 # Washington forests
 
