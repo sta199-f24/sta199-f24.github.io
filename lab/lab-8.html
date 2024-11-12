@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.12">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="description" content="Mon, Nov 25 at 8:30 am">
-
 <title>Lab 8 – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,8 +18,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -42,8 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-92dff2eee490a48d96494bac12dc7076.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -69,10 +98,7 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<meta name="quarto:status" content="draft">
-
-
+}</script><meta name="quarto:status" content="draft">
 <meta property="og:title" content="Lab 8 – STA 199">
 <meta property="og:description" content="Mon, Nov 25 at 8:30 am">
 <meta property="og:site_name" content="STA 199">
@@ -82,13 +108,10 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -99,23 +122,18 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f24" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
     <div class="dropdown">
       <a href="" title="Support" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Support"><i class="bi bi-life-preserver"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
+<li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">
               <i class="bi bi-person-raised-hand pe-1"></i>
             Office hours
@@ -134,11 +152,11 @@ ul.task-list li input[type="checkbox"] {
             </a>
           </li>
       </ul>
-    </div>
+</div>
     <div class="dropdown">
       <a href="" title="Canvas" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Canvas"><i class="bi bi-file-check-fill"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
-          <li>
+<li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/39994/announcements">
               <i class="bi bi-megaphone-fill pe-1"></i>
             Announcements
@@ -157,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
             </a>
           </li>
       </ul>
-    </div>
+</div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
@@ -168,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
@@ -176,8 +194,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -220,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -229,8 +247,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
@@ -261,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -270,8 +288,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/description.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Description</span></a>
@@ -314,7 +332,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab.html" class="sidebar-item-text sidebar-link">
@@ -334,18 +352,50 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+<li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines">Guidelines</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-1-lemurs" id="toc-part-1-lemurs" class="nav-link" data-scroll-target="#part-1-lemurs">Part 1: Lemurs</a>
+  <ul class="collapse">
+<li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-2-harassment-at-work" id="toc-part-2-harassment-at-work" class="nav-link" data-scroll-target="#part-2-harassment-at-work">Part 2: Harassment at work</a>
+  <ul class="collapse">
+<li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-3-second-chances" id="toc-part-3-second-chances" class="nav-link" data-scroll-target="#part-3-second-chances">Part 3: Second chances</a>
+  <ul class="collapse">
+<li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-8.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Lab 8</h1>
 <p class="subtitle lead">To be posted</p>
   <div class="quarto-categories">
@@ -369,15 +419,189 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><section id="introduction" class="level1"><h1>Introduction</h1>
+<p>In this lab you’ll <strong>TO DO: Add intro.</strong> And you’ll wrap up the lab revisiting the topic of data science ethics.</p>
+<section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of the lab, you will…</p>
+<ul>
+<li><strong>TO DO: Add LOs.</strong></li>
+</ul>
+<p>And, as usual, you will also…</p>
+<ul>
+<li>Get more experience with data science workflow using R, RStudio, Git, and GitHub</li>
+<li>Further your reproducible authoring skills with Quarto</li>
+<li>Improve your familiarity with version control using Git and GitHub</li>
+</ul></section><section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>Log in to RStudio, clone your <code>lab-8</code> repo from GitHub, open your <code>lab-8.qmd</code> document, and get started!</p>
+</section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>In this lab, we will work with the</p>
+<ul>
+<li>
+<strong>tidyverse</strong> package for doing data analysis in a “tidy” way,</li>
+<li>
+<strong>tidymodels</strong> package for modeling in a “tidy” way, and</li>
+<li>
+<strong>openintro</strong> package for the dataset for Part 1. <strong>TO DO:</strong> Check.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://openintrostat.github.io/openintro/">openintro</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>
+<strong>Run</strong> the code cell by clicking on the green triangle (play) button for the code cell labeled <code>load-packages</code>. This loads the package so that its features (the functions and datasets in it) are accessible from your <em>Console</em>.</li>
+<li>Then, <strong>render</strong> the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document.</li>
+</ul></section><section id="guidelines" class="level2"><h2 class="anchored" data-anchor-id="guidelines">Guidelines</h2>
+<p>As we’ve discussed in lecture, your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.</p>
+<p>Additionally, code should follow the <a href="https://style.tidyverse.org/">tidyverse style</a>. Particularly,</p>
+<ul>
+<li><p>there should be spaces before and line breaks after each <code>+</code> when building a <code>ggplot</code>,</p></li>
+<li><p>there should also be spaces before and line breaks after each <code>|&gt;</code> in a data transformation pipeline,</p></li>
+<li><p>code should be properly indented,</p></li>
+<li><p>there should be spaces around <code>=</code> signs and spaces after commas.</p></li>
+</ul>
+<p>Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to remind you to <strong>render, commit, and push</strong> your changes to GitHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You are also expected to pay attention to <a href="https://en.wikipedia.org/wiki/Code_smell">code smell</a> in addition to code style and readability. You should review and improve your code to avoid redundant steps (e.g., grouping, ungrouping, and grouping again by the same variable in a pipeline), using inconsistent syntax (e.g., <code>!</code> to say “not” in one place and <code>-</code> in another place), etc.</p>
+</div>
+</div>
+</section></section><section id="part-1-lemurs" class="level1"><h1>Part 1: Lemurs</h1>
+<p>This week we’ll be working with data from the <a href="https://lemur.duke.edu/">Duke Lemur Center</a>, which houses over 200 lemurs across 14 species – the most diverse population of lemurs on Earth, outside their native Madagascar.</p>
+<blockquote class="blockquote">
+<p>Lemurs are the most threatened group of mammals on the planet, and 95% of lemur species are at risk of extinction. Our mission is to learn everything we can about lemurs – because the more we learn, the better we can work to save them from extinction. They are endemic only to Madagascar, so it’s essentially a one-shot deal: once lemurs are gone from Madagascar, they are gone from the wild.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>By studying the variables that most affect their health, reproduction, and social dynamics, the Duke Lemur Center learns how to most effectively focus <a href="https://lemur.duke.edu/protect/overview-madagascar-conservation-programs/">their conservation efforts</a>. And the more we learn about lemurs, the better we can educate the public around the world about just how amazing these animals are, why they need to be protected, and how each and every one of us can make a difference in their survival.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Source: <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md">TidyTuesday</a></p>
+</blockquote>
+<p>The codebook for the deataset can be found <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md#lemur_datacsv">here</a>. While the TidyTuesday project used the full dataset, we’ll be working with a subset, which can be found in the data folder.</p>
+<p>First let’s load the packages.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p>Load the <code>lemurs</code> data from your <code>data</code> folder and save it as <code>lemurs</code>. Then, report which “types” of lemurs are represented in the sample and how many of each. Note that this information is in the <code>taxon</code> variable. You should refer back to the linked data dictionary to understand what the different values of <code>taxon</code> mean. Your response should be a tibble with at least three columns, <code>taxon</code>, <code>taxon_name</code> (a new variable you create that contains the description of the <code>taxon</code>, e.g., <code>EMON</code> is <code>Mongoose lemur</code>), and <code>n</code> (number of lemurs with that taxon).</p>
+</section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>What is the <strong>mean</strong> weight of <strong>ring-tailed lemurs</strong>? Calculate, visualize, and interpret a 95% bootstrap confidence interval together with your point estimate. Use <code>set.seed(123)</code> and <code>reps = 1000</code> to create your bootstrap confidence interval.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Below is a step-by-step recipe for constructing and visualizing a confidence interval. The code snippets shown are not “complete”, they’re intended to guide you in the right direction.</p>
+<ul>
+<li><p>Step 1: Create a dataset of ring-tailed lemurs, and call it <code>lemurs_rt</code>. Note, these are <code>taxon == "LCAT"</code>.</p></li>
+<li><p>Step 2: Calculate the mean weight of ring-tailed lemurs.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">obs_stat_mean_rt</span> <span class="op">&lt;-</span> <span class="va">lemurs_rt</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">weight_g</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"mean"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Step 3: Construct a bootstrap distribution. Note: There is a <code>generate()</code> step, so you also need to set a seed before running the following.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">boot_dist_mean_rt</span> <span class="op">&lt;-</span> <span class="va">lemurs_rt</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">weight_g</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">1000</span>, type <span class="op">=</span> <span class="st">"bootstrap"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"mean"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Step 4: Calculate the bounds of the confidence interval. Don’t forget to interpret it as well!</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ci_95_mean_rt</span> <span class="op">&lt;-</span> <span class="va">boot_dist_mean_rt</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">get_confidence_interval</span><span class="op">(</span></span>
+<span>    point_estimate <span class="op">=</span> <span class="va">obs_stat_mean_rt</span>, </span>
+<span>    level <span class="op">=</span> <span class="fl">0.95</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Step 5: Visualize the confidence interval, overlaying it on the bootstrap distribution.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">visualize</span><span class="op">(</span><span class="va">boot_dist_mean_rt</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">shade_confidence_interval</span><span class="op">(</span>endpoints <span class="op">=</span> <span class="va">ci_95_mean_rt</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section><section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<p>What is the <strong>median</strong> weight of ring-tailed lemurs? What is the <strong>median</strong> weight of mongoose lemurs? Report a 95% bootstrap confidence interval together with your point estimates. Use <code>set.seed(123)</code> and <code>reps = 10000</code> to create your bootstrap confidence intervals.</p>
+</section><section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<p>Your friend has never taken a statistics course. Describe to your friend the process of “bootstrap sampling” in the previous exercise to create a bootstrap confidence interval in your own words. Walk your friend through the process of collecting a bootstrap sample, computing a statistic and then repeating). You may find it helpful to describe it as drawing pieces of paper from a bag like we did in class.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What would you write on the slips of paper? How many pieces of paper would be in the bag(s)? How many bag(s) would you need for the above exercise?</p>
+</div>
+</div>
+</section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+<p>Do female lemurs differ in weight from male lemurs? Report the difference in mean weights between groups. Next, construct a 99% bootstrap distribution for the difference in means between groups and interpret it. If the interval covers 0, you might think there is no difference between groups. Does the interval cover 0? Use <code>set.seed(123)</code> and <code>reps = 10000.</code></p>
+</section><section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<p>Create a new column that tells you whether or not a lemur was born in the first or second half of the year (January through June vs July through December). Create a meaningful plot to illustrate the weights of each group of lemurs. Use <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw()</a></code> to replace the default gray plot background. Based on your figure, which group of lemurs weighs more? Is the distribution of one or both groups skewed or symmetric? See <a href="https://openintro-ims2.netlify.app/05-explore-numerical#sec-histograms">here</a> for more information about skew vs symmetric distributions.</p>
+</section><section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<p>Is there more variability in weight for lemurs born in the first half or second half of the year? Report the estimated standard deviation of each group. Report a 90% bootstrap confidence interval of s.d. for each group. Interpret the confidence intervals in context. Use <code>set.seed(123)</code> and remember to set <code>reps = 10000</code>.</p>
+</section></section><section id="part-2-harassment-at-work" class="level1"><h1>Part 2: Harassment at work</h1>
+<p>The General Social Survey (GSS) gathers data on contemporary American society in order to monitor and explain trends and constants in attitudes, behaviors, and attributes. Hundreds of trends have been tracked since 1972. In addition, since the GSS adopted questions from earlier surveys, trends can be followed for up to 70 years. The GSS contains a standard core of demographic, behavioral, and attitudinal questions, plus topics of special interest. Among the topics covered are civil liberties, crime and violence, inter-group tolerance, morality, national spending priorities, psychological well-being, social mobility, and stress and traumatic events.</p>
+<p>The data for this part comes from the <code>gss16</code> data frame (containing data from the 2016 GSS) from the <strong>dsbox</strong> package.</p>
+<section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+<p>In 2016, the GSS added a new question on harassment at work. The question is phrased as the following.</p>
+<p>Over the past five years, have you been harassed by your superiors or co-workers at your job, for example, have you experienced any bullying, physical or psychological abuse?</p>
+<p>Answers to this question are stored in the <code>harass5</code> variable in our data set.</p>
+<ol type="a">
+<li><p>Create a subset of the data that only contains <code>Yes</code> and <code>No</code> answers for the harassment question. How many respondents chose each of these answers?</p></li>
+<li><p>Describe how bootstrapping can be used to estimate the proportion of all Americans who have been harassed by their superiors or co-workers at their job.</p></li>
+<li><p>Calculate a 95% bootstrap confidence interval for the proportion of Americans who have been harassed by their superiors or co-workers at their job. Use 1000 iterations when creating your bootstrap distribution. Interpret this interval in context of the data.</p></li>
+</ol></section></section><section id="part-3-second-chances" class="level1"><h1>Part 3: Second chances</h1>
+<section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+<p>A second chance for an exercise: Take one of the exercises from a previous homework assignment, ideally one you received more feedback on / lost more points on and improve it. First, write one sentence reminding us of the specific exercise and a a few sentences on why you chose this specific exercise to improve and how you plan to improve it. Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the homework deadline, but didn’t get a chance to. Some notes for completing this exercise:</p>
+<ul>
+<li><p>You will need to add your data from your the homework assignment to the data/ folder in this assignment. You do not need to also add a data dictionary.</p></li>
+<li><p>You will need to copy over any code needed for cleaning / preparing your data for this specific exercise. You can reuse code from your previous assignment but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors make sure to fix them.</p></li>
+<li><p>Don’t worry about being critical of your own work. Even if you lost no points on the plot, if you think it can be improved, articulate how / why. We will not go back and penalize for any mistakes you might point out that we didn’t catch at the time of grading your homework assignment. There’s no risk to being critical!</p></li>
+</ul>
 
 
-<p>To be posted.</p>
-
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -942,21 +1166,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2024, Mine Çetinkaya-Rundel</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-8.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-8.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
