@@ -8,8 +8,8 @@ description: "Mon, Nov 18 at 8:30 am"
 # Introduction
 
 In this lab you'll start your practice of statistical modeling.
-You'll fit models, interpret model output, and make decisions about your data and research question based on the model results.
-And you'll wrap up the lab revisiting the topic of data science ethics.
+You'll fit models for classification, interpret model output, and make decisions about your data and research question based on the model results.
+And you'll wrap up the lab sharing a statistics and/or data science experience.
 
 ::: callout-note
 This lab assumes you've completed the labs so far and doesn't repeat setup and overview content from those labs.
