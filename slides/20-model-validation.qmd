@@ -74,7 +74,7 @@ library(forested)
 
 ## Data
 
--   The U.S. Forest Service maintains machine learning models to predict whether a plot of land is “forested.”
+-   The U.S. Forest Service maintains machine learning models to predict whether a plot of land is "forested."
 
 -   This classification is important for research, legislation, land management, etc. purposes.
 
@@ -110,9 +110,7 @@ levels(forested$forested)
 
 ## `?forested`
 
-```{=html}
 <iframe width="900" height="500" src="https://simonpcouch.github.io/forested/reference/forested.html" title="forested" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
 
 ## Should we include a predictor?
 
@@ -132,20 +130,21 @@ To determine whether we should include a predictor in a model, we should start b
 ## We've been cheating!
 
 ::: incremental
-- So far, we've been using all the data we have for building models. In predictive contexts, this would be considered *cheating*.
+-   So far, we've been using all the data we have for building models.
+    In predictive contexts, this would be considered *cheating*.
 
-- Evaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you've already seen.
+-   Evaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you've already seen.
 :::
 
 ## Spending your data {.smaller}
 
 For predictive models (used primarily in machine learning), we typically split data into training and test sets:
 
-![](images/20/test-train-split-1.svg)
+![](images/20/test-train-split-1.svg){fig-align="center"}
 
-- The **training set** is used to estimate model parameters.
+-   The **training set** is used to estimate model parameters.
 
-- The **test set** is used to find an independent assessment of model performance.
+-   The **test set** is used to find an independent assessment of model performance.
 
 . . .
 
@@ -156,12 +155,11 @@ Do not use, or even peek at, the test set during training.
 ## How much to spend?
 
 ::: incremental
-- The more data we spend (use in training), the better estimates
-we’ll get.
+-   The more data we spend (use in training), the better estimates we’ll get.
 
-- Spending too much data in training prevents us from computing a good assessment of predictive performance.
+-   Spending too much data in training prevents us from computing a good assessment of predictive performance.
 
-- Spending too much data in testing prevents us from computing a good estimate of model parameters.
+-   Spending too much data in testing prevents us from computing a good estimate of model parameters.
 :::
 
 ## The initial split
@@ -180,11 +178,11 @@ What does `set.seed()` do?
 :::
 
 ::: incremental
-- To create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.
+-   To create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.
 
-- This allows us to reproduce results by setting that seed.
+-   This allows us to reproduce results by setting that seed.
 
-- Which seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance.
+-   Which seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance.
 :::
 
 ## Accessing the data
@@ -211,16 +209,17 @@ forested_train
 
 ## Initial questions {.smaller}
 
-- What’s the distribution of the outcome, `forested`?
+-   What’s the distribution of the outcome, `forested`?
 
-- What’s the distribution of numeric variables like `precip_annual`?
+-   What’s the distribution of numeric variables like `precip_annual`?
 
-- How does the distribution of forested differ across the categorical and numerical variables?
+-   How does the distribution of forested differ across the categorical and numerical variables?
 
 . . .
 
 ::: task
-Which dataset should we use for the exploration? The entire data `forested`, the training data `forested_train`, or the testing data `forested_test`?
+Which dataset should we use for the exploration?
+The entire data `forested`, the training data `forested_train`, or the testing data `forested_test`?
 :::
 
 ## `forested`
@@ -283,20 +282,61 @@ ggplot(forested_train, aes(x = lon, y = lat, color = forested)) +
   theme_minimal()
 ```
 
+# Terminology
+
+## False negative and positive
+
+-   **False negative rate** is the proportion of actual positives that were classified as negatives.
+
+-   **False positive rate** is the proportion of actual negatives that were classified as positives.
+
+## Sensitivity
+
+**Sensitivity** is the proportion of actual positives that were correctly classified as positive.
+
+-   Also known as **true positive rate** and **recall**
+
+-   Sensitivity = 1 − False negative rate
+
+-   Useful when false negatives are more "expensive" than false positives
+
+## Specificity
+
+**Specificity** is the proportion of actual negatives that were correctly classified as negative
+
+-   Also known as **true negative rate**
+
+-   Specificity = 1 − False positive rate
+
+## ROC curve
+
+The **receiver operating characteristic (ROC) curve** allows to assess the model performance across a range of thresholds.
+
+![](images/20/roc-curve.png)
+
+## ROC curve {.smaller}
+
+::: task
+Which corner of the plot indicates the best model performance?
+:::
+
+![](images/20/roc-curve-annotated.png)
+
 # Next steps
 
 ## Next steps {.smaller}
 
 ::: incremental
-- Fit models on training data
+-   Fit models on training data
 
-- Make predictions on testing data
+-   Make predictions on testing data
 
-- Evaluate predictions on testing data:
-  - Linear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.
-  - Logistic models: False negative and positive rates, AUC (area under the curve), etc.
+-   Evaluate predictions on testing data:
 
-- Make decisions based on model predictive performance, validity across various testing/training splits (aka "cross validation"), explainability
+    -   Linear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.
+    -   Logistic models: False negative and positive rates, AUC (area under the curve), etc.
+
+-   Make decisions based on model predictive performance, validity across various testing/training splits (aka "cross validation"), explainability
 :::
 
 . . .
@@ -305,7 +345,7 @@ ggplot(forested_train, aes(x = lon, y = lat, color = forested)) +
 We will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses.
 :::
 
-## Application exercise: `{r} todays_ae` {.smaller}
+## `{r} todays_ae` {.smaller}
 
 ::: appex
 -   Go to your ae project in RStudio.
@@ -316,5 +356,3 @@ We will only learn about a subset of these in this course, but you can go furthe
 
 -   Work through the application exercise in class, and render, commit, and push your edits.
 :::
-
-

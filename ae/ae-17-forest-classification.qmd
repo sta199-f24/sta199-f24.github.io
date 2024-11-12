@@ -1,0 +1,172 @@
+---
+title: "AE 17: Forest classification"
+---
+
+In this application exercise, we will
+
+-   Split our data into testing and training
+-   Fit logistic regression regression models to testing data to classify outcomes
+-   Evaluate performance of models on testing data
+
+We will use **tidyverse** and **tidymodels** for data exploration and modeling, respectively, and the **forested** package for the data.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(tidymodels)
+library(forested)
+```
+
+Remember from the lecture that the `forested` dataset contains information on whether a plot is forested (`Yes`) or not (`No`) as well as numerical and categorical features of that plot.
+
+```{r}
+#| label: glimpse-forested
+glimpse(forested)
+```
+
+# Spending your data
+
+Split your data into testing and training in a reproducible manner and display the split object.
+
+```{r}
+#| label: train-test-split
+# add code here
+```
+
+What percent of the original `forested` data is allocated to training and what percent to testing?
+Compare your response to your neighbor's.
+Are the percentages roughly consistent?
+What determines this in the `initial_split()`?
+How would the code need to be updated to allocate 80% of the data to training and the remaining 20% to testing?
+
+```{r}
+#| label: train-test-percentages
+# add code here
+```
+
+Add response here.
+
+```{r}
+#| label: train-test-80-20
+# add code here
+```
+
+Let's stick with the default split and save our testing and training data.
+
+```{r}
+#| label: train-test-save
+# add code here
+```
+
+# Exploratory data analysis
+
+Create a visualization that explores the relationship between the outcome, one numerical predictor, and one categorical predictor.
+Then, describe, in a few sentences, what the visualization shows about the relationship between these variables.
+
+**Note:** Pay attention to which dataset you use for your exploration.
+
+```{r}
+#| label: eda-plot
+# add code here
+```
+
+Add response here.
+
+# Model 1: Custom choice of predictors
+
+## Fit
+
+Fit a model for classifying plots as forested or not based on a subset of predictors of your choice.
+Name the model `forested_custom_fit` and display a tidy output of the model.
+
+```{r}
+#| label: forested-custom-fit
+# add code here
+```
+
+## Predict
+
+Predict for the testing data using this model.
+
+```{r}
+#| label: forested-custom-aug
+# add code here
+```
+
+## Evaluate
+
+Calculate the false positive and false negative rates for the testing data using this model.
+
+```{r}
+#| label: forested-custom-eval
+# add code here
+```
+
+Another commonly used display of this information is a confusion matrix.
+Create this using the `conf_mat()` function.
+You will need to review the documentation for the function to determine how to use it.
+
+```{r}
+#| label: conf-mat-custom
+# add code here
+```
+
+## Sensitivity, specificity, ROC curve
+
+Calculate sensitivity and specificity and draw the ROC curve.
+
+```{r}
+#| label: forested-custom-roc
+# add code here
+```
+
+# Model 2: All predictors
+
+## Fit
+
+Fit a model for classifying plots as forested or not based on all predictors available.
+Name the model `forested_full_fit` and display a tidy output of the model.
+
+```{r}
+#| label: forested-full-fit
+# add code here
+```
+
+## Predict
+
+Predict for the testing data using this model.
+
+```{r}
+#| label: forested-full-aug
+# add code here
+```
+
+## Evaluate
+
+Calculate the false positive and false negative rates for the testing data using this model.
+
+```{r}
+#| label: forested-full-eval
+# add code here
+```
+
+## Sensitivity, specificity, ROC curve
+
+Calculate sensitivity and specificity and draw the ROC curve.
+
+```{r}
+#| label: forested-full-roc
+# add code here
+```
+
+# Model 1 vs. Model 2
+
+Plot both ROC curves and articulate how you would use them to compare these models.
+
+```{r}
+#| label: compare
+# add code here
+```
+
+Add response here.
