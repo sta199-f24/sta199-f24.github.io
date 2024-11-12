@@ -352,7 +352,7 @@ We will only learn about a subset of these in this course, but you can go furthe
 
 -   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
 
--   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*. You might be prompted to install **forested**, say yes.
 
 -   Work through the application exercise in class, and render, commit, and push your edits.
 :::
