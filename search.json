@@ -5198,7 +5198,7 @@
     "href": "lab/lab-7.html#question-9",
     "title": "Lab 7",
     "section": "Question 9",
-    "text": "Question 9\n\nFit a new model that adds the additional explanatory variable of polviews to your model from Question 7. Report the tidy output of the model.\nNow, predict the probability of agreeing with the following statement “Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government.” (Agree in advfront) for a Conservative person with 7 years of education."
+    "text": "Question 9\n\nFit a new model that adds the additional explanatory variable of polviews to your model from Question 8. Report the tidy output of the model.\nNow, predict the probability of agreeing with the following statement “Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government.” (Agree in advfront) for a Conservative person with 7 years of education."
   },
   {
     "objectID": "lab/lab-7.html#question-10",
