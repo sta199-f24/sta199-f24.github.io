@@ -255,7 +255,7 @@ b.  Create a new data frame called `gss22_advfront` that only contains the varia
     Report the number of rows and columns of `gss22_advfront`.
     Additionally, report what percent of the observations were discarded at this step.
 
-c.  Re-level the `advfront` variable such that it has two levels: `Strongly agree` and "`Agree"` combined into a new level called `Agree` and the remaining levels combined into"`Not agree"`.
+c.  Re-level the `advfront` variable such that it has two levels: `"Strongly agree"` and `"Agree"` combined into a new level called `Agree` and the remaining levels combined into"`Not agree"`.
     Then, re-order the levels in the following order: `"Agree"` and `"Not agree"`.
     Finally, `count()` how many times each new level appears in the `advfront` variable.
 
