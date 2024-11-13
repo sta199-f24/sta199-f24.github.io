@@ -381,15 +381,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li>
-<a href="#part-2-harassment-at-work" id="toc-part-2-harassment-at-work" class="nav-link" data-scroll-target="#part-2-harassment-at-work">Part 2: Harassment at work</a>
+<a href="#part-2-hotel-cancellations-again" id="toc-part-2-hotel-cancellations-again" class="nav-link" data-scroll-target="#part-2-hotel-cancellations-again">Part 2: Hotel cancellations (again)</a>
   <ul class="collapse">
 <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
   </ul>
 </li>
   <li>
 <a href="#part-3-second-chances" id="toc-part-3-second-chances" class="nav-link" data-scroll-target="#part-3-second-chances">Part 3: Second chances</a>
   <ul class="collapse">
-<li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+<li><a href="#question-9-1" id="toc-question-9-1" class="nav-link" data-scroll-target="#question-9-1">Question 9</a></li>
+  <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/lab/lab-8.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -420,7 +422,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><section id="introduction" class="level1"><h1>Introduction</h1>
-<p>In this lab you’ll <strong>TO DO: Add intro.</strong> And you’ll wrap up the lab revisiting the topic of data science ethics.</p>
+<p>In this lab you’ll <strong>TO DO: Add intro.</strong> And you’ll wrap up the lab revisiting two questions from previous assignments / assessments.</p>
 <section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>By the end of the lab, you will…</p>
 <ul>
@@ -577,28 +579,35 @@ Tip
 </section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p>Do female lemurs differ in weight from male lemurs? Report the difference in mean weights between groups. Next, construct a 99% bootstrap distribution for the difference in means between groups and interpret it. If the interval covers 0, you might think there is no difference between groups. Does the interval cover 0? Use <code>set.seed(123)</code> and <code>reps = 10000.</code></p>
 </section><section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
-<p>Create a new column that tells you whether or not a lemur was born in the first or second half of the year (January through June vs July through December). Create a meaningful plot to illustrate the weights of each group of lemurs. Use <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw()</a></code> to replace the default gray plot background. Based on your figure, which group of lemurs weighs more? Is the distribution of one or both groups skewed or symmetric? See <a href="https://openintro-ims2.netlify.app/05-explore-numerical#sec-histograms">here</a> for more information about skew vs symmetric distributions.</p>
+<p>Create a new column that tells you whether or not a lemur was born in the first or second half of the year (January through June vs.&nbsp;July through December). Create a meaningful plot to illustrate the weights of each group of lemurs. Use <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw()</a></code> to replace the default gray plot background. Based on your figure, which group of lemurs weighs more? Is the distribution of one or both groups skewed or symmetric?</p>
 </section><section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
-<p>Is there more variability in weight for lemurs born in the first half or second half of the year? Report the estimated standard deviation of each group. Report a 90% bootstrap confidence interval of s.d. for each group. Interpret the confidence intervals in context. Use <code>set.seed(123)</code> and remember to set <code>reps = 10000</code>.</p>
-</section></section><section id="part-2-harassment-at-work" class="level1"><h1>Part 2: Harassment at work</h1>
-<p>The General Social Survey (GSS) gathers data on contemporary American society in order to monitor and explain trends and constants in attitudes, behaviors, and attributes. Hundreds of trends have been tracked since 1972. In addition, since the GSS adopted questions from earlier surveys, trends can be followed for up to 70 years. The GSS contains a standard core of demographic, behavioral, and attitudinal questions, plus topics of special interest. Among the topics covered are civil liberties, crime and violence, inter-group tolerance, morality, national spending priorities, psychological well-being, social mobility, and stress and traumatic events.</p>
-<p>The data for this part comes from the <code>gss16</code> data frame (containing data from the 2016 GSS) from the <strong>dsbox</strong> package.</p>
+<p>Is there more variability in weight for lemurs born in the first half or second half of the year? Report the estimated standard deviation of each group. Report a 90% bootstrap confidence interval of standard deviation for each group. Interpret the confidence intervals in context. Use <code>set.seed(123)</code> and remember to set <code>reps = 10000</code>.</p>
+</section></section><section id="part-2-hotel-cancellations-again" class="level1"><h1>Part 2: Hotel cancellations (again)</h1>
+<p>For this exercise, we will work with hotel cancellations data from the previous lab. Recall that the data describe the demand of two different types of hotels. Each observation represents a hotel booking between July 1, 2015 and August 31, 2017. Some bookings were cancelled (<code>is_canceled = 1</code>) and others were kept, i.e., the guests checked into the hotel (<code>is_canceled = 0</code>). You can view the code book for all variables <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md">here</a>.</p>
+<p>The dataset, called <code>hotels.csv</code>, can be found in the <code>data</code> folder.</p>
 <section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
-<p>In 2016, the GSS added a new question on harassment at work. The question is phrased as the following.</p>
-<p>Over the past five years, have you been harassed by your superiors or co-workers at your job, for example, have you experienced any bullying, physical or psychological abuse?</p>
-<p>Answers to this question are stored in the <code>harass5</code> variable in our data set.</p>
 <ol type="a">
-<li><p>Create a subset of the data that only contains <code>Yes</code> and <code>No</code> answers for the harassment question. How many respondents chose each of these answers?</p></li>
-<li><p>Describe how bootstrapping can be used to estimate the proportion of all Americans who have been harassed by their superiors or co-workers at their job.</p></li>
-<li><p>Calculate a 95% bootstrap confidence interval for the proportion of Americans who have been harassed by their superiors or co-workers at their job. Use 1000 iterations when creating your bootstrap distribution. Interpret this interval in context of the data.</p></li>
-</ol></section></section><section id="part-3-second-chances" class="level1"><h1>Part 3: Second chances</h1>
-<section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
-<p>A second chance for an exercise: Take one of the exercises from a previous homework assignment, ideally one you received more feedback on / lost more points on and improve it. First, write one sentence reminding us of the specific exercise and a a few sentences on why you chose this specific exercise to improve and how you plan to improve it. Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the homework deadline, but didn’t get a chance to. Some notes for completing this exercise:</p>
+<li><p>Read it in with <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>.</p></li>
+<li><p>Transform the <code>is_canceled</code> variable to be a factor with “not canceled” (0) as the first level and “canceled” (1) as the second level.</p></li>
+<li><p>Split the data into training (75%) and testing (25%) sets.</p></li>
+<li><p>Fit a model to the training data predicting whether a reservation is canceled from <code>hotel</code> type (Resort or City Hotel) and at least two other predictors.</p></li>
+<li><p>Make predictions for the testing data, calculate false positive and negative rates, draw the ROC curve, and calculate the AUC (area under the curve).</p></li>
+</ol></section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+<p>a. Fit another model to the training data predicting whether a reservation is canceled from the variables you used in Question 8 plus one other predictor. State the new predictor and why you chose it.</p>
+<p>b. Make predictions for the testing data, calculate false positive and negative rates, draw the ROC curve, and calculate the AUC (area under the curve).</p>
+<p>c. Based on your findings so far, articulate which model is preferable for predicting hotel cancellations and why.</p>
+</section></section><section id="part-3-second-chances" class="level1"><h1>Part 3: Second chances</h1>
+<p>In this part you get to revisit work you’ve turned in before that can be improved. For Question 9 you’ll pick a question from a previous lab and for Question 10 a question from your take-home midterm, and improve them.</p>
+<p>Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the deadline, but didn’t get a chance to. Some notes for completing this exercise:</p>
 <ul>
-<li><p>You will need to add your data from your the homework assignment to the data/ folder in this assignment. You do not need to also add a data dictionary.</p></li>
-<li><p>You will need to copy over any code needed for cleaning / preparing your data for this specific exercise. You can reuse code from your previous assignment but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors make sure to fix them.</p></li>
-<li><p>Don’t worry about being critical of your own work. Even if you lost no points on the plot, if you think it can be improved, articulate how / why. We will not go back and penalize for any mistakes you might point out that we didn’t catch at the time of grading your homework assignment. There’s no risk to being critical!</p></li>
+<li><p>You might need to add your data from your the lab / midterm to the <code>data/</code> folder in this assignment. You do not need to also add a data dictionary.</p></li>
+<li><p>You will need to copy over any code needed for cleaning / preparing your data for this specific question. You can reuse code from your previous assignment but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors make sure to fix them.</p></li>
+<li><p>Don’t worry about being critical of your own work. Even if you lost no points on the question, if you think it can be improved, articulate how / why. We will not go back and apply additional penalties for any mistakes you might point out that we didn’t catch at the time of grading your lab / midterm. There’s no risk to being critical!</p></li>
 </ul>
+<section id="question-9-1" class="level2"><h2 class="anchored" data-anchor-id="question-9-1">Question 9</h2>
+<p>Choose one question from a previous lab that you received lots of feedback on and/or lost many points on and improve it. First, write one sentence reminding us of the specific question and a a few sentences on why you chose this specific question to improve and how you plan to improve it. Then, improve it.</p>
+</section><section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
+<p>Choose one question from the take-home midterm that you received lots of feedback on and/or lost many points on and improve it. First, write one sentence reminding us of the specific question and a a few sentences on why you chose this specific question to improve and how you plan to improve it. Then, improve it.</p>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
