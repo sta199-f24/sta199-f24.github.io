@@ -4,7 +4,7 @@ subtitle: "Lecture 21"
 date: "2024-11-13"
 format: 
   live-revealjs: 
-    output-file: 20-bootstrap-slides.html
+    output-file: 21-bootstrap-slides.html
 webr:
   cell-options:
     autorun: false
@@ -73,7 +73,7 @@ library(knitr)       # for neatly formatted tables
 
 ## Data: Houses in Duke Forest
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 -   Data on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020
 -   Scraped from Zillow
@@ -83,7 +83,7 @@ library(knitr)       # for neatly formatted tables
 ::: {.column width="50%"}
 ![](images/21/duke_forest_home.jpg){fig-alt="Home in Duke Forest"}
 :::
-:::
+:::::
 
 **Goal**: Use the area (in square feet) to understand variability in the price of houses in Duke Forest.
 
@@ -165,9 +165,14 @@ A confidence interval will allow us to make a statement like "*For each addition
 
 . . .
 
--   Should X be \$10? \$100? \$1000?
+-   Should X be \$10?
+    \$100?
+    \$1000?
 
--   If we were to take another sample of `r nrow(duke_forest)` would we expect the slope calculated based on that sample to be exactly `r dollar(slope)`? Off by \$10? \$100? \$1000?
+-   If we were to take another sample of `r nrow(duke_forest)` would we expect the slope calculated based on that sample to be exactly `r dollar(slope)`?
+    Off by \$10?
+    \$100?
+    \$1000?
 
 -   The answer depends on how variable (from one sample to another sample) the sample statistic (the slope) is
 
@@ -200,7 +205,7 @@ df_boot_samples_5 <- duke_forest |>
 
 <!-- Fix the scales for these slides, so the difference in slopes is easier to see-->
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 #| echo: false
@@ -241,11 +246,11 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
   scale_x_continuous(limits = c(1000, 6500), labels = label_number())
 ```
 :::
-:::
+:::::
 
 ## Bootstrap sample 2
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 #| echo: false
@@ -275,11 +280,11 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
   scale_x_continuous(limits = c(1000, 6500), labels = label_number())
 ```
 :::
-:::
+:::::
 
 ## Bootstrap sample 3
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 #| echo: false
@@ -309,11 +314,11 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
   scale_x_continuous(limits = c(1000, 6500), labels = label_number())
 ```
 :::
-:::
+:::::
 
 ## Bootstrap sample 4
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 #| echo: false
@@ -343,11 +348,11 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
   scale_x_continuous(limits = c(1000, 6500), labels = label_number())
 ```
 :::
-:::
+:::::
 
 ## Bootstrap sample 5
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 #| echo: false
@@ -377,7 +382,7 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
   scale_x_continuous(limits = c(1000, 6500), labels = label_number())
 ```
 :::
-:::
+:::::
 
 . . .
 
@@ -385,7 +390,7 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
 
 ## Bootstrap samples 1 - 5
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 #| echo: false
@@ -411,7 +416,7 @@ ggplot(df_boot_samples_5, aes(x = area, y = price, group = replicate)) +
   scale_x_continuous(limits = c(1000, 6500), labels = label_number())
 ```
 :::
-:::
+:::::
 
 ## Bootstrap samples 1 - 100
 
@@ -424,7 +429,7 @@ df_boot_samples_100 <- duke_forest |>
   generate(reps = 100, type = "bootstrap")
 ```
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 #| echo: false
@@ -452,7 +457,7 @@ p_df_boot_samples_100 <- ggplot(df_boot_samples_100, aes(x = area, y = price, gr
 p_df_boot_samples_100
 ```
 :::
-:::
+:::::
 
 ## Slopes of bootstrap samples
 
@@ -490,7 +495,9 @@ df_boot_samples_100_hist
 ## Confidence level
 
 ::: task
-How confident are you that the true slope is between \$0 and \$250? How about \$150 and \$170? How about \$90 and \$210?
+How confident are you that the true slope is between \$0 and \$250?
+How about \$150 and \$170?
+How about \$90 and \$210?
 :::
 
 ```{r}
@@ -589,7 +596,8 @@ get_confidence_interval(
 ## Precision vs. accuracy {.smaller}
 
 ::: task
-If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?
+If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval?
+What drawbacks are associated with using a wider interval?
 :::
 
 . . .
@@ -605,7 +613,8 @@ How can we get best of both worlds -- high precision and high accuracy?
 ## Changing confidence level
 
 ::: task
-How would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?
+How would you modify the following code to calculate a 90% confidence interval?
+How would you modify it for a 99% confidence interval?
 :::
 
 ```{r}
@@ -651,4 +660,3 @@ get_confidence_interval(
 -   We report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population
 
 -   Since we can't continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability
-                                                                                                                                                                                                                                                                                           
