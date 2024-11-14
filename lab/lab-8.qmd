@@ -2,7 +2,7 @@
 title: Lab 8
 subtitle: To be posted
 categories: Lab
-description: "Mon, Nov 25 at 8:30 am"
+description: "Tue, Nov 26 at 10:30 pm"
 draft: true
 editor_options: 
   chunk_output_type: console
@@ -11,6 +11,12 @@ editor_options:
 # Introduction
 
 In this lab you'll **TO DO: Add intro.** And you'll wrap up the lab revisiting two questions from previous assignments / assessments.
+
+**TO DO:**
+- Add part on "what's coming up with projects"
+- Deadline note
+- Make one bootstrap Q into HT
+- Swap part 1 and 2
 
 ## Learning objectives
 

@@ -255,7 +255,7 @@ b.  Create a new data frame called `gss22_advfront` that only contains the varia
     Report the number of rows and columns of `gss22_advfront`.
     Additionally, report what percent of the observations were discarded at this step.
 
-c.  Re-level the `advfront` variable such that it has two levels: `Strongly agree` and "`Agree"` combined into a new level called `Agree` and the remaining levels combined into"`Not agree"`.
+c.  Re-level the `advfront` variable such that it has two levels: `"Strongly agree"` and `"Agree"` combined into a new level called `Agree` and the remaining levels combined into"`Not agree"`.
     Then, re-order the levels in the following order: `"Agree"` and `"Not agree"`.
     Finally, `count()` how many times each new level appears in the `advfront` variable.
 
@@ -280,7 +280,7 @@ c.  Using your estimated model, predict the probability of agreeing with the sta
 
 ## Question 9
 
-a.  Fit a new model that adds the additional explanatory variable of `polviews` to your model from Question 7.
+a.  Fit a new model that adds the additional explanatory variable of `polviews` to your model from Question 8.
     Report the tidy output of the model.
 
 b.  Now, predict the probability of agreeing with the following statement *"Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government."* (`Agree` in `advfront`) for a Conservative person with 7 years of education.
