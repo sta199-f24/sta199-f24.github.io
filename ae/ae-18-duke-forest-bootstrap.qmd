@@ -1,0 +1,120 @@
+---
+title: "AE 18: Houses in Duke Forest"
+---
+
+In this application exercise, we will use bootstrapping to construct confidence intervals.
+
+## Packages
+
+We will use **tidyverse** and **tidymodels** for data exploration and modeling, respectively, and the **openintro** package for the data, and the **knitr** package for formatting tables.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+library(knitr)
+```
+
+## Data
+
+The data are on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020.
+It was originally scraped from Zillow, and can be found in the `duke_forest` data set in the **openintro** R package.
+
+```{r}
+#| label: glimpse-data
+glimpse(duke_forest)
+```
+
+## Model
+
+```{r}
+#| label: fit-model
+df_fit <- linear_reg() |>
+  set_engine("lm") |>
+  fit(price ~ area, data = duke_forest)
+
+tidy(df_fit) |>
+  kable(digits = 2)
+```
+
+## Bootstrap confidence interval
+
+### 1. Calculate the observed fit (slope)
+
+```{r}
+#| label: observed-fit
+observed_fit <- duke_forest |>
+  specify(price ~ area) |>
+  fit()
+
+observed_fit
+```
+
+### 2. Take *n* bootstrap samples and fit models to each one.
+
+Fill in the code, then set `eval: true` .
+
+```{r}
+#| label: bootstrap
+#| eval: false
+n = 100
+set.seed(20241115)
+
+boot_fits <- ______ |>
+  specify(______) |>
+  generate(reps = ____, type = "bootstrap") |>
+  fit()
+
+boot_fits
+```
+
+-   Why do we set a seed before taking the bootstrap samples?
+
+-   Make a histogram of the bootstrap samples to visualize the bootstrap distribution.
+
+```{r}
+#| label: boot-hist
+# add code here
+```
+
+### 3. Compute the 95% confidence interval as the middle 95% of the bootstrap distribution
+
+Fill in the code, then set `eval: true` .
+
+```{r}
+#| label: calc-ci
+#| eval: false
+get_confidence_interval(
+  boot_fits, 
+  point_estimate = _____, 
+  level = ____,
+  type = "percentile"
+)
+```
+
+## Changing confidence level
+
+### Modify the code from Step 3 to create a 90% confidence interval.
+
+```{r}
+#| label: 90-ci
+# add code here
+```
+
+### Modify the code from Step 3 to create a 99% confidence interval.
+
+```{r}
+#| label: 99-ci
+# add code here
+```
+
+-   Which confidence level produces the most accurate confidence interval (90%, 95%, 99%)?
+    Explain
+
+-   Which confidence level produces the most precise confidence interval (90%, 95%, 99%)?
+    Explain
+
+-   If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval?
+    What drawbacks are associated with using a wider interval?
