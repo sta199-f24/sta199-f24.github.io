@@ -67,13 +67,13 @@ Fill in the code, then set `eval: true` .
 
 ```{r}
 #| label: bootstrap
-#| eval: false
+#| eval: true
 n = 100
 set.seed(20241115)
 
-boot_fits <- ______ |>
-  specify(______) |>
-  generate(reps = ____, type = "bootstrap") |>
+boot_fits <- duke_forest |>
+  specify(price ~ area) |>
+  generate(reps = n, type = "bootstrap") |>
   fit()
 
 boot_fits
@@ -85,7 +85,10 @@ boot_fits
 
 ```{r}
 #| label: boot-hist
-# add code here
+boot_fits |>
+  filter(term == "area") |>
+  ggplot(aes(x = estimate)) +
+  geom_histogram()
 ```
 
 ### 3. Compute the 95% confidence interval as the middle 95% of the bootstrap distribution
@@ -94,11 +97,11 @@ Fill in the code, then set `eval: true` .
 
 ```{r}
 #| label: calc-ci
-#| eval: false
+#| eval: true
 get_confidence_interval(
   boot_fits, 
-  point_estimate = _____, 
-  level = ____,
+  point_estimate = observed_fit, 
+  level = 0.95,
   type = "percentile"
 )
 ```
@@ -109,14 +112,24 @@ get_confidence_interval(
 
 ```{r}
 #| label: 90-ci
-# add code here
+get_confidence_interval(
+  boot_fits, 
+  point_estimate = observed_fit, 
+  level = 0.90,
+  type = "percentile"
+)
 ```
 
 ### Modify the code from Step 3 to create a 99% confidence interval.
 
 ```{r}
 #| label: 99-ci
-# add code here
+get_confidence_interval(
+  boot_fits, 
+  point_estimate = observed_fit, 
+  level = 0.99,
+  type = "percentile"
+)
 ```
 
 -   Which confidence level produces the most accurate confidence interval (90%, 95%, 99%)?
