@@ -399,7 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Lab 8</h1>
-<p class="subtitle lead">To be posted</p>
+<p class="subtitle lead">Everything so far II</p>
   <div class="quarto-categories">
     <div class="quarto-category">Lab</div>
   </div>
@@ -480,13 +480,10 @@ Note
 <strong>tidyverse</strong> package for doing data analysis in a “tidy” way,</li>
 <li>
 <strong>tidymodels</strong> package for modeling in a “tidy” way, and</li>
-<li>
-<strong>openintro</strong> package for the dataset for Part 1. <strong>TO DO:</strong> Check.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://openintrostat.github.io/openintro/">openintro</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>
@@ -529,25 +526,38 @@ Important
 </div>
 </div>
 </section></section><section id="part-1-hotel-cancellations-again" class="level1"><h1>Part 1: Hotel cancellations (again)</h1>
-<p>For this exercise, we will work with hotel cancellations data from the previous lab. Recall that the data describe the demand of two different types of hotels. Each observation represents a hotel booking between July 1, 2015 and August 31, 2017. Some bookings were cancelled (<code>is_canceled = 1</code>) and others were kept, i.e., the guests checked into the hotel (<code>is_canceled = 0</code>). You can view the code book for all variables <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md">here</a>.</p>
-<p>The dataset, called <code>hotels.csv</code>, can be found in the <code>data</code> folder.</p>
+<p>For this exercise, we will work with hotel cancellations data from the previous lab.</p>
+<p>The dataset, called <code>hotels.csv</code>, can be found in the <code>data</code> folder. Recall that the data describe the demand of two different types of hotels. Each observation represents a hotel booking between July 1, 2015 and August 31, 2017. Some bookings were cancelled (<code>is_canceled = 1</code>) and others were kept, i.e., the guests checked into the hotel (<code>is_canceled = 0</code>). You can learn more about the data at <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11" class="uri">https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11</a> and a data dictionary has been included in the README of the <code>data</code> folder of your repository.</p>
 <section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <ol type="a">
-<li><p>Read it in with <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>.</p></li>
-<li><p>Transform the <code>is_canceled</code> variable to be a factor with “not canceled” (0) as the first level and “canceled” (1) as the second level.</p></li>
-<li><p>Split the data into training (75%) and testing (25%) sets.</p></li>
-<li><p>Fit a model to the training data predicting whether a reservation is canceled from <code>hotel</code> type (Resort or City Hotel) and at least two other predictors.</p></li>
+<li><p>Read the data in with <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>.</p></li>
+<li><p>Transform the <code>is_canceled</code> variable to be a factor with “not canceled” (0) as the first level and “canceled” (1) as the second level. Confirm that you were able to successfully transform the variable by running <code>levels(hotel$is_canceled)</code>.</p></li>
+<li><p>Split the data into training (75%) and testing (25%) sets. Report the number of rows in the testing and training sets.</p></li>
+<li><p>Fit a model to the training data predicting whether a reservation is canceled from <code>hotel</code> type (Resort or City Hotel) and at least two other predictors. Provide a tidy output of the model fit.</p></li>
 <li><p>Make predictions for the testing data. Then, in a single pipeline, calculate the false positive and negative rates. Make sure that your answer makes it clear which rates are which.</p></li>
-</ol>
-<p>and draw the ROC curve, and calculate the AUC (area under the curve).</p>
-</section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+</ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <ol type="a">
-<li><p>Fit another model to the training data predicting whether a reservation is canceled from the variables you used in Question 8 plus one other predictor. State the new predictor and why you chose it.</p></li>
+<li><p>Fit another model to the training data predicting whether a reservation is canceled from the variables you used in Question 1 plus one other predictor. State the new predictor and why you chose it.</p></li>
 <li><p>Make predictions for the testing data. Then, in a single pipeline, calculate the false positive and negative rates. Make sure that your answer makes it clear which rates are which.</p></li>
 </ol></section><section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <ol type="a">
 <li><p>What was the name you used for the model fit object for the model you created in Question 1? What about in Question 2?</p></li>
-<li><p>Plot the ROC curves of the models from Question 1 and Question 2 on the same plot, using different colors for each of the models and a legend that describes which model is represented with which color.</p></li>
+<li>
+<p>Plot the ROC curves of the models from Question 1 and Question 2 on the same plot, using different colors for each of the models and a legend that describes which model is represented with which color.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Since the level of <code>is_canceled</code> we’re predicting is the second level, we need to set <code>event_level = "second"</code> when calculating the ROC curve.</p>
+</div>
+</div>
+</li>
 <li><p>Calculate the AUC (area under the curve) for each model using the 1roc_auc()` function.</p></li>
 </ol>
 <div class="callout-hint">
@@ -566,12 +576,7 @@ Important
 <blockquote class="blockquote">
 <p>Source: <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md">TidyTuesday</a></p>
 </blockquote>
-<p>The codebook for the deataset can be found <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md#lemur_datacsv">here</a>. While the TidyTuesday project used the full dataset, we’ll be working with a subset, which can be found in the data folder.</p>
-<p>First let’s load the packages.</p>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>While the TidyTuesday project used the full dataset, we’ll be working with a subset. The dataset, called <code>lemurs.csv</code>, can be found in the <code>data</code> folder. You can learn more about the data at <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24" class="uri">https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24</a> and a data dictionary has been included in the README of the <code>data</code> folder of your repository.</p>
 <section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
 <p>Load the <code>lemurs</code> data from your <code>data</code> folder and save it as <code>lemurs</code>. Then, report which “types” of lemurs are represented in the sample and how many of each. Note that this information is in the <code>taxon</code> variable. You should refer back to the linked data dictionary to understand what the different values of <code>taxon</code> mean. Your response should be a tibble with at least three columns, <code>taxon</code>, <code>taxon_name</code> (a new variable you create that contains the description of the <code>taxon</code>, e.g., <code>EMON</code> is <code>Mongoose lemur</code>), and <code>n</code> (number of lemurs with that taxon).</p>
 </section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
@@ -591,7 +596,7 @@ Tip
 <li>Step 1: Calculate the point estimate for the slope and the intercept of the regression line.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">obs_fit</span> <span class="op">&lt;-</span> <span class="va">lemurs</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">obs_fit</span> <span class="op">&lt;-</span> <span class="va">lemurs</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">specify</span><span class="op">(</span><span class="va">weight_g</span> <span class="op">~</span> <span class="va">age_at_wt_y</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">fit</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -599,28 +604,28 @@ Tip
 <li>Step 2: Simulate a bootstrap distribution.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(___)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>boot_dist <span class="ot">&lt;-</span> lemurs <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(weight_g <span class="sc">~</span> age_at_wt_y) <span class="sc">|&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> ____, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(___)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>boot_dist <span class="ot">&lt;-</span> lemurs <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(weight_g <span class="sc">~</span> age_at_wt_y) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> ____, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Step 3: Calculate the bounds of the confidence interval.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>conf_ints <span class="ot">&lt;-</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_confidence_interval</span>(</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    boot_dist, </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">level =</span> ___, </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">point_estimate =</span> obs_fit</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>conf_ints <span class="ot">&lt;-</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_confidence_interval</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    boot_dist, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">level =</span> ___, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">point_estimate =</span> obs_fit</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </section><section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
-<p>What is the slope of the regression line for predicting weights of lemurs (<code>weight_g</code>) from the ages of lemurs (in years) when their weight was measured (<code>age_at_wt_y</code>) and their types (<code>taxon</code>)? Calculate and interpret a 95% bootstrap bootstrap confidence interval together with your point estimate. Don’t forget to set a seed and use 1,000 bootstrap samples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p>
+<p>What are the slopes of the regression line for predicting weights of lemurs (<code>weight_g</code>) from the ages of lemurs (in years) when their weight was measured (<code>age_at_wt_y</code>) and their types (<code>taxon</code>)? Calculate and interpret a 95% bootstrap bootstrap confidence interval together with your point estimate. Don’t forget to set a seed and use 1,000 bootstrap samples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p>
 </section><section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
 <p>What is the <strong>median</strong> weight of red-bellied lemurs? What is the <strong>median</strong> weight of ring-tailed lemurs? What is the <strong>median</strong> weight of mongoose lemurs? Calculate and interpret a 95% bootstrap bootstrap confidence intervals together with your point estimates. Don’t forget to set a seed and use 1,000 bootstrap samples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p>
 </section><section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
@@ -628,7 +633,7 @@ Tip
 <ol type="a">
 <li><p>Conduct a hypothesis test to answer this question at 5% significance level. Clearly state your hypotheses in context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value. Make sure to provide a one-sentence conclusion for your hypothesis test in context of the data and the research question. Don’t forget to set a seed and use 1,000 randomization samples (<code>reps = 1000</code>) when simulating your randomization distribution.</p></li>
 <li><p>Based on your answer to Part (a), would you expect a 95% confidence interval for the difference in means of female and male lemurs to include 0? Explain your reasoning.</p></li>
-<li><p>Construct a 95% bootstrap confidence interval for the difference in means of female and male lemurs. Does it include 0? Does this align with your answer to Part (b)? Don’t forget to set a seed and use 1,000 bootstrap samples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p></li>
+<li><p>Construct and interpret a 95% bootstrap confidence interval for the difference in means of female and male lemurs. Does it include 0? Does this align with your answer to Part (b)? Don’t forget to set a seed and use 1,000 bootstrap samples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p></li>
 </ol></section></section><section id="part-3-second-chances" class="level1"><h1>Part 3: Second chances</h1>
 <p>In this part you get to revisit work you’ve turned in before that can be improved. For Question 9 you’ll pick a question from a previous lab and for Question 10 a question from your take-home midterm, and improve them.</p>
 <p>Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the deadline, but didn’t get a chance to. Some notes for completing this exercise:</p>
