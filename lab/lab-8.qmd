@@ -79,12 +79,12 @@ You should review and improve your code to avoid redundant steps (e.g., grouping
 # Part 1: Hotel cancellations (again)
 
 For this exercise, we will work with hotel cancellations data from the previous lab.
+
+The dataset, called `hotels.csv`, can be found in the `data` folder.
 Recall that the data describe the demand of two different types of hotels.
 Each observation represents a hotel booking between July 1, 2015 and August 31, 2017.
 Some bookings were cancelled (`is_canceled = 1`) and others were kept, i.e., the guests checked into the hotel (`is_canceled = 0`).
-You can view the code book for all variables [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md).
-
-The dataset, called `hotels.csv`, can be found in the `data` folder.
+You can learn more about the data at <https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11> and a data dictionary has been included in the README of the `data` folder of your repository.
 
 ## Question 1
 
@@ -134,17 +134,9 @@ This week we'll be working with data from the [Duke Lemur Center](https://lemur.
 
 > Source: [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md)
 
-The codebook for the deataset can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md#lemur_datacsv).
-While the TidyTuesday project used the full dataset, we'll be working with a subset, which can be found in the data folder.
-
-First let's load the packages.
-
-```{r}
-#| label: load-packages
-#| message: false
-library(tidyverse)
-library(tidymodels)
-```
+While the TidyTuesday project used the full dataset, we'll be working with a subset.
+The dataset, called `lemurs.csv`, can be found in the `data` folder.
+You can learn more about the data at <https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24> and a data dictionary has been included in the README of the `data` folder of your repository.
 
 ## Question 4
 
