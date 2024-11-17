@@ -56,14 +56,12 @@ In this lab, we will work with the
 
 -   **tidyverse** package for doing data analysis in a "tidy" way,
 -   **tidymodels** package for modeling in a "tidy" way, and
--   **openintro** package for the dataset for Part 1. **TO DO:** Check.
 
 ```{r}
 #| eval: true
 #| message: false
 library(tidyverse)
 library(tidymodels)
-library(openintro)
 ```
 
 -   **Run** the code cell by clicking on the green triangle (play) button for the code cell labeled `load-packages`. This loads the package so that its features (the functions and datasets in it) are accessible from your *Console*.
