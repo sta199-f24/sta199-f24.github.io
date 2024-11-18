@@ -121,7 +121,7 @@ b.  Plot the ROC curves of the models from Question 1 and Question 2 on the same
     Since the level of `is_canceled` we're predicting is the second level, we need to set `event_level = "second"` when calculating the ROC curve.
     :::
 
-c.  Calculate the AUC (area under the curve) for each model using the 1roc_auc()\` function.
+c.  Calculate the AUC (area under the curve) for each model using the `roc_auc()` function.
 
 ::: callout-hint
 You can review its documentation to figure out how this function works.
