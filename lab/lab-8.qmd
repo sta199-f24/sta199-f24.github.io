@@ -19,6 +19,7 @@ Before diving into the lab, let's first check in on your project's next steps.
     -   If you cannot be there physically due to Thanksgiving travel, make arrangements to Zoom in with the rest of your team who are in lab.
 -   **After Monday, Nov 26:** Work on write-up and presentation incorporating feedback from peers and meeting with TAs/instructor as needed during office hours for further feedback.
 
+
 # Introduction
 
 In this lab, you'll continue building and evaluating predictive models and performing statistical inferences.
