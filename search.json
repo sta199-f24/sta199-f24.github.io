@@ -5489,7 +5489,7 @@
     "href": "lab/lab-8.html#question-3",
     "title": "Lab 8",
     "section": "Question 3",
-    "text": "Question 3\n\nWhat was the name you used for the model fit object for the model you created in Question 1? What about in Question 2?\n\nPlot the ROC curves of the models from Question 1 and Question 2 on the same plot, using different colors for each model and a legend that describes which model is represented with which color.\n\n\n\n\n\n\nTip\n\n\n\nSince the level of is_canceled we’re predicting is the second level, we need to set event_level = \"second\" when calculating the ROC curve.\n\n\n\nCalculate the AUC (area under the curve) for each model using the 1roc_auc()` function.\n\n\nYou can review its documentation to figure out how this function works.\n\n\nBased on your findings so far, articulate which of the two models is preferable for predicting hotel cancellations and why."
+    "text": "Question 3\n\nWhat was the name you used for the model fit object for the model you created in Question 1? What about in Question 2?\n\nPlot the ROC curves of the models from Question 1 and Question 2 on the same plot, using different colors for each model and a legend that describes which model is represented with which color.\n\n\n\n\n\n\nTip\n\n\n\nSince the level of is_canceled we’re predicting is the second level, we need to set event_level = \"second\" when calculating the ROC curve.\n\n\n\nCalculate the AUC (area under the curve) for each model using the roc_auc() function.\n\n\nYou can review its documentation to figure out how this function works.\n\n\nBased on your findings so far, articulate which of the two models is preferable for predicting hotel cancellations and why."
   },
   {
     "objectID": "lab/lab-8.html#question-4",
