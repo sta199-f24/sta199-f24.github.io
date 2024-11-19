@@ -382,11 +382,9 @@ Note: Hypotheses are always at the population level!
 
 ## Setting hypotheses
 
--   **Null hypothesis,** $H_0$: "There is nothing going on."
-    The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, $\beta_1 = 0$.
+-   **Null hypothesis,** $H_0$: "There is nothing going on." The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, $\beta_1 = 0$.
 
--   **Alternative hypothesis,** $H_A$: 
-    "There is something going on".
+-   **Alternative hypothesis,** $H_A$: "There is something going on".
     The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than, $\beta_1 \ne 0$.
 
 ## Hypothesis testing "mindset"
@@ -397,35 +395,37 @@ Note: Hypotheses are always at the population level!
 
 ## Hypothesis testing as a court trial {.smaller}
 
-- **Null hypothesis**, $H_0$: Defendant is innocent
+-   **Null hypothesis**, $H_0$: Defendant is innocent
 
-- **Alternative hypothesis**, $H_A$: Defendant is guilty
-
-. . .
-
-- **Present the evidence:** Collect data
+-   **Alternative hypothesis**, $H_A$: Defendant is guilty
 
 . . .
 
-- **Judge the evidence:** "Could these data plausibly have happened by chance if the null hypothesis were true?"
-    * Yes: Fail to reject $H_0$
-    * No: Reject $H_0$
+-   **Present the evidence:** Collect data
+
+. . .
+
+-   **Judge the evidence:** "Could these data plausibly have happened by chance if the null hypothesis were true?"
+    -   Yes: Fail to reject $H_0$
+    -   No: Reject $H_0$
 
 ## Hypothesis testing framework {.smaller}
 
 ::: incremental
-- Start with a null hypothesis, $H_0$, that represents the status quo
+-   Start with a null hypothesis, $H_0$, that represents the status quo
 
-- Set an alternative hypothesis, $H_A$, that represents the research question, i.e. what we’re testing for
+-   Set an alternative hypothesis, $H_A$, that represents the research question, i.e. what we’re testing for
 
-- Conduct a hypothesis test under the assumption that the null hypothesis is true and calculate a **p-value** (probability of observed or more extreme outcome given that the null hypothesis is true)
-    - if the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis
-    - if they do, then reject the null hypothesis in favor of the alternative
+-   Conduct a hypothesis test under the assumption that the null hypothesis is true and calculate a **p-value** (probability of observed or more extreme outcome given that the null hypothesis is true)
+
+    -   if the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis
+    -   if they do, then reject the null hypothesis in favor of the alternative
 :::
 
 ## Calculate observed slope
 
-... which we have already done:
+...
+which we have already done:
 
 ```{r}
 observed_fit <- duke_forest |>
@@ -443,7 +443,7 @@ set.seed(20241118)
 null_dist <- duke_forest |>
   specify(price ~ area) |>
   hypothesize(null = "independence") |>
-  generate(reps = 100, type = "bootstrap") |>
+  generate(reps = 100, type = "permute") |>
   fit()
 ```
 
@@ -461,6 +461,7 @@ null_dist |>
   ggplot(aes(x = estimate)) +
   geom_histogram(binwidth = 15)
 ```
+
 ## Visualize null distribution (alternative)
 
 ```{r}
