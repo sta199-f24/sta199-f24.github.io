@@ -8966,14 +8966,14 @@
     "href": "slides/22-randomization.html#simulate-null-distribution",
     "title": "Making decisions with randomization tests",
     "section": "Simulate null distribution",
-    "text": "Simulate null distribution\n\nset.seed(20241118)\nnull_dist &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  fit()"
+    "text": "Simulate null distribution\n\nset.seed(20241118)\nnull_dist &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 100, type = \"permute\") |&gt;\n  fit()"
   },
   {
     "objectID": "slides/22-randomization.html#view-null-distribution",
     "href": "slides/22-randomization.html#view-null-distribution",
     "title": "Making decisions with randomization tests",
     "section": "View null distribution",
-    "text": "View null distribution\n\nnull_dist\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept  -22075.\n 2         1 area          213.\n 3         2 intercept  249842.\n 4         2 area          108.\n 5         3 intercept   42295.\n 6         3 area          191.\n 7         4 intercept  187324.\n 8         4 area          138.\n 9         5 intercept   85980.\n10         5 area          175.\n# ℹ 190 more rows"
+    "text": "View null distribution\n\nnull_dist\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term        estimate\n       &lt;int&gt; &lt;chr&gt;          &lt;dbl&gt;\n 1         1 intercept 547294.   \n 2         1 area           4.54 \n 3         2 intercept 568599.   \n 4         2 area          -3.13 \n 5         3 intercept 561547.   \n 6         3 area          -0.593\n 7         4 intercept 526286.   \n 8         4 area          12.1  \n 9         5 intercept 651476.   \n10         5 area         -33.0  \n# ℹ 190 more rows"
   },
   {
     "objectID": "slides/22-randomization.html#visualize-null-distribution",
@@ -8994,7 +8994,7 @@
     "href": "slides/22-randomization.html#get-p-value",
     "title": "Making decisions with randomization tests",
     "section": "Get p-value",
-    "text": "Get p-value\n\nnull_dist |&gt;\n  get_p_value(obs_stat = observed_fit, direction = \"two-sided\")\n\n# A tibble: 2 × 2\n  term      p_value\n  &lt;chr&gt;       &lt;dbl&gt;\n1 area         0.88\n2 intercept    0.8"
+    "text": "Get p-value\n\nnull_dist |&gt;\n  get_p_value(obs_stat = observed_fit, direction = \"two-sided\")\n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the\n`generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\nPlease be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the\n`generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\n\n\n# A tibble: 2 × 2\n  term      p_value\n  &lt;chr&gt;       &lt;dbl&gt;\n1 area            0\n2 intercept       0"
   },
   {
     "objectID": "slides/22-randomization.html#make-a-decision",
@@ -9218,14 +9218,14 @@
     "href": "slides/22-randomization-slides.html#simulate-null-distribution",
     "title": "Making decisions with randomization tests",
     "section": "Simulate null distribution",
-    "text": "Simulate null distribution\n\nset.seed(20241118)\nnull_dist &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  fit()"
+    "text": "Simulate null distribution\n\nset.seed(20241118)\nnull_dist &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 100, type = \"permute\") |&gt;\n  fit()"
   },
   {
     "objectID": "slides/22-randomization-slides.html#view-null-distribution",
     "href": "slides/22-randomization-slides.html#view-null-distribution",
     "title": "Making decisions with randomization tests",
     "section": "View null distribution",
-    "text": "View null distribution\n\nnull_dist\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept  -22075.\n 2         1 area          213.\n 3         2 intercept  249842.\n 4         2 area          108.\n 5         3 intercept   42295.\n 6         3 area          191.\n 7         4 intercept  187324.\n 8         4 area          138.\n 9         5 intercept   85980.\n10         5 area          175.\n# ℹ 190 more rows"
+    "text": "View null distribution\n\nnull_dist\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term        estimate\n       &lt;int&gt; &lt;chr&gt;          &lt;dbl&gt;\n 1         1 intercept 547294.   \n 2         1 area           4.54 \n 3         2 intercept 568599.   \n 4         2 area          -3.13 \n 5         3 intercept 561547.   \n 6         3 area          -0.593\n 7         4 intercept 526286.   \n 8         4 area          12.1  \n 9         5 intercept 651476.   \n10         5 area         -33.0  \n# ℹ 190 more rows"
   },
   {
     "objectID": "slides/22-randomization-slides.html#visualize-null-distribution",
@@ -9246,7 +9246,7 @@
     "href": "slides/22-randomization-slides.html#get-p-value",
     "title": "Making decisions with randomization tests",
     "section": "Get p-value",
-    "text": "Get p-value\n\nnull_dist |&gt;\n  get_p_value(obs_stat = observed_fit, direction = \"two-sided\")\n\n# A tibble: 2 × 2\n  term      p_value\n  &lt;chr&gt;       &lt;dbl&gt;\n1 area         0.88\n2 intercept    0.8"
+    "text": "Get p-value\n\nnull_dist |&gt;\n  get_p_value(obs_stat = observed_fit, direction = \"two-sided\")\n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the\n`generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\nPlease be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the\n`generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\n\n\n# A tibble: 2 × 2\n  term      p_value\n  &lt;chr&gt;       &lt;dbl&gt;\n1 area            0\n2 intercept       0"
   },
   {
     "objectID": "slides/22-randomization-slides.html#make-a-decision",
