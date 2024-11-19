@@ -1,0 +1,482 @@
+---
+title: "Making decisions with randomization tests"
+subtitle: "Lecture 22"
+date: "2024-11-19"
+format: 
+  live-revealjs: 
+    output-file: 22-randomization-slides.html
+webr:
+  cell-options:
+    autorun: false
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+<!-- end: webr fodder -->
+
+<!-- begin: ae definition -->
+
+```{r}
+#| include: false
+todays_ae <- "ae-18-duke-forest-bootstrap"
+```
+
+<!-- end: ae definition -->
+
+# Warm-up
+
+## While you wait... {.smaller}
+
+::: appex
+-   Go to your `ae` project in RStudio.
+
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   Click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Wait till the you're prompted to work on the application exercise during class before editing the file.
+:::
+
+## Announcements {.xxsmall}
+
+**Before Monday, Nov 25**
+
+-   Bare minimum: Make substantial progress on your project write-up: Finish your introduction and exploratory data analysis (plots/summary statistics + their interpretations) + Write up methods you plan to use.
+-   Ideal: Start implementing the methods and get closer to answering your research question.
+-   Your work goes in `index.qmd` -- as of yesterday 50% of teams had not yet touched this file!
+-   View (and review) your rendered project on your project website linked from the "About" section of your project repo.
+
+# From last time: Quantifying uncertainty
+
+## Packages
+
+```{r}
+#| label: packages
+#| echo: true
+#| message: false
+# load packages
+library(tidyverse)   # for data wrangling and visualization
+library(tidymodels)  # for modeling
+library(openintro)   # for Duke Forest dataset
+library(scales)      # for pretty axis labels
+library(glue)        # for constructing character strings
+library(knitr)       # for neatly formatted tables
+```
+
+## Data: Houses in Duke Forest {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+-   Data on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020
+-   Scraped from Zillow
+-   Source: [`openintro::duke_forest`](http://openintrostat.github.io/openintro/reference/duke_forest.html)
+:::
+
+::: {.column width="50%"}
+![](images/21/duke_forest_home.jpg){fig-alt="Home in Duke Forest"}
+:::
+:::::
+
+**Goal**: Use the area (in square feet) to understand variability in the price of houses in Duke Forest.
+
+## Modeling {.smaller}
+
+```{r}
+#| echo: true
+df_fit <- linear_reg() |>
+  fit(price ~ area, data = duke_forest)
+
+tidy(df_fit) |>
+  kable(digits = 2) # neatly format table to 2 digits
+```
+
+```{r}
+#| include: false
+intercept <- tidy(df_fit) |> filter(term == "(Intercept)") |> pull(estimate) |> round()
+slope <- tidy(df_fit) |> filter(term == "area") |> pull(estimate) |> round()
+
+set.seed(119)
+
+df_boot_samples_100 <- duke_forest |>
+  specify(price ~ area) |>
+  generate(reps = 100, type = "bootstrap")
+
+p_df_boot_samples_100 <- ggplot(df_boot_samples_100, aes(x = area, y = price, group = replicate)) +
+  geom_line(stat = "smooth", method = "lm", se = FALSE, alpha = 0.05) +
+  labs(
+    x = "Area (square feet)",
+    y = "Sale price (USD)",
+    title = glue("Bootstrap samples 1 - 100")
+  ) +
+  scale_y_continuous(limits = c(90000, 1550000), labels = label_dollar()) +
+  scale_x_continuous(limits = c(1000, 6500), labels = label_number())
+```
+
+## Confidence interval for the slope {.smaller}
+
+A confidence interval will allow us to make a statement like "*For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by `r dollar(slope)`, plus or minus X dollars.*"
+
+## Slopes of bootstrap samples {.smaller}
+
+::: task
+**Fill in the blank:** For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by `r dollar(slope)`, plus or minus \_\_\_ dollars.
+:::
+
+```{r}
+#| echo: false
+#| message: false
+p_df_boot_samples_100 +
+  geom_abline(intercept = intercept, slope = slope, color = "#8F2D56")
+```
+
+## Slopes of bootstrap samples {.smaller}
+
+::: task
+**Fill in the blank:** For each additional square foot, we expect the sale price of Duke Forest houses to be higher, on average, by `r dollar(slope)`, plus or minus \_\_\_ dollars.
+:::
+
+```{r}
+#| echo: false
+df_boot_samples_100_fit <- df_boot_samples_100 |>
+  fit()
+
+df_boot_samples_100_hist <- ggplot(df_boot_samples_100_fit |> filter(term == "area"), aes(x = estimate)) +
+  geom_histogram(binwidth = 10, color = "white") +
+  geom_vline(xintercept = slope, color = "#8F2D56", linewidth = 1) +
+  labs(x = "Slope", y = "Count",
+       title = "Slopes of 100 bootstrap samples") +
+  scale_x_continuous(labels = label_dollar())
+
+df_boot_samples_100_hist
+```
+
+## Confidence level {.smaller}
+
+::: task
+How confident are you that the true slope is between \$0 and \$250?
+How about \$150 and \$170?
+How about \$90 and \$210?
+:::
+
+```{r}
+#| echo: false
+df_boot_samples_100_hist
+```
+
+## 95% confidence interval {.smaller}
+
+```{r}
+#| echo: false
+lower <- df_boot_samples_100_fit |>
+  ungroup() |>
+  filter(term == "area") |>
+  summarise(quantile(estimate, 0.025)) |>
+  pull()
+
+upper <- df_boot_samples_100_fit |>
+  ungroup() |>
+  filter(term == "area") |>
+  summarise(quantile(estimate, 0.975)) |>
+  pull()
+
+df_boot_samples_100_hist +
+  geom_vline(xintercept = lower, color = "steelblue", linewidth = 1, linetype = "dashed") +
+  geom_vline(xintercept = upper, color = "steelblue", linewidth = 1, linetype = "dashed")
+```
+
+::: incremental
+-   A 95% confidence interval is bounded by the middle 95% of the bootstrap distribution
+-   We are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by `r dollar(lower)` to `r dollar(upper)`.
+:::
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits.
+:::
+
+## Computing the CI for the slope I
+
+Calculate the observed slope:
+
+```{r}
+#| echo: true
+
+observed_fit <- duke_forest |>
+  specify(price ~ area) |>
+  fit()
+
+observed_fit
+```
+
+## Computing the CI for the slope II {.smaller}
+
+Take `100` bootstrap samples and fit models to each one:
+
+```{r}
+#| echo: true
+#| code-line-numbers: "1,5,6"
+
+set.seed(1120)
+
+boot_fits <- duke_forest |>
+  specify(price ~ area) |>
+  generate(reps = 100, type = "bootstrap") |>
+  fit()
+
+boot_fits
+```
+
+## Computing the CI for the slope III
+
+**Percentile method:** Compute the 95% CI as the middle 95% of the bootstrap distribution:
+
+```{r}
+#| echo: true
+#| code-line-numbers: "5"
+
+get_confidence_interval(
+  boot_fits, 
+  point_estimate = observed_fit, 
+  level = 0.95,
+  type = "percentile" # default method
+)
+```
+
+## Precision vs. accuracy {.smaller}
+
+::: task
+If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval?
+What drawbacks are associated with using a wider interval?
+:::
+
+. . .
+
+![](images/21/garfield.png)
+
+## Precision vs. accuracy {.smaller}
+
+::: task
+How can we get best of both worlds -- high precision and high accuracy?
+:::
+
+## Changing confidence level {.smaller}
+
+::: task
+How would you modify the following code to calculate a 90% confidence interval?
+How would you modify it for a 99% confidence interval?
+:::
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|4"
+
+get_confidence_interval(
+  boot_fits, 
+  point_estimate = observed_fit, 
+  level = 0.95,
+  type = "percentile"
+)
+```
+
+## Changing confidence level {.smaller}
+
+```{r}
+#| echo: true
+
+## confidence level: 90%
+get_confidence_interval(
+  boot_fits, point_estimate = observed_fit, 
+  level = 0.90, type = "percentile"
+)
+
+## confidence level: 99%
+get_confidence_interval(
+  boot_fits, point_estimate = observed_fit, 
+  level = 0.99, type = "percentile"
+)
+```
+
+## Recap {.xsmall}
+
+-   **Population:** Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. (population size = $N$)
+
+-   **Sample:** Subset of the population, ideally random and representative (sample size = $n$)
+
+-   Sample statistic $\ne$ population parameter, but if the sample is good, it can be a good estimate
+
+-   **Statistical inference:** Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process
+
+-   We report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population
+
+-   Since we can't continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability
+
+## Why do we construct confidence intervals?
+
+To estimate plausible values of a parameter of interest, e.g., a slope ($\beta_1$), a mean ($\mu$), a proportion ($p$).
+
+## What is bootstrapping?
+
+-   Bootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.
+
+-   We then use these simulated samples to quantify the uncertainty around the sample statistic we're interested in, e.g., a slope ($b_1$), a mean ($\bar{x}$), a proportion ($\hat{p}$).
+
+## What does each dot on the plot represent? {.smaller}
+
+Note: The plot is of a bootstrap distribution of a sample mean.
+
+-   Resample, with replacement, from the original data
+-   Do this 20 times (since there are 20 dots on the plot)
+-   Calculate the summary statistic of interest in each of these samples
+
+```{r}
+#| ref.label: boot-dist
+#| echo: false
+#| message: false
+```
+
+## Bootstrapping for categorical data
+
+-   `specify(response = x, success = "success level")`
+
+-   `calculate(stat = "prop")`
+
+## Bootstrapping for other `stat`s
+
+-   `calculate()` documentation: [infer.tidymodels.org/reference/calculate.html](https://infer.tidymodels.org/reference/calculate.html)
+
+-   **infer** pipelines: [infer.tidymodels.org/articles/observed_stat_examples.html](https://infer.tidymodels.org/articles/observed_stat_examples.html)
+
+# Hypothesis testing
+
+## Hypothesis testing
+
+A hypothesis test is a statistical technique used to evaluate *competing claims* using data
+
+::: incremental
+-   **Null hypothesis,** $H_0$: An assumption about the population.
+    "There is nothing going on."
+
+-   **Alternative hypothesis,** $H_A$: A research question about the population.
+    "There is something going on".
+:::
+
+. . .
+
+Note: Hypotheses are always at the population level!
+
+## Setting hypotheses
+
+-   **Null hypothesis,** $H_0$: "There is nothing going on."
+    The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, $\beta_1 = 0$.
+
+-   **Alternative hypothesis,** $H_A$: 
+    "There is something going on".
+    The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than, $\beta_1 \ne 0$.
+
+## Hypothesis testing "mindset"
+
+-   Assume you live in a world where null hypothesis is true: $\beta_1 = 0$.
+
+-   Ask yourself how likely you are to observe the sample statistic, or something even more extreme, in this world: $P(b_1 \leq 159.48~or~b_1 \geq 159.48 | \beta_1 = 0)$ = ?
+
+## Hypothesis testing as a court trial {.smaller}
+
+- **Null hypothesis**, $H_0$: Defendant is innocent
+
+- **Alternative hypothesis**, $H_A$: Defendant is guilty
+
+. . .
+
+- **Present the evidence:** Collect data
+
+. . .
+
+- **Judge the evidence:** "Could these data plausibly have happened by chance if the null hypothesis were true?"
+    * Yes: Fail to reject $H_0$
+    * No: Reject $H_0$
+
+## Hypothesis testing framework {.smaller}
+
+::: incremental
+- Start with a null hypothesis, $H_0$, that represents the status quo
+
+- Set an alternative hypothesis, $H_A$, that represents the research question, i.e. what we’re testing for
+
+- Conduct a hypothesis test under the assumption that the null hypothesis is true and calculate a **p-value** (probability of observed or more extreme outcome given that the null hypothesis is true)
+    - if the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis
+    - if they do, then reject the null hypothesis in favor of the alternative
+:::
+
+## Calculate observed slope
+
+... which we have already done:
+
+```{r}
+observed_fit <- duke_forest |>
+  specify(price ~ area) |>
+  fit()
+
+observed_fit
+```
+
+## Simulate null distribution
+
+```{r}
+#| code-line-numbers: "|1|2|3|4|5|6"
+set.seed(20241118)
+null_dist <- duke_forest |>
+  specify(price ~ area) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 100, type = "bootstrap") |>
+  fit()
+```
+
+## View null distribution {.smaller}
+
+```{r}
+null_dist
+```
+
+## Visualize null distribution {.smaller}
+
+```{r}
+null_dist |>
+  filter(term == "area") |>
+  ggplot(aes(x = estimate)) +
+  geom_histogram(binwidth = 15)
+```
+## Visualize null distribution (alternative)
+
+```{r}
+visualize(null_dist) +
+  shade_p_value(obs_stat = observed_fit, direction = "two-sided")
+```
+
+## Get p-value
+
+```{r}
+null_dist |>
+  get_p_value(obs_stat = observed_fit, direction = "two-sided")
+```
+
+## Make a decision
+
+::: task
+Based on the p-value calculated, what is the conclusion of the hypothesis test?
+:::
