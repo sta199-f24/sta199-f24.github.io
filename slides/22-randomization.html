@@ -5,8 +5,8 @@
 <meta name="generator" content="quarto-1.6.12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
-<meta name="dcterms.date" content="2024-11-14">
-<title>Quantifying uncertainty with bootstrap intervals – STA 199</title>
+<meta name="dcterms.date" content="2024-11-19">
+<title>Making decisions with randomization tests – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,11 +128,11 @@ window.Quarto = {
   typesetMath
 };
 </script>
-<meta property="og:title" content="Quantifying uncertainty with bootstrap intervals – STA 199">
-<meta property="og:description" content="Lecture 21">
+<meta property="og:title" content="Making decisions with randomization tests – STA 199">
+<meta property="og:description" content="Lecture 22">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Quantifying uncertainty with bootstrap intervals – STA 199">
-<meta name="twitter:description" content="Lecture 21">
+<meta name="twitter:title" content="Making decisions with randomization tests – STA 199">
+<meta name="twitter:description" content="Lecture 22">
 <meta name="twitter:image" content="https://sta199-f24.github.io/slides/img/twitter-card.png">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
@@ -144,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantifying uncertainty with bootstrap intervals</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Making decisions with randomization tests</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -393,45 +393,20 @@ window.Quarto = {
   <ul class="collapse">
 <li><a href="#while-you-wait" id="toc-while-you-wait" class="nav-link" data-scroll-target="#while-you-wait">While you wait…</a></li>
   <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
-  <li><a href="#from-last-time" id="toc-from-last-time" class="nav-link" data-scroll-target="#from-last-time">From last time</a></li>
   </ul>
 </li>
   <li>
-<a href="#quantifying-uncertainty" id="toc-quantifying-uncertainty" class="nav-link" data-scroll-target="#quantifying-uncertainty">Quantifying uncertainty</a>
+<a href="#from-last-time-quantifying-uncertainty" id="toc-from-last-time-quantifying-uncertainty" class="nav-link" data-scroll-target="#from-last-time-quantifying-uncertainty">From last time: Quantifying uncertainty</a>
   <ul class="collapse">
-<li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+<li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#data-houses-in-duke-forest" id="toc-data-houses-in-duke-forest" class="nav-link" data-scroll-target="#data-houses-in-duke-forest">Data: Houses in Duke Forest</a></li>
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory data analysis</a></li>
   <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling">Modeling</a></li>
-  <li><a href="#from-sample-to-population" id="toc-from-sample-to-population" class="nav-link" data-scroll-target="#from-sample-to-population">From sample to population</a></li>
-  <li><a href="#statistical-inference" id="toc-statistical-inference" class="nav-link" data-scroll-target="#statistical-inference">Statistical inference</a></li>
-  <li><a href="#inference-for-simple-linear-regression" id="toc-inference-for-simple-linear-regression" class="nav-link" data-scroll-target="#inference-for-simple-linear-regression">Inference for simple linear regression</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#confidence-interval-for-the-slope" id="toc-confidence-interval-for-the-slope" class="nav-link" data-scroll-target="#confidence-interval-for-the-slope">Confidence interval for the slope</a>
-  <ul class="collapse">
-<li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">Confidence interval</a></li>
-  <li><a href="#confidence-interval-for-the-slope-1" id="toc-confidence-interval-for-the-slope-1" class="nav-link" data-scroll-target="#confidence-interval-for-the-slope-1">Confidence interval for the slope</a></li>
-  <li><a href="#quantify-the-variability-of-the-slope" id="toc-quantify-the-variability-of-the-slope" class="nav-link" data-scroll-target="#quantify-the-variability-of-the-slope">Quantify the variability of the slope</a></li>
-  <li><a href="#bootstrap-sample-1" id="toc-bootstrap-sample-1" class="nav-link" data-scroll-target="#bootstrap-sample-1">Bootstrap sample 1</a></li>
-  <li><a href="#bootstrap-sample-2" id="toc-bootstrap-sample-2" class="nav-link" data-scroll-target="#bootstrap-sample-2">Bootstrap sample 2</a></li>
-  <li><a href="#bootstrap-sample-3" id="toc-bootstrap-sample-3" class="nav-link" data-scroll-target="#bootstrap-sample-3">Bootstrap sample 3</a></li>
-  <li><a href="#bootstrap-sample-4" id="toc-bootstrap-sample-4" class="nav-link" data-scroll-target="#bootstrap-sample-4">Bootstrap sample 4</a></li>
-  <li><a href="#bootstrap-sample-5" id="toc-bootstrap-sample-5" class="nav-link" data-scroll-target="#bootstrap-sample-5">Bootstrap sample 5</a></li>
-  <li><a href="#bootstrap-samples-1---5" id="toc-bootstrap-samples-1---5" class="nav-link" data-scroll-target="#bootstrap-samples-1---5">Bootstrap samples 1 - 5</a></li>
-  <li><a href="#bootstrap-samples-1---100" id="toc-bootstrap-samples-1---100" class="nav-link" data-scroll-target="#bootstrap-samples-1---100">Bootstrap samples 1 - 100</a></li>
+  <li><a href="#confidence-interval-for-the-slope" id="toc-confidence-interval-for-the-slope" class="nav-link" data-scroll-target="#confidence-interval-for-the-slope">Confidence interval for the slope</a></li>
   <li><a href="#slopes-of-bootstrap-samples" id="toc-slopes-of-bootstrap-samples" class="nav-link" data-scroll-target="#slopes-of-bootstrap-samples">Slopes of bootstrap samples</a></li>
   <li><a href="#slopes-of-bootstrap-samples-1" id="toc-slopes-of-bootstrap-samples-1" class="nav-link" data-scroll-target="#slopes-of-bootstrap-samples-1">Slopes of bootstrap samples</a></li>
   <li><a href="#confidence-level" id="toc-confidence-level" class="nav-link" data-scroll-target="#confidence-level">Confidence level</a></li>
-  <li><a href="#confidence-interval-1" id="toc-confidence-interval-1" class="nav-link" data-scroll-target="#confidence-interval-1">95% confidence interval</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
-  <ul class="collapse">
-<li><a href="#ae-18-duke-forest-bootstrap" id="toc-ae-18-duke-forest-bootstrap" class="nav-link" data-scroll-target="#ae-18-duke-forest-bootstrap">ae-18-duke-forest-bootstrap</a></li>
+  <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">95% confidence interval</a></li>
+  <li><a href="#ae-18-duke-forest-bootstrap" id="toc-ae-18-duke-forest-bootstrap" class="nav-link" data-scroll-target="#ae-18-duke-forest-bootstrap">ae-18-duke-forest-bootstrap</a></li>
   <li><a href="#computing-the-ci-for-the-slope-i" id="toc-computing-the-ci-for-the-slope-i" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-i">Computing the CI for the slope I</a></li>
   <li><a href="#computing-the-ci-for-the-slope-ii" id="toc-computing-the-ci-for-the-slope-ii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</a></li>
   <li><a href="#computing-the-ci-for-the-slope-iii" id="toc-computing-the-ci-for-the-slope-iii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</a></li>
@@ -440,14 +415,36 @@ window.Quarto = {
   <li><a href="#changing-confidence-level" id="toc-changing-confidence-level" class="nav-link" data-scroll-target="#changing-confidence-level">Changing confidence level</a></li>
   <li><a href="#changing-confidence-level-1" id="toc-changing-confidence-level-1" class="nav-link" data-scroll-target="#changing-confidence-level-1">Changing confidence level</a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#why-do-we-construct-confidence-intervals" id="toc-why-do-we-construct-confidence-intervals" class="nav-link" data-scroll-target="#why-do-we-construct-confidence-intervals">Why do we construct confidence intervals?</a></li>
+  <li><a href="#what-is-bootstrapping" id="toc-what-is-bootstrapping" class="nav-link" data-scroll-target="#what-is-bootstrapping">What is bootstrapping?</a></li>
+  <li><a href="#what-does-each-dot-on-the-plot-represent" id="toc-what-does-each-dot-on-the-plot-represent" class="nav-link" data-scroll-target="#what-does-each-dot-on-the-plot-represent">What does each dot on the plot represent?</a></li>
+  <li><a href="#bootstrapping-for-categorical-data" id="toc-bootstrapping-for-categorical-data" class="nav-link" data-scroll-target="#bootstrapping-for-categorical-data">Bootstrapping for categorical data</a></li>
+  <li><a href="#bootstrapping-for-other-stats" id="toc-bootstrapping-for-other-stats" class="nav-link" data-scroll-target="#bootstrapping-for-other-stats">Bootstrapping for other <code>stat</code>s</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/21-bootstrap.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="21-bootstrap-slides.html"><i class="bi bi-file-slides"></i>RevealJS (live)</a></li></ul></div></nav>
+  <li>
+<a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing">Hypothesis testing</a>
+  <ul class="collapse">
+<li><a href="#hypothesis-testing-1" id="toc-hypothesis-testing-1" class="nav-link" data-scroll-target="#hypothesis-testing-1">Hypothesis testing</a></li>
+  <li><a href="#setting-hypotheses" id="toc-setting-hypotheses" class="nav-link" data-scroll-target="#setting-hypotheses">Setting hypotheses</a></li>
+  <li><a href="#hypothesis-testing-mindset" id="toc-hypothesis-testing-mindset" class="nav-link" data-scroll-target="#hypothesis-testing-mindset">Hypothesis testing “mindset”</a></li>
+  <li><a href="#hypothesis-testing-as-a-court-trial" id="toc-hypothesis-testing-as-a-court-trial" class="nav-link" data-scroll-target="#hypothesis-testing-as-a-court-trial">Hypothesis testing as a court trial</a></li>
+  <li><a href="#hypothesis-testing-framework" id="toc-hypothesis-testing-framework" class="nav-link" data-scroll-target="#hypothesis-testing-framework">Hypothesis testing framework</a></li>
+  <li><a href="#calculate-observed-slope" id="toc-calculate-observed-slope" class="nav-link" data-scroll-target="#calculate-observed-slope">Calculate observed slope</a></li>
+  <li><a href="#simulate-null-distribution" id="toc-simulate-null-distribution" class="nav-link" data-scroll-target="#simulate-null-distribution">Simulate null distribution</a></li>
+  <li><a href="#view-null-distribution" id="toc-view-null-distribution" class="nav-link" data-scroll-target="#view-null-distribution">View null distribution</a></li>
+  <li><a href="#visualize-null-distribution" id="toc-visualize-null-distribution" class="nav-link" data-scroll-target="#visualize-null-distribution">Visualize null distribution</a></li>
+  <li><a href="#visualize-null-distribution-alternative" id="toc-visualize-null-distribution-alternative" class="nav-link" data-scroll-target="#visualize-null-distribution-alternative">Visualize null distribution (alternative)</a></li>
+  <li><a href="#get-p-value" id="toc-get-p-value" class="nav-link" data-scroll-target="#get-p-value">Get p-value</a></li>
+  <li><a href="#make-a-decision" id="toc-make-a-decision" class="nav-link" data-scroll-target="#make-a-decision">Make a decision</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/22-randomization.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="22-randomization-slides.html"><i class="bi bi-file-slides"></i>RevealJS (live)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Quantifying uncertainty with bootstrap intervals</h1>
-<p class="subtitle lead">Lecture 21</p>
+<h1 class="title">Making decisions with randomization tests</h1>
+<p class="subtitle lead">Lecture 22</p>
 </div>
 
 
@@ -471,7 +468,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 14, 2024</p>
+      <p class="date">November 19, 2024</p>
     </div>
   </div>
   
@@ -486,7 +483,7 @@ window.Quarto = {
 
 </div>
 <script type="webr-1-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRydWUsIm91dHB1dCI6ZmFsc2V9LCJjb2RlIjoib3B0aW9ucyh3aWR0aCA9IDYwKSJ9
+eyJjb2RlIjoib3B0aW9ucyh3aWR0aCA9IDYwKSIsImF0dHIiOnsiYXV0b3J1biI6ZmFsc2UsImV2YWwiOnRydWUsIm91dHB1dCI6ZmFsc2UsImVkaXQiOmZhbHNlLCJlY2hvIjpmYWxzZX19
 </script>
 </div>
 </div>
@@ -504,48 +501,14 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 </ul>
 </div>
 </section><section id="announcements" class="level2 xxsmall"><h2 class="xxsmall anchored" data-anchor-id="announcements">Announcements</h2>
-<p>Project timeline and progress:</p>
-<div class="incremental">
-<ul class="incremental">
-<li>
-<strong>Due this Friday, Nov 15 - Milestone 3</strong>
-<ul class="incremental">
-<li>Bare minimum: Address and close issues</li>
-<li>Ideal: Start working on your project write-up in <code>index.qmd</code>
-</li>
-</ul>
-</li>
-<li>
-<strong>Before Monday, Nov 25 - Between Milestones 3 and 4</strong>
-<ul class="incremental">
-<li>Bare minimum: Make substantial progress on your project write-up: Finish your introduction and exploratory data analysis (plots/summary statistics + their interpretations) + Write up methods you plan to use</li>
-<li>Ideal: Start implementing the methods and get closer to answering your research question</li>
-</ul>
-</li>
-<li>
-<strong>On Monday, Nov 25 - Milestone 4</strong>
-<ul class="incremental">
-<li>Peer review of others’ projects in lab</li>
-<li>You must be in lab to participate in the peer review</li>
-<li>If you cannot be there physically due to Thanksgiving travel, make arrangements to Zoom in with the rest of your team who are in lab</li>
-</ul>
-</li>
-<li>
-<strong>After Monday, Nov 26:</strong> Work on write-up and presentation incorporating feedback from peers and meeting with TAs/instructor as needed during office hours for further feedback</li>
-</ul>
-</div>
-</section><section id="from-last-time" class="level2"><h2 class="anchored" data-anchor-id="from-last-time">From last time</h2>
-<div class="appex">
+<p><strong>Before Monday, Nov 25</strong></p>
 <ul>
-<li><p>Go to your ae project in RStudio.</p></li>
-<li><p>Continue working on <code>ae-17-forest-classification.qmd</code>.</p></li>
-<li><p>Work through the application exercise in class, and render, commit, and push your edits.</p></li>
-</ul>
-</div>
-</section></section><section id="quantifying-uncertainty" class="level1"><h1>Quantifying uncertainty</h1>
-<section id="goal" class="level2"><h2 class="anchored" data-anchor-id="goal">Goal</h2>
-<p>Find range of plausible values for the slope using bootstrap confidence intervals.</p>
-</section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<li>Bare minimum: Make substantial progress on your project write-up: Finish your introduction and exploratory data analysis (plots/summary statistics + their interpretations) + Write up methods you plan to use.</li>
+<li>Ideal: Start implementing the methods and get closer to answering your research question.</li>
+<li>Your work goes in <code>index.qmd</code> – as of yesterday 50% of teams had not yet touched this file!</li>
+<li>View (and review) your rendered project on your project website linked from the “About” section of your project repo.</li>
+</ul></section></section><section id="from-last-time-quantifying-uncertainty" class="level1"><h1>From last time: Quantifying uncertainty</h1>
+<section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># load packages</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>   <span class="co"># for data wrangling and visualization</span></span>
@@ -569,30 +532,13 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 </div>
 </div>
 <p><strong>Goal</strong>: Use the area (in square feet) to understand variability in the price of houses in Duke Forest.</p>
-</section><section id="exploratory-data-analysis" class="level2"><h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory data analysis</h2>
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">duke_forest</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">area</span>, y <span class="op">=</span> <span class="va">price</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
-<span>    x <span class="op">=</span> <span class="st">"Area (square feet)"</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">"Sale price (USD)"</span>,</span>
-<span>    title <span class="op">=</span> <span class="st">"Price and area of houses in Duke Forest"</span></span>
-<span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu"><a href="https://scales.r-lib.org/reference/dollar_format.html">label_dollar</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
 </section><section id="modeling" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="modeling">Modeling</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>df_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">fit</span>(price <span class="sc">~</span> area, <span class="at">data =</span> duke_forest)</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">tidy</span>(df_fit) <span class="sc">|&gt;</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>) <span class="co"># neatly format table to 2 digits</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span>, data <span class="op">=</span> <span class="va">duke_forest</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">tidy</span><span class="op">(</span><span class="va">df_fit</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="co"># neatly format table to 2 digits</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -621,233 +567,8 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 </table>
 </div>
 </div>
-<p>. . .</p>
-<ul>
-<li>
-<strong>Intercept:</strong> Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.
-<ul>
-<li>Is this interpretation useful?</li>
-</ul>
-</li>
-<li>
-<strong>Slope:</strong> For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.</li>
-</ul></section><section id="from-sample-to-population" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="from-sample-to-population">From sample to population</h2>
-<blockquote class="blockquote">
-<p>For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.</p>
-</blockquote>
-<p><br></p>
-<ul>
-<li>This estimate is valid for the single sample of 98 houses.</li>
-<li>But what if we’re not interested quantifying the relationship between the size and price of a house in this single sample?</li>
-<li>What if we want to say something about the relationship between these variables for all houses in Duke Forest?</li>
-</ul></section><section id="statistical-inference" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="statistical-inference">Statistical inference</h2>
-<ul>
-<li><p><strong>Statistical inference</strong> provide methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from</p></li>
-<li><p>For our inferences to be valid, the sample should be random and representative of the population we’re interested in</p></li>
-</ul>
-<p><img src="images/21/soup.png" class="img-fluid"></p>
-</section><section id="inference-for-simple-linear-regression" class="level2"><h2 class="anchored" data-anchor-id="inference-for-simple-linear-regression">Inference for simple linear regression</h2>
-<ul>
-<li><p>Calculate a confidence interval for the slope, <span class="math inline">\(\beta_1\)</span> (today)</p></li>
-<li><p>Conduct a hypothesis test for the slope,<span class="math inline">\(\beta_1\)</span> (next week)</p></li>
-</ul></section></section><section id="confidence-interval-for-the-slope" class="level1"><h1>Confidence interval for the slope</h1>
-<section id="confidence-interval" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-interval">Confidence interval</h2>
-<div class="incremental">
-<ul class="incremental">
-<li>A plausible range of values for a population parameter is called a <strong>confidence interval</strong>
-</li>
-<li>Using only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net
-<ul class="incremental">
-<li>We can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish</li>
-<li>Similarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter</li>
-</ul>
-</li>
-</ul>
-</div>
-</section><section id="confidence-interval-for-the-slope-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-interval-for-the-slope-1">Confidence interval for the slope</h2>
+</section><section id="confidence-interval-for-the-slope" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-interval-for-the-slope">Confidence interval for the slope</h2>
 <p>A confidence interval will allow us to make a statement like “<em>For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.</em>”</p>
-<p>. . .</p>
-<ul>
-<li><p>Should X be $10? $100? $1000?</p></li>
-<li><p>If we were to take another sample of 98 would we expect the slope calculated based on that sample to be exactly $159? Off by $10? $100? $1000?</p></li>
-<li><p>The answer depends on how variable (from one sample to another sample) the sample statistic (the slope) is</p></li>
-<li><p>We need a way to quantify the variability of the sample statistic</p></li>
-</ul></section><section id="quantify-the-variability-of-the-slope" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="quantify-the-variability-of-the-slope">Quantify the variability of the slope</h2>
-<p><strong>for estimation</strong></p>
-<div class="incremental">
-<ul class="incremental">
-<li>Two approaches:
-<ol class="incremental" type="1">
-<li>Via simulation (what we’ll do in this course)</li>
-<li>Via mathematical models (what you can learn about in future courses)</li>
-</ol>
-</li>
-<li>
-<strong>Bootstrapping</strong> to quantify the variability of the slope for the purpose of estimation:
-<ul class="incremental">
-<li>Bootstrap new samples from the original sample</li>
-<li>Fit models to each of the samples and estimate the slope</li>
-<li>Use features of the distribution of the bootstrapped slopes to construct a confidence interval</li>
-</ul>
-</li>
-</ul>
-</div>
-</section><section id="bootstrap-sample-1" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-sample-1">Bootstrap sample 1</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="bootstrap-sample-2" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-sample-2">Bootstrap sample 2</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="bootstrap-sample-3" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-sample-3">Bootstrap sample 3</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="bootstrap-sample-4" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-sample-4">Bootstrap sample 4</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-16-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="bootstrap-sample-5" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-sample-5">Bootstrap sample 5</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-17-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>. . .</p>
-<p><em>so on and so forth…</em></p>
-</section><section id="bootstrap-samples-1---5" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-samples-1---5">Bootstrap samples 1 - 5</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-19-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-20-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="bootstrap-samples-1---100" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-samples-1---100">Bootstrap samples 1 - 100</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-22-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-23-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section><section id="slopes-of-bootstrap-samples" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="slopes-of-bootstrap-samples">Slopes of bootstrap samples</h2>
 <div class="task">
 <p><strong>Fill in the blank:</strong> For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
@@ -855,7 +576,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="960"></p>
+<figure class="figure"><p><img src="22-randomization_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -867,7 +588,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="960"></p>
+<figure class="figure"><p><img src="22-randomization_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -879,20 +600,16 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="960"></p>
+<figure class="figure"><p><img src="22-randomization_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="confidence-interval-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-interval-1">95% confidence interval</h2>
+</section><section id="confidence-interval" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-interval">95% confidence interval</h2>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="21-bootstrap_files/figure-revealjs/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="960"></p>
+<figure class="figure"><p><img src="22-randomization_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -903,8 +620,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 <li>We are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77.</li>
 </ul>
 </div>
-</section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
-<section id="ae-18-duke-forest-bootstrap" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-18-duke-forest-bootstrap">ae-18-duke-forest-bootstrap</h2>
+</section><section id="ae-18-duke-forest-bootstrap" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-18-duke-forest-bootstrap">ae-18-duke-forest-bootstrap</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
@@ -916,7 +632,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 </section><section id="computing-the-ci-for-the-slope-i" class="level2"><h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-i">Computing the CI for the slope I</h2>
 <p>Calculate the observed slope:</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">observed_fit</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">observed_fit</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">specify</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">fit</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -932,14 +648,14 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 </section><section id="computing-the-ci-for-the-slope-ii" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</h2>
 <p>Take <code>100</code> bootstrap samples and fit models to each one:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">set.seed</span>(<span class="dv">1120</span>)</span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a>boot_fits <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">100</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">fit</span>()</span>
-<span id="cb7-7"><a href="#cb7-7"></a></span>
-<span id="cb7-8"><a href="#cb7-8"></a>boot_fits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">set.seed</span>(<span class="dv">1120</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>boot_fits <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">100</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">fit</span>()</span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a>boot_fits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 200 × 3
 # Groups:   replicate [100]
@@ -961,12 +677,12 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 </section><section id="computing-the-ci-for-the-slope-iii" class="level2"><h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</h2>
 <p><strong>Percentile method:</strong> Compute the 95% CI as the middle 95% of the bootstrap distribution:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb9-2"><a href="#cb9-2"></a>  boot_fits, </span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="at">point_estimate =</span> observed_fit, </span>
-<span id="cb9-4"><a href="#cb9-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
-<span id="cb9-5"><a href="#cb9-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span> <span class="co"># default method</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  boot_fits, </span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="at">point_estimate =</span> observed_fit, </span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span> <span class="co"># default method</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   term      lower_ci upper_ci
@@ -990,12 +706,12 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 <p>How would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb11-2"><a href="#cb11-2"></a>  boot_fits, </span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="at">point_estimate =</span> observed_fit, </span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb9-2"><a href="#cb9-2"></a>  boot_fits, </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="at">point_estimate =</span> observed_fit, </span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   term      lower_ci upper_ci
@@ -1006,7 +722,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 </div>
 </section><section id="changing-confidence-level-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="changing-confidence-level-1">Changing confidence level</h2>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## confidence level: 90%</span></span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## confidence level: 90%</span></span>
 <span><span class="fu">get_confidence_interval</span><span class="op">(</span></span>
 <span>  <span class="va">boot_fits</span>, point_estimate <span class="op">=</span> <span class="va">observed_fit</span>, </span>
 <span>  level <span class="op">=</span> <span class="fl">0.90</span>, type <span class="op">=</span> <span class="st">"percentile"</span></span>
@@ -1018,7 +734,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 1 area          104.     212.
 2 intercept  -24380.  256730.</code></pre>
 </div>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## confidence level: 99%</span></span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## confidence level: 99%</span></span>
 <span><span class="fu">get_confidence_interval</span><span class="op">(</span></span>
 <span>  <span class="va">boot_fits</span>, point_estimate <span class="op">=</span> <span class="va">observed_fit</span>, </span>
 <span>  level <span class="op">=</span> <span class="fl">0.99</span>, type <span class="op">=</span> <span class="st">"percentile"</span></span>
@@ -1039,13 +755,172 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZWNobyI6ZmFsc2UsImV2YWwiOnRy
 <li><p><strong>Statistical inference:</strong> Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process</p></li>
 <li><p>We report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population</p></li>
 <li><p>Since we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability</p></li>
+</ul></section><section id="why-do-we-construct-confidence-intervals" class="level2"><h2 class="anchored" data-anchor-id="why-do-we-construct-confidence-intervals">Why do we construct confidence intervals?</h2>
+<p>To estimate plausible values of a parameter of interest, e.g., a slope (<span class="math inline">\(\beta_1\)</span>), a mean (<span class="math inline">\(\mu\)</span>), a proportion (<span class="math inline">\(p\)</span>).</p>
+</section><section id="what-is-bootstrapping" class="level2"><h2 class="anchored" data-anchor-id="what-is-bootstrapping">What is bootstrapping?</h2>
+<ul>
+<li><p>Bootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.</p></li>
+<li><p>We then use these simulated samples to quantify the uncertainty around the sample statistic we’re interested in, e.g., a slope (<span class="math inline">\(b_1\)</span>), a mean (<span class="math inline">\(\bar{x}\)</span>), a proportion (<span class="math inline">\(\hat{p}\)</span>).</p></li>
+</ul></section><section id="what-does-each-dot-on-the-plot-represent" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="what-does-each-dot-on-the-plot-represent">What does each dot on the plot represent?</h2>
+<p>Note: The plot is of a bootstrap distribution of a sample mean.</p>
+<ul>
+<li>Resample, with replacement, from the original data</li>
+<li>Do this 20 times (since there are 20 dots on the plot)</li>
+<li>Calculate the summary statistic of interest in each of these samples</li>
+</ul></section><section id="bootstrapping-for-categorical-data" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-for-categorical-data">Bootstrapping for categorical data</h2>
+<ul>
+<li><p><code>specify(response = x, success = "success level")</code></p></li>
+<li><p><code>calculate(stat = "prop")</code></p></li>
+</ul></section><section id="bootstrapping-for-other-stats" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-for-other-stats">Bootstrapping for other <code>stat</code>s</h2>
+<ul>
+<li><p><code>calculate()</code> documentation: <a href="https://infer.tidymodels.org/reference/calculate.html">infer.tidymodels.org/reference/calculate.html</a></p></li>
+<li><p><strong>infer</strong> pipelines: <a href="https://infer.tidymodels.org/articles/observed_stat_examples.html">infer.tidymodels.org/articles/observed_stat_examples.html</a></p></li>
+</ul></section></section><section id="hypothesis-testing" class="level1"><h1>Hypothesis testing</h1>
+<section id="hypothesis-testing-1" class="level2"><h2 class="anchored" data-anchor-id="hypothesis-testing-1">Hypothesis testing</h2>
+<p>A hypothesis test is a statistical technique used to evaluate <em>competing claims</em> using data</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p><strong>Null hypothesis,</strong> <span class="math inline">\(H_0\)</span>: An assumption about the population. “There is nothing going on.”</p></li>
+<li><p><strong>Alternative hypothesis,</strong> <span class="math inline">\(H_A\)</span>: A research question about the population. “There is something going on”.</p></li>
 </ul>
+</div>
+<p>. . .</p>
+<p>Note: Hypotheses are always at the population level!</p>
+</section><section id="setting-hypotheses" class="level2"><h2 class="anchored" data-anchor-id="setting-hypotheses">Setting hypotheses</h2>
+<ul>
+<li><p><strong>Null hypothesis,</strong> <span class="math inline">\(H_0\)</span>: “There is nothing going on.” The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, <span class="math inline">\(\beta_1 = 0\)</span>.</p></li>
+<li><p><strong>Alternative hypothesis,</strong> <span class="math inline">\(H_A\)</span>: “There is something going on”. The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than, <span class="math inline">\(\beta_1 \ne 0\)</span>.</p></li>
+</ul></section><section id="hypothesis-testing-mindset" class="level2"><h2 class="anchored" data-anchor-id="hypothesis-testing-mindset">Hypothesis testing “mindset”</h2>
+<ul>
+<li><p>Assume you live in a world where null hypothesis is true: <span class="math inline">\(\beta_1 = 0\)</span>.</p></li>
+<li><p>Ask yourself how likely you are to observe the sample statistic, or something even more extreme, in this world: <span class="math inline">\(P(b_1 \leq 159.48~or~b_1 \geq 159.48 | \beta_1 = 0)\)</span> = ?</p></li>
+</ul></section><section id="hypothesis-testing-as-a-court-trial" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="hypothesis-testing-as-a-court-trial">Hypothesis testing as a court trial</h2>
+<ul>
+<li><p><strong>Null hypothesis</strong>, <span class="math inline">\(H_0\)</span>: Defendant is innocent</p></li>
+<li><p><strong>Alternative hypothesis</strong>, <span class="math inline">\(H_A\)</span>: Defendant is guilty</p></li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>
+<strong>Present the evidence:</strong> Collect data</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>
+<strong>Judge the evidence:</strong> “Could these data plausibly have happened by chance if the null hypothesis were true?”
+<ul>
+<li>Yes: Fail to reject <span class="math inline">\(H_0\)</span>
+</li>
+<li>No: Reject <span class="math inline">\(H_0\)</span>
+</li>
+</ul>
+</li>
+</ul></section><section id="hypothesis-testing-framework" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="hypothesis-testing-framework">Hypothesis testing framework</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Start with a null hypothesis, <span class="math inline">\(H_0\)</span>, that represents the status quo</p></li>
+<li><p>Set an alternative hypothesis, <span class="math inline">\(H_A\)</span>, that represents the research question, i.e.&nbsp;what we’re testing for</p></li>
+<li>
+<p>Conduct a hypothesis test under the assumption that the null hypothesis is true and calculate a <strong>p-value</strong> (probability of observed or more extreme outcome given that the null hypothesis is true)</p>
+<ul class="incremental">
+<li>if the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis</li>
+<li>if they do, then reject the null hypothesis in favor of the alternative</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="calculate-observed-slope" class="level2"><h2 class="anchored" data-anchor-id="calculate-observed-slope">Calculate observed slope</h2>
+<p>… which we have already done:</p>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">observed_fit</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">specify</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">observed_fit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term      estimate
+  &lt;chr&gt;        &lt;dbl&gt;
+1 intercept  116652.
+2 area          159.</code></pre>
+</div>
+</div>
+</section><section id="simulate-null-distribution" class="level2"><h2 class="anchored" data-anchor-id="simulate-null-distribution">Simulate null distribution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">set.seed</span>(<span class="dv">20241118</span>)</span>
+<span id="cb17-2"><a href="#cb17-2"></a>null_dist <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">100</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="view-null-distribution" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="view-null-distribution">View null distribution</h2>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 200 × 3
+# Groups:   replicate [100]
+   replicate term      estimate
+       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;
+ 1         1 intercept  -22075.
+ 2         1 area          213.
+ 3         2 intercept  249842.
+ 4         2 area          108.
+ 5         3 intercept   42295.
+ 6         3 area          191.
+ 7         4 intercept  187324.
+ 8         4 area          138.
+ 9         5 intercept   85980.
+10         5 area          175.
+# ℹ 190 more rows</code></pre>
+</div>
+</div>
+</section><section id="visualize-null-distribution" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="visualize-null-distribution">Visualize null distribution</h2>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">term</span> <span class="op">==</span> <span class="st">"area"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">estimate</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">15</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="22-randomization_files/figure-revealjs/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="visualize-null-distribution-alternative" class="level2"><h2 class="anchored" data-anchor-id="visualize-null-distribution-alternative">Visualize null distribution (alternative)</h2>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">visualize</span><span class="op">(</span><span class="va">null_dist</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">shade_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="va">observed_fit</span>, direction <span class="op">=</span> <span class="st">"two-sided"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="22-randomization_files/figure-revealjs/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="get-p-value" class="level2"><h2 class="anchored" data-anchor-id="get-p-value">Get p-value</h2>
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">get_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="va">observed_fit</span>, direction <span class="op">=</span> <span class="st">"two-sided"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term      p_value
+  &lt;chr&gt;       &lt;dbl&gt;
+1 area         0.88
+2 intercept    0.8 </code></pre>
+</div>
+</div>
+</section><section id="make-a-decision" class="level2"><h2 class="anchored" data-anchor-id="make-a-decision">Make a decision</h2>
+<div class="task">
+<p>Based on the p-value calculated, what is the conclusion of the hypothesis test?</p>
+</div>
 
 
 <script type="webr-data">
-eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC40LjEvIn0sInBhY2thZ2VzIjp7InJlcG9zIjpbXSwicGtncyI6WyJldmFsdWF0ZSIsImtuaXRyIiwiaHRtbHRvb2xzIl19LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
+eyJwYWNrYWdlcyI6eyJyZXBvcyI6W10sInBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyJdfSwib3B0aW9ucyI6eyJiYXNlVXJsIjoiaHR0cHM6Ly93ZWJyLnItd2FzbS5vcmcvdjAuNC4xLyJ9LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
 </script><script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3siaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xIiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8xO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJ3ZWJyLTEiLCJzb3VyY2UiOiJfd2Vicl92YWx1ZV8xID0ge1xuICBjb25zdCB7IGhpZ2hsaWdodFIsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTEtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV2YWx1YXRpb24gY29uZmlndXJhdGlvblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7XG4gICAgaWQ6IFwid2Vici0xLWNvbnRlbnRzXCIsXG4gICAgZWNobzogdHJ1ZSxcbiAgICBvdXRwdXQ6IHRydWVcbiAgfSwgYmxvY2suYXR0cik7XG5cbiAgLy8gRXZhbHVhdGUgdGhlIHByb3ZpZGVkIFIgY29kZVxuICBjb25zdCByZXN1bHQgPSB3ZWJST2pzLnByb2Nlc3Moe2NvZGU6IGJsb2NrLmNvZGUsIG9wdGlvbnN9LCB7fSk7XG5cbiAgLy8gRWFybHkgeWllbGQgd2hpbGUgd2Ugd2FpdCBmb3IgdGhlIGZpcnN0IGV2YWx1YXRpb24gYW5kIHJlbmRlclxuICBpZiAob3B0aW9ucy5vdXRwdXQgJiYgIShcIjFcIiBpbiB3ZWJST2pzLnJlbmRlcmVkT2pzKSkge1xuICAgIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gICAgY29uc3Qgc3Bpbm5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG5cbiAgICBpZiAob3B0aW9ucy5lY2hvKSB7XG4gICAgICAvLyBTaG93IG91dHB1dCBhcyBoaWdobGlnaHRlZCBzb3VyY2VcbiAgICAgIGNvbnN0IHByZUVsZW0gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwicHJlXCIpO1xuICAgICAgY29udGFpbmVyLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZVwiO1xuICAgICAgcHJlRWxlbS5jbGFzc05hbWUgPSBcInNvdXJjZUNvZGUgclwiO1xuICAgICAgcHJlRWxlbS5hcHBlbmRDaGlsZChoaWdobGlnaHRSKGJsb2NrLmNvZGUpKTtcbiAgICAgIHNwaW5uZXIuY2xhc3NOYW1lID0gXCJzcGlubmVyLWdyb3cgc3Bpbm5lci1ncm93LXNtIG0tMiBwb3NpdGlvbi1hYnNvbHV0ZSB0b3AtMCBlbmQtMFwiO1xuICAgICAgcHJlRWxlbS5hcHBlbmRDaGlsZChzcGlubmVyKTtcbiAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChwcmVFbGVtKTtcbiAgICB9IGVsc2Uge1xuICAgICAgc3Bpbm5lci5jbGFzc05hbWUgPSBcInNwaW5uZXItYm9yZGVyIHNwaW5uZXItYm9yZGVyLXNtXCI7XG4gICAgICBjb250YWluZXIuYXBwZW5kQ2hpbGQoc3Bpbm5lcik7XG4gICAgfVxuXG4gICAgeWllbGQgY29udGFpbmVyO1xuICB9XG5cbiAgd2ViUk9qcy5yZW5kZXJlZE9qc1tcIjFcIl0gPSB0cnVlO1xuICB5aWVsZCBhd2FpdCByZXN1bHQ7XG59XG4ifSx7ImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsImNlbGxOYW1lIjoid2Vici1wcmVsdWRlIiwic291cmNlIjoid2ViUk9qcyA9IHtcbiAgY29uc3QgeyBXZWJSIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lLldlYlI7XG4gIGNvbnN0IHtcbiAgICBXZWJSRXZhbHVhdG9yLFxuICAgIFdlYlJFbnZpcm9ubWVudE1hbmFnZXIsXG4gICAgc2V0dXBSLFxuICAgIGI2NERlY29kZSxcbiAgICBjb2xsYXBzZVBhdGhcbiAgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc3RhdHVzQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLXN0YXR1c1wiKTtcbiAgY29uc3QgaW5kaWNhdG9yQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaW5kaWNhdG9yQ29udGFpbmVyLmNsYXNzTGlzdC5yZW1vdmUoXCJkLW5vbmVcIik7XG5cbiAgbGV0IHN0YXR1c1RleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXG4gIHN0YXR1c1RleHQuY2xhc3NMaXN0ID0gXCJleGVyY2lzZS1sb2FkaW5nLWRldGFpbHNcIjtcbiAgc3RhdHVzVGV4dCA9IHN0YXR1c0NvbnRhaW5lci5hcHBlbmRDaGlsZChzdGF0dXNUZXh0KTtcbiAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbml0aWFsaXNlYDtcblxuICAvLyBIb2lzdCBpbmRpY2F0b3Igb3V0IGZyb20gZmluYWwgc2xpZGUgd2hlbiBydW5uaW5nIHVuZGVyIHJldmVhbFxuICBjb25zdCByZXZlYWxTdGF0dXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCAuZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGlmIChyZXZlYWxTdGF0dXMpIHtcbiAgICByZXZlYWxTdGF0dXMucmVtb3ZlKCk7XG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgPiAuc2xpZGVzXCIpLmFwcGVuZENoaWxkKHJldmVhbFN0YXR1cyk7XG4gIH1cblxuICAvLyBNYWtlIGFueSByZXZlYWwgc2xpZGVzIHdpdGggbGl2ZSBjZWxscyBzY3JvbGxhYmxlXG4gIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIucmV2ZWFsIC5leGVyY2lzZS1jZWxsXCIpLmZvckVhY2goKGVsKSA9PiB7XG4gICAgZWwuY2xvc2VzdCgnc2VjdGlvbi5zbGlkZScpLmNsYXNzTGlzdC5hZGQoXCJzY3JvbGxhYmxlXCIpO1xuICB9KVxuXG4gIC8vIHdlYlIgc3VwcGxlbWVudGFsIGRhdGEgYW5kIG9wdGlvbnNcbiAgY29uc3QgZGF0YUNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici1kYXRhXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZGF0YSA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGRhdGFDb250ZW50KSk7XG5cbiAgLy8gR3JhYiBsaXN0IG9mIHJlc291cmNlcyB0byBiZSBkb3dubG9hZGVkXG4gIGNvbnN0IGZpbGVzQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ2ZnMtZmlsZVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGZpbGVzID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZmlsZXNDb250ZW50KSk7XG5cbiAgLy8gSW5pdGlhbGlzZSB3ZWJSIGFuZCBzZXR1cCBmb3IgUiBjb2RlIGV2YWx1YXRpb25cbiAgbGV0IHdlYlJQcm9taXNlID0gKGFzeW5jICh3ZWJSKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyB3ZWJSYDtcbiAgICBhd2FpdCB3ZWJSLmluaXQoKTtcblxuICAgIC8vIEluc3RhbGwgcHJvdmlkZWQgbGlzdCBvZiBwYWNrYWdlc1xuICAgIC8vIEVuc3VyZSB3ZWJSIGRlZmF1bHQgcmVwbyBpcyBpbmNsdWRlZFxuICAgIGRhdGEucGFja2FnZXMucmVwb3MucHVzaChcImh0dHBzOi8vcmVwby5yLXdhc20ub3JnXCIpXG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gd2ViUi5ldmFsUlZvaWQoYFxuICAgICAgICB3ZWJyOjppbnN0YWxsKHBrZywgcmVwb3MgPSByZXBvcylcbiAgICAgICAgbGlicmFyeShwa2csIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSlcbiAgICAgIGAsIHsgZW52OiB7XG4gICAgICAgIHBrZzogcGtnLFxuICAgICAgICByZXBvczogZGF0YS5wYWNrYWdlcy5yZXBvcyxcbiAgICAgIH19KTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICB0cnkge1xuICAgICAgICAgIGF3YWl0IHdlYlIuRlMubWtkaXIocGF0aCk7XG4gICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICBpZiAoIWUubWVzc2FnZS5pbmNsdWRlcyhcIkZTIGVycm9yXCIpKSB7XG4gICAgICAgICAgICB0aHJvdyBlO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgcmV0dXJuIGF3YWl0IHdlYlIuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5zdGFsbGluZyB3ZWJSIHNoaW1zYDtcbiAgICBhd2FpdCB3ZWJSLmV2YWxSVm9pZChgd2Vicjo6c2hpbV9pbnN0YWxsKClgKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgV2ViUiBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBSKHdlYlIsIGRhdGEpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHdlYlI7XG4gIH0pKG5ldyBXZWJSKGRhdGEub3B0aW9ucykpO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCB3ZWJSID0gYXdhaXQgd2ViUlByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFdlYlJFdmFsdWF0b3Iod2ViUiwgY29udGV4dClcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBwcm9jZXNzLFxuICAgIHdlYlJQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICB9O1xufVxuIn1dfQ==
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8xO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJfd2Vicl92YWx1ZV8xID0ge1xuICBjb25zdCB7IGhpZ2hsaWdodFIsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTEtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV2YWx1YXRpb24gY29uZmlndXJhdGlvblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7XG4gICAgaWQ6IFwid2Vici0xLWNvbnRlbnRzXCIsXG4gICAgZWNobzogdHJ1ZSxcbiAgICBvdXRwdXQ6IHRydWVcbiAgfSwgYmxvY2suYXR0cik7XG5cbiAgLy8gRXZhbHVhdGUgdGhlIHByb3ZpZGVkIFIgY29kZVxuICBjb25zdCByZXN1bHQgPSB3ZWJST2pzLnByb2Nlc3Moe2NvZGU6IGJsb2NrLmNvZGUsIG9wdGlvbnN9LCB7fSk7XG5cbiAgLy8gRWFybHkgeWllbGQgd2hpbGUgd2Ugd2FpdCBmb3IgdGhlIGZpcnN0IGV2YWx1YXRpb24gYW5kIHJlbmRlclxuICBpZiAob3B0aW9ucy5vdXRwdXQgJiYgIShcIjFcIiBpbiB3ZWJST2pzLnJlbmRlcmVkT2pzKSkge1xuICAgIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gICAgY29uc3Qgc3Bpbm5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG5cbiAgICBpZiAob3B0aW9ucy5lY2hvKSB7XG4gICAgICAvLyBTaG93IG91dHB1dCBhcyBoaWdobGlnaHRlZCBzb3VyY2VcbiAgICAgIGNvbnN0IHByZUVsZW0gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwicHJlXCIpO1xuICAgICAgY29udGFpbmVyLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZVwiO1xuICAgICAgcHJlRWxlbS5jbGFzc05hbWUgPSBcInNvdXJjZUNvZGUgclwiO1xuICAgICAgcHJlRWxlbS5hcHBlbmRDaGlsZChoaWdobGlnaHRSKGJsb2NrLmNvZGUpKTtcbiAgICAgIHNwaW5uZXIuY2xhc3NOYW1lID0gXCJzcGlubmVyLWdyb3cgc3Bpbm5lci1ncm93LXNtIG0tMiBwb3NpdGlvbi1hYnNvbHV0ZSB0b3AtMCBlbmQtMFwiO1xuICAgICAgcHJlRWxlbS5hcHBlbmRDaGlsZChzcGlubmVyKTtcbiAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChwcmVFbGVtKTtcbiAgICB9IGVsc2Uge1xuICAgICAgc3Bpbm5lci5jbGFzc05hbWUgPSBcInNwaW5uZXItYm9yZGVyIHNwaW5uZXItYm9yZGVyLXNtXCI7XG4gICAgICBjb250YWluZXIuYXBwZW5kQ2hpbGQoc3Bpbm5lcik7XG4gICAgfVxuXG4gICAgeWllbGQgY29udGFpbmVyO1xuICB9XG5cbiAgd2ViUk9qcy5yZW5kZXJlZE9qc1tcIjFcIl0gPSB0cnVlO1xuICB5aWVsZCBhd2FpdCByZXN1bHQ7XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici1wcmVsdWRlIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoid2ViUk9qcyA9IHtcbiAgY29uc3QgeyBXZWJSIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lLldlYlI7XG4gIGNvbnN0IHtcbiAgICBXZWJSRXZhbHVhdG9yLFxuICAgIFdlYlJFbnZpcm9ubWVudE1hbmFnZXIsXG4gICAgc2V0dXBSLFxuICAgIGI2NERlY29kZSxcbiAgICBjb2xsYXBzZVBhdGhcbiAgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc3RhdHVzQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLXN0YXR1c1wiKTtcbiAgY29uc3QgaW5kaWNhdG9yQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaW5kaWNhdG9yQ29udGFpbmVyLmNsYXNzTGlzdC5yZW1vdmUoXCJkLW5vbmVcIik7XG5cbiAgbGV0IHN0YXR1c1RleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXG4gIHN0YXR1c1RleHQuY2xhc3NMaXN0ID0gXCJleGVyY2lzZS1sb2FkaW5nLWRldGFpbHNcIjtcbiAgc3RhdHVzVGV4dCA9IHN0YXR1c0NvbnRhaW5lci5hcHBlbmRDaGlsZChzdGF0dXNUZXh0KTtcbiAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbml0aWFsaXNlYDtcblxuICAvLyBIb2lzdCBpbmRpY2F0b3Igb3V0IGZyb20gZmluYWwgc2xpZGUgd2hlbiBydW5uaW5nIHVuZGVyIHJldmVhbFxuICBjb25zdCByZXZlYWxTdGF0dXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCAuZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGlmIChyZXZlYWxTdGF0dXMpIHtcbiAgICByZXZlYWxTdGF0dXMucmVtb3ZlKCk7XG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgPiAuc2xpZGVzXCIpLmFwcGVuZENoaWxkKHJldmVhbFN0YXR1cyk7XG4gIH1cblxuICAvLyBNYWtlIGFueSByZXZlYWwgc2xpZGVzIHdpdGggbGl2ZSBjZWxscyBzY3JvbGxhYmxlXG4gIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIucmV2ZWFsIC5leGVyY2lzZS1jZWxsXCIpLmZvckVhY2goKGVsKSA9PiB7XG4gICAgZWwuY2xvc2VzdCgnc2VjdGlvbi5zbGlkZScpLmNsYXNzTGlzdC5hZGQoXCJzY3JvbGxhYmxlXCIpO1xuICB9KVxuXG4gIC8vIHdlYlIgc3VwcGxlbWVudGFsIGRhdGEgYW5kIG9wdGlvbnNcbiAgY29uc3QgZGF0YUNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici1kYXRhXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZGF0YSA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGRhdGFDb250ZW50KSk7XG5cbiAgLy8gR3JhYiBsaXN0IG9mIHJlc291cmNlcyB0byBiZSBkb3dubG9hZGVkXG4gIGNvbnN0IGZpbGVzQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ2ZnMtZmlsZVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGZpbGVzID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZmlsZXNDb250ZW50KSk7XG5cbiAgLy8gSW5pdGlhbGlzZSB3ZWJSIGFuZCBzZXR1cCBmb3IgUiBjb2RlIGV2YWx1YXRpb25cbiAgbGV0IHdlYlJQcm9taXNlID0gKGFzeW5jICh3ZWJSKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyB3ZWJSYDtcbiAgICBhd2FpdCB3ZWJSLmluaXQoKTtcblxuICAgIC8vIEluc3RhbGwgcHJvdmlkZWQgbGlzdCBvZiBwYWNrYWdlc1xuICAgIC8vIEVuc3VyZSB3ZWJSIGRlZmF1bHQgcmVwbyBpcyBpbmNsdWRlZFxuICAgIGRhdGEucGFja2FnZXMucmVwb3MucHVzaChcImh0dHBzOi8vcmVwby5yLXdhc20ub3JnXCIpXG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gd2ViUi5ldmFsUlZvaWQoYFxuICAgICAgICB3ZWJyOjppbnN0YWxsKHBrZywgcmVwb3MgPSByZXBvcylcbiAgICAgICAgbGlicmFyeShwa2csIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSlcbiAgICAgIGAsIHsgZW52OiB7XG4gICAgICAgIHBrZzogcGtnLFxuICAgICAgICByZXBvczogZGF0YS5wYWNrYWdlcy5yZXBvcyxcbiAgICAgIH19KTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICB0cnkge1xuICAgICAgICAgIGF3YWl0IHdlYlIuRlMubWtkaXIocGF0aCk7XG4gICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICBpZiAoIWUubWVzc2FnZS5pbmNsdWRlcyhcIkZTIGVycm9yXCIpKSB7XG4gICAgICAgICAgICB0aHJvdyBlO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgcmV0dXJuIGF3YWl0IHdlYlIuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5zdGFsbGluZyB3ZWJSIHNoaW1zYDtcbiAgICBhd2FpdCB3ZWJSLmV2YWxSVm9pZChgd2Vicjo6c2hpbV9pbnN0YWxsKClgKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgV2ViUiBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBSKHdlYlIsIGRhdGEpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHdlYlI7XG4gIH0pKG5ldyBXZWJSKGRhdGEub3B0aW9ucykpO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCB3ZWJSID0gYXdhaXQgd2ViUlByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFdlYlJFdmFsdWF0b3Iod2ViUiwgY29udGV4dClcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBwcm9jZXNzLFxuICAgIHdlYlJQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICB9O1xufVxuIn1dfQ==
 </script><div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
 
@@ -1671,7 +1546,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/21-bootstrap.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/slides/22-randomization.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
