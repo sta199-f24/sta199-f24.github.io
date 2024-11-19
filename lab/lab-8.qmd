@@ -3,36 +3,36 @@ title: Lab 8
 subtitle: Everything so far II
 categories: Lab
 description: "Tue, Nov 26 at 10:30 pm"
-draft: true
 ---
 
 # Project next steps
 
-Before diving into the lab, let's first check in on your project next steps.
+Before diving into the lab, let's first check in on your project's next steps.
 
 -   **Before Monday, Nov 25 - Between Milestones 3 and 4:**
     -   Read the instructions for [Milestone 4](/project/4-peer-review) and [Milestone 5](/project/5-writeup-presenation).
     -   Bare minimum: Make substantial progress on your project write-up: Finish your introduction and exploratory data analysis (plots/summary statistics + their interpretations) + Write up methods you plan to use.
     -   Ideal: Start implementing the methods and get closer to answering your research question.
 -   **On Monday, Nov 25 - Milestone 4:**
-    -   Peer review of others' projects in lab.
-    -   You must be in lab to participate in the peer review.
+    -   Peer review of others' projects in the lab.
+    -   You must be in the lab to participate in the peer review.
     -   If you cannot be there physically due to Thanksgiving travel, make arrangements to Zoom in with the rest of your team who are in lab.
 -   **After Monday, Nov 26:** Work on write-up and presentation incorporating feedback from peers and meeting with TAs/instructor as needed during office hours for further feedback.
 
+
 # Introduction
 
-In this lab you'll continue building and evaluating predictive models and perform statistical inference.
+In this lab, you'll continue building and evaluating predictive models and performing statistical inferences.
 
-Additionally, you'll revisit two questions of your choice from previous assignments / assessments.
+Additionally, you'll revisit two questions of your choice from previous assignments/assessments.
 
 ## Learning objectives
 
 By the end of the lab, you will...
 
 -   Train models on training data and test them on testing data to evaluate and compare their performances.
--   Perform statistical inferene with bootstrapping and hypothesis testing.
--   Revisit two questions from previous assignments / assessments.
+-   Perform statistical inference with bootstrapping and hypothesis testing.
+-   Revisit two questions from previous assignments/assessments.
 
 And, as usual, you will also...
 
@@ -52,8 +52,8 @@ Log in to RStudio, clone your `lab-8` repo from GitHub, open your `lab-8.qmd` do
 
 In this lab, we will work with the
 
--   **tidyverse** package for doing data analysis in a "tidy" way,
--   **tidymodels** package for modeling in a "tidy" way, and
+-   **tidyverse** package for doing data analysis in a "tidy" way and
+-   **tidymodels** package for modeling in a "tidy" way.
 
 ```{r}
 #| eval: true
@@ -79,9 +79,9 @@ You should review and improve your code to avoid redundant steps (e.g., grouping
 For this exercise, we will work with hotel cancellations data from the previous lab.
 
 The dataset, called `hotels.csv`, can be found in the `data` folder.
-Recall that the data describe the demand of two different types of hotels.
-Each observation represents a hotel booking between July 1, 2015 and August 31, 2017.
-Some bookings were cancelled (`is_canceled = 1`) and others were kept, i.e., the guests checked into the hotel (`is_canceled = 0`).
+Recall that the data describes the demand for two different types of hotels.
+Each observation represents a hotel booking between July 1, 2015, and August 31, 2017.
+Some bookings were canceled (`is_canceled = 1`), and others were kept, i.e., the guests checked into the hotel (`is_canceled = 0`).
 You can learn more about the data at <https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11> and a data dictionary has been included in the README of the `data` folder of your repository.
 
 ## Question 1
@@ -115,13 +115,13 @@ b.  Make predictions for the testing data.
 a.  What was the name you used for the model fit object for the model you created in Question 1?
     What about in Question 2?
 
-b.  Plot the ROC curves of the models from Question 1 and Question 2 on the same plot, using different colors for each of the models and a legend that describes which model is represented with which color.
+b.  Plot the ROC curves of the models from Question 1 and Question 2 on the same plot, using different colors for each model and a legend that describes which model is represented with which color.
 
     ::: callout-tip
     Since the level of `is_canceled` we're predicting is the second level, we need to set `event_level = "second"` when calculating the ROC curve.
     :::
 
-c.  Calculate the AUC (area under the curve) for each model using the 1roc_auc()\` function.
+c.  Calculate the AUC (area under the curve) for each model using the `roc_auc()` function.
 
 ::: callout-hint
 You can review its documentation to figure out how this function works.
@@ -131,7 +131,7 @@ d.  Based on your findings so far, articulate which of the two models is prefera
 
 # Part 2: Lemurs
 
-This week we'll be working with data from the [Duke Lemur Center](https://lemur.duke.edu/), which houses over 200 lemurs across 14 species -- the most diverse population of lemurs on Earth, outside their native Madagascar.
+In this part, you'll work with data from the [Duke Lemur Center](https://lemur.duke.edu/), which houses over 200 lemurs across 14 species -- the most diverse population of lemurs on Earth, outside their native Madagascar.
 
 > Lemurs are the most threatened group of mammals on the planet, and 95% of lemur species are at risk of extinction.
 > Our mission is to learn everything we can about lemurs -- because the more we learn, the better we can work to save them from extinction.
@@ -142,9 +142,10 @@ This week we'll be working with data from the [Duke Lemur Center](https://lemur.
 
 > Source: [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md)
 
-While the TidyTuesday project used the full dataset, we'll be working with a subset.
+While the TidyTuesday project used the full dataset, you'll work with a subset.
 The dataset, called `lemurs.csv`, can be found in the `data` folder.
-You can learn more about the data at <https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24> and a data dictionary has been included in the README of the `data` folder of your repository.
+You can learn more about the data at <https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24>.
+A data dictionary has been included in the README of the `data` folder of your repository.
 
 ## Question 4
 
@@ -162,7 +163,8 @@ Don't forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when 
 
 ::: callout-tip
 Below is a step-by-step recipe for constructing and visualizing a confidence interval.
-The code snippets shown are not "complete", they include some blanks you need to fill and they are just intended to guide you in the right direction.
+The code snippets shown are not "complete." 
+They include some blanks you need to fill in, and they are just intended to guide you in the right direction.
 
 -   Step 1: Calculate the point estimate for the slope and the intercept of the regression line.
 
@@ -217,8 +219,8 @@ Don't forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when 
 Do female lemurs differ in weight from male lemurs, on average?
 
 a.  Conduct a hypothesis test to answer this question at 5% significance level.
-    Clearly state your hypotheses in context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value.
-    Make sure to provide a one-sentence conclusion for your hypothesis test in context of the data and the research question.
+    Clearly state your hypotheses in the context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value.
+    Provide a one-sentence conclusion for your hypothesis test in the context of the data and the research question.
     Don't forget to set a seed and use 1,000 randomization samples (`reps = 1000`) when simulating your randomization distribution.
 
 b.  Based on your answer to Part (a), would you expect a 95% confidence interval for the difference in means of female and male lemurs to include 0?
@@ -231,33 +233,33 @@ c.  Construct and interpret a 95% bootstrap confidence interval for the differen
 
 # Part 3: Second chances
 
-In this part you get to revisit work you've turned in before that can be improved.
+In this part, you get to revisit work you've turned in before that can be improved.
 For Question 9 you'll pick a question from a previous lab and for Question 10 a question from your take-home midterm, and improve them.
 
 Some of these improvements might be "fixes" for things that were pointed out as missing or incorrect.
-Some of them might be things you hoped to do before the deadline, but didn't get a chance to.
+Some of them might be things you hoped to do before the deadline but didn't get a chance to.
 Some notes for completing this exercise:
 
--   You might need to add your data from your the lab / midterm to the `data/` folder in this assignment.
+-   You might need to add your data from your lab/midterm to the `data/` folder in this assignment.
     You do not need to also add a data dictionary.
 
--   You will need to copy over any code needed for cleaning / preparing your data for this specific question.
-    You can reuse code from your previous assignment but note that we will re-evaluate your code as part of the grading for this exercise.
-    This means we might catch something wrong with it that we didn't catch before, so if you spot any errors make sure to fix them.
+-   You will need to copy over any code needed to clean/prepare your data for this specific question.
+    You can reuse code from your previous assignment, but note that we will re-evaluate your code as part of the grading for this exercise.
+    This means we might catch something wrong with it that we didn't catch before, so if you spot any errors, make sure to fix them.
 
 -   Don't worry about being critical of your own work.
-    Even if you lost no points on the question, if you think it can be improved, articulate how / why.
-    We will not go back and apply additional penalties for any mistakes you might point out that we didn't catch at the time of grading your lab / midterm.
-    There's no risk to being critical!
+    Even if you lost no points on the question if you think it can be improved, articulate how / why.
+    We will not apply additional penalties for any mistakes you might point out that we didn't catch when grading your lab/midterm.
+    There's no risk of being critical!
 
 ## Question 9
 
 Choose one question from a previous lab that you received lots of feedback on and/or lost many points on and improve it.
-First, write one sentence reminding us of the specific question and a a few sentences on why you chose this specific question to improve and how you plan to improve it.
+First, write one sentence reminding us of the specific question and a few sentences on why you chose this specific question to improve and how you plan to improve it.
 Then, improve it.
 
 ## Question 10
 
 Choose one question from the take-home midterm that you received lots of feedback on and/or lost many points on and improve it.
-First, write one sentence reminding us of the specific question and a a few sentences on why you chose this specific question to improve and how you plan to improve it.
+First, write one sentence reminding us of the specific question and a few sentences on why you chose this specific question to improve and how you plan to improve it.
 Then, improve it.
