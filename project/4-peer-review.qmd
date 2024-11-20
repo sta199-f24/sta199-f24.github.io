@@ -74,19 +74,20 @@ library(googlesheets4)
 gs4_deauth()
 
 make_pairing_table <- function(section_no) {
-  teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", section_no)) |>
-  mutate(team_to_review_1 = paste0("[", team_to_review_1, "](", url_1, ")")) |>
-  mutate(team_to_review_2 = paste0("[", team_to_review_2, "](", url_2, ")")) |>
-  select(-url_1, -url_2)  |>
-  gt() |>
-  fmt_markdown(
-    columns = everything() 
-  ) |>
-  cols_label(
-    your_team_name = "Your team name",
-    team_to_review_1 = "Team to review 1",
-    team_to_review_2 = "Team to review 2"
-  )
+  read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", section_no)) |>
+    mutate(team_to_review_1 = paste0("[", team_to_review_1, "](", url_1, ")")) |>
+    mutate(team_to_review_2 = paste0("[", team_to_review_2, "](", url_2, ")")) |>
+    select(-url_1, -url_2)  |>
+    gt() |>
+    fmt_markdown(
+      columns = everything() 
+    ) |>
+    cols_label(
+      your_team_name = "Your team name",
+      team_to_review_1 = "Team to review 1",
+      team_to_review_2 = "Team to review 2"
+    )
+}
 ```
 
 ::: panel-tabset
