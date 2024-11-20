@@ -19,7 +19,6 @@ Before diving into the lab, let's first check in on your project's next steps.
     -   If you cannot be there physically due to Thanksgiving travel, make arrangements to Zoom in with the rest of your team who are in lab.
 -   **After Monday, Nov 26:** Work on write-up and presentation incorporating feedback from peers and meeting with TAs/instructor as needed during office hours for further feedback.
 
-
 # Introduction
 
 In this lab, you'll continue building and evaluating predictive models and performing statistical inferences.
@@ -41,7 +40,7 @@ And, as usual, you will also...
 -   Improve your familiarity with version control using Git and GitHub
 
 ::: callout-note
-This lab is due on \*\*Tue, November 26 at 10:30 pm, i.e., right before Thanksgiving break begins.
+This lab is due on **Tue, November 26 at 10:30 pm**, i.e., right before Thanksgiving break begins.
 :::
 
 ## Getting started
@@ -158,13 +157,13 @@ Your response should be a tibble with at least three columns, `taxon`, `taxon_na
 ## Question 5
 
 What is the slope of the regression line for predicting weights of lemurs (`weight_g`) from the ages of lemurs (in years) when their weight was measured (`age_at_wt_y`)?
-Calculate and interpret a 95% bootstrap bootstrap confidence interval together with your point estimate.
+Calculate and interpret a 95% bootstrap bootstrap confidence interval.
+Also report your point estimate.
 Don't forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when simulating your bootstrap distribution.
 
 ::: callout-tip
 Below is a step-by-step recipe for constructing and visualizing a confidence interval.
-The code snippets shown are not "complete." 
-They include some blanks you need to fill in, and they are just intended to guide you in the right direction.
+The code snippets shown are not "complete." They include some blanks you need to fill in, and they are just intended to guide you in the right direction.
 
 -   Step 1: Calculate the point estimate for the slope and the intercept of the regression line.
 
@@ -203,7 +202,8 @@ conf_ints <-
 ## Question 6
 
 What are the slopes of the regression line for predicting weights of lemurs (`weight_g`) from the ages of lemurs (in years) when their weight was measured (`age_at_wt_y`) and their types (`taxon`)?
-Calculate and interpret a 95% bootstrap bootstrap confidence interval together with your point estimate.
+Calculate and interpret a 95% bootstrap bootstrap confidence interval.
+Also report your point estimate.
 Don't forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when simulating your bootstrap distribution.
 
 ## Question 7
@@ -211,7 +211,8 @@ Don't forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when 
 What is the **median** weight of red-bellied lemurs?
 What is the **median** weight of ring-tailed lemurs?
 What is the **median** weight of mongoose lemurs?
-Calculate and interpret a 95% bootstrap bootstrap confidence intervals together with your point estimates.
+Calculate and interpret a 95% bootstrap bootstrap confidence intervals.
+Also report your point estimates.
 Don't forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when simulating your bootstrap distribution.
 
 ## Question 8
