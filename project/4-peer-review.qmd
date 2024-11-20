@@ -69,7 +69,7 @@ As a team you should spend \~30 minutes on each team's project.
 
 To be posted.
 
-<!--
+````{=html}
 
 ```{r}
 library(tidyverse)
@@ -77,80 +77,67 @@ library(gt)
 library(googlesheets4)
 gs4_deauth()
 
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/15vBETwwne7qjZ7EpGvpdk_yZ0zFd07N4cuihF6LpkhY/edit#gid=0") |>
-  mutate(team_to_review = paste0("[", team_to_review, "](", url, ")")) |>
-  select(-url)
-
-make_pairing_table <- function(df, section_no) {
-  df |>
-    filter(section == section_no) |>
-    gt() |>
-    fmt_markdown(
-      columns = team_to_review
-    ) |>
-    cols_align(
-      align = "center",
-      columns = section
-    ) |>
-    cols_label(
-      section = "Lab section",
-      your_team_name = "Your team name",
-      team_to_review = "Team to review"
-    )
-}
+make_pairing_table <- function(section_no) {
+  teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", section_no)) |>
+  mutate(team_to_review_1 = paste0("[", team_to_review_1, "](", url_1, ")")) |>
+  mutate(team_to_review_2 = paste0("[", team_to_review_2, "](", url_2, ")")) |>
+  select(-url_1, -url_2)  |>
+  gt() |>
+  fmt_markdown(
+    columns = everything() 
+  ) |>
+  cols_label(
+    your_team_name = "Your team name",
+    team_to_review_1 = "Team to review 1",
+    team_to_review_2 = "Team to review 2"
+  )
 ```
 
 ::: panel-tabset
 ## L1 - 8:30 am
 
 ```{r}
-make_pairing_table(teams, 1)
+make_pairing_table(1)
 ```
 
 ## L2 - 10:05 am
 
 ```{r}
-make_pairing_table(teams, 2)
+make_pairing_table(2)
 ```
 
 ## L3 - 11:45 am
 
 ```{r}
-make_pairing_table(teams, 3)
+make_pairing_table(3)
 ```
 
 ## L4 - 1:25 pm
 
 ```{r}
-make_pairing_table(teams, 4)
-```
-
-## L11 - 1:25 pm
-
-```{r}
-make_pairing_table(teams, 11)
+make_pairing_table(4)
 ```
 
 ## L5 - 3:05 pm
 
 ```{r}
-make_pairing_table(teams, 5)
+make_pairing_table(5)
 ```
 
 ## L6 - 4:40 pm
 
 ```{r}
-make_pairing_table(teams, 6)
+make_pairing_table(6)
 ```
 
 ## L7 - 4:40 pm
 
 ```{r}
-make_pairing_table(teams, 7)
+make_pairing_table(7)
 ```
 :::
 
--->
+````
 
 # Grading
 
