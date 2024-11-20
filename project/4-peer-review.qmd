@@ -67,8 +67,6 @@ As a team you should spend \~30 minutes on each team's project.
 
 # Review pairings
 
-To be posted.
-
 ````{=html}
 
 ```{r}
@@ -106,35 +104,54 @@ make_pairing_table(1)
 make_pairing_table(2)
 ```
 
-## L3 - 11:45 am
+## L3 - 10:05 am
 
 ```{r}
 make_pairing_table(3)
 ```
 
-## L4 - 1:25 pm
+## L4 - 11:45 am
 
 ```{r}
 make_pairing_table(4)
 ```
 
-## L5 - 3:05 pm
+## L5 - 11:45 am
 
 ```{r}
 make_pairing_table(5)
 ```
 
-## L6 - 4:40 pm
+## L6 - 1:25 pm
 
 ```{r}
 make_pairing_table(6)
 ```
 
-## L7 - 4:40 pm
+## L7 - 1:25 pm
 
 ```{r}
 make_pairing_table(7)
 ```
+
+## L8 - 3:05 pm
+
+```{r}
+make_pairing_table(8)
+```
+
+## L9 - 3:05 pm
+
+```{r}
+make_pairing_table(9)
+```
+
+## L10 - 4:40 pm
+
+```{r}
+make_pairing_table(10)
+```
+
 :::
 
 ````
