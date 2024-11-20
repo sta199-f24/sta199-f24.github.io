@@ -68,6 +68,7 @@ As a team you should spend \~30 minutes on each team's project.
 # Review pairings
 
 ```{r}
+#| message: false
 library(tidyverse)
 library(gt)
 library(googlesheets4)
