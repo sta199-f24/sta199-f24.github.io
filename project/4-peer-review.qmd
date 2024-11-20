@@ -67,8 +67,6 @@ As a team you should spend \~30 minutes on each team's project.
 
 # Review pairings
 
-````{=html}
-
 ```{r}
 library(tidyverse)
 library(gt)
@@ -151,10 +149,8 @@ make_pairing_table(9)
 ```{r}
 make_pairing_table(10)
 ```
-
 :::
 
-````
 
 # Grading
 
