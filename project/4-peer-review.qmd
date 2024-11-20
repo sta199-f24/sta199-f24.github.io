@@ -67,35 +67,26 @@ As a team you should spend \~30 minutes on each team's project.
 
 # Review pairings
 
-To be posted.
-
-<!--
-
 ```{r}
+#| message: false
 library(tidyverse)
 library(gt)
 library(googlesheets4)
 gs4_deauth()
 
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/15vBETwwne7qjZ7EpGvpdk_yZ0zFd07N4cuihF6LpkhY/edit#gid=0") |>
-  mutate(team_to_review = paste0("[", team_to_review, "](", url, ")")) |>
-  select(-url)
-
-make_pairing_table <- function(df, section_no) {
+make_pairing_table <- function(df) {
   df |>
-    filter(section == section_no) |>
+    mutate(team_to_review_1 = paste0("[", team_to_review_1, "](", url_1, ")")) |>
+    mutate(team_to_review_2 = paste0("[", team_to_review_2, "](", url_2, ")")) |>
+    select(-url_1, -url_2)  |>
     gt() |>
     fmt_markdown(
-      columns = team_to_review
-    ) |>
-    cols_align(
-      align = "center",
-      columns = section
+      columns = everything() 
     ) |>
     cols_label(
-      section = "Lab section",
       your_team_name = "Your team name",
-      team_to_review = "Team to review"
+      team_to_review_1 = "Team to review 1",
+      team_to_review_2 = "Team to review 2"
     )
 }
 ```
@@ -104,53 +95,84 @@ make_pairing_table <- function(df, section_no) {
 ## L1 - 8:30 am
 
 ```{r}
-make_pairing_table(teams, 1)
+#| message: false
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 1))
+make_pairing_table(teams)
 ```
 
 ## L2 - 10:05 am
 
 ```{r}
-make_pairing_table(teams, 2)
+#| message: false
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 2))
+make_pairing_table(teams)
 ```
 
-## L3 - 11:45 am
+## L3 - 10:05 am
 
 ```{r}
-make_pairing_table(teams, 3)
+#| message: false
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 3))
+make_pairing_table(teams)
 ```
 
-## L4 - 1:25 pm
+## L4 - 11:45 am
 
 ```{r}
-make_pairing_table(teams, 4)
+#| message: false
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 4))
+make_pairing_table(teams)
 ```
 
-## L11 - 1:25 pm
+## L5 - 11:45 am
 
 ```{r}
-make_pairing_table(teams, 11)
+#| message: false
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 5))
+make_pairing_table(teams)
 ```
 
-## L5 - 3:05 pm
+## L6 - 1:25 pm
 
 ```{r}
-make_pairing_table(teams, 5)
+#| message: false
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 6))
+make_pairing_table(teams)
 ```
 
-## L6 - 4:40 pm
+## L7 - 1:25 pm
 
 ```{r}
-make_pairing_table(teams, 6)
+#| message: false
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 7))
+make_pairing_table(teams)
 ```
 
-## L7 - 4:40 pm
+## L8 - 3:05 pm
 
 ```{r}
-make_pairing_table(teams, 7)
+#| message: false
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 8))
+make_pairing_table(teams)
+```
+
+## L9 - 3:05 pm
+
+```{r}
+#| message: false
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 9))
+make_pairing_table(teams)
+```
+
+## L10 - 4:40 pm
+
+```{r}
+#| message: false
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 10))
+make_pairing_table(teams)
 ```
 :::
 
--->
 
 # Grading
 
