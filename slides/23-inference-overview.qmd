@@ -226,10 +226,36 @@ set.seed(1121)
 null_means <- duke_forest |>
   specify(response = price) |>
   hypothesize(null = "point", mu = 600000) |>
-  generate(reps = 100, type = "draw") |>
+  generate(reps = 100, type = "bootstrap") |>
   calculate(stat = "mean")
 
 null_means
+```
+
+## Visualize the null distribution
+
+```{r}
+visualize(null_means)
+```
+
+## Calculate the p-value
+
+Probability of observed or more extreme outcome, given the null hypothesis is true:
+
+$$
+2 \times P(\bar{x} < 559899 ~ | ~ \mu = 600000)
+$$
+
+```{r}
+null_means |>
+  get_p_value(obs_stat = observed_mean, direction = "two-sided")
+```
+
+## Visualize the p-value
+
+```{r}
+visualize(null_means) +
+  shade_p_value(obs_stat = observed_mean, direction = "two-sided")
 ```
 
 # Application exercise
