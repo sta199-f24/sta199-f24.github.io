@@ -82,7 +82,7 @@ library(knitr)       # for neatly formatted tables
 -   **Null hypothesis,** $H_0$: "There is nothing going on." The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, $\beta_1 = 0$.
 
 -   **Alternative hypothesis,** $H_A$: "There is something going on".
-    The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than, $\beta_1 \ne 0$.
+    The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than 0, $\beta_1 \ne 0$.
 
 ## Calculate observed slope
 
@@ -167,7 +167,7 @@ observed_mean
 
 ## Computing the CI for the mean II {.smaller}
 
-Take `1,000` bootstrap samples and calculate the mean of each one:
+Take `100` bootstrap samples and calculate the mean of each one:
 
 ```{r}
 #| code-line-numbers: "|1|2|3|4|5"
