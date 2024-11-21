@@ -1,0 +1,219 @@
+---
+title: "Inference overview"
+subtitle: "Lecture 23"
+date: "2024-11-21"
+format: 
+  live-revealjs: 
+    output-file: 23-inference-overview-slides.html
+webr:
+  cell-options:
+    autorun: false
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+<!-- end: webr fodder -->
+
+<!-- begin: ae definition -->
+
+```{r}
+#| include: false
+todays_ae <- "ae-19-equality-randomization"
+```
+
+<!-- end: ae definition -->
+
+# Warm-up
+
+## While you wait... {.smaller}
+
+::: appex
+-   Go to your `ae` project in RStudio.
+
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   Click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Wait till the you're prompted to work on the application exercise during class before editing the file.
+:::
+
+# From last time: Randomization
+
+## Packages
+
+```{r}
+#| label: packages
+#| echo: true
+#| message: false
+# load packages
+library(tidyverse)   # for data wrangling and visualization
+library(tidymodels)  # for modeling
+library(openintro)   # for Duke Forest dataset
+library(scales)      # for pretty axis labels
+library(glue)        # for constructing character strings
+library(knitr)       # for neatly formatted tables
+```
+
+## Data: Houses in Duke Forest {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+-   Data on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020
+-   Scraped from Zillow
+-   Source: [`openintro::duke_forest`](http://openintrostat.github.io/openintro/reference/duke_forest.html)
+:::
+
+::: {.column width="50%"}
+![](images/21/duke_forest_home.jpg){fig-alt="Home in Duke Forest"}
+:::
+:::::
+
+## Setting hypotheses
+
+-   **Null hypothesis,** $H_0$: "There is nothing going on." The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, $\beta_1 = 0$.
+
+-   **Alternative hypothesis,** $H_A$: "There is something going on".
+    The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than, $\beta_1 \ne 0$.
+
+## Calculate observed slope
+
+...
+which we have already done:
+
+```{r}
+observed_fit <- duke_forest |>
+  specify(price ~ area) |>
+  fit()
+
+observed_fit
+```
+
+## Simulate null distribution
+
+```{r}
+#| code-line-numbers: "|1|2|3|4|5|6"
+set.seed(20241118)
+null_dist <- duke_forest |>
+  specify(price ~ area) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 100, type = "permute") |>
+  fit()
+```
+
+## View null distribution {.smaller}
+
+```{r}
+null_dist
+```
+
+## Visualize null distribution {.smaller}
+
+```{r}
+null_dist |>
+  filter(term == "area") |>
+  ggplot(aes(x = estimate)) +
+  geom_histogram(binwidth = 15)
+```
+
+## Visualize null distribution (alternative)
+
+```{r}
+visualize(null_dist) +
+  shade_p_value(obs_stat = observed_fit, direction = "two-sided")
+```
+
+## Get p-value {.smaller}
+
+```{r}
+null_dist |>
+  get_p_value(obs_stat = observed_fit, direction = "two-sided")
+```
+
+## Make a decision
+
+::: task
+Based on the p-value calculated, what is the conclusion of the hypothesis test?
+:::
+
+# Inference for a mean
+
+## Average prices of houses in Duke Forest
+
+::: task
+Estimate the average price of houses in Duke Forest with a 95% confidence interval.
+:::
+
+## Computing the CI for the mean I
+
+Calculate the observed **mean**:
+
+```{r}
+#| echo: true
+observed_mean <- duke_forest |>
+  specify(response = price) |>
+  calculate(stat = "mean")
+
+observed_mean
+```
+
+## Computing the CI for the mean II {.smaller}
+
+Take `1,000` bootstrap samples and calculate the mean of each one:
+
+```{r}
+#| echo: true
+#| code-line-numbers: "1,5,6"
+set.seed(1121)
+
+boot_means <- duke_forest |>
+  specify(response = price) |>
+  generate(reps = 100, type = "bootstrap") |>
+  calculate(stat = "mean")
+
+boot_means
+```
+
+## Computing the CI for the mean III
+
+Compute the 95% CI as the middle 95% of the bootstrap distribution:
+
+```{r}
+get_confidence_interval(
+  boot_means, 
+  point_estimate = observed_mean, 
+  level = 0.95,
+  type = "percentile"
+)
+```
+
+# Application exercise
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits.
+:::
+
+## Recap of AE {.smaller}
+
+-   A hypothesis test is a statistical technique used to evaluate competing claims (null and alternative hypotheses) using data.
+-   We simulate a null distribution using our original data.
+-   We use our sample statistic and direction of the alternative hypothesis to calculate the p-value.
+-   We use the p-value to determine conclusions about the alternative hypotheses.
+
+# 
