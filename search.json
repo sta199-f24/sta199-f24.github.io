@@ -7636,7 +7636,7 @@
     "href": "slides/23-inference-overview.html#setting-the-hypotheses",
     "title": "Inference overview",
     "section": "Setting the hypotheses",
-    "text": "Setting the hypotheses\nDefine \\(\\mu\\) as the true average price of all houses in Duke Forest\n\\(H_0: \\mu = 600000\\) - The true average price of all houses in Duke Forest is $600,000 (as claimed by the Durham Herald Sun, i.e., there’s nothing going on)\n\\(H_A: \\mu \\ne 600000\\) - The true average price of all houses in Duke Forest is different than $600,000 (refuting the claim by the Durham Herald Sun, i.e., there is something going on)"
+    "text": "Setting the hypotheses\nDefine \\(\\mu\\) as the true average price of all houses in Duke Forest:\n\n\n\\(H_0: \\mu = 600000\\) - The true average price of all houses in Duke Forest is $600,000 (as claimed by the Durham Herald Sun, i.e., there’s nothing going on)\n\\(H_A: \\mu \\ne 600000\\) - The true average price of all houses in Duke Forest is different than $600,000 (refuting the claim by the Durham Herald Sun, i.e., there is something going on)"
   },
   {
     "objectID": "slides/23-inference-overview.html#calculate-the-observed",
@@ -7664,14 +7664,14 @@
     "href": "slides/23-inference-overview.html#calculate-the-p-value",
     "title": "Inference overview",
     "section": "Calculate the p-value",
-    "text": "Calculate the p-value\nProbability of observed or more extreme outcome, given the null hypothesis is true:\n\\[\n2 \\times P(\\bar{x} &lt; 559899 ~ | ~ \\mu = 600000)\n\\]\n\nnull_means |&gt;\n  get_p_value(obs_stat = observed_mean, direction = \"two-sided\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1    0.02"
+    "text": "Calculate the p-value\n\nProbability of observed or lower outcome, given the given the null hypothesis is true: \\(P(\\bar{x} &lt; 559899 ~ | ~ \\mu = 600000)\\)\n\n\n. . .\n\nProbability of observed or more extreme outcome, given the null hypothesis is true:\n\n\\[\n2 \\times P(\\bar{x} &lt; 559899 ~ | ~ \\mu = 600000)\n\\]\n. . .\n\nnull_means |&gt;\n  get_p_value(\n    obs_stat = observed_mean, \n    direction = \"two-sided\"\n  )\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1    0.02"
   },
   {
     "objectID": "slides/23-inference-overview.html#visualize-the-p-value",
     "href": "slides/23-inference-overview.html#visualize-the-p-value",
     "title": "Inference overview",
     "section": "Visualize the p-value",
-    "text": "Visualize the p-value\n\nvisualize(null_means) +\n  shade_p_value(obs_stat = observed_mean, direction = \"two-sided\")"
+    "text": "Visualize the p-value\n\nvisualize(null_means) +\n  shade_p_value(\n    obs_stat = observed_mean, \n    direction = \"two-sided\"\n  )"
   },
   {
     "objectID": "slides/23-inference-overview.html#ae-19-equality-randomization",
@@ -7804,7 +7804,7 @@
     "href": "slides/23-inference-overview-slides.html#setting-the-hypotheses",
     "title": "Inference overview",
     "section": "Setting the hypotheses",
-    "text": "Setting the hypotheses\nDefine \\(\\mu\\) as the true average price of all houses in Duke Forest\n\\(H_0: \\mu = 600000\\) - The true average price of all houses in Duke Forest is $600,000 (as claimed by the Durham Herald Sun, i.e., there’s nothing going on)\n\\(H_A: \\mu \\ne 600000\\) - The true average price of all houses in Duke Forest is different than $600,000 (refuting the claim by the Durham Herald Sun, i.e., there is something going on)"
+    "text": "Setting the hypotheses\nDefine \\(\\mu\\) as the true average price of all houses in Duke Forest:\n\n\n\\(H_0: \\mu = 600000\\) - The true average price of all houses in Duke Forest is $600,000 (as claimed by the Durham Herald Sun, i.e., there’s nothing going on)\n\\(H_A: \\mu \\ne 600000\\) - The true average price of all houses in Duke Forest is different than $600,000 (refuting the claim by the Durham Herald Sun, i.e., there is something going on)"
   },
   {
     "objectID": "slides/23-inference-overview-slides.html#calculate-the-observed",
@@ -7832,14 +7832,14 @@
     "href": "slides/23-inference-overview-slides.html#calculate-the-p-value",
     "title": "Inference overview",
     "section": "Calculate the p-value",
-    "text": "Calculate the p-value\nProbability of observed or more extreme outcome, given the null hypothesis is true:\n\\[\n2 \\times P(\\bar{x} &lt; 559899 ~ | ~ \\mu = 600000)\n\\]\n\nnull_means |&gt;\n  get_p_value(obs_stat = observed_mean, direction = \"two-sided\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1    0.02"
+    "text": "Calculate the p-value\n\nProbability of observed or lower outcome, given the given the null hypothesis is true: \\(P(\\bar{x} &lt; 559899 ~ | ~ \\mu = 600000)\\)\n\n\n\n\nProbability of observed or more extreme outcome, given the null hypothesis is true:\n\n\\[\n2 \\times P(\\bar{x} &lt; 559899 ~ | ~ \\mu = 600000)\n\\]\n\n\n\nnull_means |&gt;\n  get_p_value(\n    obs_stat = observed_mean, \n    direction = \"two-sided\"\n  )\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1    0.02"
   },
   {
     "objectID": "slides/23-inference-overview-slides.html#visualize-the-p-value",
     "href": "slides/23-inference-overview-slides.html#visualize-the-p-value",
     "title": "Inference overview",
     "section": "Visualize the p-value",
-    "text": "Visualize the p-value\n\nvisualize(null_means) +\n  shade_p_value(obs_stat = observed_mean, direction = \"two-sided\")"
+    "text": "Visualize the p-value\n\nvisualize(null_means) +\n  shade_p_value(\n    obs_stat = observed_mean, \n    direction = \"two-sided\"\n  )"
   },
   {
     "objectID": "slides/23-inference-overview-slides.html#ae-19-equality-randomization",
