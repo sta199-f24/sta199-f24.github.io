@@ -11,7 +11,6 @@ We'll use the **tidyverse** and **tidymodels** packages.
 ```{r}
 #| label: load-packages
 #| message: false
-
 library(tidyverse)
 library(tidymodels)
 ```
@@ -45,8 +44,7 @@ Load the data.
 ```{r}
 #| label: load-data
 #| message: false
-
-equality <- read_csv("https://sta199-s24.github.io/data/equality.csv")
+equality <- read_csv("data/equality.csv")
 ```
 
 ## Exercise 2
@@ -58,7 +56,6 @@ Calculate and visualize these proportions.
 ```{r}
 #| label: sample-props
 #| fig-asp: 0.4
-
 # add code here
 ```
 
@@ -68,7 +65,6 @@ Calculate the observed sample statistic, i.e., the difference between the propor
 
 ```{r}
 #| label: sample-stat
-
 # add code here
 ```
 
@@ -92,7 +88,6 @@ Conduct the hypothesis test using randomization and visualize and report the p-v
 
 ```{r}
 #| label: null-dist
-
 # add code here
 ```
 
@@ -116,7 +111,6 @@ Estimate the difference in population proportions of 18-24 year old NC voters an
 
 ```{r}
 #| label: bootstrap-ci
-
 # add code here
 ```
 
