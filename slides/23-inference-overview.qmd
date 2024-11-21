@@ -146,7 +146,7 @@ Based on the p-value calculated, what is the conclusion of the hypothesis test?
 
 # Inference for a mean
 
-## Average prices of houses in Duke Forest
+## Estimating the average price of houses in Duke Forest
 
 ::: task
 Estimate the average price of houses in Duke Forest with a 95% confidence interval.
@@ -170,8 +170,7 @@ observed_mean
 Take `1,000` bootstrap samples and calculate the mean of each one:
 
 ```{r}
-#| echo: true
-#| code-line-numbers: "1,5,6"
+#| code-line-numbers: "|1|2|3|4|5"
 set.seed(1121)
 
 boot_means <- duke_forest |>
@@ -193,6 +192,44 @@ get_confidence_interval(
   level = 0.95,
   type = "percentile"
 )
+```
+
+## Making a decision about the average price of houses in Duke Forest
+
+::: task
+An article in the Durham Herald Sun states that the average price of a house in Duke Forest is \$600,000.
+Do these data provide convincing evidence to refute this claim?
+:::
+
+## Setting the hypotheses
+
+Define $\mu$ as the true average price of all houses in Duke Forest
+
+$H_0: \mu = 600000$ - The true average price of all houses in Duke Forest is \$600,000 (as claimed by the Durham Herald Sun, i.e., there's nothing going on)
+
+$H_A: \mu \ne 600000$ - The true average price of all houses in Duke Forest is different than \$600,000 (refuting the claim by the Durham Herald Sun, i.e., there is something going on)
+
+## Calculate the observed
+
+Well, we already did this!
+
+```{r}
+observed_mean
+```
+
+## Simulate the null distribution
+
+```{r}
+#| code-line-numbers: "|5|6"
+set.seed(1121)
+
+null_means <- duke_forest |>
+  specify(response = price) |>
+  hypothesize(null = "point", mu = 600000) |>
+  generate(reps = 100, type = "draw") |>
+  calculate(stat = "mean")
+
+null_means
 ```
 
 # Application exercise
