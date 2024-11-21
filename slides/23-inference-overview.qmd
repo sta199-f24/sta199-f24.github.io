@@ -203,11 +203,13 @@ Do these data provide convincing evidence to refute this claim?
 
 ## Setting the hypotheses
 
-Define $\mu$ as the true average price of all houses in Duke Forest
+Define $\mu$ as the true average price of all houses in Duke Forest:
 
-$H_0: \mu = 600000$ - The true average price of all houses in Duke Forest is \$600,000 (as claimed by the Durham Herald Sun, i.e., there's nothing going on)
+::: incremental
+-   $H_0: \mu = 600000$ - The true average price of all houses in Duke Forest is \$600,000 (as claimed by the Durham Herald Sun, i.e., there's nothing going on)
 
-$H_A: \mu \ne 600000$ - The true average price of all houses in Duke Forest is different than \$600,000 (refuting the claim by the Durham Herald Sun, i.e., there is something going on)
+-   $H_A: \mu \ne 600000$ - The true average price of all houses in Duke Forest is different than \$600,000 (refuting the claim by the Durham Herald Sun, i.e., there is something going on)
+:::
 
 ## Calculate the observed
 
@@ -217,7 +219,7 @@ Well, we already did this!
 observed_mean
 ```
 
-## Simulate the null distribution
+## Simulate the null distribution {.smaller}
 
 ```{r}
 #| code-line-numbers: "|5|6"
@@ -238,24 +240,36 @@ null_means
 visualize(null_means)
 ```
 
-## Calculate the p-value
+## Calculate the p-value {.smaller}
 
-Probability of observed or more extreme outcome, given the null hypothesis is true:
+- Probability of observed or lower outcome, given the given the null hypothesis is true: $P(\bar{x} < 559899 ~ | ~ \mu = 600000)$
+
+. . .
+
+- Probability of observed or more extreme outcome, given the null hypothesis is true:
 
 $$
 2 \times P(\bar{x} < 559899 ~ | ~ \mu = 600000)
 $$
 
+. . .
+
 ```{r}
 null_means |>
-  get_p_value(obs_stat = observed_mean, direction = "two-sided")
+  get_p_value(
+    obs_stat = observed_mean, 
+    direction = "two-sided"
+  )
 ```
 
-## Visualize the p-value
+## Visualize the p-value {.smaller}
 
 ```{r}
 visualize(null_means) +
-  shade_p_value(obs_stat = observed_mean, direction = "two-sided")
+  shade_p_value(
+    obs_stat = observed_mean, 
+    direction = "two-sided"
+  )
 ```
 
 # Application exercise
@@ -278,5 +292,3 @@ visualize(null_means) +
 -   We simulate a null distribution using our original data.
 -   We use our sample statistic and direction of the alternative hypothesis to calculate the p-value.
 -   We use the p-value to determine conclusions about the alternative hypotheses.
-
-# 
