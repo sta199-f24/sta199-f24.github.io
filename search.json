@@ -7597,11 +7597,11 @@
     "text": "Make a decision\n\nBased on the p-value calculated, what is the conclusion of the hypothesis test?"
   },
   {
-    "objectID": "slides/23-inference-overview.html#average-prices-of-houses-in-duke-forest",
-    "href": "slides/23-inference-overview.html#average-prices-of-houses-in-duke-forest",
+    "objectID": "slides/23-inference-overview.html#estimating-the-average-price-of-houses-in-duke-forest",
+    "href": "slides/23-inference-overview.html#estimating-the-average-price-of-houses-in-duke-forest",
     "title": "Inference overview",
-    "section": "Average prices of houses in Duke Forest",
-    "text": "Average prices of houses in Duke Forest\n\nEstimate the average price of houses in Duke Forest with a 95% confidence interval."
+    "section": "Estimating the average price of houses in Duke Forest",
+    "text": "Estimating the average price of houses in Duke Forest\n\nEstimate the average price of houses in Duke Forest with a 95% confidence interval."
   },
   {
     "objectID": "slides/23-inference-overview.html#computing-the-ci-for-the-mean-i",
@@ -7623,6 +7623,55 @@
     "title": "Inference overview",
     "section": "Computing the CI for the mean III",
     "text": "Computing the CI for the mean III\nCompute the 95% CI as the middle 95% of the bootstrap distribution:\n\nget_confidence_interval(\n  boot_means, \n  point_estimate = observed_mean, \n  level = 0.95,\n  type = \"percentile\"\n)\n\n# A tibble: 1 × 2\n  lower_ci upper_ci\n     &lt;dbl&gt;    &lt;dbl&gt;\n1  521923.  605514."
+  },
+  {
+    "objectID": "slides/23-inference-overview.html#making-a-decision-about-the-average-price-of-houses-in-duke-forest",
+    "href": "slides/23-inference-overview.html#making-a-decision-about-the-average-price-of-houses-in-duke-forest",
+    "title": "Inference overview",
+    "section": "Making a decision about the average price of houses in Duke Forest",
+    "text": "Making a decision about the average price of houses in Duke Forest\n\nAn article in the Durham Herald Sun states that the average price of a house in Duke Forest is $600,000. Do these data provide convincing evidence to refute this claim?"
+  },
+  {
+    "objectID": "slides/23-inference-overview.html#setting-the-hypotheses",
+    "href": "slides/23-inference-overview.html#setting-the-hypotheses",
+    "title": "Inference overview",
+    "section": "Setting the hypotheses",
+    "text": "Setting the hypotheses\nDefine \\(\\mu\\) as the true average price of all houses in Duke Forest\n\\(H_0: \\mu = 600000\\) - The true average price of all houses in Duke Forest is $600,000 (as claimed by the Durham Herald Sun, i.e., there’s nothing going on)\n\\(H_A: \\mu \\ne 600000\\) - The true average price of all houses in Duke Forest is different than $600,000 (refuting the claim by the Durham Herald Sun, i.e., there is something going on)"
+  },
+  {
+    "objectID": "slides/23-inference-overview.html#calculate-the-observed",
+    "href": "slides/23-inference-overview.html#calculate-the-observed",
+    "title": "Inference overview",
+    "section": "Calculate the observed",
+    "text": "Calculate the observed\nWell, we already did this!\n\nobserved_mean\n\nResponse: price (numeric)\n# A tibble: 1 × 1\n     stat\n    &lt;dbl&gt;\n1 559899."
+  },
+  {
+    "objectID": "slides/23-inference-overview.html#simulate-the-null-distribution",
+    "href": "slides/23-inference-overview.html#simulate-the-null-distribution",
+    "title": "Inference overview",
+    "section": "Simulate the null distribution",
+    "text": "Simulate the null distribution\n\nset.seed(1121)\n\nnull_means &lt;- duke_forest |&gt;\n  specify(response = price) |&gt;\n  hypothesize(null = \"point\", mu = 600000) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  calculate(stat = \"mean\")\n\nnull_means\n\nResponse: price (numeric)\nNull Hypothesis: point\n# A tibble: 100 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 631572.\n 2         2 586077.\n 3         3 628357.\n 4         4 609853.\n 5         5 606495.\n 6         6 623755.\n 7         7 573132.\n 8         8 615423.\n 9         9 599994.\n10        10 628927.\n# ℹ 90 more rows"
+  },
+  {
+    "objectID": "slides/23-inference-overview.html#visualize-the-null-distribution",
+    "href": "slides/23-inference-overview.html#visualize-the-null-distribution",
+    "title": "Inference overview",
+    "section": "Visualize the null distribution",
+    "text": "Visualize the null distribution\n\nvisualize(null_means)"
+  },
+  {
+    "objectID": "slides/23-inference-overview.html#calculate-the-p-value",
+    "href": "slides/23-inference-overview.html#calculate-the-p-value",
+    "title": "Inference overview",
+    "section": "Calculate the p-value",
+    "text": "Calculate the p-value\nProbability of observed or more extreme outcome, given the null hypothesis is true:\n\\[\n2 \\times P(\\bar{x} &lt; 559899 ~ | ~ \\mu = 600000)\n\\]\n\nnull_means |&gt;\n  get_p_value(obs_stat = observed_mean, direction = \"two-sided\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1    0.02"
+  },
+  {
+    "objectID": "slides/23-inference-overview.html#visualize-the-p-value",
+    "href": "slides/23-inference-overview.html#visualize-the-p-value",
+    "title": "Inference overview",
+    "section": "Visualize the p-value",
+    "text": "Visualize the p-value\n\nvisualize(null_means) +\n  shade_p_value(obs_stat = observed_mean, direction = \"two-sided\")"
   },
   {
     "objectID": "slides/23-inference-overview.html#ae-19-equality-randomization",
@@ -7716,11 +7765,11 @@
     "text": "Make a decision\n\nBased on the p-value calculated, what is the conclusion of the hypothesis test?"
   },
   {
-    "objectID": "slides/23-inference-overview-slides.html#average-prices-of-houses-in-duke-forest",
-    "href": "slides/23-inference-overview-slides.html#average-prices-of-houses-in-duke-forest",
+    "objectID": "slides/23-inference-overview-slides.html#estimating-the-average-price-of-houses-in-duke-forest",
+    "href": "slides/23-inference-overview-slides.html#estimating-the-average-price-of-houses-in-duke-forest",
     "title": "Inference overview",
-    "section": "Average prices of houses in Duke Forest",
-    "text": "Average prices of houses in Duke Forest\n\nEstimate the average price of houses in Duke Forest with a 95% confidence interval."
+    "section": "Estimating the average price of houses in Duke Forest",
+    "text": "Estimating the average price of houses in Duke Forest\n\nEstimate the average price of houses in Duke Forest with a 95% confidence interval."
   },
   {
     "objectID": "slides/23-inference-overview-slides.html#computing-the-ci-for-the-mean-i",
@@ -7742,6 +7791,55 @@
     "title": "Inference overview",
     "section": "Computing the CI for the mean III",
     "text": "Computing the CI for the mean III\nCompute the 95% CI as the middle 95% of the bootstrap distribution:\n\nget_confidence_interval(\n  boot_means, \n  point_estimate = observed_mean, \n  level = 0.95,\n  type = \"percentile\"\n)\n\n# A tibble: 1 × 2\n  lower_ci upper_ci\n     &lt;dbl&gt;    &lt;dbl&gt;\n1  521923.  605514."
+  },
+  {
+    "objectID": "slides/23-inference-overview-slides.html#making-a-decision-about-the-average-price-of-houses-in-duke-forest",
+    "href": "slides/23-inference-overview-slides.html#making-a-decision-about-the-average-price-of-houses-in-duke-forest",
+    "title": "Inference overview",
+    "section": "Making a decision about the average price of houses in Duke Forest",
+    "text": "Making a decision about the average price of houses in Duke Forest\n\nAn article in the Durham Herald Sun states that the average price of a house in Duke Forest is $600,000. Do these data provide convincing evidence to refute this claim?"
+  },
+  {
+    "objectID": "slides/23-inference-overview-slides.html#setting-the-hypotheses",
+    "href": "slides/23-inference-overview-slides.html#setting-the-hypotheses",
+    "title": "Inference overview",
+    "section": "Setting the hypotheses",
+    "text": "Setting the hypotheses\nDefine \\(\\mu\\) as the true average price of all houses in Duke Forest\n\\(H_0: \\mu = 600000\\) - The true average price of all houses in Duke Forest is $600,000 (as claimed by the Durham Herald Sun, i.e., there’s nothing going on)\n\\(H_A: \\mu \\ne 600000\\) - The true average price of all houses in Duke Forest is different than $600,000 (refuting the claim by the Durham Herald Sun, i.e., there is something going on)"
+  },
+  {
+    "objectID": "slides/23-inference-overview-slides.html#calculate-the-observed",
+    "href": "slides/23-inference-overview-slides.html#calculate-the-observed",
+    "title": "Inference overview",
+    "section": "Calculate the observed",
+    "text": "Calculate the observed\nWell, we already did this!\n\nobserved_mean\n\nResponse: price (numeric)\n# A tibble: 1 × 1\n     stat\n    &lt;dbl&gt;\n1 559899."
+  },
+  {
+    "objectID": "slides/23-inference-overview-slides.html#simulate-the-null-distribution",
+    "href": "slides/23-inference-overview-slides.html#simulate-the-null-distribution",
+    "title": "Inference overview",
+    "section": "Simulate the null distribution",
+    "text": "Simulate the null distribution\n\nset.seed(1121)\n\nnull_means &lt;- duke_forest |&gt;\n  specify(response = price) |&gt;\n  hypothesize(null = \"point\", mu = 600000) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  calculate(stat = \"mean\")\n\nnull_means\n\nResponse: price (numeric)\nNull Hypothesis: point\n# A tibble: 100 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 631572.\n 2         2 586077.\n 3         3 628357.\n 4         4 609853.\n 5         5 606495.\n 6         6 623755.\n 7         7 573132.\n 8         8 615423.\n 9         9 599994.\n10        10 628927.\n# ℹ 90 more rows"
+  },
+  {
+    "objectID": "slides/23-inference-overview-slides.html#visualize-the-null-distribution",
+    "href": "slides/23-inference-overview-slides.html#visualize-the-null-distribution",
+    "title": "Inference overview",
+    "section": "Visualize the null distribution",
+    "text": "Visualize the null distribution\n\nvisualize(null_means)"
+  },
+  {
+    "objectID": "slides/23-inference-overview-slides.html#calculate-the-p-value",
+    "href": "slides/23-inference-overview-slides.html#calculate-the-p-value",
+    "title": "Inference overview",
+    "section": "Calculate the p-value",
+    "text": "Calculate the p-value\nProbability of observed or more extreme outcome, given the null hypothesis is true:\n\\[\n2 \\times P(\\bar{x} &lt; 559899 ~ | ~ \\mu = 600000)\n\\]\n\nnull_means |&gt;\n  get_p_value(obs_stat = observed_mean, direction = \"two-sided\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1    0.02"
+  },
+  {
+    "objectID": "slides/23-inference-overview-slides.html#visualize-the-p-value",
+    "href": "slides/23-inference-overview-slides.html#visualize-the-p-value",
+    "title": "Inference overview",
+    "section": "Visualize the p-value",
+    "text": "Visualize the p-value\n\nvisualize(null_means) +\n  shade_p_value(obs_stat = observed_mean, direction = \"two-sided\")"
   },
   {
     "objectID": "slides/23-inference-overview-slides.html#ae-19-equality-randomization",
