@@ -7545,7 +7545,7 @@
     "href": "slides/23-inference-overview.html#setting-hypotheses",
     "title": "Inference overview",
     "section": "Setting hypotheses",
-    "text": "Setting hypotheses\n\nNull hypothesis, \\(H_0\\): “There is nothing going on.” The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, \\(\\beta_1 = 0\\).\nAlternative hypothesis, \\(H_A\\): “There is something going on”. The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than, \\(\\beta_1 \\ne 0\\)."
+    "text": "Setting hypotheses\n\nNull hypothesis, \\(H_0\\): “There is nothing going on.” The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, \\(\\beta_1 = 0\\).\nAlternative hypothesis, \\(H_A\\): “There is something going on”. The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than 0, \\(\\beta_1 \\ne 0\\)."
   },
   {
     "objectID": "slides/23-inference-overview.html#calculate-observed-slope",
@@ -7615,7 +7615,7 @@
     "href": "slides/23-inference-overview.html#computing-the-ci-for-the-mean-ii",
     "title": "Inference overview",
     "section": "Computing the CI for the mean II",
-    "text": "Computing the CI for the mean II\nTake 1,000 bootstrap samples and calculate the mean of each one:\n\nset.seed(1121)\n\nboot_means &lt;- duke_forest |&gt;\n  specify(response = price) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  calculate(stat = \"mean\")\n\nboot_means\n\nResponse: price (numeric)\n# A tibble: 100 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 591471.\n 2         2 545975.\n 3         3 588256.\n 4         4 569751.\n 5         5 566394.\n 6         6 583654.\n 7         7 533031.\n 8         8 575321.\n 9         9 559893.\n10        10 588826.\n# ℹ 90 more rows"
+    "text": "Computing the CI for the mean II\nTake 100 bootstrap samples and calculate the mean of each one:\n\nset.seed(1121)\n\nboot_means &lt;- duke_forest |&gt;\n  specify(response = price) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  calculate(stat = \"mean\")\n\nboot_means\n\nResponse: price (numeric)\n# A tibble: 100 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 591471.\n 2         2 545975.\n 3         3 588256.\n 4         4 569751.\n 5         5 566394.\n 6         6 583654.\n 7         7 533031.\n 8         8 575321.\n 9         9 559893.\n10        10 588826.\n# ℹ 90 more rows"
   },
   {
     "objectID": "slides/23-inference-overview.html#computing-the-ci-for-the-mean-iii",
@@ -7713,7 +7713,7 @@
     "href": "slides/23-inference-overview-slides.html#setting-hypotheses",
     "title": "Inference overview",
     "section": "Setting hypotheses",
-    "text": "Setting hypotheses\n\nNull hypothesis, \\(H_0\\): “There is nothing going on.” The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, \\(\\beta_1 = 0\\).\nAlternative hypothesis, \\(H_A\\): “There is something going on”. The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than, \\(\\beta_1 \\ne 0\\)."
+    "text": "Setting hypotheses\n\nNull hypothesis, \\(H_0\\): “There is nothing going on.” The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, \\(\\beta_1 = 0\\).\nAlternative hypothesis, \\(H_A\\): “There is something going on”. The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than 0, \\(\\beta_1 \\ne 0\\)."
   },
   {
     "objectID": "slides/23-inference-overview-slides.html#calculate-observed-slope",
@@ -7783,7 +7783,7 @@
     "href": "slides/23-inference-overview-slides.html#computing-the-ci-for-the-mean-ii",
     "title": "Inference overview",
     "section": "Computing the CI for the mean II",
-    "text": "Computing the CI for the mean II\nTake 1,000 bootstrap samples and calculate the mean of each one:\n\nset.seed(1121)\n\nboot_means &lt;- duke_forest |&gt;\n  specify(response = price) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  calculate(stat = \"mean\")\n\nboot_means\n\nResponse: price (numeric)\n# A tibble: 100 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 591471.\n 2         2 545975.\n 3         3 588256.\n 4         4 569751.\n 5         5 566394.\n 6         6 583654.\n 7         7 533031.\n 8         8 575321.\n 9         9 559893.\n10        10 588826.\n# ℹ 90 more rows"
+    "text": "Computing the CI for the mean II\nTake 100 bootstrap samples and calculate the mean of each one:\n\nset.seed(1121)\n\nboot_means &lt;- duke_forest |&gt;\n  specify(response = price) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  calculate(stat = \"mean\")\n\nboot_means\n\nResponse: price (numeric)\n# A tibble: 100 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 591471.\n 2         2 545975.\n 3         3 588256.\n 4         4 569751.\n 5         5 566394.\n 6         6 583654.\n 7         7 533031.\n 8         8 575321.\n 9         9 559893.\n10        10 588826.\n# ℹ 90 more rows"
   },
   {
     "objectID": "slides/23-inference-overview-slides.html#computing-the-ci-for-the-mean-iii",
