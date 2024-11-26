@@ -57,7 +57,7 @@ todays_ae <- "ae-19-equality-randomization"
 
 # Projects with Quarto [live demo]
 
-## Your project write-up with Quarto
+## Your project write-up with Quarto {.smaller}
 
 - Figure sizing: `fig-width`, `fig-height`, etc. in code cells.
 
