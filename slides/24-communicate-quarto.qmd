@@ -34,17 +34,9 @@ todays_ae <- "ae-19-equality-randomization"
 
 # Warm-up
 
-## While you wait... {.smaller}
+## Announcements
 
-::: appex
--   Go to your `ae` project in RStudio.
-
--   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
-
--   Click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
-
--   Wait till the you're prompted to work on the application exercise during class before editing the file.
-:::
+- Lab 8 due tonight at 10:30 pm
 
 # From last time
 
