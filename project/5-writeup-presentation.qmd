@@ -136,6 +136,8 @@ Presentations will be recorded and uploaded to Warpwire or YouTube.
 **The presentation must be no longer than 5 minutes.** 
 During grading, we will stop watching your video at the 5-minute mark.
 
+### Recording your presentation
+
 For recording your presentation, you may use can use any platform that works best for your group to record your presentation.
 Below are a few resources on recording videos:
 
@@ -144,19 +146,31 @@ Below are a few resources on recording videos:
 -   [Windows 10 built-in screen recording functionality](https://www.youtube.com/watch?v=OfPbr1mRDuo)
 -   [Kap for screen recording](https://getkap.co/)
 
-Once your video is ready, upload the video to Warpwire or another video platform (e.g., YouTube), then add a link to your video in your repo README.
+### Uploading your presentation
+
+Once your video is ready, upload it to Warpwire or another video platform (e.g., YouTube).
 
 To upload your video to Warpwire:
 
--   Click the Warpwire tab in the course Canvas site.
+-   Click the Warpwire tab on the course Canvas site.
 -   Click the "+" and select "Upload files".
 -   Locate the video on your computer and click to upload.
 
 The instructions should be a lot more straightforward for YouTube.
-See <https://support.google.com/youtube/answer/57407?hl=en&co=GENIE.Platform%3DDesktop> for step-by-step instructions.
+See <https://support.google.com/youtube/answer/57407?hl=en&co=GENIE.Platform%3DDesktop> for step-by-step instructions. 
+You can make it "Unlisted", which means it will only be available to those you've shared the link with.
 
-Once you've uploaded your video to some platform, grab its sharing link and post it on Ed Discussion.
-More information on this will be posted closer to the project deadline.
+### Sharing your presentation
+
+This step is essential -- if you don't share your video by the deadline, it will be as if you haven't recorded it in the first place.
+
+You must share your video with the teaching team **and** with other students in the class.
+
+- Sharing with the teaching team (formal submission): Add a link to your video in your repo's README.
+
+- Sharing with other students in the class: Post a link to your video on Ed Discussion. Title it "Your team name: Your project title" and use the "Presentation" tag.
+
+Make sure that your video is accessible to others. You should test this by sharing the link with a teammate or checking it in Incognito mode in your browser.
 
 ## Grading
 
