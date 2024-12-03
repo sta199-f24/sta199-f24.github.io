@@ -3,25 +3,9 @@ title: "Looking back: STA 199 overview"
 subtitle: "Lecture 25"
 date: "2024-12-03"
 format: 
-  live-revealjs: 
+  revealjs: 
     output-file: 25-look-back-overview-slides.html
-webr:
-  cell-options:
-    autorun: false
 ---
-
-<!-- begin: webr fodder -->
-
-{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
-
-```{webr}
-#| edit: false
-#| echo: false
-#| output: false
-options(width = 60)
-```
-
-<!-- end: webr fodder -->
 
 <!-- begin: ae definition -->
 
