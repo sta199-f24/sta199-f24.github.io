@@ -27,7 +27,7 @@ options(width = 60)
 
 ```{r}
 #| include: false
-todays_ae <- "ae-20-XXX"
+todays_ae <- "ae-20-effective-dataviz"
 ```
 
 <!-- end: ae definition -->
@@ -38,7 +38,7 @@ todays_ae <- "ae-20-XXX"
 
 -   Final exam review session: Tuesday, 12/10, 11 am - 1 pm in Bio Sci 111 – come with questions!
 -   Modified office hours during finals week: See "finals week" tab on the [office hours sheet](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?gid=336315218#gid=336315218)
--   Course and TA evaluations due Monday, December 9
+-   Course and TA evaluations due Monday, 12/9
     -   TA of the Year award nominations: Email [dus\@sta.duke.edu](mailto:dus@stat.duke.edu).
 
 ## Final exam
@@ -51,6 +51,8 @@ Thursday, 12/14, 9 am - 12 pm
 
 ## Thursday: Looking further
 
+::: columns
+::: column
 **Options:**
 
 - Bayesian inference
@@ -58,6 +60,11 @@ Thursday, 12/14, 9 am - 12 pm
 - Building data dashboards
 
 - Building data-centric interactive web apps
+:::
+::: column
+![](images/25/qr-code.png)
+:::
+:::
 
 # Projects
 
@@ -88,6 +95,18 @@ The American Association of University Professors (AAUP) is a nonprofit membersh
 What trends are apparent in this visualization?
 
 ![](images/25/staff-employment.png){fig-align="center"}
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits.
+:::
 
 ## Data prep
 
