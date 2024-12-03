@@ -45,6 +45,7 @@ todays_ae <- "ae-20-effective-dataviz"
 
 Thursday, 12/14, 9 am - 12 pm
 
+-   Review posted on course website
 -   You should have received an email with your room assignment: Bio Sci 111 or Gross 107 (or testing center)
 -   Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you
 -   Also bring a pencil and eraser (you’re allowed to use a pen, but you might not want to)
