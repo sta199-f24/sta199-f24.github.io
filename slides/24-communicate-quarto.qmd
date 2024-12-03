@@ -5,6 +5,12 @@ date: "2024-11-26"
 format: 
   revealjs: 
     output-file: 24-communicate-quarto-slides.html
+    footer: "[🔗 sta199-f24.github.io](https://sta199-f24.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: "images/logo.png" 
+    toc: false
 ---
 
 <!-- begin: ae definition -->
