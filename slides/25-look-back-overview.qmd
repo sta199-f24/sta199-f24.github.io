@@ -41,7 +41,7 @@ todays_ae <- "ae-20-effective-dataviz"
 -   Course and TA evaluations due Monday, 12/9
     -   TA of the Year award nominations: Email [dus\@sta.duke.edu](mailto:dus@stat.duke.edu).
 
-## Final exam
+## Final exam {.smaller}
 
 Thursday, 12/14, 9 am - 12 pm
 
