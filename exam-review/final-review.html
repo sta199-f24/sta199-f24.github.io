@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.12">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Final review – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
@@ -20,8 +17,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -41,8 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-92dff2eee490a48d96494bac12dc7076.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -68,9 +97,32 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 <meta property="og:title" content="Final review – STA 199">
 <meta property="og:description" content="Questions">
 <meta property="og:site_name" content="STA 199">
@@ -80,13 +132,10 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -97,23 +146,18 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f24" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
     <div class="dropdown">
       <a href="" title="Support" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Support"><i class="bi bi-life-preserver"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
+<li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing">
               <i class="bi bi-person-raised-hand pe-1"></i>
             Office hours
@@ -132,11 +176,11 @@ ul.task-list li input[type="checkbox"] {
             </a>
           </li>
       </ul>
-    </div>
+</div>
     <div class="dropdown">
       <a href="" title="Canvas" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Canvas"><i class="bi bi-file-check-fill"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
-          <li>
+<li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/39994/announcements">
               <i class="bi bi-megaphone-fill pe-1"></i>
             Announcements
@@ -155,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
             </a>
           </li>
       </ul>
-    </div>
+</div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
@@ -166,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
@@ -174,8 +218,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -218,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -227,8 +271,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
@@ -259,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -268,8 +312,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/description.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Description</span></a>
@@ -312,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab.html" class="sidebar-item-text sidebar-link">
@@ -332,18 +376,45 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="final-review.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#part-1---employment" id="toc-part-1---employment" class="nav-link active" data-scroll-target="#part-1---employment">Part 1 - Employment</a>
+  <ul class="collapse">
+<li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-2---blizzard" id="toc-part-2---blizzard" class="nav-link" data-scroll-target="#part-2---blizzard">Part 2 - Blizzard</a>
+  <ul class="collapse">
+<li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+  <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#part-3---miscellaneous" id="toc-part-3---miscellaneous" class="nav-link" data-scroll-target="#part-3---miscellaneous">Part 3 - Miscellaneous</a>
+  <ul class="collapse">
+<li><a href="#question-11" id="toc-question-11" class="nav-link" data-scroll-target="#question-11">Question 11</a></li>
+  <li><a href="#question-12" id="toc-question-12" class="nav-link" data-scroll-target="#question-12">Question 12</a></li>
+  <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus">Bonus</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/exam-review/final-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="final-review.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Final review</h1>
 <p class="subtitle lead">Questions</p>
 </div>
@@ -359,15 +430,245 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suggested answers can be found <a href="../exam-review/final-review-A.html">here</a>, but resist the urge to peek before you go through it yourself.</p>
+</div>
+</div>
+<section id="part-1---employment" class="level1"><h1>Part 1 - Employment</h1>
+<p>A large university knows that about 70% of the full-time students are employed at least 5 hours per week. The members of the Statistics Department wonder if the same proportion of their students work at least 5 hours per week. They randomly sample 25 majors and find that 15 of the students (60%) work 5 or more hours each week.</p>
+<section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p>Describe how you can set up a simulation to estimate the proportion of statistics majors who work 5 or more hours each week based on this sample.</p>
+</section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>A bootstrap distribution with 1000 simulations is shown below. Approximate the bounds of the 95% confidence interval based on this distribution.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="final-review_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<p>Suppose the lower bound of the confidence interval from the previous question is L and the upper bound is U. Which of the following is correct?</p>
+<p>a. Between L to U of statistics majors work at least 5 hours per week.</p>
+<p>b. 95% of the time the true proportion of statistics majors who work at least 5 hours per week is between L and U.</p>
+<p>c. Between L and U of random samples of 25 statistics majors are expected to yield confidence intervals that contain the true proportion of statistics majors who work at least 5 hours per week.</p>
+<p>d. 95% of random samples of 25 statistics majors will yield confidence intervals between L and U.</p>
+<p>e. None of the above.</p>
+<div style="page-break-after: always;"></div>
+</section></section><section id="part-2---blizzard" class="level1"><h1>Part 2 - Blizzard</h1>
+<p>In 2020, employees of Blizzard Entertainment circulated a spreadsheet to anonymously share salaries and recent pay increases amidst rising tension in the video game industry over wage disparities and executive compensation. (Source: <a href="https://www.bloomberg.com/news/articles/2020-08-03/blizzard-workers-share-salaries-in-revolt-over-wage-disparities">Blizzard Workers Share Salaries in Revolt Over Pay</a>)</p>
+<p>The name of the data frame used for this analysis is <code>blizzard_salary</code> and the variables are:</p>
+<ul>
+<li><p><code>percent_incr</code>: Raise given in July 2020, as percent increase with values ranging from 1 (1% increase to 21.5 (21.5% increase)</p></li>
+<li><p><code>salary_type</code>: Type of salary, with levels <code>Hourly</code> and <code>Salaried</code></p></li>
+<li><p><code>annual_salary</code>: Annual salary, in USD, with values ranging from $50,939 to $216,856.</p></li>
+<li><p><code>performance_rating</code>: Most recent review performance rating, with levels <code>Poor</code>, <code>Successful</code>, <code>High</code>, and <code>Top</code>. The <code>Poor</code> level is the lowest rating and the <code>Top</code> level is the highest rating.</p></li>
+</ul>
+<p>The top ten rows of <code>blizzard_salary</code> are shown below:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 409 × 4
+   percent_incr salary_type annual_salary performance_rating
+          &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;             
+ 1          1   Salaried               1  High              
+ 2          1   Salaried               1  Successful        
+ 3          1   Salaried               1  High              
+ 4          1   Hourly             33987. Successful        
+ 5         NA   Hourly             34798. High              
+ 6         NA   Hourly             35360  &lt;NA&gt;              
+ 7         NA   Hourly             37440  &lt;NA&gt;              
+ 8          0   Hourly             37814. &lt;NA&gt;              
+ 9          4   Hourly             41101. Top               
+10          1.2 Hourly             42328  &lt;NA&gt;              
+# ℹ 399 more rows</code></pre>
+</div>
+</div>
+<section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<p>Next, you fit a model for predicting raises (<code>percent_incr</code>) from salaries (<code>annual_salary</code>). We’ll call this model <code>raise_1_fit</code>. A tidy output of the model is shown below.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term           estimate  std.error statistic   p.value
+  &lt;chr&gt;             &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)   1.87      0.432           4.33 0.0000194
+2 annual_salary 0.0000155 0.00000452      3.43 0.000669 </code></pre>
+</div>
+</div>
+<p>Which of the following is the best interpretation of the slope coefficient?</p>
+<ol type="a">
+<li>For every additional $1,000 of annual salary, the model predicts the raise to be higher, on average, by 1.55%.</li>
+<li>For every additional $1,000 of annual salary, the raise goes up by 0.0155%.</li>
+<li>For every additional $1,000 of annual salary, the model predicts the raise to be higher, on average, by 0.0155%.</li>
+<li>For every additional $1,000 of annual salary, the model predicts the raise to be higher, on average, by 1.87%.</li>
+</ol></section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+<p>You then fit a model for predicting raises (<code>percent_incr</code>) from salaries (<code>annual_salary</code>) and performance ratings (<code>performance_rating</code>). We’ll call this model <code>raise_2_fit</code>. Which of the following is definitely true based on the information you have so far?</p>
+<ol type="a">
+<li>Intercept of <code>raise_2_fit</code> is higher than intercept of <code>raise_1_fit</code>.</li>
+<li>Slope of <code>raise_2_fit</code> is higher than RMSE of <code>raise_1_fit</code>.</li>
+<li>Adjusted <span class="math inline">\(R^2\)</span> of <code>raise_2_fit</code> is higher than adjusted <span class="math inline">\(R^2\)</span> of <code>raise_1_fit</code>.</li>
+<li>
+<span class="math inline">\(R^2\)</span> of <code>raise_2_fit</code> is higher <span class="math inline">\(R^2\)</span> of <code>raise_1_fit</code>.</li>
+</ol></section><section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<p>The tidy model output for the <code>raise_2_fit</code> model you fit is shown below.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  term                            estimate  std.error statistic  p.value
+  &lt;chr&gt;                              &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)                   3.55       0.508           6.99 1.99e-11
+2 annual_salary                 0.00000989 0.00000436      2.27 2.42e- 2
+3 performance_ratingPoor       -4.06       1.42           -2.86 4.58e- 3
+4 performance_ratingSuccessful -2.40       0.397          -6.05 4.68e- 9
+5 performance_ratingTop         2.99       0.715           4.18 3.92e- 5</code></pre>
+</div>
+</div>
+<p>When your teammate sees this model output, they remark “The coefficient for <code>performance_ratingSuccessful</code> is negative, that’s weird. I guess it means that people who get successful performance ratings get lower raises.” How would you respond to your teammate?</p>
+</section><section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<p>Ultimately, your teammate decides they don’t like the negative slope coefficients in the model output you created (not that there’s anything wrong with negative slope coefficients!), does something else, and comes up with the following model output.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  term                            estimate  std.error statistic    p.value
+  &lt;chr&gt;                              &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+1 (Intercept)                  -0.511      1.47          -0.347 0.729     
+2 annual_salary                 0.00000989 0.00000436     2.27  0.0242    
+3 performance_ratingSuccessful  1.66       1.42           1.17  0.242     
+4 performance_ratingHigh        4.06       1.42           2.86  0.00458   
+5 performance_ratingTop         7.05       1.53           4.60  0.00000644</code></pre>
+</div>
+</div>
+<p>Unfortunately they didn’t write their code in a Quarto document, instead just wrote some code in the Console and then lost track of their work. They remember using the <code>fct_relevel()</code> function and doing something like the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>blizzard_salary <span class="ot">&lt;-</span> blizzard_salary <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">performance_rating =</span> <span class="fu">fct_relevel</span>(performance_rating, ___))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What should they put in the blanks to get the same model output as above?</p>
+<ol type="a">
+<li>“Poor”, “Successful”, “High”, “Top”</li>
+<li>“Successful”, “High”, “Top”</li>
+<li>“Top”, “High”, “Successful”, “Poor”</li>
+<li>Poor, Successful, High, Top</li>
+</ol></section><section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+<p>Suppose we fit a model to predict <code>percent_incr</code> from <code>annual_salary</code> and <code>salary_type</code>. A tidy output of the model is shown below.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term                 estimate  std.error statistic p.value
+  &lt;chr&gt;                   &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)         1.24      0.570           2.18 0.0300 
+2 annual_salary       0.0000137 0.00000464      2.96 0.00329
+3 salary_typeSalaried 0.913     0.544           1.68 0.0938 </code></pre>
+</div>
+</div>
+<p>Which of the following visualizations represent this model? Explain your reasoning.</p>
+<div id="fig-raise-salary-type" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-raise-salary-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-raise-salary-type" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-raise-salary-type-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-raise-salary-type-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="final-review_files/figure-html/fig-raise-salary-type-1.png" class="img-fluid figure-img" data-ref-parent="fig-raise-salary-type" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-raise-salary-type-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Option 1
+</figcaption></figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-raise-salary-type" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-raise-salary-type-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-raise-salary-type-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="final-review_files/figure-html/fig-raise-salary-type-2.png" class="img-fluid figure-img" data-ref-parent="fig-raise-salary-type" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-raise-salary-type-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Option 2
+</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-raise-salary-type" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-raise-salary-type-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-raise-salary-type-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="final-review_files/figure-html/fig-raise-salary-type-3.png" class="img-fluid figure-img" data-ref-parent="fig-raise-salary-type" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-raise-salary-type-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Option 3
+</figcaption></figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-raise-salary-type" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-raise-salary-type-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-raise-salary-type-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="final-review_files/figure-html/fig-raise-salary-type-4.png" class="img-fluid figure-img" data-ref-parent="fig-raise-salary-type" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-raise-salary-type-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) Option 4
+</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-raise-salary-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Visualizations of the relationship between percent increase, annual salary, and salary type
+</figcaption></figure>
+</div>
+</section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+<p>Define the term parsimonious model.</p>
+<div style="page-break-after: always;"></div>
+</section><section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
+<p>Suppose you now fit a model to predict the natural log of percent increase, <code>log(percent_incr)</code>, from performance rating. The model is called <code>raise_4_fit</code>.</p>
+<p>You’re provided the following:</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tidy</span><span class="op">(</span><span class="va">raise_4_fit</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">term</span>, <span class="va">estimate</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>exp_estimate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">estimate</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  term                         estimate exp_estimate
+  &lt;chr&gt;                           &lt;dbl&gt;        &lt;dbl&gt;
+1 (Intercept)                     -7.15     0.000786
+2 performance_ratingSuccessful     6.93  1025.      
+3 performance_ratingHigh           8.17  3534.      
+4 performance_ratingTop            8.91  7438.      </code></pre>
+</div>
+</div>
+<p>Based on this, which of the following is true?</p>
+<p>a. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by 10.25% compared to the employees with Poor performance rating.</p>
+<p>b. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by 6.93% compared to the employees with Poor performance rating.</p>
+<p>c. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 1025 compared to the employees with Poor performance rating.</p>
+<p>d. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 6.93 compared to the employees with Poor performance rating.</p>
+</section></section><section id="part-3---miscellaneous" class="level1"><h1>Part 3 - Miscellaneous</h1>
+<section id="question-11" class="level2"><h2 class="anchored" data-anchor-id="question-11">Question 11</h2>
+<p>Which of the following is the definiton of a regression model? Select all that apply.</p>
+<p>a. <span class="math inline">\(\hat{y} = \beta_0 + \beta_1 X_1\)</span></p>
+<p>b. <span class="math inline">\(y = \beta_0 + \beta_1 X_1\)</span></p>
+<p>c. <span class="math inline">\(\hat{y} = \beta_0 + \beta_1 X_1 + \epsilon\)</span></p>
+<p>d. <span class="math inline">\(y = \beta_0 + \beta_1 X_1 + \epsilon\)</span></p>
+</section><section id="question-12" class="level2"><h2 class="anchored" data-anchor-id="question-12">Question 12</h2>
+<p><strong>Choose the best answer.</strong></p>
+<p>A survey based on a random sample of 2,045 American teenagers found that a 95% confidence interval for the mean number of texts sent per month was (1450, 1550). A valid interpretation of this interval is</p>
+<ol type="a">
+<li>95% of all teens who text send between 1450 and 1550 text messages per month.</li>
+<li>If a new survey with the same sample size were to be taken, there is a 95% chance that the mean number of texts in the sample would be between 1450 and 1550.</li>
+<li>We are 95% confident that the mean number of texts per month of all American teens is between 1450 and 1550.</li>
+<li>We are 95% confident that, were we to repeat this survey, the mean number of texts per month of those taking part in the survey would be between 1450 and 1550.</li>
+</ol>
+<div style="page-break-after: always;"></div>
+</section><section id="bonus" class="level2"><h2 class="anchored" data-anchor-id="bonus">Bonus</h2>
+<p>Pick a concept we introduced in class so far that you’ve been struggling with and explain it in your own words.</p>
 
 
-<p>To be posted.</p>
-
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -932,21 +1233,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2024, Mine Çetinkaya-Rundel</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/exam-review/final-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/edit/main/exam-review/final-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f24/sta199-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
