@@ -117,8 +117,8 @@ format:
     highlight-style: a11y-light
 
 theme:
-  light: ["cosmo", "style/sta199.scss"]
-  dark: ["cosmo", "style/sta199.scss", "style/dark.scss"]
+  light: [cosmo, style/sta199.scss]
+  dark: [cosmo, style/sta199.scss, style/dark.scss]
 linkcolor: "#5D737E"
 toc: true
 code-copy: hover
