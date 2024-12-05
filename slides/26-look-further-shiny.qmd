@@ -1,10 +1,16 @@
 ---
-title: "Looking further: Building interactive web apps with R and Shiny"
+title: "Looking further: Building interactive web apps in R and Shiny"
 subtitle: "Lecture 26"
 date: "2024-12-05"
 format: 
   live-revealjs: 
     output-file: 26-look-further-shiny-slides.html
+webr:
+  packages:
+    - tidyverse
+    - glue
+  resources:
+    - https://raw.githubusercontent.com/sta199-f24/sta199-f24.github.io/main/slides/data/weather.csv
 ---
 
 <!-- begin: webr fodder -->
@@ -16,6 +22,8 @@ format:
 #| echo: false
 #| output: false
 options(width = 60)
+
+weather <- read_csv("weather.csv")
 ```
 
 <!-- end: webr fodder -->
@@ -24,7 +32,7 @@ options(width = 60)
 
 ```{r}
 #| include: false
-todays_ae <- "ae-19-equality-randomization"
+todays_ae <- "ae-21-weather-forecast"
 ```
 
 <!-- end: ae definition -->
@@ -41,7 +49,7 @@ todays_ae <- "ae-19-equality-randomization"
 
 -   Peer evaluations due at 5 pm tomorrow
 
-# Shiny {.nostretch}
+# Interactive web apps in R with Shiny {.nostretch}
 
 ![](images/26/hex-shiny.png){fig-align="center" width="30%"}
 
@@ -126,10 +134,57 @@ shinyApp(
 
 ## Live demo
 
-Let's make a weather app!
+<iframe data-src="https://sta199-f24.github.io/shiny-demo/shinylive/" width="100%" height="500px" style="border:1px solid;border-radius: 5px;" data-external="1">
 
-Go to <https://github.com/sta199-f24/shiny-demo> to follow along.
+## `{r} todays_ae` {.smaller}
 
-::: callout-note
-If you want to code along, click on the "Use this template" button to create a copy of this repo for yourself, clone it in RStudio, and code along as usual.
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".R")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits.
 :::
+
+## Data
+
+```{webr}
+weather
+```
+
+## Scaffold 1 {.smaller}
+
+**Find variables that are numeric and not constant for selected city**
+
+```{webr}
+weather_city <- weather |>
+  filter(City == "Durham")
+
+weather_city |>
+  select(where(is.numeric)) |>
+  select(where(function(x) var(x) != 0)) |>
+  names()
+```
+
+## Scaffold 2 {.smaller}
+
+**Calculate number of days that mention "Rain", "Snow", "Clear" in conditions**
+
+```{webr}
+weather_day_conditions <- weather_city |>
+  mutate(day = yday(DateTime)) |>
+  select(day, Conditions) |>
+  group_by(day) |>
+  distinct(Conditions) |>
+  summarize(day_conditions = glue_collapse(Conditions, sep = ", ")) |>
+  mutate(
+    clear = str_detect(day_conditions, "Clear"),
+    rain = str_detect(day_conditions, "Rain"),
+    snow = str_detect(day_conditions, "Snow")
+  )
+
+weather_day_conditions
+```
+
