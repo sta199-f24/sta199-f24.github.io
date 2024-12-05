@@ -1,0 +1,135 @@
+---
+title: "Looking further: Building interactive web apps with R and Shiny"
+subtitle: "Lecture 26"
+date: "2024-12-05"
+format: 
+  live-revealjs: 
+    output-file: 26-look-further-shiny-slides.html
+---
+
+<!-- begin: webr fodder -->
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options(width = 60)
+```
+
+<!-- end: webr fodder -->
+
+<!-- begin: ae definition -->
+
+```{r}
+#| include: false
+todays_ae <- "ae-19-equality-randomization"
+```
+
+<!-- end: ae definition -->
+
+# Warm-up
+
+## Announcements
+
+-   Course and TA evaluations due Monday, 12/9
+
+    -   TA of the Year award nominations: Email [dus\@sta.duke.edu](mailto:dus@stat.duke.edu).
+
+-   Project due at 5 pm today
+
+-   Peer evaluations due at 5 pm tomorrow
+
+# Shiny {.nostretch}
+
+![](images/26/hex-shiny.png){fig-align="center" width="30%"}
+
+## Shiny
+
+> Shiny is an R package that makes it easy to build interactive web apps straight from R.
+> You can host standalone apps on a webpage or embed them in R Markdown documents or build dashboards.
+> You can also extend your Shiny apps with CSS themes, htmlwidgets, and JavaScript actions.
+
+## Shiny App
+
+<br/>
+
+::::::::::: columns
+:::: {.column .larger width="40%"}
+Server
+
+::: {style="border: 2px solid; border-radius: 5px; text-align:center; font-size: 90px; height: 250px"}
+`r fontawesome::fa("r-project")` + `r fontawesome::fa("server")`
+:::
+::::
+
+:::: {.column width="20%"}
+::: {style="text-align: center; font-size: 90px; padding-top: 20px"}
+<br/>⇄
+:::
+::::
+
+:::::: {.column .larger width="40%"}
+Client / Browser
+
+::::: {style="border: 2px solid; border-radius: 5px; text-align: center; height: 250px"}
+::: {style="font-size: 90px"}
+`r fontawesome::fa("file-code")`
+:::
+
+::: {style="font-size: 50px"}
+`r fontawesome::fa("html5")` + `r fontawesome::fa("js")` + `r fontawesome::fa("css3")`
+:::
+:::::
+::::::
+:::::::::::
+
+## Anatomy of an App
+
+```{r shiny-anatomy}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|3-11|4-6|8-10"
+library(shiny)
+
+shinyApp(
+  ui = list(
+    # new (to you) widgets go here
+  ),
+  
+  server = function(input, output, session) {
+    # somewhat familiat (to you) code goes here
+  }
+)
+```
+
+## Shiny Widgets Gallery
+
+::: {style="text-align: center"}
+<https://shiny.posit.co/r/gallery/widgets/widget-gallery/>
+:::
+
+<iframe data-src="https://gallery.shinyapps.io/081-widgets-gallery/" width="100%" height="500px" style="border:1px solid;border-radius: 5px;" data-external="1">
+
+</iframe>
+
+## A brief widget tour
+
+::: {style="text-align: center"}
+[rundel.shinyapps.io/widgets/](https://rundel.shinyapps.io/widgets/)
+:::
+
+<iframe data-src="https://rundel.shinyapps.io/widgets/" width="100%" height="500px" style="border:1px solid;border-radius: 5px;" data-external="1">
+
+</iframe>
+
+## Live demo
+
+Let's make a weather app!
+
+Go to <https://github.com/sta199-f24/shiny-demo> to follow along.
+
+::: callout-note
+If you want to code along, click on the "Use this template" button to create a copy of this repo for yourself, clone it in RStudio, and code along as usual.
+:::
