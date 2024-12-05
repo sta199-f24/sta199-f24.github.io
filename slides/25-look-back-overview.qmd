@@ -5,9 +5,6 @@ date: "2024-12-03"
 format: 
   live-revealjs: 
     output-file: 25-look-back-overview-slides.html
-webr:
-  cell-options:
-    autorun: false
 ---
 
 <!-- begin: webr fodder -->

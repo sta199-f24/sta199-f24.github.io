@@ -9,6 +9,9 @@ format:
     slide-number: true
     logo: "images/logo.png" 
     toc: false
+    webr:
+      cell-options:
+        autorun: false
   live-html:
     code-link: true
     webr:

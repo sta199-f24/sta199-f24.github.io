@@ -5,9 +5,6 @@ date: "2024-11-26"
 format: 
   live-revealjs: 
     output-file: 24-communicate-quarto-slides.html
-webr:
-  cell-options:
-    autorun: false
 ---
 
 <!-- begin: webr fodder -->
