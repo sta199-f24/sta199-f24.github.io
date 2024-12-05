@@ -1,5 +1,5 @@
 ---
-title: "Looking further: Building interactive web apps in R and Shiny"
+title: "Looking further: Building interactive web apps in R + Shiny"
 subtitle: "Lecture 26"
 date: "2024-12-05"
 format: 
@@ -187,4 +187,3 @@ weather_day_conditions <- weather_city |>
 
 weather_day_conditions
 ```
-
