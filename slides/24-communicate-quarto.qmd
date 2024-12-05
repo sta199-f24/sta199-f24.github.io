@@ -55,7 +55,7 @@ todays_ae <- "ae-19-equality-randomization"
 -   We use our sample statistic and direction of the alternative hypothesis to calculate the p-value.
 -   We use the p-value to determine conclusions about the alternative hypotheses.
 
-# Projects with Quarto \[live demo\]
+# Projects with Quarto
 
 ## Your project write-up with Quarto {.smaller}
 

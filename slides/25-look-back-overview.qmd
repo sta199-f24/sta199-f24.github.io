@@ -116,7 +116,6 @@ What trends are apparent in this visualization?
 #| label: load-data-staff
 #| message: false
 #| code-fold: true
-
 library(tidyverse)
 library(scales)
 
