@@ -3775,154 +3775,154 @@
   {
     "objectID": "slides/26-look-further-shiny-slides.html#announcements",
     "href": "slides/26-look-further-shiny-slides.html#announcements",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Announcements",
     "text": "Announcements\n\n\nCourse and TA evaluations due Monday, 12/9\n\nTA of the Year award nominations: Email dus@sta.duke.edu.\n\n\nProject due at 5 pm today\nPeer evaluations due at 5 pm tomorrow"
   },
   {
     "objectID": "slides/26-look-further-shiny-slides.html#shiny",
     "href": "slides/26-look-further-shiny-slides.html#shiny",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Shiny",
     "text": "Shiny\n\nShiny is an R package that makes it easy to build interactive web apps straight from R. You can host standalone apps on a webpage or embed them in R Markdown documents or build dashboards. You can also extend your Shiny apps with CSS themes, htmlwidgets, and JavaScript actions."
   },
   {
     "objectID": "slides/26-look-further-shiny-slides.html#shiny-app",
     "href": "slides/26-look-further-shiny-slides.html#shiny-app",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Shiny App",
     "text": "Shiny App\n\n\n\nServer\n\n + \n\n\n\n⇄\n\n\nClient / Browser\n\n\n\n\n\n +  +"
   },
   {
     "objectID": "slides/26-look-further-shiny-slides.html#anatomy-of-an-app",
     "href": "slides/26-look-further-shiny-slides.html#anatomy-of-an-app",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Anatomy of an App",
     "text": "Anatomy of an App\n\nlibrary(shiny)\n\nshinyApp(\n  ui = list(\n    # new (to you) widgets go here\n  ),\n  \n  server = function(input, output, session) {\n    # somewhat familiat (to you) code goes here\n  }\n)"
   },
   {
     "objectID": "slides/26-look-further-shiny-slides.html#shiny-widgets-gallery",
     "href": "slides/26-look-further-shiny-slides.html#shiny-widgets-gallery",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Shiny Widgets Gallery",
     "text": "Shiny Widgets Gallery\n\nhttps://shiny.posit.co/r/gallery/widgets/widget-gallery/"
   },
   {
     "objectID": "slides/26-look-further-shiny-slides.html#a-brief-widget-tour",
     "href": "slides/26-look-further-shiny-slides.html#a-brief-widget-tour",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "A brief widget tour",
     "text": "A brief widget tour\n\nrundel.shinyapps.io/widgets/"
   },
   {
     "objectID": "slides/26-look-further-shiny-slides.html#live-demo",
     "href": "slides/26-look-further-shiny-slides.html#live-demo",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Live demo",
     "text": "Live demo"
   },
   {
     "objectID": "slides/26-look-further-shiny-slides.html#ae-21-weather-forecast",
     "href": "slides/26-look-further-shiny-slides.html#ae-21-weather-forecast",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "ae-21-weather-forecast",
     "text": "ae-21-weather-forecast\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-21-weather-forecast.R.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
     "objectID": "slides/26-look-further-shiny-slides.html#data",
     "href": "slides/26-look-further-shiny-slides.html#data",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Data",
     "text": "Data"
   },
   {
     "objectID": "slides/26-look-further-shiny-slides.html#scaffold-1",
     "href": "slides/26-look-further-shiny-slides.html#scaffold-1",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Scaffold 1",
     "text": "Scaffold 1\nFind variables that are numeric and not constant for selected city"
   },
   {
     "objectID": "slides/26-look-further-shiny-slides.html#scaffold-2",
     "href": "slides/26-look-further-shiny-slides.html#scaffold-2",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Scaffold 2",
     "text": "Scaffold 2\nCalculate number of days that mention “Rain”, “Snow”, “Clear” in conditions"
   },
   {
     "objectID": "slides/26-look-further-shiny.html#announcements",
     "href": "slides/26-look-further-shiny.html#announcements",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Announcements",
     "text": "Announcements\n\n\nCourse and TA evaluations due Monday, 12/9\n\nTA of the Year award nominations: Email dus@sta.duke.edu.\n\n\nProject due at 5 pm today\nPeer evaluations due at 5 pm tomorrow"
   },
   {
     "objectID": "slides/26-look-further-shiny.html#shiny",
     "href": "slides/26-look-further-shiny.html#shiny",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Shiny",
     "text": "Shiny\n\nShiny is an R package that makes it easy to build interactive web apps straight from R. You can host standalone apps on a webpage or embed them in R Markdown documents or build dashboards. You can also extend your Shiny apps with CSS themes, htmlwidgets, and JavaScript actions."
   },
   {
     "objectID": "slides/26-look-further-shiny.html#shiny-app",
     "href": "slides/26-look-further-shiny.html#shiny-app",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Shiny App",
     "text": "Shiny App\n\n\n\nServer\n\n + \n\n\n\n⇄\n\n\n\nClient / Browser\n\n\n\n\n\n +  +"
   },
   {
     "objectID": "slides/26-look-further-shiny.html#anatomy-of-an-app",
     "href": "slides/26-look-further-shiny.html#anatomy-of-an-app",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Anatomy of an App",
     "text": "Anatomy of an App\n\nlibrary(shiny)\n\nshinyApp(\n  ui = list(\n    # new (to you) widgets go here\n  ),\n  \n  server = function(input, output, session) {\n    # somewhat familiat (to you) code goes here\n  }\n)"
   },
   {
     "objectID": "slides/26-look-further-shiny.html#shiny-widgets-gallery",
     "href": "slides/26-look-further-shiny.html#shiny-widgets-gallery",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Shiny Widgets Gallery",
     "text": "Shiny Widgets Gallery\n\nhttps://shiny.posit.co/r/gallery/widgets/widget-gallery/"
   },
   {
     "objectID": "slides/26-look-further-shiny.html#a-brief-widget-tour",
     "href": "slides/26-look-further-shiny.html#a-brief-widget-tour",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "A brief widget tour",
     "text": "A brief widget tour\n\nrundel.shinyapps.io/widgets/"
   },
   {
     "objectID": "slides/26-look-further-shiny.html#live-demo",
     "href": "slides/26-look-further-shiny.html#live-demo",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Live demo",
     "text": "Live demo"
   },
   {
     "objectID": "slides/26-look-further-shiny.html#ae-21-weather-forecast",
     "href": "slides/26-look-further-shiny.html#ae-21-weather-forecast",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "ae-21-weather-forecast",
     "text": "ae-21-weather-forecast\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-21-weather-forecast.R.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
     "objectID": "slides/26-look-further-shiny.html#data",
     "href": "slides/26-look-further-shiny.html#data",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Data",
     "text": "Data"
   },
   {
     "objectID": "slides/26-look-further-shiny.html#scaffold-1",
     "href": "slides/26-look-further-shiny.html#scaffold-1",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Scaffold 1",
     "text": "Scaffold 1\nFind variables that are numeric and not constant for selected city"
   },
   {
     "objectID": "slides/26-look-further-shiny.html#scaffold-2",
     "href": "slides/26-look-further-shiny.html#scaffold-2",
-    "title": "Looking further: Building interactive web apps in R and Shiny",
+    "title": "Looking further: Building interactive web apps in R + Shiny",
     "section": "Scaffold 2",
     "text": "Scaffold 2\nCalculate number of days that mention “Rain”, “Snow”, “Clear” in conditions"
   },
