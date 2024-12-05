@@ -12,8 +12,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.39">
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
-<meta name="dcterms.date" content="2024-11-26">
-<title>STA 199 – Communicating data science results with Quarto</title>
+<meta name="dcterms.date" content="2024-12-03">
+<title>STA 199 – Looking back: STA 199 overview</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,6 +31,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
 <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-8ddbb892c54ec36f6a83d478972f4507.css">
 <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -125,11 +190,11 @@
     }
   </style>
 <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script><link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<meta property="og:title" content="Communicating data science results with Quarto – STA 199">
-<meta property="og:description" content="Lecture 24">
+<meta property="og:title" content="Looking back: STA 199 overview – STA 199">
+<meta property="og:description" content="Lecture 25">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Communicating data science results with Quarto – STA 199">
-<meta name="twitter:description" content="Lecture 24">
+<meta name="twitter:title" content="Looking back: STA 199 overview – STA 199">
+<meta name="twitter:description" content="Lecture 25">
 <meta name="twitter:image" content="https://sta199-f24.github.io/slides/img/twitter-card.png">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
@@ -138,8 +203,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Communicating data science results with Quarto</h1>
-  <p class="subtitle">Lecture 24</p>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Looking back: STA 199 overview</h1>
+  <p class="subtitle">Lecture 25</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -152,7 +217,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
     </div>
 </div>
 
-  <p class="date">November 26, 2024</p>
+  <p class="date">December 3, 2024</p>
 </section><section class="slide level2"><!-- begin: webr fodder --><div class="cell" data-edit="false">
 <div>
 <div id="webr-1" class="exercise-cell">
@@ -170,41 +235,169 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlY2hvIjpmYWxzZSwiZWRpdCI6ZmFsc2UsImV2YWwiOnRy
 
 </section><section id="announcements" class="slide level2"><h2>Announcements</h2>
 <ul>
-<li>Lab 8 due tonight at 10:30 pm</li>
-</ul></section></section><section><section id="from-last-time" class="title-slide slide level1 center"><h1>From last time</h1>
+<li>Final exam review session: Tuesday, 12/10, 11 am - 1 pm in Bio Sci 111 – come with questions!</li>
+<li>Modified office hours during finals week: See “finals week” tab on the <a href="https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?gid=336315218#gid=336315218">office hours sheet</a>
+</li>
+<li>Course and TA evaluations due Monday, 12/9
+<ul>
+<li>TA of the Year award nominations: Email <a href="mailto:dus@stat.duke.edu">dus@sta.duke.edu</a>.</li>
+</ul>
+</li>
+</ul></section><section id="final-exam" class="slide level2 smaller"><h2>Final exam</h2>
+<p>Thursday, 12/14, 9 am - 12 pm</p>
+<ul>
+<li>Review posted on course website</li>
+<li>You should have received an email with your room assignment: Bio Sci 111 or Gross 107 (or testing center)</li>
+<li>Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you</li>
+<li>Also bring a pencil and eraser (you’re allowed to use a pen, but you might not want to)</li>
+</ul></section><section id="thursday-looking-further" class="slide level2"><h2>Thursday: Looking further</h2>
+<div class="columns">
+<div class="column">
+<p><strong>Options:</strong></p>
+<ul>
+<li><p>Bayesian inference</p></li>
+<li><p>Building data dashboards</p></li>
+<li><p>Building data-centric interactive web apps</p></li>
+</ul>
+</div><div class="column">
+<p><img data-src="images/25/qr-code.png"></p>
+</div></div>
+</section></section><section><section id="projects" class="title-slide slide level1 center"><h1>Projects</h1>
 
-</section><section id="ae-19-equality-randomization" class="slide level2"><h2><code>ae-19-equality-randomization</code></h2>
+</section><section id="remaining-items" class="slide level2"><h2>Remaining items</h2>
+<ul>
+<li><p>Write up</p></li>
+<li><p>Presentation / video</p></li>
+<li><p>Peer evaluation</p></li>
+</ul>
+<p>Questions?</p>
+</section><section id="live-code-review" class="slide level2"><h2>Live code review</h2>
+<p><a href="https://github.com/sta199-f24/project-spa-r-kles" class="uri">https://github.com/sta199-f24/project-spa-r-kles</a></p>
+</section></section><section><section id="effective-communication" class="title-slide slide level1 center"><h1>Effective communication</h1>
+
+</section><section id="take-a-sad-plot-make-it-better" class="slide level2 smaller"><h2>Take A Sad Plot &amp; Make It Better</h2>
+
+<img data-src="images/25/sad-plot-to-better.gif" class="r-stretch"></section><section id="trends-instructional-staff-employees-in-universities" class="slide level2 smaller"><h2>Trends instructional staff employees in universities</h2>
+<p>The American Association of University Professors (AAUP) is a nonprofit membership association of faculty and other academic professionals. <a href="https://www.aaup.org/sites/default/files/files/AAUP_Report_InstrStaff-75-11_apr2013.pdf">This report</a> by the AAUP shows trends in instructional staff employees between 1975 and 2011, and contains the following image. What trends are apparent in this visualization?</p>
+
+<img data-src="images/25/staff-employment.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="ae-20-effective-dataviz" class="slide level2 smaller"><h2>ae-20-effective-dataviz</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
-<li><p>Continue working on <code>ae-19-equality-randomization.qmd</code>.</p></li>
+<li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-20-effective-dataviz.qmd</em>.</p></li>
+<li><p>Work through the application exercise in class, and render, commit, and push your edits.</p></li>
 </ul>
 </div>
-</section><section id="recap-of-ae" class="slide level2 smaller"><h2>Recap of AE</h2>
+</section><section id="data-prep" class="slide level2"><h2>Data prep</h2>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a>staff <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/instructional-staff.csv"</span>)</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a>staff_long <span class="ot">&lt;-</span> staff <span class="sc">|&gt;</span></span>
+<span id="cb1-7"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb1-8"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>faculty_type, <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb1-9"><a></a>    <span class="at">values_to =</span> <span class="st">"percentage"</span></span>
+<span id="cb1-10"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-12"><a></a>    <span class="at">percentage =</span> <span class="fu">as.numeric</span>(percentage),</span>
+<span id="cb1-13"><a></a>    <span class="at">faculty_type =</span> <span class="fu">fct_relevel</span>(</span>
+<span id="cb1-14"><a></a>      faculty_type,</span>
+<span id="cb1-15"><a></a>      <span class="st">"Full-Time Tenured Faculty"</span>,</span>
+<span id="cb1-16"><a></a>      <span class="st">"Full-Time Tenure-Track Faculty"</span>,</span>
+<span id="cb1-17"><a></a>      <span class="st">"Full-Time Non-Tenure-Track Faculty"</span>,</span>
+<span id="cb1-18"><a></a>      <span class="st">"Part-Time Faculty"</span>,</span>
+<span id="cb1-19"><a></a>      <span class="st">"Graduate Student Employees"</span></span>
+<span id="cb1-20"><a></a>    ),</span>
+<span id="cb1-21"><a></a>    <span class="at">year =</span> <span class="fu">as.numeric</span>(year),</span>
+<span id="cb1-22"><a></a>    <span class="at">faculty_type_color =</span> <span class="fu">if_else</span>(faculty_type <span class="sc">==</span> <span class="st">"Part-Time Faculty"</span>, <span class="st">"firebrick3"</span>, <span class="st">"gray40"</span>)</span>
+<span id="cb1-23"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="pick-a-purpose" class="slide level2 smaller"><h2>Pick a purpose</h2>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb2-2"><a></a>  staff_long,</span>
+<span id="cb2-3"><a></a>  <span class="fu">aes</span>(</span>
+<span id="cb2-4"><a></a>    <span class="at">x =</span> year,</span>
+<span id="cb2-5"><a></a>    <span class="at">y =</span> percentage,</span>
+<span id="cb2-6"><a></a>    <span class="at">color =</span> faculty_type_color, <span class="at">group =</span> faculty_type</span>
+<span id="cb2-7"><a></a>    )</span>
+<span id="cb2-8"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb2-9"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-11"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb2-12"><a></a>    <span class="at">y =</span> <span class="st">"Percent of Total Instructional Staff"</span>,</span>
+<span id="cb2-13"><a></a>    <span class="at">color =</span> <span class="cn">NULL</span>,</span>
+<span id="cb2-14"><a></a>    <span class="at">title =</span> <span class="st">"Trends in Instructional Staff Employment Status, 1975-2011"</span>,</span>
+<span id="cb2-15"><a></a>    <span class="at">subtitle =</span> <span class="st">"All Institutions, National Totals"</span>,</span>
+<span id="cb2-16"><a></a>    <span class="at">caption =</span> <span class="st">"Source: US Department of Education, IPEDS Fall Staff Survey"</span></span>
+<span id="cb2-17"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb2-18"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">accuracy =</span> <span class="dv">1</span>, <span class="at">scale =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb2-19"><a></a>  <span class="fu">scale_color_identity</span>() <span class="sc">+</span></span>
+<span id="cb2-20"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-21"><a></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb2-22"><a></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="fl">0.1</span>, <span class="fl">0.6</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="at">unit =</span> <span class="st">"in"</span>)</span>
+<span id="cb2-23"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb2-24"><a></a>  <span class="fu">coord_cartesian</span>(<span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb2-25"><a></a>  <span class="fu">annotate</span>(</span>
+<span id="cb2-26"><a></a>    <span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb2-27"><a></a>    <span class="at">x =</span> <span class="dv">2012</span>, <span class="at">y =</span> <span class="dv">41</span>, <span class="at">label =</span> <span class="st">"Part-Time</span><span class="sc">\n</span><span class="st">Faculty"</span>,</span>
+<span id="cb2-28"><a></a>    <span class="at">color =</span> <span class="st">"firebrick3"</span>, <span class="at">hjust =</span> <span class="st">"left"</span>, <span class="at">size =</span> <span class="dv">5</span></span>
+<span id="cb2-29"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb2-30"><a></a>  <span class="fu">annotate</span>(</span>
+<span id="cb2-31"><a></a>    <span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb2-32"><a></a>    <span class="at">x =</span> <span class="dv">2012</span>, <span class="at">y =</span> <span class="fl">13.5</span>, <span class="at">label =</span> <span class="st">"Other</span><span class="sc">\n</span><span class="st">Faculty"</span>,</span>
+<span id="cb2-33"><a></a>    <span class="at">color =</span> <span class="st">"gray40"</span>, <span class="at">hjust =</span> <span class="st">"left"</span>, <span class="at">size =</span> <span class="dv">5</span></span>
+<span id="cb2-34"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb2-35"><a></a>  <span class="fu">annotate</span>(</span>
+<span id="cb2-36"><a></a>    <span class="at">geom =</span> <span class="st">"segment"</span>,</span>
+<span id="cb2-37"><a></a>    <span class="at">x =</span> <span class="fl">2011.5</span>, <span class="at">xend =</span> <span class="fl">2011.5</span>,</span>
+<span id="cb2-38"><a></a>    <span class="at">y =</span> <span class="dv">7</span>, <span class="at">yend =</span> <span class="dv">20</span>,</span>
+<span id="cb2-39"><a></a>    <span class="at">color =</span> <span class="st">"gray40"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span></span>
+<span id="cb2-40"><a></a>  )</span>
+<span id="cb2-41"><a></a></span>
+<span id="cb2-42"><a></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<img data-src="25-look-back-overview_files/figure-revealjs/unnamed-chunk-5-1.png" width="1152" class="r-stretch"></section><section id="use-labels-to-communicate-the-message" class="slide level2 smaller"><h2>Use labels to communicate the message</h2>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>p <span class="sc">+</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-3"><a></a>    <span class="at">title =</span> <span class="st">"Instruction by part-time faculty on a steady increase"</span>,</span>
+<span id="cb3-4"><a></a>    <span class="at">subtitle =</span> <span class="st">"Trends in Instructional Staff Employment Status, 1975-2011</span><span class="sc">\n</span><span class="st">All Institutions, National Totals"</span>,</span>
+<span id="cb3-5"><a></a>    <span class="at">caption =</span> <span class="st">"Source: US Department of Education, IPEDS Fall Staff Survey"</span>,</span>
+<span id="cb3-6"><a></a>    <span class="at">y =</span> <span class="st">"Percent of Total Instructional Staff"</span>,</span>
+<span id="cb3-7"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span></span>
+<span id="cb3-8"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<img data-src="25-look-back-overview_files/figure-revealjs/unnamed-chunk-6-1.png" width="1152" class="r-stretch"></section><section id="simplify" class="slide level2 smaller"><h2>Simplify</h2>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>p <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-3"><a></a>    <span class="at">title =</span> <span class="st">"Instruction by part-time faculty on a steady increase"</span>,</span>
+<span id="cb4-4"><a></a>    <span class="at">subtitle =</span> <span class="st">"Trends in Instructional Staff Employment Status, 1975-2011</span><span class="sc">\n</span><span class="st">All Institutions, National Totals"</span>,</span>
+<span id="cb4-5"><a></a>    <span class="at">caption =</span> <span class="st">"Source: US Department of Education, IPEDS Fall Staff Survey"</span>,</span>
+<span id="cb4-6"><a></a>    <span class="at">y =</span> <span class="st">"Percent of Total Instructional Staff"</span>,</span>
+<span id="cb4-7"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span></span>
+<span id="cb4-8"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb4-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<img data-src="25-look-back-overview_files/figure-revealjs/unnamed-chunk-7-1.png" width="1152" class="r-stretch"></section><section id="summary" class="slide level2 smaller"><h2>Summary</h2>
 <ul>
-<li>A hypothesis test is a statistical technique used to evaluate competing claims (null and alternative hypotheses) using data.</li>
-<li>We simulate a null distribution using our original data.</li>
-<li>We use our sample statistic and direction of the alternative hypothesis to calculate the p-value.</li>
-<li>We use the p-value to determine conclusions about the alternative hypotheses.</li>
-</ul></section></section><section><section id="projects-with-quarto" class="title-slide slide level1 center"><h1>Projects with Quarto</h1>
-
-</section><section id="your-project-write-up-with-quarto" class="slide level2 smaller"><h2>Your project write-up with Quarto</h2>
-<ul>
-<li><p>Figure sizing: <code>fig-width</code>, <code>fig-height</code>, etc. in code cells.</p></li>
-<li><p>Figure layout: <code>layout-ncol</code> for placing multiple figures in a chunk.</p></li>
-<li><p>Further control over figure layout with the <strong>patchwork</strong> package.</p></li>
-<li><p>Cell options for what makes it in your final report: <code>message</code>, <code>echo</code>, etc.</p></li>
-<li><p>Citations.</p></li>
-<li><p>Finalizing your report with <code>echo: false</code>.</p></li>
-</ul></section><section id="building-your-project-website-with-quarto" class="slide level2"><h2>Building your project website with Quarto</h2>
-<ul>
-<li><p>The <code>docs</code> folder.</p></li>
-<li><p>Making sure your website reflects your latest changes.</p></li>
-<li><p>Customizing the look of your website.</p></li>
-</ul></section><section id="slides" class="slide level2"><h2>Slides</h2>
-<ul>
-<li><p><strong>Option 1:</strong> Make your slides not in Quarto but make sure they’re available in your Quarto project website.</p></li>
-<li><p><strong>Option 2:</strong> Make your slides with Quarto.</p></li>
+<li>Represent percentages as parts of a whole</li>
+<li>Place variables representing time on the x-axis when possible</li>
+<li>Pay attention to data types, e.g., represent time as time on a continuous scale, not years as levels of a categorical variable</li>
+<li>Prefer direct labeling over legends</li>
+<li>Use accessible colors</li>
+<li>Use color to draw attention</li>
+<li>Pick a purpose and label, color, annotate for that purpose</li>
+<li>Communicate your main message directly in the plot labels</li>
+<li>Simplify before you call it done (a.k.a. “Before you leave the house, look in the mirror and take one thing off”)</li>
 </ul>
 
 
