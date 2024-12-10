@@ -4452,77 +4452,77 @@
   {
     "objectID": "ae/ae-20-effective-dataviz.html",
     "href": "ae/ae-20-effective-dataviz.html",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "",
     "text": "The American Association of University Professors (AAUP) is a nonprofit membership association of faculty and other academic professionals. This report by the AAUP shows trends in instructional staff employees between 1975 and 2011, and contains the following image. What trends are apparent in this visualization?"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz.html#packages",
     "href": "ae/ae-20-effective-dataviz.html#packages",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Packages",
     "text": "Packages\n\nlibrary(tidyverse)\nlibrary(scales)\nlibrary(ggthemes)"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz.html#data",
     "href": "ae/ae-20-effective-dataviz.html#data",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Data",
     "text": "Data\nEach row in this dataset represents a faculty type, and the columns are the years for which we have data. The values are percentage of hires of that type of faculty for each year.\n\nstaff &lt;- read_csv(\"https://sta199-s24.github.io/data/instructional-staff.csv\")\nstaff\n\n# A tibble: 5 × 12\n  faculty_type    `1975` `1989` `1993` `1995` `1999` `2001` `2003` `2005` `2007`\n  &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 Full-Time Tenu…   29     27.6   25     24.8   21.8   20.3   19.3   17.8   17.2\n2 Full-Time Tenu…   16.1   11.4   10.2    9.6    8.9    9.2    8.8    8.2    8  \n3 Full-Time Non-…   10.3   14.1   13.6   13.6   15.2   15.5   15     14.8   14.9\n4 Part-Time Facu…   24     30.4   33.1   33.2   35.5   36     37     39.3   40.5\n5 Graduate Stude…   20.5   16.5   18.1   18.8   18.7   19     20     19.9   19.5\n# ℹ 2 more variables: `2009` &lt;dbl&gt;, `2011` &lt;dbl&gt;"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz.html#recreate",
     "href": "ae/ae-20-effective-dataviz.html#recreate",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Recreate",
     "text": "Recreate\n\n\nYour turn: Recreate the visualization above. Try to match as many of the elements as possible. Hint: You might need to reshape your data first.\n\n\n# add code here\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz.html#represent-percentages-as-parts-of-a-whole",
     "href": "ae/ae-20-effective-dataviz.html#represent-percentages-as-parts-of-a-whole",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Represent percentages as parts of a whole",
     "text": "Represent percentages as parts of a whole\n\n\nDemo: Recreate the previous visualization where the percentages are represented as parts of a whole.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz.html#place-time-on-x-axis",
     "href": "ae/ae-20-effective-dataviz.html#place-time-on-x-axis",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Place time on x-axis",
     "text": "Place time on x-axis\n\n\nDemo: Convert the visualization to a line plot with time on the x-axis.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz.html#pay-attention-to-variable-types",
     "href": "ae/ae-20-effective-dataviz.html#pay-attention-to-variable-types",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Pay attention to variable types",
     "text": "Pay attention to variable types\n\n\nQuestion: What is wrong with the x-axis of the plot above? How can you fix it?\n\nAdd response here.\n\n\nYour turn: Implement the fix for the x-axis of the plot.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz.html#use-an-accessible-color-scale",
     "href": "ae/ae-20-effective-dataviz.html#use-an-accessible-color-scale",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Use an accessible color scale",
     "text": "Use an accessible color scale\n\n\nQuestion: What do we mean by an accessible color scale? What types of color vision deficiencies are there?\n\nAdd response here.\n\nDemo: What does the plot look like to people with various color vision deficiencies?\nDemo: Remake the plot with an accessible color scale.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz.html#use-direct-labeling",
     "href": "ae/ae-20-effective-dataviz.html#use-direct-labeling",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Use direct labeling",
     "text": "Use direct labeling\n\n\nDemo: Remove the legend and add labels for each line at the end of the line (where x is the max(x) recorded).\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz.html#use-color-to-draw-attention",
     "href": "ae/ae-20-effective-dataviz.html#use-color-to-draw-attention",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Use color to draw attention",
     "text": "Use color to draw attention\n\n\nDemo: Redo the line plot where Part-time Faculty is red and the rest are gray.\n\n\n# label: recode\n# add code here\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz.html#we-could-keep-going",
     "href": "ae/ae-20-effective-dataviz.html#we-could-keep-going",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "We could keep going…",
     "text": "We could keep going…\nLet’s go back to the slides for that."
   },
@@ -4634,77 +4634,77 @@
   {
     "objectID": "ae/ae-20-effective-dataviz-A.html",
     "href": "ae/ae-20-effective-dataviz-A.html",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "",
     "text": "The American Association of University Professors (AAUP) is a nonprofit membership association of faculty and other academic professionals. This report by the AAUP shows trends in instructional staff employees between 1975 and 2011, and contains the following image. What trends are apparent in this visualization?"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz-A.html#packages",
     "href": "ae/ae-20-effective-dataviz-A.html#packages",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Packages",
     "text": "Packages\n\nlibrary(tidyverse)\nlibrary(scales)\nlibrary(ggthemes)"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz-A.html#data",
     "href": "ae/ae-20-effective-dataviz-A.html#data",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Data",
     "text": "Data\nEach row in this dataset represents a faculty type, and the columns are the years for which we have data. The values are percentage of hires of that type of faculty for each year.\n\nstaff &lt;- read_csv(\"https://sta199-s24.github.io/data/instructional-staff.csv\")\nstaff\n\n# A tibble: 5 × 12\n  faculty_type    `1975` `1989` `1993` `1995` `1999` `2001` `2003` `2005` `2007`\n  &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 Full-Time Tenu…   29     27.6   25     24.8   21.8   20.3   19.3   17.8   17.2\n2 Full-Time Tenu…   16.1   11.4   10.2    9.6    8.9    9.2    8.8    8.2    8  \n3 Full-Time Non-…   10.3   14.1   13.6   13.6   15.2   15.5   15     14.8   14.9\n4 Part-Time Facu…   24     30.4   33.1   33.2   35.5   36     37     39.3   40.5\n5 Graduate Stude…   20.5   16.5   18.1   18.8   18.7   19     20     19.9   19.5\n# ℹ 2 more variables: `2009` &lt;dbl&gt;, `2011` &lt;dbl&gt;"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz-A.html#recreate",
     "href": "ae/ae-20-effective-dataviz-A.html#recreate",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Recreate",
     "text": "Recreate\n\n\nYour turn: Recreate the visualization above. Try to match as many of the elements as possible. Hint: You might need to reshape your data first.\n\n\nstaff_long &lt;- staff |&gt;\n  pivot_longer(\n    cols = -faculty_type, names_to = \"year\",\n    values_to = \"percentage\"\n  ) |&gt;\n  mutate(\n    percentage = as.numeric(percentage),\n    faculty_type = fct_relevel(\n      faculty_type,\n      \"Full-Time Tenured Faculty\",\n      \"Full-Time Tenure-Track Faculty\",\n      \"Full-Time Non-Tenure-Track Faculty\",\n      \"Part-Time Faculty\",\n      \"Graduate Student Employees\"\n    )\n  )\n\n\nggplot(\n  staff_long,\n  aes(\n    x = str_wrap(faculty_type, 20),\n    y = percentage,\n    fill = year\n    )\n  ) +\n  geom_col(position = \"dodge\") +\n  scale_y_continuous(breaks = seq(5, 45, 5), limits = c(0, 45)) +\n  labs(\n    x = NULL,\n    y = \"Percent of Total Instructional Staff\",\n    fill = NULL,\n    title = \"Trends in Instructional Staff Employment Status, 1975-2011\",\n    subtitle = \"All Institutions, National Totals\",\n    caption = \"Source: US Department of Education, IPEDS Fall Staff Survey\"\n  ) +\n  theme(\n    legend.position = c(0.4, 0.93),\n    legend.direction = \"horizontal\",\n    legend.key.size = unit(0.2, \"cm\"),\n    legend.key.height = unit(0.1, \"cm\"),\n    legend.text.align = 0,\n    legend.background = element_rect(color = \"black\", linewidth = 0.2),\n    legend.text = element_text(size = 7),\n    panel.grid.minor = element_blank(),\n    panel.grid.major.x = element_blank(),\n    plot.caption = element_text(size = 8, hjust = 0)\n  ) +\n  guides(fill = guide_legend(nrow = 1))\n\nWarning: The `legend.text.align` argument of `theme()` is deprecated as of ggplot2\n3.5.0.\nℹ Please use theme(legend.text = element_text(hjust)) instead.\n\n\nWarning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2\n3.5.0.\nℹ Please use the `legend.position.inside` argument of `theme()` instead."
   },
   {
     "objectID": "ae/ae-20-effective-dataviz-A.html#represent-percentages-as-parts-of-a-whole",
     "href": "ae/ae-20-effective-dataviz-A.html#represent-percentages-as-parts-of-a-whole",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Represent percentages as parts of a whole",
     "text": "Represent percentages as parts of a whole\n\n\nDemo: Recreate the previous visualization where the percentages are represented as parts of a whole.\n\n\nggplot(\n  staff_long,\n  aes(\n    x = str_wrap(faculty_type, 20),\n    y = percentage,\n    fill = fct_rev(year)\n    )\n  ) +\n  geom_col(position = \"fill\", color = \"white\", linewidth = 0.2) +\n  scale_y_continuous(labels = label_percent()) +\n  labs(\n    x = NULL,\n    y = \"Percent of Total Instructional Staff\",\n    fill = NULL,\n    title = \"Trends in Instructional Staff Employment Status, 1975-2011\",\n    subtitle = \"All Institutions, National Totals\",\n    caption = \"Source: US Department of Education, IPEDS Fall Staff Survey\"\n  ) +\n  theme(\n    legend.text.align = 0,\n    legend.background = element_rect(color = \"black\", size = 0.2),\n    legend.text = element_text(size = 7),\n    panel.grid.minor = element_blank(),\n    panel.grid.major.x = element_blank(),\n    plot.caption = element_text(size = 8, hjust = 0)\n  )\n\nWarning: The `size` argument of `element_rect()` is deprecated as of ggplot2 3.4.0.\nℹ Please use the `linewidth` argument instead."
   },
   {
     "objectID": "ae/ae-20-effective-dataviz-A.html#place-time-on-x-axis",
     "href": "ae/ae-20-effective-dataviz-A.html#place-time-on-x-axis",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Place time on x-axis",
     "text": "Place time on x-axis\n\n\nDemo: Convert the visualization to a line plot with time on the x-axis.\n\n\nggplot(\n  staff_long,\n  aes(\n    x = year,\n    y = percentage,\n    color = str_wrap(faculty_type, 20),\n    group = str_wrap(faculty_type, 20)\n    )\n  ) +\n  geom_line(linewidth = 1) +\n  labs(\n    x = NULL,\n    y = \"Percent of Total Instructional Staff\",\n    color = NULL,\n    title = \"Trends in Instructional Staff Employment Status, 1975-2011\",\n    subtitle = \"All Institutions, National Totals\",\n    caption = \"Source: US Department of Education, IPEDS Fall Staff Survey\"\n  ) +\n  scale_y_continuous(labels = label_percent(accuracy = 1, scale = 1)) +\n  theme(\n    legend.key.height = unit(1.5, \"cm\"),\n    plot.caption = element_text(size = 8, hjust = 0)\n  )"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz-A.html#pay-attention-to-variable-types",
     "href": "ae/ae-20-effective-dataviz-A.html#pay-attention-to-variable-types",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Pay attention to variable types",
     "text": "Pay attention to variable types\n\n\nQuestion: What is wrong with the x-axis of the plot above? How can you fix it?\n\nTime is represented as a character string (equally spaces between levels) instead of on a continuous scale (with spacing indicating numbers of years between ticks.\n\n\nYour turn: Implement the fix for the x-axis of the plot.\n\n\nstaff_long &lt;- staff_long |&gt;\n  mutate(year = as.numeric(year))\n\nggplot(\n  staff_long,\n  aes(\n    x = year,\n    y = percentage,\n    color = str_wrap(faculty_type, 20),\n    group = str_wrap(faculty_type, 20)\n  )\n) +\n  geom_line(linewidth = 1) +\n  labs(\n    x = NULL,\n    y = \"Percent of Total Instructional Staff\",\n    color = NULL,\n    title = \"Trends in Instructional Staff Employment Status, 1975-2011\",\n    subtitle = \"All Institutions, National Totals\",\n    caption = \"Source: US Department of Education, IPEDS Fall Staff Survey\"\n  ) +\n  scale_y_continuous(labels = label_percent(accuracy = 1, scale = 1)) +\n  theme(\n    legend.key.height = unit(1.5, \"cm\"),\n    plot.caption = element_text(size = 8, hjust = 0)\n  )"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz-A.html#use-an-accessible-color-scale",
     "href": "ae/ae-20-effective-dataviz-A.html#use-an-accessible-color-scale",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Use an accessible color scale",
     "text": "Use an accessible color scale\nQuestion: What do we mean by an accessible color scale? What types of color vision deficiencies are there?\n\nDemo: What does the plot look like to people with various color vision deficiencies?\nDemo: Remake the plot with an accessible color scale.\n\n\nggplot(\n  staff_long,\n  aes(\n    x = year,\n    y = percentage,\n    color = str_wrap(faculty_type, 20),\n    group = str_wrap(faculty_type, 20)\n    )\n  ) +\n  geom_line(linewidth = 1) +\n  labs(\n    x = NULL,\n    y = \"Percent of Total Instructional Staff\",\n    color = NULL,\n    title = \"Trends in Instructional Staff Employment Status, 1975-2011\",\n    subtitle = \"All Institutions, National Totals\",\n    caption = \"Source: US Department of Education, IPEDS Fall Staff Survey\"\n  ) +\n  scale_y_continuous(labels = label_percent(accuracy = 1, scale = 1)) +\n  theme(\n    legend.key.height = unit(1.5, \"cm\"),\n    plot.caption = element_text(size = 8, hjust = 0)\n  ) +\n  scale_color_colorblind() # from ggthemes package"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz-A.html#use-direct-labeling",
     "href": "ae/ae-20-effective-dataviz-A.html#use-direct-labeling",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Use direct labeling",
     "text": "Use direct labeling\n\n\nDemo: Remove the legend and add labels for each line at the end of the line (where x is the max(x) recorded).\n\n\nggplot(\n  staff_long,\n  aes(\n    x = year,\n    y = percentage,\n    color = faculty_type,\n    group = faculty_type\n    )\n  ) +\n  geom_line(linewidth = 1, show.legend = FALSE) +\n  geom_text(\n    data = staff_long |&gt; filter(year == max(year)),\n    aes(x = year + 1, y = percentage, label = faculty_type),\n    hjust = \"left\", show.legend = FALSE, size = 4\n  ) +\n  labs(\n    x = NULL,\n    y = \"Percent of Total Instructional Staff\",\n    color = NULL,\n    title = \"Trends in Instructional Staff Employment Status, 1975-2011\",\n    subtitle = \"All Institutions, National Totals\",\n    caption = \"Source: US Department of Education, IPEDS Fall Staff Survey\"\n  ) +\n  scale_y_continuous(labels = label_percent(accuracy = 1, scale = 1)) +\n  theme(\n    plot.caption = element_text(size = 8, hjust = 0),\n    plot.margin = margin(0.1, 2.5, 0.1, 0.1, unit = \"in\")\n  ) +\n  coord_cartesian(clip = \"off\") +\n  scale_color_colorblind()"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz-A.html#use-color-to-draw-attention",
     "href": "ae/ae-20-effective-dataviz-A.html#use-color-to-draw-attention",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "Use color to draw attention",
     "text": "Use color to draw attention\n\n\nDemo: Redo the line plot where Part-time Faculty is red and the rest are gray.\n\n\nstaff_long &lt;- staff_long |&gt;\n  mutate(faculty_type_color = if_else(faculty_type == \"Part-Time Faculty\", \"firebrick3\", \"gray40\"))\n\n\nggplot(\n  staff_long,\n  aes(\n    x = year,\n    y = percentage,\n    color = faculty_type_color, group = faculty_type\n    )\n  ) +\n  geom_line(linewidth = 1, show.legend = FALSE) +\n  geom_text(\n    data = staff_long |&gt; filter(year == max(year)),\n    aes(x = year + 1, y = percentage, label = faculty_type),\n    hjust = \"left\", show.legend = FALSE, size = 4\n  ) +\n  labs(\n    x = NULL,\n    y = \"Percent of Total Instructional Staff\",\n    color = NULL,\n    title = \"Trends in Instructional Staff Employment Status, 1975-2011\",\n    subtitle = \"All Institutions, National Totals\",\n    caption = \"Source: US Department of Education, IPEDS Fall Staff Survey\"\n  ) +\n  scale_y_continuous(labels = label_percent(accuracy = 1, scale = 1)) +\n  scale_color_identity() +\n  theme(\n    plot.caption = element_text(size = 8, hjust = 0),\n    plot.margin = margin(0.1, 2.5, 0.1, 0.1, unit = \"in\")\n  ) +\n  coord_cartesian(clip = \"off\")"
   },
   {
     "objectID": "ae/ae-20-effective-dataviz-A.html#we-could-keep-going",
     "href": "ae/ae-20-effective-dataviz-A.html#we-could-keep-going",
-    "title": "Trends instructional staff employees in universities",
+    "title": "AE 20: Trends instructional staff employees in universities",
     "section": "We could keep going…",
     "text": "We could keep going…\nLet’s go back to the slides for that."
   },
@@ -5676,7 +5676,7 @@
     "href": "ae.html",
     "title": "Application exercises",
     "section": "",
-    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 2 pm) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: UN Votes\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\nSuggested answers\n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\n \n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\n \n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\n \n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\nSuggested answers\n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\n \n\n\n\n\nAE 07: Sales taxes + data joining\n\n\nSuggested answers\n\n\n\n\nAE 07: Sales taxes + data joining\n\n\n \n\n\n\n\nAE 08: Durham climate + factors\n\n\nSuggested answers\n\n\n\n\nAE 08: Durham climate + factors\n\n\n \n\n\n\n\nAE 09: Age gaps + sales + import\n\n\nSuggested answers\n\n\n\n\nAE 09: Age gaps + sales + import\n\n\n \n\n\n\n\nAE 10: Opinion articles in The Chronicle\n\n\nSuggested answers\n\n\n\n\nAE 10: Opinion articles in The Chronicle\n\n\n \n\n\n\n\nAE 11: UN Votes - Revisit + Chat GPT adventures\n\n\n \n\n\n\n\nAE 12: Modelling fish\n\n\nSuggested answers\n\n\n\n\nAE 12: Modelling fish\n\n\n \n\n\n\n\nAE 13: Modelling penguins\n\n\nSuggested answers\n\n\n\n\nAE 13: Modelling penguins\n\n\n \n\n\n\n\nAE 14: Modelling penguins with multiple predictors\n\n\nSuggested answers\n\n\n\n\nAE 14: Modelling penguins with multiple predictors\n\n\n \n\n\n\n\nAE 15: Modelling loan interest rates\n\n\nSuggested answers\n\n\n\n\nAE 15: Modelling loan interest rates\n\n\n \n\n\n\n\nAE 16: Building a spam filter\n\n\nSuggested answers\n\n\n\n\nAE 16: Building a spam filter\n\n\n \n\n\n\n\nAE 17: Forest classification\n\n\nSuggested answers\n\n\n\n\nAE 17: Forest classification\n\n\n \n\n\n\n\nAE 18: Houses in Duke Forest\n\n\nSuggested answers\n\n\n\n\nAE 18: Houses in Duke Forest\n\n\n \n\n\n\n\nAE 19: Equality\n\n\nSuggested answers\n\n\n\n\nAE 19: Equality\n\n\n \n\n\n\n\nTrends instructional staff employees in universities\n\n\n \n\n\n\n\nTrends instructional staff employees in universities\n\n\n \n\n\n\n\n\nNo matching items\n\n\n  \n\n\n\nMore AEs to be added as the semester progresses.",
+    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 2 pm) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: UN Votes\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\nSuggested answers\n\n\n\n\nAE 03: Bechdel + data visualization and transformation\n\n\n \n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\n \n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\n \n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\nSuggested answers\n\n\n\n\nAE 06: StatSci majors + data tidying\n\n\n \n\n\n\n\nAE 07: Sales taxes + data joining\n\n\nSuggested answers\n\n\n\n\nAE 07: Sales taxes + data joining\n\n\n \n\n\n\n\nAE 08: Durham climate + factors\n\n\nSuggested answers\n\n\n\n\nAE 08: Durham climate + factors\n\n\n \n\n\n\n\nAE 09: Age gaps + sales + import\n\n\nSuggested answers\n\n\n\n\nAE 09: Age gaps + sales + import\n\n\n \n\n\n\n\nAE 10: Opinion articles in The Chronicle\n\n\nSuggested answers\n\n\n\n\nAE 10: Opinion articles in The Chronicle\n\n\n \n\n\n\n\nAE 11: UN Votes - Revisit + Chat GPT adventures\n\n\n \n\n\n\n\nAE 12: Modelling fish\n\n\nSuggested answers\n\n\n\n\nAE 12: Modelling fish\n\n\n \n\n\n\n\nAE 13: Modelling penguins\n\n\nSuggested answers\n\n\n\n\nAE 13: Modelling penguins\n\n\n \n\n\n\n\nAE 14: Modelling penguins with multiple predictors\n\n\nSuggested answers\n\n\n\n\nAE 14: Modelling penguins with multiple predictors\n\n\n \n\n\n\n\nAE 15: Modelling loan interest rates\n\n\nSuggested answers\n\n\n\n\nAE 15: Modelling loan interest rates\n\n\n \n\n\n\n\nAE 16: Building a spam filter\n\n\nSuggested answers\n\n\n\n\nAE 16: Building a spam filter\n\n\n \n\n\n\n\nAE 17: Forest classification\n\n\nSuggested answers\n\n\n\n\nAE 17: Forest classification\n\n\n \n\n\n\n\nAE 18: Houses in Duke Forest\n\n\nSuggested answers\n\n\n\n\nAE 18: Houses in Duke Forest\n\n\n \n\n\n\n\nAE 19: Equality\n\n\nSuggested answers\n\n\n\n\nAE 19: Equality\n\n\n \n\n\n\n\nAE 20: Trends instructional staff employees in universities\n\n\nSuggested answers\n\n\n\n\nAE 20: Trends instructional staff employees in universities\n\n\n \n\n\n\n\n\nNo matching items\n\n\n  \n\n\n\nMore AEs to be added as the semester progresses.",
     "crumbs": [
       "Application exercises"
     ]
