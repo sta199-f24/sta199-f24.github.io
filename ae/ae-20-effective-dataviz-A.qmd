@@ -1,8 +1,6 @@
 ---
-title: "Trends instructional staff employees in universities"
-categories: 
-  - Application exercise
-  - Answers
+title: "AE 20: Trends instructional staff employees in universities"
+subtitle: Suggested answers
 ---
 
 The American Association of University Professors (AAUP) is a nonprofit membership association of faculty and other academic professionals.
