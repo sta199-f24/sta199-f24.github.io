@@ -100,7 +100,7 @@ $$
 
 -   **Your turn:** Interpret the slope and the intercept in the context of the data.
 
-    -   Intercept: Penguins with 0 flipper length are expected, on average, to weigh 5,781 grams.
+    -   Intercept: Penguins with 0 flipper length are expected, on average, to weigh -5,781 grams.
 
     -   Slopes: For each additional millimeter of a penguin;s flipper length, the weight of their penguin is expected to be higher, on average, by 49.7 grams.
 
