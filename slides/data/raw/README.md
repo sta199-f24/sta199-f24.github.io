@@ -1,4 +1,4 @@
-- 2024 Sales Tax Rates State  Local Sales Tax by State.csv
+- 2024 Sales Tax Rates State and Local Sales Tax by State.csv
 
 Source: https://taxfoundation.org/data/all/state/2024-sales-taxes/
 
